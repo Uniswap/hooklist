@@ -430,6 +430,72 @@
   },
   {
     "hook": {
+      "address": "0x044301939deb7ca53c4733dd4d9b3bc5ea0c6888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring Few ETH Hook",
+      "description": "A hook that enables 1:1 wrapping and unwrapping between ETH and fwWETH (Few Wrapped ETH) in Uniswap v4 pools, intercepting swaps via beforeSwap and using delta returns to handle token conversions entirely within the hook.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x0fe942afdb2f51e25cbf892aad175c6a574f2888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring Few WBTC Hook",
+      "description": "Enables 1:1 wrapping and unwrapping between a token and its Ring Protocol fewToken wrapper during Uniswap v4 swaps. Validates that pools are formed exclusively between the underlying token and its fewToken counterpart with zero fees.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x10865f8301d46a61Badc726DE44d9D4F00F68440",
       "chain": "ethereum",
       "chainId": 1,
@@ -491,6 +557,39 @@
     "properties": {
       "dynamicFee": true,
       "upgradeable": true,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4b2eb653d13e6c9ac5a0a01fde22f2c8d6592888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring Few USDC Hook",
+      "description": "A hook that facilitates seamless 1:1 wrapping and unwrapping of an ERC20 token and its Ring Few-wrapped counterpart (fewToken) within a Uniswap v4 pool, intercepting swaps in beforeSwap to perform the wrap or unwrap operation and returning a delta to settle the exchange.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
       "requiresCustomSwapData": false
     }
   },
@@ -655,6 +754,39 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8347b7a3807c681513d2b51b8223e59aa16a2888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring Few CBBTC Hook",
+      "description": "Enables atomic 1:1 wrapping and unwrapping between an ERC20 token and its Few-wrapped equivalent within Uniswap v4 swaps, intercepting beforeSwap to perform the wrap/unwrap and returning the delta directly without going through the pool AMM.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false
     }
