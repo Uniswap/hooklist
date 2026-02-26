@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xf9ced7d0f5292af02385410eda5b7570b10b50c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BVCC Dynamic Fee Hook (Ethereum)",
+    "description": "An advanced anti-bot Uniswap v4 hook by BlockVenture Chain Capital that dynamically adjusts LP fees based on gas price levels, volatility, and 24-hour pool volume. It applies a repeat-swap penalty to deter bot activity and collects a small hook fee from each swap's output amount.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
