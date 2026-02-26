@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xd577f945b6025ce1e60ac1a82f2ee8ff3fb428c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ArtacleIndexHook",
+    "description": "Non-upgradeable hook that enforces a time-decaying anti-snipe fee mechanism on trades. Charges dynamic fees starting at 95% decaying to 10% on buys, 50% then 10% on sells. Fees distributed: 80% to token contract for NFT acquisitions, 10% to admin, 10% to artblocks.io fund.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/artacle/public-docs/blob/main/artacle_index_hook_audit/Audit-Summary-Report.md"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
