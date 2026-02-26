@@ -44,6 +44,16 @@ jobs:
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
 
+      - name: Comment on unverified — fallback
+        if: success() && contains(steps.claude.outputs.result, 'not verified')
+        run: |
+          if gh issue view ${{ github.event.issue.number }} --json labels -q '.labels[].name' | grep -q unverified; then
+            gh issue comment ${{ github.event.issue.number }} --body "The source code for this hook is **not verified** on the block explorer. Please verify the contract source and reopen this issue once verification is complete." 2>/dev/null || true
+            gh issue close ${{ github.event.issue.number }} 2>/dev/null || true
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - name: Comment on issue — failed
         if: failure()
         run: gh issue comment ${{ github.event.issue.number }} --body "Analysis failed. See [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details."

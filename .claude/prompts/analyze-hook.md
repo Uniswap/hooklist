@@ -77,7 +77,31 @@ Then use `Grep` to search `.sources/` for relevant patterns (getHookPermissions,
 
 ### Detecting Verification Status
 
-If the script prints `Verified: False`, the source is NOT verified. Comment on the issue explaining the source is not verified, add the `unverified` label, and stop.
+If the script prints `Verified: False`, the source is NOT verified:
+
+1. Add the `unverified` label:
+```bash
+gh issue edit <issue_number> --add-label unverified
+```
+
+2. Write a comment body to a file and post it (avoids shell escaping issues):
+```bash
+python3 -c "
+with open('comment.md', 'w') as f:
+    f.write('The source code for this hook is **not verified** on the block explorer. ')
+    f.write('Please verify the contract source and reopen this issue once verification is complete.')
+"
+```
+```bash
+gh issue comment <issue_number> --body-file comment.md
+```
+
+3. Close the issue:
+```bash
+gh issue close <issue_number>
+```
+
+4. Stop — do not proceed with analysis or PR creation.
 
 ### Proxy Contracts
 
