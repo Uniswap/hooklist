@@ -1,0 +1,62 @@
+name: Submit a Hook
+description: Propose a Uniswap v4 hook for the registry
+title: "hook: "
+labels: ["submission"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Submit a deployed Uniswap v4 hook to the registry. Provide the chain and address — Claude will automatically analyze the verified source code and generate the metadata.
+  - type: dropdown
+    id: chain
+    attributes:
+      label: Chain
+      options:
+        - ethereum
+        - unichain
+        - base
+        - arbitrum
+        - optimism
+        - polygon
+        - blast
+        - worldchain
+        - avalanche
+        - bnb
+        - celo
+        - zora
+        - ink
+        - soneium
+    validations:
+      required: true
+  - type: input
+    id: address
+    attributes:
+      label: Hook Address
+      description: The deployed hook contract address
+      placeholder: "0x..."
+    validations:
+      required: true
+  - type: input
+    id: name
+    attributes:
+      label: Hook Name
+      description: Optional — will be detected from source if not provided
+      placeholder: "MyHook"
+  - type: textarea
+    id: description
+    attributes:
+      label: Description
+      description: Optional — Claude will generate a summary if not provided
+      placeholder: "What does this hook do?"
+  - type: input
+    id: deployer
+    attributes:
+      label: Deployer Address
+      description: Optional
+      placeholder: "0x..."
+  - type: input
+    id: audit_url
+    attributes:
+      label: Audit URL
+      description: Optional — link to a security audit
+      placeholder: "https://..."
