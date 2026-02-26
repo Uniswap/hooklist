@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xdad7ea85ff786b389a13f4714a56b1721b56c044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Asterix Hook",
+    "description": "A fee-collection hook that takes a configurable percentage of each swap's unspecified output token: for native ETH outputs the fee is forwarded to a treasury, while for ERC-20 outputs it is burned by sending to a dead address. A separate configurable portion is always forwarded to a main treasury.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
