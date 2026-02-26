@@ -1,0 +1,63 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Uniswap v4 Hook",
+  "type": "object",
+  "required": ["hook", "flags", "properties"],
+  "additionalProperties": false,
+  "properties": {
+    "hook": {
+      "type": "object",
+      "required": ["address", "chain", "chainId", "name", "verifiedSource"],
+      "additionalProperties": false,
+      "properties": {
+        "address": { "type": "string", "pattern": "^0x[a-fA-F0-9]{40}$" },
+        "chain": { "type": "string" },
+        "chainId": { "type": "integer" },
+        "name": { "type": "string" },
+        "description": { "type": "string", "default": "" },
+        "deployer": { "type": "string", "pattern": "^0x[a-fA-F0-9]{40}$", "default": "" },
+        "verifiedSource": { "type": "boolean" },
+        "auditUrl": { "type": "string", "format": "uri", "default": "" }
+      }
+    },
+    "flags": {
+      "type": "object",
+      "required": [
+        "beforeInitialize", "afterInitialize",
+        "beforeAddLiquidity", "afterAddLiquidity",
+        "beforeRemoveLiquidity", "afterRemoveLiquidity",
+        "beforeSwap", "afterSwap",
+        "beforeDonate", "afterDonate",
+        "beforeSwapReturnsDelta", "afterSwapReturnsDelta",
+        "afterAddLiquidityReturnsDelta", "afterRemoveLiquidityReturnsDelta"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "beforeInitialize": { "type": "boolean" },
+        "afterInitialize": { "type": "boolean" },
+        "beforeAddLiquidity": { "type": "boolean" },
+        "afterAddLiquidity": { "type": "boolean" },
+        "beforeRemoveLiquidity": { "type": "boolean" },
+        "afterRemoveLiquidity": { "type": "boolean" },
+        "beforeSwap": { "type": "boolean" },
+        "afterSwap": { "type": "boolean" },
+        "beforeDonate": { "type": "boolean" },
+        "afterDonate": { "type": "boolean" },
+        "beforeSwapReturnsDelta": { "type": "boolean" },
+        "afterSwapReturnsDelta": { "type": "boolean" },
+        "afterAddLiquidityReturnsDelta": { "type": "boolean" },
+        "afterRemoveLiquidityReturnsDelta": { "type": "boolean" }
+      }
+    },
+    "properties": {
+      "type": "object",
+      "required": ["dynamicFee", "upgradeable", "requiresCustomSwapData"],
+      "additionalProperties": false,
+      "properties": {
+        "dynamicFee": { "type": "boolean" },
+        "upgradeable": { "type": "boolean" },
+        "requiresCustomSwapData": { "type": "boolean" }
+      }
+    }
+  }
+}
