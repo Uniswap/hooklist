@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xfd213be7883db36e1049dc42f5bd6a0ec66b68cc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Clanker Dynamic Fee Hook (Arbitrum)",
+    "description": "Clanker V4 hook for autonomous token deployment with dynamic fees that adjust based on swap volatility using a tick-based accumulator model. Also includes MEV protection via an optional external module active for the first 2 minutes after pool creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
