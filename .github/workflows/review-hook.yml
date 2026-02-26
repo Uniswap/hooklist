@@ -19,7 +19,7 @@ jobs:
       - uses: anthropics/claude-code-action@v1
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          review_comments: true
+          allowed_bots: 'claude'
           claude_args: '--allowedTools "Bash(curl*),Bash(python3*),Read,Glob,Grep"'
           prompt: |
             Review this PR by following the instructions in .claude/prompts/review-hook.md.
