@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x4b2eb653d13e6c9ac5a0a01fde22f2c8d6592888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Ring Few USDC Hook",
+    "description": "A hook that facilitates seamless 1:1 wrapping and unwrapping of an ERC20 token and its Ring Few-wrapped counterpart (fewToken) within a Uniswap v4 pool, intercepting swaps in beforeSwap to perform the wrap or unwrap operation and returning a delta to settle the exchange.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
