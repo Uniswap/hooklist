@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x74803bd586fa5ce3a9ab38b49a7ca633af8700cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Token Flow Tax Hook (Ethereum)",
+    "description": "A Uniswap v4 hook that applies configurable taxes on TOKEN/ETH swaps, collecting native ETH taxes on both inflows and outflows. Supports multiple tokens sharing one hook, with a configurable owner cut of all taxes collected.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
