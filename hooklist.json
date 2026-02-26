@@ -760,6 +760,39 @@
   },
   {
     "hook": {
+      "address": "0xf13bdafb90c79f2201e2ce42010c8ef75fede8c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ENS Wheel Hook",
+      "description": "A Uniswap v4 hook for the ENSWheel protocol that restricts pool initialization and liquidity additions to the ENSWheel factory, and applies a time-decaying buy fee (starting at 95%, decreasing to 10% over time) distributed between the ENS collection engine (80%) and a configurable team address (20%).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x15cD9520D0fAF71c938Db4426F8C58B5cBAa9ACc",
       "chain": "polygon",
       "chainId": 137,
