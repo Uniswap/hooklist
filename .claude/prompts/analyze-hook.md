@@ -43,14 +43,21 @@ Example: address ending in `...2080` → bits 13 and 7 set → `beforeInitialize
 
 ## Step 4: Fetch Verified Source from Etherscan
 
-Read `chains.json` to get the explorer URL for the chain. Then fetch verified source:
+**IMPORTANT: Use the Etherscan API, not the website. Never scrape etherscan.io HTML.**
+
+Look up the chain in `chains.json` to get the `chainId`. Then fetch verified source using the Etherscan V2 API:
 
 ```bash
-curl "EXPLORER_URL&module=contract&action=getsourcecode&address=ADDRESS&apikey=$ETHERSCAN_API_KEY"
+curl -s "https://api.etherscan.io/v2/api?chainid=CHAIN_ID&module=contract&action=getsourcecode&address=ADDRESS&apikey=$ETHERSCAN_API_KEY"
 ```
 
-For Etherscan V2 chains, use: `https://api.etherscan.io/v2/api?chainid=CHAIN_ID`
-For Blockscout chains (zora, ink, soneium), use the `explorerUrl` from `chains.json` directly.
+For Blockscout chains (zora, ink, soneium), use the `explorerUrl` from `chains.json` instead:
+
+```bash
+curl -s "BLOCKSCOUT_URL?module=contract&action=getsourcecode&address=ADDRESS"
+```
+
+The `$ETHERSCAN_API_KEY` environment variable is available in CI.
 
 ### Detecting Verification Status
 
