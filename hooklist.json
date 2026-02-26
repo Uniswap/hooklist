@@ -892,6 +892,39 @@
   },
   {
     "hook": {
+      "address": "0xde400595199e6dae55a1bcb742b3eb249af00800",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "M0 Tick Range Hook",
+      "description": "Restricts liquidity provision to a configurable tick range by reverting in beforeAddLiquidity if the position's ticks fall outside the allowed bounds. An authorized manager role can update the tick range.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xe3c63a9813ac03be0e8618b627cb8170cfa468c4",
       "chain": "ethereum",
       "chainId": 1,
