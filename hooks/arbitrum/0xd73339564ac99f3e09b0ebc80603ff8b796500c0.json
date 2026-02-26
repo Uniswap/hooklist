@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xd73339564ac99f3e09b0ebc80603ff8b796500c0",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Limit Order Hook (Arbitrum)",
+    "description": "A Uniswap v4 hook that enables limit order functionality by recording the tick before each swap and delegating to a LimitOrderManager contract after each swap to execute any limit orders whose tick range was crossed. Supports dynamic LP fee updates via a permissioned fee manager role.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
