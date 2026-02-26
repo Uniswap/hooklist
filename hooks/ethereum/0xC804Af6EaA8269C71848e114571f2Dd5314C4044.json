@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xC804Af6EaA8269C71848e114571f2Dd5314C4044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TaxStrategyHook",
+    "description": "A revenue-sharing hook that charges 10% fee on all swaps, automatically converting fees to ETH for strategic allocation: 90% to an automated treasury that invests in ETF-candidate tokens, 10% to development fund. Includes automated profit-taking at 10% gains with buyback-and-burn mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/ETFStrategy/etf-strategy-uniswap-v4"
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
