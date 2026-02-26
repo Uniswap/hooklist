@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Parse an Etherscan getsourcecode API response.
 
-Usage: python3 scripts/parse_etherscan.py /tmp/source.json [--outdir /tmp/sources]
+Usage: python3 scripts/parse_etherscan.py response.json [--outdir .sources]
 
 Prints contract metadata to stdout and writes individual source files
 to the output directory for grep-based analysis.
@@ -11,7 +11,7 @@ import os
 import sys
 
 
-def parse(response_path: str, outdir: str = "/tmp/sources") -> dict:
+def parse(response_path: str, outdir: str = ".sources") -> dict:
     """Parse Etherscan API response, extract sources, return metadata."""
     with open(response_path) as f:
         data = json.load(f)
@@ -58,7 +58,7 @@ def main():
         sys.exit(1)
 
     response_path = sys.argv[1]
-    outdir = "/tmp/sources"
+    outdir = ".sources"
     if "--outdir" in sys.argv:
         outdir = sys.argv[sys.argv.index("--outdir") + 1]
 

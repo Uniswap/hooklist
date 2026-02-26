@@ -61,19 +61,19 @@ The `$ETHERSCAN_API_KEY` environment variable is available in CI.
 
 ### Fetching and parsing
 
-Save the API response to a temp file, then use the provided parsing script. Source code can be very large (100K+ chars), so never try to read it all at once.
+Save the API response, then use the provided parsing script. Source code can be very large (100K+ chars), so never try to read it all at once.
 
 ```bash
 # Fetch and save
-curl -s "https://api.etherscan.io/v2/api?chainid=CHAIN_ID&module=contract&action=getsourcecode&address=ADDRESS&apikey=$ETHERSCAN_API_KEY" -o /tmp/source.json
+curl -s "https://api.etherscan.io/v2/api?chainid=CHAIN_ID&module=contract&action=getsourcecode&address=ADDRESS&apikey=$ETHERSCAN_API_KEY" -o etherscan_response.json
 
-# Parse response — prints metadata, writes individual source files to /tmp/sources/
-python3 scripts/parse_etherscan.py /tmp/source.json
+# Parse response — prints metadata, writes individual source files to .sources/
+python3 scripts/parse_etherscan.py etherscan_response.json
 ```
 
-The script prints `ContractName`, `Proxy`, `Implementation`, and `Verified` status. If verified, it extracts all source files to `/tmp/sources/` (handles both single-file and multi-file contracts).
+The script prints `ContractName`, `Proxy`, `Implementation`, and `Verified` status. If verified, it extracts all source files to `.sources/` within the working directory (handles both single-file and multi-file contracts).
 
-Then use `grep` to search `/tmp/sources/` for relevant patterns (getHookPermissions, beforeSwap, hookData, delegatecall, etc.) rather than trying to read entire files.
+Then use `Grep` to search `.sources/` for relevant patterns (getHookPermissions, beforeSwap, hookData, delegatecall, etc.) rather than trying to read entire files.
 
 ### Detecting Verification Status
 
