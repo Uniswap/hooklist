@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xf7ac669593d2d9d01026fa5b756dd5b4f7aaa8cc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Clanker Static Fee Hook (Arbitrum)",
+    "description": "A Clanker token launch hook for Arbitrum that applies separate, configurable LP fees for buys and sells of the Clanker token (set statically at pool initialization), and collects a protocol fee on each swap via beforeSwap and afterSwap delta adjustments. It also includes a short-lived MEV protection module active in the first two minutes after pool creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
