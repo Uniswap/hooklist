@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x044301939deb7ca53c4733dd4d9b3bc5ea0c6888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Ring Few ETH Hook",
+    "description": "A hook that enables 1:1 wrapping and unwrapping between ETH and fwWETH (Few Wrapped ETH) in Uniswap v4 pools, intercepting swaps via beforeSwap and using delta returns to handle token conversions entirely within the hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
