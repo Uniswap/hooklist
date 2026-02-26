@@ -2,7 +2,7 @@ import json
 import os
 import tempfile
 import pytest
-from aggregate import aggregate_hooks, generate_readme_table
+from aggregate import aggregate_hooks
 
 
 @pytest.fixture
@@ -109,11 +109,3 @@ def test_aggregate_hooks_empty():
         assert hooks == []
 
 
-def test_generate_readme_table(hook_dir):
-    hooks = aggregate_hooks(os.path.join(hook_dir, "hooks"))
-    table = generate_readme_table(hooks)
-    assert "TestHook" in table
-    assert "SwapHook" in table
-    assert "ethereum" in table
-    assert "base" in table
-    assert "| Chain |" in table

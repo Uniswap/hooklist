@@ -24,6 +24,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add hooklist.json README.md
-          git diff --staged --quiet || git commit -m "chore: regenerate hooklist.json and README"
+          git add hooklist.json
+          git diff --staged --quiet || git commit -m "chore: regenerate hooklist.json"
           git push
