@@ -59,15 +59,25 @@ curl -s "BLOCKSCOUT_URL?module=contract&action=getsourcecode&address=ADDRESS"
 
 The `$ETHERSCAN_API_KEY` environment variable is available in CI.
 
+### Fetching and parsing
+
+Save the API response to a temp file, then use the provided parsing script. Source code can be very large (100K+ chars), so never try to read it all at once.
+
+```bash
+# Fetch and save
+curl -s "https://api.etherscan.io/v2/api?chainid=CHAIN_ID&module=contract&action=getsourcecode&address=ADDRESS&apikey=$ETHERSCAN_API_KEY" -o /tmp/source.json
+
+# Parse response — prints metadata, writes individual source files to /tmp/sources/
+python3 scripts/parse_etherscan.py /tmp/source.json
+```
+
+The script prints `ContractName`, `Proxy`, `Implementation`, and `Verified` status. If verified, it extracts all source files to `/tmp/sources/` (handles both single-file and multi-file contracts).
+
+Then use `grep` to search `/tmp/sources/` for relevant patterns (getHookPermissions, beforeSwap, hookData, delegatecall, etc.) rather than trying to read entire files.
+
 ### Detecting Verification Status
 
-- If `SourceCode` is empty string OR `ABI` equals `"Contract source code not verified"`, the source is NOT verified.
-- In that case: comment on the issue explaining the source is not verified, add the `unverified` label, and stop.
-
-### Parsing Multi-File Sources
-
-- If `SourceCode` starts with `{{`, it's Solidity Standard JSON Input. Strip the outer `{` and `}`, parse the inner JSON, and read source files from the `sources` object.
-- Otherwise, `SourceCode` is plain Solidity text.
+If the script prints `Verified: False`, the source is NOT verified. Comment on the issue explaining the source is not verified, add the `unverified` label, and stop.
 
 ### Proxy Contracts
 

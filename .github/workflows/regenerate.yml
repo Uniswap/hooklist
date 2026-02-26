@@ -17,7 +17,10 @@ jobs:
         with:
           python-version: '3.12'
 
-      - name: Regenerate hooklist.json and README
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Regenerate hooklist.json
         run: python scripts/aggregate.py
 
       - name: Commit changes
