@@ -529,6 +529,39 @@
   },
   {
     "hook": {
+      "address": "0x6e1babe41d708f6d46a89cda1ae46de95458e444",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Strategic Reserve Hook",
+      "description": "Manages fee collection and distribution for Strategic Reserve ETH/token pools, implementing a time-decaying buy fee that starts high (up to 80%) and decreases to a configurable floor (4-10%), with fees distributed to reserve contracts and protocol recipients.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x6fb14025194d3921942B269ba49c988fbD3fC0Cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -711,6 +744,72 @@
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdad7ea85ff786b389a13f4714a56b1721b56c044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Asterix Hook",
+      "description": "A fee-collection hook that takes a configurable percentage of each swap's unspecified output token: for native ETH outputs the fee is forwarded to a treasury, while for ERC-20 outputs it is burned by sending to a dead address. A separate configurable portion is always forwarded to a main treasury.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe3c63a9813ac03be0e8618b627cb8170cfa468c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TokenWorks Hook v4",
+      "description": "A hook for the TokenWorks NFT strategy ecosystem that restricts pool initialization and liquidity addition to the NFTStrategyFactory, and collects a configurable swap fee (default 10%, with a 95% initial buy fee) distributed among the collection owner, a protocol fee address, and PNKSTR token holders.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
       "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
