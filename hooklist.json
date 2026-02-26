@@ -133,6 +133,39 @@
   },
   {
     "hook": {
+      "address": "0xF6d0A13609bb5779Bc5D639F2bA3Bfda83D4D0C0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ZoraV4CoinHook",
+      "description": "Powers the Zora Coins protocol by managing per-coin Uniswap v4 pools with automated multi-curve liquidity provisioning, a decaying launch fee (99% to 1% over 10 seconds), and post-swap reward distribution to creators, referrers, and LPs.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/ourzora/zora-protocol/blob/main/packages/coins/src/hooks/ZoraV4CoinHook.sol"
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x0fcb2c049786054fd35330db361a75a88903a8cc",
       "chain": "bnb",
       "chainId": 56,
