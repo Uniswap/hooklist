@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x57991106cb7aa27e2771beda0d6522f68524a888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "WETH Hook",
+    "description": "A Uniswap v4 hook that enables seamless ETH/WETH wrapping and unwrapping within v4 pools at a 1:1 ratio. It intercepts swaps to deposit or withdraw ETH from the WETH contract in-flight, supporting both exact input and exact output swaps, while blocking liquidity operations since the pool serves purely as a conversion mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
