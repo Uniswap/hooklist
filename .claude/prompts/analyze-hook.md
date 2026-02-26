@@ -151,25 +151,47 @@ git commit -m "Add <name> hook on <chain>"
 git push -u origin hooks/<chain>/<address>
 ```
 
+Use the `Write` tool to create `pr_body.md` with the PR description, then create the PR with `--body-file`. This ensures proper markdown formatting.
+
 ```bash
-gh pr create --title "Add <name> hook on <chain>" --body "## Summary
+gh pr create --title "Add <name> hook on <chain>" --body-file pr_body.md
+```
+
+The PR body should contain:
+
+```markdown
+## Summary
 <1-2 sentence description>
 
 ## Flags
 | Flag | Value |
 |------|-------|
 | beforeInitialize | true/false |
-| ... | ... |
+| afterInitialize | true/false |
+| beforeAddLiquidity | true/false |
+| afterAddLiquidity | true/false |
+| beforeRemoveLiquidity | true/false |
+| afterRemoveLiquidity | true/false |
+| beforeSwap | true/false |
+| afterSwap | true/false |
+| beforeDonate | true/false |
+| afterDonate | true/false |
+| beforeSwapReturnsDelta | true/false |
+| afterSwapReturnsDelta | true/false |
+| afterAddLiquidityReturnsDelta | true/false |
+| afterRemoveLiquidityReturnsDelta | true/false |
 
 ## Properties
-- dynamicFee: true/false
-- upgradeable: true/false
-- requiresCustomSwapData: true/false
+| Property | Value |
+|----------|-------|
+| dynamicFee | true/false |
+| upgradeable | true/false |
+| requiresCustomSwapData | true/false |
 
 ## Warnings
-<any discrepancies or notes>
+<any discrepancies or notes, or "None">
 
-Closes #<issue_number>"
+Closes #<issue_number>
 ```
 
 ## Reference: Hook JSON Schema
