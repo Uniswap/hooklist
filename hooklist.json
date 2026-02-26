@@ -1,6 +1,72 @@
 [
   {
     "hook": {
+      "address": "0x2F9354Bbb0eDEf5c2a5C4b78D0C59D73412A28CC",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ClawnchHookStaticFeeV2",
+      "description": "Token launcher hook for Base. Fork of Clanker ClankerHookV2 with security fixes: transient storage for reentrant fee safety, slippage protection on fee swaps, MEV decay boundary fix, per-direction static fees, fee preference system, VestedDevBuy extension.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2Fd54Aaf84023EDA60Bd65eDb5914c1a306850cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Seedify Fee Hook",
+      "description": "Collects fees on swaps involving a designated fundraising currency. Fees split between platform treasury and optional creator treasury, with launch vs post-launch fee tiers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/Seedifyfund/base-uniswap-hook"
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x00001f3b9712708127b1fcad61cb892535951888",
       "chain": "ethereum",
       "chainId": 1,
@@ -193,6 +259,72 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe54082DfBf044B6a8F584bdDdb90a22d5613C440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UpegHook",
+      "description": "Stores on-chain SVG data for collectible ERC-20 tokens. Calls start on the configured token when first liquidity is added, and updates a random seed on each swap involving that token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/ChainCreators/Upeg"
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x15cD9520D0fAF71c938Db4426F8C58B5cBAa9ACc",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "Aegis V1.1",
+      "description": "Dynamic fee hook designed to optimize capital efficiency, protect LP value, and automatically adapt to market volatility.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://docs.aegis.markets/audits"
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false
     }
