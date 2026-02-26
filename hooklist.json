@@ -298,6 +298,39 @@
   },
   {
     "hook": {
+      "address": "0x0000000aa232009084Bd71A5797d089AA4Edfad4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Angstrom",
+      "description": "Angstrom is a decentralized exchange that takes control of its transaction ordering, preventing value extraction from liquidity providers and traders. By running application-specific auctions, Angstrom internalizes MEV and redirects the extracted value back to users, preventing arbitrage losses and sandwich attacks while reducing trading fees and gas.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/spearbit/portfolio/blob/master/pdfs/Sorella-Spearbit-Security-Review-October-2024.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
       "address": "0x00001f3b9712708127b1fcad61cb892535951888",
       "chain": "ethereum",
       "chainId": 1,
