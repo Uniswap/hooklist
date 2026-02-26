@@ -65,12 +65,13 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - name: Comment on unverified — fallback
+      - name: Label unverified — fallback
         if: success() && contains(steps.claude.outputs.result, 'not verified')
         run: |
-          if gh issue view ${{ github.event.issue.number }} --json labels -q '.labels[].name' | grep -q unverified; then
-            gh issue comment ${{ github.event.issue.number }} --body "The source code for this hook is **not verified** on the block explorer. Please verify the contract source and reopen this issue once verification is complete." 2>/dev/null || true
-            gh issue close ${{ github.event.issue.number }} 2>/dev/null || true
+          # Only comment if Claude didn't already (check for unverified label as signal)
+          if ! gh issue view ${{ github.event.issue.number }} --json labels -q '.labels[].name' | grep -q unverified; then
+            gh issue edit ${{ github.event.issue.number }} --add-label unverified 2>/dev/null || true
+            gh issue comment ${{ github.event.issue.number }} --body "The source code for this hook is **not verified** on the block explorer. Please verify the contract source and resubmit once verification is complete." 2>/dev/null || true
           fi
         env:
           GH_TOKEN: ${{ github.token }}

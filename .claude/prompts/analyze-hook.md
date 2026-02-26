@@ -89,19 +89,14 @@ gh issue edit <issue_number> --add-label unverified
 python3 -c "
 with open('comment.md', 'w') as f:
     f.write('The source code for this hook is **not verified** on the block explorer. ')
-    f.write('Please verify the contract source and reopen this issue once verification is complete.')
+    f.write('Please verify the contract source and resubmit once verification is complete.')
 "
 ```
 ```bash
 gh issue comment <issue_number> --body-file comment.md
 ```
 
-3. Close the issue:
-```bash
-gh issue close <issue_number>
-```
-
-4. Stop — do not proceed with analysis or PR creation.
+3. Stop — do not close the issue or proceed with analysis or PR creation.
 
 ### Proxy Contracts
 
