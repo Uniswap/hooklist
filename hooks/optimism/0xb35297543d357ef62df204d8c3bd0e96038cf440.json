@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xb35297543d357ef62df204d8c3bd0e96038cf440",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "Findex Hook (Optimism)",
+    "description": "A Uniswap v4 hook for the Findex protocol that restricts pool initialization and liquidity additions to whitelisted pools and authorized providers, while managing dynamic LP fees and granting transfer exceptions to limited-account holders after swaps and liquidity events.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
