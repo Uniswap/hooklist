@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x00bbc6fc07342cf80d14b60695cf0e1aa8de00cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Action Hook",
+    "description": "Captures a configurable basis-point fee from BUX/ETH pool swaps, splitting proceeds between an action funding contract (for hourly and daily rewards) and a dev fee splitter via beforeSwap and afterSwap return deltas.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
