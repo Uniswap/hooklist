@@ -44,6 +44,27 @@ jobs:
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
 
+      - name: Create PR — fallback
+        if: success() && !contains(steps.claude.outputs.result, 'not verified')
+        run: |
+          # Check if Claude pushed a branch but couldn't create the PR
+          BRANCH=$(git branch -r --list 'origin/hooks/*' --sort=-committerdate | head -1 | tr -d ' ')
+          if [ -n "$BRANCH" ]; then
+            LOCAL=${BRANCH#origin/}
+            # Only create PR if one doesn't already exist for this branch
+            EXISTING=$(gh pr list --head "$LOCAL" --json number -q '.[0].number' 2>/dev/null || true)
+            if [ -z "$EXISTING" ]; then
+              git checkout "$LOCAL" 2>/dev/null || git checkout -b "$LOCAL" "$BRANCH"
+              if [ -f pr_body.md ]; then
+                gh pr create --title "$(git log -1 --format=%s)" --body-file pr_body.md || true
+              else
+                gh pr create --title "$(git log -1 --format=%s)" --body "Closes #${{ github.event.issue.number }}" || true
+              fi
+            fi
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - name: Comment on unverified — fallback
         if: success() && contains(steps.claude.outputs.result, 'not verified')
         run: |
