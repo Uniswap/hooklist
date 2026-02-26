@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x0000000aa232009084Bd71A5797d089AA4Edfad4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Angstrom",
+    "description": "Decentralized exchange that takes control of transaction ordering, preventing MEV extraction from LPs and traders. Runs application-specific auctions to internalize MEV and redirect value back to users.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/spearbit/portfolio/blob/master/pdfs/Sorella-Spearbit-Security-Review-October-2024.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
