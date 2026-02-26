@@ -1,6 +1,105 @@
 [
   {
     "hook": {
+      "address": "0x2097d7329389264a1542ad50802bb0de84a650c4",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "BVCC Dynamic Fee Hook (Arbitrum)",
+      "description": "Dynamically adjusts LP fees per-swap based on current gas price tiers and penalizes high-frequency traders, while collecting an additional protocol fee in afterSwap from the swap output.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2a4adf825bd96598487dbb6b2d8d882a4eb86888",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "WETH Hook (Arbitrum)",
+      "description": "A Uniswap v4 hook that enables seamless wrapping and unwrapping of ETH and WETH in a dedicated zero-fee pool, intercepting swaps to perform 1:1 ETH\u2194WETH conversion while blocking direct liquidity operations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc4bf39a096a1b610dd6186935f3ad99c66239080",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "Slippage Fee Hook (Arbitrum)",
+      "description": "Dynamically computes LP fees before each swap based on the simulated price impact (tick difference between current and post-swap price), charging higher fees for larger swaps to reduce impermanent loss for liquidity providers. Requires pools to use dynamic fees and reverts any swap that would cause slippage exceeding 5%.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xd73339564ac99f3e09b0ebc80603ff8b796500c0",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -23,6 +122,72 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf7ac669593d2d9d01026fa5b756dd5b4f7aaa8cc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "Clanker Static Fee Hook (Arbitrum)",
+      "description": "A Clanker token launch hook for Arbitrum that applies separate, configurable LP fees for buys and sells of the Clanker token (set statically at pool initialization), and collects a protocol fee on each swap via beforeSwap and afterSwap delta adjustments. It also includes a short-lived MEV protection module active in the first two minutes after pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfd213be7883db36e1049dc42f5bd6a0ec66b68cc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "Clanker Dynamic Fee Hook (Arbitrum)",
+      "description": "Clanker V4 hook for autonomous token deployment with dynamic fees that adjust based on swap volatility using a tick-based accumulator model. Also includes MEV protection via an optional external module active for the first 2 minutes after pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -253,6 +418,39 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8a36d8408f5285c3f81509947bc187b3c0efd0c4",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "BVCC Dynamic Fee Hook (BNB)",
+      "description": "Dynamically adjusts LP fees per swap based on gas price levels, price volatility, and 24-hour trading volume, with an anti-bot cooldown penalty for frequent swappers. Also collects a small hook fee from swap output amounts via afterSwapReturnsDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
@@ -1546,6 +1744,39 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb35297543d357ef62df204d8c3bd0e96038cf440",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "Findex Hook (Optimism)",
+      "description": "A Uniswap v4 hook for the Findex protocol that restricts pool initialization and liquidity additions to whitelisted pools and authorized providers, while managing dynamic LP fees and granting transfer exceptions to limited-account holders after swaps and liquidity events.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false
     }
