@@ -105,20 +105,48 @@ Cross-reference the address-derived flags with the source code:
 
 ## Step 6: Generate the Hook JSON
 
-Create `hooks/<chain>/<address>.json` matching the schema in `schema.json`. Use submitter-provided values for `name`, `description`, `deployer`, and `auditUrl` when present. Generate the rest from analysis.
+Use the `Write` tool to create `hooks/<chain>/<address>.json` matching the schema in `schema.json`. The Write tool creates parent directories automatically — do not use `mkdir`. Use submitter-provided values for `name`, `description`, `deployer`, and `auditUrl` when present. Generate the rest from analysis.
 
 ## Step 7: Open a PR
 
-1. Create a branch named `hooks/<chain>/<address>`
-2. Commit the hook JSON file
-3. Open a PR with:
-   - Title: `Add <name> hook on <chain>`
-   - Body containing:
-     - Hook analysis summary
-     - Flag table
-     - Properties summary
-     - Any warnings or discrepancies found
-     - `Closes #<issue_number>`
+**Important: Run each git/gh command as a separate Bash call. Do not chain commands with `&&`.**
+
+```bash
+git checkout -b hooks/<chain>/<address>
+```
+
+```bash
+git add hooks/<chain>/<address>.json
+```
+
+```bash
+git commit -m "Add <name> hook on <chain>"
+```
+
+```bash
+git push -u origin hooks/<chain>/<address>
+```
+
+```bash
+gh pr create --title "Add <name> hook on <chain>" --body "## Summary
+<1-2 sentence description>
+
+## Flags
+| Flag | Value |
+|------|-------|
+| beforeInitialize | true/false |
+| ... | ... |
+
+## Properties
+- dynamicFee: true/false
+- upgradeable: true/false
+- requiresCustomSwapData: true/false
+
+## Warnings
+<any discrepancies or notes>
+
+Closes #<issue_number>"
+```
 
 ## Reference: Hook JSON Schema
 
