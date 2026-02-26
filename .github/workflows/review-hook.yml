@@ -20,9 +20,14 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           allowed_bots: 'claude'
-          claude_args: '--allowedTools "Bash(curl*),Bash(python3*),Read,Glob,Grep"'
+          claude_args: '--allowedTools "Bash(curl*),Bash(git*),Bash(gh*),Bash(python3*),Read,Glob,Grep"'
           prompt: |
-            Review this PR by following the instructions in .claude/prompts/review-hook.md.
-            Verify each hook file's flags, properties, and metadata against the on-chain source code.
+            Review PR #${{ github.event.pull_request.number }}.
+            Follow the instructions in .claude/prompts/review-hook.md to verify each hook file.
+
+            After completing your review, submit it as a GitHub PR review using `gh`:
+            - If everything is correct: `gh pr review ${{ github.event.pull_request.number }} --approve --body "<your summary>"`
+            - If there are issues: `gh pr review ${{ github.event.pull_request.number }} --request-changes --body "<your findings>"`
         env:
+          GH_TOKEN: ${{ github.token }}
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
