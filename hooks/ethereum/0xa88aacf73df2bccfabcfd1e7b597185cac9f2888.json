@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xa88aacf73df2bccfabcfd1e7b597185cac9f2888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "WstETHHook",
+    "description": "A Uniswap v4 hook that enables seamless wrapping and unwrapping between stETH and wstETH during swaps, applying the dynamic stETH/wstETH exchange rate in beforeSwap and settling token deltas directly with the pool manager. Liquidity additions are blocked; all exchange is handled exclusively through the hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/Uniswap/contracts/pull/93"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
