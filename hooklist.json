@@ -826,11 +826,77 @@
   },
   {
     "hook": {
+      "address": "0x75ae0292e8ad3ab60b9a1a7b3046d3f4abdfa888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring Few WSTETH Hook (Ethereum)",
+      "description": "Wraps and unwraps wstETH (a Few-wrapped token) on-the-fly during Uniswap v4 swaps, enabling seamless 1:1 conversion between the underlying ERC20 and its Few-wrapped counterpart in a zero-fee pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x8347b7a3807c681513d2b51b8223e59aa16a2888",
       "chain": "ethereum",
       "chainId": 1,
       "name": "Ring Few CBBTC Hook",
       "description": "Enables atomic 1:1 wrapping and unwrapping between an ERC20 token and its Few-wrapped equivalent within Uniswap v4 swaps, intercepting beforeSwap to perform the wrap/unwrap and returning the delta directly without going through the pool AMM.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x877323adbf747f85eb8d182d42f01f34a5492888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring Few WEETH Hook (Ethereum)",
+      "description": "A 1:1 wrapping/unwrapping hook for Ring Protocol's Few Wrapped WEETH token on Uniswap v4, enabling seamless swaps between WEETH and its few-wrapped variant. The hook intercepts swaps to atomically wrap or unwrap tokens using BeforeSwapDelta, and validates pool initialization to ensure only the wrapper/underlying pair with zero fee is permitted.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -1057,6 +1123,39 @@
   },
   {
     "hook": {
+      "address": "0xd5770936a6678353f1b17c342b29c4416b029080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Custom Fee MEV Protection Hook (Ethereum)",
+      "description": "A Uniswap v4 hook for TOKEN/ETH and TOKEN/WETH pools that applies configurable directional buy/sell fee overrides and optional anti-MEV protections including blacklisting, one-trade-per-block enforcement, cooldown periods, and maximum sell amount limits.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xd6a45df0c82c9a686ab1e58fb28d8fc0cf106444",
       "chain": "ethereum",
       "chainId": 1,
@@ -1244,6 +1343,105 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf9527fb5a34ac6fbc579e4fbc3bf292ed57d4880",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Arrakis Private Hook (Ethereum)",
+      "description": "Restricts liquidity additions to authorized Arrakis LP modules for private vaults, and applies per-direction dynamic fee overrides on swaps via the Uniswap v4 LP fee override mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf9ced7d0f5292af02385410eda5b7570b10b50c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BVCC Dynamic Fee Hook (Ethereum)",
+      "description": "An advanced anti-bot Uniswap v4 hook by BlockVenture Chain Capital that dynamically adjusts LP fees based on gas price levels, volatility, and 24-hour pool volume. It applies a repeat-swap penalty to deter bot activity and collects a small hook fee from each swap's output amount.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x480dafdb4d6092ef3217595b75784ec54b52e888",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "WETH Hook (Optimism)",
+      "description": "A Uniswap v4 hook that enables seamless wrapping and unwrapping of ETH to WETH within a pool, intercepting swaps to perform 1:1 ETH\u2194WETH conversions while blocking direct liquidity operations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
