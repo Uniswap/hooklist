@@ -67,6 +67,39 @@
   },
   {
     "hook": {
+      "address": "0x0fcb2c049786054fd35330db361a75a88903a8cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ClankerHookStaticFeeV2",
+      "description": "Clanker V4 hook v2 for autonomous token deployment with fixed LP fee rates, MEV modules, pool extensions, protocol fee, and LP locker fee collection.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/quantidexyz/clanker-v4/blob/main/audits/macro_v4_audit_2.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x00001f3b9712708127b1fcad61cb892535951888",
       "chain": "ethereum",
       "chainId": 1,
@@ -226,6 +259,39 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xA312884b73862377317f0071eC6eB5404025A8C4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "999WHL Hook",
+      "description": "Takes 10% buy and sell fee, used to buy digits ENS NFTs. Same flywheel as NFTStrategy.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false
     }
