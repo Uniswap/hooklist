@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xd6a45df0c82c9a686ab1e58fb28d8fc0cf106444",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TokenWorks Hook v3",
+    "description": "A Uniswap v4 hook by TokenWorks that manages fee collection and distribution for NFT strategy ETH/token pools. It enforces ETH/token-only pool initialization via the factory, applies a time-decaying buy fee (starting at 95% and decreasing to 10% over blocks), and uses afterSwapReturnsDelta to skim fees and distribute them to the protocol, stakers, and collection owners.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
