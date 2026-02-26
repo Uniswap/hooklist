@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x877323adbf747f85eb8d182d42f01f34a5492888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Ring Few WEETH Hook (Ethereum)",
+    "description": "A 1:1 wrapping/unwrapping hook for Ring Protocol's Few Wrapped WEETH token on Uniswap v4, enabling seamless swaps between WEETH and its few-wrapped variant. The hook intercepts swaps to atomically wrap or unwrap tokens using BeforeSwapDelta, and validates pool initialization to ensure only the wrapper/underlying pair with zero fee is permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
