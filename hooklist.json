@@ -562,6 +562,39 @@
   },
   {
     "hook": {
+      "address": "0x3ba779bad405d9b68a7a7a86ff6916c806a200cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Meme Strategy Hook (Ethereum)",
+      "description": "A Uniswap v4 hook for the MEMS meme token that collects dynamic asymmetric swap fees (Phase 1: 50%, Phase 2: 10\u201390%) on ETH\u2194MEMS swaps, splitting proceeds 80/20 between a strategy contract and treasury. Includes anti-snipe protection that blocks public swaps until trading is activated by the strategy.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x4b2eb653d13e6c9ac5a0a01fde22f2c8d6592888",
       "chain": "ethereum",
       "chainId": 1,
@@ -864,6 +897,39 @@
       "chainId": 1,
       "name": "Ring Few CBBTC Hook",
       "description": "Enables atomic 1:1 wrapping and unwrapping between an ERC20 token and its Few-wrapped equivalent within Uniswap v4 swaps, intercepting beforeSwap to perform the wrap/unwrap and returning the delta directly without going through the pool AMM.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x85b648a64aed6307d5d5ce26e6ae086c17bde888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring Few DAI Hook (Ethereum)",
+      "description": "A Uniswap v4 hook that enables seamless wrapping and unwrapping of Few Token (fewToken) during swaps at a 1:1 ratio. It intercepts swaps to wrap the underlying ERC20 token into fewToken or unwrap fewToken back to the underlying token, validating that the pool only contains the wrapper and underlying token pair with zero fees.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
