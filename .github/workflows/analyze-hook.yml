@@ -16,7 +16,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Comment on issue — started
+        run: gh issue comment ${{ github.event.issue.number }} --body "Analyzing hook submission... this may take a few minutes."
+        env:
+          GH_TOKEN: ${{ github.token }}
+
       - uses: anthropics/claude-code-action@v1
+        id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           show_full_output: true
@@ -37,3 +43,9 @@ jobs:
             6. Open a PR that closes issue #${{ github.event.issue.number }}
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+
+      - name: Comment on issue — failed
+        if: failure()
+        run: gh issue comment ${{ github.event.issue.number }} --body "Analysis failed. See [workflow run](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}) for details."
+        env:
+          GH_TOKEN: ${{ github.token }}
