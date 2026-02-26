@@ -116,7 +116,7 @@ Cross-reference the address-derived flags with the source code:
    - Mutable storage pointing to an implementation address
    - `SELFDESTRUCT` / `SELFDESTRUC` opcode usage
 
-4. **Detect `requiresCustomSwapData`**: Check if the hook's `beforeSwap` or `afterSwap` reads from `hookData` parameter and requires specific encoded data (signatures, parameters, etc.) that a standard router would not provide. If `hookData` is only used for pass-through or is ignored, this is `false`.
+4. **Detect `requiresCustomSwapData`**: Check if the hook's `beforeSwap` or `afterSwap` reads from `hookData` parameter and requires specific encoded data (signatures, parameters, etc.) that a standard router would not provide. This is `true` if **any code path** decodes or inspects `hookData` for custom data — even if some paths work without it (e.g. conditional checks like `if (hookData.length > 0)`). Only set to `false` if `hookData` is completely ignored or passed through without inspection.
 
 5. **Generate name**: Use `ContractName` from the Etherscan response if the submitter didn't provide one.
 
