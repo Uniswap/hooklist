@@ -10,11 +10,14 @@ Public registry of Uniswap v4 hook deployments across all supported chains.
 - `schema.json` — JSON Schema for hook files
 - `scripts/aggregate.py` — reads all hook files, validates against schema, outputs `hooklist.json`
 - `scripts/validate.py` — validates hook JSON files against `schema.json`
-- `scripts/parse_etherscan.py` — parses Etherscan API responses, extracts source files to `/tmp/sources/`
+- `scripts/verify_flags.py` — verifies hook flags match the address bitmask
+- `scripts/parse_etherscan.py` — parses Etherscan API responses, extracts source files to `.sources/`
 - `.github/workflows/analyze-hook.yml` — CI: on issue open, Claude analyzes the hook and opens a PR
-- `.github/workflows/validate.yml` — CI: on PR, validates hook files against schema
+- `.github/workflows/validate.yml` — CI: on PR, validates schema + flag bitmask
+- `.github/workflows/review-hook.yml` — CI: on PR, Claude reviews hook data against on-chain source
 - `.github/workflows/regenerate.yml` — CI: on merge to main, rebuilds `hooklist.json`
-- `.claude/prompts/analyze-hook.md` — prompt used by the analyze-hook CI workflow
+- `.claude/prompts/analyze-hook.md` — prompt for the analyze-hook workflow
+- `.claude/prompts/review-hook.md` — prompt for the review-hook workflow
 
 ## Hook File Format
 

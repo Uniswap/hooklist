@@ -1,0 +1,28 @@
+name: Review Hook PR
+
+on:
+  pull_request:
+    paths: ['hooks/**']
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          review_comments: true
+          claude_args: '--allowedTools "Bash(curl*),Bash(python3*),Read,Glob,Grep"'
+          prompt: |
+            Review this PR by following the instructions in .claude/prompts/review-hook.md.
+            Verify each hook file's flags, properties, and metadata against the on-chain source code.
+        env:
+          ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}

@@ -17,5 +17,8 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Validate hook files
+      - name: Validate hook files against schema
         run: python scripts/validate.py
+
+      - name: Verify flags match address bitmask
+        run: python scripts/verify_flags.py
