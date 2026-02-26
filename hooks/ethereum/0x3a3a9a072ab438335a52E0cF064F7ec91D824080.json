@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x3a3a9a072ab438335a52E0cF064F7ec91D824080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "CustomHook",
+    "description": "Hook for applying a dynamic (changeable) fee for any pool the hook works with. On each swap, it calls poolManager.updateDynamicLPFee() with an admin-configurable fee rate, and is deployed behind a TransparentUpgradeableProxy.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": true,
+    "requiresCustomSwapData": false
+  }
+}
