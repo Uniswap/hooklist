@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xbadf77d50478b4432ef1f243b9c0bc7869486888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Ring Few USDT Hook",
+    "description": "Wraps and unwraps USDT to/from fewUSDT (Ring Protocol's wrapped token) automatically during swaps in Uniswap v4 pools, performing 1:1 conversions and absorbing the full swap delta via beforeSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
