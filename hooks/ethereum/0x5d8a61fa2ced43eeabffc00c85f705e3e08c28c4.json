@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x5d8a61fa2ced43eeabffc00c85f705e3e08c28c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TokenWorks Hook v5",
+    "description": "A Uniswap v4 hook for NFT-backed range liquidity pools that validates pool initialization with an NFT collection, restricts liquidity additions to the NFTStrategyFactory, and takes a dynamic swap fee on behalf of NFT strategy holders via afterSwap delta returns.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
