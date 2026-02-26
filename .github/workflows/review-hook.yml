@@ -17,17 +17,42 @@ jobs:
           fetch-depth: 0
 
       - uses: anthropics/claude-code-action@v1
+        id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           allowed_bots: 'claude'
-          claude_args: '--allowedTools "Bash(curl*),Bash(git*),Bash(gh*),Bash(python3*),Read,Glob,Grep"'
+          show_full_output: true
+          claude_args: >-
+            --json-schema '{"type":"object","properties":{"review_body":{"type":"string"},"outcome":{"type":"string","enum":["APPROVE","REQUEST_CHANGES"]}},"required":["review_body","outcome"]}'
+            --allowedTools "Bash(curl:*),Bash(python3:*),Read,Glob,Grep"
           prompt: |
-            Review PR #${{ github.event.pull_request.number }}.
-            Follow the instructions in .claude/prompts/review-hook.md to verify each hook file.
+            Review this PR by following the instructions in .claude/prompts/review-hook.md.
+            Verify each hook file's flags, properties, and metadata against the on-chain source code.
 
-            After completing your review, submit it as a GitHub PR review using `gh`:
-            - If everything is correct: `gh pr review ${{ github.event.pull_request.number }} --approve --body "<your summary>"`
-            - If there are issues: `gh pr review ${{ github.event.pull_request.number }} --request-changes --body "<your findings>"`
+            Output your review as JSON with:
+            - "review_body": your full review summary (markdown)
+            - "outcome": "APPROVE" if everything is correct, "REQUEST_CHANGES" if there are issues
+        env:
+          ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+
+      - name: Post review
+        if: success() && steps.claude.outputs.structured_output
         env:
           GH_TOKEN: ${{ github.token }}
-          ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
+          STRUCTURED_OUTPUT: ${{ steps.claude.outputs.structured_output }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          OUTCOME=$(echo "$STRUCTURED_OUTPUT" | jq -r '.outcome')
+          BODY=$(echo "$STRUCTURED_OUTPUT" | jq -r '.review_body')
+
+          case "$OUTCOME" in
+            APPROVE)
+              gh pr review "$PR_NUMBER" --approve --body "$BODY"
+              ;;
+            REQUEST_CHANGES)
+              gh pr review "$PR_NUMBER" --request-changes --body "$BODY"
+              ;;
+            *)
+              gh pr review "$PR_NUMBER" --comment --body "$BODY"
+              ;;
+          esac
