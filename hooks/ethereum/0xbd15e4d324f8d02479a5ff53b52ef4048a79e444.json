@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xbd15e4d324f8d02479a5ff53b52ef4048a79e444",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TokenWorks Hook v2",
+    "description": "A Uniswap v4 hook for NFTStrategy trading pools that applies time-decaying buy fees (starting at 99% and decreasing to 10% as blocks accumulate) and a flat 10% sell fee, collecting fees via afterSwap delta returns and distributing them to configured recipients.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
