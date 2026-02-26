@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xe3c63a9813ac03be0e8618b627cb8170cfa468c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TokenWorks Hook v4",
+    "description": "A hook for the TokenWorks NFT strategy ecosystem that restricts pool initialization and liquidity addition to the NFTStrategyFactory, and collects a configurable swap fee (default 10%, with a 95% initial buy fee) distributed among the collection owner, a protocol fee address, and PNKSTR token holders.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
