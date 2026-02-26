@@ -430,6 +430,105 @@
   },
   {
     "hook": {
+      "address": "0x57991106cb7aa27e2771beda0d6522f68524a888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WETH Hook",
+      "description": "A Uniswap v4 hook that enables seamless ETH/WETH wrapping and unwrapping within v4 pools at a 1:1 ratio. It intercepts swaps to deposit or withdraw ETH from the WETH contract in-flight, supporting both exact input and exact output swaps, while blocking liquidity operations since the pool serves purely as a conversion mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5d8a61fa2ced43eeabffc00c85f705e3e08c28c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TokenWorks Hook v5",
+      "description": "A Uniswap v4 hook for NFT-backed range liquidity pools that validates pool initialization with an NFT collection, restricts liquidity additions to the NFTStrategyFactory, and takes a dynamic swap fee on behalf of NFT strategy holders via afterSwap delta returns.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6c24d0bcc264ef6a740754a11ca579b9d225e8cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Clanker Static Fee Hook",
+      "description": "A Uniswap v4 hook for the Clanker token launchpad that enforces per-pool static LP fees configured at initialization, collects protocol fees on the paired token, and supports optional MEV-protection modules and pool extensions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
       "address": "0x6fb14025194d3921942B269ba49c988fbD3fC0Cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -529,6 +628,39 @@
   },
   {
     "hook": {
+      "address": "0xbd15e4d324f8d02479a5ff53b52ef4048a79e444",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TokenWorks Hook v2",
+      "description": "A Uniswap v4 hook for NFTStrategy trading pools that applies time-decaying buy fees (starting at 99% and decreasing to 10% as blocks accumulate) and a flat 10% sell fee, collecting fees via afterSwap delta returns and distributing them to configured recipients.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xC804Af6EaA8269C71848e114571f2Dd5314C4044",
       "chain": "ethereum",
       "chainId": 1,
@@ -543,6 +675,39 @@
       "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd6a45df0c82c9a686ab1e58fb28d8fc0cf106444",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "TokenWorks Hook v3",
+      "description": "A Uniswap v4 hook by TokenWorks that manages fee collection and distribution for NFT strategy ETH/token pools. It enforces ETH/token-only pool initialization via the factory, applies a time-decaying buy fee (starting at 95% and decreasing to 10% over blocks), and uses afterSwapReturnsDelta to skim fees and distribute them to the protocol, stakers, and collection owners.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
