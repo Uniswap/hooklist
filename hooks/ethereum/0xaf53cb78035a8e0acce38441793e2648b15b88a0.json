@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xaf53cb78035a8e0acce38441793e2648b15b88a0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "M0 Allowlist Hook",
+    "description": "An access-control hook that restricts swaps to allowlisted addresses using the Predicate authorization system and restricts liquidity provision to approved providers; donations are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
