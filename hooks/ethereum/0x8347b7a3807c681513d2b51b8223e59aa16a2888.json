@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x8347b7a3807c681513d2b51b8223e59aa16a2888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Ring Few CBBTC Hook",
+    "description": "Enables atomic 1:1 wrapping and unwrapping between an ERC20 token and its Few-wrapped equivalent within Uniswap v4 swaps, intercepting beforeSwap to perform the wrap/unwrap and returning the delta directly without going through the pool AMM.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
