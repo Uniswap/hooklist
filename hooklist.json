@@ -67,6 +67,39 @@
   },
   {
     "hook": {
+      "address": "0xa09FF20120D0dC9B9840C3260EA4F2be7e6cE888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SuperTokenWrapperHook",
+      "description": "Hook for upgrading/downgrading (wrapping/unwrapping) SuperTokens (Wrapper Super Tokens) via Uniswap V4 pools. Inspired by the WETHHook from Uniswap V4 Periphery.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/0xPilou/supertoken-wrapper-hook/blob/main/src/SuperTokenWrapperHook.sol"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x0fcb2c049786054fd35330db361a75a88903a8cc",
       "chain": "bnb",
       "chainId": 56,
@@ -75,6 +108,39 @@
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": "https://github.com/quantidexyz/clanker-v4/blob/main/audits/macro_v4_audit_2.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x65ba941cdfec82af6686784ecaf4bc1b45f328cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ClankerHookDynamicFee",
+      "description": "Clanker V4 hook for autonomous token deployment with dynamic fees that adjust based on trading volume.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/quantidexyz/clanker-v4/blob/main/audits/cantina_v4_audit_1.pdf"
     },
     "flags": {
       "beforeInitialize": true,
