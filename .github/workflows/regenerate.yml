@@ -5,6 +5,10 @@ on:
     branches: [main]
     paths: ['hooks/**']
 
+concurrency:
+  group: regenerate-registry
+  cancel-in-progress: true
+
 jobs:
   regenerate:
     runs-on: ubuntu-latest
