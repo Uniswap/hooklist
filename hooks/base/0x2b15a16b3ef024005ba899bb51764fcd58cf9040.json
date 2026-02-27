@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x2b15a16b3ef024005ba899bb51764fcd58cf9040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Zora Post Hook v2.2.1 (Base)",
+    "description": "Zora's content coin hook that manages multi-position liquidity for creator coins, collecting swap fees after each trade and distributing them as rewards to creators, referrers, and LPs in a backing currency. Supports liquidity migration to new hook versions via a registered upgrade gate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": true
+  }
+}
