@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x4519e2b040ff1b64fa03abe2aef0bc99d7cceaa8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "GPX Hook (Base)",
+    "description": "GPXHooks manages the Uniswap V4 GPX-USDC liquidity pool, collecting 1% fees per swap and distributing them across four destinations (GoldPesa Mines, Treasury, Pawn, and GPX Owner), while blocking unauthorized liquidity changes and periodically triggering automated pool rebalancing.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
