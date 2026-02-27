@@ -1684,6 +1684,39 @@
   },
   {
     "hook": {
+      "address": "0xe61bdf0c9e665f02df20fede6dcef379cb751040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Zora Post Hook v1.0.0.2 (Base)",
+      "description": "Zora's Uniswap v4 hook for content coins that creates multi-curve Doppler liquidity positions on pool initialization, and on every swap collects accrued LP fees, swaps them to the backing currency, and distributes rewards to the protocol, creator, and optional trade referrer encoded in hookData.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xed1698c29928a6c44cddb0c75ab0e5d47eb72a80",
       "chain": "base",
       "chainId": 8453,
