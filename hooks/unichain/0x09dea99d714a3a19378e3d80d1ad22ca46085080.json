@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x09dea99d714a3a19378e3d80d1ad22ca46085080",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Renzo Hook (Unichain)",
+    "description": "A peg stability hook for the ETH/ezETH pool that charges a minimum fee for trades moving toward the peg and a linearly-scaled fee based on deviation from the ezETH rate provider price for trades moving away from the peg.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
