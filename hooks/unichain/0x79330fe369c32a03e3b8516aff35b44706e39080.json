@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x79330fe369c32a03e3b8516aff35b44706e39080",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Panoptic Oracle Hook (Unichain)",
+    "description": "Records price observations on each swap and initializes oracle state on pool initialization, exposing a Uniswap V3-compatible oracle interface with both standard and truncated tick adapters deployed per pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
