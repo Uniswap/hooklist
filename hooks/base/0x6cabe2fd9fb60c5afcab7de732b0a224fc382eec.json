@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x6cabe2fd9fb60c5afcab7de732b0a224fc382eec",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "GPO Hook (Base)",
+    "description": "An immutable, ownerless Uniswap v4 hook for the GoldPesa Option (GPO) token that deploys GPO, seeds a full-range liquidity position, and enforces a 10% USDC fee on every swap via BeforeSwapDelta and AfterSwapDelta. Liquidity is permanently locked after initial minting, and donations and unauthorized pool initialization are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
