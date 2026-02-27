@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x6646B048fBa0a70a692f7690ae6daD83BCACb0C8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Super Strategy v3 (Base)",
+    "description": "A fee-collecting hook that splits each swap's input into a 2% hook reserve and 0.3% protocol fee, accumulating reserves per pool so anyone can trigger auto-compounding back into concentrated LP positions when a configurable threshold is met.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
