@@ -1189,6 +1189,39 @@
   },
   {
     "hook": {
+      "address": "0xca975b9daf772c71161f3648437c3616e5be0088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Simple Sell Tax Hook",
+      "description": "Applies a configurable basis-point sell tax when tokens are swapped against ETH or wrapped native assets. The fee is taken from the pool in beforeSwap and sent to a recipient address configured per-token by the token owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xd3c1f2174f37f88811f99b1b1b4c1356c0246000",
       "chain": "base",
       "chainId": 8453,
