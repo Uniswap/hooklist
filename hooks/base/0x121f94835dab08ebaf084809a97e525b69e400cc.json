@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x121f94835dab08ebaf084809a97e525b69e400cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AI Protocol Swap Fee Hook v1 (Base)",
+    "description": "A Uniswap v4 hook that charges a configurable fee on swaps involving a designated fee token. Fees are collected in beforeSwap and afterSwap based on whether the operation is a buy or sell and whether the swap is exact-in or exact-out, then forwarded to a configured fee recipient contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
