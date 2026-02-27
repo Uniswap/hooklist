@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xb476c448da4453208df4e371fee26f4e630d3044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SPAWN (Base)",
+    "description": "SpawnerHook is a Uniswap V4 hook for the SPAWN token ecosystem that takes a configurable fee on each swap and distributes it among token creators, parent token chains, and the protocol. After each swap, it also triggers automatic creation of a new \"spawn\" token via the Spawner contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
