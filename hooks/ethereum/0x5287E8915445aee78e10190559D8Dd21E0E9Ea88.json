@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x5287E8915445aee78e10190559D8Dd21E0E9Ea88",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Cork AMM (Ethereum)",
+    "description": "Cork AMM is a custom Uniswap v4 hook for the Cork Protocol that implements a specialized AMM for depeg-swap token pairs (RA and CT). It replaces the standard Uniswap price curve with its own pricing logic, gates all native liquidity modifications through the hook's own interface, and supports optional flash swaps via a CorkSwapCallback pattern.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
