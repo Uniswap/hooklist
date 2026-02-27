@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xb429d62f8f3bffb98cdb9569533ea23bf0ba28cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Clanker Static Fee Hook v2 (Base)",
+    "description": "A Uniswap v4 hook used by the Clanker token launch platform that enforces separate fixed LP fees for the clanker token and the paired token, collects a 20% protocol fee on each swap, and supports optional MEV protection modules and pool extensions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
