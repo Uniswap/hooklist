@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xfbce3d80c659c765bc6c55e29e87d839c7609040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Zora Creator Hook v1 (Base)",
+    "description": "A Uniswap v4 hook for Zora Creator Coins that automatically creates liquidity positions on pool initialization and, on every swap, collects LP fees, swaps them to a backing currency, and distributes rewards to coin creators and trade referrals.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
