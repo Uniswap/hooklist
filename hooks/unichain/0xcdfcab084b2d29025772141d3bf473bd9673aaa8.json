@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xcdfcab084b2d29025772141d3bf473bd9673aaa8",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Universal Hook (Unichain)",
+    "description": "A JIT (Just-In-Time) liquidity hook that intercepts swaps via beforeSwap and fulfills them internally at oracle-reported prices through a MerchantController-managed liquidity system. Standard liquidity additions and removals are blocked; only owner-initialized, oracle-whitelisted pools with an approved pair token are supported.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
