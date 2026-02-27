@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x27bfccf7fdd8215ce5dd86c2a36651d05c8450cc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Aegis v1 Hook (Unichain)",
+    "description": "A dynamic fee hook that uses a truncated geometric oracle to compute adaptive swap fees based on market volatility. Protocol fees are collected from swaps (both exact-in and exact-out) and automatically reinvested into full-range liquidity positions via an integrated liquidity manager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
