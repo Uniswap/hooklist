@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x35b9b5b023897da8c7375ba6141245b8416460cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Wassblaster Hook",
+    "description": "A hook for wASS/memecoin pairs that charges a 1% total fee (0.3% to LPs, 0.7% to the hook) and routes a configurable portion of buys through an in-swap OTC mechanism at the actual pool rate, distributing wASS fee proceeds to stakers and accumulating memecoin fees as OTC inventory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
