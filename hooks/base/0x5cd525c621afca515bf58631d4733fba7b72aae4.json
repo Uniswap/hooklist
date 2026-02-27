@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x5cd525c621afca515bf58631d4733fba7b72aae4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Coinbase Verified Hook (Base)",
+    "description": "A Coinbase-authored access-control hook for Verified Pools that restricts pool initialization, liquidity operations, swaps, and donations to addresses verified by configurable on-chain policies. Also collects an optional configurable bips-based hook fee on swaps via afterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
