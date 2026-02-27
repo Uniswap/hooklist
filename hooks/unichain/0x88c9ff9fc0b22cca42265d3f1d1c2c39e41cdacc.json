@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x88c9ff9fc0b22cca42265d3f1d1c2c39e41cdacc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Aegis v3 Hook (Unichain)",
+    "description": "A dynamic AMM hook that adjusts LP fees based on market volatility using a truncated geometric oracle with surge fee mechanism, enforces tick movement caps to limit price manipulation, and automatically reinvests protocol fees into full-range liquidity positions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
