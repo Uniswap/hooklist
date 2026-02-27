@@ -232,6 +232,39 @@
   },
   {
     "hook": {
+      "address": "0x1e0c810a30fb82391df936602c1161421381b0c8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SuperStrategy Hook (Base)",
+      "description": "A Uniswap v4 hook that collects a 2% fee on each swap and auto-compounds the accumulated reserves back into pool liquidity. It forwards 0.30% to a protocol fee receiver, allows admin-designated market makers to trade fee-free, and supports multi-pool liquidity management with configurable auto-compounding thresholds.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x23321f11a6d44fd1ab790044fdfde5758c902fdc",
       "chain": "base",
       "chainId": 8453,
@@ -260,6 +293,39 @@
     "properties": {
       "dynamicFee": false,
       "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2b15a16b3ef024005ba899bb51764fcd58cf9040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Zora Post Hook v2.2.1 (Base)",
+      "description": "Zora's content coin hook that manages multi-position liquidity for creator coins, collecting swap fees after each trade and distributing them as rewards to creators, referrers, and LPs in a backing currency. Supports liquidity migration to new hook versions via a registered upgrade gate.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
       "requiresCustomSwapData": true
     }
   },
@@ -331,6 +397,39 @@
   },
   {
     "hook": {
+      "address": "0x4ab61d774b170d0610fdcc5559aae2c356c600c8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Pubhouse Hook",
+      "description": "A token launchpad hook that performs internal swaps using accumulated token fees to fill buy orders, distributes LP fees between token creators and the protocol team, and automatically buybacks and burns the protocol token when accumulated ETH exceeds a threshold.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x51bba15255406cfe7099a42183302640ba7dafdc",
       "chain": "base",
       "chainId": 8453,
@@ -358,6 +457,72 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0x570a48f96035c2874de1c0f13c5075a05683b0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Deli Hook (Base)",
+      "description": "Collects swap fees always in wBLT and forwards them to a FeeProcessor contract, while enforcing that all pools include wBLT as a token and use dynamic LP fees (overriding them to 0 at swap time). Syncs DailyEpochGauge and IncentiveGauge on every swap to support incentive accounting.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5b409184204b86f708d3aebb3cad3f02835f68cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Fey Hook (Base)",
+      "description": "A Uniswap v4 hook for Fey Protocol that manages paired-token pools with per-direction static LP fees and a 20% protocol fee. It includes MEV protection active for 2 minutes post-launch, optional pool extensions, and LP locker integration for automatic fee collection.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": true
     }
@@ -617,6 +782,39 @@
       "afterDonate": true,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0x95afbc0fccf974b41380f24e562f15b6dd90fac8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Deli Constant Product Hook (Base)",
+      "description": "Implements a constant product (x\u00b7y=k) AMM within Uniswap v4, replacing concentrated liquidity with traditional V2-style pool mechanics and integrating epoch-based incentive gauges and a fee processor for reward distribution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -958,6 +1156,72 @@
   },
   {
     "hook": {
+      "address": "0xc8d077444625eb300a427a6dfb2b1dbf9b159040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Zora Post Hook v2.3.0 (Base)",
+      "description": "Uniswap v4 hook for Zora Coins that automatically collects LP fees on every swap, converts them to a backing currency, and distributes rewards \u2014 with optional trade referral support via hookData and hook migration managed through a registered upgrade gate.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd3c1f2174f37f88811f99b1b1b4c1356c0246000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Aquinas Hook (Base)",
+      "description": "Restricts Uniswap v4 pool initialization to factory-authorized Safe addresses for Aquinas DAOs, preventing frontrunning of LP initialization by requiring the caller to be pre-approved by the Aquinas factory.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xd577f945b6025ce1e60ac1a82f2ee8ff3fb428c4",
       "chain": "base",
       "chainId": 8453,
@@ -1090,6 +1354,39 @@
   },
   {
     "hook": {
+      "address": "0xe2b4100de1cd284bd364f738d1354715515c90c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Zora Post Hook v2.4.0 (Base)",
+      "description": "Powers the Zora Coins protocol by managing per-coin Uniswap v4 pools with automated multi-curve liquidity provisioning, a decaying launch fee (99% to 1% over 10 seconds), post-swap reward distribution to creators, referrers, and LPs, and a limit-order fill mechanism on tick crossings.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
       "address": "0xed1698c29928a6c44cddb0c75ab0e5d47eb72a80",
       "chain": "base",
       "chainId": 8453,
@@ -1217,6 +1514,39 @@
     "properties": {
       "dynamicFee": false,
       "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0xff74be9d3596ea7a33bb4983dd7906fb34135040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Zora Post Hook v2.2 (Base)",
+      "description": "A Zora hook that initializes multi-position Doppler curve liquidity when a Zora coin pool is created, then automatically collects LP fees on every swap, converts them to a backing currency, and distributes rewards to creators, trade referrers, and liquidity providers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
       "requiresCustomSwapData": true
     }
   },
