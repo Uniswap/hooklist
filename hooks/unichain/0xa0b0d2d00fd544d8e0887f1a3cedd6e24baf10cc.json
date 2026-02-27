@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xa0b0d2d00fd544d8e0887f1a3cedd6e24baf10cc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Aegis v2 Hook (Unichain)",
+    "description": "Spot is a Uniswap v4 hook that implements dynamic fee management using a truncated geometric oracle and a DynamicFeeManager to compute base and surge fees based on recent trading activity. It also collects protocol fees and reinvests them into a full-range liquidity position via a FullRangeLiquidityManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
