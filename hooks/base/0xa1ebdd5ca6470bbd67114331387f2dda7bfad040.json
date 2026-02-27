@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xa1ebdd5ca6470bbd67114331387f2dda7bfad040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Zora Post Hook v1 (Base)",
+    "description": "A Uniswap v4 hook for Zora coin pools that sets up multi-position liquidity on pool initialization and, after each swap, collects accrued LP fees, converts them to a backing currency, and distributes rewards to creators, referrers, and the protocol.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
