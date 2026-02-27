@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xf785bb58059fab6fb19bdda2cb9078d9e546efdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Flaunch POSM v2 (Base)",
+    "description": "Flaunch's PositionManager hook manages the full lifecycle of fair-launch memecoins on Uniswap v4, including a fair launch window, internal swap pool for fee conversion, a bid wall for automated buy-side liquidity, and fee distribution to creators, protocol, and optional referrers via hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
