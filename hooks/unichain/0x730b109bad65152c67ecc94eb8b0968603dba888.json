@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x730b109bad65152c67ecc94eb8b0968603dba888",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "WETH Hook (Unichain)",
+    "description": "A 1:1 ETH/WETH wrapper hook that intercepts swaps in beforeSwap to wrap ETH into WETH or unwrap WETH into ETH, bypassing the pool's AMM math via BeforeSwapDelta. Liquidity additions are blocked — the hook itself manages liquidity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
