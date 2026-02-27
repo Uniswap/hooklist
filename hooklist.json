@@ -793,6 +793,39 @@
   },
   {
     "hook": {
+      "address": "0x6646B048fBa0a70a692f7690ae6daD83BCACb0C8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Super Strategy v3 (Base)",
+      "description": "A fee-collecting hook that splits each swap's input into a 2% hook reserve and 0.3% protocol fee, accumulating reserves per pool so anyone can trigger auto-compounding back into concentrated LP positions when a configurable threshold is met.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x6cabe2fd9fb60c5afcab7de732b0a224fc382eec",
       "chain": "base",
       "chainId": 8453,
@@ -2458,6 +2491,39 @@
       "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5287E8915445aee78e10190559D8Dd21E0E9Ea88",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Cork AMM (Ethereum)",
+      "description": "Cork AMM is a custom Uniswap v4 hook for the Cork Protocol that implements a specialized AMM for depeg-swap token pairs (RA and CT). It replaces the standard Uniswap price curve with its own pricing logic, gates all native liquidity modifications through the hook's own interface, and supports optional flash swaps via a CorkSwapCallback pattern.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
       "afterSwap": false,
