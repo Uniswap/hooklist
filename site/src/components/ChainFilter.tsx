@@ -16,7 +16,7 @@ export function ChainFilter({ available, selected, onChange }: Props) {
   }
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-1.5">
       {available.map((chain) => {
         const active = selected.includes(chain);
         const info = CHAINS[chain];
@@ -24,12 +24,19 @@ export function ChainFilter({ available, selected, onChange }: Props) {
           <button
             key={chain}
             onClick={() => toggle(chain)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
               active
-                ? "text-white border-transparent"
-                : "text-gray-600 border-gray-300 hover:border-gray-400"
+                ? "text-white shadow-md"
+                : "glass text-uni-text-secondary hover:text-uni-text hover:bg-uni-surface-hover"
             }`}
-            style={active ? { backgroundColor: info?.color ?? "#6b7280" } : undefined}
+            style={
+              active
+                ? {
+                    background: info?.color ?? "#6b7280",
+                    boxShadow: `0 4px 14px ${info?.color ?? "#6b7280"}40`,
+                  }
+                : undefined
+            }
           >
             {info?.displayName ?? chain}
           </button>

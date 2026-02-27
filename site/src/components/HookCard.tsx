@@ -13,50 +13,55 @@ export function HookCard({ hook, onClick }: Props) {
   return (
     <button
       onClick={onClick}
-      className="text-left w-full p-4 rounded-lg border border-gray-200 hover:shadow-md hover:border-gray-300 transition-all cursor-pointer"
-      style={{ borderLeftWidth: "3px", borderLeftColor: chain?.color ?? "#d1d5db" }}
+      className="text-left w-full p-4 rounded-2xl glass hover:bg-uni-surface-hover hover:shadow-lg transition-all cursor-pointer group"
     >
-      <div className="flex items-center gap-2 mb-2">
+      <div className="flex items-center gap-2 mb-2.5">
         <span
-          className="px-2 py-0.5 rounded-full text-[10px] font-semibold text-white"
+          className="px-2 py-0.5 rounded-lg text-[10px] font-bold text-white tracking-wide uppercase"
           style={{ backgroundColor: chain?.color ?? "#6b7280" }}
         >
           {chain?.displayName ?? hook.hook.chain}
         </span>
-        {hook.hook.verifiedSource && (
-          <span className="text-[10px] text-green-600 font-medium">Verified</span>
-        )}
-        {!hook.hook.verifiedSource && (
-          <span className="text-[10px] text-gray-400 font-medium">Unverified</span>
+        {hook.hook.verifiedSource ? (
+          <span className="flex items-center gap-0.5 text-[10px] text-emerald-500 font-semibold">
+            <svg width="10" height="10" viewBox="0 0 16 16" fill="currentColor">
+              <path d="M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zm3.78 4.97a.75.75 0 0 0-1.06 0L7 8.69 5.28 6.97a.75.75 0 0 0-1.06 1.06l2.25 2.25a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 0 0 0-1.06z" />
+            </svg>
+            Verified
+          </span>
+        ) : (
+          <span className="text-[10px] text-uni-text-tertiary font-medium">
+            Unverified
+          </span>
         )}
       </div>
 
-      <h3 className="text-sm font-semibold text-gray-900 leading-tight mb-1 line-clamp-1">
+      <h3 className="text-sm font-bold text-uni-text leading-tight mb-1 line-clamp-1 group-hover:text-uni-pink-dark transition-colors">
         {hook.hook.name}
       </h3>
 
       {hook.hook.description && (
-        <p className="text-xs text-gray-500 leading-relaxed mb-3 line-clamp-2">
+        <p className="text-xs text-uni-text-secondary leading-relaxed mb-3 line-clamp-2">
           {hook.hook.description}
         </p>
       )}
 
       <div className="flex items-center gap-2 flex-wrap">
-        <span className="text-[10px] text-gray-400">
+        <span className="text-[10px] text-uni-text-tertiary font-medium">
           {activeFlags} flag{activeFlags !== 1 ? "s" : ""}
         </span>
         {hook.properties.dynamicFee && (
-          <span className="px-1.5 py-0.5 rounded bg-blue-50 text-blue-600 text-[10px] font-medium">
+          <span className="px-1.5 py-0.5 rounded-md bg-blue-500/10 text-blue-600 text-[10px] font-semibold">
             dynamicFee
           </span>
         )}
         {hook.properties.upgradeable && (
-          <span className="px-1.5 py-0.5 rounded bg-amber-50 text-amber-600 text-[10px] font-medium">
+          <span className="px-1.5 py-0.5 rounded-md bg-amber-500/10 text-amber-600 text-[10px] font-semibold">
             upgradeable
           </span>
         )}
         {hook.properties.requiresCustomSwapData && (
-          <span className="px-1.5 py-0.5 rounded bg-purple-50 text-purple-600 text-[10px] font-medium">
+          <span className="px-1.5 py-0.5 rounded-md bg-purple-500/10 text-purple-600 text-[10px] font-semibold">
             customSwapData
           </span>
         )}

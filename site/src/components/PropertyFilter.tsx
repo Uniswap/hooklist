@@ -11,6 +11,12 @@ const LABELS: Record<PropertyName, string> = {
   requiresCustomSwapData: "Custom Swap Data",
 };
 
+const COLORS: Record<PropertyName, { bg: string; shadow: string }> = {
+  dynamicFee: { bg: "#3b82f6", shadow: "rgba(59, 130, 246, 0.35)" },
+  upgradeable: { bg: "#f59e0b", shadow: "rgba(245, 158, 11, 0.35)" },
+  requiresCustomSwapData: { bg: "#8b5cf6", shadow: "rgba(139, 92, 246, 0.35)" },
+};
+
 export function PropertyFilter({ selected, onChange }: Props) {
   function toggle(prop: PropertyName) {
     if (selected.includes(prop)) {
@@ -21,18 +27,27 @@ export function PropertyFilter({ selected, onChange }: Props) {
   }
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap gap-1.5">
       {PROPERTY_NAMES.map((prop) => {
         const active = selected.includes(prop);
+        const color = COLORS[prop];
         return (
           <button
             key={prop}
             onClick={() => toggle(prop)}
-            className={`px-3 py-1 rounded-full text-xs font-medium border transition-colors cursor-pointer ${
+            className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
               active
-                ? "bg-pink-600 text-white border-pink-600"
-                : "text-gray-600 border-gray-300 hover:border-gray-400"
+                ? "text-white shadow-md"
+                : "glass text-uni-text-secondary hover:text-uni-text hover:bg-uni-surface-hover"
             }`}
+            style={
+              active
+                ? {
+                    background: color.bg,
+                    boxShadow: `0 4px 14px ${color.shadow}`,
+                  }
+                : undefined
+            }
           >
             {LABELS[prop]}
           </button>

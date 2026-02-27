@@ -1,6 +1,131 @@
 @import "tailwindcss";
 
+@theme {
+  --color-uni-pink: #fc72ff;
+  --color-uni-pink-dark: #ff007a;
+  --color-uni-pink-light: #fff0fe;
+  --color-uni-bg: #faf5ff;
+  --color-uni-surface: rgba(255, 255, 255, 0.72);
+  --color-uni-surface-hover: rgba(255, 255, 255, 0.88);
+  --color-uni-border: rgba(0, 0, 0, 0.06);
+  --color-uni-text: #131313;
+  --color-uni-text-secondary: #7d7d7d;
+  --color-uni-text-tertiary: #adadad;
+}
+
 body {
-  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  font-family: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-uni-bg);
+  color: var(--color-uni-text);
+}
+
+/* Floating gradient orbs — signature Uniswap background */
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.35;
+  pointer-events: none;
+  z-index: 0;
+  will-change: transform;
+}
+
+.orb-pink {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #fc72ff 0%, transparent 70%);
+  top: -10%;
+  right: -5%;
+  animation: float-a 20s ease-in-out infinite;
+}
+
+.orb-blue {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, #7b61ff 0%, transparent 70%);
+  bottom: 10%;
+  left: -8%;
+  animation: float-b 25s ease-in-out infinite;
+}
+
+.orb-magenta {
+  width: 350px;
+  height: 350px;
+  background: radial-gradient(circle, #ff007a 0%, transparent 70%);
+  top: 50%;
+  right: 30%;
+  animation: float-c 22s ease-in-out infinite;
+}
+
+@keyframes float-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(-40px, 30px) scale(1.05); }
+  66% { transform: translate(20px, -20px) scale(0.95); }
+}
+
+@keyframes float-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  33% { transform: translate(30px, -40px) scale(1.08); }
+  66% { transform: translate(-20px, 20px) scale(0.92); }
+}
+
+@keyframes float-c {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-30px, -30px) scale(1.1); }
+}
+
+/* Glassmorphism surface */
+.glass {
+  background: var(--color-uni-surface);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid var(--color-uni-border);
+}
+
+.glass-strong {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid var(--color-uni-border);
+}
+
+/* Pink gradient button */
+.btn-pink {
+  background: linear-gradient(135deg, #fc72ff, #ff007a);
+  color: white;
+  font-weight: 600;
+  border: none;
+  transition: all 0.2s ease;
+}
+
+.btn-pink:hover {
+  box-shadow: 0 4px 20px rgba(252, 114, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Detail panel slide-in */
+@keyframes slide-in {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+.animate-slide-in {
+  animation: slide-in 0.3s ease-out;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.12);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(0, 0, 0, 0.2);
 }

@@ -39,11 +39,16 @@ export function FlagFilter({ selected, onChange }: Props) {
           <button
             key={flag}
             onClick={() => toggle(flag)}
-            className={`px-2 py-0.5 rounded text-xs font-mono transition-colors cursor-pointer ${
+            className={`px-2.5 py-1 rounded-lg text-[11px] font-mono font-medium transition-all cursor-pointer ${
               active
-                ? "bg-pink-600 text-white"
-                : "bg-gray-100 text-gray-600 hover:bg-gray-200"
+                ? "bg-uni-pink text-white shadow-sm"
+                : "glass text-uni-text-secondary hover:text-uni-text hover:bg-uni-surface-hover"
             }`}
+            style={
+              active
+                ? { boxShadow: "0 2px 10px rgba(252, 114, 255, 0.35)" }
+                : undefined
+            }
           >
             {LABELS[flag]}
           </button>
