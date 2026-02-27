@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xd60d6b218116cfd801e28f78d011a203d2b068cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Clanker Dynamic Fee Hook v2 (Base)",
+    "description": "A Clanker v2 hook that dynamically adjusts LP fees based on a volatility accumulator derived from simulated tick movement. It also collects a protocol fee on Clanker token swaps and supports optional MEV protection modules and per-pool extensions via custom swap data.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
