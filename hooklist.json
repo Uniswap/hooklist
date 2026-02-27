@@ -67,6 +67,39 @@
   },
   {
     "hook": {
+      "address": "0x9B21E1cdD975E58F714Fd1Bd5a803198d5520088",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "External DEX Wrapper (Arbitrum)",
+      "description": "Routes Uniswap v4 swaps through the Camelot (Algebra) V3 ETH/USDC pool on Arbitrum, intercepting swaps in beforeSwap and fully settling them via BeforeSwapDelta with a configurable owner-adjustable fee ratio.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xc4bf39a096a1b610dd6186935f3ad99c66239080",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -727,6 +760,39 @@
   },
   {
     "hook": {
+      "address": "0x5C062F56e7F1a5Cf25b95E626AF15176f52Fb0c8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Super Strategy v2 (Base)",
+      "description": "A fee-compounding hook that skims a portion of each swap's input as fees, splitting the take between a per-pool hook balance and a protocol fee receiver, then allows that accumulated hook balance to be deployed as liquidity back into the pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x5cd525c621afca515bf58631d4733fba7b72aae4",
       "chain": "base",
       "chainId": 8453,
@@ -1383,6 +1449,39 @@
       "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb476c448da4453208df4e371fee26f4e630d3044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SPAWN (Base)",
+      "description": "SpawnerHook is a Uniswap V4 hook for the SPAWN token ecosystem that takes a configurable fee on each swap and distributes it among token creators, parent token chains, and the protocol. After each swap, it also triggers automatic creation of a new \"spawn\" token via the Spawner contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
     }
   },
   {
