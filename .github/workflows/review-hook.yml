@@ -2,7 +2,6 @@ name: Review Hook PR
 
 on:
   pull_request:
-    paths: ['hooks/**']
 
 jobs:
   review:
@@ -16,7 +15,19 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Check for hook changes
+        id: changed
+        run: |
+          HOOKS_CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'hooks/**' | head -1)
+          if [ -n "$HOOKS_CHANGED" ]; then
+            echo "hooks=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "hooks=false" >> "$GITHUB_OUTPUT"
+            echo "No hook files changed, skipping review."
+          fi
+
       - uses: anthropics/claude-code-action@v1
+        if: steps.changed.outputs.hooks == 'true'
         id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -36,7 +47,7 @@ jobs:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
 
       - name: Post review
-        if: success() && steps.claude.outputs.structured_output
+        if: success() && steps.changed.outputs.hooks == 'true' && steps.claude.outputs.structured_output
         env:
           GH_TOKEN: ${{ github.token }}
           STRUCTURED_OUTPUT: ${{ steps.claude.outputs.structured_output }}
