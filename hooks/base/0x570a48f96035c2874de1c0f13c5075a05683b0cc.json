@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x570a48f96035c2874de1c0f13c5075a05683b0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Deli Hook (Base)",
+    "description": "Collects swap fees always in wBLT and forwards them to a FeeProcessor contract, while enforcing that all pools include wBLT as a token and use dynamic LP fees (overriding them to 0 at swap time). Syncs DailyEpochGauge and IncentiveGauge on every swap to support incentive accounting.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
