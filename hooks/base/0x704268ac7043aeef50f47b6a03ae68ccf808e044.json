@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x704268ac7043aeef50f47b6a03ae68ccf808e044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BTC ACC Hook (Base)",
+    "description": "A hook that takes a configurable fee (1-10%) on each swap and deposits it into a Bitcoin accumulation contract, converting swap fees from ETH, WETH, USDC, or cbBTC into Bitcoin for the swapper. The beforeInitialize hook enforces that pools must pair exactly one allowed base token (ETH/WETH/USDC/cbBTC) with a non-base token.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
