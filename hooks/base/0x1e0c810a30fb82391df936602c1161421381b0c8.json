@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x1e0c810a30fb82391df936602c1161421381b0c8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SuperStrategy Hook (Base)",
+    "description": "A Uniswap v4 hook that collects a 2% fee on each swap and auto-compounds the accumulated reserves back into pool liquidity. It forwards 0.30% to a protocol fee receiver, allows admin-designated market makers to trade fee-free, and supports multi-pool liquidity management with configurable auto-compounding thresholds.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
