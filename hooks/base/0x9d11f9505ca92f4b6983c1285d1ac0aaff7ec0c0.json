@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x9d11f9505ca92f4b6983c1285d1ac0aaff7ec0c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Limit Order Hook (Base)",
+    "description": "A limit order hook that records the tick before each swap and triggers limit order execution after the swap completes by delegating to a LimitOrderManager contract. It also supports role-based dynamic LP fee management via AccessControl.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
