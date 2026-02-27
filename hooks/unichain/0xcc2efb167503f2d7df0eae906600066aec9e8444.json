@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xcc2efb167503f2d7df0eae906600066aec9e8444",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Uniderp Hook (Unichain)",
+    "description": "A fee-collection and referral hook for Uniderp token launches on Unichain that takes a 1% fee on swaps and distributes it among token creators, multi-level referrers (up to 3 tiers), and the platform via afterSwapReturnsDelta. It also records referral relationships during swaps and liquidity additions when a referrer address is provided in hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
