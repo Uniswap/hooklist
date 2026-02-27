@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x8dc3b85e1dc1c846ebf3971179a751896842e5dc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Flaunch AnyPOSM v1 (Base)",
+    "description": "The Flaunch AnyPositionManager hook enables any ERC20 token to use a BidWall and community fee distribution on Uniswap v4. It supports an internal swap pool, fair launch mechanics, referrer fee sharing via hookData, and emits comprehensive pool event tracking.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
