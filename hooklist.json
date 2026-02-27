@@ -199,6 +199,39 @@
   },
   {
     "hook": {
+      "address": "0x23321f11a6d44fd1ab790044fdfde5758c902fdc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Flaunch POSM v4 (Base)",
+      "description": "Flaunch's PositionManager is a Uniswap v4 hook that manages the full lifecycle of memecoin launches, from token creation and fair-launch phase to ongoing swaps. It incorporates an InternalSwapPool for protocol fee accumulation, a BidWall for native-token liquidity support, and a FeeDistributor that routes swap fees to creators and optional referrers encoded in hookData.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
       "address": "0x2F9354Bbb0eDEf5c2a5C4b78D0C59D73412A28CC",
       "chain": "base",
       "chainId": 8453,
@@ -265,6 +298,204 @@
   },
   {
     "hook": {
+      "address": "0x51bba15255406cfe7099a42183302640ba7dafdc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Flaunch POSM v1",
+      "description": "The Flaunch PositionManager is a Uniswap v4 hook that manages the full lifecycle of memecoin creation and trading, including a fair launch window, an internal swap pool for fee reinvestment, and fee distribution to token creators and referrers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5cd525c621afca515bf58631d4733fba7b72aae4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Coinbase Verified Hook (Base)",
+      "description": "A Coinbase-authored access-control hook for Verified Pools that restricts pool initialization, liquidity operations, swaps, and donations to addresses verified by configurable on-chain policies. Also collects an optional configurable bips-based hook fee on swaps via afterSwapReturnsDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0x704268ac7043aeef50f47b6a03ae68ccf808e044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BTC ACC Hook (Base)",
+      "description": "A hook that takes a configurable fee (1-10%) on each swap and deposits it into a Bitcoin accumulation contract, converting swap fees from ETH, WETH, USDC, or cbBTC into Bitcoin for the swapper. The beforeInitialize hook enforces that pools must pair exactly one allowed base token (ETH/WETH/USDC/cbBTC) with a non-base token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8dc3b85e1dc1c846ebf3971179a751896842e5dc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Flaunch AnyPOSM v1 (Base)",
+      "description": "The Flaunch AnyPositionManager hook enables any ERC20 token to use a BidWall and community fee distribution on Uniswap v4. It supports an internal swap pool, fair launch mechanics, referrer fee sharing via hookData, and emits comprehensive pool event tracking.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9d11f9505ca92f4b6983c1285d1ac0aaff7ec0c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Limit Order Hook (Base)",
+      "description": "A limit order hook that records the tick before each swap and triggers limit order execution after the swap completes by delegating to a LimitOrderManager contract. It also supports role-based dynamic LP fee management via AccessControl.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9e433f32bb5481a9ca7dff5b3af74a7ed041a888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ETH-flETH Auto Wrap Hook (Base)",
+      "description": "A 1:1 ETH/flETH swap hook that fully handles swaps in beforeSwap by depositing/withdrawing from the flETH contract, acting as a custom curve with zero fees. Liquidity additions are blocked, and only the ETH/flETH pair is accepted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xa09FF20120D0dC9B9840C3260EA4F2be7e6cE888",
       "chain": "base",
       "chainId": 8453,
@@ -286,6 +517,105 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb08211d57032dd10b1974d4b876851a7f7596888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "WETH Hook",
+      "description": "A 1:1 ETH/WETH wrapper hook that allows users to swap between ETH and WETH within Uniswap V4 pools. It intercepts swaps to perform native wrapping and unwrapping, blocks direct liquidity operations, and requires pools to be initialized with zero fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb903b0ab7bcee8f5e4d8c9b10a71aac7135d6fdc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Flaunch POSM v3 (Base)",
+      "description": "A Uniswap v4 hook that manages the full lifecycle of memecoin token launches (\"flaunches\") \u2014 including a fair launch window, an internal swap pool for fee recycling, a BidWall for ETH liquidity concentration, and configurable fee distribution to creators and referrers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc5a48b447f01e9ce3ede71e4c1c2038c38bd9000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Graduation Hook (Base)",
+      "description": "Restricts pool initialization to a designated Moxie bonding curve address, ensuring Uniswap v4 pools can only be initialized through the authorized bonding curve as part of a token graduation process.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
@@ -331,6 +661,72 @@
   },
   {
     "hook": {
+      "address": "0xd60d6b218116cfd801e28f78d011a203d2b068cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Clanker Dynamic Fee Hook v2 (Base)",
+      "description": "A Clanker v2 hook that dynamically adjusts LP fees based on a volatility accumulator derived from simulated tick movement. It also collects a protocol fee on Clanker token swaps and supports optional MEV protection modules and per-pool extensions via custom swap data.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
+    }
+  },
+  {
+    "hook": {
+      "address": "0xed1698c29928a6c44cddb0c75ab0e5d47eb72a80",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TWAMM Hook (Base)",
+      "description": "Implements the Time-Weighted Average Market Maker (TWAMM) strategy, allowing users to place long-horizon token swap orders that are executed gradually over time against the AMM. Before each swap, liquidity add, or liquidity remove, the hook executes any pending TWAMM orders up to the current timestamp.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xF6d0A13609bb5779Bc5D639F2bA3Bfda83D4D0C0",
       "chain": "base",
       "chainId": 8453,
@@ -360,6 +756,39 @@
       "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf785bb58059fab6fb19bdda2cb9078d9e546efdc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Flaunch POSM v2 (Base)",
+      "description": "Flaunch's PositionManager hook manages the full lifecycle of fair-launch memecoins on Uniswap v4, including a fair launch window, internal swap pool for fee conversion, a bid wall for automated buy-side liquidity, and fee distribution to creators, protocol, and optional referrers via hookData.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true
     }
   },
   {
