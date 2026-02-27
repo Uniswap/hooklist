@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x23321f11a6d44fd1ab790044fdfde5758c902fdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Flaunch POSM v4 (Base)",
+    "description": "Flaunch's PositionManager is a Uniswap v4 hook that manages the full lifecycle of memecoin launches, from token creation and fair-launch phase to ongoing swaps. It incorporates an InternalSwapPool for protocol fee accumulation, a BidWall for native-token liquidity support, and a FeeDistributor that routes swap fees to creators and optional referrers encoded in hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
