@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x5b409184204b86f708d3aebb3cad3f02835f68cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Fey Hook (Base)",
+    "description": "A Uniswap v4 hook for Fey Protocol that manages paired-token pools with per-direction static LP fees and a 20% protocol fee. It includes MEV protection active for 2 minutes post-launch, optional pool extensions, and LP locker integration for automatic fee collection.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true
+  }
+}
