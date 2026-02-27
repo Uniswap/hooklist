@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x2016c0e4f8bb1d6fea777dc791be919e2eda40c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Limit Order Hook (Unichain)",
+    "description": "Enables limit order functionality on Uniswap v4 pools by storing the pre-swap tick in transient storage and executing limit orders after each swap based on tick crossings. Also supports dynamic LP fee updates through a role-based access control system.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
