@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xb030fd8c2f8576f8ab05cfbbe659285e7d7a1040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Zora Post Hook v1.0.0.1 (Base)",
+    "description": "A Zora content coin hook that automatically handles fee collection and reward distribution on every swap, converting LP fees to a backing currency and paying out rewards. On pool initialization, it creates multiple Doppler liquidity positions; supports migration to new hook implementations via a registered upgrade gate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": true
+  }
+}
