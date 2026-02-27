@@ -2146,6 +2146,39 @@
   },
   {
     "hook": {
+      "address": "0x011a8ed40095f2d7e9c19125b8254b19678d68cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ClankerHookDynamicFeeV2",
+      "description": "Clanker's v2 dynamic fee hook that adjusts LP fees based on a tick-difference volatility accumulator, collecting a 20% protocol fee on each swap. Supports optional MEV protection and pool extension modules.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x0fcb2c049786054fd35330db361a75a88903a8cc",
       "chain": "bnb",
       "chainId": 56,
