@@ -2,23 +2,39 @@ name: Validate Hook Files
 
 on:
   pull_request:
-    paths: ['hooks/**']
 
 jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Check for hook changes
+        id: changed
+        run: |
+          HOOKS_CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'hooks/**' | head -1)
+          if [ -n "$HOOKS_CHANGED" ]; then
+            echo "hooks=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "hooks=false" >> "$GITHUB_OUTPUT"
+            echo "No hook files changed, skipping validation."
+          fi
 
       - uses: actions/setup-python@v5
+        if: steps.changed.outputs.hooks == 'true'
         with:
           python-version: '3.12'
 
       - name: Install dependencies
+        if: steps.changed.outputs.hooks == 'true'
         run: pip install -r requirements.txt
 
       - name: Validate hook files against schema
+        if: steps.changed.outputs.hooks == 'true'
         run: python scripts/validate.py
 
       - name: Verify flags match address bitmask
+        if: steps.changed.outputs.hooks == 'true'
         run: python scripts/verify_flags.py
