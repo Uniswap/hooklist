@@ -29,6 +29,10 @@ Each hook file has three sections: `hook` (identity + metadata), `flags` (14 Uni
 nix-shell -p python312Packages.pytest python312Packages.jsonschema --run "cd scripts && python -m pytest test_aggregate.py -v"
 ```
 
+## Git & PRs
+
+This repository only allows **rebase merges** (no merge commits, no squash). Use `gh pr merge <number> --rebase --delete-branch` to merge PRs.
+
 ## Regenerating hooklist.json
 
 ```

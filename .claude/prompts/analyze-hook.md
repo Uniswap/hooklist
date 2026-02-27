@@ -51,10 +51,10 @@ Look up the chain in `chains.json` to get the `chainId`. Then fetch verified sou
 curl -s "https://api.etherscan.io/v2/api?chainid=CHAIN_ID&module=contract&action=getsourcecode&address=ADDRESS&apikey=$ETHERSCAN_API_KEY"
 ```
 
-For Blockscout chains (zora, ink, soneium), use the `explorerUrl` from `chains.json` instead:
+For Blockscout chains (zora, ink, soneium) and Routescan chains (avalanche), use the `explorerUrl` from `chains.json` instead (no API key needed):
 
 ```bash
-curl -s "BLOCKSCOUT_URL?module=contract&action=getsourcecode&address=ADDRESS"
+curl -s "EXPLORER_URL?module=contract&action=getsourcecode&address=ADDRESS"
 ```
 
 The `$ETHERSCAN_API_KEY` environment variable is available in CI.
