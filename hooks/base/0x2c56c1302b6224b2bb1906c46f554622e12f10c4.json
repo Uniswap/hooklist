@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x2c56c1302b6224b2bb1906c46f554622e12f10c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BVCC Dynamic Fee Hook (Base)",
+    "description": "An advanced dynamic fee hook by BlockVenture Chain Capital that adjusts LP fees based on gas price, price volatility, and 24-hour trade volume, while applying anti-bot cooldown penalties for repeated swaps. It also collects a small protocol fee on each swap output via afterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
