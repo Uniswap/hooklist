@@ -14,14 +14,14 @@ jobs:
       pull-requests: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
 
       - name: Comment on issue — started
         run: gh issue comment ${{ github.event.issue.number }} --body "Analyzing hook submission... this may take a few minutes. [Follow along](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }})"
         env:
           GH_TOKEN: ${{ github.token }}
 
-      - uses: anthropics/claude-code-action@v1
+      - uses: anthropics/claude-code-action@64c7a0ef71df67b14cb4471f4d9c8565c61042bf
         id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}

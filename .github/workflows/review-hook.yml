@@ -11,7 +11,7 @@ jobs:
       pull-requests: write
       id-token: write
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
 
@@ -26,7 +26,7 @@ jobs:
             echo "No hook files changed, skipping review."
           fi
 
-      - uses: anthropics/claude-code-action@v1
+      - uses: anthropics/claude-code-action@64c7a0ef71df67b14cb4471f4d9c8565c61042bf
         if: steps.changed.outputs.hooks == 'true'
         id: claude
         with:
