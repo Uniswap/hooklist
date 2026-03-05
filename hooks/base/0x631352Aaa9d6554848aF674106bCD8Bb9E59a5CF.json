@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x631352Aaa9d6554848aF674106bCD8Bb9E59a5CF",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AngstromL2",
+    "description": "MEV-aware hook that taxes top-of-block swaps based on priority fees and charges configurable fees on swaps and JIT liquidity additions/removals, distributing LP compensation rewards proportional to liquidity across affected ticks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
