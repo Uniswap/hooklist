@@ -39,7 +39,15 @@ def parse(response_path: str, outdir: str = ".sources") -> dict:
         # Multi-file source: strip outer braces, parse JSON
         inner = json.loads(src[1:-1])
         for name, content in inner["sources"].items():
-            path = os.path.join(outdir, name.replace("/", "_"))
+            # Sanitize filename: replace path separators, remove traversal sequences
+            safe_name = os.path.basename(name.replace("/", "_").replace("\\", "_"))
+            if not safe_name or safe_name.startswith("."):
+                safe_name = f"source_{hash(name) & 0xFFFFFFFF:08x}.sol"
+            path = os.path.join(outdir, safe_name)
+            # Verify resolved path stays within outdir
+            if not os.path.realpath(path).startswith(os.path.realpath(outdir)):
+                print(f"  Skipping suspicious path: {name}")
+                continue
             with open(path, "w") as out:
                 out.write(content["content"])
             print(f"  Source file: {name} ({len(content['content'])} chars)")

@@ -3,6 +3,10 @@ name: Review Hook PR
 on:
   pull_request:
 
+concurrency:
+  group: review-hook-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   review:
     runs-on: ubuntu-latest
@@ -14,11 +18,14 @@ jobs:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Check for hook changes
         id: changed
+        env:
+          BASE_REF: ${{ github.base_ref }}
         run: |
-          HOOKS_CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'hooks/**' | head -1)
+          HOOKS_CHANGED=$(git diff --name-only "origin/${BASE_REF}...HEAD" -- 'hooks/**' | head -1)
           if [ -n "$HOOKS_CHANGED" ]; then
             echo "hooks=true" >> "$GITHUB_OUTPUT"
           else
@@ -35,7 +42,7 @@ jobs:
           show_full_output: true
           claude_args: >-
             --json-schema '{"type":"object","properties":{"review_body":{"type":"string"},"outcome":{"type":"string","enum":["APPROVE","REQUEST_CHANGES"]}},"required":["review_body","outcome"]}'
-            --allowedTools "Bash(curl:*),Bash(python3:*),Read,Glob,Grep"
+            --allowedTools "Bash(curl:*api.etherscan.*),Bash(curl:*api-sepolia.etherscan.*),Bash(curl:*api.arbiscan.*),Bash(curl:*api-sepolia.basescan.*),Bash(curl:*api.basescan.*),Bash(curl:*api.polygonscan.*),Bash(python3:*),Read,Glob,Grep"
           prompt: |
             Review this PR by following the instructions in .claude/prompts/review-hook.md.
             Verify each hook file's flags, properties, and metadata against the on-chain source code.
@@ -58,7 +65,8 @@ jobs:
 
           case "$OUTCOME" in
             APPROVE)
-              gh pr review "$PR_NUMBER" --approve --body "$BODY"
+              # Post as comment instead of approval — a human must approve
+              gh pr review "$PR_NUMBER" --comment --body "$(printf '## Automated Review: APPROVE\n\n%s\n\n---\n_A human reviewer must still approve this PR before merge._' "$BODY")"
               ;;
             REQUEST_CHANGES)
               gh pr review "$PR_NUMBER" --request-changes --body "$BODY"
