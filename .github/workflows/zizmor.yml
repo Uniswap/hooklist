@@ -22,7 +22,14 @@ jobs:
 
       - uses: astral-sh/setup-uv@0c5e2b8115b80b4c7c5ddf6ffdd634974642d182
 
-      - name: Run zizmor
-        run: uvx zizmor .
+      - name: Run zizmor on changed files
         env:
+          BASE_REF: ${{ github.base_ref }}
           GH_TOKEN: ${{ github.token }}
+        run: |
+          FILES=$(git diff --name-only "origin/${BASE_REF}...HEAD" -- '.github/workflows/' '.github/actions/')
+          if [ -n "$FILES" ]; then
+            echo "$FILES" | xargs uvx zizmor --config .zizmor.yml
+          else
+            echo "No workflow/action files changed."
+          fi
