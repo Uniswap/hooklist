@@ -3,18 +3,27 @@ name: Validate Hook Files
 on:
   pull_request:
 
+concurrency:
+  group: validate-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
 jobs:
   validate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Check for hook changes
         id: changed
+        env:
+          BASE_REF: ${{ github.base_ref }}
         run: |
-          HOOKS_CHANGED=$(git diff --name-only origin/${{ github.base_ref }}...HEAD -- 'hooks/**' | head -1)
+          HOOKS_CHANGED=$(git diff --name-only "origin/${BASE_REF}...HEAD" -- 'hooks/**' | head -1)
           if [ -n "$HOOKS_CHANGED" ]; then
             echo "hooks=true" >> "$GITHUB_OUTPUT"
           else
