@@ -1,0 +1,36 @@
+name: Zizmor Security Audit
+
+on:
+  pull_request:
+    paths:
+      - '.github/workflows/**'
+      - '.github/actions/**'
+
+concurrency:
+  group: zizmor-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  zizmor:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - uses: astral-sh/setup-uv@0c5e2b8115b80b4c7c5ddf6ffdd634974642d182
+
+      - name: Run zizmor on changed files
+        env:
+          BASE_REF: ${{ github.base_ref }}
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          FILES=$(git diff --name-only "origin/${BASE_REF}...HEAD" -- '.github/workflows/' '.github/actions/')
+          if [ -n "$FILES" ]; then
+            echo "$FILES" | xargs uvx zizmor --config .zizmor.yml
+          else
+            echo "No workflow/action files changed."
+          fi
