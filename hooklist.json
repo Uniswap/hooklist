@@ -265,6 +265,39 @@
   },
   {
     "hook": {
+      "address": "0x0469a4Bd3724DC86C9542F4694c976DA13C450c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Zora Hook",
+      "description": "Zora's Uniswap v4 hook for their Coins protocol on Base, which applies a dynamic launch fee that decays from 99% to 1% over the 10 seconds after coin creation. On every swap it collects LP fees, converts them to a backing currency, and distributes rewards to creators and trade referrers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x121f94835dab08ebaf084809a97e525b69e400cc",
       "chain": "base",
       "chainId": 8453,
