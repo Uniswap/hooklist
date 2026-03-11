@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xeA9346e83952840E69Beb36Df365C4e68DE0E080",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LiquidLaunchHook",
+    "description": "A liquid launch hook that restricts pool initialization to authorized strategies via a factory registry, and automatically converts accumulated fees to a preferred token currency during swaps using nested pool swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
