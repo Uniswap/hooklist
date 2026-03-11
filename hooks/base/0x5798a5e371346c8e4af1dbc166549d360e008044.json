@@ -1,0 +1,31 @@
+{
+  "hook": {
+    "address": "0x5798a5e371346c8e4af1dbc166549d360e008044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Adaptive Burn Hook",
+    "description": "Automatically burns a configurable percentage of PR token output on buys and captures ETH into a vault on sells. Burn and capture rates are admin-adjustable within bounds, capped at a maximum of 5%.",
+    "verifiedSource": true
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
