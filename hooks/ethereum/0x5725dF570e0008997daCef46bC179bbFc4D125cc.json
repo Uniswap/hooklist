@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x5725dF570e0008997daCef46bC179bbFc4D125cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Auto Liquidity Generator",
+    "description": "Collects configurable buy and sell taxes (in WETH) on every swap, then automatically uses accumulated fees to buy the paired token and add full-range protocol-owned liquidity once a configurable threshold is reached.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
