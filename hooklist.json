@@ -4124,6 +4124,39 @@
   },
   {
     "hook": {
+      "address": "0xb9a17e66db950e00822c2b833d6bb304c9b86080",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "MEVTaxTestInProd",
+      "description": "Implements a priority-fee-proportional MEV tax as a dynamic LP fee. On each swap, the fee is scaled proportionally to the transaction's priority fee relative to the highest priority fee observed in the previous block, with owner-configurable minimum and maximum bounds.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xbc6e5abda425309c2534bc2bc92562f5419ce8cc",
       "chain": "unichain",
       "chainId": 130,
