@@ -28,7 +28,7 @@ jobs:
           BASE_REF: ${{ github.base_ref }}
           GH_TOKEN: ${{ github.token }}
         run: |
-          FILES=$(git diff --name-only "origin/${BASE_REF}...HEAD" -- '.github/workflows/' '.github/actions/')
+          FILES=$(git diff --name-only "origin/${BASE_REF}...HEAD" -- '.github/workflows/' '.github/actions/' | while read -r f; do [ -f "$f" ] && echo "$f"; done)
           if [ -n "$FILES" ]; then
             echo "$FILES" | xargs uvx zizmor --config .zizmor.yml
           else
