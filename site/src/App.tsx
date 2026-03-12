@@ -38,7 +38,7 @@ function App() {
               </p>
               <div className="flex flex-col gap-1 text-sm">
                 <a
-                  href="https://github.com/uniswap/hooklist/issues/new"
+                  href="https://github.com/Uniswap/hooklist/issues/new?template=submit-hook.yml"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-uni-pink-dark hover:text-uni-pink font-semibold transition-colors"
