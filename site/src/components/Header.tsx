@@ -3,27 +3,12 @@ export function Header() {
     <header className="sticky top-0 z-40 glass-strong">
       <div className="flex items-center justify-between px-6 py-3 max-w-[1440px] mx-auto">
         <div className="flex items-center gap-2.5">
-          <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
-            <circle cx="24" cy="24" r="24" fill="url(#uni-grad)" />
-            <g transform="translate(6, 0)">
-              <path
-                d="M24 8 L24 30 Q24 38 18 38 Q12 38 12 32"
-                stroke="white"
-                strokeWidth="4"
-                strokeLinecap="round"
-                fill="none"
-              />
-              <circle cx="24" cy="8" r="3" fill="white" />
-              <path
-                d="M20 8 L24 8 L28 5"
-                stroke="white"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                fill="none"
-              />
-            </g>
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="url(#hk-grad)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M16 9v6a5 5 0 0 1 -10 0v-4l3 3" />
+            <path d="M14 7a2 2 0 1 0 4 0a2 2 0 1 0 -4 0" />
+            <path d="M16 5v-2" />
             <defs>
-              <linearGradient id="uni-grad" x1="0" y1="0" x2="48" y2="48">
+              <linearGradient id="hk-grad" x1="6" y1="2" x2="20" y2="20" gradientUnits="userSpaceOnUse">
                 <stop stopColor="#fc72ff" />
                 <stop offset="1" stopColor="#ff007a" />
               </linearGradient>
