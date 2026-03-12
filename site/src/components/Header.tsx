@@ -5,16 +5,23 @@ export function Header() {
         <div className="flex items-center gap-2.5">
           <svg width="28" height="28" viewBox="0 0 48 48" fill="none">
             <circle cx="24" cy="24" r="24" fill="url(#uni-grad)" />
-            <path
-              d="M17 16c2-4 8-5 11-3s4 7 2 11-7 6-10 5-5-9-3-13z"
-              fill="white"
-              opacity="0.9"
-            />
-            <path
-              d="M24 14c1-2 4-2 5 0s0 5-2 6-4-4-3-6z"
-              fill="white"
-              opacity="0.7"
-            />
+            <g transform="translate(6, 0)">
+              <path
+                d="M24 8 L24 30 Q24 38 18 38 Q12 38 12 32"
+                stroke="white"
+                strokeWidth="4"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <circle cx="24" cy="8" r="3" fill="white" />
+              <path
+                d="M20 8 L24 8 L28 5"
+                stroke="white"
+                strokeWidth="2.5"
+                strokeLinecap="round"
+                fill="none"
+              />
+            </g>
             <defs>
               <linearGradient id="uni-grad" x1="0" y1="0" x2="48" y2="48">
                 <stop stopColor="#fc72ff" />
