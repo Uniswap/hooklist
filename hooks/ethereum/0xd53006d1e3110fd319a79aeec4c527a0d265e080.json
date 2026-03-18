@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0xd53006d1e3110fd319a79aeec4c527a0d265e080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "VirtualLBPStrategyBasic",
+    "description": "A hook implementing a Virtual Liquidity Bootstrapping Pool (LBP) strategy for token launches. It restricts pool initialization to the contract itself and gates all swaps on a migration approval flag, enabling controlled token distribution.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
