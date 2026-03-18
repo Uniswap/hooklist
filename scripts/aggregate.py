@@ -32,11 +32,20 @@ def aggregate_hooks(hooks_dir: str, schema: dict | None = None) -> list[dict]:
     return hooks
 
 
+SWAP_FLAGS = ("beforeSwap", "afterSwap", "beforeSwapReturnsDelta", "afterSwapReturnsDelta")
+
+
+def filter_vanilla_swap(hooks: list[dict]) -> list[dict]:
+    """Return hooks that have no swap-related flags enabled."""
+    return [h for h in hooks if not any(h["flags"][f] for f in SWAP_FLAGS)]
+
+
 def main():
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
     hooks_dir = os.path.join(repo_root, "hooks")
     schema_path = os.path.join(repo_root, "schema.json")
     hooklist_path = os.path.join(repo_root, "hooklist.json")
+    vanilla_path = os.path.join(repo_root, "hooklist-vanilla-swap.json")
 
     with open(schema_path) as f:
         schema = json.load(f)
@@ -47,7 +56,13 @@ def main():
         json.dump(hooks, f, indent=2)
         f.write("\n")
 
+    vanilla = filter_vanilla_swap(hooks)
+    with open(vanilla_path, "w") as f:
+        json.dump(vanilla, f, indent=2)
+        f.write("\n")
+
     print(f"Aggregated {len(hooks)} hooks into hooklist.json")
+    print(f"Filtered {len(vanilla)} vanilla-swap hooks into hooklist-vanilla-swap.json")
 
 
 if __name__ == "__main__":
