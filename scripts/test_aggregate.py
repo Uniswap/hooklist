@@ -2,7 +2,7 @@ import json
 import os
 import tempfile
 import pytest
-from aggregate import aggregate_hooks
+from aggregate import aggregate_hooks, filter_vanilla_swap
 
 
 SCHEMA = {
@@ -170,6 +170,29 @@ def test_aggregate_with_schema_missing_flag():
             json.dump(hook, f)
         with pytest.raises(ValueError, match="Schema validation failed"):
             aggregate_hooks(tmpdir, schema=SCHEMA)
+
+
+def test_filter_vanilla_swap_excludes_swap_hooks():
+    swap_hook = _valid_hook()  # has beforeSwap=True
+    vanilla_hook = _valid_hook(address="0x00000000000000000000000000000000000000A0")
+    vanilla_hook["flags"]["beforeSwap"] = False
+    vanilla_hook["flags"]["beforeInitialize"] = False
+    result = filter_vanilla_swap([swap_hook, vanilla_hook])
+    assert len(result) == 1
+    assert result[0]["hook"]["address"] == vanilla_hook["hook"]["address"]
+
+
+def test_filter_vanilla_swap_excludes_returns_delta():
+    hook = _valid_hook()
+    hook["flags"]["beforeSwap"] = False
+    hook["flags"]["afterSwap"] = False
+    hook["flags"]["afterSwapReturnsDelta"] = True
+    result = filter_vanilla_swap([hook])
+    assert result == []
+
+
+def test_filter_vanilla_swap_empty():
+    assert filter_vanilla_swap([]) == []
 
 
 def test_aggregate_with_schema_wrong_type():

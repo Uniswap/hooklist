@@ -1,0 +1,101 @@
+[
+  {
+    "hook": {
+      "address": "0xc5a48b447f01e9ce3ede71e4c1c2038c38bd9000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Graduation Hook (Base)",
+      "description": "Restricts pool initialization to a designated Moxie bonding curve address, ensuring Uniswap v4 pools can only be initialized through the authorized bonding curve as part of a token graduation process.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd3c1f2174f37f88811f99b1b1b4c1356c0246000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Aquinas Hook (Base)",
+      "description": "Restricts Uniswap v4 pool initialization to factory-authorized Safe addresses for Aquinas DAOs, preventing frontrunning of LP initialization by requiring the caller to be pre-approved by the Aquinas factory.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
+      "address": "0xde400595199e6dae55a1bcb742b3eb249af00800",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "M0 Tick Range Hook",
+      "description": "Restricts liquidity provision to a configurable tick range by reverting in beforeAddLiquidity if the position's ticks fall outside the allowed bounds. An authorized manager role can update the tick range.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  }
+]
