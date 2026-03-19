@@ -1154,6 +1154,39 @@
   },
   {
     "hook": {
+      "address": "0x66E51DEab56975Bb1c64413bd3AB01FA95B82acc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "XDHook",
+      "description": "A launchpad hook that gates pool initialization, liquidity management, and swaps to authorized actors pre-graduation, collecting WETH-denominated fees as ERC-6909 claims. After graduation, access restrictions are lifted and the swap fee is capped at 0.15%.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x6cabe2fd9fb60c5afcab7de732b0a224fc382eec",
       "chain": "base",
       "chainId": 8453,
