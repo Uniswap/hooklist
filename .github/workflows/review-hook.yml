@@ -38,6 +38,7 @@ jobs:
         id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
           allowed_bots: 'claude'
           show_full_output: true
           claude_args: >-
