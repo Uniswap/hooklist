@@ -31,7 +31,6 @@ jobs:
         id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          github_token: ${{ github.token }}
           show_full_output: true
           claude_args: '--allowedTools "Bash(curl:*api.etherscan.*),Bash(curl:*api-sepolia.etherscan.*),Bash(curl:*api.arbiscan.*),Bash(curl:*api-sepolia.basescan.*),Bash(curl:*api.basescan.*),Bash(curl:*api.polygonscan.*),Bash(git*),Bash(gh*),Bash(python3*),Read,Glob,Grep,Write"'
           prompt: |
