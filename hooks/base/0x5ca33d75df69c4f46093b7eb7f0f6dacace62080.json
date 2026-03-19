@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x5ca33d75df69c4f46093b7eb7f0f6dacace62080",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "GovernedLBPStrategy",
+    "description": "A governance-gated Liquidity Bootstrapping Pool (LBP) strategy hook that blocks swaps until a designated governance address approves migration, then migrates token distribution from a bootstrapping phase to a full-range Uniswap v4 pool position.",
+    "deployer": "0xBc869216dAD02E1A95c1478a459D064b16F41B24",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
