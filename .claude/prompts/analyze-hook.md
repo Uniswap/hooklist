@@ -126,6 +126,8 @@ Cross-reference the address-derived flags with the source code:
 
 Use the `Write` tool to create `hooks/<chain>/<address>.json` matching the schema in `schema.json`. The Write tool creates parent directories automatically — do not use `mkdir`. Use submitter-provided values for `name`, `description`, `deployer`, and `auditUrl` when present. Generate the rest from analysis.
 
+**IMPORTANT: `deployer` must be a valid Ethereum address (`0x` + 40 hex chars) or an empty string `""`. If the submitter provides a name or organization instead of an address, discard it and use `""`. Never put a human-readable name in the `deployer` field.**
+
 ## Step 7: Open a PR
 
 **Important: Run each git/gh command as a separate Bash call. Do not chain commands with `&&`.**
