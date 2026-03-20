@@ -32,12 +32,9 @@ def aggregate_hooks(hooks_dir: str, schema: dict | None = None) -> list[dict]:
     return hooks
 
 
-SWAP_FLAGS = ("beforeSwap", "afterSwap", "beforeSwapReturnsDelta", "afterSwapReturnsDelta")
-
-
 def filter_vanilla_swap(hooks: list[dict]) -> list[dict]:
-    """Return hooks that have no swap-related flags enabled."""
-    return [h for h in hooks if not any(h["flags"][f] for f in SWAP_FLAGS)]
+    """Return hooks whose vanillaSwap property is true."""
+    return [h for h in hooks if h["properties"]["vanillaSwap"]]
 
 
 def main():
