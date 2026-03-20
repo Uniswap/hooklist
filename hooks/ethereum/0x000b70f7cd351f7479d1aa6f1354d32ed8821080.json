@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "Nuclear Man's Pool Trader Hook",
-    "description": "A dynamic fee hook that adjusts LP fees based on volatility by comparing spot price from a Uniswap V2 pair against an exponential moving average filter — keeping fees low during calm markets and raising them up to 25% during high-volatility periods. It also collects a configurable developer fee on each swap.",
+    "description": "A dynamic fee hook that adjusts LP fees based on volatility by comparing spot price from a Uniswap V2 pair against an exponential moving average filter \u2014 keeping fees low during calm markets and raising them up to 25% during high-volatility periods. It also collects a configurable developer fee on each swap.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -28,6 +28,8 @@
   "properties": {
     "dynamicFee": true,
     "upgradeable": false,
-    "requiresCustomSwapData": false
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
   }
 }
