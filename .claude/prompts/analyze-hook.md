@@ -118,9 +118,18 @@ Cross-reference the address-derived flags with the source code:
 
 4. **Detect `requiresCustomSwapData`**: This is `true` if a normal swap (sending empty `hookData`) would **fail, revert, or produce materially incorrect behavior** because the hook requires specific encoded data (signatures, parameters, routing info, etc.) in `hookData`. If the hook merely inspects `hookData` for optional/ancillary features (e.g. an optional trade referrer via `if (hookData.length > 0)`) but swaps work correctly without it, this is `false`. In short: would an unsuspecting router or user sending no `hookData` have a bad experience?
 
-5. **Generate name**: Use `ContractName` from the Etherscan response if the submitter didn't provide one.
+5. **Detect `vanillaSwap`**: This is `true` if the hook's `beforeSwap`/`afterSwap` implementations do NOT modify swap pricing, amounts, or deltas. Hooks that only perform access control (allow/deny), logging, oracle updates, or observation are vanilla. Hooks that execute trades, modify fees, return deltas, or alter swap mechanics are NOT vanilla. If the hook has no swap flags enabled at all, `vanillaSwap` is always `true`.
 
-6. **Generate description**: Write a 1-2 sentence summary of what the hook does, based on your analysis of the source code.
+6. **Detect `swapAccess`**: Classify the hook's swap access control mechanism:
+   - `"none"` — No restrictions on who can swap or when (default for most hooks)
+   - `"temporal"` — Swaps gated by a timestamp or block number
+   - `"allowlist"` — Only approved addresses can swap (KYC, whitelist)
+   - `"governance"` — An admin/governance address must enable swaps (e.g., migration gates)
+   - `"other"` — Some other access restriction mechanism
+
+7. **Generate name**: Use `ContractName` from the Etherscan response if the submitter didn't provide one.
+
+8. **Generate description**: Write a 1-2 sentence summary of what the hook does, based on your analysis of the source code.
 
 ## Step 6: Generate the Hook JSON
 
@@ -184,6 +193,8 @@ The PR body should contain:
 | dynamicFee | true/false |
 | upgradeable | true/false |
 | requiresCustomSwapData | true/false |
+| vanillaSwap | true/false |
+| swapAccess | none/temporal/allowlist/governance/other |
 
 ## Warnings
 <any discrepancies or notes, or "None">
