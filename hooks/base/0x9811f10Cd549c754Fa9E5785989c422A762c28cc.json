@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x9811f10Cd549c754Fa9E5785989c422A762c28cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Liquid Static Fee Hook V2",
+    "description": "Uniswap V4 hook with fixed LP fee configuration, MEV protection via descending fee modules, per-swap pool extensions, and protocol fee collection. Alternative to the Dynamic Fee hook for Liquid Protocol pools preferring stable fees.",
+    "deployer": "Liquid Protocol",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
