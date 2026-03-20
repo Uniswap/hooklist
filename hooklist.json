@@ -4124,6 +4124,39 @@
   },
   {
     "hook": {
+      "address": "0x580ca49389d83b019d07E17e99454f2F218e2dc0",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "UniswapV4ScheduledMulticurveInitializerHook",
+      "description": "A Doppler protocol hook (by Whetstone Research) that gates pool initialization and liquidity additions to an authorized initializer contract, and enforces a configurable start time before which swaps are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0x480dafdb4d6092ef3217595b75784ec54b52e888",
       "chain": "optimism",
       "chainId": 10,
