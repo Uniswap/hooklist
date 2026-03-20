@@ -19,6 +19,8 @@ export interface HookProperties {
   dynamicFee: boolean;
   upgradeable: boolean;
   requiresCustomSwapData: boolean;
+  vanillaSwap: boolean;
+  swapAccess: "none" | "temporal" | "allowlist" | "governance" | "other";
 }
 
 export interface HookMeta {
@@ -39,7 +41,7 @@ export interface HookEntry {
 }
 
 export type FlagName = keyof HookFlags;
-export type PropertyName = keyof HookProperties;
+export type PropertyName = "dynamicFee" | "upgradeable" | "requiresCustomSwapData" | "vanillaSwap";
 
 export const FLAG_NAMES: FlagName[] = [
   "beforeInitialize",
@@ -62,4 +64,5 @@ export const PROPERTY_NAMES: PropertyName[] = [
   "dynamicFee",
   "upgradeable",
   "requiresCustomSwapData",
+  "vanillaSwap",
 ];

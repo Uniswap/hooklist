@@ -51,12 +51,14 @@
     },
     "properties": {
       "type": "object",
-      "required": ["dynamicFee", "upgradeable", "requiresCustomSwapData"],
+      "required": ["dynamicFee", "upgradeable", "requiresCustomSwapData", "vanillaSwap", "swapAccess"],
       "additionalProperties": false,
       "properties": {
         "dynamicFee": { "type": "boolean" },
         "upgradeable": { "type": "boolean" },
-        "requiresCustomSwapData": { "type": "boolean" }
+        "requiresCustomSwapData": { "type": "boolean" },
+        "vanillaSwap": { "type": "boolean" },
+        "swapAccess": { "type": "string", "enum": ["none", "temporal", "allowlist", "governance", "other"] }
       }
     }
   }

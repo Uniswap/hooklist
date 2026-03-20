@@ -9,12 +9,14 @@ const LABELS: Record<PropertyName, string> = {
   dynamicFee: "Dynamic Fee",
   upgradeable: "Upgradeable",
   requiresCustomSwapData: "Custom Swap Data",
+  vanillaSwap: "Vanilla Swap",
 };
 
 const COLORS: Record<PropertyName, { bg: string; shadow: string }> = {
   dynamicFee: { bg: "#3b82f6", shadow: "rgba(59, 130, 246, 0.35)" },
   upgradeable: { bg: "#f59e0b", shadow: "rgba(245, 158, 11, 0.35)" },
   requiresCustomSwapData: { bg: "#8b5cf6", shadow: "rgba(139, 92, 246, 0.35)" },
+  vanillaSwap: { bg: "#10b981", shadow: "rgba(16, 185, 129, 0.35)" },
 };
 
 export function PropertyFilter({ selected, onChange }: Props) {
