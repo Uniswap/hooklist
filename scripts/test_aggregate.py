@@ -55,11 +55,13 @@ SCHEMA = {
         },
         "properties": {
             "type": "object",
-            "required": ["dynamicFee", "upgradeable", "requiresCustomSwapData"],
+            "required": ["dynamicFee", "upgradeable", "requiresCustomSwapData", "vanillaSwap", "swapAccess"],
             "properties": {
                 "dynamicFee": {"type": "boolean"},
                 "upgradeable": {"type": "boolean"},
                 "requiresCustomSwapData": {"type": "boolean"},
+                "vanillaSwap": {"type": "boolean"},
+                "swapAccess": {"type": "string", "enum": ["none", "temporal", "allowlist", "governance", "other"]},
             },
         },
     },
@@ -98,6 +100,8 @@ def _valid_hook(chain="ethereum", address="0x00000000000000000000000000000000000
             "dynamicFee": False,
             "upgradeable": False,
             "requiresCustomSwapData": False,
+            "vanillaSwap": False,
+            "swapAccess": "none",
         },
     }
 
@@ -173,10 +177,9 @@ def test_aggregate_with_schema_missing_flag():
 
 
 def test_filter_vanilla_swap_excludes_swap_hooks():
-    swap_hook = _valid_hook()  # has beforeSwap=True
+    swap_hook = _valid_hook()  # has beforeSwap=True, vanillaSwap=False
     vanilla_hook = _valid_hook(address="0x00000000000000000000000000000000000000A0")
-    vanilla_hook["flags"]["beforeSwap"] = False
-    vanilla_hook["flags"]["beforeInitialize"] = False
+    vanilla_hook["properties"]["vanillaSwap"] = True
     result = filter_vanilla_swap([swap_hook, vanilla_hook])
     assert len(result) == 1
     assert result[0]["hook"]["address"] == vanilla_hook["hook"]["address"]
@@ -199,6 +202,36 @@ def test_aggregate_with_schema_wrong_type():
     with tempfile.TemporaryDirectory() as tmpdir:
         hook = _valid_hook()
         hook["flags"]["beforeSwap"] = "yes"  # should be boolean
+        os.makedirs(os.path.join(tmpdir, "ethereum"))
+        with open(os.path.join(tmpdir, "ethereum", "bad.json"), "w") as f:
+            json.dump(hook, f)
+        with pytest.raises(ValueError, match="Schema validation failed"):
+            aggregate_hooks(tmpdir, schema=SCHEMA)
+
+
+def test_filter_vanilla_swap_includes_beforeSwap_with_vanillaSwap():
+    """A hook with beforeSwap=True but vanillaSwap=True IS included."""
+    hook = _valid_hook()  # has beforeSwap=True by default
+    hook["properties"]["vanillaSwap"] = True
+    result = filter_vanilla_swap([hook])
+    assert len(result) == 1
+    assert result[0]["hook"]["address"] == hook["hook"]["address"]
+
+
+def test_filter_vanilla_swap_includes_governance_access_with_vanillaSwap():
+    """Access control doesn't affect vanilla status."""
+    hook = _valid_hook()
+    hook["properties"]["vanillaSwap"] = True
+    hook["properties"]["swapAccess"] = "governance"
+    result = filter_vanilla_swap([hook])
+    assert len(result) == 1
+
+
+def test_schema_rejects_invalid_swapAccess():
+    """Schema validation rejects an invalid swapAccess value."""
+    with tempfile.TemporaryDirectory() as tmpdir:
+        hook = _valid_hook()
+        hook["properties"]["swapAccess"] = "invalid"
         os.makedirs(os.path.join(tmpdir, "ethereum"))
         with open(os.path.join(tmpdir, "ethereum", "bad.json"), "w") as f:
             json.dump(hook, f)

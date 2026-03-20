@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "Meme Strategy Hook (Ethereum)",
-    "description": "A Uniswap v4 hook for the MEMS meme token that collects dynamic asymmetric swap fees (Phase 1: 50%, Phase 2: 10–90%) on ETH\u2194MEMS swaps, splitting proceeds 80/20 between a strategy contract and treasury. Includes anti-snipe protection that blocks public swaps until trading is activated by the strategy.",
+    "description": "A Uniswap v4 hook for the MEMS meme token that collects dynamic asymmetric swap fees (Phase 1: 50%, Phase 2: 10\u201390%) on ETH\u2194MEMS swaps, splitting proceeds 80/20 between a strategy contract and treasury. Includes anti-snipe protection that blocks public swaps until trading is activated by the strategy.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -28,6 +28,8 @@
   "properties": {
     "dynamicFee": false,
     "upgradeable": false,
-    "requiresCustomSwapData": false
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
   }
 }
