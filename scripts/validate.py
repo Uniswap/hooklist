@@ -38,8 +38,12 @@ def main():
             jsonschema.validate(hook, schema)
             print(f"  OK: {filepath}")
         except jsonschema.ValidationError as e:
-            errors.append(f"{filepath}: {e.message}")
-            print(f"FAIL: {filepath}: {e.message}")
+            path = ".".join(str(p) for p in e.path) or "<root>"
+            errors.append(f"{filepath}: {path}: {e.message}")
+            print(f"FAIL: {filepath}")
+            print(f"  field: {path}")
+            print(f"  value: {e.instance!r}")
+            print(f"  error: {e.message}")
 
     if errors:
         print(f"\n{len(errors)} validation error(s)")
