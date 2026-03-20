@@ -1913,6 +1913,39 @@
   },
   {
     "hook": {
+      "address": "0xbb7784a4d481184283ed89619a3e3ed143e1adc0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DecayMulticurveInitializerHook",
+      "description": "A Uniswap v4 hook by Whetstone Research (Doppler v2) that implements time-based linear LP fee decay, lowering fees from a configurable start rate to an end rate over a set duration. Liquidity additions are gated to a designated initializer contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false
+    }
+  },
+  {
+    "hook": {
       "address": "0xc3b8e77ac038aa260035a1911827086c34a9e844",
       "chain": "base",
       "chainId": 8453,
