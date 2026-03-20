@@ -56,9 +56,24 @@ Cross-reference the `properties` section against the source code:
 
 3. **requiresCustomSwapData**: Should be `true` if a normal swap with empty `hookData` would **fail, revert, or produce materially incorrect behavior** — i.e. the hook requires specific encoded data (signatures, parameters, routing info, etc.) to function. Should be `false` if swaps work correctly without `hookData`, even if the hook optionally inspects it for ancillary features (e.g. an optional trade referrer).
 
-4. **vanillaSwap**: Should be `true` if the hook's beforeSwap/afterSwap do not modify swap pricing, amounts, or deltas — only access control, logging, or observation. Should be `true` if the hook has no swap flags. Should be `false` if the hook executes trades, modifies fees, returns deltas, or alters swap mechanics in any way.
+4. **vanillaSwap**: Verify this answers: "Once a swap is allowed to execute, does it behave identically to a standard v4 pool?"
 
-5. **swapAccess**: Should accurately classify the hook's swap access control: `"none"` if no restrictions, `"temporal"` for time-based gates, `"allowlist"` for address-based restrictions, `"governance"` for admin-controlled gates, `"other"` for anything else.
+   **Must be `false` if ANY of:** `dynamicFee` is true, `requiresCustomSwapData` is true, `beforeSwapReturnsDelta` or `afterSwapReturnsDelta` is true, the hook executes nested swaps or transfers tokens inside beforeSwap/afterSwap, or the hook modifies pool state that changes swap behavior.
+
+   **Must be `true` if:** the hook has no swap flags at all.
+
+   **Can be `true` if:** the hook has beforeSwap/afterSwap but they only perform access control (revert-based gating), observation (recording prices/ticks/volumes), or event emission — without modifying how the swap executes.
+
+   A hook that *blocks* swaps (reverts) is vanilla. A hook that *changes* how swaps execute is not.
+
+5. **swapAccess**: Verify the classification matches the actual access control mechanism in beforeSwap:
+   - `"none"` — beforeSwap has no access control, or the hook has no swap flags
+   - `"temporal"` — gates on `block.timestamp` or `block.number` (configurable start/end times)
+   - `"allowlist"` — checks caller against an approved address set, registry, or Merkle proof
+   - `"governance"` — checks a boolean flag (e.g., `migrated`, `tradingEnabled`) set by an owner/admin
+   - `"other"` — any other gating mechanism
+
+   These are orthogonal to `vanillaSwap` — a hook can be vanilla with restricted access.
 
 ### 2d: Check Metadata
 

@@ -118,14 +118,34 @@ Cross-reference the address-derived flags with the source code:
 
 4. **Detect `requiresCustomSwapData`**: This is `true` if a normal swap (sending empty `hookData`) would **fail, revert, or produce materially incorrect behavior** because the hook requires specific encoded data (signatures, parameters, routing info, etc.) in `hookData`. If the hook merely inspects `hookData` for optional/ancillary features (e.g. an optional trade referrer via `if (hookData.length > 0)`) but swaps work correctly without it, this is `false`. In short: would an unsuspecting router or user sending no `hookData` have a bad experience?
 
-5. **Detect `vanillaSwap`**: This is `true` if the hook's `beforeSwap`/`afterSwap` implementations do NOT modify swap pricing, amounts, or deltas. Hooks that only perform access control (allow/deny), logging, oracle updates, or observation are vanilla. Hooks that execute trades, modify fees, return deltas, or alter swap mechanics are NOT vanilla. If the hook has no swap flags enabled at all, `vanillaSwap` is always `true`.
+5. **Detect `vanillaSwap`**: Determines whether, once a swap is allowed to execute, it behaves identically to a standard Uniswap v4 pool with no hook. Use this decision process:
 
-6. **Detect `swapAccess`**: Classify the hook's swap access control mechanism:
-   - `"none"` — No restrictions on who can swap or when (default for most hooks)
-   - `"temporal"` — Swaps gated by a timestamp or block number
-   - `"allowlist"` — Only approved addresses can swap (KYC, whitelist)
-   - `"governance"` — An admin/governance address must enable swaps (e.g., migration gates)
-   - `"other"` — Some other access restriction mechanism
+   **Always `true` if:** the hook has no swap flags at all (`beforeSwap`, `afterSwap`, `beforeSwapReturnsDelta`, `afterSwapReturnsDelta` are all `false`).
+
+   **Always `false` if ANY of these are true:**
+   - `dynamicFee` is `true` (hook modifies fees)
+   - `requiresCustomSwapData` is `true` (standard swap with empty hookData would fail)
+   - `beforeSwapReturnsDelta` or `afterSwapReturnsDelta` is `true` (hook modifies swap amounts)
+   - The hook executes nested swaps, transfers tokens, or calls `poolManager.swap()` inside `beforeSwap`/`afterSwap`
+   - The hook modifies pool state in ways that change subsequent swap behavior (e.g., adjusting tick spacing, moving liquidity)
+
+   **`true` if the hook has `beforeSwap`/`afterSwap` but they ONLY do:**
+   - Access control: revert if caller/timing/state doesn't meet criteria (allow/deny gating)
+   - Observation: recording prices, ticks, volumes, or timestamps for oracle/analytics purposes
+   - Event emission: emitting events for off-chain indexing
+   - Reading state without modifying it
+
+   **Key distinction:** A hook that *blocks* a swap (reverts in beforeSwap) is vanilla — the swap either doesn't happen or happens normally. A hook that *changes* how the swap executes is NOT vanilla.
+
+6. **Detect `swapAccess`**: Classify the hook's swap access control mechanism by searching the `beforeSwap` implementation:
+
+   - `"none"` — No access control logic in beforeSwap. The hook either has no beforeSwap, or beforeSwap never reverts based on caller identity, timing, or external state. Default for most hooks.
+   - `"temporal"` — Swaps gated by time. Look for: `block.timestamp` or `block.number` comparisons, `require(block.timestamp >= startTime)`, configurable start/end times, or phase-based timing logic.
+   - `"allowlist"` — Only approved addresses can swap. Look for: `mapping(address => bool)` checks against `tx.origin` or `sender`, calls to external allowlist/registry contracts, Merkle proof verification, or KYC/Predicate authorization checks.
+   - `"governance"` — An admin/owner must flip a flag to enable swaps. Look for: boolean storage like `migrated`, `tradingEnabled`, or `launched` that is set by an owner/admin function, with beforeSwap checking `require(migrated)` or similar. Includes single-owner gates, multi-sig gates, and role-based access control.
+   - `"other"` — Some other mechanism not covered above (e.g., NFT-gated, token-balance-gated, signature-based).
+
+   **Important:** A hook can be `vanillaSwap: true` with any `swapAccess` value — these are orthogonal. Access control determines *if* you can swap; vanillaSwap determines *how* the swap behaves once allowed. If the hook has no swap flags, `swapAccess` must be `"none"`.
 
 7. **Generate name**: Use `ContractName` from the Etherscan response if the submitter didn't provide one.
 
