@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "Auto Liquidity Generator",
-    "description": "Collects configurable buy and sell taxes (in WETH) on every swap, then automatically uses accumulated fees to buy the paired token and add full-range protocol-owned liquidity once a configurable threshold is reached.",
+    "description": "Collects configurable buy and sell taxes (in WETH) on every swap. Once accumulated fees reach a configurable threshold, deducts a platform fee (20–50% of the accumulated amount) sent to a designated collector, then uses the remainder to buy the paired token and add full-range protocol-owned liquidity. Residual tokens after liquidity addition are burned.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
