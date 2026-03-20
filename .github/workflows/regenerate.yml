@@ -37,11 +37,6 @@ jobs:
       - name: Regenerate hooklist.json
         run: python scripts/aggregate.py
 
-      - name: Copy to site public
-        run: |
-          cp hooklist.json site/public/hooklist.json
-          cp hooklist-vanilla-swap.json site/public/hooklist-vanilla-swap.json
-
       - name: Commit and push
         env:
           APP_TOKEN: ${{ steps.app-token.outputs.token }}
@@ -49,6 +44,6 @@ jobs:
           git config user.name "hook-registry-bot[bot]"
           git config user.email "hook-registry-bot[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${APP_TOKEN}@github.com/${{ github.repository }}.git"
-          git add hooklist.json hooklist-vanilla-swap.json site/public/hooklist.json site/public/hooklist-vanilla-swap.json
+          git add hooklist.json hooklist-vanilla-swap.json
           git diff --staged --quiet || git commit -m "chore: regenerate hooklist.json"
           git push
