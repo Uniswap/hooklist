@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x3043e182047F8696dFE483535785ed1C3681baC4",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "BackGeoOracle",
+    "description": "A Uniswap v4 oracle hook that records TWAP price observations and performs automatic backrun swaps to partially offset price impact. Requires zero-fee pools with full-range liquidity and exactInput swaps only; calling routers must implement the IMsgSender interface to support backrun ERC6909 crediting.",
+    "deployer": "0x3043e182047F8696dFE483535785ed1C3681baC4",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
