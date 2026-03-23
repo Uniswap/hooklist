@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x1D8691A1A7d53B60DeDd99D8079E026cB0E5bac4",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "BackGeoOracle",
+    "description": "A Uniswap v4 hook that maintains an on-chain TWAP oracle and executes automatic backrun logic to mitigate price impact — when a swap moves the price beyond a threshold, the hook performs a partial or full inverse swap in the same transaction and credits the original trader with the proceeds as ERC6909 tokens.",
+    "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
