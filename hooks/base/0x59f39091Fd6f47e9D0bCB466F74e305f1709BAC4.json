@@ -1,0 +1,33 @@
+{
+  "hook": {
+    "address": "0x59f39091Fd6f47e9D0bCB466F74e305f1709BAC4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BackGeoOracle",
+    "description": "A TWAP oracle hook that combines price observation with a geometric backrun mechanism, automatically reversing a proportional share of swaps that cause significant price impact and crediting the excess tokens back to the original user via ERC6909 minting.",
+    "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false
+  }
+}
