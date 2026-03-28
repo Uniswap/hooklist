@@ -979,6 +979,41 @@
   },
   {
     "hook": {
+      "address": "0x59f39091Fd6f47e9D0bCB466F74e305f1709BAC4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BackGeoOracle",
+      "description": "A TWAP oracle hook that combines price observation with a geometric backrun mechanism, automatically reversing a proportional share of swaps that cause significant price impact and crediting the excess tokens back to the original user via ERC6909 minting.",
+      "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5b409184204b86f708d3aebb3cad3f02835f68cc",
       "chain": "base",
       "chainId": 8453,
@@ -2974,6 +3009,41 @@
   },
   {
     "hook": {
+      "address": "0x77B2051204306786934BE8bEC29a48584E133aC4",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "BackGeoOracle",
+      "description": "A TWAP oracle hook that maintains price observations for Uniswap v4 pools and automatically executes backrun swaps to mitigate price impact, returning profits in ERC6909 tokens to the original swapper.",
+      "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8a36d8408f5285c3f81509947bc187b3c0efd0c4",
       "chain": "bnb",
       "chainId": 56,
@@ -3390,6 +3460,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x41A9Bf2969Af822942A553baBd6d8DDA0dfF80Cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ETIMTaxHook",
+      "description": "A tax hook for the ETIM token that deducts configurable buy and sell taxes from each swap via BeforeSwapDelta, distributing sell-side taxes to foundation, S6, official, and burn allocations. Buys are gated behind a growth-pool depletion check and only exact-input swaps are supported.",
+      "deployer": "0x6f5C1F534f569A1Cd00287c65fC4a0B86BF3c9E3",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -3989,6 +4094,41 @@
   },
   {
     "hook": {
+      "address": "0xB13250f0Dc8ec6dE297E81CDA8142DB51860BaC4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BackGeoOracle",
+      "description": "A TWAP oracle hook with built-in backrun protection that records on-chain price observations and automatically executes reverse swaps after large price-impact trades to restore the pool price toward the geometric mean, crediting the original swapper with ERC6909 tokens.",
+      "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xbadf77d50478b4432ef1f243b9c0bc7869486888",
       "chain": "ethereum",
       "chainId": 1,
@@ -4514,6 +4654,41 @@
   },
   {
     "hook": {
+      "address": "0x79234983dED8EAA571873fffe94e437e11C7FaC4",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "BackGeoOracle",
+      "description": "A TWAP oracle hook that automatically executes backrun swaps to restore price toward its geometric mean after significant price moves, crediting backrun proceeds to the original swapper via ERC6909 tokens. Only supports exactIn swaps on zero-fee, full-range oracle pools.",
+      "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb35297543d357ef62df204d8c3bd0e96038cf440",
       "chain": "optimism",
       "chainId": 10,
@@ -4576,6 +4751,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1D8691A1A7d53B60DeDd99D8079E026cB0E5bac4",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "BackGeoOracle",
+      "description": "A Uniswap v4 hook that maintains an on-chain TWAP oracle and executes automatic backrun logic to mitigate price impact \u2014 when a swap moves the price beyond a threshold, the hook performs a partial or full inverse swap in the same transaction and credits the original trader with the proceeds as ERC6909 tokens.",
+      "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -4681,6 +4891,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x54bd666eA7FD8d5404c0593Eab3Dcf9b6E2A3aC4",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "BackGeoOracle",
+      "description": "A TWAP oracle hook that records tick observations on every pool action and executes automatic backrun swaps after price-impactful trades, returning value to the original swapper as ERC6909 tokens.",
+      "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
