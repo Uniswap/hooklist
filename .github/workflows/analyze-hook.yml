@@ -32,7 +32,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           show_full_output: true
-          claude_args: '--allowedTools "Bash(curl *),Bash(git *),Bash(gh *),Bash(python3 *),Read,Glob,Grep,Write"'
+          claude_args: '--allowedTools "Bash(curl *etherscan*),Bash(curl *blockscout*),Bash(curl *routescan*),Bash(git *),Bash(gh *),Bash(python3 *),Read,Glob,Grep,Write" --disallowedTools "Bash(env *),Bash(printenv *),Bash(set *),Bash(export *),Bash(cat /proc/*),Bash(cat /etc/*)"'
           prompt: |
             Analyze the hook submission in issue #${{ github.event.issue.number }}.
 

@@ -42,7 +42,8 @@ jobs:
           show_full_output: true
           claude_args: >-
             --json-schema '{"type":"object","properties":{"review_body":{"type":"string"},"outcome":{"type":"string","enum":["APPROVE","REQUEST_CHANGES"]}},"required":["review_body","outcome"]}'
-            --allowedTools "Bash(curl *),Bash(python3 *),Read,Glob,Grep"
+            --allowedTools "Bash(curl *etherscan*),Bash(curl *blockscout*),Bash(curl *routescan*),Bash(python3 *),Read,Glob,Grep"
+            --disallowedTools "Bash(env *),Bash(printenv *),Bash(set *),Bash(export *),Bash(cat /proc/*),Bash(cat /etc/*)"
           prompt: |
             Review this PR by following the instructions in .claude/prompts/review-hook.md.
             Verify each hook file's flags, properties, and metadata against the on-chain source code.
