@@ -1,11 +1,9 @@
 import json
 import os
-import tempfile
-import pytest
-
-sys_path_hack = os.path.dirname(os.path.abspath(__file__))
 import sys
-sys.path.insert(0, sys_path_hack)
+import tempfile
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from prefilter import parse_issue_body, validate_submission, CHAINS
 
