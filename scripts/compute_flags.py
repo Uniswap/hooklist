@@ -9,7 +9,7 @@ import json
 import re
 import sys
 
-from verify_flags import FLAG_BITS, decode_flags
+from verify_flags import decode_flags
 
 
 def main():
