@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe620421BDE7D6A367d2c3b7E8dfA09B90AEa90CC",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "Aegis DFM",
+    "description": "A dynamic fee market maker hook that uses a truncated geometric oracle to compute base and surge fees, collects a protocol fee share on each swap, and reinvests collected fees into a full-range liquidity position.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
