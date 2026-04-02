@@ -31,7 +31,7 @@ def sanitize_name(name: str) -> str:
     return name[:100]
 
 
-def assemble(submission: dict, source_meta: dict, flags: dict, claude_output: dict, issue_number: int) -> dict:
+def assemble(submission: dict, source_meta: dict, flags: dict, claude_output: dict) -> dict:
     """Assemble the final hook JSON from all inputs."""
     with open(os.path.join(REPO_ROOT, "chains.json")) as f:
         chains = json.load(f)
@@ -156,7 +156,7 @@ def main():
     with open(claude_path) as f:
         claude_output = json.load(f)
 
-    hook = assemble(submission, source_meta, flags, claude_output, issue_number)
+    hook = assemble(submission, source_meta, flags, claude_output)
 
     hook_json = json.dumps(hook, indent=2) + "\n"
     print(hook_json)
