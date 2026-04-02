@@ -71,6 +71,41 @@
   },
   {
     "hook": {
+      "address": "0x5e645C3D580976Ca9e3fe77525D954E73a0Ce0C0",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "Alphix",
+      "description": "JIT (just-in-time) liquidity hook that atomically adds concentrated liquidity around each swap in beforeSwap and removes it in afterSwap to improve price execution. Uses a dynamic fee algorithm that adjusts LP fees based on the pool's token ratio, and re-hypothecates idle liquidity to external yield sources.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9B21E1cdD975E58F714Fd1Bd5a803198d5520088",
       "chain": "arbitrum",
       "chainId": 42161,
