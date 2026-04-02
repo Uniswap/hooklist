@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xCD256a2f4574CB6acA4837313ad225d2fe1De5Cf",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Angstrom L2",
+    "description": "A Uniswap v4 hook that extracts a MEV tax from top-of-block (ToB) swaps paid in ETH and distributes it to LPs as rewards, while also applying a JIT liquidity tax on adds and removes to disincentivize just-in-time liquidity provision.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
