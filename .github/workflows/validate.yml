@@ -13,22 +13,51 @@ jobs:
     permissions:
       contents: read
     steps:
+      # Two checkouts: base branch (trusted scripts) and PR head (hook files to validate)
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
-          fetch-depth: 0
+          ref: ${{ github.base_ref }}
+          path: trusted
           persist-credentials: false
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+          path: pr
 
       - name: Check for hook changes
         id: changed
         env:
-          BASE_REF: ${{ github.base_ref }}
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          HOOKS_CHANGED=$(git diff --name-only "origin/${BASE_REF}...HEAD" -- 'hooks/**' | head -1)
-          if [ -n "$HOOKS_CHANGED" ]; then
+          CHANGED=$(gh pr files "$PR_NUMBER" --json path -q '.[].path' --repo "${{ github.repository }}")
+          HOOK_FILES=$(echo "$CHANGED" | grep '^hooks/' || true)
+          if [ -n "$HOOK_FILES" ]; then
             echo "hooks=true" >> "$GITHUB_OUTPUT"
+            echo "$HOOK_FILES" | sed 's|^|pr/|' > changed_hooks.txt
           else
             echo "hooks=false" >> "$GITHUB_OUTPUT"
             echo "No hook files changed, skipping validation."
+          fi
+
+      # Exact-diff policy: only hooks/** allowed, exactly one file
+      - name: Enforce exact-diff policy
+        if: steps.changed.outputs.hooks == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          CHANGED=$(gh pr files "$PR_NUMBER" --json path -q '.[].path' --repo "${{ github.repository }}")
+          INVALID=$(echo "$CHANGED" | grep -v '^hooks/' || true)
+          if [ -n "$INVALID" ]; then
+            echo "::error::PR modifies files outside hooks/: $INVALID"
+            exit 1
+          fi
+          COUNT=$(echo "$CHANGED" | wc -l)
+          if [ "$COUNT" -ne 1 ]; then
+            echo "::error::PR must change exactly one hook file, found $COUNT changed files"
+            exit 1
           fi
 
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
@@ -38,12 +67,12 @@ jobs:
 
       - name: Install dependencies
         if: steps.changed.outputs.hooks == 'true'
-        run: pip install -r requirements.txt
+        run: pip install -r trusted/requirements.txt
 
       - name: Validate hook files against schema
         if: steps.changed.outputs.hooks == 'true'
-        run: python scripts/validate.py
+        run: python trusted/scripts/validate.py $(cat changed_hooks.txt)
 
       - name: Verify flags match address bitmask
         if: steps.changed.outputs.hooks == 'true'
-        run: python scripts/verify_flags.py
+        run: python trusted/scripts/verify_flags.py $(cat changed_hooks.txt)
