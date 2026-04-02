@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7deBE6943ACEFE85c4EE81Aadd736466e07528cC",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "tokens.fun HookDynamicFeeV2",
+    "description": "Token launchpad hook with volatility-based dynamic fees, MEV protection (sniper auctions, block/time delays), automated LP locking with up to 7 positions, fee conversion, and pool extensions. Used by tokens.fun on Base. All pools pair with WETH.",
+    "deployer": "0x3B5AEdd9Ab921E592d2Fccaa6e33CF893e7EEb70",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
