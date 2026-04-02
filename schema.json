@@ -11,13 +11,13 @@
       "additionalProperties": false,
       "properties": {
         "address": { "type": "string", "pattern": "^0x[a-fA-F0-9]{40}$" },
-        "chain": { "type": "string" },
+        "chain": { "type": "string", "enum": ["arbitrum", "avalanche", "base", "blast", "bnb", "celo", "ethereum", "ink", "monad", "optimism", "polygon", "soneium", "unichain", "worldchain", "zora"] },
         "chainId": { "type": "integer" },
-        "name": { "type": "string" },
-        "description": { "type": "string", "default": "" },
+        "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+        "description": { "type": "string", "default": "", "maxLength": 500 },
         "deployer": { "type": "string", "pattern": "^(0x[a-fA-F0-9]{40})?$", "default": "" },
         "verifiedSource": { "type": "boolean" },
-        "auditUrl": { "type": "string", "default": "" }
+        "auditUrl": { "type": "string", "default": "", "pattern": "^(https://.*)?$" }
       }
     },
     "flags": {
