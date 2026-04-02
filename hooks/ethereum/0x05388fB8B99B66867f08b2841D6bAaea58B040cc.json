@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x05388fB8B99B66867f08b2841D6bAaea58B040cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ETIMTaxHook",
+    "description": "A buy/sell tax hook for ETIM/ETH pools that deducts configurable tax rates from swap input amounts using return deltas, holding collected ETH and ETIM fees in the contract for owner withdrawal or burn.",
+    "deployer": "0x6f5C1F534f569A1Cd00287c65fC4a0B86BF3c9E3",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
