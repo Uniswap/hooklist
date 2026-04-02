@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7Fa49D29481b6D168505Ccde26635e204c09e5CF",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AngstromL2",
+    "description": "Implements the Angstrom MEV-tax protocol, applying a priority-fee-based MEV tax on swaps and JIT liquidity additions/removals, with proceeds distributed to LPs and the protocol. Pool creation is restricted to the owner or factory contract, and the hook supports an emergency withdraw-only mode controlled by the factory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
