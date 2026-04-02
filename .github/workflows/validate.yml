@@ -31,7 +31,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          CHANGED=$(gh pr files "$PR_NUMBER" --json path -q '.[].path' --repo "${{ github.repository }}")
+          CHANGED=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename')
           HOOK_FILES=$(echo "$CHANGED" | grep '^hooks/' || true)
           if [ -n "$HOOK_FILES" ]; then
             echo "hooks=true" >> "$GITHUB_OUTPUT"
@@ -48,7 +48,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          CHANGED=$(gh pr files "$PR_NUMBER" --json path -q '.[].path' --repo "${{ github.repository }}")
+          CHANGED=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename')
           INVALID=$(echo "$CHANGED" | grep -v '^hooks/' || true)
           if [ -n "$INVALID" ]; then
             echo "::error::PR modifies files outside hooks/: $INVALID"

@@ -56,8 +56,10 @@ jobs:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          CHAIN: ${{ steps.prefilter.outputs.CHAIN }}
+          ADDRESS: ${{ steps.prefilter.outputs.ADDRESS }}
         run: |
-          if ! python scripts/fetch_source.py "${{ steps.prefilter.outputs.CHAIN }}" "${{ steps.prefilter.outputs.ADDRESS }}" \
+          if ! python scripts/fetch_source.py "$CHAIN" "$ADDRESS" \
             --api-key "$ETHERSCAN_API_KEY" \
             --output source_meta.json \
             --outdir .sources; then
@@ -68,7 +70,9 @@ jobs:
 
       # Step 3: Compute flags deterministically from address
       - name: Compute flags
-        run: python scripts/compute_flags.py "${{ steps.prefilter.outputs.ADDRESS }}" --output computed_flags.json
+        env:
+          ADDRESS: ${{ steps.prefilter.outputs.ADDRESS }}
+        run: python scripts/compute_flags.py "$ADDRESS" --output computed_flags.json
 
       # Step 4: Claude analysis — read-only, structured output only
       # ETHERSCAN_API_KEY is NOT passed to this step
@@ -98,6 +102,8 @@ jobs:
         env:
           STRUCTURED_OUTPUT: ${{ steps.claude.outputs.structured_output }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
+          CHAIN: ${{ steps.prefilter.outputs.CHAIN }}
+          ADDRESS: ${{ steps.prefilter.outputs.ADDRESS }}
         run: |
           echo "$STRUCTURED_OUTPUT" > claude_output.json
           python scripts/assemble_hook.py \
@@ -106,7 +112,7 @@ jobs:
             --flags computed_flags.json \
             --claude claude_output.json \
             --issue-number "$ISSUE_NUMBER" \
-            --output "hooks/${{ steps.prefilter.outputs.CHAIN }}/${{ steps.prefilter.outputs.ADDRESS }}.json" \
+            --output "hooks/${CHAIN}/${ADDRESS}.json" \
             --pr-body pr_body.md 2> assemble_stderr.txt
           SAFE_NAME=$(grep '^SAFE_NAME=' assemble_stderr.txt | cut -d= -f2-)
           echo "SAFE_NAME=$SAFE_NAME" >> "$GITHUB_OUTPUT"

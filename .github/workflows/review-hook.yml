@@ -32,7 +32,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          HOOK_FILES=$(gh pr files "$PR_NUMBER" --json path -q '.[].path' --repo "${{ github.repository }}" | grep '^hooks/' || true)
+          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename' | grep '^hooks/' || true)
           if [ -n "$HOOK_FILES" ]; then
             echo "hooks=true" >> "$GITHUB_OUTPUT"
           else
@@ -58,7 +58,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          HOOK_FILES=$(gh pr files "$PR_NUMBER" --json path -q '.[].path' --repo "${{ github.repository }}" | grep '^hooks/')
+          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename' | grep '^hooks/')
           for HOOK_FILE in $HOOK_FILES; do
             CHAIN=$(echo "$HOOK_FILE" | cut -d/ -f2)
             ADDRESS=$(basename "$HOOK_FILE" .json)
