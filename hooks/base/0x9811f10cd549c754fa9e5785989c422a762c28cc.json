@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9811f10cd549c754fa9e5785989c422a762c28cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LiquidHookStaticFeeV2",
+    "description": "A Liquid Protocol hook that enforces a static LP fee per pool (configured at initialization with separate rates for buying and selling the liquid token) and collects a 20% protocol fee on swaps. Includes optional MEV protection that can temporarily raise fees for up to 2 minutes after pool creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
