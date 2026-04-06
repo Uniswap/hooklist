@@ -1924,6 +1924,41 @@
   },
   {
     "hook": {
+      "address": "0x84129dc46b712614471131e8b9dadd64c7d21bc0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Hook_V2",
+      "description": "EMA-based dynamic fee hook for Uniswap V4. Calculates swap fees using Exponential Moving Average of price, with 30-step fee schedule (0.01%-3.00%) and 300-block anti-JIT protection via tx.origin. No owner, no admin functions, fully immutable.",
+      "deployer": "0xbE048D30fa1b5144694D33f8bd482D469028Da99",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x854f820475b229b7805a386f758cfb285023d040",
       "chain": "base",
       "chainId": 8453,
