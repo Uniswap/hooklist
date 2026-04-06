@@ -119,16 +119,25 @@ jobs:
           echo "SAFE_NAME=$SAFE_NAME" >> "$GITHUB_OUTPUT"
 
       # Step 6: Create PR with deterministic git commands
+      # Use GitHub App token so the push/PR triggers validate and review workflows
+      # (GITHUB_TOKEN events don't trigger other workflows — anti-recursion protection)
+      - name: Create GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547
+        with:
+          app-id: ${{ vars.REGISTRY_APP_ID }}
+          private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
+
       - name: Create PR
         env:
-          GH_TOKEN: ${{ github.token }}
+          GH_TOKEN: ${{ steps.app-token.outputs.token }}
           CHAIN: ${{ steps.prefilter.outputs.CHAIN }}
           ADDRESS: ${{ steps.prefilter.outputs.ADDRESS }}
           SAFE_NAME: ${{ steps.assemble.outputs.SAFE_NAME }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git config user.name "hook-registry-bot[bot]"
+          git config user.email "hook-registry-bot[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           BRANCH="hooks/${CHAIN}/${ADDRESS}"
           git checkout -b "$BRANCH"
