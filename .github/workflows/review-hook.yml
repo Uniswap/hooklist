@@ -75,7 +75,7 @@ jobs:
         id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
-          allowed_bots: 'claude'
+          allowed_bots: 'claude,hooklist-generator'
           show_full_output: true
           claude_args: >-
             --json-schema '{"type":"object","properties":{"review_body":{"type":"string"},"outcome":{"type":"string","enum":["APPROVE","REQUEST_CHANGES"]}},"required":["review_body","outcome"]}'
