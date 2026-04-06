@@ -36,6 +36,11 @@ jobs:
           HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename' | grep '^hooks/' || true)
           if [ -n "$HOOK_FILES" ]; then
             echo "hooks=true" >> "$GITHUB_OUTPUT"
+            # Save changed file list for Claude's prompt
+            echo "$HOOK_FILES" > changed_hooks.txt
+            echo "HOOK_FILES<<EOF" >> "$GITHUB_OUTPUT"
+            echo "$HOOK_FILES" >> "$GITHUB_OUTPUT"
+            echo "EOF" >> "$GITHUB_OUTPUT"
           else
             echo "hooks=false" >> "$GITHUB_OUTPUT"
             echo "No hook files changed, skipping review."
@@ -82,8 +87,10 @@ jobs:
             --allowedTools "Read,Grep"
           prompt: |
             Review this PR by following the instructions in trusted/.claude/prompts/review-hook.md.
-            Hook files are in the current directory under hooks/.
             Read scripts and reference files from the trusted/ directory.
+
+            This PR changes ONLY the following hook file(s) — review ONLY these:
+            ${{ steps.changed.outputs.HOOK_FILES }}
 
             The on-chain source code has been fetched to .sources/ and metadata to source_meta.json.
             Use Read and Grep to analyze .sources/ — do NOT use Bash or attempt to fetch source yourself.
