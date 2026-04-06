@@ -15,17 +15,17 @@ jobs:
       pull-requests: write
       id-token: write
     steps:
-      # Two checkouts: base branch (trusted prompts/scripts) and PR head (hook files)
+      # Default checkout = PR head (claude-code-action needs CWD to be a git repo)
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      # Separate checkout of base branch for trusted scripts/prompts
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
           ref: ${{ github.base_ref }}
           path: trusted
           persist-credentials: false
-
-      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
-        with:
-          persist-credentials: false
-          path: pr
 
       - name: Check for hook changes
         id: changed
@@ -82,7 +82,7 @@ jobs:
             --allowedTools "Read,Grep"
           prompt: |
             Review this PR by following the instructions in trusted/.claude/prompts/review-hook.md.
-            Read hook files from the pr/ directory.
+            Hook files are in the current directory under hooks/.
             Read scripts and reference files from the trusted/ directory.
 
             The on-chain source code has been fetched to .sources/ and metadata to source_meta.json.
