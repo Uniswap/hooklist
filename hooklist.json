@@ -1329,6 +1329,41 @@
   },
   {
     "hook": {
+      "address": "0x6145a9cd8d6b597af774ea95b73684416848e088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "MoonpotHook",
+      "description": "A floor-price defense hook for a TMP/USDC pool. It applies a dynamic sell tax that ramps from a maximum rate near the floor tick down to a base rate as price rises above it, and intercepts and burns excess TMP tokens that would push the price below the protocol floor. Buys are charged a flat base defense tax.",
+      "deployer": "0xda669Fb34A24E7E64Ee2d3BAe98E4734945c4cDB",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x631352Aaa9d6554848aF674106bCD8Bb9E59a5CF",
       "chain": "base",
       "chainId": 8453,
