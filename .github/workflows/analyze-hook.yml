@@ -140,6 +140,8 @@ jobs:
           git config user.email "hook-registry-bot[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${GH_TOKEN}@github.com/${{ github.repository }}.git"
           BRANCH="hooks/${CHAIN}/${ADDRESS}"
+          # Delete stale remote branch from any previous failed run
+          git push origin --delete "$BRANCH" 2>/dev/null || true
           git checkout -b "$BRANCH"
           git add "hooks/${CHAIN}/${ADDRESS}.json"
           git commit -m "Add ${SAFE_NAME} hook on ${CHAIN}"
