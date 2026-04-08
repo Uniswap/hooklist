@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x627fa6f76fa96b10bae1b6fba280a3c9264500cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LivoSwapHook",
+    "description": "# LivoSwapHook\n\nA singleton Uniswap V4 hook that intercepts swaps on graduated Livo token pools to collect two types of fees:\n\n1. **LP fee (1%)** \u2014 hardcoded as `LP_FEE_BPS = 100`. Charged on every swap, split 50/50 between token creator and protocol treasury.\n2. **Sell/buy tax** \u2014 read dynamically per-token from `ILivoToken(tokenAddress).getTaxConfig()`, which returns a `TaxConfig` struct with `buyTaxBps`, `sellTaxBps`, `taxDurationSeconds`, and `graduationTimestamp`. Tax is time-limited (on...",
+    "deployer": "0xBa489180Ea6EEB25cA65f123a46F3115F388f181",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/LivoLaunchpad/livo-contracts/blob/main/audits/2026.01.29%20-%20Final%20-%20Livo%20Labs%20Collaborative%20Audit%20Report%201769696282.pdf"
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
