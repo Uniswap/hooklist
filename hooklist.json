@@ -4129,6 +4129,41 @@
   },
   {
     "hook": {
+      "address": "0x4509b7eb3f9641226804fea4976963435d1c6080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "StableStableHook",
+      "description": "Dynamic fee hook for stable/stable pools that adjusts LP fees based on price deviation from a configurable reference price. Fees decay exponentially when the pool price is outside the optimal range, incentivizing arbitrage back to peg while charging reduced fees for stabilizing swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4b2eb653d13e6c9ac5a0a01fde22f2c8d6592888",
       "chain": "ethereum",
       "chainId": 1,
