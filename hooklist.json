@@ -71,6 +71,41 @@
   },
   {
     "hook": {
+      "address": "0x3043e182047f8696dfe483535785ed1c3681bac4",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "BackGeoOracle",
+      "description": "A TWAP oracle hook that records price observations and mitigates price impact by executing automatic backruns on large swaps, crediting the original sender with ERC6909 tokens. Only exact-input swaps are supported; calling routers must implement IMsgSender.",
+      "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5e645C3D580976Ca9e3fe77525D954E73a0Ce0C0",
       "chain": "arbitrum",
       "chainId": 42161,
