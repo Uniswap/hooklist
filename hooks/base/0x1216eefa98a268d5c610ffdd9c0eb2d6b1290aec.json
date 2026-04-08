@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1216eefa98a268d5c610ffdd9c0eb2d6b1290aec",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Apex Yield",
+    "description": "Oracle-priced market maker hook that intercepts swaps at Pyth oracle price + dynamic fee. Fees accumulate in-pool and are distributed as dual-token rewards to LP depositors via a Synthetix-style accumulator. ~285K gas per swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
