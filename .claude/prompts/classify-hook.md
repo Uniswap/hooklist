@@ -74,7 +74,7 @@ Use the submitter's name from `submission.json` if provided. Otherwise, use `con
 
 ### 7. Generate `description`
 
-Use the submitter's description from `submission.json` if provided. Otherwise, write a 1-2 sentence summary of what the hook does based on the source code.
+Use the submitter's description from `submission.json` if provided. Otherwise, write a 1-2 sentence summary (max 500 characters) of what the hook does based on the source code. Be concise — this is a registry entry, not documentation.
 
 ## Important
 

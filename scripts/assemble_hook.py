@@ -49,10 +49,12 @@ def assemble(submission: dict, source_meta: dict, flags: dict, claude_output: di
         name = "UnnamedHook"
     name = sanitize_name(name)
 
-    # Description priority: submitter > claude
+    # Description priority: submitter > claude, truncate to 500 chars
     description = submission.get("description", "").strip()
     if not description:
         description = claude_output.get("description", "").strip()
+    if len(description) > 500:
+        description = description[:497] + "..."
 
     # Deployer: must be valid address or empty
     deployer = submission.get("deployer", "").strip()

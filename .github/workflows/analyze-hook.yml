@@ -84,7 +84,7 @@ jobs:
           github_token: ${{ github.token }}
           show_full_output: true
           claude_args: >-
-            --json-schema '{"type":"object","properties":{"name":{"type":"string"},"description":{"type":"string"},"dynamicFee":{"type":"boolean"},"upgradeable":{"type":"boolean"},"requiresCustomSwapData":{"type":"boolean"},"vanillaSwap":{"type":"boolean"},"swapAccess":{"type":"string","enum":["none","temporal","allowlist","governance","other"]}},"required":["name","description","dynamicFee","upgradeable","requiresCustomSwapData","vanillaSwap","swapAccess"]}'
+            --json-schema '{"type":"object","properties":{"name":{"type":"string","maxLength":100},"description":{"type":"string","maxLength":500},"dynamicFee":{"type":"boolean"},"upgradeable":{"type":"boolean"},"requiresCustomSwapData":{"type":"boolean"},"vanillaSwap":{"type":"boolean"},"swapAccess":{"type":"string","enum":["none","temporal","allowlist","governance","other"]}},"required":["name","description","dynamicFee","upgradeable","requiresCustomSwapData","vanillaSwap","swapAccess"]}'
             --allowedTools "Read,Grep"
           prompt: |
             Classify the hook at ${{ steps.prefilter.outputs.ADDRESS }} on ${{ steps.prefilter.outputs.CHAIN }}.
