@@ -82,6 +82,7 @@ jobs:
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ github.token }}
+          allowed_non_write_users: '*'
           show_full_output: true
           claude_args: >-
             --json-schema '{"type":"object","properties":{"name":{"type":"string","maxLength":100},"description":{"type":"string","maxLength":500},"dynamicFee":{"type":"boolean"},"upgradeable":{"type":"boolean"},"requiresCustomSwapData":{"type":"boolean"},"vanillaSwap":{"type":"boolean"},"swapAccess":{"type":"string","enum":["none","temporal","allowlist","governance","other"]}},"required":["name","description","dynamicFee","upgradeable","requiresCustomSwapData","vanillaSwap","swapAccess"]}'
