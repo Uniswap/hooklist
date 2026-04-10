@@ -13,7 +13,6 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
-      id-token: write
     steps:
       # Default checkout = PR head (claude-code-action needs CWD to be a git repo)
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
@@ -80,8 +79,8 @@ jobs:
         id: claude
         with:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ github.token }}
           allowed_bots: 'claude,hooklist-generator'
-          show_full_output: true
           claude_args: >-
             --json-schema '{"type":"object","properties":{"review_body":{"type":"string"},"outcome":{"type":"string","enum":["APPROVE","REQUEST_CHANGES"]}},"required":["review_body","outcome"]}'
             --allowedTools "Read,Grep"
@@ -89,8 +88,8 @@ jobs:
             Review this PR by following the instructions in trusted/.claude/prompts/review-hook.md.
             Read scripts and reference files from the trusted/ directory.
 
-            This PR changes ONLY the following hook file(s) — review ONLY these:
-            ${{ steps.changed.outputs.HOOK_FILES }}
+            This PR changes ONLY the following hook file(s) — review ONLY these.
+            Read the file changed_hooks.txt for the list of changed hook files.
 
             The on-chain source code has been fetched to .sources/ and metadata to source_meta.json.
             Use Read and Grep to analyze .sources/ — do NOT use Bash or attempt to fetch source yourself.

@@ -16,7 +16,6 @@ jobs:
       contents: write
       issues: write
       pull-requests: write
-      id-token: write
     steps:
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -83,7 +82,6 @@ jobs:
           anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
           github_token: ${{ github.token }}
           allowed_non_write_users: '*'
-          show_full_output: true
           claude_args: >-
             --json-schema '{"type":"object","properties":{"name":{"type":"string","maxLength":100},"description":{"type":"string","maxLength":500},"dynamicFee":{"type":"boolean"},"upgradeable":{"type":"boolean"},"requiresCustomSwapData":{"type":"boolean"},"vanillaSwap":{"type":"boolean"},"swapAccess":{"type":"string","enum":["none","temporal","allowlist","governance","other"]}},"required":["name","description","dynamicFee","upgradeable","requiresCustomSwapData","vanillaSwap","swapAccess"]}'
             --allowedTools "Read,Grep"
@@ -118,6 +116,10 @@ jobs:
             --output "hooks/${CHAIN}/${ADDRESS}.json" \
             --pr-body pr_body.md 2> assemble_stderr.txt
           SAFE_NAME=$(grep '^SAFE_NAME=' assemble_stderr.txt | cut -d= -f2-)
+          if [ -z "$SAFE_NAME" ]; then
+            echo "::error::SAFE_NAME not found in assemble output"
+            exit 1
+          fi
           echo "SAFE_NAME=$SAFE_NAME" >> "$GITHUB_OUTPUT"
 
       # Step 6: Create PR with deterministic git commands
