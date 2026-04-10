@@ -106,6 +106,41 @@
   },
   {
     "hook": {
+      "address": "0x3e61d0519d598bf2dfaef5b8fa0256bf7e1d60c0",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "SafeSwap",
+      "description": "Anti-rug and anti-whale protection hook. Sell rate limiting, cooldowns, progressive fees, launch protection mode. Immutable config per pool.",
+      "deployer": "0x0F09c114BAD2eaA48E902329732DB63EA4210cDE",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5e645C3D580976Ca9e3fe77525D954E73a0Ce0C0",
       "chain": "arbitrum",
       "chainId": 42161,
