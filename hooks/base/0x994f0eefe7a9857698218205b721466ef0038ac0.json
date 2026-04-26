@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x994f0eefe7a9857698218205b721466ef0038ac0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SwayHookJIT",
+    "description": "JIT-LP hook for token launches with engine-based dynamic pricing (PowerCurve / Momentum / Hybrid). Hook holds 100% of token supply at launch and provides liquidity just-in-time during swaps via beforeSwap/afterSwap callbacks. Designed to look like a standard V4 pool to off-chain quoters.",
+    "deployer": "0x2bc2063bb53AF0Da20608364d47DE2BAC546EA0E",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
