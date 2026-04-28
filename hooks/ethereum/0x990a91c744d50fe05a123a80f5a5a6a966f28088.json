@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x990a91c744d50fe05a123a80f5a5a6a966f28088",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DeployerTaxHook",
+    "description": "Charges a configurable buy/sell tax (up to 15% hardcap) on exact-input swaps for a single token pool by returning a BeforeSwapDelta, accumulating fees as ERC6909 claim tokens on the PoolManager and draining them to a developer wallet via drainFees().",
+    "deployer": "0x2D3daDF3817bc4e76494Ec52Da48D8978142E6bc",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
