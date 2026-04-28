@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x486579de6391053df88a073cebd673dd545200cc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "The Pool",
+    "description": "A volatility-adjusted fee hook that takes a percentage of each swap's output via afterSwapReturnsDelta and routes it to a fee distributor. Also supports reserve-sale fills in beforeSwap, where a registered vault can offer single-sided inventory to swappers at a chosen price in either price-improvement or vault-spread mode.",
+    "deployer": "0xe5f5Ef79b3DFF47EcDf7842645222e43AD0ed080",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
