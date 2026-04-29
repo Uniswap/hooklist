@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x98fa6468c65ec0100cb92c62dc6109236c130440",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UCatHook",
+    "description": "Custom v4 hook for UniCat \u2014 the first production v4 hook combined with an ERC-721 NFT collection (888 hard cap) and staking miner on Ethereum mainnet.\n\nHook capabilities:\n- afterAddLiquidity: snapshots LP position to mint a tracked LP NFT\n- afterSwap: re-randomizes a global seed used as entropy for on-chain SVG NFT generation\n\nIntegrates with:\n- UCat ERC-20 (0x36608E64D5391bF40486EC81886308a6b8bC06a5)\n- UCatNFT ERC-721 (0xf7498e0dFa1978F1568825a69aB2F23BAc51A408)\n- UCatStake staking miner (0x...",
+    "deployer": "0x0d6ad47259Ab540bEBC78199357FF2a0488F68aa",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/Thanattt/unicat/blob/main/AUDIT.md"
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
