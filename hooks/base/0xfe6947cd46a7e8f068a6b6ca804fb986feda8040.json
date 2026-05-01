@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfe6947cd46a7e8f068a6b6ca804fb986feda8040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BpegHook",
+    "description": "An afterSwap hook that syncs NFT metadata with token balance.\nWhen a user buys BPEG tokens, the hook mints NFT metadata\nproportional to their integer balance. When they sell, it burns\nNFT metadata accordingly. Uses tx.origin to identify the end user.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
