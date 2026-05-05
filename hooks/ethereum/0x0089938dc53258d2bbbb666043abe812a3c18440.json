@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0089938dc53258d2bbbb666043abe812a3c18440",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PokemonPegHook",
+    "description": "Fragment-minting hook for testPEG token. Mints visual fragment NFTs to swap recipients on every buy via tx.origin/hookData recipient resolution. Fork of HenryPeg/BtcPeg v9.3 architecture. Pool: ETH/testPEG fee=10000.",
+    "deployer": "0xD626EB019226A7B1b7a7F112a378B790A47C4568",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
