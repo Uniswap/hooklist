@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x34052720fd88197718251765fe03611d740c00cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PAMHook",
+    "description": "ETH-side fee collector for the Perpetual Asteroid Machine token; converts fees to ASTEROID and distributes to PAM holders",
+    "deployer": "0x66Ea2577c8AD16251B762efcfB461eB569332254",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
