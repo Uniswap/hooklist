@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "PokemonPegHook",
-    "description": "Pok\u00e9mon Peg ($pPEG) v4 hoo  k. Mints fragment metadata (one Pok\u00e9mon per fragment) on every buy and burns LIFO on sell, resolving the tr  ader address from hookData or tx.origin so fragments reach the EOA \u2014 not the router. Calls start() on the  token when first liquidity is added, and randomises the seed on each afterSwap. Direct successor to BtcPeg / Upeg  with the same recipient-fix pattern.",
+    "description": "Pok\u00e9mon Peg ($pPEG) v4 hook. Mints NFT fragment metadata (one Pok\u00e9mon per fragment) on every buy, proportional to pPEG received. Resolves the recipient address from hookData (20- or 32-byte) or falls back to tx.origin for contract callers. Calls start() on the token on first liquidity addition and randomises the RNG seed on each afterSwap.",
     "deployer": "0xE20B8921058B116758cfdE5552967C67e70F7b47",
     "verifiedSource": true,
     "auditUrl": ""
