@@ -4,7 +4,7 @@
     "chain": "arbitrum",
     "chainId": 42161,
     "name": "The Pool",
-    "description": "A volatility-adjusted fee hook that takes a percentage of each swap's output via afterSwapReturnsDelta and routes it to a fee distributor. Also supports reserve-sale fills in beforeSwap, where a registered vault can offer single-sided inventory to swappers at a chosen price in either price-improvement or vault-spread mode.",
+    "description": "The Pool protocol's volatility-adjusted fee hook (on-chain contract: DynamicFeeHookV2). Takes a percentage of each swap's output via afterSwapReturnsDelta (25 bps base, scaling up to 37.5 bps under realized volatility) and routes it to a fee distributor. Also supports reserve-sale fills in beforeSwap, where a registered vault can offer single-sided inventory to swappers at a chosen price in either price-improvement or vault-spread mode. Second hook deployment from The Pool project (github.com/emilianosolazzi/The-Pool); see also the sibling hook at 0x62076c1cb0ea57acd2353ff45226a1fb1e6100c4.",
     "deployer": "0xe5f5Ef79b3DFF47EcDf7842645222e43AD0ed080",
     "verifiedSource": true,
     "auditUrl": ""
