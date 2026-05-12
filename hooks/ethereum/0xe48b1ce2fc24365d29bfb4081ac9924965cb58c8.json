@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe48b1ce2fc24365d29bfb4081ac9924965cb58c8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Hook",
+    "description": "Prices swaps on an exponential bonding curve (K \u00d7 (1 -\n   e^(-eth/S))) instead of AMM, charging a dual-phase tax \u2014 0.2% with 1 ETH buy \n  cap in Phase 1, 0.5% uncapped in Phase 2. Locked taxes auto-release as rewards\n   to staked NFT holders when circulating supply drops below target. Uses \n  beforeSwapReturnDelta for custom delta accounting and blocks all LP additions \n  via beforeAddLiquidity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
