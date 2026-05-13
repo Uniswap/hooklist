@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8f24193cc75fc64a30a038442bcd622ff4070088",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LodeHook",
+    "description": "A Uniswap v4 hook that captures top-of-block LVR and routes it through a per-pool splitter\n\nThe first swap of each block on an opted-in pool pays an additional premium scaled by `premiumBps`. Subsequent swaps in the same block pay only standard pool fees. A `minAuctionInputSize` floor defeats dust-disarm attacks, sub-economic swaps skip the auction slot without consuming it.\n\nSafety.\n- Pause guardian (separate multisig, kills capture globally in one tx)\n- Per-pool deactivation\n- 24h timelock ...",
+    "deployer": "0x9849ddA51E40e56998FE269568A7619eA3521cbF",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
