@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x529785A7262E4fAe020902a1C0cf16b16440A8cC",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LayerMeme Dynamic Fee Hook v2 (Base)",
+    "description": "A Uniswap v4 hook used by the LAYERMEME token launch platform that dynamically adjusts LP fees for launched token pools, collects a protocol fee on launched token swaps, and supports optional MEV protection modules and pool extensions without requiring custom swap data.",
+    "deployer": "0x5f05Daf1312d62Da92497edC6F3e39E265999103",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
