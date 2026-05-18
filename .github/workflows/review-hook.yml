@@ -37,9 +37,17 @@ jobs:
             echo "hooks=true" >> "$GITHUB_OUTPUT"
             # Save changed file list for Claude's prompt
             echo "$HOOK_FILES" > changed_hooks.txt
-            echo "HOOK_FILES<<EOF" >> "$GITHUB_OUTPUT"
+            # Per-call unguessable heredoc delimiter (defense in depth
+            # against $GITHUB_OUTPUT duplicate-key last-write-wins injection;
+            # $HOOK_FILES is gh-api output but filenames are attacker-influenced
+            # via fork PRs, so per-call randomness is meaningful here).
+            HF_DELIM_RAND=$(openssl rand -hex 16)
+            [ -n "$HF_DELIM_RAND" ] || { echo "::error::openssl rand returned empty" >&2; exit 1; }
+            [ "$(printf '%s' "$HOOK_FILES" | wc -c)" -lt 900000 ] || { echo "::error::HOOK_FILES exceeds 900KB" >&2; exit 1; }
+            HF_DELIM="HOOK_FILES_DELIMITER_$(date +%s%N)_${HF_DELIM_RAND}"
+            echo "HOOK_FILES<<${HF_DELIM}" >> "$GITHUB_OUTPUT"
             echo "$HOOK_FILES" >> "$GITHUB_OUTPUT"
-            echo "EOF" >> "$GITHUB_OUTPUT"
+            echo "${HF_DELIM}" >> "$GITHUB_OUTPUT"
           else
             echo "hooks=false" >> "$GITHUB_OUTPUT"
             echo "No hook files changed, skipping review."
