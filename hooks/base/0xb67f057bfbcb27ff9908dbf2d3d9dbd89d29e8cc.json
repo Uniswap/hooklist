@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb67f057bfbcb27ff9908dbf2d3d9dbd89d29e8cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "JanpuHookStaticFeeV2",
+    "description": "JANPU Base launchpad hook that applies per-pool static LP fees through Uniswap v4 dynamic-fee updates, collects JANPU protocol fees on launched-token swaps, supports optional MEV fee protection and pool extensions, and accepts empty hook data for standard swaps.",
+    "deployer": "0x25EBD2106452415420fb6Eb7056bFF8d7b391d55",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
