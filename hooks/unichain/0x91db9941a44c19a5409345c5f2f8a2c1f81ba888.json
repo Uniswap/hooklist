@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x91db9941a44c19a5409345c5f2f8a2c1f81ba888",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "AsyncSwap",
+    "description": "Async order book that intercepts exact-input swaps \u2014 the maker's input is taken as a 6909 claim and an open order is created at a limit price. A filler later settles by delivering the minimum output amount directly to the maker, bypassing the AMM entirely.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
