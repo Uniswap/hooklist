@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x63d3132013839ed98e9dbc375a88d5eebf52d040",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "WLimitOrderHook",
+    "description": "A Uniswap v4 hook implementing single-tick limit orders with atomic swap + order placement. Users place orders by adding concentrated liquidity at a specific tick; when the pool price crosses that tick, the position is automatically filled. The swapAndPlaceOrder() function combines a swap and limit order placement in a single transaction, preventing front-running. Filled orders can be withdrawn at any time.",
+    "deployer": "0x8431849ae448E0EC537ab18a813158eab23E6912",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
