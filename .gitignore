@@ -5,3 +5,12 @@ comment.md
 __pycache__/
 *.pyc
 __pycache__/
+
+# Override global ignore of .claude/ for tracked repo content.
+# Note: git cannot un-ignore files inside an excluded directory without
+# first re-including the directory, hence the explicit pattern.
+!.claude/
+!.claude/**
+.claude/worktrees/
+.claude/scheduled_tasks.lock
+.claude/settings.local.json
