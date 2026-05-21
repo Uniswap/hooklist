@@ -131,6 +131,11 @@ jobs:
         with:
           app-id: ${{ vars.REGISTRY_APP_ID }}
           private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
+          # Scope the App token to the minimum needed by the "Create PR" step:
+          # - contents:write — git push, delete stale branch
+          # - pull-requests:write — gh pr create, gh pr merge --auto
+          permission-contents: write
+          permission-pull-requests: write
 
       - name: Create PR
         env:
