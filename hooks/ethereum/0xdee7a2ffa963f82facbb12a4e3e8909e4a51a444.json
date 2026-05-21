@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdee7a2ffa963f82facbb12a4e3e8909e4a51a444",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TTTHook",
+    "description": "Uniswap v4 hook for TTT/ETH pools launched by the TenThousandTokens factory. Applies a decaying buy fee (99%\u21921% over 98 blocks from launch) and a flat 1% sell fee; buy fees are converted to ETH via an internal pool swap and split between a FeeSplitter and a per-token buyback sink in afterSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
