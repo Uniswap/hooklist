@@ -39,20 +39,18 @@ def assemble(submission: dict, source_meta: dict, flags: dict, claude_output: di
     chain = submission["chain"]
     chain_id = chains[chain]["chainId"]
 
-    # Name priority: submitter > claude > contractName
-    name = submission.get("name", "").strip()
-    if not name:
-        name = claude_output.get("name", "").strip()
+    # Name: Claude is canonical (it evaluates the submitter's suggestion against the source
+    # per classify-hook.md §6). Submitter text never lands directly in the registry.
+    # contractName is a defense-in-depth fallback if Claude returns empty.
+    name = claude_output.get("name", "").strip()
     if not name:
         name = source_meta.get("contractName", "").strip()
     if not name:
         name = "UnnamedHook"
     name = sanitize_name(name)
 
-    # Description priority: submitter > claude, truncate to 500 chars
-    description = submission.get("description", "").strip()
-    if not description:
-        description = claude_output.get("description", "").strip()
+    # Description: Claude is canonical (see classify-hook.md §7).
+    description = claude_output.get("description", "").strip()
     if len(description) > 500:
         description = description[:497] + "..."
 
@@ -109,6 +107,12 @@ def generate_pr_body(flags: dict, claude_output: dict, description: str, issue_n
         }.items()
     )
 
+    warnings = claude_output.get("warnings") or []
+    if warnings:
+        warning_section = "\n".join(f"- {w}" for w in warnings)
+    else:
+        warning_section = "None"
+
     return f"""## Summary
 {description}
 
@@ -123,7 +127,7 @@ def generate_pr_body(flags: dict, claude_output: dict, description: str, issue_n
 {prop_rows}
 
 ## Warnings
-None
+{warning_section}
 
 Closes #{issue_number}
 """

@@ -78,9 +78,9 @@ Cross-reference the `properties` section against the source code:
 ### 2d: Check Metadata
 
 - `verifiedSource` should be `true` if Etherscan has verified source code
-- `name` should match `ContractName` from Etherscan (or be a reasonable override)
-- `description` should accurately describe what the hook does
 - `chainId` should match the chain in `chains.json`
+- `name` should be one of: `ContractName` from Etherscan, a recognizable abbreviation of it, or a project-qualified label substantiated by the source (NatSpec `@title`, file path, imports). It must **not** contain promotional, audit, safety, affiliation, or endorsement language (e.g. "Official", "Verified", "Audited", "Safe", "Trusted", brand names not present in the source) unless those terms are explicit in the verified source itself. If you see such language, REQUEST_CHANGES — the analyze-hook step should have rejected the submitter's suggestion.
+- `description` must factually describe what the source actually does. Every claim should be substantiated by the Solidity logic. Reject descriptions that contain audit claims, safety guarantees, affiliations, or marketing language not present in the source.
 
 ## Step 3: Output Your Review
 

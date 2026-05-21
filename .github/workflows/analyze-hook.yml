@@ -83,7 +83,7 @@ jobs:
           github_token: ${{ github.token }}
           allowed_non_write_users: '*'
           claude_args: >-
-            --json-schema '{"type":"object","properties":{"name":{"type":"string","maxLength":100},"description":{"type":"string","maxLength":500},"dynamicFee":{"type":"boolean"},"upgradeable":{"type":"boolean"},"requiresCustomSwapData":{"type":"boolean"},"vanillaSwap":{"type":"boolean"},"swapAccess":{"type":"string","enum":["none","temporal","allowlist","governance","other"]}},"required":["name","description","dynamicFee","upgradeable","requiresCustomSwapData","vanillaSwap","swapAccess"]}'
+            --json-schema '{"type":"object","properties":{"name":{"type":"string","maxLength":100},"description":{"type":"string","maxLength":500},"dynamicFee":{"type":"boolean"},"upgradeable":{"type":"boolean"},"requiresCustomSwapData":{"type":"boolean"},"vanillaSwap":{"type":"boolean"},"swapAccess":{"type":"string","enum":["none","temporal","allowlist","governance","other"]},"warnings":{"type":"array","maxItems":20,"items":{"type":"string","maxLength":300}}},"required":["name","description","dynamicFee","upgradeable","requiresCustomSwapData","vanillaSwap","swapAccess","warnings"]}'
             --allowedTools "Read,Grep"
           prompt: |
             Classify the hook at ${{ steps.prefilter.outputs.ADDRESS }} on ${{ steps.prefilter.outputs.CHAIN }}.
