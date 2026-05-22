@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe87be9bc8e462de016760aa83bac56d608836aa8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "RehypHook",
+    "description": "A custom bonding-curve AMM hook that owns all pool liquidity internally, blocking external LP deposits and donations. Swaps exchange WETH/USDC/GHO for REHYP tokens using reserve-based pricing; excess assets are deposited into Aave V3 to earn yield, which can be harvested to increase reserves and burn REHYP supply.",
+    "deployer": "0x7F4C1A4ED0be550d4D18B5FdB78a2104A674D6e8",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
