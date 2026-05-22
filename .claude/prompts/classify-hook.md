@@ -100,9 +100,13 @@ Process:
 Return a `warnings` array of short strings (≤20 entries) covering any inconsistency a human reviewer should see:
 
 - **Rejected submitter name** — format: `Submitter-proposed name "<X>" rejected: <reason>. Using "<Y>".`
+- **Absent submitter name** — when the submission has no name (empty, missing, or `_No response_`), format: `Submitter did not provide a name. Using AI-derived "<Y>".`
 - **Rejected submitter description** — format: `Submitter-proposed description rejected: <reason>. Using AI-generated description.`
+- **Absent submitter description** — when the submission has no description (empty, missing, or `_No response_`), format: `Submitter did not provide a description. Using AI-generated description.`
 - **Flag mismatch** — if the hook extends `BaseHook` and `getHookPermissions()` does not match `computed_flags.json`, add: `getHookPermissions() returns <X> but address bitmask encodes <Y>.`
 - **Other source-vs-submission inconsistencies** — e.g. submitter claimed `deployer` but the source-deploying address is different (only if you can verify this from source).
+
+Both name and description are required cases — always emit a warning whenever the AI's text (rather than the submitter's) lands in the registry, whether because the submitter's suggestion was rejected or because no suggestion was provided. This way reviewers can tell at a glance which fields are human-supplied-and-verified vs AI-authored.
 
 If everything is clean, return `warnings: []`.
 
