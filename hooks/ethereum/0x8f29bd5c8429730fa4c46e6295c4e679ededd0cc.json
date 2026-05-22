@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8f29bd5c8429730fa4c46e6295c4e679ededd0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Aegis",
+    "description": "AegisHook applies dynamic swap fees sourced from an external DynamicFeeManager, updates a TWAP oracle on each swap, charges a configurable hook fee on every trade (taken as a BeforeSwapDelta/AfterSwapDelta), and periodically reinvests accumulated fees as full-range liquidity via an AegisEngine on a 1-hour cooldown.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
