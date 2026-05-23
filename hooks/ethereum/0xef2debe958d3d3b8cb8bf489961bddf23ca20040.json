@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xef2debe958d3d3b8cb8bf489961bddf23ca20040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ShitGiftHook",
+    "description": "An afterSwap hook that enqueues a commit-reveal lottery ticket for qualifying SHIT token buys (\u2265 42069 SHIT) on the canonical pool. Tickets are settled 2+ blocks later using blockhash as RNG, giving a 1% chance of receiving 1 ether of a community-deposited art token (ERC-20/ERC-1155). Winners face a 24-hour cooldown; payouts go to tx.origin.",
+    "deployer": "0x5F9C597e1358E41E14eB7A426E80b04A7CedB56b",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
