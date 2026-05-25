@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaa92349f126fc28639c974b320a7eca9ea3a4088",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SpyHook",
+    "description": "Passes ordinary swaps through with zero fee impact; when the designated SpyBatch settler swaps with non-empty hookData, takes a 1% fee (COVERT_FEE_BPS) from the input currency and routes it to a vault address for burning.",
+    "deployer": "0x53896369e36D7184A1F29A0aE1DAFc3F0aAA4aF4",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
