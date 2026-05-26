@@ -32,7 +32,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename' | grep '^hooks/' || true)
+          # Filter out removed files — review verifies hook content against on-chain
+          # source, which only makes sense for files still present on the PR head.
+          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[] | select(.status != "removed") | .filename' | grep '^hooks/' || true)
           if [ -n "$HOOK_FILES" ]; then
             echo "hooks=true" >> "$GITHUB_OUTPUT"
             # Save changed file list for Claude's prompt
@@ -71,7 +73,7 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename' | grep '^hooks/')
+          HOOK_FILES=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[] | select(.status != "removed") | .filename' | grep '^hooks/')
           for HOOK_FILE in $HOOK_FILES; do
             CHAIN=$(echo "$HOOK_FILE" | cut -d/ -f2)
             ADDRESS=$(basename "$HOOK_FILE" .json)
