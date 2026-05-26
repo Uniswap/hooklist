@@ -31,17 +31,16 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          CHANGED=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files" --jq '.[].filename')
-          HOOK_FILES=$(echo "$CHANGED" | grep '^hooks/' || true)
-          if [ -z "$HOOK_FILES" ]; then
+          FILES_JSON=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files")
+          CHANGED=$(echo "$FILES_JSON" | jq -r '.[].filename')
+          HAS_HOOK_CHANGES=$(echo "$CHANGED" | grep '^hooks/' || true)
+          if [ -z "$HAS_HOOK_CHANGES" ]; then
             echo "hooks=false" >> "$GITHUB_OUTPUT"
             echo "No hook files changed, skipping validation."
             exit 0
           fi
-          echo "hooks=true" >> "$GITHUB_OUTPUT"
-          echo "$HOOK_FILES" | sed 's|^|pr/|' > changed_hooks.txt
 
-          # Exact-diff policy: only hooks/** allowed, exactly one file
+          # Exact-diff policy: only hooks/** allowed, exactly one file (applies to add/modify/remove)
           INVALID=$(echo "$CHANGED" | grep -v '^hooks/' || true)
           if [ -n "$INVALID" ]; then
             echo "::error::PR modifies files outside hooks/: $INVALID"
@@ -52,6 +51,17 @@ jobs:
             echo "::error::PR must change exactly one hook file, found $COUNT changed files"
             exit 1
           fi
+
+          # Schema validation only applies to files still present on the PR head
+          # (added/modified). Removed files have no content to validate.
+          HOOK_FILES=$(echo "$FILES_JSON" | jq -r '.[] | select(.status != "removed") | .filename' | grep '^hooks/' || true)
+          if [ -z "$HOOK_FILES" ]; then
+            echo "hooks=false" >> "$GITHUB_OUTPUT"
+            echo "Hook file is being removed, nothing to schema-validate."
+            exit 0
+          fi
+          echo "hooks=true" >> "$GITHUB_OUTPUT"
+          echo "$HOOK_FILES" | sed 's|^|pr/|' > changed_hooks.txt
 
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
         if: steps.changed.outputs.hooks == 'true'
