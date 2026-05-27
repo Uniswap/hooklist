@@ -2169,11 +2169,11 @@
   },
   {
     "hook": {
-      "address": "0x80e2f7dc8c2c880bbc4bdf80a5fb0eb8b1db68cc",
+      "address": "0x80E2F7dC8C2C880BbC4BDF80A5Fb0eB8B1DB68CC",
       "chain": "base",
       "chainId": 8453,
-      "name": "LiquidHookDynamicFeeV2",
-      "description": "Liquid Protocol's dynamic fee hook that adjusts LP fees based on realized volatility (tick movement across swaps) and collects a 20% protocol fee on paired token swaps. It includes a time-limited MEV protection module that can temporarily increase fees and an optional pool extension system for post-swap callbacks.",
+      "name": "Liquid Dynamic Fee Hook V2",
+      "description": "Uniswap V4 hook with volatility-responsive dynamic LP fees (0.5%-5%), MEV protection via descending fee modules, per-swap pool extensions, and protocol fee collection. Powers Liquid Protocol token pools on Base.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -2204,11 +2204,11 @@
   },
   {
     "hook": {
-      "address": "0x80E2F7dC8C2C880BbC4BDF80A5Fb0eB8B1DB68CC",
+      "address": "0x80e2f7dc8c2c880bbc4bdf80a5fb0eb8b1db68cc",
       "chain": "base",
       "chainId": 8453,
-      "name": "Liquid Dynamic Fee Hook V2",
-      "description": "Uniswap V4 hook with volatility-responsive dynamic LP fees (0.5%-5%), MEV protection via descending fee modules, per-swap pool extensions, and protocol fee collection. Powers Liquid Protocol token pools on Base.",
+      "name": "LiquidHookDynamicFeeV2",
+      "description": "Liquid Protocol's dynamic fee hook that adjusts LP fees based on realized volatility (tick movement across swaps) and collects a 20% protocol fee on paired token swaps. It includes a time-limited MEV protection module that can temporarily increase fees and an optional pool extension system for post-swap callbacks.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -4615,41 +4615,6 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
-    }
-  },
-  {
-    "hook": {
-      "address": "0x0f7ff748f58d16876ba71783f3a7cf2cf3f2c040",
-      "chain": "ethereum",
-      "chainId": 1,
-      "name": "ShitGiftHook",
-      "description": "Uniswap V4 afterSwap hook for the ShitVerse meme ecosystem. On any qualifying buy (\u2265 42069 SHIT) of the canonical ETH/SHIT 1% pool, rolls a 1% RNG and on win transfers 1 ether of a randomly-picked community-deposited 'art' token (ERC-20/ERC-1155 dual-surface DualToken) to tx.origin. Per-origin 24h cooldown; CEI ordering with all state writes committed before the external transfer. Pool membership gated by ShitVerseFactory.isValidToken at deposit time.",
-      "deployer": "0x5F9C597e1358E41E14eB7A426E80b04A7CedB56b",
-      "verifiedSource": true,
-      "auditUrl": ""
-    },
-    "flags": {
-      "beforeInitialize": false,
-      "afterInitialize": false,
-      "beforeAddLiquidity": false,
-      "afterAddLiquidity": false,
-      "beforeRemoveLiquidity": false,
-      "afterRemoveLiquidity": false,
-      "beforeSwap": false,
-      "afterSwap": true,
-      "beforeDonate": false,
-      "afterDonate": false,
-      "beforeSwapReturnsDelta": false,
-      "afterSwapReturnsDelta": false,
-      "afterAddLiquidityReturnsDelta": false,
-      "afterRemoveLiquidityReturnsDelta": false
-    },
-    "properties": {
-      "dynamicFee": false,
-      "upgradeable": false,
-      "requiresCustomSwapData": false,
-      "vanillaSwap": false,
-      "swapAccess": "none"
     }
   },
   {
