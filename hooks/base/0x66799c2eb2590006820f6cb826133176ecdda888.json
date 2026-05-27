@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x66799c2eb2590006820f6cb826133176ecdda888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "EstateHook",
+    "description": "A bonding curve AMM hook that replaces standard pool swaps with buy/sell actions against a logarithmic curve. Buyers mint EstateTokens by paying ETH; sellers burn tokens to receive ETH, with 10% of proceeds withheld as rental rewards distributed through the EstateToken contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
