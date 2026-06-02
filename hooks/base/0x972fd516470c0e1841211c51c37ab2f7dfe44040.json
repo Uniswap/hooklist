@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x972fd516470c0e1841211c51c37ab2f7dfe44040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SpectraHook",
+    "description": "Uniswap v4 afterSwap hook for SpectraLaunch tokens that auto-harvests the token's parked fee balance after every swap, sells the tokens for ETH via a nested swap inside the same unlock context, and credits the ETH proceeds pro-rata to token holders.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
