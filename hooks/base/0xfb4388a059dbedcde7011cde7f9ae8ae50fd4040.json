@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xFb4388a059dbedCde7011Cde7F9ae8aE50Fd4040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "llms (LLMS) — Spectra Launchpad Hook",
+    "description": "SPECTRA launchpad hook on Base: the token IS its own Uniswap v4 hook (\"holding = LP\"). afterSwap-flagged; swap fees in the ETH/LLMS pool (fee 10000 = 1%, tickSpacing 200) accrue pro-rata to holders. Graduated from a bonding curve.",
+    "deployer": "0x34054B1dF385595d8ce6345b856459b568FE7714",
+    "verifiedSource": false,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
