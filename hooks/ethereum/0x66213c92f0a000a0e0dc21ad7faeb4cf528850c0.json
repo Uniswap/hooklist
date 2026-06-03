@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x66213c92f0a000a0e0dc21ad7faeb4cf528850c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Unigen Hook",
+    "description": "A Uniswap v4 hook for an ETH/UGEN pool that queues NFT mints for qualifying buyers via commit-reveal entropy in afterSwap. Applies a dynamic LP fee override (1 bps) for Tier-S wallet-age holders in beforeSwap, and includes a governance-controlled whitelist gate for the launch window.",
+    "deployer": "0x69F88CDfF5e10bda376c65dC1637101Cc2f46f2E",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
