@@ -1959,6 +1959,41 @@
   },
   {
     "hook": {
+      "address": "0x6b80ce7c95b0206b14ce9977c904e11918d48040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SpectraLaunch",
+      "description": "SPECTRA launchpad afterSwap hook on Base \u2014 the token is its own Uniswap v4 hook (holding = LP). Token contract 0x6b80ce7c95b0206b14ce9977c904e11918d48040. Source verified on BaseScan.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6cabe2fd9fb60c5afcab7de732b0a224fc382eec",
       "chain": "base",
       "chainId": 8453,
@@ -2583,6 +2618,41 @@
       "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x972fd516470c0e1841211c51c37ab2f7dfe44040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SpectraHook",
+      "description": "Uniswap v4 afterSwap hook for SpectraLaunch tokens that auto-harvests the token's parked fee balance after every swap, sells the tokens for ETH via a nested swap inside the same unlock context, and credits the ETH proceeds pro-rata to token holders.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
     }
@@ -4584,6 +4654,41 @@
   },
   {
     "hook": {
+      "address": "0x02861997ca5d65d40fa34facdaa9f969c95fd0c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UnigenHook",
+      "description": "A Uniswap v4 hook that queues NFT mints for qualifying ETH-to-UGEN buyers in afterSwap and applies a reduced 1 bps fee override in beforeSwap for Tier-S wallet-age holders. Includes an admin-controlled whitelist gate for launch-window anti-sniper protection.",
+      "deployer": "0x69F88CDfF5e10bda376c65dC1637101Cc2f46f2E",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x044301939deb7ca53c4733dd4d9b3bc5ea0c6888",
       "chain": "ethereum",
       "chainId": 1,
@@ -4745,6 +4850,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1c94eb938ffb066c3a5f0d43e44a428f35a1e888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring FewV2 Direct Routing Hook",
+      "description": "Ownerless Uniswap v4 hook that exposes Ring FewV2 direct-pair liquidity through v4 swaps. The hook wraps the input token into its canonical FewToken, swaps through the corresponding FewV2 pair, unwraps the output token, and settles back through PoolManager. It does not require or decode custom hookData, does not allow liquidity in the v4 pool, and has no hook owner, pause, upgrade path, or route-control admin.",
+      "deployer": "0x61e75d5c5dee4205a5bbcd9fbc40498b693197ad",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
@@ -6750,6 +6890,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "Spot",
+      "description": "DynamicFee Hook w/ Oracle Implementation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": "https://docs.aegis.markets/audits"
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
