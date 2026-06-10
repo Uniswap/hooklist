@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x21411ada5ba2bf1ed416a2573e037cda070ce080",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MoonsendFeeHook_BASE",
+    "description": "A Uniswap v4 hook that enforces per-pool dynamic LP fee overrides. Pools must be pre-registered by an authorized factory before initialization; `beforeSwap` returns the registered fee with the OVERRIDE_FEE_FLAG set, overriding the pool's LP fee on every swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
