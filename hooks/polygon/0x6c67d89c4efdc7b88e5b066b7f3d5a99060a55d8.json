@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6c67d89c4efdc7b88e5b066b7f3d5a99060a55d8",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "IndexHook",
+    "description": "A hook for index token pools that tracks index token reserves across liquidity positions, applies a 0% LP fee override for the index token's own self-swaps, and optionally takes a custom hook fee from swap input. Pool operations are restricted to explicitly allowlisted pools, and liquidity additions enforce a per-pool LP allowlist for manually added pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
