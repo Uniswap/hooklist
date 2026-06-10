@@ -2239,11 +2239,11 @@
   },
   {
     "hook": {
-      "address": "0x80E2F7dC8C2C880BbC4BDF80A5Fb0eB8B1DB68CC",
+      "address": "0x80e2f7dc8c2c880bbc4bdf80a5fb0eb8b1db68cc",
       "chain": "base",
       "chainId": 8453,
-      "name": "Liquid Dynamic Fee Hook V2",
-      "description": "Uniswap V4 hook with volatility-responsive dynamic LP fees (0.5%-5%), MEV protection via descending fee modules, per-swap pool extensions, and protocol fee collection. Powers Liquid Protocol token pools on Base.",
+      "name": "LiquidHookDynamicFeeV2",
+      "description": "Liquid Protocol's dynamic fee hook that adjusts LP fees based on realized volatility (tick movement across swaps) and collects a 20% protocol fee on paired token swaps. It includes a time-limited MEV protection module that can temporarily increase fees and an optional pool extension system for post-swap callbacks.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -2274,11 +2274,11 @@
   },
   {
     "hook": {
-      "address": "0x80e2f7dc8c2c880bbc4bdf80a5fb0eb8b1db68cc",
+      "address": "0x80E2F7dC8C2C880BbC4BDF80A5Fb0eB8B1DB68CC",
       "chain": "base",
       "chainId": 8453,
-      "name": "LiquidHookDynamicFeeV2",
-      "description": "Liquid Protocol's dynamic fee hook that adjusts LP fees based on realized volatility (tick movement across swaps) and collects a 20% protocol fee on paired token swaps. It includes a time-limited MEV protection module that can temporarily increase fees and an optional pool extension system for post-swap callbacks.",
+      "name": "Liquid Dynamic Fee Hook V2",
+      "description": "Uniswap V4 hook with volatility-responsive dynamic LP fees (0.5%-5%), MEV protection via descending fee modules, per-swap pool extensions, and protocol fee collection. Powers Liquid Protocol token pools on Base.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -2659,11 +2659,11 @@
   },
   {
     "hook": {
-      "address": "0x9811f10cd549c754fa9e5785989c422a762c28cc",
+      "address": "0x9811f10Cd549c754Fa9E5785989c422A762c28cc",
       "chain": "base",
       "chainId": 8453,
-      "name": "LiquidHookStaticFeeV2",
-      "description": "A Liquid Protocol hook that enforces a static LP fee per pool (configured at initialization with separate rates for buying and selling the liquid token) and collects a 20% protocol fee on swaps. Includes optional MEV protection that can temporarily raise fees for up to 2 minutes after pool creation.",
+      "name": "Liquid Static Fee Hook V2",
+      "description": "Uniswap V4 hook with fixed LP fee configuration, MEV protection via descending fee modules, per-swap pool extensions, and protocol fee collection. Alternative to the Dynamic Fee hook for Liquid Protocol pools preferring stable fees.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -2694,11 +2694,11 @@
   },
   {
     "hook": {
-      "address": "0x9811f10Cd549c754Fa9E5785989c422A762c28cc",
+      "address": "0x9811f10cd549c754fa9e5785989c422a762c28cc",
       "chain": "base",
       "chainId": 8453,
-      "name": "Liquid Static Fee Hook V2",
-      "description": "Uniswap V4 hook with fixed LP fee configuration, MEV protection via descending fee modules, per-swap pool extensions, and protocol fee collection. Alternative to the Dynamic Fee hook for Liquid Protocol pools preferring stable fees.",
+      "name": "LiquidHookStaticFeeV2",
+      "description": "A Liquid Protocol hook that enforces a static LP fee per pool (configured at initialization with separate rates for buying and selling the liquid token) and collects a 20% protocol fee on swaps. Includes optional MEV protection that can temporarily raise fees for up to 2 minutes after pool creation.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -4475,6 +4475,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x91fb28d8f4906df4e8c71806dfeb882dd82815d8",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "IndexHook",
+      "description": "A hook for IndexToken pools that gates swaps and liquidity additions/removals to owner-approved pools, supports dynamic LP fees with zero-fee overrides for index token self-swaps and custom hook fees for other swappers, and tracks index token reserves in pools for burn coefficient accounting.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -7380,6 +7415,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6c67d89c4efdc7b88e5b066b7f3d5a99060a55d8",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "IndexHook",
+      "description": "A hook for index token pools that tracks index token reserves across liquidity positions, applies a 0% LP fee override for the index token's own self-swaps, and optionally takes a custom hook fee from swap input. Pool operations are restricted to explicitly allowlisted pools, and liquidity additions enforce a per-pool LP allowlist for manually added pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
