@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x91fb28d8f4906df4e8c71806dfeb882dd82815d8",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "IndexHook",
+    "description": "A hook for IndexToken pools that gates swaps and liquidity additions/removals to owner-approved pools, supports dynamic LP fees with zero-fee overrides for index token self-swaps and custom hook fees for other swappers, and tracks index token reserves in pools for burn coefficient accounting.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
