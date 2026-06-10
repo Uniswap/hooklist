@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4e4ecde86fc904b6e7be363e0f4bf127fd7195d8",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "IndexHook",
+    "description": "A Uniswap v4 hook for index token pools that enforces an owner-controlled pool allowlist, applies dynamic LP fees with optional custom hook fees, grants zero-fee swaps to index tokens swapping on their own native pools, and tracks index token balances across pools for burn coefficient accounting.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
