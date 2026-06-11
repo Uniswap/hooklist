@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7db23263e461fdfc08cecf03cdfa503391e64044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "VenaHook",
+    "description": "Custom-accounting Uniswap v4 hook for ETH/VENA on Base. Uses afterSwap return delta (1% output fee), distributes 80% to NFT holders and 20% to treasury, and applies buy/sell NFT game logic.",
+    "deployer": "0x3b8C25CA63f901792570B1bbaDfF83369d25fF4c",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
