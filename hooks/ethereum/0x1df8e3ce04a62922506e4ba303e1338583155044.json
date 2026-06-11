@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1df8e3ce04a62922506e4ba303e1338583155044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DiamondHandsHook",
+    "description": "Anti-dump hook for a single DMND/WETH pool that charges 0% on buys and a dynamic 0.5\u201310% fee on sells, scaling with 1h rolling sell pressure via integral pricing. Captured fees are split 50/30/20 between a MerkleDistributor jackpot for DMND holders, WETH\u2192DMND buyback-and-burn, and direct LP donations via poolManager.donate().",
+    "deployer": "0x889850C014C75dF029157fEb59794263D9A075af",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
