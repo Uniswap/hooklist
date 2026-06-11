@@ -2169,6 +2169,41 @@
   },
   {
     "hook": {
+      "address": "0x70e163cf92b4565a0eeba7d12d2cfcebd51c40cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FloorPad Floor Hook",
+      "description": "Singleton Uniswap v4 hook serving all FloorPad memecoins (per-pool state keyed by poolId). On each buy, diverts a dynamic cut of the WETH input into a per-pool vault and fees to protocol/creator; on each sell, skims a fee from the WETH output. The vault backs a WETH-per-token redemption floor that ratchets up only on buys; holders can burn coins to redeem at the floor at any time.",
+      "deployer": "0x31567D977ed6fD5389C6C3D6cCcb374f7bAb3489",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x73E74c090446ad7c9745EBa3c26F3E1a9680E8CC",
       "chain": "base",
       "chainId": 8453,
