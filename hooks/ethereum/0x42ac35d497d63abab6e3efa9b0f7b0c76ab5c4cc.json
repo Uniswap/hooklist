@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x42ac35d497d63abab6e3efa9b0f7b0c76ab5c4cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SharesHook",
+    "description": "Collects protocol fees (2.5% each) on buy and sell swaps for a designated native/token pool, updates an on-chain random seed on each swap, and notifies an external launch controller of swap activity. Triggers a token start on first liquidity addition once config is finalized.",
+    "deployer": "0x2E613Cf717c40c3575073f761d3b423Cb7153a91",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
