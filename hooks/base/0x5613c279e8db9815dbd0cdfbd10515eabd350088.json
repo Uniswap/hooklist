@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5613c279e8db9815dbd0cdfbd10515eabd350088",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "GBPFv4Hook",
+    "description": "A Uniswap v4 hook that intercepts all swaps against a USDS/GBPF pool and fully replaces pool math with primary-market mint or redeem operations against a vault, pricing trades via a GBP/USD oracle TWAP, a solvency-indexed spread curve, and a flat 20 bp protocol fee.",
+    "deployer": "0x398CA93b76806D3517DD3520F1aE09620Fcb5c24",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
