@@ -1541,6 +1541,41 @@
   },
   {
     "hook": {
+      "address": "0x5613c279e8db9815dbd0cdfbd10515eabd350088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "GBPFv4Hook",
+      "description": "A Uniswap v4 hook that intercepts all swaps against a USDS/GBPF pool and fully replaces pool math with primary-market mint or redeem operations against a vault, pricing trades via a GBP/USD oracle TWAP, a solvency-indexed spread curve, and a flat 20 bp protocol fee.",
+      "deployer": "0x398CA93b76806D3517DD3520F1aE09620Fcb5c24",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x570a48f96035c2874de1c0f13c5075a05683b0cc",
       "chain": "base",
       "chainId": 8453,
@@ -5490,6 +5525,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x42ac35d497d63abab6e3efa9b0f7b0c76ab5c4cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SharesHook",
+      "description": "Collects protocol fees (2.5% each) on buy and sell swaps for a designated native/token pool, updates an on-chain random seed on each swap, and notifies an external launch controller of swap activity. Triggers a token start on first liquidity addition once config is finalized.",
+      "deployer": "0x2E613Cf717c40c3575073f761d3b423Cb7153a91",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
