@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd847b6153c321abfbf7969422fceb129343d2888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AggHook",
+    "description": "Routes swaps through a hardcoded set of 3 Uniswap v4 pools and 6 V3-compatible pools, sorted on-the-fly by effective sqrtPrice. Handles exactIn and exactOut in both directions, returns a BeforeSwapDelta that fully settles the exchange. Liquidity additions and pool initialization are restricted to a hardcoded admin address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
