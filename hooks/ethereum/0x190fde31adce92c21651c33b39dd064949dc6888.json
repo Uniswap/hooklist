@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x190fde31adce92c21651c33b39dd064949dc6888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AggHook",
+    "description": "AggHook intercepts swaps via beforeSwapReturnsDelta to route liquidity across multiple registered V3 and V4 pools (including Uniswap V3 and PancakeSwap V3 via swap callbacks), performing multi-hop execution and charging a protocol fee via the pool manager's donate function. Routing data and pool addresses are baked into the contract bytecode; add-liquidity and initialization are restricted to an admin address (tx.origin check).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
