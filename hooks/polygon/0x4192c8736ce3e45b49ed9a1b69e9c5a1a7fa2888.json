@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4192c8736ce3e45b49ed9a1b69e9c5a1a7fa2888",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "AggHook",
+    "description": "A Uniswap v4 hook that aggregates USDC.e/USDC swaps across 12 liquidity pools (11 v4 pools and 1 PancakeSwap v3 pool) by sorting routes by effective sqrtPrice and filling sequentially. It uses beforeSwapReturnsDelta to return the aggregated delta, levies a fee via poolManager.donate(), and restricts pool initialization and liquidity addition to a hardcoded admin address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
