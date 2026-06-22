@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x192499a79cadb2e9ba221a252a3e3b7adc714880",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "ArrakisPrivateHook",
+    "description": "Arrakis Finance private vault hook that restricts liquidity additions to authorized vault modules and overrides LP fees per swap direction (zeroForOne/oneForZero) on every swap, enabling custom fee tiers for private Arrakis vaults.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
