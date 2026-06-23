@@ -4584,6 +4584,41 @@
   },
   {
     "hook": {
+      "address": "0x192499a79cadb2e9ba221a252a3e3b7adc714880",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "ArrakisPrivateHook",
+      "description": "Arrakis Finance private vault hook that restricts liquidity additions to the authorized vault module and overrides LP fees per swap direction (zero-for-one vs one-for-zero) as configured by the vault executor.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4c3377978b0c37ba9905ac55d31741f990200440",
       "chain": "bnb",
       "chainId": 56,
@@ -5241,6 +5276,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x192499a79cadb2e9ba221a252a3e3b7adc714880",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ArrakisPrivateHook",
+      "description": "Arrakis private vault hook that restricts liquidity additions to the authorized module and overrides LP fees per swap direction, configurable by the vault executor.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
