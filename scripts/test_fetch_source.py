@@ -17,6 +17,17 @@ def test_get_explorer_url_blockscout_chain():
     assert "blockscout" in url or "zora" in url
 
 
+def test_get_explorer_url_okx_chain():
+    url = get_explorer_url("xlayer")
+    assert "web3.okx.com" in url and "chainShortName=xlayer" in url
+
+
+def test_get_explorer_url_new_chains():
+    assert get_explorer_url("linea") == "https://api.etherscan.io/v2/api?chainid=59144"
+    assert get_explorer_url("megaeth") == "https://api.etherscan.io/v2/api?chainid=4326"
+    assert get_explorer_url("zksync") == "https://block-explorer-api.mainnet.zksync.io/api"
+
+
 def test_get_explorer_url_unknown_chain():
     import pytest
     with pytest.raises(KeyError):
@@ -79,3 +90,22 @@ def test_fetch_and_parse_proxy(tmp_path):
 
     assert meta["proxy"] is True
     assert meta["implementation"] == "0x1234567890abcdef1234567890abcdef12345678"
+
+
+def test_fetch_and_parse_okx(tmp_path):
+    """OKX responses use the OKX parser."""
+    mock_response = {
+        "data": [{
+            "contractName": "OkxHook",
+            "sourceCode": "contract OkxHook {}",
+            "proxy": "0",
+            "implementation": "",
+        }]
+    }
+    response_file = tmp_path / "response.json"
+    response_file.write_text(json.dumps(mock_response))
+
+    meta = fetch_and_parse(str(response_file), outdir=str(tmp_path / "sources"), explorer_type="okx")
+
+    assert meta["contractName"] == "OkxHook"
+    assert meta["verified"] is True
