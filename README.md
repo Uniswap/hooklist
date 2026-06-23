@@ -35,7 +35,7 @@ Optional fields (name, description, deployer, audit URL) can be provided in the 
 
 ## Supported Chains
 
-Ethereum, Unichain, Base, Arbitrum, Optimism, Polygon, Blast, Worldchain, Avalanche, BNB, Celo, Zora, Ink, Soneium
+Ethereum, Unichain, Base, Arbitrum, Optimism, Polygon, Blast, Worldchain, Avalanche, BNB, Celo, Zora, Ink, Soneium, Linea, Monad, MegaETH, Tempo, X Layer, zkSync
 
 See [`chains.json`](chains.json) for chain IDs and block explorer mappings.
 
@@ -45,3 +45,7 @@ See [`chains.json`](chains.json) for chain IDs and block explorer mappings.
 2. **Analysis** — the [`analyze-hook`](.github/workflows/analyze-hook.yml) workflow runs Claude Code to fetch and analyze the hook
 3. **Review** — Claude opens a PR with the hook JSON file; a maintainer reviews and merges
 4. **Aggregation** — the [`regenerate`](.github/workflows/regenerate.yml) workflow rebuilds [`hooklist.json`](hooklist.json) from all individual hook files
+
+## Uniswap Routing Allowlisting
+
+Submitting your hook to this repository **DOES NOT** automatically cause your hook to be allowlisted for routing by Uniswap's routing algorithm. This is just a public registry of hooks. If you are looking to get your hook allowlisted for routing by Uniswap's routing algorithm, please visit https://share.hsforms.com/15fMHwt6NTzuKuQdxw6nHwws8pgg.
