@@ -3359,6 +3359,41 @@
   },
   {
     "hook": {
+      "address": "0xacf358b129423f0107b0bf892b3eff6c770128cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ZNS Launchpad",
+      "description": "A token launchpad hook that sets directional LP fees (separate rates for buying vs. selling the launched token) via updateDynamicLPFee. Includes an optional MEV protection module active for up to 2 minutes after pool creation that can temporarily raise fees, and blocks liquidity additions during the MEV window.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb030fd8c2f8576f8ab05cfbbe659285e7d7a1040",
       "chain": "base",
       "chainId": 8453,
@@ -5354,6 +5389,41 @@
   },
   {
     "hook": {
+      "address": "0x190fde31adce92c21651c33b39dd064949dc6888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AggHook",
+      "description": "AggHook intercepts swaps via beforeSwapReturnsDelta to route liquidity across multiple registered V3 and V4 pools (including Uniswap V3 and PancakeSwap V3 via swap callbacks), performing multi-hop execution and charging a protocol fee via the pool manager's donate function. Routing data and pool addresses are baked into the contract bytecode; add-liquidity and initialization are restricted to an admin address (tx.origin check).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x192499a79cadb2e9ba221a252a3e3b7adc714880",
       "chain": "ethereum",
       "chainId": 1,
@@ -7104,6 +7174,41 @@
   },
   {
     "hook": {
+      "address": "0xd847b6153c321abfbf7969422fceb129343d2888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AggHook",
+      "description": "Routes swaps through a hardcoded set of 3 Uniswap v4 pools and 6 V3-compatible pools, sorted on-the-fly by effective sqrtPrice. Handles exactIn and exactOut in both directions, returns a BeforeSwapDelta that fully settles the exchange. Liquidity additions and pool initialization are restricted to a hardcoded admin address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xdad7ea85ff786b389a13f4714a56b1721b56c044",
       "chain": "ethereum",
       "chainId": 1,
@@ -7594,6 +7699,41 @@
   },
   {
     "hook": {
+      "address": "0xe449e013004db4a5681e9622ca10c5ba0ea610cc",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "AegisHook",
+      "description": "Dynamic-fee hook that charges additional hook fees on every swap (collected in the input token), auto-reinvests accumulated fees into the pool via an external AegisEngine, integrates an on-chain oracle for TWAP cardinality management, and delegates limit-order processing to a LimitOrderManager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe620421BDE7D6A367d2c3b7E8dfA09B90AEa90CC",
       "chain": "monad",
       "chainId": 143,
@@ -7896,6 +8036,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4192c8736ce3e45b49ed9a1b69e9c5a1a7fa2888",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "AggHook",
+      "description": "A Uniswap v4 hook that aggregates USDC.e/USDC swaps across 12 liquidity pools (11 v4 pools and 1 PancakeSwap v3 pool) by sorting routes by effective sqrtPrice and filling sequentially. It uses beforeSwapReturnsDelta to return the aggregated delta, levies a fee via poolManager.donate(), and restricts pool initialization and liquidity addition to a hardcoded admin address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
