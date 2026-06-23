@@ -5634,6 +5634,41 @@
   },
   {
     "hook": {
+      "address": "0x35fa675461ce9d9d7fda4b1a8b1cf767b616e888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AggHook",
+      "description": "A Uniswap v4 hook that automatically routes swaps across multiple registered liquidity uniswapV3like pools from Uniswap, Pancakeswap, Sushiswap, Aerodrome, etc. By discovering and executing the most efficient path at transaction time, it allows traders to access deeper aggregated liquidity, improve price execution, and reduce the effects of liquidity fragmentation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3a3a9a072ab438335a52E0cF064F7ec91D824080",
       "chain": "ethereum",
       "chainId": 1,
@@ -6606,6 +6641,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x903633d861ab705dc6a2ef91b478b9cab00f4044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OnlyHooksHook",
+      "description": "Takes a fee (default 1%) on the output token of every swap via afterSwapReturnsDelta, routing 50% to the treasury and 50% split evenly among the trader's active creator beneficiaries per SubscriptionRegistry. Unsubscribed traders send the full creator share to treasury. Trader identity is decoded from hookData if present, otherwise falls back to tx.origin; empty hookData never reverts.",
+      "deployer": "0xC8e7571512A7D765008c264E89D71151bf89cdeB",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
