@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3dd864a80cc5dc3d6e3f4e1a6af92b0d2047e888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Ring FewV2 Aggregator Hook",
+    "description": "Ownerless router-compatible Uniswap v4 hook that exposes Ring FewV2 AMM liquidity through v4 swaps. The hook uses empty hookData, registers aggregator pools, exposes quote and pseudoTotalValueLocked for routing discovery, and has no hook owner, pause, upgrade path, or route-control admin.",
+    "deployer": "0x61e75d5c5dee4205a5bbcd9fbc40498b693197ad",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/RingProtocol/ring-v4-aggregator-hook-audit/blob/audit-router-compat-aggregator-interface/docs/ABDK_Ring_Aggregator_Hook_Audit_Report_v1.1.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
