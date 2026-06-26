@@ -2694,6 +2694,41 @@
   },
   {
     "hook": {
+      "address": "0x84bbab8cac69bf6711ba81f9915dc346f4cf2088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "RwagmiHookV2",
+      "description": "RWAGMI Hook V2 is a Uniswap v4 launch hook for Base B20 Asset/WETH pools. It gates pool initialization so pools are created only through the RWAGMI launcher, supports optional dynamic LP fee overrides, and runs a mandatory launch-auction module during the first swaps to redirect early launch MEV into the pool's locker/reward split. After the auction window ends, swaps continue normally through the v4 pool.",
+      "deployer": "0xb206ee1b465c46B75D3381f96de1598AC8E2DB20",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x854f820475b229b7805a386f758cfb285023d040",
       "chain": "base",
       "chainId": 8453,
