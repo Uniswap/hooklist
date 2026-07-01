@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc9156c1868e122ef5b3e6ed946e1e88ff7da68cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Bonker Static Fee Hook (Base)",
+    "description": "A Uniswap v4 hook for token launches that stores direction-specific LP fees (bonker-side and paired-side) set at initialization, and collects a 20% protocol fee on each swap via beforeSwap and afterSwap delta returns. Includes an optional time-limited MEV-protection module that can temporarily raise fees, and supports configurable pool extensions.",
+    "deployer": "0x21b109ce8E663FB63CF0B2529324A2e75AeAf87D",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/bonker-wtf/contracts/blob/main/audit/CLAWDIT-Bonker-Audit.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
