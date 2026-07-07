@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7098bf7dff80532aa6bbdb52df4ac4992bec3a80",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "SuperDCAGauge",
+    "description": "A Uniswap v4 hook for SuperDCA token pools implementing a three-tier dynamic fee structure (0% internal, 0.10% keeper, 0.50% external), a king-of-the-hill keeper deposit mechanism, and SuperDCA token reward distribution via minting and pool donations triggered on liquidity operations. Only verified router addresses are permitted to execute swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
