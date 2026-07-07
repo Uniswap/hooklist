@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf667a4d5470545da19151b44542401ec56a200c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TideHook",
+    "description": "TideHook is a Uniswap v4 hook that acts as both an ERC-20 token (TIDE) and the sole LP of a single v4 pool. It enforces a degressive launch fee schedule (25%\u219210%\u21925% forever) by overriding the dynamic LP fee each swap, distributes swap fees pro-rata to TIDE holders via a vesting mechanism, and features a lottery that awards forfeited unclaimed earnings from sellers to a random holder.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
