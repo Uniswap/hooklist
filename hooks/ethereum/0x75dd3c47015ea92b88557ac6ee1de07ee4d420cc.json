@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x75dd3c47015ea92b88557ac6ee1de07ee4d420cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SlopPoolHook",
+    "description": "A fee-collecting hook for the ETH/SLOP pool that applies a block-number-decaying launch fee on ETH\u2192SLOP buys and a fixed 2% fee on SLOP\u2192ETH sells, distributing ETH proceeds between a buy-and-void receiver and a team address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
