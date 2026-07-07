@@ -4,7 +4,7 @@
     "chain": "bnb",
     "chainId": 56,
     "name": "StarbaseHookV2",
-    "description": "Tax collection hook for the STARBASE V2 STAR/WBNB pool on BNB Chain that collects a 4% STAR tax on every swap, routing 1% to a burn address, 1% to an operations wallet, and 2% to a space fund via BeforeSwapDelta and AfterSwapDelta returns.",
+    "description": "Tax collection hook for the STARBASE V2 STAR/WBNB pool on BNB Chain that collects a 4% STAR tax on every swap: 1% is sent directly to a burn address and 3% (operations + space fund portions) is sent to a tax accumulator contract for distribution, implemented via BeforeSwapDelta and AfterSwapDelta returns.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
