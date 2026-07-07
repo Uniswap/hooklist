@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x46b8c74d89a647063311ad08c7456732d5e94888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "WontonHook",
+    "description": "Restricts liquidity additions to a single authorized manager address and gates buy-side swaps behind a governance-controlled `tradingEnabled` flag. Pre-launch exact-input buys are punished: the input token is taken but output is forced to zero via beforeSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
