@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb0cc755b03abf0b981dd57a0fb12b8a54e08facc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LendingHookV2",
+    "description": "A Uniswap v4 hook implementing a range-aware lending AMM (lo0p protocol) that seeds the pool with single-sided LOOP token liquidity across multiple price bands, skims a fixed 1% fee on all swaps via BeforeSwapDelta/AfterSwapDelta, and enforces a same-block liquidation lockout. Supports borrow, repay, and liquidation operations tied to concentrated liquidity bands.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
