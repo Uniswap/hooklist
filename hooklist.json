@@ -771,6 +771,41 @@
   },
   {
     "hook": {
+      "address": "0x9f2c7342bd75b8cf129fdac3526495e2a47dc044",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "StrategyFeeHook",
+      "description": "Charges a 10% fee on the output token of each swap in owner-allowlisted pools, converting non-AVAX fees to AVAX via an in-pool nested swap, then forwarding all collected fees to a configurable strategy manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xbfc09fb0a5cde1457b4393d056601531fb52eaa8",
       "chain": "avalanche",
       "chainId": 43114,
@@ -5704,6 +5739,41 @@
   },
   {
     "hook": {
+      "address": "0x43abf000b9783254f5ef3227b8ba598d298c40cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "StarbaseHookV2",
+      "description": "Tax collection hook for the STARBASE V2 STAR/WBNB pool on BNB Chain that collects a 4% STAR tax on every swap: 1% is sent directly to a burn address and 3% (operations + space fund portions) is sent to a tax accumulator contract for distribution, implemented via BeforeSwapDelta and AfterSwapDelta returns.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4c3377978b0c37ba9905ac55d31741f990200440",
       "chain": "bnb",
       "chainId": 56,
@@ -6859,6 +6929,76 @@
   },
   {
     "hook": {
+      "address": "0x269044c34e5c6c41d5908d88924f544de38cc0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "STRMOGHook",
+      "description": "Accrues a 10% fee on all swaps in a designated ETH/STRMOG pool, routing collected fees to an immutable treasury address. Fees are captured inline via swap delta returns in beforeSwap and afterSwap, and can be swept to treasury by any caller, with an optional 0.3% bounty to the sweep initiator.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x27174ccfd54b4529b025559afa93fc187cea80cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "QuasarHook",
+      "description": "A Uniswap v4 hook that burns 1% of its own QUASAR/PRISM token on every swap (taken via beforeSwap/afterSwap return deltas) and distributes 4% LP fees to rank-weighted NFT holders. Each whole QUASAR token unit held automatically mints a corresponding facet NFT, with earlier-minted facets assigned higher rank-based weights for proportionally greater fee shares.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x29d6e0ff868ba37fd81f84208b1bc6781dffb0c0",
       "chain": "ethereum",
       "chainId": 1,
@@ -7021,6 +7161,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3226136d52beac0ecf777cedaca5c02a1373f0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "GeodeMiningHook",
+      "description": "A token launch hook that tracks WETH buy volume per round to allocate mining rewards to buyers, accrues a 3% fee on all WETH swaps (split between burns and protocol), and automatically executes token buybacks triggered by sell pressure.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -7314,6 +7489,41 @@
   },
   {
     "hook": {
+      "address": "0x3cc9707a9b6dfbbb72e2bfeddc341f7de9cbbacc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LendingHookV3",
+      "description": "A lending AMM hook that manages a full-range ETH/ERC20 V4 LP position as a shared vault. LPs deposit and earn swap fees; borrowers draw ETH against TOKEN collateral at 40% LTV; a 0.5% protocol fee is skimmed from each swap via BeforeSwapDelta/AfterSwapDelta hooks, and swaps are blocked in any block where a liquidation occurred.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3dd864a80cc5dc3d6e3f4e1a6af92b0d2047e888",
       "chain": "ethereum",
       "chainId": 1,
@@ -7364,6 +7574,41 @@
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x428091038f0e0631b627e1061475ad919a983acc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LendingHookV4",
+      "description": "A lending AMM hook that manages a single full-range ETH/TOKEN LP position as an ERC4626-style vault, allowing LPs to deposit and borrowers to take ETH loans against TOKEN collateral at 40% LTV. Skims a 0.5% protocol swap fee via beforeSwap/afterSwap delta returns and blocks swaps in the same block as a liquidation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
       "afterSwap": true,
@@ -8469,6 +8714,41 @@
   },
   {
     "hook": {
+      "address": "0x82d30501471db64a8b7af9a878b5f45efb873acc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LendingHookV4",
+      "description": "A full-range ETH/TOKEN Uniswap v4 LP vault with integrated lending: LPs deposit to earn swap fees and origination fees, borrowers lock TOKEN collateral to borrow ETH at 40% LTV, and a 0.5% protocol fee is skimmed from every swap via BeforeSwapDelta and AfterSwapDelta. Includes borrow/repay/liquidate mechanics with a manipulation-resistant price snapshot system.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8347b7a3807c681513d2b51b8223e59aa16a2888",
       "chain": "ethereum",
       "chainId": 1,
@@ -9375,6 +9655,76 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xac7b5d06fa1e77d08aea40d46cb7c5923a87a0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Hash",
+      "description": "An ERC20 token (HASH) that is also its own Uniswap v4 hook, managing an ETH/HASH pool with a 1% swap fee captured via BeforeSwapDelta and AfterSwapDelta return values. Includes a genesis sale phase, proof-of-work token mining, and a governance gate that blocks swaps until the genesis pool is seeded.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xaea739d4a978bb4c22f2e43bd008817979a860cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HaloHook",
+      "description": "HaloHook implements a phase-based ETH tax system for a token launch, extracting 3\u201330% from buys and sells via hook deltas with a time-decaying ignition period. Buy taxes are partially accrued as claimable refunds, released only if the buyer holds their token position for a minimum block window after purchase.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -10495,6 +10845,76 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xede8ec3dbb11055a736612e174ab7b0b41028ac0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FairTradeHook",
+      "description": "A Uniswap v4 hook that blocks swaps from addresses on an owner-maintained blocklist; beforeAddLiquidity and beforeRemoveLiquidity are implemented as pass-throughs with no additional logic.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xedef34db16d8c8cd874effcb5feba46b94d23acc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LendingHookV4",
+      "description": "A lending AMM hook that manages a full-range ETH/TOKEN LP position as a collateralized borrowing vault. LPs deposit ETH and TOKEN to earn swap fees; borrowers post TOKEN collateral for ETH loans at 40% LTV. Skims a 0.5% protocol fee on each swap via BeforeSwapDelta/AfterSwapDelta, and blocks swaps in any block where a liquidation occurred.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
