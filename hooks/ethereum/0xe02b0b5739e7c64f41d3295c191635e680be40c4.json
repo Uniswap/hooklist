@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe02b0b5739e7c64f41d3295c191635e680be40c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TuringHook",
+    "description": "Uniswap v4 hook for the TURING protocol that collects a 10% output fee on each swap: burns TURING tokens on buys (ETH\u2192TURING) and distributes ETH fees on sells, splitting 1% to a team wallet and 9% to the token treasury. Calls enterSwap() on the token contract before each swap to set transient authorization.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
