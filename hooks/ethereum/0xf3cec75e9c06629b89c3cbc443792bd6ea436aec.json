@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf3cec75e9c06629b89c3cbc443792bd6ea436aec",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PerpLandHook",
+    "description": "A leveraged-long protocol on a bonding curve that lets users open 2\u20135x ETH-collateralized long positions. The hook owns all pool liquidity, restricts LP operations to itself, gates trading on a `tradingEnabled` flag, enforces TWAP-based price gates on opens, caps per-block curve advances, and auto-liquidates undercollateralized positions inside `afterSwap`.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
