@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2677fdcb72f59766d03d9ee4a6c7390bf3ed0800",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DCAHook",
+    "description": "A hook that gates liquidity additions on two specific pools: limits the ETH/DCA pool to a single initial liquidity add, and enforces full-range tick bounds (\u00b1887200) for the DCA/SPX6900 pool via beforeAddLiquidity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
