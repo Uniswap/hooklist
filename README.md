@@ -35,7 +35,7 @@ Optional fields (name, description, deployer, audit URL) can be provided in the 
 
 ## Supported Chains
 
-Ethereum, Unichain, Base, Arbitrum, Optimism, Polygon, Blast, Worldchain, Avalanche, BNB, Celo, Zora, Ink, Soneium, Linea, Monad, MegaETH, Tempo, X Layer, zkSync
+Ethereum, Unichain, Base, Arbitrum, Optimism, Polygon, Blast, Worldchain, Avalanche, BNB, Celo, Zora, Ink, Soneium, Linea, Monad, Robinhood Chain, MegaETH, Tempo, X Layer, zkSync
 
 See [`chains.json`](chains.json) for chain IDs and block explorer mappings.
 
