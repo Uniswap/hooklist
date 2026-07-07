@@ -54,9 +54,6 @@ jobs:
       - name: Fetch source
         env:
           ETHERSCAN_API_KEY: ${{ secrets.ETHERSCAN_API_KEY }}
-          OKX_ACCESS_KEY: ${{ secrets.OKX_ACCESS_KEY }}
-          OKX_SECRET_KEY: ${{ secrets.OKX_SECRET_KEY }}
-          OKX_PASSPHRASE: ${{ secrets.OKX_PASSPHRASE }}
           GH_TOKEN: ${{ github.token }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
           CHAIN: ${{ steps.prefilter.outputs.CHAIN }}
