@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaea739d4a978bb4c22f2e43bd008817979a860cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HaloHook",
+    "description": "HaloHook implements a phase-based ETH tax system for a token launch, extracting 3\u201330% from buys and sells via hook deltas with a time-decaying ignition period. Buy taxes are partially accrued as claimable refunds, released only if the buyer holds their token position for a minimum block window after purchase.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
