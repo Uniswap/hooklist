@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x068f3dd75f3537bc5b396bc0ead71b832c0c2acc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "VortexHook",
+    "description": "A Uniswap v4 hook for a VRTX/USDC pool that organizes liquidity into tick-based bands; out-of-range bands have their USDC removed and deposited to Aave to earn yield, which is periodically used to buy and burn VRTX. Charges a 1% fee on USDC-side swaps, restricts liquidity management to the hook itself, and gates public swaps behind an owner-controlled started flag.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
