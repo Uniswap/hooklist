@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x62ee80f068dce30ea4a275e91bb733fb17fd0ac0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FairTradeHook",
+    "description": "Anti-MEV hook that blocks swaps from owner-blocklisted addresses, reverts same-block swaps from the same sender (sandwich detection), and enforces a configurable per-address timestamp cooldown between swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "other"
+  }
+}
