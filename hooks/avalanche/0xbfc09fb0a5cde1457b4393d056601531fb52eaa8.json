@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbfc09fb0a5cde1457b4393d056601531fb52eaa8",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "AuthSwaps",
+    "description": "Restricts swaps, liquidity operations, and pool initialization to users verified as whitelisted and not banned or sanctioned by an external Manifest Finance Auth Manager contract, with router-level access gated via an owner-managed trusted-sender allowlist.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
