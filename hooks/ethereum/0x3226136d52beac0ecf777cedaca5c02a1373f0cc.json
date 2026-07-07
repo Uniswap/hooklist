@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3226136d52beac0ecf777cedaca5c02a1373f0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "GeodeMiningHook",
+    "description": "A token launch hook that tracks WETH buy volume per round to allocate mining rewards to buyers, accrues a 3% fee on all WETH swaps (split between burns and protocol), and automatically executes token buybacks triggered by sell pressure.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
