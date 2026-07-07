@@ -12631,5 +12631,40 @@
       "vanillaSwap": false,
       "swapAccess": "temporal"
     }
+  },
+  {
+    "hook": {
+      "address": "0x2e11d4f7bbb9af02a439fa5bedb8a4c7ce9540c0",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "KickIt Possession Fee Hook",
+      "description": "A Uniswap v4 hook that implements a possession-based dynamic fee for a $KICK/WOKB pool. In `beforeSwap`, it computes and overrides the LP fee (0.30%\u20131.50%) based on a time-decaying buy/sell pressure score; in `afterSwap`, it updates that score with the completed trade's direction and size, scaled by a configurable tournament phase.",
+      "deployer": "0x1c2B8137c0C5bf49EB03D4be3A7F8577e82bF146",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
   }
 ]
