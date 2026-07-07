@@ -806,6 +806,41 @@
   },
   {
     "hook": {
+      "address": "0x358ac5a3fa0d5a80d78013dbe6a4f290438ca000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FullRangeLBPStrategy",
+      "description": "A Uniswap v4 hook implementing a Liquidity Bootstrapping Pool strategy that restricts pool initialization to the contract itself via beforeInitialize, then migrates raised funds and reserved tokens into a full-range liquidity position after the auction concludes.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5832f3e51295cee676eebbb25748d527f64b5f80",
       "chain": "ethereum",
       "chainId": 1,
@@ -946,6 +981,41 @@
   },
   {
     "hook": {
+      "address": "0x890681cff5ad2069f020027f41f5f68f6a292000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FullRangeLBPStrategy",
+      "description": "A Uniswap v4 hook implementing a Liquidity Bootstrapping Pool (LBP) migration strategy. Uses `beforeInitialize` to restrict pool initialization to the contract itself, then migrates token sale proceeds and reserve tokens into a full-range v4 liquidity position after the LBP auction concludes.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x98fa6468c65ec0100cb92c62dc6109236c130440",
       "chain": "ethereum",
       "chainId": 1,
@@ -1012,6 +1082,76 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb0bbf26a84587e91f9c0ffa5622940c3324e2880",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "V4AlphaHook",
+      "description": "A Uniswap v4 hook that restricts pool initialization to the contract owner and gates swaps and liquidity additions via a per-pool start timestamp, allowing the owner to schedule when trading begins.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbd3ab5859f244cc9f51ee0ca755c5cf663d80040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PrismHook",
+      "description": "DN404-style ERC20/ERC721 hybrid token (PRISM, 5,000 supply) that manages a single Uniswap v4 ETH/PRISM pool. Each whole token held auto-mints an NFT; LP fees harvested from the hook's own position are distributed pro-rata to NFT holders. The afterSwap callback is a pure no-op.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
