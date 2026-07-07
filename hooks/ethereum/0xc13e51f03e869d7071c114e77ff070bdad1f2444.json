@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc13e51f03e869d7071c114e77ff070bdad1f2444",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DEPHIHook",
+    "description": "Implements asymmetric block-decaying swap taxes: buy tax starts at 99% and decays to 10% over ~445 blocks (100 bps per 5 blocks), sell tax is constant 10%. Fees are skimmed in afterSwap, converted to ETH via an internal pool swap if needed, then split between the token contract, a charity address, and a protocol address. Exact output swaps are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
