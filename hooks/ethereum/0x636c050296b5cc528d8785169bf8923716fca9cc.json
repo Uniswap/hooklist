@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x636c050296b5cc528d8785169bf8923716fca9cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ArtCoinsHookSkimFee",
+    "description": "Uniswap v4 hook for ArtCoins token launches that skims a per-swap fee from swap volume and splits it three ways: a bounty leg, a protocol leg, and an optional referral leg. Implements a dynamic LP fee and an anti-sniper decay window that blocks public LP additions while the skim rate is elevated above its baseline.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
