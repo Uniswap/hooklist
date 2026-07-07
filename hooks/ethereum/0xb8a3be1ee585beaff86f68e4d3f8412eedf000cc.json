@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb8a3be1ee585beaff86f68e4d3f8412eedf000cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PDAIBurnHook",
+    "description": "Burns 1% of pDAI on every swap in a WETH/pDAI Uniswap v4 pool. beforeSwap handles the specified side and afterSwap handles the unspecified side, each taking pDAI from the pool manager and sending it to address(0xdEaD) via return deltas. Burn failures are silently ignored so swaps always proceed. No admin, no upgrades, all addresses hardcoded.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
