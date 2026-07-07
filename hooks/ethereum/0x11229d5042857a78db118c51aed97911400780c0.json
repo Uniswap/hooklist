@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x11229d5042857a78db118c51aed97911400780c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "VitaHook",
+    "description": "Uniswap v4 hook that gates trading on official VITA pools until the token is started, applies a time-based tiered dynamic LP fee (decreasing from 5% to 1% over 7 hours), and refreshes a random seed after each swap to support token launch mechanics.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
