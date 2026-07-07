@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x29d6e0ff868ba37fd81f84208b1bc6781dffb0c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "CumHook",
+    "description": "Dynamic LP fee hook that adjusts fees based on cumulative price impact (CPI) across swaps. Fees scale with directional market imbalance and time-decay between swaps; each pool must be explicitly configured with fee bounds, decay parameters, and illiquidity scale before trading is permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
