@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9ab4a4d223fa0ce27ab15b376f298f7ee3b9eac0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HyperVolatileHook",
+    "description": "An exponential bonding-curve JIT-liquidity hook that maintains three concentrated positions (active, display-high, display-low) per pool. Before each swap, it burns all existing positions and remints an active position sized to the trade per the curve, plus display positions flanking it; after the swap it updates the curve state and vault accounting.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
