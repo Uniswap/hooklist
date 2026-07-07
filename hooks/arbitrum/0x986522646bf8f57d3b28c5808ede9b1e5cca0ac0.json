@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x986522646bf8f57d3b28c5808ede9b1e5cca0ac0",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "FedzHook",
+    "description": "A Uniswap v4 hook for a stablecoin pool that restricts swaps and liquidity operations to the current active player in an external time-slot system (checked via tx.origin), and reverts any swap whose post-execution price falls below a configurable depeg threshold.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "other"
+  }
+}
