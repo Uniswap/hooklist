@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4440854b2d02c57a0dc5c58b7a884562d875c0c4",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "UniswapV4KEMHook",
+    "description": "A swap hook that requires a signed off-chain quote in hookData for each swap, validating exchange rate, nonce, and expiry against a designated quote signer. Excess output beyond the signed maximum exchange rate is captured as EG tokens minted as ERC-6909 claims in the PoolManager, claimable by designated accounts.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
