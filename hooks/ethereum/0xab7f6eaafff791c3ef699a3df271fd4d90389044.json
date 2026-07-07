@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xab7f6eaafff791c3ef699a3df271fd4d90389044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "CellHook",
+    "description": "CellHook is simultaneously the $CELL ERC-20 token and its own Uniswap v4 hook. After each swap, it takes a 7% fee on the unspecified currency: CELL-side fees are 100% burned for deflation, while ETH-side fees are distributed as ETH yield to token holders and fund a randomized, volume-paced token-elimination mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
