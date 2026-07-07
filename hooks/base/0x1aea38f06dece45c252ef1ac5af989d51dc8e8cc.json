@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1aea38f06dece45c252ef1ac5af989d51dc8e8cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ClankerHookStaticFeeV2",
+    "description": "Clanker protocol hook that configures asymmetric static LP fees per pool (separate buy and sell rates for the clanker token), collects protocol fees from swaps via BeforeSwapDelta and AfterSwapDelta, and includes an optional MEV module that can temporarily raise fees to deter sandwich attacks during the initial liquidity deployment window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
