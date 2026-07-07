@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x43abf000b9783254f5ef3227b8ba598d298c40cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "StarbaseHookV2",
+    "description": "Tax collection hook for the STARBASE V2 STAR/WBNB pool on BNB Chain that collects a 4% STAR tax on every swap, routing 1% to a burn address, 1% to an operations wallet, and 2% to a space fund via BeforeSwapDelta and AfterSwapDelta returns.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
