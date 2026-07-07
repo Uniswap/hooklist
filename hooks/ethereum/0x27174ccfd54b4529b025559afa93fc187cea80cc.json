@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x27174ccfd54b4529b025559afa93fc187cea80cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "QuasarHook",
+    "description": "A Uniswap v4 hook that burns 1% of its own QUASAR/PRISM token on every swap (taken via beforeSwap/afterSwap return deltas) and distributes 4% LP fees to rank-weighted NFT holders. Each whole QUASAR token unit held automatically mints a corresponding facet NFT, with earlier-minted facets assigned higher rank-based weights for proportionally greater fee shares.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
