@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xff02680c7afe8c63e91c07efa985c81efa6b68c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "StockTokenHook",
+    "description": "A hook for stock token pools that enforces configurable trading-hours windows and charges time-decaying buy/sell fees (decaying from a start rate to an end rate over 48 hours from the first trade), redistributing collected fees between a developer wallet and the StockToken vault contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
