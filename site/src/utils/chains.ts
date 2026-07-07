@@ -66,6 +66,12 @@ export const CHAINS: Record<string, ChainInfo> = {
     color: "#8247e5",
     explorerBaseUrl: "https://polygonscan.com",
   },
+  robinhood: {
+    chainId: 4663,
+    displayName: "Robinhood Chain",
+    color: "#00c805",
+    explorerBaseUrl: "https://robinhoodchain.blockscout.com",
+  },
   soneium: {
     chainId: 1868,
     displayName: "Soneium",
