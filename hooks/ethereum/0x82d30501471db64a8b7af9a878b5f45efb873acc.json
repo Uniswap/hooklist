@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x82d30501471db64a8b7af9a878b5f45efb873acc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LendingHookV4",
+    "description": "A full-range ETH/TOKEN Uniswap v4 LP vault with integrated lending: LPs deposit to earn swap fees and origination fees, borrowers lock TOKEN collateral to borrow ETH at 40% LTV, and a 0.5% protocol fee is skimmed from every swap via BeforeSwapDelta and AfterSwapDelta. Includes borrow/repay/liquidate mechanics with a manipulation-resistant price snapshot system.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
