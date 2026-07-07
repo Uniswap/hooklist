@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6d9c97c94c88a67d1a93bbc8ccae3a5322208844",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "FeeHook",
+    "description": "Tracks swap fees in afterSwap and periodically collects them from an LP position, burning non-native token proceeds. Distributes accumulated ETH fees weekly to vMooney token holders who check in each week.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
