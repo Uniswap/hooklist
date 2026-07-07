@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0d62529346ac2c61f5c0582210d01214687bc0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FeeHookV3",
+    "description": "A fee-collection hook for token launch pools that charges ETH-denominated fees on each swap, splitting proceeds among a registered token creator, an optional partner, an optional hot-swappable extension module, and a protocol wallet. Fee rates are determined by a configurable market-cap-tiered table or per-token custom fees with automatic decay.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
