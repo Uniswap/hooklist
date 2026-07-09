@@ -6229,6 +6229,41 @@
   },
   {
     "hook": {
+      "address": "0x77b2051204306786934be8bec29a48584e133ac4",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "BackGeoOracle",
+      "description": "A Uniswap v4 oracle hook that records TWAP observations and executes automatic backrun swaps to reduce price impact. Requires full-range liquidity positions, exactInput-only swaps, and routers implementing IMsgSender to credit backrun proceeds to the original sender.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x77B2051204306786934BE8bEC29a48584E133aC4",
       "chain": "bnb",
       "chainId": 56,
