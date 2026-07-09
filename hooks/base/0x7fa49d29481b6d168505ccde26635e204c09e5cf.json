@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7fa49d29481b6d168505ccde26635e204c09e5cf",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AngstromL2",
+    "description": "Uniswap v4 hook that charges a priority-fee-based MEV tax on swaps and JIT liquidity additions/removals, distributing collected fees between pool creator and factory protocol while compensating LPs via a per-tick reward accumulator system. Only supports ETH-paired pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
