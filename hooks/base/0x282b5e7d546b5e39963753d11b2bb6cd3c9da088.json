@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x282b5e7d546b5e39963753d11b2bb6cd3c9da088",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MoonpotHook",
+    "description": "A USDC/TMP pool hook that applies dynamic defense taxes on TMP sells (scaled by distance above a configurable price floor), intercepts and burns excess TMP beyond the protocol liquidity cap via BeforeSwapDelta, and records a TWAP oracle to guard against sandwich attacks during liquidity injection.",
+    "deployer": "0xb2AC08BD330587BaEdca180e791426B901a937A9",
+    "verifiedSource": true,
+    "auditUrl": "https://hacken.io/audits/the-moonpot/sca-the-moonpot-the-moonpot-contracts-may2026/"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
