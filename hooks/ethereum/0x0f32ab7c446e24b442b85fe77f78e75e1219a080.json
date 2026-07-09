@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0f32ab7c446e24b442b85fe77f78e75e1219a080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MoonsendFeeHookEth",
+    "description": "A Uniswap v4 hook that applies a dynamic LP fee override in `beforeSwap` for pools registered by an owner-controlled factory. Each pool's fee tier is set at registration time from a fixed set of allowed values; unregistered pools receive no override.",
+    "deployer": "0x45C4854c699db833eeF2bAe6cFB09EA2551E97CB",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
