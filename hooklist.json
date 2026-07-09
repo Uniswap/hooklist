@@ -5669,6 +5669,41 @@
   },
   {
     "hook": {
+      "address": "0xe0e522e5888e398d9e5d4d90a48c489425cb2888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "sETH Hook",
+      "description": "A Uniswap v4 hook that wraps and unwraps Superfluid's native asset SuperToken (SETH/ETHx) at a 1:1 ratio. It intercepts swaps via `beforeSwap` to perform ETH\u2192ETHx wrapping or ETHx\u2192ETH downgrading directly, returning a `BeforeSwapDelta` to handle pool accounting. Direct liquidity operations are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe2b4100de1cd284bd364f738d1354715515c90c0",
       "chain": "base",
       "chainId": 8453,
