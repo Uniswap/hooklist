@@ -12529,6 +12529,41 @@
   },
   {
     "hook": {
+      "address": "0x79234983ded8eaa571873fffe94e437e11c7fac4",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "BackGeoOracle",
+      "description": "Oracle hook for zero-fee, full-range Uniswap v4 pools that records TWAP observations and performs automatic backrun swaps to partially reverse large price impacts, returning value to swappers via ERC6909 tokens. Only exactIn swaps are supported; routers must implement IMsgSender or backrun transactions will revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb1db44de89634a001ceb5847defc3ff1e5601bc0",
       "chain": "optimism",
       "chainId": 10,
