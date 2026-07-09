@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Spot",
+    "description": "Full-range AMM hook with a truncated geometric mean oracle that dynamically adjusts LP fees (base + surge) based on tick movement. Charges a configurable protocol fee share on each swap and reinvests it into a full-range liquidity position via the FullRangeLiquidityManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
