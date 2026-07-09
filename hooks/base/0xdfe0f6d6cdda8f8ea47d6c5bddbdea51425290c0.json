@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdfe0f6d6cdda8f8ea47d6c5bddbdea51425290c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "HomelanderUniV4Plugin",
+    "description": "A Uniswap v4 hook that runs on-chain MEV arbitrage after each swap via an external executor contract, applies a configurable dynamic LP fee (waived for the MEV executor address), and registers new pools with an external routing contract on initialization.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
