@@ -12144,6 +12144,41 @@
   },
   {
     "hook": {
+      "address": "0xebac1d1a384d3ae1a162fdf30788fcfa228380cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ash Hook",
+      "description": "AshHook collects a configurable protocol fee (default 5%, max 10%) on ETH/ASH pool swaps: an ETH fee on buys is taken in beforeSwap via returnDelta, and an ETH fee on sells is taken in afterSwap, both forwarded to a treasury address. The owner can pause fee collection and update the fee rate and treasury.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xeBAc1d1a384D3AE1a162fdF30788FcfA228380cc",
       "chain": "ethereum",
       "chainId": 1,
