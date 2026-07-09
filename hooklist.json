@@ -8609,6 +8609,41 @@
   },
   {
     "hook": {
+      "address": "0x41a9bf2969af822942a553babd6d8dda0dff80cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ETIM Tax Hook",
+      "description": "Applies a configurable buy/sell tax (up to 10%) on ETIM swaps via BeforeSwapDelta; buy tax is collected in ETH (currency0), sell tax is split among a burn address, S6 rewards, a foundation wallet, and an official wallet. Buys are blocked until a governance flag (isGrowthPoolDepleted on the main contract) is set; exempt addresses bypass taxation. afterSwap currently returns a zero delta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x428091038f0e0631b627e1061475ad919a983acc",
       "chain": "ethereum",
       "chainId": 1,
