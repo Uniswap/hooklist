@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x59f39091fd6f47e9d0bcb466f74e305f1709bac4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BackGeoOracle",
+    "description": "A TWAP oracle hook that performs partial backruns after price-impacting swaps: when a swap moves the tick beyond a threshold, the hook executes an inverse swap via poolManager.swap() and credits the surplus to the original sender as ERC6909 tokens. Only exactIn swaps are supported; routers must implement IMsgSender() to identify the recipient for backrun proceeds.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
