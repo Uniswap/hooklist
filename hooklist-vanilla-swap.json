@@ -1331,6 +1331,41 @@
   },
   {
     "hook": {
+      "address": "0x580ca49389d83b019d07e17e99454f2f218e2dc0",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "UniswapV4ScheduledMulticurveInitializerHook",
+      "description": "A token launch hook by Whetstone Research that gates pool initialization and liquidity additions exclusively to a designated Initializer contract, and blocks swaps until a per-pool configured start timestamp, enabling scheduled fair-launch token distributions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x079fd05102b6569dedde57551311bffe83f19f00",
       "chain": "polygon",
       "chainId": 137,
