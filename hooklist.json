@@ -1926,6 +1926,41 @@
   },
   {
     "hook": {
+      "address": "0x2fd54aaf84023eda60bd65edb5914c1a306850cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SeedifyFeeHook",
+      "description": "A time-based fundraise fee hook for Uniswap v4 that charges configurable fees on swaps involving a designated fundraise token, with a higher initial rate during a launch window that drops to a lower rate afterward. Fees are split between platform and creator treasuries and accumulated for on-demand withdrawal.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x34a45c6b61876d739400bd71228cbcbd4f53e8cc",
       "chain": "base",
       "chainId": 8453,
