@@ -2799,6 +2799,41 @@
   },
   {
     "hook": {
+      "address": "0x66e51deab56975bb1c64413bd3ab01fa95b82acc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "XDHook",
+      "description": "A launchpad hook that collects swap fees (initially 2%) via ERC-6909 claims, preferring WETH when possible. Pre-graduation, pool initialization, liquidity, and swaps are restricted to allowlisted actors via an authority registry; post-graduation, access control is lifted and the fee is capped at 0.15%.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6b80ce7c95b0206b14ce9977c904e11918d48040",
       "chain": "base",
       "chainId": 8453,
@@ -6207,6 +6242,41 @@
       "beforeInitialize": true,
       "afterInitialize": false,
       "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "Spot",
+      "description": "A Uniswap v4 hook that computes dynamic LP fees via a base+surge pricing model using a truncated geometric oracle, takes a configurable protocol fee share on each swap, and reinvests that share into a full-range liquidity position.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
