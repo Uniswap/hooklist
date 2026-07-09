@@ -6509,6 +6509,41 @@
   },
   {
     "hook": {
+      "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
+      "chain": "celo",
+      "chainId": 42220,
+      "name": "Spot",
+      "description": "Uniswap v4 hook that computes dynamic swap fees (base + surge) from a truncated geometric oracle and charges a configurable protocol fee share per swap, reinvesting it into a full-range liquidity position managed by FullRangeLiquidityManager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0000000aa232009084Bd71A5797d089AA4Edfad4",
       "chain": "ethereum",
       "chainId": 1,
