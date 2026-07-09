@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "Super Strategy",
-    "description": "A fee-collecting hook that skims a 2.3% fee on each swap (2% hook reserves + 0.3% protocol) via beforeSwapReturnsDelta, accumulating reserves per pool. The owner can register pools, pause trading, and trigger liquidity management back into the pool via Uniswap v4's PositionManager.",
+    "description": "A fee-collecting hook that skims a 2.3% fee on each swap (2% hook reserves + 0.3% protocol) via beforeSwapReturnsDelta, accumulating reserves per pool. Pools are registered automatically on initialization. The owner can pause trading and claim LP fees; anyone can trigger liquidity management (minting or adding to positions via Uniswap v4's PositionManager) and receives a 0.1% caller incentive for doing so.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
