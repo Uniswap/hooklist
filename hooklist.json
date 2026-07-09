@@ -8364,6 +8364,41 @@
   },
   {
     "hook": {
+      "address": "0x3a3a9a072ab438335a52e0cf064f7ec91d824080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Tetris Custom Dynamic Fee Hook",
+      "description": "An upgradeable proxy hook that calls poolManager.updateDynamicLPFee() on every swap to enforce a configurable LP fee percentage. The fee and admin address are set at initialization and can be updated by the admin.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3a84bc99fd208bdc0fee2eb72a9d6c9a7271a444",
       "chain": "ethereum",
       "chainId": 1,
