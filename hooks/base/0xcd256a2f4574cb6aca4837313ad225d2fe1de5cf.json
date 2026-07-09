@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcd256a2f4574cb6aca4837313ad225d2fe1de5cf",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AngstromL2",
+    "description": "A Uniswap v4 hook for ETH-paired pools that applies MEV-based swap taxes (scaled to gas priority fee) and protocol/creator swap fees, distributes rewards to in-range LPs via tick-based accounting, charges a JIT liquidity MEV tax on adds/removes, and supports a withdraw-only emergency mode controlled by an external factory owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
