@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7624ac031ca94a9d6f732a74ef90ea10c5510040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SpectraLaunch",
+    "description": "Spectra launchpad hook on Base. ERC-20 + Uniswap V4 afterSwap hook where holding the token is providing liquidity (swap fees accrue pro-rata to holders). Graduated from a bonding curve. Token contract: 0x7624aC031CA94a9D6f732A74EF90EA10c5510040.",
+    "deployer": "0x34054B1dF385595d8ce6345b856459b568FE7714",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
