@@ -13019,6 +13019,41 @@
   },
   {
     "hook": {
+      "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "Spot",
+      "description": "A Uniswap v4 hook that implements dynamic LP fee management and protocol fee collection. In beforeSwap, it computes a dynamic fee (base + surge via DynamicFeeManager, or a manual override) and charges a protocol share on exactIn swaps; in afterSwap, it does the same for exactOut swaps. Collected fees are minted as ERC-6909 credits to a FullRangeLiquidityManager for optional auto-reinvestment, while a TruncatedGeometricOracle tracks tick movement for volatility-based fee tuning.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x28f389d3d730c72141de6bb7516fef6f487f80cc",
       "chain": "xlayer",
       "chainId": 196,
@@ -13076,6 +13111,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x88c9ff9fc0b22cca42265d3f1d1c2c39e41cdacc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "Spot",
+      "description": "A Uniswap v4 hook (contract Spot) that implements dynamic LP fee management, protocol fee collection, and oracle price observations. In beforeSwap it computes fee overrides via lpFeeOverride and charges protocol fees; in afterSwap it updates tick oracles, settles fees, and triggers liquidity reinvestment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
