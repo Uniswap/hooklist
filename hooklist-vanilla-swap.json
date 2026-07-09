@@ -1261,6 +1261,41 @@
   },
   {
     "hook": {
+      "address": "0xe54082dfbf044b6a8f584bdddb90a22d5613c440",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UPeg Hook",
+      "description": "Calls `start()` on a configured token when the first liquidity is added to that token's pool, and updates an internal random seed on each swap involving the configured token. Both actions are no-ops when no token is configured or for pools not involving the token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xede8ec3dbb11055a736612e174ab7b0b41028ac0",
       "chain": "ethereum",
       "chainId": 1,
