@@ -7209,6 +7209,41 @@
   },
   {
     "hook": {
+      "address": "0x05388fb8b99b66867f08b2841d6baaea58b040cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ETIMTaxHook",
+      "description": "A tax hook for ETIM/ETH swaps that deducts a configurable tax (up to 10%) on buys and sells via beforeSwap. Buy taxes (in ETH) and sell taxes (in ETIM) are held in this contract, with sell taxes split among S6, Foundation, Official, and a burn address. Buys are gated by a governance flag from an external main contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x05388fB8B99B66867f08b2841D6bAaea58B040cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -10154,6 +10189,41 @@
       "chainId": 1,
       "name": "LitePSM Aggregator Hook (DAI)",
       "description": "Aggregator hook that routes USDC/DAI (or USDC/USDS) swaps through a MakerDAO LitePSM contract, bypassing Uniswap pool liquidity entirely. Uses beforeSwapReturnsDelta to intercept and settle swaps at PSM pricing; blocks direct liquidity addition to the pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x958a0904940f744f8c6b72c043ceee3ea34ae888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LitePSM Aggregator Hook USDS",
+      "description": "Routes USDC\u2194USDS (or DAI) swaps through a MakerDAO LitePSM by intercepting beforeSwap and returning a BeforeSwapDelta, bypassing the standard AMM curve entirely. Liquidity addition is blocked; the hook enforces one canonical pool per gem/stable token pair.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
