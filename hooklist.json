@@ -12634,6 +12634,41 @@
   },
   {
     "hook": {
+      "address": "0x54bd666ea7fd8d5404c0593eab3dcf9b6e2a3ac4",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "BackGeoOracle",
+      "description": "Oracle hook with automated backrun functionality that mitigates price impact. Enforces zero-fee, max-tick-spacing, full-range-only pools. On swaps (exactIn only), computes a tick delta versus the last observation; if the price impact exceeds a threshold, executes an inverse nested swap and mints ERC6909 tokens to the original sender. Requires swap routers to implement `IMsgSender.msgSender()` or backrun-triggering transactions will revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x54bd666eA7FD8d5404c0593Eab3Dcf9b6E2A3aC4",
       "chain": "unichain",
       "chainId": 130,
