@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5725df570e0008997dacef46bc179bbfc4d125cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Auto Liquidity Generator Hook",
+    "description": "LiquidityGenHook collects configurable buy and sell WETH taxes on swaps via BeforeSwapDelta and AfterSwapDelta, accumulates them, and automatically re-invests into the pool as full-range liquidity once a threshold is reached. A platform fee is taken before the liquidity add.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
