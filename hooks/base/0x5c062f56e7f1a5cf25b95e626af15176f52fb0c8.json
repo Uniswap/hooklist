@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5c062f56e7f1a5cf25b95e626af15176f52fb0c8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SuperStrategy",
+    "description": "A Uniswap v4 hook that collects percentage-based swap fees using BeforeSwapDelta, splitting proceeds between a per-pool hook reserve and a configurable protocol fee receiver. Manages concentrated liquidity positions per pool with cooldown-gated rebalancing logic.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
