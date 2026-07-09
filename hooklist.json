@@ -1366,6 +1366,41 @@
   },
   {
     "hook": {
+      "address": "0x1c0c00db76140b4e7deb997ccf1246d8d6b80440",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "A51peg Hook",
+      "description": "A51pegHook locks the A51peg token pool on first liquidity addition, and in afterSwap opportunistically triggers NFT reveal when an unrevealed token is pending. Emits swap analytics events via AlienSwap. No swap access control.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1e0c810a30fb82391df936602c1161421381b0c8",
       "chain": "base",
       "chainId": 8453,
