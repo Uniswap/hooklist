@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7cbbff9c4fcd74b221c535f4fb4b1db04f1b9044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Alphix LVR Fee Hook",
+    "description": "Dynamic LP fee hook that applies admin-controlled per-pool LP fees via `updateDynamicLPFee` and charges a configurable per-pool protocol fee on each swap's output via `afterSwap` with delta return. Accumulated protocol fees are held as ERC-6909 claims and can be swept to a treasury address by calling `handleHookFees()`.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
