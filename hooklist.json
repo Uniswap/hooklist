@@ -10254,6 +10254,41 @@
   },
   {
     "hook": {
+      "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Spot",
+      "description": "A dynamic fee hook that charges a base fee derived from oracle tick volatility and a time-decaying surge fee during high-volatility periods; a configurable protocol share of swap fees is minted to a full-range liquidity manager for reinvestment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb7945204f1f72b3adffb166b09f52a027a122fcc",
       "chain": "ethereum",
       "chainId": 1,
