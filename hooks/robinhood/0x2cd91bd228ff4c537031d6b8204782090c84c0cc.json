@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2cd91bd228ff4c537031d6b8204782090c84c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "IndexFeeHook",
+    "description": "Charges a fixed 3% fee on all swaps in native ETH/token pools, taken in ETH and sent to an immutable treasury address. Uses return deltas split across beforeSwap (when ETH is the specified currency) and afterSwap (when ETH is the unspecified currency); pools where currency0 is not native ETH pass through untaxed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
