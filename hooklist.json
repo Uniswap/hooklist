@@ -13929,6 +13929,41 @@
   },
   {
     "hook": {
+      "address": "0x25a1bb2313e4b24307e8259b177431a61bfe04cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SharesHook",
+      "description": "Collects protocol fees (2.5% each) on buy and sell swaps for a designated native/token pool, updates an on-chain random seed on each swap, and notifies an external launch controller of swap activity. Triggers a token start on first liquidity addition once config is finalized.",
+      "deployer": "0x2E613Cf717c40c3575073f761d3b423Cb7153a91",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2cd91bd228ff4c537031d6b8204782090c84c0cc",
       "chain": "robinhood",
       "chainId": 4663,
