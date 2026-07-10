@@ -13824,6 +13824,41 @@
   },
   {
     "hook": {
+      "address": "0x65efdf8cce99b53c925df878df275df21cb6e8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Clanker Dynamic Fee Hook (V2)",
+      "description": "A dynamic fee hook for Clanker pools that adjusts LP fees based on realized volatility. It simulates each swap to estimate the post-swap tick, computes a volatility accumulator from tick displacement relative to a reference tick, and calls updateDynamicLPFee with a fee that scales quadratically with volatility, bounded by configurable base and max fee parameters.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
       "chain": "soneium",
       "chainId": 1868,
