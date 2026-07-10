@@ -7839,6 +7839,41 @@
   },
   {
     "hook": {
+      "address": "0x10392843021a1af0abe3b1a21f14673dc05340cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LivoSwapHook",
+      "description": "A singleton, ownerless Uniswap v4 hook for tokens graduated via LivoGraduatorUniswapV4 that collects LP fees and time-limited buy/sell taxes on ETH/token swaps. Fees are split between a configurable LP fee router (treasury + creator) and the token's master fee handler, with fee amounts determined per-token via ILivoToken.getSwapFees().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x10865f8301d46a61Badc726DE44d9D4F00F68440",
       "chain": "ethereum",
       "chainId": 1,
