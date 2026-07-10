@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x367bf580a1a6cc784f30a77713e02eca76210044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "UruLaunchHook",
+    "description": "Uniswap V4 hook for the URU token launch that collects a time-decaying sniper tax (up to 99% at launch, decaying to 1% over a configured duration) on each swap via afterSwapReturnsDelta, sending proceeds to a vault. Also tracks per-epoch URU/WETH volume to compute and emit an emission rate signal for external consumers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
