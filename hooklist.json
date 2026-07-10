@@ -13894,6 +13894,41 @@
   },
   {
     "hook": {
+      "address": "0x48b8f6ad3a1b4aa477314c9a23035b8f84dde8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Clanker Static Fee Hook (V2)",
+      "description": "A Clanker v4 hook that applies directional static LP fees: different fee rates for clanker-token vs paired-token swap directions. On each swap, it calls updateDynamicLPFee to enforce the configured static rate for that direction.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x65efdf8cce99b53c925df878df275df21cb6e8cc",
       "chain": "robinhood",
       "chainId": 4663,
