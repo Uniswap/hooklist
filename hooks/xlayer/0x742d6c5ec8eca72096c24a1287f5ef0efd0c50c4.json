@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x742d6c5ec8eca72096c24a1287f5ef0efd0c50c4",
+    "chain": "xlayer",
+    "chainId": 196,
+    "name": "GoldenGoalHook",
+    "description": "World Cup-style arena hook for GOAL/WOKB: match-phase dynamic fees (Kickoff/Live/ExtraTime/FinalWhistle), on-chain goal points per swap, 20 bps skim split 50/50 pot/buyback with GOAL auto-burn, anti-snipe max-buy window, and pro-rata pot claims after Final Whistle.",
+    "deployer": "0x9a8a00698043f52012d9e4cd9c0badf5b509d2fb",
+    "verifiedSource": false,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "temporal"
+  }
+}
