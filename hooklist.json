@@ -9239,6 +9239,41 @@
   },
   {
     "hook": {
+      "address": "0x4a00c91f7f1dc905211a4b8e931607d72c2f1040",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AtomicLimitOrderHook",
+      "description": "AtomicLimitOrderHook atomically combines a swap and a limit-order placement in a single transaction, extending OpenZeppelin's LimitOrderHook. It prevents front-running between the two steps and adds guards that keep order accounting consistent under aggregator-style multi-hop swaps. Uses the AFTER_INITIALIZE and AFTER_SWAP flags; ordinary swaps through the pool require no custom hook data.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4b2eb653d13e6c9ac5a0a01fde22f2c8d6592888",
       "chain": "ethereum",
       "chainId": 1,
@@ -14104,6 +14139,41 @@
   },
   {
     "hook": {
+      "address": "0xa507e8c472918338c6c15eb894c9703581b060cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PlebIndexFeeHook",
+      "description": "Charges an immutable ETH trade tax (up to 4%) on PLEB/ETH pool swaps, diverting the fee directly to a fixed treasury address via BeforeSwapDelta and AfterSwapDelta. Restricts pool initialization to native-ETH/PLEB pairs; has no owner or upgrade mechanism.",
+      "deployer": "0x773F8E15b640FecF1c9A1db0EF388E7842bfBD04",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
       "chain": "soneium",
       "chainId": 1868,
@@ -14835,6 +14905,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x742d6c5ec8eca72096c24a1287f5ef0efd0c50c4",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "GoldenGoalHook",
+      "description": "A Uniswap v4 hook implementing a sports-themed trading arena: applies match-phase dynamic fees, accumulates per-swap goal points, takes configurable skim fees split between a communal prize pot and GOAL token buyback-and-burn, enforces a temporal anti-snipe buy limit window, and allows pro-rata pot claims at match end.",
+      "deployer": "0x9a8a00698043f52012d9e4cd9c0badf5b509d2fb",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
