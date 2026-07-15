@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5e6b0bbc811705b8d8234e9914c0507243fb1080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Friar",
+    "description": "Volatility-responsive dynamic LP fee hook using the Liquidity Book volatility-accumulator model. Sets per-swap LP fees based on recent price movement \u2014 low base fee in calm markets that surges with volatility and decays over configurable windows. No owner, no upgradeability; all parameters are immutable.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
