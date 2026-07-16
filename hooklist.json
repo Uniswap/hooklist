@@ -13999,6 +13999,41 @@
   },
   {
     "hook": {
+      "address": "0x23739445e76d83a40f87fe2fd6a53e73badf60cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LittleJohnHook",
+      "description": "A factory-deployed Uniswap v4 launch-pool hook that takes an ETH-leg fee on all four swap shapes via beforeSwap/afterSwap return-delta. The fee optionally decays over time from a launch-time rate to a settled base rate. Fees are minted as ERC-6909 ETH claims to a per-pool locker. A configurable time-bounded sell-lock can restrict the creator from selling during the launch window. Pool config is write-once via factory; no owner or upgrade path exists.",
+      "deployer": "0x37978084Bc37BC0e68F50f2BE7213B94FEFcD916",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2539029365c03b131cca25cb10ff4519a1dcc0cc",
       "chain": "robinhood",
       "chainId": 4663,
