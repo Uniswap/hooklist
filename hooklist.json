@@ -8819,6 +8819,41 @@
   },
   {
     "hook": {
+      "address": "0x3a9f9e9fcb1377de2c2f88ea0d8166e92bbf60c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PriceImpactDynamicFeeHook",
+      "description": "A 2-state dynamic fee hook pinned to a single pool. In the DOWN state, non-owner swaps pay a base LP fee (default 2%); if a swap moves the sqrtPrice beyond a configurable threshold, the crank flips ON and subsequent non-owner swaps pay a fee cap (default 10%). Fee is applied as a beforeSwap LP fee override; the owner (tx.origin) pays 0% and can reset the crank via hookData.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3ba779bad405d9b68a7a7a86ff6916c806a200cc",
       "chain": "ethereum",
       "chainId": 1,
