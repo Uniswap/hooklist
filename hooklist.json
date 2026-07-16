@@ -14244,6 +14244,41 @@
   },
   {
     "hook": {
+      "address": "0x4e3468951d49f2eea976ed0d6e75ffcb44a9a544",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Doppler",
+      "description": "Uniswap v4 pool initializer that distributes liquidity across multiple positions using a bonding curve (Multicurve). Supports dynamic LP fees, optional Doppler Hook callbacks on initialization and swaps, and fee collection via afterSwap delta returns.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5e6b0bbc811705b8d8234e9914c0507243fb1080",
       "chain": "robinhood",
       "chainId": 4663,
