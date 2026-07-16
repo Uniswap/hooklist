@@ -15504,6 +15504,41 @@
   },
   {
     "hook": {
+      "address": "0x51f3d18a574c1deec5c04d395573cda9248dd0c4",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "Mundial",
+      "description": "A Uniswap v4 hook that runs an 8-team knockout World Cup tournament inside a single pool. Pledged fans receive dynamic LP fee discounts based on tournament state (neutral, fan-alive, match-live, golden-goal). afterSwap skims a Champions Pot via delta returns; match outcomes are determined by swap volume with extra-time and penalty tiebreakers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x742d6c5ec8eca72096c24a1287f5ef0efd0c50c4",
       "chain": "xlayer",
       "chainId": 196,
