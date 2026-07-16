@@ -14489,6 +14489,41 @@
   },
   {
     "hook": {
+      "address": "0xbffe76cc9e506285032b2e5d1b74b579e39ac0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LivoSwapHook (1 fee tier)",
+      "description": "A singleton Uniswap v4 hook that collects a fixed 1% LP fee (split 50/50 between creator and treasury) on all swaps, plus a time-limited buy/sell tax, for tokens graduated via the Livo launchpad. Swaps revert before a token's graduation event.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xfeda24f0d3805170e7566ce617cfba01ce05d080",
       "chain": "robinhood",
       "chainId": 4663,
