@@ -12109,6 +12109,41 @@
   },
   {
     "hook": {
+      "address": "0xd2094b5cdb1a12b6274e4a4d3a252cd94c51efcc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "NFTXV4Hook",
+      "description": "Uniswap v4 hook for the NFTX protocol that manages NFT-backed liquidity pools with dynamic LP fees (per-origin fee overrides via OVERRIDE_FEE_FLAG), on-chain price oracle observations, and AMM fee collection credited to a configurable beneficiary address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd53006d1e3110fd319a79aeec4c527a0d265e080",
       "chain": "ethereum",
       "chainId": 1,
