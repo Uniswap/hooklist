@@ -14664,6 +14664,41 @@
   },
   {
     "hook": {
+      "address": "0xdb1902bc975992828616b0224d9c5ff907e9c0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LivoSwapHook (V2)",
+      "description": "Singleton fee hook for Livo-graduated ETH/token pools. Collects LP fees and post-graduation taxes on the ETH leg across all four swap directions, routing them to a treasury fee router and per-token receivers via ILivoToken.accrueFees(). Blocks swaps on non-graduated tokens. Fees are withheld via BeforeSwapDelta or AfterSwapDelta depending on which leg the ETH amount is known.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xfeda24f0d3805170e7566ce617cfba01ce05d080",
       "chain": "robinhood",
       "chainId": 4663,
