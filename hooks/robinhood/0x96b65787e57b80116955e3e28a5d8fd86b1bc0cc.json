@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x96b65787e57b80116955e3e28a5d8fd86b1bc0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ReflectionHook",
+    "description": "Charges a per-pool creator reflection fee plus a fixed platform fee, both in native ETH, on native-ETH/token pools. Fees are collected via delta returns in beforeSwap (exact-in buys, exact-out sells) and afterSwap (exact-in sells, exact-out buys), covering all four swap directions without double-charging.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
