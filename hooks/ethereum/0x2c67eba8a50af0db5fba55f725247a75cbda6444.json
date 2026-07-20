@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2c67eba8a50af0db5fba55f725247a75cbda6444",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FWATokenHook",
+    "description": "ETH/FWAToken pool hook that charges a flat 1% fee on all swaps, routing proceeds to an owner-set fee wallet (buys: fee taken in FWAToken and swapped to ETH; sells: fee taken in ETH). Pool initialization is gated on the token's `launching()` flag; buy-side swaps revert for unauthorized callers until the owner enables external trading via `externalBuysEnabled`.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
