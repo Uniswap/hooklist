@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5cf8e499c7c466c7e2cf127bdf129f57151e65dc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "Flaunch PositionManager",
+    "description": "Flaunch's core Uniswap v4 hook that manages memecoin pool launches with optional scheduled flaunch timestamps, runs an internal swap pool to fill swaps from fee inventory before hitting the Uniswap pool, captures and distributes swap fees to LPs and optional referrers via hookData, and integrates a bid wall mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
