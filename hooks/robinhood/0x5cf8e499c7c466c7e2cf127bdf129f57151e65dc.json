@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5cf8e499c7c466c7e2cf127bdf129f57151e65dc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Flaunch PositionManager",
+    "description": "A Uniswap v4 hook that manages memecoin launches on the Flaunch platform, featuring an internal swap pool for pre-swap fee conversion, temporal gating for scheduled token launches, a BidWall for buy-side liquidity support, and fee distribution to protocol, creators, and optional referrers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
