@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x07f7850aa55ffb4a6f2693d493c4477747ec6fdc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Flaunch PositionManager",
+    "description": "Flaunch's full-lifecycle memecoin hook that manages token creation, fair launch periods, and ongoing trading. Implements an internal swap pool to fill orders from accumulated fees before hitting the Uniswap pool, fee distribution with optional referrer support, a bid wall mechanism, and temporal access control that gates swaps until a scheduled launch timestamp.",
+    "deployer": "0x6e47e74707b6ed81cf150b641df332507763872b",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
