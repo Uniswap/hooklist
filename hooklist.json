@@ -14979,6 +14979,41 @@
   },
   {
     "hook": {
+      "address": "0xda55066ef3dfce0deb006bacbf2dfd931a6ab0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RobHook",
+      "description": "Uniswap v4 hook that applies a fixed 3% trade tax on all swaps, collecting fees in the quote asset and minting ERC-6909 claims to an immutable fee recipient. Also checks a 6-hour interval in beforeSwap and calls an external triggerHeist() on the associated token contract when the interval has elapsed.",
+      "deployer": "0xE12DDe6d8B4ecf78ef8c999E96BA3De75CABaE22",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xdb1902bc975992828616b0224d9c5ff907e9c0cc",
       "chain": "robinhood",
       "chainId": 4663,
