@@ -14804,6 +14804,41 @@
   },
   {
     "hook": {
+      "address": "0x78f535390f5c3ac2ac67d11abb9f6e48043340cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LendsProtocolHook",
+      "description": "Charges an owner-configurable fee (up to 5%) on swaps in explicitly enabled pools, collecting it in the quote currency and distributing it proportionally to up to 10 weighted fee recipients via beforeSwap and afterSwap delta adjustments.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x958a809134be3f333cfeb1a0db4ae37c0867aa88",
       "chain": "robinhood",
       "chainId": 4663,
