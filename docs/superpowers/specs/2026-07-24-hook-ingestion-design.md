@@ -26,7 +26,7 @@ Every datum belongs to exactly one lane. The lane is determined by *content*, no
 
 | Lane | Content | Verification | Merge policy |
 |---|---|---|---|
-| **Mechanical** | Instance observations (address, block, codehash, address-derived flag mask) **and unverified family stubs** (codehash + `sourceStatus: "unverified"` — zero judgment content) | CI independently re-derives every fact (event log, `eth_getCode`, bit math, explorer verification status) | Auto (see Governance) |
+| **Mechanical** | Instance observations (address, block, codehash) **and unverified family stubs** (codehash + `sourceStatus: "unverified"` — zero judgment content) | CI independently re-derives every fact (event log, `eth_getCode`, bit math, explorer verification status) | Auto (see Governance) |
 | **Judgment** | Analysis of verified source: name, description, kind, implemented permissions, properties, warnings | AI analysis + bot review + human review (existing flow) | Reviewed PR |
 
 Unverified families are expected to be the *majority* of auto-discovered families; keeping their stubs in the mechanical lane is what keeps human review load proportional to verified, analyzable code.
@@ -51,7 +51,7 @@ EIP-1167 minimal clones: the target address is immutable in the clone bytecode; 
 
 Hook flags are a function of the **address** bits (the PoolManager consults only these). The **code** independently determines which callbacks are implemented. Effective behavior is the intersection.
 
-- Index lines carry the 14-bit mask derived from the address — redundant with the address by construction, kept deliberately: it is verifiable from the diff alone and saves every consumer the bit math.
+- Index lines do **not** store flags — they are the low 14 bits of the address, fully derivable from a field every line already has. Built artifacts expand them into the familiar 14-boolean object at build time; the derivation (`int(address, 16) & 0x3FFF`, bit table in `.claude/prompts/analyze-hook.md`) is documented for raw-JSONL consumers.
 - Family files carry `implementedPermissions` — what the code supports, from source analysis. Absent unless `sourceStatus: "verified"`.
 - Divergence is computed at build time and surfaced as per-instance fields in the built lookup artifacts (not stored in git): bit set but not implemented → callbacks fail, pools may be broken (serious); implemented but bit unset → dormant callback (informational).
 
@@ -114,7 +114,7 @@ Notes:
 ### Index line schema (sketch)
 
 ```jsonl
-{"address":"0x…2080","family":"0xabc…","block":31280045,"flags":"0x2080"}
+{"address":"0x…2080","family":"0xabc…","block":31280045}
 ```
 
 - Chain is implied by the filename; addresses lowercased.
@@ -131,7 +131,7 @@ One run scans **all chains**, commits **once**, and only when there is something
 
 1. Per chain: `eth_getLogs(Initialize)` on the PoolManager from `cursor` to `head − confirmations` (reorg buffer), in bounded chunks.
 2. **Skip `hooks == address(0)`** (the majority of Initialize events).
-3. For each new hook address: `eth_getCode` → codehash; decode flag mask from the address string.
+3. For each new hook address: `eth_getCode` → codehash.
    - **Empty code** (counterfactual deploy where the address has no init flags yet, or pre-observation state): do *not* write an index line; add the address to a `pendingCode` list in `cursors.json`, rechecked each run. After M runs without code, write the line with family `empty-code` (still rechecked on later sightings — it is not dedup-final).
 4. Append lines to `index/<chain>.jsonl`; advance cursors; commit only if there are new lines or a chain's unscanned window exceeds a threshold.
 5. For each new codehash with **no `families/` file, no open `families/<codehash>` branch/PR, and no in-flight `analyze-family` run** (run-name convention below), dispatch analysis — capped at **N families per run, oldest first**. The queue is the set of missing family files itself; no queue state exists.
@@ -165,7 +165,7 @@ Declares `concurrency: { group: analyze-family, cancel-in-progress: false }` so 
 
 | Change shape | Validation | Allowed to co-occur |
 |---|---|---|
-| `index/**` commit (mechanical) | re-derive every new line (code fetch, hash, bit math); nothing outside `index/` may be touched | cursors.json |
+| `index/**` commit (mechanical) | re-derive every new line (code fetch, hash); nothing outside `index/` may be touched | cursors.json |
 | `families/<codehash>.json` stub | explorer verification status re-checked; no judgment fields present | — |
 | `families/<codehash>.json` analysis PR | family schema; codehash exists in index; flags-vs-implementedPermissions sanity | `hooks/` files of the same family (delegating case) |
 | `hooks/<chain>/<address>.json` PR | existing schema + flag-bitmask checks (unchanged) | its family file |
@@ -224,7 +224,7 @@ Survives as the **enrichment path**: community submissions contribute name/descr
 Extend the existing pytest setup (`scripts/test_*.py`):
 
 - Scanner: log parsing, `hooks==0x0` skip, empty-code pending list, cursor math, chunking, reorg buffer, per-chain isolation (mocked RPC).
-- Codehash/family grouping; flag-mask decode (property test against the 14-bit table).
+- Codehash/family grouping; build-time flag expansion from addresses (property test against the 14-bit table, reusing `verify_flags.decode_flags`).
 - JSONL append/dedupe idempotency; correction-line latest-wins semantics.
 - Family/index schema validation; stub-vs-analysis field gating on `sourceStatus`.
 - Build: artifact generation, denormalized lookup join, divergence-warning computation, honesty stamps, unchanged legacy artifacts.
