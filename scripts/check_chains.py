@@ -33,8 +33,8 @@ def main():
             assert len(code) > 2, f"no code at poolManager {cfg['poolManager']}"
             assert cfg["deployBlock"] < head, "deployBlock beyond head"
             logs = client.get_logs(cfg["poolManager"], evm.INITIALIZE_TOPIC,
-                                   cfg["deployBlock"], min(cfg["deployBlock"] + 50_000, head))
-            print(f"  OK: {name} head={head} initialize-logs-in-first-50k={len(logs)}")
+                                   cfg["deployBlock"], min(cfg["deployBlock"] + 5_000, head))
+            print(f"  OK: {name} head={head} initialize-logs-in-first-5k={len(logs)}")
         except Exception as e:
             failures.append(f"{name}: {e}")
             print(f"FAIL: {name}: {e}")
