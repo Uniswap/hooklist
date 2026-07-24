@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
-"""Validate hook JSON files against schema.json.
+"""Validate hook and family JSON files against their schemas.
 
 Usage:
-  python3 scripts/validate.py                     # validate all hooks
-  python3 scripts/validate.py hooks/base/0x...json # validate specific files
+  python3 scripts/validate.py                       # validate all hooks + families
+  python3 scripts/validate.py <file> [<file> ...]   # validate specific files
 """
 import json
 import glob
@@ -12,38 +12,53 @@ import sys
 
 import jsonschema
 
+_SCHEMAS = {}
+
+
+def _schema_for(filepath: str, repo_root: str) -> dict:
+    name = "family.schema.json" if "families/" in filepath.replace(os.sep, "/") else "schema.json"
+    if name not in _SCHEMAS:
+        with open(os.path.join(repo_root, name)) as f:
+            _SCHEMAS[name] = json.load(f)
+    return _SCHEMAS[name]
+
+
+def validate_file(filepath: str, repo_root: str) -> list[str]:
+    """Return a list of error strings (empty if valid)."""
+    schema = _schema_for(filepath, repo_root)
+    with open(filepath) as f:
+        data = json.load(f)
+    try:
+        jsonschema.validate(data, schema)
+        return []
+    except jsonschema.ValidationError as e:
+        path = ".".join(str(p) for p in e.path) or "<root>"
+        return [f"{filepath}: {path}: {e.message}"]
+
 
 def main():
     repo_root = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    schema_path = os.path.join(repo_root, "schema.json")
 
-    with open(schema_path) as f:
-        schema = json.load(f)
-
-    # Validate specific files or all hooks
     if len(sys.argv) > 1:
         files = sys.argv[1:]
     else:
         files = glob.glob(os.path.join(repo_root, "hooks", "**", "*.json"), recursive=True)
+        files += glob.glob(os.path.join(repo_root, "families", "*.json"))
 
     if not files:
-        print("No hook files to validate.")
+        print("No files to validate.")
         return
 
     errors = []
     for filepath in files:
-        with open(filepath) as f:
-            hook = json.load(f)
-        try:
-            jsonschema.validate(hook, schema)
-            print(f"  OK: {filepath}")
-        except jsonschema.ValidationError as e:
-            path = ".".join(str(p) for p in e.path) or "<root>"
-            errors.append(f"{filepath}: {path}: {e.message}")
+        errs = validate_file(filepath, repo_root)
+        if errs:
+            errors.extend(errs)
             print(f"FAIL: {filepath}")
-            print(f"  field: {path}")
-            print(f"  value: {e.instance!r}")
-            print(f"  error: {e.message}")
+            for e in errs:
+                print(f"  {e}")
+        else:
+            print(f"  OK: {filepath}")
 
     if errors:
         print(f"\n{len(errors)} validation error(s)")
