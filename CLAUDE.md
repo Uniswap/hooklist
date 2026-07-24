@@ -26,7 +26,7 @@ Each hook file has three sections: `hook` (identity + metadata), `flags` (14 Uni
 ## Running Tests
 
 ```
-nix-shell -p python312Packages.pytest python312Packages.jsonschema --run "cd scripts && python -m pytest test_aggregate.py -v"
+nix-shell -p python312Packages.pytest python312Packages.jsonschema python312Packages.pycryptodome --run "cd scripts && python -m pytest test_aggregate.py -v"
 ```
 
 ## Git & PRs
