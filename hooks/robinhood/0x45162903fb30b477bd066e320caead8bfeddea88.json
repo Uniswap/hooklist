@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x45162903fb30b477bd066e320caead8bfeddea88",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AMT-1 Canonical Market Hook",
+    "description": "Immutable custom-accounting Uniswap v4 hook for AMT-1 markets.\nRoutes exact-input swaps through deterministic mint and burn pricing\nwithout LP liquidity or a secondary pool price.\nGithub: https://github.com/Amt-Protocol/amt-1/",
+    "deployer": "0x266836a48c76f5a5e5d6265a97d7f3d90e339072",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
