@@ -10,14 +10,10 @@ import json
 import os
 
 import index_ledger
-from verify_flags import decode_flags
+from verify_flags import FLAG_BITS, decode_flags
 
-FLAG_NAMES = [
-    "beforeInitialize", "afterInitialize", "beforeAddLiquidity", "afterAddLiquidity",
-    "beforeRemoveLiquidity", "afterRemoveLiquidity", "beforeSwap", "afterSwap",
-    "beforeDonate", "afterDonate", "beforeSwapReturnsDelta", "afterSwapReturnsDelta",
-    "afterAddLiquidityReturnsDelta", "afterRemoveLiquidityReturnsDelta",
-]
+# Canonical flag order comes from verify_flags.FLAG_BITS (single source).
+FLAG_NAMES = list(FLAG_BITS)
 
 
 def _load_families(repo_root: str) -> dict[str, dict]:

@@ -15,6 +15,7 @@ visited first for a given lowercased address wins, and the second is skipped
 via the in-memory `known` map without needing a second disk read.
 """
 import argparse
+import datetime
 import glob
 import json
 import os
@@ -25,13 +26,10 @@ import assemble_family
 import evm
 import index_ledger
 import rpc
+from verify_flags import FLAG_BITS
 
-FLAG_NAMES = [
-    "beforeInitialize", "afterInitialize", "beforeAddLiquidity", "afterAddLiquidity",
-    "beforeRemoveLiquidity", "afterRemoveLiquidity", "beforeSwap", "afterSwap",
-    "beforeDonate", "afterDonate", "beforeSwapReturnsDelta", "afterSwapReturnsDelta",
-    "afterAddLiquidityReturnsDelta", "afterRemoveLiquidityReturnsDelta",
-]
+# Canonical flag order comes from verify_flags.FLAG_BITS (single source).
+FLAG_NAMES = list(FLAG_BITS)
 
 RPC_SLEEP_SECONDS = 0.1
 
@@ -53,7 +51,7 @@ def family_from_hooks(family_id: str, members: list[tuple]) -> dict:
             "sourceStatus": "verified",
             "repoUrl": "",
             "auditUrl": h.get("auditUrl", ""),
-            "analyzedAt": "2026-07-24",
+            "analyzedAt": datetime.date.today().isoformat(),
         },
         "implementedPermissions": dict(best["flags"]),
         "properties": props,
