@@ -65,3 +65,49 @@ def test_chain_failure_isolated(tmp_path):
     rc = ingest.run(root, client_factory=lambda n, c: FakeClient(0, fail=True))
     assert rc == 2  # all configured chains failed
     assert not os.path.exists(os.path.join(root, "index", "celo.jsonl"))
+
+
+# ---- cursor-persistence gate (no noise commits on idle cron ticks) ----
+
+def cursors_path(root):
+    return os.path.join(root, "index", "cursors.json")
+
+
+def test_idle_small_advance_does_not_write_cursors(tmp_path):
+    """No new lines and a sub-threshold cursor advance: cursors.json is not
+    written, so the workflow's diff gate sees no change (no noise commit)."""
+    root = setup_repo(tmp_path)
+    # head 1010, confirmations 10 -> cursor 1000; advance 1000 < threshold
+    assert 1000 < ingest.CURSOR_PERSIST_MIN_ADVANCE
+    ingest.run(root, client_factory=lambda n, c: FakeClient(1010))
+    assert not os.path.exists(cursors_path(root))
+
+
+def test_idle_large_advance_writes_cursors(tmp_path):
+    """No new lines but a threshold-sized advance: persisted, so the
+    unscanned window cannot grow without bound."""
+    root = setup_repo(tmp_path)
+    # head 6010 -> cursor 6000; advance 6000 >= threshold
+    ingest.run(root, client_factory=lambda n, c: FakeClient(6010))
+    cursors = json.loads(open(cursors_path(root)).read())
+    assert cursors["celo"]["block"] == 6000
+
+
+def test_new_lines_force_cursor_persist_below_threshold(tmp_path):
+    """New index lines always persist the cursor, even for a small advance."""
+    root = setup_repo(tmp_path)
+    client = FakeClient(1010, logs=[log_for(HOOK, 500)], code={HOOK: "0x6001"})
+    ingest.run(root, client_factory=lambda n, c: client)
+    cursors = json.loads(open(cursors_path(root)).read())
+    assert cursors["celo"]["block"] == 1000
+
+
+def test_small_advance_leaves_persisted_cursor_untouched(tmp_path):
+    """A later idle run with a sub-threshold advance past the persisted
+    cursor leaves the file at the old value (rescanning that small window
+    next run is safe: known-address dedup absorbs re-seen instances)."""
+    root = setup_repo(tmp_path)
+    ingest.run(root, client_factory=lambda n, c: FakeClient(6010))  # persists 6000
+    ingest.run(root, client_factory=lambda n, c: FakeClient(7010))  # +1000 < threshold
+    cursors = json.loads(open(cursors_path(root)).read())
+    assert cursors["celo"]["block"] == 6000

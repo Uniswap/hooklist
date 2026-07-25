@@ -18,6 +18,17 @@ import rpc
 import scan
 
 
+# Persist a chain's cursor advance only when the run appended new lines, or
+# when the cursor moved at least this many blocks past the last persisted
+# value. One getLogs chunk window (scan.py's default chunk_size) is the
+# defensible floor: losing a sub-threshold advance means the next run
+# re-fetches at most one chunk it already saw — and the known-address dedup
+# makes that rescan a no-op — whereas persisting every tiny advance would
+# turn each 30-minute cron tick into a noise commit plus a full artifact
+# rebuild and Pages deploy (regenerate.yml triggers on index/**).
+CURSOR_PERSIST_MIN_ADVANCE = 5000
+
+
 def _default_client(name: str, cfg: dict) -> rpc.RpcClient:
     return rpc.RpcClient(cfg["rpcUrls"])
 
@@ -33,6 +44,7 @@ def run(repo_root: str, client_factory=_default_client, only_chains=None) -> int
             cursors = json.load(f)
 
     total_lines = 0
+    cursors_changed = False
     attempted, failed = 0, 0
     for name, cfg in sorted(chains.items()):
         if "rpcUrls" not in cfg:
@@ -54,12 +66,20 @@ def run(repo_root: str, client_factory=_default_client, only_chains=None) -> int
         if result.new_lines:
             index_ledger.append_lines(index_path, result.new_lines)
             total_lines += len(result.new_lines)
-        cursors[name] = {"block": result.cursor, "pending": result.pending}
+        # New lines force persistence (pending-state changes that produced
+        # them must not replay next run); otherwise only a threshold-sized
+        # cursor advance is worth a commit. A dropped sub-threshold advance
+        # is safe: the next run rescans a small window and the known-address
+        # dedup absorbs any re-seen instances.
+        if result.new_lines or result.cursor - state["block"] >= CURSOR_PERSIST_MIN_ADVANCE:
+            cursors[name] = {"block": result.cursor, "pending": result.pending}
+            cursors_changed = True
 
-    os.makedirs(os.path.join(repo_root, "index"), exist_ok=True)
-    with open(cursors_path, "w") as f:
-        json.dump(cursors, f, indent=2, sort_keys=True)
-        f.write("\n")
+    if cursors_changed:
+        os.makedirs(os.path.join(repo_root, "index"), exist_ok=True)
+        with open(cursors_path, "w") as f:
+            json.dump(cursors, f, indent=2, sort_keys=True)
+            f.write("\n")
 
     print(f"Scanned {attempted - failed}/{attempted} chains; "
           f"{total_lines} new index lines")
