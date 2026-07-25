@@ -9,7 +9,11 @@
       select chain_id, uniqExact(hooks) from v4_initialize
       where hooks != '0x0000000000000000000000000000000000000000' group by chain_id
       → record expected instance + family counts; sets review-throughput expectations.
-- [ ] Run scripts/seed_families.py (post-merge), open seed PR, merge after review.
+- [ ] Run scripts/seed_families.py (post-merge); spot-check the output locally
+      (scripts/validate.py + scripts/build_artifacts.py); push directly to main
+      with the ingest App credentials (mechanical lane: the seed is derived from
+      already-human-reviewed hooks/ entries, and a seed PR would violate our own
+      CI policy matrix — ~224 family files plus index/families mixing).
 - [ ] Enable ingest on celo + soneium (workflow_dispatch with chains input); watch 3 days.
 - [ ] Cross-check celo/soneium index counts vs ClickHouse.
 - [ ] Enable unichain + ethereum; watch backfill chunking + RPC rate limits.
