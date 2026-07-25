@@ -1,5 +1,7 @@
 import json
 import os
+
+import rpc
 import seed_families as sf
 
 
@@ -49,3 +51,37 @@ def test_seed_validates_output(tmp_path):
     p.parent.mkdir()
     p.write_text(json.dumps(fam))
     assert validate.validate_file(str(p), repo_root) == []
+
+
+def test_get_code_with_retry_recovers_on_second_attempt(monkeypatch):
+    """A transient RPC failure on attempt 1 should not be fatal: the retry
+    should succeed and return the code, with no unslept delay in tests."""
+    monkeypatch.setattr(sf.time, "sleep", lambda seconds: None)
+    calls = []
+
+    def post(url, payload):
+        calls.append(payload)
+        if len(calls) == 1:
+            raise ConnectionError("simulated transient failure")
+        return {"jsonrpc": "2.0", "id": payload["id"], "result": "0xabc"}
+
+    client = rpc.RpcClient(["http://a"], post=post)
+    code = sf._get_code_with_retry(client, "0x" + "1" * 40, "celo")
+    assert code == "0xabc"
+    assert len(calls) == 2
+
+
+def test_get_code_with_retry_returns_none_after_both_attempts_fail(monkeypatch):
+    """A persistently-unreachable RPC should skip (return None), not crash,
+    so the caller can log-and-continue rather than aborting the whole run."""
+    monkeypatch.setattr(sf.time, "sleep", lambda seconds: None)
+    calls = []
+
+    def post(url, payload):
+        calls.append(payload)
+        raise ConnectionError("simulated persistent failure")
+
+    client = rpc.RpcClient(["http://a"], post=post)
+    code = sf._get_code_with_retry(client, "0x" + "1" * 40, "celo")
+    assert code is None
+    assert len(calls) == 2
