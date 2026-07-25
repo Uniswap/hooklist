@@ -3,7 +3,7 @@ name: Regenerate Registry
 on:
   push:
     branches: [main]
-    paths: ['hooks/**']
+    paths: ['hooks/**', 'families/**', 'index/**']
 
 concurrency:
   group: regenerate-registry
@@ -37,6 +37,9 @@ jobs:
       - name: Regenerate hooklist.json
         run: python scripts/aggregate.py
 
+      - name: Build published artifacts (dist/)
+        run: python scripts/build_artifacts.py
+
       - name: Commit and push
         env:
           APP_TOKEN: ${{ steps.app-token.outputs.token }}
@@ -47,3 +50,30 @@ jobs:
           git add hooklist.json hooklist-vanilla-swap.json
           git diff --staged --quiet || git commit -m "chore: regenerate hooklist.json"
           git push
+
+      # dist/ is gitignored (uncommitted, ephemeral build output); the
+      # committed hooklist.json / hooklist-vanilla-swap.json above remain the
+      # raw-URL fallback for consumers who don't use Pages.
+      - name: Assemble Pages site
+        run: |
+          mkdir -p _site
+          cp hooklist.json hooklist-vanilla-swap.json _site/
+          cp -r dist/. _site/
+
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9
+        with:
+          path: _site
+
+  deploy-pages:
+    needs: regenerate
+    runs-on: ubuntu-latest
+    permissions:
+      pages: write     # publish the uploaded artifact to GitHub Pages
+      id-token: write  # required by actions/deploy-pages for OIDC verification
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@cd2ce8fcbc39b97be8ca5fce6e763baed58fa128
