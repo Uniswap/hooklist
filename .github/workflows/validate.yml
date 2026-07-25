@@ -32,7 +32,11 @@ jobs:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          FILES_JSON=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files")
+          # --paginate: the files endpoint returns 30 entries per page; without
+          # it, files 31+ (including .github/**) would escape the policy gates
+          # below. Pages arrive as concatenated JSON arrays; each jq filter here
+          # uses .[] applied per input document, which is pagination-safe.
+          FILES_JSON=$(gh api --paginate "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files")
           CHANGED=$(echo "$FILES_JSON" | jq -r '.[].filename')
 
           HOOKS=$(echo "$CHANGED" | grep '^hooks/' || true)
@@ -106,10 +110,18 @@ jobs:
             echo "No index/ files changed."
             exit 0
           fi
+          # This step is a security backstop, so it must fail closed: if the
+          # base ref cannot be resolved, diffing against it would silently
+          # produce zero lines and "validate" nothing. Verify it up front.
+          BASE_REF="origin/${{ github.base_ref }}"
+          if ! git -C pr rev-parse --verify --quiet "${BASE_REF}^{commit}" >/dev/null; then
+            echo "::error::Cannot resolve ${BASE_REF} in the PR checkout; refusing to skip index re-derivation"
+            exit 1
+          fi
           while read -r f; do
             CHAIN=$(basename "$f" .jsonl)
-            git -C pr diff "origin/${{ github.base_ref }}" -- "$f" 2>/dev/null \
-              | grep '^+{' | sed 's/^+//' > added_lines.txt || true
+            git -C pr diff "$BASE_REF" -- "$f" > diff_out.txt
+            sed -n '/^+{/s/^+//p' diff_out.txt > added_lines.txt
             if [ -s added_lines.txt ]; then
               python trusted/scripts/validate_index.py "$CHAIN" --file added_lines.txt
             fi
