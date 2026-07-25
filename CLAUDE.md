@@ -32,6 +32,7 @@ Public registry of Uniswap v4 hook deployments across all supported chains.
 - `.github/workflows/regenerate.yml` — CI: on merge to main, rebuilds `hooklist.json` + `dist/` and publishes to Pages
 - `.github/workflows/ingest.yml` — CI: scheduled (~30 min), scans chains and dispatches family analyses
 - `.github/workflows/analyze-family.yml` — CI: dispatched per new family, Claude classifies it (or writes an unverified stub) and opens a PR
+- `.github/workflows/tests.yml` — CI: on PR touching `scripts/**`, runs the pytest suite
 - `.claude/prompts/analyze-hook.md` — prompt for the analyze-hook workflow
 - `.claude/prompts/review-hook.md` — prompt for the review-hook workflow
 - `.claude/prompts/classify-family.md` — prompt for the analyze-family workflow
