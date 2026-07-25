@@ -24,8 +24,9 @@ jobs:
         with:
           persist-credentials: false
           path: pr
+          fetch-depth: 0
 
-      - name: Check for hook changes and enforce diff policy
+      - name: Check for registry changes and enforce diff policy
         id: changed
         env:
           GH_TOKEN: ${{ github.token }}
@@ -33,49 +34,83 @@ jobs:
         run: |
           FILES_JSON=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files")
           CHANGED=$(echo "$FILES_JSON" | jq -r '.[].filename')
-          HAS_HOOK_CHANGES=$(echo "$CHANGED" | grep '^hooks/' || true)
-          if [ -z "$HAS_HOOK_CHANGES" ]; then
-            echo "hooks=false" >> "$GITHUB_OUTPUT"
-            echo "No hook files changed, skipping validation."
+
+          HOOKS=$(echo "$CHANGED" | grep '^hooks/' || true)
+          FAMILIES=$(echo "$CHANGED" | grep '^families/' || true)
+          INDEX=$(echo "$CHANGED" | grep '^index/' || true)
+          OTHER=$(echo "$CHANGED" | grep -v -e '^hooks/' -e '^families/' -e '^index/' || true)
+
+          if [ -z "$HOOKS$FAMILIES$INDEX" ]; then
+            echo "data=false" >> "$GITHUB_OUTPUT"
+            echo "No registry data files changed, skipping validation."
             exit 0
           fi
-
-          # Exact-diff policy: only hooks/** allowed, exactly one file (applies to add/modify/remove)
-          INVALID=$(echo "$CHANGED" | grep -v '^hooks/' || true)
-          if [ -n "$INVALID" ]; then
-            echo "::error::PR modifies files outside hooks/: $INVALID"
+          if [ -n "$OTHER" ]; then
+            echo "::error::Registry-data PR also modifies other files: $OTHER"
             exit 1
           fi
-          COUNT=$(echo "$CHANGED" | wc -l)
-          if [ "$COUNT" -ne 1 ]; then
-            echo "::error::PR must change exactly one hook file, found $COUNT changed files"
+          # Allowed combinations (spec CI policy matrix):
+          #  - index/** only (mechanical)
+          #  - families/<id>.json alone, or with hooks/** files (delegating case)
+          #  - hooks/** file(s) alone (enrichment / delegating instances)
+          if [ -n "$INDEX" ] && [ -n "$HOOKS$FAMILIES" ]; then
+            echo "::error::index/ changes must not mix with hooks/ or families/ changes"
             exit 1
           fi
-
-          # Schema validation only applies to files still present on the PR head
-          # (added/modified). Removed files have no content to validate.
-          HOOK_FILES=$(echo "$FILES_JSON" | jq -r '.[] | select(.status != "removed") | .filename' | grep '^hooks/' || true)
-          if [ -z "$HOOK_FILES" ]; then
-            echo "hooks=false" >> "$GITHUB_OUTPUT"
-            echo "Hook file is being removed, nothing to schema-validate."
-            exit 0
+          FAM_COUNT=$(echo "$FAMILIES" | grep -c . || true)
+          if [ "$FAM_COUNT" -gt 1 ]; then
+            echo "::error::PR must change at most one family file, found $FAM_COUNT"
+            exit 1
           fi
-          echo "hooks=true" >> "$GITHUB_OUTPUT"
-          echo "$HOOK_FILES" | sed 's|^|pr/|' > changed_hooks.txt
+          echo "data=true" >> "$GITHUB_OUTPUT"
+
+          # Schema/flag validation only applies to files still present on the
+          # PR head (added/modified). Removed files have no content to check.
+          echo "$FILES_JSON" | jq -r '.[] | select(.status != "removed") | .filename' \
+            | grep -e '^hooks/' -e '^families/' | sed 's|^|pr/|' > changed_data.txt || true
+          echo "$FILES_JSON" | jq -r '.[] | select(.status != "removed") | .filename' \
+            | grep '^index/.*\.jsonl$' > changed_index.txt || true
 
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
-        if: steps.changed.outputs.hooks == 'true'
+        if: steps.changed.outputs.data == 'true'
         with:
           python-version: '3.12'
 
       - name: Install dependencies
-        if: steps.changed.outputs.hooks == 'true'
+        if: steps.changed.outputs.data == 'true'
         run: pip install -r trusted/requirements.txt
 
-      - name: Validate hook files against schema
-        if: steps.changed.outputs.hooks == 'true'
-        run: python trusted/scripts/validate.py $(cat changed_hooks.txt)
+      - name: Validate hook/family files against schema
+        if: steps.changed.outputs.data == 'true'
+        run: |
+          if [ -s changed_data.txt ]; then
+            python trusted/scripts/validate.py $(cat changed_data.txt)
+          else
+            echo "No hooks/ or families/ files to schema-validate."
+          fi
 
       - name: Verify flags match address bitmask
-        if: steps.changed.outputs.hooks == 'true'
-        run: python trusted/scripts/verify_flags.py $(cat changed_hooks.txt)
+        if: steps.changed.outputs.data == 'true'
+        run: |
+          HOOK_FILES=$(grep '^pr/hooks/' changed_data.txt || true)
+          if [ -n "$HOOK_FILES" ]; then
+            python trusted/scripts/verify_flags.py $HOOK_FILES
+          else
+            echo "No hooks/ files to flag-verify."
+          fi
+
+      - name: Re-derive index lines
+        if: steps.changed.outputs.data == 'true'
+        run: |
+          if [ ! -s changed_index.txt ]; then
+            echo "No index/ files changed."
+            exit 0
+          fi
+          while read -r f; do
+            CHAIN=$(basename "$f" .jsonl)
+            git -C pr diff "origin/${{ github.base_ref }}" -- "$f" 2>/dev/null \
+              | grep '^+{' | sed 's/^+//' > added_lines.txt || true
+            if [ -s added_lines.txt ]; then
+              python trusted/scripts/validate_index.py "$CHAIN" --file added_lines.txt
+            fi
+          done < changed_index.txt
