@@ -1,0 +1,37 @@
+name: Tests
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/**'
+      - 'requirements.txt'
+      - 'schema.json'
+      - '.github/workflows/tests.yml'
+
+concurrency:
+  group: tests-${{ github.event.pull_request.number }}
+  cancel-in-progress: true
+
+jobs:
+  pytest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt pytest
+
+      # Run from the repo root: test_compute_flags.py shells out with
+      # cwd="scripts" relative to the repo root, and PYTHONPATH=scripts lets
+      # the rest of the suite import sibling modules exactly as it does when
+      # run from inside scripts/. All 126 tests pass under this invocation.
+      - name: Run test suite
+        run: PYTHONPATH=scripts python -m pytest scripts/ -q
