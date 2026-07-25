@@ -15,6 +15,9 @@ concurrency:
 
 jobs:
   ingest:
+    # Pre-rollout no-op: until the ingest App is configured (rollout checklist
+    # step 1 sets INGEST_APP_ID), the token step would fail every 30 minutes.
+    if: vars.INGEST_APP_ID != ''
     runs-on: ubuntu-latest
     permissions:
       contents: read
