@@ -14,8 +14,13 @@ on:
         description: 'Representative instance address'
         required: true
 
+# Per-family group: distinct families queue independently (a static group
+# allows only one pending run, so dispatching several families in quick
+# succession would silently cancel the middle ones — conclusion "cancelled",
+# which select_analyses.py's failure gate never counts). Duplicate dispatches
+# of the SAME family still coalesce.
 concurrency:
-  group: analyze-family
+  group: analyze-family-${{ inputs.family }}
   cancel-in-progress: false
 
 jobs:
