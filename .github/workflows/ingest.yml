@@ -42,15 +42,23 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Scan chains
-        run: python scripts/ingest.py --chains "${{ inputs.chains }}"
+        env:
+          CHAINS_INPUT: ${{ inputs.chains }}
+        run: python scripts/ingest.py --chains "$CHAINS_INPUT"
 
       - name: Validate own output (mechanical-lane self-check)
         run: |
-          # Re-derive every line this run appended
-          if ! git diff --quiet -- index/; then
-            for f in $(git diff --name-only -- 'index/*.jsonl'); do
+          # index/ does not exist as a tracked path until the first run ever
+          # commits it, so freshly-created *.jsonl files start out untracked.
+          # `git diff` (unstaged) never sees untracked files, so we must stage
+          # first (git add -A) and gate/diff against the index (--cached) to
+          # catch both brand-new chain files and appended lines in existing
+          # ones.
+          git add -A -- index/
+          if ! git diff --cached --quiet -- index/; then
+            for f in $(git diff --cached --name-only -- 'index/*.jsonl'); do
               CHAIN=$(basename "$f" .jsonl)
-              git diff -- "$f" | grep '^+{' | sed 's/^+//' > /tmp/added.txt || true
+              git diff --cached -- "$f" | grep '^+{' | sed 's/^+//' > /tmp/added.txt || true
               if [ -s /tmp/added.txt ]; then
                 python scripts/validate_index.py "$CHAIN" --file /tmp/added.txt
               fi
@@ -61,13 +69,15 @@ jobs:
         env:
           APP_TOKEN: ${{ steps.app-token.outputs.token }}
         run: |
-          if git diff --quiet -- index/; then
+          # Re-stage in case this step runs independently of the self-check
+          # step's staging (defense in depth; also a no-op if already staged).
+          git add -A -- index/
+          if git diff --cached --quiet -- index/; then
             echo "No new instances."; exit 0
           fi
           git config user.name "hook-ingest-bot[bot]"
           git config user.email "hook-ingest-bot[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${APP_TOKEN}@github.com/${{ github.repository }}.git"
-          git add index/
           git commit -m "chore: ingest new hook instances"
           for _ in 1 2 3; do
             git push && exit 0
