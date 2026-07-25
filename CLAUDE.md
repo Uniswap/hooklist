@@ -20,7 +20,7 @@ Public registry of Uniswap v4 hook deployments across all supported chains.
 - `scripts/scan.py` — scans a chain's `PoolManager` `Initialize` events for new hook instances
 - `scripts/ingest.py` — CLI entrypoint: scans configured chains, appends new index lines
 - `scripts/index_ledger.py` — read/write helpers for the append-only `index/<chain>.jsonl` ledger
-- `scripts/select_analyses.py` — selects which new families to dispatch for analysis (caps, dedupes in-flight/failed)
+- `scripts/select_analyses.py` — derives analysis candidates from `index/` (families with no `families/<id>.json`, retry-by-absence) and filters/caps them (open PRs, in-flight runs, failure cap)
 - `scripts/validate_index.py` — re-derives index lines from live chain state (mechanical-lane backstop)
 - `scripts/assemble_family.py` — builds a `families/<id>.json` file from Claude's classification output, or as an unverified stub
 - `scripts/build_artifacts.py` — builds published `dist/` artifacts (`families.json`, `lookup/<chain>.json`) from `index/` + `families/` + `hooks/`

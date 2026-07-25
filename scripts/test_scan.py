@@ -40,7 +40,6 @@ def test_scans_to_head_minus_confirmations_and_records_hook():
     assert line["address"] == HOOK
     assert line["family"] == evm.codehash("0x6001")
     assert line["block"] == 1000  # to_block of the chunk containing it? NO — see impl: block from log
-    assert r.new_families == [evm.codehash("0x6001")]
 
 
 def test_skips_zero_hook():
@@ -80,14 +79,14 @@ def test_chunking_bounded_by_max_chunks():
     assert r.cursor == 300  # 3 chunks * 100 blocks, far short of head
 
 
-def test_new_family_deduped_within_run():
+def test_two_instances_same_code_both_recorded():
     h2 = "0x00000000000000000000000000000000000120c0"
     client = FakeClient(head=1010,
                         logs_by_range={(1, 1000): [log_for(HOOK), log_for(h2)]},
                         code={HOOK: "0x6001", h2: "0x6001"})
     r = scan.scan_chain(client, CFG, cursor=0, pending={}, known=set())
     assert len(r.new_lines) == 2
-    assert r.new_families == [evm.codehash("0x6001")]  # one family, two instances
+    assert {l["family"] for l in r.new_lines} == {evm.codehash("0x6001")}
 
 
 def test_pending_address_reappearing_in_log_not_double_processed():

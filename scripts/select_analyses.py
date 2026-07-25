@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
-"""Select which new families to dispatch for analysis.
+"""Select which families to dispatch for analysis.
 
-Spec rule: dispatch iff no family file, no open families/<id> PR, no
-in-flight analyze-family run, and < 3 failed runs (then a human stub-path
-takes over). Cap per ingest run, oldest first (candidates arrive in scan
-order, which is block order).
+Spec rule (retry-by-absence): the candidate set is every family present in
+index/ that has no families/<id>.json file — a missing family file, with no
+open branch/PR and no in-flight run, IS the retry queue. Deriving candidates
+from the index (rather than from a "new this run" list) means overflow
+beyond the cap, failed/cancelled analysis runs, and lost dispatches are all
+picked up again on the next ingest run. Dispatch iff no family file, no open
+families/<id> PR, no in-flight analyze-family run, and < 3 failed runs (then
+a human stub-path takes over). Cap per ingest run.
 """
 import argparse
+import glob
 import json
 import os
 import subprocess
 import sys
+
+import index_ledger
 
 MAX_FAILURES = 3
 
@@ -18,6 +25,24 @@ MAX_FAILURES = 3
 def _default_gh(args: list[str]) -> str:
     return subprocess.run(["gh"] + args, check=True, capture_output=True,
                           text=True).stdout
+
+
+def candidates_from_index(repo_root: str) -> list[dict]:
+    """Families in index/ with no families/<id>.json, each with one
+    representative instance (deterministic: first by sorted chain, then by
+    sorted address within the chain)."""
+    by_family: dict[str, dict] = {}
+    for index_path in sorted(glob.glob(os.path.join(repo_root, "index", "*.jsonl"))):
+        chain = os.path.basename(index_path)[:-len(".jsonl")]
+        latest = index_ledger.latest_by_address(index_ledger.read_lines(index_path))
+        for address in sorted(latest):
+            fam = latest[address]["family"]
+            if fam == "empty-code" or fam in by_family:
+                continue
+            if os.path.exists(os.path.join(repo_root, "families", f"{fam}.json")):
+                continue
+            by_family[fam] = {"family": fam, "chain": chain, "address": address}
+    return list(by_family.values())
 
 
 def select(candidates: list[dict], repo_root: str, gh=_default_gh, cap: int = 5) -> list[dict]:
@@ -60,8 +85,7 @@ def main():
         os.path.dirname(os.path.abspath(__file__))))
     ap.add_argument("--cap", type=int, default=5)
     args = ap.parse_args()
-    with open(os.path.join(args.repo_root, "new_families.json")) as f:
-        candidates = json.load(f)
+    candidates = candidates_from_index(args.repo_root)
     print(json.dumps(select(candidates, args.repo_root, cap=args.cap)))
 
 

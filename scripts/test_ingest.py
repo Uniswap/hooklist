@@ -46,8 +46,9 @@ def test_ingest_appends_and_writes_outputs(tmp_path):
     assert json.loads(lines[0])["address"] == HOOK
     cursors = json.loads(open(os.path.join(root, "index", "cursors.json")).read())
     assert cursors["celo"]["block"] == 1000
-    fams = json.loads(open(os.path.join(root, "new_families.json")).read())
-    assert fams == [{"family": evm.codehash("0x6001"), "chain": "celo", "address": HOOK}]
+    # No new_families.json side artifact: analysis candidates are derived
+    # from the index by select_analyses.py (retry-by-absence).
+    assert not os.path.exists(os.path.join(root, "new_families.json"))
 
 
 def test_ingest_idempotent_second_run(tmp_path):

@@ -15,10 +15,9 @@ class ScanResult:
     new_lines: list = field(default_factory=list)
     cursor: int = 0
     pending: dict = field(default_factory=dict)
-    new_families: list = field(default_factory=list)
 
 
-def _resolve(client, address, block, result, seen_families, existing_runs=None):
+def _resolve(client, address, block, result, existing_runs=None):
     """getCode an address; append an index line or park/advance it in pending.
 
     existing_runs is the pending count already on record for this address at
@@ -30,9 +29,6 @@ def _resolve(client, address, block, result, seen_families, existing_runs=None):
     if family is not None:
         result.pending.pop(address, None)
         result.new_lines.append(index_ledger.make_line(address, family, block))
-        if family not in seen_families:
-            seen_families.add(family)
-            result.new_families.append(family)
         return
 
     # Still no code.
@@ -53,7 +49,6 @@ def scan_chain(client, cfg: dict, cursor: int, pending: dict, known: set,
     head = client.block_number()
     safe_head = head - cfg["confirmations"]
     result = ScanResult(cursor=cursor, pending=dict(pending))
-    seen_families: set = set()
     # Addresses already pending must not be treated as first-sightings if a
     # fresh log for them shows up later in this same run (they're resolved
     # via the recheck loop below; re-resolving them from the log loop would
@@ -63,7 +58,7 @@ def scan_chain(client, cfg: dict, cursor: int, pending: dict, known: set,
     # Recheck previously pending (empty-code) addresses first, at the
     # current cursor block (no new chunk has been scanned yet this run).
     for address, runs in pending.items():
-        _resolve(client, address, cursor, result, seen_families, existing_runs=runs)
+        _resolve(client, address, cursor, result, existing_runs=runs)
 
     chunks = 0
     while result.cursor < safe_head and chunks < max_chunks:
@@ -76,7 +71,7 @@ def scan_chain(client, cfg: dict, cursor: int, pending: dict, known: set,
                 continue
             seen_addresses.add(hook)
             block = int(log["blockNumber"], 16) if "blockNumber" in log else to_block
-            _resolve(client, hook, block, result, seen_families)
+            _resolve(client, hook, block, result)
         result.cursor = to_block
         chunks += 1
 

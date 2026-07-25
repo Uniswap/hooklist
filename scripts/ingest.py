@@ -2,7 +2,11 @@
 """Ingest new hook instances across all configured chains.
 
 Usage: python3 scripts/ingest.py [--repo-root PATH] [--chains a,b,c]
-Writes: index/<chain>.jsonl, index/cursors.json, new_families.json
+Writes: index/<chain>.jsonl, index/cursors.json
+
+Analysis candidates are NOT emitted here: select_analyses.py derives them
+from the index itself (retry-by-absence), so this script's only job is to
+keep the mechanical ledger current.
 """
 import argparse
 import json
@@ -28,7 +32,7 @@ def run(repo_root: str, client_factory=_default_client, only_chains=None) -> int
         with open(cursors_path) as f:
             cursors = json.load(f)
 
-    new_families = []
+    total_lines = 0
     attempted, failed = 0, 0
     for name, cfg in sorted(chains.items()):
         if "rpcUrls" not in cfg:
@@ -49,32 +53,16 @@ def run(repo_root: str, client_factory=_default_client, only_chains=None) -> int
             continue
         if result.new_lines:
             index_ledger.append_lines(index_path, result.new_lines)
-        # Map each new family to a representative line. If multiple new
-        # instances share a family, the LAST one encountered in new_lines
-        # wins; any instance address of that family is an acceptable
-        # representative for new_families.json (dispatch just needs one
-        # address to fetch source for), so this is intentional, not a bug.
-        # Every family in result.new_families is guaranteed (by scan.py's
-        # construction) to have at least one line with that family in
-        # new_lines, so this dict comprehension can never leave a family
-        # unmapped and the lookup below can never KeyError.
-        by_family = {l["family"]: l for l in result.new_lines
-                     if l["family"] in result.new_families}
-        for fam in result.new_families:
-            new_families.append({"family": fam, "chain": name,
-                                 "address": by_family[fam]["address"]})
+            total_lines += len(result.new_lines)
         cursors[name] = {"block": result.cursor, "pending": result.pending}
 
     os.makedirs(os.path.join(repo_root, "index"), exist_ok=True)
     with open(cursors_path, "w") as f:
         json.dump(cursors, f, indent=2, sort_keys=True)
         f.write("\n")
-    with open(os.path.join(repo_root, "new_families.json"), "w") as f:
-        json.dump(new_families, f, indent=2)
-        f.write("\n")
 
     print(f"Scanned {attempted - failed}/{attempted} chains; "
-          f"{len(new_families)} new families")
+          f"{total_lines} new index lines")
     return 2 if attempted and failed == attempted else 0
 
 
