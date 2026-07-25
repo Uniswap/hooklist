@@ -32,7 +32,7 @@ The registry is built from three stores:
 
 **Family identity.** A family's `id` is the keccak256 hash of the deployed bytecode (`scripts/evm.py`'s `codehash`); every address sharing that hash is the same family, regardless of chain or deployer. Two exceptions:
 - **`empty-code`** — sentinel family used when `eth_getCode` still returns no code after the scanner has rechecked an address across 6 separate ingest runs (e.g. a `CREATE2` address referenced before deployment). It is not a real family and is never dispatched for analysis.
-- **Dated observations** — an index line records what was true as of `block`, not a permanent guarantee. `scripts/validate_index.py` tolerates an `empty-code` line even if the address now has code (a later line is the correction, not a reason to reject the old one), and tolerates a line whose codehash no longer matches current on-chain code (pre-Cancun `SELFDESTRUCT` can empty a contract afterward).
+- **Dated observations** — an index line records what was true as of `block`, not a permanent guarantee. `scripts/validate_index.py` tolerates an `empty-code` line even if the address now has code (a later line is the correction, not a reason to reject the old one), and tolerates a line whose address now returns no code at all (pre-Cancun `SELFDESTRUCT` can empty a contract afterward). Code that is still present but hashes to something other than the recorded family is a hard error.
 
 **Flag derivation.** The 14 Uniswap v4 hook permission flags are the low 14 bits of the hook's address: `int(address, 16) & 0x3FFF`. Bit → flag (see `scripts/verify_flags.py`):
 
