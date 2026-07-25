@@ -1,0 +1,88 @@
+name: Ingest Hooks
+
+on:
+  schedule:
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+    inputs:
+      chains:
+        description: 'Comma-separated chain subset (empty = all configured)'
+        default: ''
+
+concurrency:
+  group: ingest
+  cancel-in-progress: false
+
+jobs:
+  ingest:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: write   # dispatch analyze-family.yml (gh workflow run) + read run status (gh run list)
+      pull-requests: read  # select_analyses.py runs `gh pr list` to check for open families/<id> PRs
+    steps:
+      - name: Create ingest App token
+        id: app-token
+        uses: actions/create-github-app-token@d72941d797fd3113feb6b93fd0dec494b13a2547
+        with:
+          app-id: ${{ vars.INGEST_APP_ID }}
+          private-key: ${{ secrets.INGEST_APP_PRIVATE_KEY }}
+          permission-contents: write
+
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          token: ${{ steps.app-token.outputs.token }}
+          persist-credentials: false
+
+      - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
+        with:
+          python-version: '3.12'
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Scan chains
+        run: python scripts/ingest.py --chains "${{ inputs.chains }}"
+
+      - name: Validate own output (mechanical-lane self-check)
+        run: |
+          # Re-derive every line this run appended
+          if ! git diff --quiet -- index/; then
+            for f in $(git diff --name-only -- 'index/*.jsonl'); do
+              CHAIN=$(basename "$f" .jsonl)
+              git diff -- "$f" | grep '^+{' | sed 's/^+//' > /tmp/added.txt || true
+              if [ -s /tmp/added.txt ]; then
+                python scripts/validate_index.py "$CHAIN" --file /tmp/added.txt
+              fi
+            done
+          fi
+
+      - name: Commit and push (rebase-retry)
+        env:
+          APP_TOKEN: ${{ steps.app-token.outputs.token }}
+        run: |
+          if git diff --quiet -- index/; then
+            echo "No new instances."; exit 0
+          fi
+          git config user.name "hook-ingest-bot[bot]"
+          git config user.email "hook-ingest-bot[bot]@users.noreply.github.com"
+          git remote set-url origin "https://x-access-token:${APP_TOKEN}@github.com/${{ github.repository }}.git"
+          git add index/
+          git commit -m "chore: ingest new hook instances"
+          for _ in 1 2 3; do
+            git push && exit 0
+            git pull --rebase origin main
+          done
+          exit 1
+
+      - name: Dispatch family analyses
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          SELECTED=$(python scripts/select_analyses.py --cap 5)
+          echo "$SELECTED" | jq -c '.[]' | while read -r item; do
+            gh workflow run analyze-family.yml \
+              -f family="$(echo "$item" | jq -r .family)" \
+              -f chain="$(echo "$item" | jq -r .chain)" \
+              -f address="$(echo "$item" | jq -r .address)"
+          done
