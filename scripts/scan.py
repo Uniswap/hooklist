@@ -54,7 +54,11 @@ def scan_chain(client, cfg: dict, cursor: int, pending: dict, known: set,
     safe_head = head - cfg["confirmations"]
     result = ScanResult(cursor=cursor, pending=dict(pending))
     seen_families: set = set()
-    seen_addresses: set = set(known)
+    # Addresses already pending must not be treated as first-sightings if a
+    # fresh log for them shows up later in this same run (they're resolved
+    # via the recheck loop below; re-resolving them from the log loop would
+    # reset their pending count via the existing_runs=None branch).
+    seen_addresses: set = set(known) | set(pending.keys())
 
     # Recheck previously pending (empty-code) addresses first, at the
     # current cursor block (no new chunk has been scanned yet this run).

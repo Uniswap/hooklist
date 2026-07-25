@@ -7,6 +7,7 @@ class FakeClient:
         self.head = head
         self.logs = logs_by_range or {}
         self.code = code or {}
+        self.get_code_calls = {}
 
     def block_number(self):
         return self.head
@@ -15,7 +16,9 @@ class FakeClient:
         return self.logs.get((from_block, to_block), [])
 
     def get_code(self, address):
-        return self.code.get(address.lower(), "0x")
+        key = address.lower()
+        self.get_code_calls[key] = self.get_code_calls.get(key, 0) + 1
+        return self.code.get(key, "0x")
 
 
 def log_for(hook):
@@ -85,6 +88,29 @@ def test_new_family_deduped_within_run():
     r = scan.scan_chain(client, CFG, cursor=0, pending={}, known=set())
     assert len(r.new_lines) == 2
     assert r.new_families == [evm.codehash("0x6001")]  # one family, two instances
+
+
+def test_pending_address_reappearing_in_log_not_double_processed():
+    """A pending address that also shows up in a fresh Initialize log this
+    run must be resolved only once (via the recheck loop), not reprocessed
+    (and reset) by the main log loop."""
+    client = FakeClient(head=1011, logs_by_range={(1001, 1001): [log_for(HOOK)]})
+    r = scan.scan_chain(client, CFG, cursor=1000, pending={HOOK: 3}, known=set())
+    assert client.get_code_calls[HOOK.lower()] == 1
+    assert r.pending == {HOOK: 4}
+    assert r.new_lines == []
+
+
+def test_pending_address_reappearing_in_log_resolves_once_when_code_appears():
+    """Same scenario, but code has appeared: exactly one index line is
+    produced, not two."""
+    client = FakeClient(head=1011, logs_by_range={(1001, 1001): [log_for(HOOK)]},
+                        code={HOOK: "0x6001"})
+    r = scan.scan_chain(client, CFG, cursor=1000, pending={HOOK: 3}, known=set())
+    assert client.get_code_calls[HOOK.lower()] == 1
+    assert r.pending == {}
+    assert len(r.new_lines) == 1
+    assert r.new_lines[0]["family"] == evm.codehash("0x6001")
 
 
 def test_pending_argument_not_mutated():
