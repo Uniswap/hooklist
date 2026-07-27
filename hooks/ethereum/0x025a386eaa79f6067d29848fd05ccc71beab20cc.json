@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x025a386eaa79f6067d29848fd05ccc71beab20cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EthCreatorFeeHookV2",
+    "description": "Shared Uniswap v4 hook that applies a configurable ETH-denominated swap fee (1%\u201310%, fixed at pool registration) on native ETH/token pools. The total fee is split between the token creator and an immutable Launcher treasury (fixed 0.10% share), accruing as ERC-6909 claims redeemable by creator or Launcher. LP fee is zero; no token transfer tax.",
+    "deployer": "0x2Bb333d48DFAF1596D9036671d2E43168994249E",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
