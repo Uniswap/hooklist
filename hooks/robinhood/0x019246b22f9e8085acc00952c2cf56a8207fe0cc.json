@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x019246b22f9e8085acc00952c2cf56a8207fe0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CashCatQuoteFeeHook",
+    "description": "A shared Uniswap v4 hook for all CashCat launchpad pools that charges a configurable swap fee (up to 10%) always in the pool's quote currency via v4 return-delta accounting. Fees are taken in beforeSwap for specified-quote swaps and afterSwap for unspecified-quote swaps, minted as ERC-6909 claims to a locker. Pool creation is gated to the CashCat launchpad; afterSwap also records a cosmetic graduation milestone based on post-swap price.",
+    "deployer": "0xf29fEF9e4B52420E1bf4f7233f3b0bdCeD85d09E",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
