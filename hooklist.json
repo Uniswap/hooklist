@@ -14734,6 +14734,41 @@
   },
   {
     "hook": {
+      "address": "0x4eb1976978756bd56802d8162f2271844924e0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LunchTaxHookPair",
+      "description": "ERC1967 proxy wrapping a Uniswap v4 hook that applies configurable buy/sell taxes (up to 5% per side) via beforeSwap/afterSwap delta returns, accruing fees per pool in the quote token and distributing them to recipients through a pull-based ledger with optional holder-rewards routing.",
+      "deployer": "0x7B2DaF7F696bB844C7786693062D6619D1858cC9",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x59e2cea84bf858b66d46b22742bef4304ee0aacc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -15462,6 +15497,41 @@
     "properties": {
       "dynamicFee": true,
       "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf7521cf0bb7c11e2d2794189412614cf2e29a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ERC1967Proxy",
+      "description": "An ERC1967 upgradeable proxy deployed as a Uniswap v4 hook with beforeSwap, afterSwap, beforeSwapReturnsDelta, and afterSwapReturnsDelta permissions. The implementation contract is not verified; swap behavior is determined by an unverified implementation behind the proxy.",
+      "deployer": "0x7B2DaF7F696bB844C7786693062D6619D1858cC9",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
