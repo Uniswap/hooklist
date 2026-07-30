@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfe36b48c9c0240991e4cef006a2445f2ff524888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "WsgemBackstopHook",
+    "description": "Custom-curve backstop hook for the tGBP/wstGBP pool. beforeSwap returns a BeforeSwapDelta that cancels the AMM curve and routes the swap through the wstGBP wrapper's atomic mint/redeem, so buys execute at mintcost() and sells at burncost(). beforeAddLiquidity reverts, so the pool holds no LP liquidity. The hook is ownerless, holds no capital, and charges no fee of its own. Swaps must be settle-first; a conventional swap-then-settle v4 router will revert.",
+    "deployer": "0xdeed2376ad1d9cc54e0cca449b1d7a96939120f9",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
