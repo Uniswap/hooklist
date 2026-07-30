@@ -15469,6 +15469,41 @@
   },
   {
     "hook": {
+      "address": "0xd8e101ca5a6dc06382536b26c7ca7bc1a8a6a8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "EquityLaunchHook",
+      "description": "Bonding-curve launchpad hook for pools quoted in tokenized stock shares (Robinhood Chain Stock Tokens). Captures trading fees entirely on the quote side via beforeSwap/afterSwap deltas, routing them through a FeeRouter (protocol/creator/referrer split). Three phases: a 50-block anti-sniper guard (90%\u21923% fee decay), a 1% bonding-curve phase, and a 1% graduated phase triggered by a per-pool quote raise threshold.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xda55066ef3dfce0deb006bacbf2dfd931a6ab0cc",
       "chain": "robinhood",
       "chainId": 4663,
