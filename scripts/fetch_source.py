@@ -14,6 +14,7 @@ import sys
 from parse_etherscan import parse as parse_etherscan
 from parse_okx import parse as parse_okx
 from parse_sourcify import parse as parse_sourcify
+from parse_blockscout_v2 import parse as parse_blockscout_v2
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -31,6 +32,8 @@ def fetch_and_parse(response_path: str, outdir: str = ".sources", explorer_type:
         return parse_sourcify(response_path, outdir)
     if explorer_type == "okx":
         return parse_okx(response_path, outdir)
+    if explorer_type == "blockscout-v2":
+        return parse_blockscout_v2(response_path, outdir)
     return parse_etherscan(response_path, outdir)
 
 
@@ -76,6 +79,12 @@ def main():
     elif explorer_type == "okx":
         url = f"{explorer_url}&contractAddress={address}"
         parser = parse_okx
+    elif explorer_type == "blockscout-v2":
+        # Blockscout's native API. Same host as the Etherscan-compatible endpoint, but not
+        # subject to the same rate limit, and a throttled reply cannot be mistaken for an
+        # unverified contract. explorerUrl already ends in /api.
+        url = f"{explorer_url}/v2/smart-contracts/{address}"
+        parser = parse_blockscout_v2
     else:
         # Blockscout / Routescan — no API key
         url = f"{explorer_url}?module=contract&action=getsourcecode&address={address}"
