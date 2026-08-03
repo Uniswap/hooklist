@@ -7069,6 +7069,41 @@
   },
   {
     "hook": {
+      "address": "0x8bab0d3049b6d5d17b36d3263786fe587a9d00c4",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SparkHookV4",
+      "description": "A token-launch hook that enforces anti-bot protections for the first 20,000 blocks after launch: one swap per block per sender, and a max buy limit per wallet. On sells, it collects a 2% fee (via afterSwapReturnsDelta) split between a platform wallet and the pool creator.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x91fb28d8f4906df4e8c71806dfeb882dd82815d8",
       "chain": "bnb",
       "chainId": 56,
@@ -8351,6 +8386,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x276223c8658b08937a937b711ce38e1715da0080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Uni20Hook",
+      "description": "A beforeSwap-only Uniswap v4 hook that automatically triggers LP fee harvesting via an immutable IUni20FeeLocker contract before each registered pool swap. Harvesting failures are caught with try/catch so they cannot block user trades. No hookData is required and no swap deltas are modified.",
+      "deployer": "0xfe462E4B43a328B88213cE696a7e9926eb06eb74",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -13229,6 +13299,41 @@
   },
   {
     "hook": {
+      "address": "0xfe36b48c9c0240991e4cef006a2445f2ff524888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WsgemBackstopHook",
+      "description": "Custom-curve backstop hook for the tGBP/wstGBP pool. beforeSwap returns a BeforeSwapDelta that cancels the AMM curve and routes the swap through the wstGBP wrapper's atomic mint/redeem, so buys execute at mintcost() and sells at burncost(). beforeAddLiquidity reverts, so the pool holds no LP liquidity. The hook is ownerless, holds no capital, and charges no fee of its own. Swaps must be settle-first; a conventional swap-then-settle v4 router will revert.",
+      "deployer": "0xdeed2376ad1d9cc54e0cca449b1d7a96939120f9",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x580ca49389d83b019d07e17e99454f2f218e2dc0",
       "chain": "monad",
       "chainId": 143,
@@ -14915,6 +15020,41 @@
       "name": "RobFeeHook",
       "description": "Fixed 2% swap fee on the native-ETH side of the pool, both directions, distributed instantly to four fixed recipients. Fee rate is a constant; only the distribution split is owner-adjustable. Non-upgradeable, no pool-creation or liquidity restrictions",
       "deployer": "0xfe10b62984bce34f0ff4fdde6f996c0836698534",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x625591a8aba062e93e8547be32ea5c6abd8900cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ERC8404FeeHook (Hoodroids)",
+      "description": "A Uniswap v4 custom-accounting hook for the Hoodroids/ETH pool.\nIt collects a quote-currency-only swap fee through beforeSwap/afterSwap\ndeltas and sends it to an immutable fee collector. The owner may only\nreduce the fee; it can never be increased.",
+      "deployer": "0x28c85dBEbe5c981b8a69721CB7f3421e8106F5B6",
       "verifiedSource": true,
       "auditUrl": ""
     },
