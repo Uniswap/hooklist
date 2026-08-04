@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x880bfa436d722bfde337eafc7c22123c17b90088",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BuffetAMM",
+    "description": "Proprietary AMM for ETH/USDC that prices swaps via an external IPriceEngine contract and settles them entirely through the hook using BeforeSwapDelta, minting and burning ERC-6909 claim tokens to manage its own liquidity pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
