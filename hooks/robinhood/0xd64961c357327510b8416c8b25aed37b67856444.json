@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd64961c357327510b8416c8b25aed37b67856444",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FWATokenHook",
+    "description": "A Uniswap v4 hook for a single ETH/FWAToken pool that charges a flat 1% fee on both buys and sells via afterSwapReturnsDelta, routing fees to an owner-set address. Buys are gated by an owner-controlled boolean (externalBuysEnabled); only registered protocol modules may buy while gating is active. Exact-output swaps are always rejected.",
+    "deployer": "0xAbf6f5B4e90fB4D11759cd5B71Fc869F48c155fC",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
