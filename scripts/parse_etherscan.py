@@ -16,7 +16,15 @@ def parse(response_path: str, outdir: str = ".sources") -> dict:
     with open(response_path) as f:
         data = json.load(f)
 
-    r = data["result"][0]
+    # A rate-limited or errored explorer replies {"result": null, "message": "..."},
+    # which crashes on subscript rather than reporting anything actionable. Raise instead
+    # of returning "unverified": we do NOT know the contract is unverified, only that the
+    # explorer did not answer, and silently recording it as unverified would be wrong.
+    result = data.get("result")
+    if not result:
+        raise ValueError(f"explorer returned no result: {data.get('message') or 'unknown error'}")
+
+    r = result[0]
     meta = {
         "contractName": r["ContractName"],
         "proxy": r.get("Proxy", "0") == "1",
