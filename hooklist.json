@@ -4024,6 +4024,41 @@
   },
   {
     "hook": {
+      "address": "0x880bfa436d722bfde337eafc7c22123c17b90088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BuffetAMM",
+      "description": "Hook that uses before swap deltas to swap with offchain quoted prices",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x88c9ff9fc0b22cca42265d3f1d1c2c39e41cdacc",
       "chain": "base",
       "chainId": 8453,
@@ -14279,6 +14314,41 @@
   },
   {
     "hook": {
+      "address": "0x01617950099780f43dbd331cecc27b8af521e0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CreatorFeeHookV1",
+      "description": "Charges fixed directional buy and sell fees in beforeSwap or afterSwap depending on trade shape, collecting a protocol fee, and paying the remainder to up to five creator-nominated recipients.",
+      "deployer": "0x91b6Eba0f71EA8B1aC25960A2770eD0bCa5FC128",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x019246b22f9e8085acc00952c2cf56a8207fe0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -14581,6 +14651,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x28388ca220f955b5bdf0309e28612fe057c00088",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BuffetAMM",
+      "description": "hook that gets prices from price engine to give swaps using liquidity stored in the pool manager",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -15224,6 +15329,41 @@
   },
   {
     "hook": {
+      "address": "0x7aa716e1a2dad5309abeca3e8c75abfed287a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BuybackBurnHookV1",
+      "description": "Charges fixed directional buy and sell fees in beforeSwap or afterSwap depending on trade shape, collecting a protocol fee, and spends the remainder buying the pool's own token back on sells and burning it.",
+      "deployer": "0x91b6Eba0f71EA8B1aC25960A2770eD0bCa5FC128",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x958a809134be3f333cfeb1a0db4ae37c0867aa88",
       "chain": "robinhood",
       "chainId": 4663,
@@ -15395,6 +15535,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xac8a969865c553ba47bc523f7f65af1abc3470cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FactoryHook",
+      "description": "Singleton hook for graduated BCToken pools that computes a volatility-adjusted dynamic fee split between LP positions (via LP-fee override) and a protocol waterfall (via hook deltas). Blocks swaps until the coin graduates and supports an owner-controlled halt flag.",
+      "deployer": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -15605,6 +15780,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd64961c357327510b8416c8b25aed37b67856444",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FWATokenHook",
+      "description": "A Uniswap v4 hook for a single ETH/FWAToken pool that charges a flat 1% fee on both buys and sells via afterSwapReturnsDelta, routing fees to an owner-set address. Buys are gated by an owner-controlled boolean (externalBuysEnabled); only registered protocol modules may buy while gating is active. Exact-output swaps are always rejected.",
+      "deployer": "0xAbf6f5B4e90fB4D11759cd5B71Fc869F48c155fC",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
