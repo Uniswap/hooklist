@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xac8a969865c553ba47bc523f7f65af1abc3470cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FactoryHook",
+    "description": "Singleton hook for graduated BCToken pools that computes a volatility-adjusted dynamic fee split between LP positions (via LP-fee override) and a protocol waterfall (via hook deltas). Blocks swaps until the coin graduates and supports an owner-controlled halt flag.",
+    "deployer": "0x4e59b44847b379578588920cA78FbF26c0B4956C",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
