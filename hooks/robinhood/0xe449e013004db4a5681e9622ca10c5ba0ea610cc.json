@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe449e013004db4a5681e9622ca10c5ba0ea610cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AegisHook",
+    "description": "A Uniswap v4 hook that applies dynamic LP fees via an external fee manager, charges additional hook fees on swaps (split by exact-in/exact-out path), records price oracle observations, and periodically reinvests accumulated fees into full-range liquidity positions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
