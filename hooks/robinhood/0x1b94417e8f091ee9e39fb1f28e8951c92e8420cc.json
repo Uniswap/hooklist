@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1b94417e8f091ee9e39fb1f28e8951c92e8420cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MidasAntiSnipeSuperhook",
+    "description": "ETH/token hook that charges configurable fees on both sides of each swap \u2014 ETH-side fees are split between a royalty recipient and the pool's adopter, token-side swaps burn a configurable amount to a dead address. Buys within a configurable post-launch window pay a linearly-decaying anti-snipe surcharge. Includes an on-chain TWAP oracle and rejects fee-on-transfer tokens and exact-output swaps.",
+    "deployer": "0x7689f33dac018e92A33EF6F49CC51D150544f393",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
