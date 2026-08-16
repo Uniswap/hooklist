@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x89968793222b6ca2a63ed511de01dbd8225ca8c0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Ponzuki",
+    "description": "Time-decaying swap fee that starts at 20% and linearly decays to 1% over the first hour after pool launch. Fees are split between the LP position (compounding), a project vault, a protocol fee recipient, and an optional referrer address passed via hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
