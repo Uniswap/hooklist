@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x48c22af8ad989fc9d5e82d6055dc0f263076e0c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MultiHookHost",
+    "description": "A Uniswap v4 hook with a configurable block-number-based anti-sniper gate that blocks swaps until a set number of blocks after pool launch. In afterSwap, it redirects a configurable fee (platform + creator basis points) from the unspecified swap output into per-currency balances, with an optional buyback-burn that sends an additional token slice to a burn address on buy swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
