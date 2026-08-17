@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xefe669814e5eec33406bd50ffa8331618d076aec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CashCatHook",
+    "description": "Fee engine for CashCat pools that skims a configurable ETH-side trading fee from every swap, covering both exact-input and exact-output directions. Supports an optional launch window with a higher fee that decays linearly to a base rate; fees are split between a platform treasury and the pool creator. Pool liquidity is locked at launch \u2014 LP removal always reverts.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
