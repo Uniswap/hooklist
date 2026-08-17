@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x46c4455f65da6d0e8bb0274e257f99733dde2544",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookedV1",
+    "description": "A Uniswap v4 hook for MainToken/USDG trading pairs that collects fees via afterSwapReturnsDelta: 10% on buys (6.5% to a rewards collector, 2% to a jackpot, 1.5% to an ops wallet) and 3.5% on sells (2% to jackpot, 1.5% to ops). Liquidity provision is restricted to the owner and a configurable position manager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
