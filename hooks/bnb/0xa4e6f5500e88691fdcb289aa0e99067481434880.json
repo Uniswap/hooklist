@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa4e6f5500e88691fdcb289aa0e99067481434880",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "ArrakisPrivateHook",
+    "description": "A Uniswap v4 hook for Arrakis private vaults that overrides LP fees per swap direction (zeroForOne/oneForZero) with directionally configurable rates, and restricts liquidity additions to the vault's authorized module only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
