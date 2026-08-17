@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xffbfa95c07ba855fee037350634aba4a404e20cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BallisticFeeHookV3",
+    "description": "Directional quote-currency fee hook with configurable per-pool buy/sell fee rates, a time-decaying opening fee schedule, and a 10 bps platform floor. Fees are split between a per-pool creator allocation vault and a platform treasury collector. The hook bypasses fees for the registered allocation vault address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
