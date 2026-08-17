@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xeb1e05df4b1e0e7eed94cd06628900868ea3a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SealDaoFeeHook",
+    "description": "Fee-collection hook for a single ETH/SEAL token pool that levies a 1% DAO fee on native ETH swap amounts via beforeSwap and afterSwap delta returns. A treasury address can permanently disable fee collection.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
