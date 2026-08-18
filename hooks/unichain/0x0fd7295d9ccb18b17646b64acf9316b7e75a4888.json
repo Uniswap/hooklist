@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0fd7295d9ccb18b17646b64acf9316b7e75a4888",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "PolymarketHook",
+    "description": "A prediction market hook that creates binary-outcome YES/NO token pairs backed by USDC. The `beforeSwap` handler intercepts trades on YES/USDC and NO/USDC pools: for buy orders it mints equal YES+NO tokens from USDC, performs an internal swap on the YES/NO pool to consolidate into the desired token, and returns the delta to settle the trade entirely within the hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
