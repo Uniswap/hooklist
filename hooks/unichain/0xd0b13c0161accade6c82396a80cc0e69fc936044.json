@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd0b13c0161accade6c82396a80cc0e69fc936044",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "UniswapCupHook",
+    "description": "Uniswap v4 hook for the UniswapCup protocol that restricts pools to exact-input swaps only and collects a percentage fee from each swap's output. If the output token is non-native, the fee is converted back to ETH via a nested pool swap inside afterSwap. Collected ETH is forwarded to the factory owner, and transfer restrictions on UniswapCupTeamToken are updated after each swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
