@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2ea5eac8a4e31f0889e86fc135c5eae8e0b16ae0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "PrediXHookProxyV2",
+    "description": "ERC1967-style upgradeable proxy for a prediction market AMM hook. Gates swaps through a trusted-router allowlist with per-swap anti-sandwich identity commitments; all registered pools must use dynamic fees, which the hook overrides per-swap. Emits per-trade price and USDC volume events for each registered prediction-market pool. Enforces 48-hour timelocks on upgrades, diamond rotation, and admin transfers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
