@@ -13,8 +13,13 @@ def test_get_explorer_url_etherscan_chain():
 
 
 def test_get_explorer_url_blockscout_chain():
-    url = get_explorer_url("zora")
-    assert "blockscout" in url or "zora" in url
+    url = get_explorer_url("soneium")
+    assert "blockscout" in url or "soneium" in url
+
+
+def test_get_explorer_url_sourcify_chain():
+    assert get_explorer_url("tempo") == "https://contracts.tempo.xyz"
+    assert get_explorer_url("zora") == "https://sourcify.dev/server"
 
 
 def test_get_explorer_url_okx_chain():

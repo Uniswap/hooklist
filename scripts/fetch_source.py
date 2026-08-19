@@ -111,8 +111,13 @@ def main():
     response_file = "explorer_response.json"
 
     if explorer_type == "sourcify":
-        # Sourcify v2 API: GET /v2/contract/{chainId}/{address}?fields=sources,proxyResolution
-        url = f"{explorer_url}/v2/contract/{chain_id}/{address}?fields=sources,proxyResolution"
+        # Sourcify v2 API: GET /v2/contract/{chainId}/{address}?fields=...
+        # `compilation` carries the contract name, which is the fallback assemble_hook.py
+        # uses when the classifier returns no name.
+        url = (
+            f"{explorer_url}/v2/contract/{chain_id}/{address}"
+            "?fields=sources,compilation,proxyResolution"
+        )
         parser = parse_sourcify
     elif explorer_type == "etherscan":
         url = f"{explorer_url}&module=contract&action=getsourcecode&address={address}&apikey={api_key}"
@@ -160,7 +165,10 @@ def main():
     if meta["proxy"] and meta["implementation"]:
         impl_address = meta["implementation"]
         if explorer_type == "sourcify":
-            impl_url = f"{explorer_url}/v2/contract/{chain_id}/{impl_address}?fields=sources"
+            impl_url = (
+                f"{explorer_url}/v2/contract/{chain_id}/{impl_address}"
+                "?fields=sources,compilation"
+            )
         elif explorer_type == "etherscan":
             impl_url = f"{explorer_url}&module=contract&action=getsourcecode&address={impl_address}&apikey={api_key}"
         elif explorer_type == "okx":
