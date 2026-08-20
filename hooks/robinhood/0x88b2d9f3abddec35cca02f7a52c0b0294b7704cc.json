@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x88b2d9f3abddec35cca02f7a52c0b0294b7704cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MrSuccHook",
+    "description": "Collects a 2.5% protocol fee on buys and sells in a designated native/token pool, routes fees to a configurable recipient via poolManager.take(), updates an on-chain random seed on each swap, and triggers token launch on first liquidity add.",
+    "deployer": "0x57F375bfeDDd0c8d6378804dC9b21Af7df6782e9",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
