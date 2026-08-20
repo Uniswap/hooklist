@@ -1086,6 +1086,41 @@
   },
   {
     "hook": {
+      "address": "0x0a914acb246063b4ed0f3a0fc13d0c0e8c8500c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CapGate",
+      "description": "Reverts swaps where the absolute amount specified exceeds MAX_TRADE (100e18 units). Inherits AeonFee, which takes a mandatory 10 bps fee on the unspecified (output) currency of every swap via afterSwap return delta, routing it to a hardcoded recipient.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0b8fbfa9861af89d7d2cf2e55f61cee982a22080",
       "chain": "base",
       "chainId": 8453,
@@ -1852,6 +1887,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2ad6936032d4201fc74041afbc801faab1bf40c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "HeavierHand",
+      "description": "Gates swaps to only allow selling the token the pool currently holds more of, based on virtual reserves derived from slot0 price and active liquidity. Past a 10% skew cap the gate inverts so only the rebalancing direction is admitted. Charges a mandatory 10 bps protocol fee on every swap via afterSwap return-delta, routed to a fixed recipient address.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -3464,6 +3534,41 @@
   },
   {
     "hook": {
+      "address": "0x723b16ef13a1b9a2bd63238bec47cdf1d4a010c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DynamicFee",
+      "description": "Adjusts the LP fee dynamically based on tick movement from the previous swap \u2014 larger moves increase the fee (up to 5%), smaller moves reduce it (floor 0.05%). Inherits AeonFee, which takes a mandatory 10 bps protocol fee on every swap routed to a fixed hardcoded recipient via afterSwap return-delta.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x73E74c090446ad7c9745EBa3c26F3E1a9680E8CC",
       "chain": "base",
       "chainId": 8453,
@@ -4549,6 +4654,41 @@
   },
   {
     "hook": {
+      "address": "0x9818ddd1102c9606cd693ac17a7b8b17609480c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TailTwins",
+      "description": "Gates swaps by requiring the swap amount's absolute low byte to be within 16 of the current pool's sqrtPriceX96 low byte; reverts otherwise. Also charges a mandatory 10 bps protocol fee on every swap's unspecified (output) currency via afterSwap return delta, routed to a fixed recipient.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9850de90445233c2561dd29fc67aaa353b48a888",
       "chain": "base",
       "chainId": 8453,
@@ -4930,6 +5070,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa7a62422d13c7648ca53ad91e9268ac4bfc6c0c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TotalizerTrap",
+      "description": "Tracks a per-pool cumulative swap volume and reverts any swap whose amount would bring the running total to a multiple of 11. Inherits a mandatory 10 bps protocol fee (AeonFee) taken on every swap's output currency via afterSwap return delta.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -5879,6 +6054,41 @@
   },
   {
     "hook": {
+      "address": "0xd24d29a47adb8786072ab2cb9925dc8ba36bc044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CrownClash",
+      "description": "Takes a mandatory 10 bps protocol fee (AeonFee) plus an optional 7 bps tribute on every swap's unspecified currency when hookData encodes a player address, routing both directly to a fixed treasury. Tracks cumulative per-pool swap volume per player and maintains an on-chain leaderboard of the highest-volume trader (the 'champion').",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd3c1f2174f37f88811f99b1b1b4c1356c0246000",
       "chain": "base",
       "chainId": 8453,
@@ -6049,6 +6259,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdb4a0eb0410407d6c22a35c27288834e0d9f4044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LegacyLedger",
+      "description": "Charges a mandatory 0.10% protocol fee (AeonFee) on every swap's unspecified currency, routing it to a fixed immutable treasury address. Optionally charges an additional 0.05% loyalty tax when hookData encodes a player address, incrementing that player's on-chain loyalty score and tier.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -6369,6 +6614,41 @@
   },
   {
     "hook": {
+      "address": "0xec78ee3f1fc117415a8006a0344ccaff30aa40c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ExactInGate",
+      "description": "Blocks exact-output swaps by reverting when `amountSpecified > 0`. Inherits `AeonFee`, which takes a mandatory 10 bps protocol fee on every swap's unspecified (output) currency via `afterSwapReturnsDelta`, routing it to a hardcoded recipient address.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xed1698c29928a6c44cddb0c75ab0e5d47eb72a80",
       "chain": "base",
       "chainId": 8453,
@@ -6572,6 +6852,41 @@
     "properties": {
       "dynamicFee": false,
       "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfba729a7d8fc48cbb261a845a0f26281ed7800c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "NoOp",
+      "description": "Minimal hook that emits a BeforeSwapFired event on every swap and takes a mandatory 10 bps protocol fee on the unspecified (output) currency, routing it to a hardcoded recipient address via poolManager.take() in afterSwap. The fee rate and recipient are compile-time constants that cannot be overridden by derived contracts.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
@@ -15084,6 +15399,41 @@
   },
   {
     "hook": {
+      "address": "0x1cdbdc57b803a5270f76b52468b3d368d124e0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "StonkBirdsFeeHook",
+      "description": "2% ETH fee on swaps. 175 bps to NestBoosterPot, 25 bps to polVault. Taken in beforeSwap when ETH is specified, afterSwap otherwise. Only native ETH / STONKBIRDS pools. Owner can mark addresses fee-exempt.",
+      "deployer": "0xaDCd3300fbAf8B5CE446f6De0aE078b1A56D5ceb",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1e27183e12a9c108dd850e022f26870b12a200c4",
       "chain": "robinhood",
       "chainId": 4663,
@@ -16099,6 +16449,41 @@
   },
   {
     "hook": {
+      "address": "0x6b567e25cc6e9d77f1a030a68db39f86c03540c4",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CapGate",
+      "description": "Reverts swaps exceeding a fixed 100-token size cap (MAX_TRADE = 100e18). After each swap, takes a mandatory 10 bps protocol fee from the output currency and routes it to a hardcoded recipient address via poolManager.take().",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6df3bebfbec267221b819ac30bb32e2f02c700c4",
       "chain": "robinhood",
       "chainId": 4663,
@@ -16130,6 +16515,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x70dec3a54943fd96fe460ff74172038f57208044",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LegacyLedger",
+      "description": "On every swap, takes a mandatory 10 bps protocol fee (via AeonFee base) plus an optional 0.05% loyalty tax on the unspecified currency, routing both directly to a fixed treasury address. Swaps that include a 32-byte player address in hookData earn loyalty marks accumulating into a capped tier score.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -16340,6 +16760,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x88b2d9f3abddec35cca02f7a52c0b0294b7704cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "MrSuccHook",
+      "description": "Collects a 2.5% protocol fee on buys and sells in a designated native/token pool, routes fees to a configurable recipient via poolManager.take(), updates an on-chain random seed on each swap, and triggers token launch on first liquidity add.",
+      "deployer": "0x57F375bfeDDd0c8d6378804dC9b21Af7df6782e9",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -17005,6 +17460,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc97c22c241ecd0b9fb5656307e47c8a674ee2088",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "MidasRWAHook",
+      "description": "Uniswap v4 hook for tokens paired with RWA quote assets (e.g. Robinhood Chain Stock Tokens). Charges a 1% steady-state fee split four ways: 0.35% to LPs, 0.35% accrued for GOLD buy-and-burn (sent to dead address), 0.22% to the pool deployer, and 0.08% as an immutable template royalty. An 8% launch surcharge decays linearly over 120 seconds, with a 1.5x multiplier on sells. Burn sweeps are rate-limited to once per hour with a 10% reference-price band and 3% slippage floor.",
+      "deployer": "0x7689f33dac018e92A33EF6F49CC51D150544f393",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
