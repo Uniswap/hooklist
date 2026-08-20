@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xec78ee3f1fc117415a8006a0344ccaff30aa40c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ExactInGate",
+    "description": "Blocks exact-output swaps by reverting when `amountSpecified > 0`. Inherits `AeonFee`, which takes a mandatory 10 bps protocol fee on every swap's unspecified (output) currency via `afterSwapReturnsDelta`, routing it to a hardcoded recipient address.",
+    "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
