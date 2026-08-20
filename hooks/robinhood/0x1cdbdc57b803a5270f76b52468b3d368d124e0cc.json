@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1cdbdc57b803a5270f76b52468b3d368d124e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StonkBirdsFeeHook",
+    "description": "2% ETH fee on swaps. 175 bps to NestBoosterPot, 25 bps to polVault. Taken in beforeSwap when ETH is specified, afterSwap otherwise. Only native ETH / STONKBIRDS pools. Owner can mark addresses fee-exempt.",
+    "deployer": "0xaDCd3300fbAf8B5CE446f6De0aE078b1A56D5ceb",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
