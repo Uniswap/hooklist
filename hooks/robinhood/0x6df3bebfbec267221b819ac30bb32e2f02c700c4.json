@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6df3bebfbec267221b819ac30bb32e2f02c700c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HeavierHand",
+    "description": "Gates swap direction by virtual reserves: within a 10% skew band, swaps must sell the pool's heavier currency; beyond the cap, the gate inverts and only the rebalancing leg (selling the lighter side) is admitted. Charges a mandatory 10 bps Aeon protocol fee on every swap via afterSwap return delta.",
+    "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
