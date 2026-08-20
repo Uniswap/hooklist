@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfba729a7d8fc48cbb261a845a0f26281ed7800c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "NoOp",
+    "description": "Minimal hook that emits a BeforeSwapFired event on every swap and takes a mandatory 10 bps protocol fee on the unspecified (output) currency, routing it to a hardcoded recipient address via poolManager.take() in afterSwap. The fee rate and recipient are compile-time constants that cannot be overridden by derived contracts.",
+    "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
