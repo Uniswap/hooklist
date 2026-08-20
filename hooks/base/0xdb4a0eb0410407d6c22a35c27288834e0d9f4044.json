@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdb4a0eb0410407d6c22a35c27288834e0d9f4044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LegacyLedger",
+    "description": "Charges a mandatory 0.10% protocol fee (AeonFee) on every swap's unspecified currency, routing it to a fixed immutable treasury address. Optionally charges an additional 0.05% loyalty tax when hookData encodes a player address, incrementing that player's on-chain loyalty score and tier.",
+    "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
