@@ -16939,6 +16939,41 @@
   },
   {
     "hook": {
+      "address": "0x971df49844604e44514120682eac3fcdc4f5c0c4",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "TailTwins",
+      "description": "Gates swaps by requiring the low byte of the swap size to be within 16 units (circular distance) of the low byte of the pool's current sqrtPriceX96. Takes a mandatory 10 bps fee on every swap's unspecified currency, sent to a hardcoded Aeon recipient via afterSwap return delta.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x99d4c5cf21d8f00b627afe2bf1ee2840f886e044",
       "chain": "robinhood",
       "chainId": 4663,
