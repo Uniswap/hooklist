@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7566a3bfbe88c06bc5f33fea927f461e8279d0c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DynamicFee",
+    "description": "Adjusts LP swap fees based on tick movement from the prior swap: larger price moves raise the fee and smaller moves lower it, bounded between 0.05% and 5%. All swaps also pay a mandatory 10 bps protocol fee taken from the output currency and routed to a fixed recipient via afterSwap return-delta.",
+    "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
