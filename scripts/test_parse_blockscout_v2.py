@@ -80,6 +80,31 @@ def test_parse_blockscout_v2_proxy(tmp_path):
     assert meta["implementation"] == "0xabcdef1234567890abcdef1234567890abcdef12"
 
 
+def test_parse_blockscout_v2_proxy_accepts_address_hash(tmp_path):
+    """Blockscout's live v2 response names implementation addresses address_hash."""
+    response = {
+        "name": "ProxyHook",
+        "is_verified": True,
+        "file_path": "src/ProxyHook.sol",
+        "source_code": "contract ProxyHook {}",
+        "additional_sources": [],
+        "proxy_type": "eip1967",
+        "implementations": [
+            {
+                "address_hash": "0xabcdef1234567890abcdef1234567890abcdef12",
+                "name": "Impl",
+            }
+        ],
+    }
+    response_file = tmp_path / "response.json"
+    response_file.write_text(json.dumps(response))
+
+    meta = parse(str(response_file), outdir=str(tmp_path / "sources"))
+
+    assert meta["proxy"] is True
+    assert meta["implementation"] == "0xabcdef1234567890abcdef1234567890abcdef12"
+
+
 def test_parse_blockscout_v2_unknown_proxy_type_is_not_a_proxy(tmp_path):
     """Some instances report proxy_type "unknown" for plain contracts."""
     response = {
