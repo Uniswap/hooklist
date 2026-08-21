@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0c1f3d9c84db7b3f9a660e6a0e406808fa642aec",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EthereumWordsHook",
+    "description": "EthereumWordsHook is a non-upgradeable Uniswap v4 hook for Ethereum Words protocol-registered pools. It enforces immutable liquidity rules, charges fixed protocol fees using beforeSwap and afterSwap return deltas (2% on the ETH/WORDS pool and 1% on WORDS/child-token pools), tracks WORDS reserves as NFT reward weights, burns child-market WORDS fees, and distributes main-pool ETH fees between the treasury and NFT owners.",
+    "deployer": "0x7A6e92073add9437468b6714cfC17cB50CbDEfE0",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
