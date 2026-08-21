@@ -124,6 +124,8 @@ def main():
             impl_url = f"{explorer_url}&module=contract&action=getsourcecode&address={impl_address}&apikey={api_key}"
         elif explorer_type == "okx":
             impl_url = f"{explorer_url}&contractAddress={impl_address}"
+        elif explorer_type == "blockscout-v2":
+            impl_url = f"{explorer_url}/v2/smart-contracts/{impl_address}"
         else:
             impl_url = f"{explorer_url}?module=contract&action=getsourcecode&address={impl_address}"
 

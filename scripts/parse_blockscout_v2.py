@@ -26,7 +26,7 @@ Blockscout v2 response format (GET /api/v2/smart-contracts/{address}):
     ...
   ],
   "proxy_type": null | "eip1167" | ...,
-  "implementations": [{"address": "0x...", "name": "Impl"}]
+  "implementations": [{"address" | "address_hash": "0x...", "name": "Impl"}]
 }
 
 An unverified or unknown address returns {"message": "Not found"} with no source keys.
@@ -58,7 +58,7 @@ def parse(response_path: str, outdir: str = ".sources") -> dict:
     impls = data.get("implementations") or []
     implementation = ""
     if impls and isinstance(impls, list) and isinstance(impls[0], dict):
-        implementation = impls[0].get("address", "") or ""
+        implementation = impls[0].get("address", "") or impls[0].get("address_hash", "") or ""
 
     meta = {
         "contractName": data.get("name", "") or "",

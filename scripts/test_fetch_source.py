@@ -1,9 +1,12 @@
 import json
 import os
+import subprocess
 import sys
+from pathlib import Path
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import fetch_source
 from fetch_source import get_explorer_url, fetch_and_parse
 
 
@@ -109,3 +112,61 @@ def test_fetch_and_parse_okx(tmp_path):
 
     assert meta["contractName"] == "OkxHook"
     assert meta["verified"] is True
+
+
+def test_blockscout_v2_proxy_implementation_uses_native_v2_endpoint(tmp_path, monkeypatch):
+    """Proxy resolution keeps both Blockscout requests on the native v2 API."""
+    proxy_address = "0x1111111111111111111111111111111111111111"
+    implementation_address = "0x2222222222222222222222222222222222222222"
+    responses = [
+        {
+            "name": "ProxyHook",
+            "is_verified": True,
+            "file_path": "src/ProxyHook.sol",
+            "source_code": "contract ProxyHook {}",
+            "additional_sources": [],
+            "proxy_type": "eip1967",
+            "implementations": [{"address": implementation_address, "name": "ImplHook"}],
+        },
+        {
+            "name": "ImplHook",
+            "is_verified": True,
+            "file_path": "src/ImplHook.sol",
+            "source_code": "contract ImplHook {}",
+            "additional_sources": [],
+            "proxy_type": None,
+            "implementations": [],
+        },
+    ]
+    requested_urls = []
+
+    def fake_curl(args, capture_output, text):
+        requested_urls.append(args[-1])
+        output_path = Path(args[args.index("-o") + 1])
+        output_path.write_text(json.dumps(responses[len(requested_urls) - 1]))
+        return subprocess.CompletedProcess(args, 0, stdout="200", stderr="")
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(fetch_source.subprocess, "run", fake_curl)
+    monkeypatch.setattr(
+        sys,
+        "argv",
+        [
+            "fetch_source.py",
+            "robinhood",
+            proxy_address,
+            "--output",
+            "source_meta.json",
+            "--outdir",
+            ".sources",
+        ],
+    )
+
+    fetch_source.main()
+
+    assert requested_urls == [
+        f"https://robinhoodchain.blockscout.com/api/v2/smart-contracts/{proxy_address}",
+        f"https://robinhoodchain.blockscout.com/api/v2/smart-contracts/{implementation_address}",
+    ]
+    assert json.loads(Path("source_meta.json").read_text())["contractName"] == "ImplHook"
+    assert Path(".sources/src_ImplHook.sol").exists()
