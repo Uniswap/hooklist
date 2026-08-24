@@ -3009,6 +3009,41 @@
   },
   {
     "hook": {
+      "address": "0x5e48f905661d75501ca756edb3403da98f0400c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BlockEcho",
+      "description": "Gates swaps by requiring the swap amount's last two digits (mod 100) to be within \u00b12 of the current block number's last two digits. Takes a mandatory 10 bps protocol fee on every swap's unspecified (output) amount, routed to a hardcoded recipient via afterSwap return delta.",
+      "deployer": "0x0DE98e661606EcFC448da7A8276DdE4de45200C8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5e5d19d22c85a4aef7c1fdf25fb22a5a38f71040",
       "chain": "base",
       "chainId": 8453,
@@ -8399,6 +8434,41 @@
   },
   {
     "hook": {
+      "address": "0x0c1f3d9c84db7b3f9a660e6a0e406808fa642aec",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EthereumWordsHook",
+      "description": "EthereumWordsHook is a non-upgradeable Uniswap v4 hook for Ethereum Words protocol-registered pools. It enforces immutable liquidity rules, charges fixed protocol fees using beforeSwap and afterSwap return deltas (2% on the ETH/WORDS pool and 1% on WORDS/child-token pools), tracks WORDS reserves as NFT reward weights, burns child-market WORDS fees, and distributes main-pool ETH fees between the treasury and NFT owners.",
+      "deployer": "0x7A6e92073add9437468b6714cfC17cB50CbDEfE0",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0d62529346ac2c61f5c0582210d01214687bc0cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -12490,6 +12560,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb0e89dffff0990946d2a97cf8c9bc55abbd520cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EBlockHook",
+      "description": "Enforces a fixed 2.5% ETH-denominated fee on swaps in a single configured pool, collected via beforeSwap and afterSwap return deltas. Token purchase amounts are tracked in transient storage for consumption by an external lottery/token contract. Fees accumulate and are distributed to the lottery contract via a permissionless `distributeFees()` call. The buyback executor is exempt from fee collection.",
+      "deployer": "0xA7818aa5E447073d98Bf06ED849F90a45D03f3A3",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -18055,6 +18160,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf667c59cd75ab1d7943fc8284edab51f3a76bfff",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ERC1967Proxy",
+      "description": "An ERC-1967 upgradeable proxy that delegates all Uniswap v4 hook calls to an unverified implementation address. The hook address encodes all 14 permission flags; actual hook behavior cannot be assessed from the proxy-only verified source.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
