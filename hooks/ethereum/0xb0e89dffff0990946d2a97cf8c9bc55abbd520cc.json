@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb0e89dffff0990946d2a97cf8c9bc55abbd520cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EBlockHook",
+    "description": "Enforces a fixed 2.5% ETH-denominated fee on swaps in a single configured pool, collected via beforeSwap and afterSwap return deltas. Token purchase amounts are tracked in transient storage for consumption by an external lottery/token contract. Fees accumulate and are distributed to the lottery contract via a permissionless `distributeFees()` call. The buyback executor is exempt from fee collection.",
+    "deployer": "0xA7818aa5E447073d98Bf06ED849F90a45D03f3A3",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
