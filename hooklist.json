@@ -16939,6 +16939,41 @@
   },
   {
     "hook": {
+      "address": "0x64c6103255ccc638febe3619aeb52d2b59d6a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SlvrHook",
+      "description": "A hook for the SLVR/ETH pool that taxes exact-input swaps up to 2%: buys pay an ETH fee into a lottery jackpot pot and receive weighted tickets; sells pay a SLVR fee to in-range LP stakers. Optional hookData (address buyer, uint8 boost) enables ticket attribution and boost multipliers. Exact-output and partial fills revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x65efdf8cce99b53c925df878df275df21cb6e8cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -17040,6 +17075,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x70a9a88402989226847ec122043ce5e7ff462080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FablesRWA",
+      "description": "A session-aware dynamic-fee hook for tokenized equity (RWA) pairs. Adjusts LP fees based on US equity market sessions (open/overnight/closed) using a baked NYSE calendar, with linear opening descent spikes and optional closing ramp to price information asymmetry around market open and close events. Operator pokes can temporarily override the autonomous fee within bounded limits.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -17149,6 +17219,41 @@
   },
   {
     "hook": {
+      "address": "0x75a54357d9c78a2db19004a5fdc76c50f9242aec",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CashCatHookV2",
+      "description": "Fee engine for CashCat pools that takes a fixed-rate fee from the quote (ETH) side of every swap via BeforeSwapDelta and AfterSwapDelta returns, splitting proceeds between a creator and a platform treasury. Liquidity is permanently locked after a single factory-controlled seed; only the factory may create or seed pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x78f535390f5c3ac2ac67d11abb9f6e48043340cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -17180,6 +17285,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x79576fbad6e83915630bbb5d5658483f05532080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FablesRWA",
+      "description": "Session-aware dynamic-fee hook for tokenized RWA equity pairs that adjusts LP fees based on US market calendar sessions (open, overnight, closed) using block.timestamp, with an opening descent ramp, a closing ramp, and a time-bounded operator fee poke override.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -17225,6 +17365,41 @@
       "name": "BuybackBurnHookV1",
       "description": "Charges fixed directional buy and sell fees in beforeSwap or afterSwap depending on trade shape, collecting a protocol fee, and spends the remainder buying the pool's own token back on sells and burning it.",
       "deployer": "0x91b6Eba0f71EA8B1aC25960A2770eD0bCa5FC128",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x83608601b5db694a63f38686ec064312b60420cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PrinterHook",
+      "description": "Collects a flat 5% ETH fee on every swap in native-ETH/token pools, routing accrued fees automatically to a token buyback-and-burn leg, a compounding single-sided liquidity band, and a treasury. Supports a one-time decaying anti-snipe buy surcharge in the early launch window.",
+      "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
     },
