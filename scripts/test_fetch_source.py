@@ -109,3 +109,105 @@ def test_fetch_and_parse_okx(tmp_path):
 
     assert meta["contractName"] == "OkxHook"
     assert meta["verified"] is True
+
+
+# --- fetch_with_retry ---
+
+from fetch_source import fetch_with_retry
+
+
+def _fake_curl(script, monkeypatch):
+    """Fake subprocess.run for curl. script is a list of (http_code, body);
+    http_code None simulates a curl-level failure (nonzero exit)."""
+    import fetch_source as fs
+    calls = []
+    sleeps = []
+
+    def fake_run(cmd, capture_output=True, text=True):
+        idx = min(len(calls), len(script) - 1)
+        calls.append(list(cmd))
+        code, body = script[idx]
+        out_path = cmd[cmd.index("-o") + 1]
+
+        class Result:
+            pass
+
+        r = Result()
+        if code is None:
+            r.returncode = 56
+            r.stdout = ""
+            r.stderr = "curl: (56) connection reset"
+            return r
+        with open(out_path, "w") as f:
+            f.write(body)
+        r.returncode = 0
+        r.stdout = str(code)
+        r.stderr = ""
+        return r
+
+    monkeypatch.setattr(fs.subprocess, "run", fake_run)
+    monkeypatch.setattr(fs.time, "sleep", lambda s: sleeps.append(s))
+    return calls, sleeps
+
+
+def test_fetch_with_retry_success_first_try(tmp_path, monkeypatch):
+    calls, sleeps = _fake_curl([(200, '{"message":"OK"}')], monkeypatch)
+    out = str(tmp_path / "resp.json")
+    code = fetch_with_retry("http://example/api", out)
+    assert code == "200"
+    assert len(calls) == 1
+    assert sleeps == []
+
+
+def test_fetch_with_retry_transient_500_then_success(tmp_path, monkeypatch):
+    """Blockscout intermittent 500s are retried until a good response."""
+    calls, sleeps = _fake_curl(
+        [(500, '{"message":"Something went wrong.","result":null,"status":"0"}'),
+         (500, '{"message":"Something went wrong.","result":null,"status":"0"}'),
+         (200, '{"message":"OK","result":[{}]}')],
+        monkeypatch,
+    )
+    out = str(tmp_path / "resp.json")
+    code = fetch_with_retry("http://example/api", out)
+    assert code == "200"
+    assert len(calls) == 3
+    assert len(sleeps) == 2
+    assert json.load(open(out))["message"] == "OK"
+
+
+def test_fetch_with_retry_rate_limit_429(tmp_path, monkeypatch):
+    calls, _ = _fake_curl([(429, "rate limited"), (200, '{"ok":1}')], monkeypatch)
+    code = fetch_with_retry("http://example/api", str(tmp_path / "r.json"))
+    assert code == "200"
+    assert len(calls) == 2
+
+
+def test_fetch_with_retry_curl_failure_retried(tmp_path, monkeypatch):
+    calls, _ = _fake_curl([(None, ""), (200, '{"ok":1}')], monkeypatch)
+    code = fetch_with_retry("http://example/api", str(tmp_path / "r.json"))
+    assert code == "200"
+    assert len(calls) == 2
+
+
+def test_fetch_with_retry_empty_body_retried(tmp_path, monkeypatch):
+    """An empty 200 response (observed from Robinhood Blockscout) is transient."""
+    calls, _ = _fake_curl([(200, ""), (200, '{"ok":1}')], monkeypatch)
+    code = fetch_with_retry("http://example/api", str(tmp_path / "r.json"))
+    assert code == "200"
+    assert len(calls) == 2
+
+
+def test_fetch_with_retry_gives_up_after_max_attempts(tmp_path, monkeypatch):
+    calls, sleeps = _fake_curl([(500, '{"message":"Something went wrong."}')], monkeypatch)
+    code = fetch_with_retry("http://example/api", str(tmp_path / "r.json"), max_attempts=5)
+    assert code == "500"
+    assert len(calls) == 5
+    assert len(sleeps) == 4
+
+
+def test_fetch_with_retry_404_not_retried(tmp_path, monkeypatch):
+    """404 (e.g. Sourcify not-found) is a definitive answer, not transient."""
+    calls, _ = _fake_curl([(404, '{"error":"not found"}')], monkeypatch)
+    code = fetch_with_retry("http://example/api", str(tmp_path / "r.json"))
+    assert code == "404"
+    assert len(calls) == 1

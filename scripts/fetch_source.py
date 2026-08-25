@@ -10,6 +10,7 @@ import json
 import os
 import subprocess
 import sys
+import time
 
 from parse_etherscan import parse as parse_etherscan
 from parse_okx import parse as parse_okx
@@ -17,6 +18,46 @@ from parse_sourcify import parse as parse_sourcify
 from parse_blockscout_v2 import parse as parse_blockscout_v2
 
 REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+
+# Explorer instances (notably Blockscout ones) intermittently return 5xx,
+# 429 rate limits, or empty bodies for contracts that are verified. A single
+# failed attempt must not be read as "source not verified".
+TRANSIENT_HTTP_CODES = {"429", "500", "502", "503", "504"}
+RETRY_BACKOFF_SECONDS = 2
+
+
+def fetch_with_retry(url: str, response_file: str, max_attempts: int = 5) -> str:
+    """Fetch url to response_file with curl, retrying transient failures.
+
+    Retries on curl-level failure, transient HTTP codes, and empty response
+    bodies, with exponential backoff. Returns the final HTTP status code as a
+    string ("000" if curl itself never succeeded).
+    """
+    http_code = "000"
+    for attempt in range(1, max_attempts + 1):
+        result = subprocess.run(
+            ["curl", "-s", "-o", response_file, "-w", "%{http_code}", url],
+            capture_output=True, text=True
+        )
+        http_code = result.stdout.strip() if result.returncode == 0 else "000"
+        transient = (
+            result.returncode != 0
+            or http_code in TRANSIENT_HTTP_CODES
+            or not os.path.exists(response_file)
+            or os.path.getsize(response_file) == 0
+        )
+        if not transient:
+            return http_code
+        if attempt < max_attempts:
+            delay = RETRY_BACKOFF_SECONDS * (2 ** (attempt - 1))
+            print(
+                f"Explorer fetch attempt {attempt}/{max_attempts} failed "
+                f"(HTTP {http_code}); retrying in {delay}s...",
+                file=sys.stderr,
+            )
+            time.sleep(delay)
+    return http_code
 
 
 def get_explorer_url(chain: str) -> str:
@@ -91,16 +132,16 @@ def main():
         parser = parse_etherscan
 
     # Fetch
-    result = subprocess.run(
-        ["curl", "-s", "-o", response_file, "-w", "%{http_code}", url],
-        capture_output=True, text=True
-    )
-    if result.returncode != 0:
-        print(f"Failed to fetch from explorer: {result.stderr}", file=sys.stderr)
+    http_code = fetch_with_retry(url, response_file)
+    if http_code == "000" or http_code in TRANSIENT_HTTP_CODES:
+        print(
+            f"Explorer error (HTTP {http_code}) after retries — transient explorer "
+            "failure, NOT a verification verdict. Try again later.",
+            file=sys.stderr,
+        )
         sys.exit(1)
 
     # For Sourcify, a 404 means not verified — write an empty error response
-    http_code = result.stdout.strip()
     if explorer_type == "sourcify" and http_code == "404":
         with open(response_file, "w") as f:
             json.dump({"error": "not found"}, f)
@@ -128,11 +169,8 @@ def main():
             impl_url = f"{explorer_url}?module=contract&action=getsourcecode&address={impl_address}"
 
         impl_response_file = "explorer_impl_response.json"
-        impl_result = subprocess.run(
-            ["curl", "-s", "-o", impl_response_file, "-w", "%{http_code}", impl_url],
-            capture_output=True, text=True
-        )
-        if explorer_type == "sourcify" and impl_result.stdout.strip() == "404":
+        impl_http_code = fetch_with_retry(impl_url, impl_response_file)
+        if explorer_type == "sourcify" and impl_http_code == "404":
             with open(impl_response_file, "w") as f:
                 json.dump({"error": "not found"}, f)
 
