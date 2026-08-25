@@ -2241,6 +2241,41 @@
   },
   {
     "hook": {
+      "address": "0x3b2b979df21036cee51b8debb13100e2cb8deacc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LaunchHook",
+      "description": "A shared Uniswap v4 hook for token launchpad pools that locks liquidity to a single-sided position, charges a time-decaying anti-snipe fee on the quote currency around launch, and distributes fees among creator, platform, and optional referrer via a FeeEscrow contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3e342a06f9592459d75721d6956b570f02ef2dc0",
       "chain": "base",
       "chainId": 8453,
