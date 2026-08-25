@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3d1f36aac352d8d2ac41831e7a2e48c37e4820cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "QuoteAssetCreatorFeeHookV1",
+    "description": "A shared Uniswap v4 hook for token/quote-asset pools that charges a fixed 1% fee on every swap, denominated in the quote asset. Fees are split 0.9% to the token creator's reward vault and 0.1% to a launcher fee recipient, implemented via BeforeSwapDelta and AfterSwapDelta returns. Pools must be registered by the token creator before swaps are permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
