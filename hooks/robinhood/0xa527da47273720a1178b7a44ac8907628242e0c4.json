@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa527da47273720a1178b7a44ac8907628242e0c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CreatorFeeAntiSnipeHook",
+    "description": "Launchpad hook that charges a creator fee on every swap output (split 70/30 between creator and protocol) and caps exact-in WETH buy amounts during a configurable time-based launch window using a 3-phase curve (flat cap \u2192 linear ramp \u2192 uncapped) to reduce sniping at launch. Also supports multi-token LP reward distribution (\"juice rail\") using a fee-growth accumulator pattern.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
