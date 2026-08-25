@@ -18969,6 +18969,41 @@
   },
   {
     "hook": {
+      "address": "0xe908dd34310da285be504f2ec62189d51d37c0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "M1AdaptiveHook",
+      "description": "Collects a configurable buy/sell fee from swap output on allowlisted M1 pools, forwarding proceeds to a buyback vault. Exact-output swaps pay the fee via beforeSwap delta; exact-input swaps pay via afterSwap delta. Rates are adjustable by an owner/operator within configured bounds.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xeb05ff77166f09fe78edcf4e137e001ea1e660cc",
       "chain": "robinhood",
       "chainId": 4663,
