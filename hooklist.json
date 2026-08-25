@@ -17569,6 +17569,76 @@
   },
   {
     "hook": {
+      "address": "0x8fecfbffd5f5e430d3a375c0af0fdb5a458f6044",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PonsV2MemeHook",
+      "description": "Singleton Uniswap v4 hook shared by all graduated Pons v2 meme pools. Takes a configurable fee on every swap via afterSwap, converts memecoin-denominated fees to quote currency via internal swaps against the pool's own liquidity, then distributes proceeds among protocol, creator, and a five-year buyback-and-lock vault according to per-pool fee splits frozen at launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x92657be80f14e339c6ca6ba3d023ecae0a2bc0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "MoonFlameBurnTaxHook",
+      "description": "Burns 5% of FLAME on buys and 10% on sells by intercepting swap deltas: sells are taxed in beforeSwap (reducing input) and buys in afterSwap (reducing output). Burned tokens are taken from the pool manager and destroyed via FLAME.burn(). Only supports exact-input swaps on a single configured FLAME/quote pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x958a809134be3f333cfeb1a0db4ae37c0867aa88",
       "chain": "robinhood",
       "chainId": 4663,
@@ -17771,6 +17841,76 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa0e8fbff13e24af2b5e61a72800e08a161bde080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FablesRWA",
+      "description": "Session-aware dynamic-fee hook for tokenized equity pairs. Computes LP fees from a configurable US market calendar (open, overnight, and closed session tiers with an opening descent ramp and closing ramp around the bell), with TTL-bounded operator poke overrides, all resolved at swap time via the beforeSwap fee-override return.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa4570c37590e45f0b06898123d4de16307a32080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FablesRWA",
+      "description": "Session-aware dynamic-fee hook for tokenized equity (RWA) pools. Adjusts LP fees based on a market calendar (open/overnight/closed sessions) driven by block.timestamp, with optional operator fee overrides (\"pokes\") bounded by TTL, configurable floor, and per-pool fee cap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
