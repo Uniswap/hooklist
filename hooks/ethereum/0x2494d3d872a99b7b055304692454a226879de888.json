@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2494d3d872a99b7b055304692454a226879de888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OraclePricingHook",
+    "description": "A Uniswap v4 hook that prices swaps entirely from Chainlink oracle feeds, bypassing the AMM curve. Operates as an on-chain RFQ venue for tokenized equities, with configurable markets, bid-ask spreads, market hours, and inventory held as ERC-6909 claims inside the PoolManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
