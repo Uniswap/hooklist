@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xed4b32249a657228207c0a429dd8668690afe0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GazzFeeHook",
+    "description": "A fee hook for gazz.fun V4 pools that charges a flat 2% ETH fee on every swap, taken from the ETH side of the trade and forwarded to a GazzFeeSplitter. Only native ETH pools (currency0 = address(0)) are accepted; non-ETH pools are rejected in beforeInitialize.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
