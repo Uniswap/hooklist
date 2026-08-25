@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa0e8fbff13e24af2b5e61a72800e08a161bde080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FablesRWA",
+    "description": "Session-aware dynamic-fee hook for tokenized equity pairs. Computes LP fees from a configurable US market calendar (open, overnight, and closed session tiers with an opening descent ramp and closing ramp around the bell), with TTL-bounded operator poke overrides, all resolved at swap time via the beforeSwap fee-override return.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
