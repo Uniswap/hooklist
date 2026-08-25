@@ -7384,6 +7384,41 @@
   },
   {
     "hook": {
+      "address": "0x10d46c0ea45c5257a1e29c8dced7ede70125e0c4",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "AlphaHook3Pct",
+      "description": "Dynamic-fee hook for BSC token/stablecoin pools that adjusts LP fees (0.30%\u20133.00%) based on volatility and volume EMAs, seeding new pools at the fee ceiling as a launch premium that decays over ~10\u201315 minutes. Collects a 20% protocol share on top of LP fees via the afterSwap delta, swept to a fixed recipient.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x192499a79cadb2e9ba221a252a3e3b7adc714880",
       "chain": "bnb",
       "chainId": 56,
