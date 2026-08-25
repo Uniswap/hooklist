@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8dbdf613fc5bf103d1718620e15e45a6982d3ac8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DamperHook",
+    "description": "A sell-protection hook for newly launched token pools that applies dynamic surge fees and burns a portion of coins sold during a 3-hour post-launch damper window, scaling fees based on recent sell pressure and cumulative price impact. Liquidity mutations and pool initialization are restricted to the authorized launcher.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
