@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x10d46c0ea45c5257a1e29c8dced7ede70125e0c4",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "AlphaHook3Pct",
+    "description": "Dynamic-fee hook for BNB Chain that adjusts LP fees (0.30%\u20133.00%) per pool based on an EMA of tick-movement volatility and swap volume. New pools launch at the fee ceiling and decay to the floor over ~10\u201315 minutes. An additional 20% protocol fee is charged on top of the LP fee via the afterSwap delta and swept to a fixed recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
