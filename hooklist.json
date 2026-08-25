@@ -16274,6 +16274,41 @@
   },
   {
     "hook": {
+      "address": "0x380a2836760631d8b69ac1cbafce60bb919b40cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "DTFFeeHook",
+      "description": "Swap-tax hook that skims a configurable buy/sell fee (always denominated in a fixed fee token) off every swap and forwards it directly to a treasury. Features a time-decaying launch tax (starting up to 90%, decaying linearly to the baseline fee over an immutable window) as an anti-sniper measure, with permanent exemptions for the protocol router and launcher. Fee rate and treasury are admin-adjustable via OpenZeppelin AccessManager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3d1bfb1e3634c9d278359143ee7bb0e12cf690c4",
       "chain": "robinhood",
       "chainId": 4663,
