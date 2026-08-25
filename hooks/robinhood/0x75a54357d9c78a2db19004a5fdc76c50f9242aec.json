@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x75a54357d9c78a2db19004a5fdc76c50f9242aec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CashCatHookV2",
+    "description": "Fee engine for CashCat pools that takes a fixed-rate fee from the quote (ETH) side of every swap via BeforeSwapDelta and AfterSwapDelta returns, splitting proceeds between a creator and a platform treasury. Liquidity is permanently locked after a single factory-controlled seed; only the factory may create or seed pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
