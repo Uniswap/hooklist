@@ -15784,6 +15784,41 @@
   },
   {
     "hook": {
+      "address": "0x107251ffcc1fc808643dc8da345e901f59ec2044",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PonsV2MemeHook",
+      "description": "Singleton Uniswap v4 hook for graduated Pons v2 meme pools that collects protocol and creator fees on every swap via afterSwap using a return delta, batches memecoin-denominated fees and converts them to the quote currency via internal swaps, then distributes proceeds among the protocol, creator, and an optional buyback-and-lock vault.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x12783b423b9cf1a136bd7e0f8baca5944f5baacc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -17526,6 +17561,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8dbdf613fc5bf103d1718620e15e45a6982d3ac8",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "DamperHook",
+      "description": "A sell-protection hook for newly launched token pools that applies dynamic surge fees and burns a portion of coins sold during a 3-hour post-launch damper window, scaling fees based on recent sell pressure and cumulative price impact. Liquidity mutations and pool initialization are restricted to the authorized launcher.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
