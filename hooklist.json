@@ -8154,6 +8154,41 @@
   },
   {
     "hook": {
+      "address": "0x00000078bd49d5279a99b5f4011a5c61ee8caac0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DualPoolHook",
+      "description": "JIT (Just-In-Time) hook that deploys concentrated LP positions across multiple owner-configured tick-range buckets immediately before each swap and removes them afterward. Integrates ERC4626 vaults for idle-capital rehypothecation between swaps. Pool fees are static and fixed at pool creation; the owner can pause individual pools via a liveness flag.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x00001f3b9712708127b1fcad61cb892535951888",
       "chain": "ethereum",
       "chainId": 1,
@@ -9134,6 +9169,41 @@
   },
   {
     "hook": {
+      "address": "0x2494d3d872a99b7b055304692454a226879de888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OraclePricingHook",
+      "description": "A Uniswap v4 hook that prices swaps entirely from Chainlink oracle feeds, bypassing the AMM curve. Operates as an on-chain RFQ venue for tokenized equities, with configurable markets, bid-ask spreads, market hours, and inventory held as ERC-6909 claims inside the PoolManager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x269044c34e5c6c41d5908d88924f544de38cc0cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -9935,6 +10005,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x411236bebc7adf67b3657096c66cb637537680cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ForgeHook",
+      "description": "A swap tax hook for a FORGE token pool that skims a flat 1% sell tax and a 90% cliff launch buy tax (active for 5 minutes post-launch) to a treasury address on every swap. Also overrides the LP fee to a flat 0.30% on all swaps. Pool is locked until a configured launch timestamp.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -11710,6 +11815,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x90c67c1e866f86526f0e338459cd435e1f23a0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "QuoteAssetCreatorFeeHookV1",
+      "description": "Charges a fixed 1% fee in the quote token (split 0.9% to the token creator's vault, 0.1% to the launcher) on every swap of registered stock/quote-asset pairs. Uses beforeSwap/afterSwap return deltas to extract fees from both exact-input and exact-output swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
@@ -15426,6 +15566,76 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x032ff68841f3c93e3bc1de27919a00ae5a7620cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchFeeHook",
+      "description": "Charges a configurable fee (up to 5%, set at deployment) on the ETH side of swaps in native-ETH launchpad pools. Fees are collected in beforeSwap (ETH-specified trades) and afterSwap (token-specified trades) via delta returns, then forwarded to a LaunchFeeSplitter contract that attributes them to each token's creator.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x06a889870c8f83640d6816319f72e2aa579b6080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FablesRampETH",
+      "description": "Singleton dynamic-fee hook for native ETH pools on Robinhood Chain. Charges a per-pool flat fee with a TTL-bounded admin override (poke) clamped between a configured floor and cap. Sweeps native ETH fee revenue to an ERC20-only epoch distributor by wrapping into WETH; ERC20 pools also supported.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
