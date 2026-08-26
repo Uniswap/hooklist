@@ -491,6 +491,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "GlueHook",
+      "description": "Uniswap v4 hook implementing a per-pool buyback-and-burn mechanism. On sells of the designated main token, a pot absorbs a portion at the pool's exact execution price (shield, via beforeSwap delta). On buys, pot funds purchase more of the main token and deliver it to a configured recipient or burn address (pump, via afterSwap nested swap). Optionally manages an auto-compounding hook-held LP position whose fees are split between compounding, buyback, and burn.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -907,6 +942,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "GlueHook",
+      "description": "Buyback-and-burn hook that shields main-token sells by absorbing them at pool execution price (no price impact, via beforeSwap delta) and pumps on buys using a per-pool donation pot. Optionally supports a hook-held LP program with auto-compounding, configurable fee splits, and burn/recipient delivery.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -5494,6 +5564,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "GlueHook",
+      "description": "A buyback-and-burn hook that maintains a donation pot per pool: on sells of the designated main token, the pot absorbs the trade at the pool's own execution price (shield, via BeforeSwapDelta); on buys, it spends pot funds to buy more main (pump). Optionally runs an LP fee program with auto-compounding and configurable fee splits per pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb3ae7c0495fe4d20786cf6d119c7a821f83f40cc",
       "chain": "base",
       "chainId": 8453,
@@ -7244,6 +7349,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "blast",
+      "chainId": 81457,
+      "name": "GlueHook",
+      "description": "A buyback-and-burn hook that absorbs main-token sells at the pool's own execution price using a BeforeSwapDelta (SHIELD), and executes a capped buy of the main token on every secondary-to-main swap using pot reserves (PUMP). Optionally supports auto-compounding LP fee programs per pool, with configurable compound, buyback, and burn share splits.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
       "chain": "blast",
       "chainId": 81457,
@@ -8076,6 +8216,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "celo",
+      "chainId": 42220,
+      "name": "GlueHook",
+      "description": "GlueHook implements a price-support mechanism: it absorbs main-token sells in beforeSwap via delta returns (shield) and executes buyback swaps in afterSwap (pump), with automatic LP fee harvesting and distribution to configured recipients.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -14524,6 +14699,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "megaeth",
+      "chainId": 4326,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook that absorbs main-token sells at the pool's own execution price (shield) and executes market buys on the pool on incoming buys (pump), delivering purchased tokens to a configurable recipient or burning them. Optionally manages a hook-held LP position with auto-harvested, auto-compounding fee splits.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x580ca49389d83b019d07E17e99454f2F218e2dc0",
       "chain": "monad",
       "chainId": 143,
@@ -14590,6 +14800,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "GlueHook",
+      "description": "GlueHook intercepts main-token sells by filling them from a funded 'pot' at the pool's own execution price (shield), and after each swap auto-harvests LP fees and executes a capped 'pump' buy of the main token using pot secondary-token reserves.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -15014,6 +15259,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook implementing a shield mechanism (absorbs main-to-secondary sells from a funded pot at the pool's own price, returning a BeforeSwapDelta) and a pump mechanism (uses pot funds to buy back the main token on incoming buy swaps via a nested self-call), with optional auto-harvesting and auto-compounding of a hook-held LP position.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb35297543d357ef62df204d8c3bd0e96038cf440",
       "chain": "optimism",
       "chainId": 10,
@@ -15391,6 +15671,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook singleton implementing a per-pool buyback-and-burn mechanism: a \"shield\" absorbs sells from a funded donation pot at the pool's own execution price (via beforeSwapReturnsDelta), and a \"pump\" spends pot secondary tokens to buy back the main token on incoming buys (via a nested self-call swap in afterSwap). Supports optional auto-compounding LP programs with configurable fee splitting.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -15924,6 +16239,41 @@
   },
   {
     "hook": {
+      "address": "0x188df8e99e8289a606e1396657329ce989975080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FriarV2",
+      "description": "Volatility-responsive dynamic LP fee hook porting the Liquidity Book (LFJ joe-v2, MIT) volatility-accumulator mechanism to Uniswap v4. Fee rises with recent price movement and decays back to a per-pool base rate, hard-capped at 10%. Config is per-pool, frozen at initialization; no owner or admin functions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1b94417e8f091ee9e39fb1f28e8951c92e8420cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -16156,6 +16506,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x28cd4baa8903c95f2525c2d47ef4fb48886060cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ReflectionFeeHook",
+      "description": "A 2% swap tax hook for graduated reflection-token pools. On ETH-specified swaps it takes a fixed 200 bps fee via beforeSwap/afterSwap return-delta callbacks and forwards it to a per-token fee bucket in the factory contract. Pool initialization is gated to a designated graduator address to prevent front-running.",
+      "deployer": "0xDE0d5aea396d5b937149e36ddbfd6b49f26f19bc",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -16445,6 +16830,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3ef7b3ecfe1da268f296e3f28cc29da1dd8d24cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PNGStrategy Hook",
+      "description": "Applies configurable buy and sell fees on ETH\u2194strategy-token swaps by intercepting them via BeforeSwapDelta (buy) and AfterSwapDelta (sell), taking fees in ETH via poolManager.take(). Collected fees are split among a strategy contract, an owner recipient, and a holder rewards recipient according to configurable BPS ratios; pool initialization and liquidity addition are restricted to the strategy contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -18164,6 +18584,41 @@
   },
   {
     "hook": {
+      "address": "0xa4e6f5500e88691fdcb289aa0e99067481434880",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ArrakisPrivateHook",
+      "description": "Arrakis private vault hook that enforces per-direction dynamic LP fee overrides in beforeSwap and restricts liquidity additions to the vault's registered module only.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa507e8c472918338c6c15eb894c9703581b060cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -18440,6 +18895,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook that shields a designated main token from sell pressure by absorbing sells at pool price from a funded pot (beforeSwap delta), and pumps the main token by buying with pot secondary funds on buys (afterSwap nested swap). Supports hook-held LP positions with auto-harvesting and auto-compounding fee splits.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -19634,6 +20124,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "GlueHook",
+      "description": "A price-defense hook that absorbs sells of a designated main token from a configurable liquidity pot at the pool's execution price (shield), executes buyback swaps on main-token buys (pump), and auto-harvests LP fees \u2014 all managed per pool by a pot admin and operator.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
       "chain": "soneium",
       "chainId": 1868,
@@ -20194,6 +20719,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "GlueHook",
+      "description": "Singleton buyback-and-burn hook with a per-pool donation pot: on sells (MAIN\u2192SECONDARY), beforeSwap absorbs the sell at the pool's exact price from pot funds (shield), preventing price impact; on buys (SECONDARY\u2192MAIN), afterSwap uses pot funds to buy more main (pump), capped to prevent sandwiching. Supports an auto-compounding hook-held LP position with configurable fee splits for burns, buybacks, and compounding.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb4960cd4f9147f9e37a7aa9005df7156f61e4444",
       "chain": "unichain",
       "chainId": 130,
@@ -20426,6 +20986,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook that runs a per-pool buyback pot: on sells of the designated main token, beforeSwap absorbs the sell at the pool's own execution price (SHIELD, using a BeforeSwapDelta), preventing price impact; on buys, afterSwap executes a sandwitch-resistant buyback pump and delivers acquired tokens to a recipient (default: burn). Supports optional LP programs with auto-compounding concentrated-liquidity fee harvesting.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -20684,6 +21279,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "GlueHook",
+      "description": "A pot-based buyback hook that absorbs main-token sells at the pool price via a funded shield (beforeSwap delta), executes buyback pumps on every buy of the main token, and auto-harvests LP fees for splitting and compounding back into the liquidity position.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb4f4949e8d0a177bb6d2fea33e9516bb219610cc",
       "chain": "xlayer",
       "chainId": 196,
@@ -20741,6 +21371,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "zora",
+      "chainId": 7777777,
+      "name": "GlueHook",
+      "description": "A buyback hook that maintains a \"pot\" of a designated main token: in beforeSwap, it absorbs sell-side pressure by filling sells against the pot at the pool's own price via BeforeSwapDelta (shield); in afterSwap, it buys back main tokens using accumulated secondary tokens (pump). Supports a hook-managed LP position with auto-harvest, auto-compound, buyback, and burn splits.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
