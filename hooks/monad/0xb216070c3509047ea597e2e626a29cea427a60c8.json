@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "GlueHook",
+    "description": "GlueHook intercepts main-token sells by filling them from a funded 'pot' at the pool's own execution price (shield), and after each swap auto-harvests LP fees and executes a capped 'pump' buy of the main token using pot secondary-token reserves.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
