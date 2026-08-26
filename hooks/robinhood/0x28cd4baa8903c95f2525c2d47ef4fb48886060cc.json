@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x28cd4baa8903c95f2525c2d47ef4fb48886060cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ReflectionFeeHook",
+    "description": "A 2% swap tax hook for graduated reflection-token pools. On ETH-specified swaps it takes a fixed 200 bps fee via beforeSwap/afterSwap return-delta callbacks and forwards it to a per-token fee bucket in the factory contract. Pool initialization is gated to a designated graduator address to prevent front-running.",
+    "deployer": "0xDE0d5aea396d5b937149e36ddbfd6b49f26f19bc",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
