@@ -21874,6 +21874,41 @@
   },
   {
     "hook": {
+      "address": "0x1d18a1368e8931745d01f402909201ad4c01aacc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "AstroHook",
+      "description": "Uniswap v4 hook for meme token pools that gates pool initialization to registered launches, enforces optional liquidity/transfer protection via an activation period, and collects configurable buy/sell taxes in the quote token using beforeSwap/afterSwap return deltas.",
+      "deployer": "0x5886AdA74ef255faadde26a32f29aE0b32c08A4e",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x28f389d3d730c72141de6bb7516fef6f487f80cc",
       "chain": "xlayer",
       "chainId": 196,
