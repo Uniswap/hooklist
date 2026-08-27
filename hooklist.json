@@ -8084,6 +8084,41 @@
   },
   {
     "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "GlueHook",
+      "description": "Automated buyback and fee-harvesting hook that maintains a \"pot\" of secondary tokens. In beforeSwap, shields main-token sells by absorbing them from pot reserves (returning a BeforeSwapDelta). In afterSwap, pumps main-token buys by spending pot secondary reserves on additional buybacks, and auto-harvests LP fees via configurable split programs.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb3ea59248e7d7dbb9e0ea5f1f8a5b0d33ab5e8cc",
       "chain": "bnb",
       "chainId": 56,
@@ -20851,6 +20886,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
+      "chain": "tempo",
+      "chainId": 4217,
+      "name": "GlueHook",
+      "description": "Buyback-and-burn hook that absorbs main-token sells at the pool's own execution price (shield, via beforeSwap delta) and market-buys the main token on every buy swap using a donated pot of secondary tokens (pump, in afterSwap). Optionally auto-compounds LP fees from a hook-held liquidity position, splitting them into compound, burn, and delivery legs.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
