@@ -13404,6 +13404,41 @@
   },
   {
     "hook": {
+      "address": "0xb0f8d28660be567ab2efd9e7d6cbff3971130a44",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EthRL Hook",
+      "description": "A Uniswap v4 hook managing an ETH/ETHRL main pool and per-answer token pools. It permanently locks external liquidity (beforeAddLiquidity and beforeRemoveLiquidity always revert), charges a 2% fee on the main pool and 0.5% on answer pools via afterSwapReturnsDelta, converts collected fees to ETH, allocates 2% of ETH for ETHRL buyback-and-burn, and distributes the remaining 98% as ETH rewards through a weighted distributor contract.",
+      "deployer": "0x9Cb58EaE836eaA9110C9007372841bD37f8DE6D9",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb13250f0dc8ec6de297e81cda8142db51860bac4",
       "chain": "ethereum",
       "chainId": 1,
