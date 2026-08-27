@@ -8364,6 +8364,41 @@
   },
   {
     "hook": {
+      "address": "0x0000005bb4df4109bf356a585c8b8ea70fcbaac0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DualPoolHook",
+      "description": "A JIT (Just-In-Time) liquidity hook that deploys concentrated multi-range LP positions from ERC-4626 vault assets immediately before each swap and removes them afterward. Features owner-configurable liquidity bucket distributions, static fees fixed at pool creation, and a per-pool liveness flag for emergency pause.",
+      "deployer": "0x58e28b95a2ee57c4e90613afce9e8cceed3ab1e8",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x00000078bd49d5279a99b5f4011a5c61ee8caac0",
       "chain": "ethereum",
       "chainId": 1,
@@ -10954,6 +10989,41 @@
   },
   {
     "hook": {
+      "address": "0x55ba643a0716988f2a7e7ff27dc4c80bea8a6ac0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DualPoolHook",
+      "description": "JIT liquidity hook that deploys multi-range concentrated positions before each swap and removes them after, with ERC4626 vault rehypothecation for idle capital yield. Pool fees are static (set at initialization), and swaps can be paused by the owner via a liveness flag.",
+      "deployer": "0x5b57d58970ebe25b98b22db1e9f5be61b362b4c6",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5725dF570e0008997daCef46bC179bbFc4D125cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -11720,6 +11790,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7b919ca67cbd31ce752761e88eb674acbfd22ac0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DualPoolHook",
+      "description": "JIT hook that deploys concentrated liquidity across multiple owner-configured tick ranges before each swap and removes it after, enabling just-in-time market making with ERC-4626 vault rehypothecation for idle capital. Swap access is gated by an owner-managed liveness flag; pool fees are static and set at initialization.",
+      "deployer": "0x892a2a64178af49ec56d2311f955168cc96b8511",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -13995,6 +14100,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcde44b16e25b4321ef6471a4aa8d9d4d4fbf2ac0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DualPoolHook",
+      "description": "JIT liquidity hook that deploys concentrated LP positions across multiple configurable tick ranges before each swap and removes them afterward. Idle capital is rehypothecated via ERC-4626 vaults between swaps. The LP fee is static, set at pool creation via PoolKey.fee; dynamic fees are explicitly rejected.",
+      "deployer": "0xf520820897fd7ca6977777892aed0e4b35a74d5f",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
