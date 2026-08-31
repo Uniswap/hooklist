@@ -3674,6 +3674,41 @@
   },
   {
     "hook": {
+      "address": "0x702b1fe403ec993a102adde47f2ab52eb2eadacc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "StonkHook",
+      "description": "A hook that gates swaps via an external `isTradingOpen()` oracle, withholds a configurable fee (up to 5%) from the asset leg of every swap using beforeSwap/afterSwap return-deltas, permanently locks liquidity (any negative liquidityDelta reverts), restricts liquidity additions to the factory only, and overrides the native LP fee to zero via OVERRIDE_FEE_FLAG.",
+      "deployer": "0x1E6F0A86B56Fa66c133F7c08EdE527184eC7EbFB",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x704268ac7043aeef50f47b6a03ae68ccf808e044",
       "chain": "base",
       "chainId": 8453,
