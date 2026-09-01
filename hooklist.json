@@ -2661,6 +2661,41 @@
   },
   {
     "hook": {
+      "address": "0x4951d0e1cfb915f64ab19aed153bd6305a244088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Vvveity Fee Hook V2",
+      "description": "Charges a flat immutable fee (in basis points) on every swap via beforeSwap, forwarding the fee inline to either a platform address or the token creator, determined by trade direction and token registration.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x49659b737c672324a221623f8d3f29e5687f28cc",
       "chain": "base",
       "chainId": 8453,
