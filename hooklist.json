@@ -2346,6 +2346,41 @@
   },
   {
     "hook": {
+      "address": "0x37ca10c307fa8caa772f3583b3fd1e923dee2aa8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "StableSwapHooks",
+      "description": "A Uniswap v4 hook implementing a Curve-style StableSwap AMM with full custom accounting. Supports 2\u20134 currencies with optional rate oracles and dynamic amplification coefficient (ramp). Executes swaps entirely in beforeSwap via BeforeSwapDelta, collecting LP, hook, and protocol fees. Issues its own ERC20 LP token (SSLP).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3b2b979df21036cee51b8debb13100e2cb8deacc",
       "chain": "base",
       "chainId": 8453,
