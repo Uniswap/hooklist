@@ -7,7 +7,8 @@
     "description": "A Uniswap v4 hook that implements dynamic LP fee management and protocol fee collection. In beforeSwap, it computes a dynamic fee (base + surge via DynamicFeeManager, or a manual override) and charges a protocol share on exactIn swaps; in afterSwap, it does the same for exactOut swaps. Collected fees are minted as ERC-6909 credits to a FullRangeLiquidityManager for optional auto-reinvestment, while a TruncatedGeometricOracle tracks tick movement for volatility-based fee tuning.",
     "deployer": "",
     "verifiedSource": true,
-    "auditUrl": ""
+    "auditUrl": "",
+    "release": "spot/spot"
   },
   "flags": {
     "beforeInitialize": false,

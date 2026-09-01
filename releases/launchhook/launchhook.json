@@ -1,0 +1,26 @@
+{
+  "project": "launchhook",
+  "id": "launchhook",
+  "version": "1",
+  "name": "LaunchHook",
+  "description": "LaunchHook is the fee-collection hook used by the Tickr launchpad. It charges a flat 2% fee on every swap (taken from input ETH on buys via beforeSwap and from output ETH on sells via afterSwap) and splits it 50/50 between the token's creator \u2014 the holder of the corresponding TickrOwner NFT \u2014 and the platform. Fee constants and the creator/platform split are immutable; the only governor action is a one-time setFactory(...) binding.",
+  "source": {
+    "verified": true,
+    "codeHashes": [
+      "sha256:91e559afcfb968212eef7e4b153d7e2374568e8b6cc8ad5ccd92e449e8750484",
+      "sha256:dc560e775e03494800af44f42247ee57e2d895a8da1532cefccdc6e3557a60a0"
+    ]
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  },
+  "warnings": [],
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null
+  }
+}
