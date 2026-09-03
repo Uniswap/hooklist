@@ -48,7 +48,16 @@ def _unverified() -> dict:
 def parse(response_path: str, outdir: str = ".sources") -> dict:
     """Parse Blockscout v2 API response, extract sources, return metadata."""
     with open(response_path) as f:
-        data = json.load(f)
+        body = f.read()
+    try:
+        data = json.loads(body)
+    except json.JSONDecodeError:
+        # A bot-challenge or error page, not an API answer: say so instead of
+        # crashing, and never call the contract unverified on its account.
+        raise RuntimeError(
+            "Explorer returned a non-JSON body (a bot challenge or error page?) — "
+            "transient explorer failure, not an unverified contract"
+        ) from None
 
     # Not-found, error, and rate-limited shapes all lack `is_verified`. Treat anything
     # without it as unverified rather than indexing into keys that may not be there.

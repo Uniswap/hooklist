@@ -25,6 +25,16 @@ REPO_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # failed attempt must not be read as "source not verified".
 TRANSIENT_HTTP_CODES = {"429", "500", "502", "503", "504"}
 RETRY_BACKOFF_SECONDS = 2
+# Some explorers (robinhoodchain.blockscout.com since late August 2026) sit
+# behind a Cloudflare bot challenge that answers curl's default user agent
+# with an HTTP 403 HTML page; the same request with a browser user agent
+# gets the JSON. Identify as a browser, and treat a 403 as transient so a
+# challenge is retried rather than read as "source not verified".
+FETCH_USER_AGENT = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/128.0 Safari/537.36 hooklist-fetch"
+)
+CHALLENGE_HTTP_CODES = {"403"}
 
 
 def fetch_with_retry(url: str, response_file: str, max_attempts: int = 5) -> str:
@@ -37,13 +47,18 @@ def fetch_with_retry(url: str, response_file: str, max_attempts: int = 5) -> str
     http_code = "000"
     for attempt in range(1, max_attempts + 1):
         result = subprocess.run(
-            ["curl", "-s", "-o", response_file, "-w", "%{http_code}", url],
+            [
+                "curl", "-s", "-o", response_file, "-w", "%{http_code}",
+                "-A", FETCH_USER_AGENT, "-H", "Accept: application/json",
+                url,
+            ],
             capture_output=True, text=True
         )
         http_code = result.stdout.strip() if result.returncode == 0 else "000"
         transient = (
             result.returncode != 0
             or http_code in TRANSIENT_HTTP_CODES
+            or http_code in CHALLENGE_HTTP_CODES
             or not os.path.exists(response_file)
             or os.path.getsize(response_file) == 0
         )

@@ -116,3 +116,12 @@ def test_parse_blockscout_v2_path_traversal_is_sanitized(tmp_path):
 
     for written in os.listdir(outdir):
         assert os.path.realpath(os.path.join(outdir, written)).startswith(os.path.realpath(outdir))
+
+
+def test_parse_non_json_body_is_a_transient_failure(tmp_path):
+    import pytest
+    from parse_blockscout_v2 import parse
+    body = tmp_path / "challenge.json"
+    body.write_text("<!DOCTYPE html><html><title>Just a moment...</title></html>")
+    with pytest.raises(RuntimeError, match="non-JSON"):
+        parse(str(body), str(tmp_path / "out"))
