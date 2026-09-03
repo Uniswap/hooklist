@@ -216,3 +216,24 @@ def test_fetch_with_retry_404_not_retried(tmp_path, monkeypatch):
     code = fetch_with_retry("http://example/api", str(tmp_path / "r.json"))
     assert code == "404"
     assert len(calls) == 1
+
+
+def test_fetch_with_retry_sends_browser_user_agent(tmp_path, monkeypatch):
+    import fetch_source as fs
+    calls, _ = _fake_curl([(200, '{"ok":1}')], monkeypatch)
+    fs.fetch_with_retry("http://x", str(tmp_path / "r.json"))
+    cmd = calls[0]
+    assert "-A" in cmd and cmd[cmd.index("-A") + 1] == fs.FETCH_USER_AGENT
+    assert "-H" in cmd and cmd[cmd.index("-H") + 1] == "Accept: application/json"
+
+
+def test_fetch_with_retry_bot_challenge_403_retried(tmp_path, monkeypatch):
+    # Cloudflare's challenge answers 403 with an HTML page; a later attempt gets the JSON.
+    import fetch_source as fs
+    calls, _ = _fake_curl(
+        [(403, "<!DOCTYPE html><title>Just a moment...</title>"), (200, '{"is_verified":true}')],
+        monkeypatch,
+    )
+    code = fs.fetch_with_retry("http://x", str(tmp_path / "r.json"))
+    assert code == "200"
+    assert len(calls) == 2
