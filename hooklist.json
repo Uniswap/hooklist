@@ -3081,6 +3081,41 @@
   },
   {
     "hook": {
+      "address": "0x4db263809e6ea36d223161535173a01b5b3240c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DynamicFeeHookV2",
+      "description": "Implements a linearly decaying LP fee that starts high at launch and decreases to a steady-state fee over a configurable duration (anti-sniper mechanism). Records an on-chain TWAP oracle after each swap using a cumulative sqrtPrice accumulator.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x51bba15255406cfe7099a42183302640ba7dafdc",
       "chain": "base",
       "chainId": 8453,
@@ -6649,6 +6684,41 @@
   },
   {
     "hook": {
+      "address": "0xbeff407b7062e2fe15928960a58aec93b0c76044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "AdvancedFeeHookV3",
+      "description": "A Uniswap v4 hook for the BaseStonk token launchpad that collects configurable swap taxes in afterSwap, distributing fees between a platform treasury, creator payees, optional token burns (to a dead address), and single-sided liquidity additions. Pool initialization is restricted to the launcher address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc3b8e77ac038aa260035a1911827086c34a9e844",
       "chain": "base",
       "chainId": 8453,
@@ -7091,6 +7161,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd55bfda89980b3a517719f2e6fbd53be565b0844",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "AutoFeeCollectionHook",
+      "description": "Collects a fixed 1% fee on every swap via afterSwap delta return, taking the fee from the pool manager and transferring it to a per-pool creator address configured on the first liquidity addition.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
