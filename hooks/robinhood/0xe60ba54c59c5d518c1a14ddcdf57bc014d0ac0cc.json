@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe60ba54c59c5d518c1a14ddcdf57bc014d0ac0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "OGHook",
+    "description": "Platform fee hook for OG.fun token launches. On every swap, collects a configurable hook fee plus optional creator buy/sell taxes from the quote token, distributes proceeds to token creators, affiliates (via hookData code), a buyback-and-burn pool, staking, and treasury. Includes decaying anti-snipe surcharges in early post-launch blocks and decaying deployer-dump surcharges in the first 48 hours.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
