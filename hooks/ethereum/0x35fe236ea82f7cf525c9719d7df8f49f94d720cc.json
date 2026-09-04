@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x35fe236ea82f7cf525c9719d7df8f49f94d720cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EthCreatorFeeHookV3",
+    "description": "Charges immutable, configurable buy and sell fees on native ETH/token pools, split between a registered creator reward vault (authenticated via a factory) and an immutable launcher fee recipient. Fees are deducted directly from swaps via BeforeSwapDelta and AfterSwapDelta return values; ERC-20 transfers are not taxed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
