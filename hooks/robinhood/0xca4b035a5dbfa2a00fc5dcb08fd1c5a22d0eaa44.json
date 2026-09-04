@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xca4b035a5dbfa2a00fc5dcb08fd1c5a22d0eaa44",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "A shared Uniswap v4 hook for launchpad-created token pools that gates pool initialization and liquidity to a factory, blocks third-party liquidity adds/removes, and charges a per-swap fee on the unspecified currency split among creator, platform, and referrer, with a linearly-decaying anti-snipe surcharge over a configurable block window after launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
