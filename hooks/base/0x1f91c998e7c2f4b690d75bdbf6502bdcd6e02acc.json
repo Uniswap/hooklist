@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1f91c998e7c2f4b690d75bdbf6502bdcd6e02acc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LaunchHook",
+    "description": "A shared Uniswap v4 launchpad hook that gates pool creation and liquidity management to a factory, permanently locks single-sided token liquidity, and charges configurable fees on swaps\u2014split among creator, platform, referrer, and fixed recipients\u2014with a linearly-decaying anti-snipe surcharge in a configurable window after launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
