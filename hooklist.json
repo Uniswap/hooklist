@@ -2974,6 +2974,41 @@
   },
   {
     "hook": {
+      "address": "0x59aef9799dea01a7fb7da73bea10dfb08858a088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "NARA Liquidity Growth Hook",
+      "description": "A Uniswap v4 hook for a single registered token/base pool that applies a configurable, block-level pressure-based fee to exact-input swaps only. Fee rates scale through tiered thresholds relative to a protocol-configured depth parameter; collected fees are taken from the swap input via poolManager.take() and forwarded to an external vault.",
+      "deployer": "0xDE9E3Cac08b7a31Db18c7432d4C45DF4584Fd646",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x59f39091Fd6f47e9D0bCB466F74e305f1709BAC4",
       "chain": "base",
       "chainId": 8453,
