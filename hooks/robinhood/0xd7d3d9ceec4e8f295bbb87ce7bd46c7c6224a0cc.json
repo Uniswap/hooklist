@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd7d3d9ceec4e8f295bbb87ce7bd46c7c6224a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LunchTaxHookPairImmutable",
+    "description": "Non-upgradeable Uniswap v4 hook that collects configurable buy/sell taxes on the quote token of each managed pool. Proceeds are distributed to the token creator, platform fee sink, and referrers, with optional launch guards (trading-open delay, max-buy cap, and a decaying launch-window tax rate).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
