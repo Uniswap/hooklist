@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd5252a67935fc6b913c4441ac0e5ebf3219faaa8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "PlayerCurveHook",
+    "description": "Bonding curve hook for player token / country token pairs. Intercepts all swaps via beforeSwapReturnsDelta, applying a custom pricing formula with a 5% fee (partly burned). Swaps are gated on per-country phase 2 activation (all packs sold) and an owner-controlled pause.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
