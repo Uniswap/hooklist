@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3f69290ecfe5415f5dd86f653e8e019247f525c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RuneMarketHook",
+    "description": "A Uniswap v4 hook that gates pool initialization to authorized addresses, enforces per-pool pause controls settable by an OPERATOR_ROLE admin, collects a configurable percentage fee on swaps via afterSwapReturnsDelta, and notifies an IOrderManager of tick movements after each swap to settle limit orders.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
