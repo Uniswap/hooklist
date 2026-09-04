@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x97edfabcc578743e3b1e77a03c7772eea28c40c8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ThryxAntiSniperHookV5",
+    "description": "An anti-sniper hook for token launches that applies a time-decaying fee (up to 80% at t=0, decaying over a configurable window to a permanent 1% base) on exact-input swaps, with fees split between pool creators and the protocol. Supports per-pool parameter overrides, a block-multiplier surcharge for rapid sequential swaps, and an optional agent credential bypass via signed hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
