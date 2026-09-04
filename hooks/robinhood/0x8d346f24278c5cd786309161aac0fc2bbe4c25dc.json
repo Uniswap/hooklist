@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8d346f24278c5cd786309161aac0fc2bbe4c25dc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Flaunch PositionManager",
+    "description": "Flaunch's central Uniswap v4 hook that manages meme token launches (flaunches), runs an internal swap pool that fills orders from fee inventory before routing to Uniswap, distributes swap fees to creators, referrers, and protocol, records price observations for a TWAP oracle, and manages a BidWall for liquidity buybacks. New pools are gated by a configurable launch timestamp until trading is enabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
