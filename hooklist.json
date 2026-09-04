@@ -2101,6 +2101,41 @@
   },
   {
     "hook": {
+      "address": "0x26541922c531ad24e26437f51fa77ff8c6ef90c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ZoraV4CoinHook",
+      "description": "Zora Coin hook that initializes Doppler multi-curve liquidity positions on pool creation, charges a dynamic LP fee each swap, and in afterSwap collects accrued fees, converts them to a backing currency, distributes market rewards, and fills limit orders if the price tick moved.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2677fdcb72f59766d03d9ee4a6c7390bf3ed0800",
       "chain": "base",
       "chainId": 8453,
@@ -3256,6 +3291,41 @@
   },
   {
     "hook": {
+      "address": "0x56f25473dd2c2e8cd37b68ff38f3bddeb19daaa8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CurveHook",
+      "description": "A custom bonding curve AMM hook for FIFA/Country token pairs using a virtual reserve formula to price buys and sells. Charges a 5% fee per swap (burned), fully replaces pool liquidity mechanics (all direct add/remove liquidity and donate operations revert), and gates trading behind a phase-activation flag set by an authorized pack opener.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x570a48f96035c2874de1c0f13c5075a05683b0cc",
       "chain": "base",
       "chainId": 8453,
@@ -4221,6 +4291,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6e5388d971015f3608b08f3c38fea80d0e685040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CreatorCoinHook",
+      "description": "A Zora protocol hook for creator coin pools that collects LP fees on every swap, converts them to a backing currency via multi-hop paths, and distributes market rewards to the creator (including triggering vested coin claims) and other recipients.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -6369,6 +6474,41 @@
   },
   {
     "hook": {
+      "address": "0xadfe042ded16b4bfee0af065dfa85af0c9196a44",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TokenFab",
+      "description": "Token launch platform implementing a bonding curve that automatically transitions to a two-sided AMM pool once the bonding curve supply is fully purchased. Charges a 1% fee on swaps (split 50/50 between creator and platform), and only permits swaps where the launched token amount is the specified side.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb030fd8c2f8576f8ab05cfbbe659285e7d7a1040",
       "chain": "base",
       "chainId": 8453,
@@ -6575,6 +6715,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb4a13777525ddc151603e6d6b7db86352848eaa8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CurveHook",
+      "description": "A bonding-curve AMM hook that fully intercepts all swaps between a FIFA token and per-country ERC-20 tokens, executing trades via a virtual constant-product formula with a 5% fee split between burns and treasury. Add/remove liquidity and donations are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -7135,6 +7310,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcae7ebfa18755d1f35ee8e0f3356f375ed5b2aa8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CurveHook",
+      "description": "A bonding-curve AMM hook that manages swaps between a FIFA token and CountryToken ERC-20s using a virtual constant-product formula. Fully intercepts swap execution via beforeSwapReturnsDelta, minting or burning CountryToken supply on each trade while burning a 5% FIFA fee. Standard liquidity add/remove and donate operations are all blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -15609,6 +15819,41 @@
   },
   {
     "hook": {
+      "address": "0xc26d4199880ff83e10b1076589e975b830118a80",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WorldCupHook",
+      "description": "Blocks swaps and liquidity changes on nation-token/WCUP pools when a nation is in a live knockout match. Checks a TournamentRegistry oracle for a global trading-open flag and per-token freeze status; reverts if either currency in the pool is currently frozen.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc5e600b573aba770f8b5e3da6c3dd45ff5e440cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -16655,6 +16900,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf88003f8486047c2fd46da0ac6d84f4c4fd40a88",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BracketHook",
+      "description": "A Uniswap v4 hook implementing a dual-regime AMM for a World Cup bracket protocol: a virtual-reserve bonding curve for early-stage trading, transitioning to a standard v4 pool with protocol fees and elimination taxes (up to 10% on sells of eliminated teams) after graduation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -23130,6 +23410,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcc2f3d91987e70ba04de356b76df2e24d6e800cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchpadHook",
+      "description": "A token launchpad hook that collects buy/sell fees on every swap and splits them between a creator, platform treasury, optional referral tiers, and a dividend pool. Enforces anti-snipe windows and max-buy limits during a fair launch period, with optional automatic buyback-and-burn triggered by accumulated fee thresholds.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
