@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2b5a09a9bb438fc5b3248de2222a65043504c240",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SubframeSwapHookV2",
+    "description": "Tracks per-wallet token purchase amounts in afterSwap, enforcing a 69-token maximum buy limit (MAX_BUY_AMOUNT). Permanently locks liquidity removal by reverting all beforeRemoveLiquidity calls.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
