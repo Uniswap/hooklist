@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x03d2434d5a9ab7fb46bd3c7956a7c62e0cd46044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AdvancedFeeHook",
+    "description": "Charges a configurable tax on each swap (up to 10%), split between a platform treasury, a burn address, single-sided liquidity re-injection, and up to 8 creator payees. Pool initialization is restricted to a designated launcher address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
