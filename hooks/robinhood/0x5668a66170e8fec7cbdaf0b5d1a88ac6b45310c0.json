@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5668a66170e8fec7cbdaf0b5d1a88ac6b45310c0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LootHookV4",
+    "description": "Meme token launchpad hook that records oracle price observations, enforces per-origin cumulative buy caps during the first hour after launch, writes transient attestation data for on-chain game credit, dispatches token graduation, and executes an in-swap crank for fee collection and protocol maintenance.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
