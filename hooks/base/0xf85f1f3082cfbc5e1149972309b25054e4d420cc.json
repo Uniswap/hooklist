@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf85f1f3082cfbc5e1149972309b25054e4d420cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "B20Hook",
+    "description": "A fee-collection hook for the klik.finance B20 launchpad that takes market-cap-tiered ETH fees on exact-input buy swaps, distributing them between a platform treasury and the token creator. Includes a launch-window anti-snipe guard that blocks buys in the deployment block and caps per-origin ETH spend in the first few blocks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
