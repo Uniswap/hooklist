@@ -1086,6 +1086,41 @@
   },
   {
     "hook": {
+      "address": "0x03d2434d5a9ab7fb46bd3c7956a7c62e0cd46044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "AdvancedFeeHook",
+      "description": "Charges a configurable tax on each swap (up to 10%), split between a platform treasury, a burn address, single-sided liquidity re-injection, and up to 8 creator payees. Pool initialization is restricted to a designated launcher address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0469a4Bd3724DC86C9542F4694c976DA13C450c0",
       "chain": "base",
       "chainId": 8453,
@@ -1222,6 +1257,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x0ae73dfa41f1acacf32ad050924384b295e968cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ClankerHookStaticFeeV2",
+      "description": "A Uniswap v4 hook for Clanker token pools that applies directional static LP fees (configurable per-pool for buying vs. selling the Clanker token), collects protocol fees by modifying swap deltas via beforeSwapReturnsDelta and afterSwapReturnsDelta, and supports optional MEV modules (temporary high-fee anti-sniping) and pool extensions during the swap lifecycle.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -2832,6 +2902,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4cd3be8768aea2a0297c22c17a7a3cae65adc0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Politiswap",
+      "description": "A hook that manages political token ETH/ERC20 pools, taking a 2% fee on each swap and redirecting it to a fee collector. It tracks daily net ETH inflows per pool, determines which pool had the highest inflow each day, and allows holders of that day's winning token to claim governance token rewards.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -7559,6 +7664,41 @@
   },
   {
     "hook": {
+      "address": "0xf85f1f3082cfbc5e1149972309b25054e4d420cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "B20Hook",
+      "description": "A fee-collection hook for the klik.finance B20 launchpad that takes market-cap-tiered ETH fees on exact-input buy swaps, distributing them between a platform treasury and the token creator. Includes a launch-window anti-snipe guard that blocks buys in the deployment block and caps per-origin ETH spend in the first few blocks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf9527fb5a34ac6fbc579e4fbc3bf292ed57d4880",
       "chain": "base",
       "chainId": 8453,
@@ -9869,6 +10009,41 @@
   },
   {
     "hook": {
+      "address": "0x1b153a4ed40929dc2e699b6020296843ad98aacc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Sa1tHook",
+      "description": "A multi-phase token launch hook managing CURVE (bonding curve with custom pricing via ERC-6909 claims), REFUND_WINDOW (sell-only with refunds at entry price), and AMM (full-range Uniswap v4 pool with 1% fee skim) phases. Supports mechanic plugins for customizable fee structures and behaviors (e.g., HALVING token burns, MONEYBACK refunds).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1b9f3544dc4915e0c08882d1c3f39b6e464e4844",
       "chain": "ethereum",
       "chainId": 1,
@@ -10556,6 +10731,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x35fe236ea82f7cf525c9719d7df8f49f94d720cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EthCreatorFeeHookV3",
+      "description": "Charges immutable, configurable buy and sell fees on native ETH/token pools, split between a registered creator reward vault (authenticated via a factory) and an immutable launcher fee recipient. Fees are deducted directly from swaps via BeforeSwapDelta and AfterSwapDelta return values; ERC-20 transfers are not taxed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -12004,6 +12214,41 @@
   },
   {
     "hook": {
+      "address": "0x676e38b66a7547ff685549e4ad88134ac62200cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FeeHook",
+      "description": "Collects ETH fees on token swaps, splitting proceeds between the token creator and a protocol wallet. Blocks swaps at launch block unless explicitly permitted by the token factory, and disables fee collection once a pool's market cap exceeds a configurable graduation threshold.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6c24d0bcc264ef6a740754a11ca579b9d225e8cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -12664,6 +12909,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8a22e2a5768c72751f2da3e3b904365203b100cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FeeHookV2",
+      "description": "Fee hook for a token launchpad that charges ETH-denominated fees on every swap, split between a protocol wallet and per-token creator recipients. Fee rates are determined by owner-tunable market-cap tiers or per-token custom fees with an mcap-based auto-decay schedule.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -13461,6 +13741,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa2dcd7bf7ff3c014a855bf00799ccf07e6c800cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FeeHook",
+      "description": "A hook that charges a tiered ETH-denominated swap fee (0.5%\u20131.25% based on token market cap) on ETH/token pools. In beforeSwap and afterSwap it skims the fee from the ETH leg of each swap via BeforeSwapDelta/AfterSwapDelta, accruing 75% to a hardcoded protocol wallet and 25% to a per-token registered creator, redeemable via a pull-based claim().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
