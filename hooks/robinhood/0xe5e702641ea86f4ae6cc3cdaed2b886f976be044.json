@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe5e702641ea86f4ae6cc3cdaed2b886f976be044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "V2MemeHook",
+    "description": "Singleton Uniswap v4 hook shared by all graduated launchpad v2 memecoin pools. Takes a percentage fee on every swap via afterSwap using the delta return mechanism, accumulates fees per pool, and on demand converts memecoin-denominated fees to the quote currency via internal swaps, distributing proceeds among the protocol, a buyback-and-lock vault, and the pool creator according to fee terms frozen at registration.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
