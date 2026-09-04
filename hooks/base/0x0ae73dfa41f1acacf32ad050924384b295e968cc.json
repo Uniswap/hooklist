@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0ae73dfa41f1acacf32ad050924384b295e968cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ClankerHookStaticFeeV2",
+    "description": "A Uniswap v4 hook for Clanker token pools that applies directional static LP fees (configurable per-pool for buying vs. selling the Clanker token), collects protocol fees by modifying swap deltas via beforeSwapReturnsDelta and afterSwapReturnsDelta, and supports optional MEV modules (temporary high-fee anti-sniping) and pool extensions during the swap lifecycle.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
