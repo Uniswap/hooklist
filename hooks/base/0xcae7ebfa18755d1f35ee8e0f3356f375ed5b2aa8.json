@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcae7ebfa18755d1f35ee8e0f3356f375ed5b2aa8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "CurveHook",
+    "description": "A bonding-curve AMM hook that manages swaps between a FIFA token and CountryToken ERC-20s using a virtual constant-product formula. Fully intercepts swap execution via beforeSwapReturnsDelta, minting or burning CountryToken supply on each trade while burning a 5% FIFA fee. Standard liquidity add/remove and donate operations are all blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
