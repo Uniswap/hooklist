@@ -1086,6 +1086,76 @@
   },
   {
     "hook": {
+      "address": "0x000052423c1db6b7ff8641b85a7eefc7b2791888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BunniHook",
+      "description": "Core Uniswap v4 hook for the Bunni v2 protocol. Replaces standard AMM swap execution with custom Liquidity Density Functions (LDFs), dynamic surge-fee pricing, optional am-AMM for fee management, a TWAP oracle, auto-rebalancing via Flood, and a per-pool hooklet plugin system.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x0000fe59823933ac763611a69c88f91d45f81888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BunniHook",
+      "description": "Uniswap v4 hook for Bunni v2 concentrated liquidity pools that handles the entire swap lifecycle in beforeSwap using custom Liquidity Density Function math, dynamic surge fees, a TWAP oracle, am-AMM auction-based LVR/MEV recapture, and automated FloodPlain-based rebalancing.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x03d2434d5a9ab7fb46bd3c7956a7c62e0cd46044",
       "chain": "base",
       "chainId": 8453,
@@ -1471,6 +1541,41 @@
   },
   {
     "hook": {
+      "address": "0x130b18baa7f6f0d7b3730acc605aabe56df028cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BerylPadHookStaticFeeV2",
+      "description": "A BerylPad launchpad hook that enforces asymmetric static LP fees (separate buy and sell rates for the launched token) and collects a 20% protocol fee on every swap via BeforeSwapDelta and AfterSwapDelta adjustments. Includes a time-limited MEV protection module active immediately after pool launch and optional configurable pool extensions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x167f77c0d015414f65bf3dde7198922c399e2080",
       "chain": "base",
       "chainId": 8453,
@@ -1633,6 +1738,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1cfead8e66cebc5e51093dfd247ad34f841740c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TruthMarketHook",
+      "description": "A Uniswap v4 hook for TrueMarkets prediction pools that tracks tick movements across swaps to trigger range-order settlement via an OrderManager, optionally validates swaps against tick boundaries via a configurable SwapValidator, and deducts a configurable protocol fee from swap output using afterSwapReturnsDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -6999,6 +7139,41 @@
   },
   {
     "hook": {
+      "address": "0xd60a6a0f0d5e3fd451449c7256bbbdc59561e888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Generic4626Router",
+      "description": "A hook-based router for symmetric ERC4626 vault pairs that intercepts swaps to perform vault deposits (underlying \u2192 shares) or redeems (shares \u2192 underlying) in place of standard AMM swaps. Pool initialization is gated through the hook; direct liquidity addition is blocked entirely.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd60d6b218116cfd801e28f78d011a203d2b068cc",
       "chain": "base",
       "chainId": 8453,
@@ -11444,6 +11619,41 @@
   },
   {
     "hook": {
+      "address": "0x488796ec3d30c76076719a0c3bd0e8fee98f4500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages creator-controlled, one-sided token/ETH liquidity positions on Uniswap v4. Creators initialize a pool, seed token-only liquidity at the launch price boundary, and can later withdraw both principal and accrued fees.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x49c4ab474dc5519bfe120acb4098d3e6f61b40cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -11650,6 +11860,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x51768f5da32ba2008304cc81674da51acb802888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LaunchpadHook",
+      "description": "A token launchpad hook that implements a constant-product bonding curve priced in IMD tokens. Swaps on launched token pools (ETH/coin) are fully consumed in beforeSwap: the ETH leg routes through a canonical ETH/IMD pool, and the IMD proceeds price the coin against a per-coin virtual reserve curve. Creator fees (ETH) and burn fees (IMD) are applied on each trade.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -14244,6 +14489,41 @@
   },
   {
     "hook": {
+      "address": "0xafed2c6e0d906520ca17143a8918ce6d54b128cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LaunchHook",
+      "description": "LaunchHook manages token launch pools with locked liquidity, applying a high anti-snipe fee (up to 99%) that decays over 20 seconds post-launch to a normal 1% rate. Buy and sell fees are split between the token creator and a protocol escrow.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb09aba41d397474e6c25a625f87ef8c200480044",
       "chain": "ethereum",
       "chainId": 1,
@@ -14640,6 +14920,41 @@
     },
     "flags": {
       "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb8d9477eb6ef5f0df5219cf0c8130dd7e520e0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ConfigurableKlikHook",
+      "description": "Configurable tax hook for token launches on Uniswap v4. Charges per-pool buy/sell taxes with optional launch-decay and volume-based surcharges (capped at 25%), splits fees among platform, hook creator, token creator, buyback, and holder rewards, and automatically purchases and burns tokens when the buyback budget reaches 0.1 ETH.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
       "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,

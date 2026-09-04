@@ -911,6 +911,41 @@
   },
   {
     "hook": {
+      "address": "0x488796ec3d30c76076719a0c3bd0e8fee98f4500",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LauncherHook",
+      "description": "A token launchpad hook that manages creator-controlled, one-sided token/ETH liquidity positions on Uniswap v4. Creators initialize a pool, seed token-only liquidity at the launch price boundary, and can later withdraw both principal and accrued fees.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5832f3e51295cee676eebbb25748d527f64b5f80",
       "chain": "ethereum",
       "chainId": 1,
