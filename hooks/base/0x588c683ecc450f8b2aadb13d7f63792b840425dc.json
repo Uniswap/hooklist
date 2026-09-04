@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x588c683ecc450f8b2aadb13d7f63792b840425dc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Flaunch PositionManager",
+    "description": "Flaunch's core hook managing memecoin token launches (\"flaunches\") with single-sided liquidity seeding, an internal swap pool for fee-token conversion, multi-recipient fee distribution (creator, protocol, BidWall), temporal gating for scheduled launches, and per-swap TWAP oracle recording.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
