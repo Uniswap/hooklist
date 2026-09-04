@@ -1366,6 +1366,41 @@
   },
   {
     "hook": {
+      "address": "0xdfa04b8b60bf496594a3c256512409fba5a94080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WhitelistHook",
+      "description": "A Uniswap v4 hook that restricts swaps to whitelisted addresses. It checks `tx.origin` against an external `ISwapWhitelist` contract in `beforeSwap`, reverting with `SwapperNotWhitelisted` for non-whitelisted callers. No modification to swap execution occurs beyond access control.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe54082dfbf044b6a8f584bdddb90a22d5613c440",
       "chain": "ethereum",
       "chainId": 1,
@@ -1581,6 +1616,41 @@
       "chainId": 4663,
       "name": "PairV4Hook",
       "description": "Gates pool initialization so only a trusted launchpad contract can initialize pre-authorized pools with a fixed fee (10,000) and tick spacing (200). Implements only beforeInitialize; swap behavior is entirely unmodified.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4245822772d196a046ac69ed307551b3bfb52000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchpadHook",
+      "description": "A Uniswap v4 hook that restricts pool initialization to a single designated launchpad address, preventing front-running of pool creation for token launches. It is not in the swap path and runs only once per pool, at initialization.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
