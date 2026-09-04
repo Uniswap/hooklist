@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0b1daad7084aca64e2c21cf1b16374b8a26968cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ZnsHookStaticFee",
+    "description": "A token-launch hook for the ZNS Launchpad (forked from Clanker v4) that sets directional static LP fees per pool at initialization, dynamically updates the LP fee on each swap based on swap direction (clanker vs. paired token), routes fee collection to a factory address, and optionally activates an anti-MEV module for up to 2 minutes post-launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
