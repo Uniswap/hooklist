@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x13c890c58330f0a2af26bef7989389638c1080cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LaunchpadHook",
+    "description": "A launchpad fee hook that collects a configurable fee (default 1%) on every swap in registered token pools, splits fees between the token creator (\u226550%) and a platform treasury, distributes referral cuts through a 3-tier referral chain, and records quote volume to a factory contract for graduation tracking.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
