@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x000052423c1db6b7ff8641b85a7eefc7b2791888",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "BunniHook",
+    "description": "Full-featured AMM hook implementing custom swap routing via beforeSwapReturnsDelta, TWAP-based dynamic fees, surge fees, am-AMM auction-managed fee markets, and a TWAP price oracle. Liquidity distribution is controlled by pluggable Liquidity Density Functions (LDF); pool-specific logic can be extended via an optional hooklet interface.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
