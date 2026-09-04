@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf679fcb0090d6b444296cdacf91884537072ea44",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFab",
+    "description": "TokenFab is a bonding curve factory hook that manages token launches on Uniswap v4. It deploys new ERC-20 tokens into bonding curve pools, charges a 1% swap fee split between creator and platform, and automatically migrates to a standard AMM pool once the bonding curve supply target is reached.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
