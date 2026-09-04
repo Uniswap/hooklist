@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9b47e436e216b2cb54d6f24154f86d946098d040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ContentCoinHook",
+    "description": "Uniswap v4 hook for Zora content coins that, on every swap, collects accrued LP fees from all positions, converts them to a backing currency via multi-hop swap paths, and distributes the proceeds as market rewards. On pool initialization, it creates multiple Doppler-curve liquidity positions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
