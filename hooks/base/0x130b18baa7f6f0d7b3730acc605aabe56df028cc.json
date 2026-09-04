@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x130b18baa7f6f0d7b3730acc605aabe56df028cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BerylPadHookStaticFeeV2",
+    "description": "A BerylPad launchpad hook that enforces asymmetric static LP fees (separate buy and sell rates for the launched token) and collects a 20% protocol fee on every swap via BeforeSwapDelta and AfterSwapDelta adjustments. Includes a time-limited MEV protection module active immediately after pool launch and optional configurable pool extensions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
