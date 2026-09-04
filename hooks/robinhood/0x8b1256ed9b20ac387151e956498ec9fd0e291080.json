@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8b1256ed9b20ac387151e956498ec9fd0e291080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FriarTier",
+    "description": "Dynamic LP fee hook implementing a Liquidity Book volatility-accumulator surge mechanism on top of an immutable base fee set at deployment. Each deployment represents a distinct, non-configurable fee tier shared by all pools on that hook, with no admin controls, no upgradeability, and no protocol fee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
