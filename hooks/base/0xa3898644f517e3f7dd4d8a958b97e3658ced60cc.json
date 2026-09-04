@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa3898644f517e3f7dd4d8a958b97e3658ced60cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FlowHookV3",
+    "description": "A USDG-denominated tax hook for token/USDG pools. On every swap it takes a configurable fee (plus an anti-snipe time-decaying surcharge) in USDG via beforeSwap/afterSwap return deltas, then routes proceeds across five buckets: holder baskets, LP auto-add above spot, treasury, token buyback-and-burn, and referral payouts, with a tiered platform cut split between a burn pot and a platform wallet.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
