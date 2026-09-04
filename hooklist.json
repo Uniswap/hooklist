@@ -1401,6 +1401,41 @@
   },
   {
     "hook": {
+      "address": "0x0a10576d56379b951317e07363301c1e8c7e9fcc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TupleOracleHook",
+      "description": "A Uniswap v4 hook that maintains a TWAP oracle (truncated observations) and a liquidity book tracking liquidity distribution across tick buckets. It records collateralized debt positions via hookData on liquidity operations, overrides swap fees based on direction (zero fee for tuple\u2192wrapped-native swaps, fixed LP_FEE otherwise), and donates wrapped-native fees back to LPs on qualifying swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0a914acb246063b4ed0f3a0fc13d0c0e8c8500c4",
       "chain": "base",
       "chainId": 8453,
@@ -17114,6 +17149,41 @@
   },
   {
     "hook": {
+      "address": "0xe92a31bf7466712902b7d0eebd9b40e7eb96c444",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BCHook",
+      "description": "Collects a static 10% fee on all swaps in ETH/BC token pools, converting token fees to ETH via an internal nested swap and distributing 90% to a league pool and 10% to a fee address. Liquidity additions are restricted to the BCFactory, and exact-output swaps are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xebac1d1a384d3ae1a162fdf30788fcfa228380cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -20124,6 +20194,41 @@
   },
   {
     "hook": {
+      "address": "0x1e4798985a823c0b4a6895b4a0c9a0f645e3a880",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "QuiverV4Hook",
+      "description": "Shared policy hook for Quiver v4 token launch pools. Enforces permissioned pool initialization via a launcher, optional liquidity exclusivity during the bootstrap phase, and optional buy-side gating that requires buyers to be pre-authorized by an on-chain gate authorization contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2026a3f0721c4a3ff86acbeab1b47c6bec2600cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -20855,6 +20960,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3f69290ecfe5415f5dd86f653e8e019247f525c4",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RuneMarketHook",
+      "description": "A Uniswap v4 hook that gates pool initialization to authorized addresses, enforces per-pool pause controls settable by an OPERATOR_ROLE admin, collects a configurable percentage fee on swaps via afterSwapReturnsDelta, and notifies an IOrderManager of tick movements after each swap to settle limit orders.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -24880,6 +25020,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdd35b72b8e8a9290de03b382fc254c95053f6888",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ERC1967Proxy Hook",
+      "description": "A Uniswap v4 hook deployed as an ERC1967 upgradeable proxy. The implementation contract is not verified, so the full hook logic cannot be analyzed. The address bitmask indicates beforeSwap with delta return, beforeInitialize, and beforeAddLiquidity permissions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
