@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb884a8a6459b52c143717894a93b2f676e6b00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookPadHook",
+    "description": "A shared Uniswap v4 hook for all HookPad token launch pools, enforcing a 5-second anti-snipe window with a 60% buy tax routed to the protocol treasury, followed by a dynamic tiered buy/sell tax schedule cycling per global trade count. All fees are taken from the native ETH side of every swap and forwarded to a fee locker for distribution to the token creator or treasury.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
