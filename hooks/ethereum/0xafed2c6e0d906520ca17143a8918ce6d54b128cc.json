@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xafed2c6e0d906520ca17143a8918ce6d54b128cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LaunchHook",
+    "description": "LaunchHook manages token launch pools with locked liquidity, applying a high anti-snipe fee (up to 99%) that decays over 20 seconds post-launch to a normal 1% rate. Buy and sell fees are split between the token creator and a protocol escrow.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
