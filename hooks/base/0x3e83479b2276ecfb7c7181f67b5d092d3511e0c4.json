@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3e83479b2276ecfb7c7181f67b5d092d3511e0c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TruthMarketHook",
+    "description": "A prediction market hook that records pre-swap tick, then in afterSwap calls an external OrderManager to settle limit orders triggered by tick movement. Optionally collects a configurable fee on the unspecified token amount via afterSwapReturnsDelta, and supports per-pool pausing by an operator role.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
