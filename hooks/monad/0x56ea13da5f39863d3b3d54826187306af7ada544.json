@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x56ea13da5f39863d3b3d54826187306af7ada544",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "DopplerHookInitializer",
+    "description": "Uniswap v4 pool initializer implementing the Doppler Multicurve bonding curve mechanism, distributing liquidity across multiple tick-range positions for token launches. Supports locked pools with fee-collecting beneficiaries, dynamic LP fee adjustment via linked Doppler hooks, and pool graduation logic triggered by reaching a target tick.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
