@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x32f685f7941744d1f93b34ecbce34358472b60cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LunchTaxHookImmutable",
+    "description": "A non-upgradeable Uniswap v4 hook for ETH-paired token launches that collects configurable buy/sell taxes (up to 20% per side) via BeforeSwapDelta and AfterSwapDelta, with optional launch guards including timestamp-based trading delays, decaying opening taxes, and per-transaction buy caps. Collected ETH is distributed to token creators and a platform address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
