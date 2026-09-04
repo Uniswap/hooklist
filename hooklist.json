@@ -18759,6 +18759,41 @@
   },
   {
     "hook": {
+      "address": "0x0c5c490a077452f1d67d8b657550847123086080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GreenTownV4Hook",
+      "description": "Graduation gate hook that restricts pool initialization to a designated migrator and blocks all swaps on a per-pool basis until the pool is explicitly opened via openPool() after graduation liquidity has been locked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0e6e93dc982eb50ad622abf0beac1e551c6000cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -19516,6 +19551,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x35c0098836fa0d10a015a95bf02c16387814f0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SentryStockFeeHookV3",
+      "description": "Launch hook with a time-decaying dynamic fee (high start \u2192 floor) that skims fees from swaps and splits them among creator, treasury, holder reflections (via dividend token notifyReward), and auto-compounding locked full-range LP. A pre-reflection delay window redirects the reflection share to creator/treasury; whitelisted launch wallets pay the floor fee rate.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -20649,6 +20719,41 @@
   },
   {
     "hook": {
+      "address": "0x6eb98e97d0efaeb784ca4e8ee55f7bfb5e5800cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CubeHook",
+      "description": "Collects a configurable fee (in basis points, 1%\u201310%) on swaps for factory-registered tokens in Cube Family launchpad pools. Fees are taken via BeforeSwapDelta or AfterSwapDelta and forwarded to a factory contract; when the pool manager lacks sufficient balance, fees are parked as ERC-6909 claims and flushed on the next eligible swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x70a9a88402989226847ec122043ce5e7ff462080",
       "chain": "robinhood",
       "chainId": 4663,
@@ -21227,6 +21332,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
       "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8b1256ed9b20ac387151e956498ec9fd0e291080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FriarTier",
+      "description": "Dynamic LP fee hook implementing a Liquidity Book volatility-accumulator surge mechanism on top of an immutable base fee set at deployment. Each deployment represents a distinct, non-configurable fee tier shared by all pools on that hook, with no admin controls, no upgradeability, and no protocol fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
@@ -22154,6 +22294,41 @@
   },
   {
     "hook": {
+      "address": "0xad46b4950cb86c43fc74b08c81300fe2e49280cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PadHook",
+      "description": "Uniswap v4 hook for the Mixpad token launchpad. Collects a platform fee on every swap, splitting it between the token creator and treasury; a configurable portion is auto-routed to a buyback-and-burn. Applies a block-decaying anti-snipe surcharge on early buys and a time-decaying surcharge on sells by the original token deployer.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xadaf12314ba795702434cc542f4a43050a9a84cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -22430,6 +22605,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbdf11b474f03d4559edf02541b9606f1ce2b40cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ZentralCoreFeeHook",
+      "description": "Volatility-based dynamic fee hook for the Zentral launchpad. Fees scale between a per-pool base and max rate (0.25%\u20133%) based on previous-swap tick movement, collected in ETH, token, or both per pool configuration. Input-side fees are taken in beforeSwap; output-side fees in afterSwap. Exact-output swaps are rejected; only exact-input swaps are supported.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
