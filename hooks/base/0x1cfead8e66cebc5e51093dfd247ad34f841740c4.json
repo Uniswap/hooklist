@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1cfead8e66cebc5e51093dfd247ad34f841740c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TruthMarketHook",
+    "description": "A Uniswap v4 hook for TrueMarkets prediction pools that tracks tick movements across swaps to trigger range-order settlement via an OrderManager, optionally validates swaps against tick boundaries via a configurable SwapValidator, and deducts a configurable protocol fee from swap output using afterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
