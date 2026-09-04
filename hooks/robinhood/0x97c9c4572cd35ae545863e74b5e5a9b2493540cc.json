@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x97c9c4572cd35ae545863e74b5e5a9b2493540cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchpadHook",
+    "description": "Uniswap v4 hook for token launchpads that collects a percentage fee on every swap (via beforeSwap/afterSwap return deltas), splits fees between the token creator and platform treasury, distributes referral cuts, and tracks quote volume for token graduation logic.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
