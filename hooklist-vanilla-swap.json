@@ -1611,6 +1611,41 @@
   },
   {
     "hook": {
+      "address": "0x8526171645365821d0630f20bbe35284a3d1a040",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CashCatGraduationHook",
+      "description": "Singleton hook for the CashCat launchpad that restricts pool initialization to the launchpad (beforeInitialize) and monitors post-swap prices to set a one-way graduation latch when a launch token's paired-currency principal reaches a configured threshold (afterSwap).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa27d4eef437ab754074c8c9e6bcbc55184de2000",
       "chain": "robinhood",
       "chainId": 4663,
