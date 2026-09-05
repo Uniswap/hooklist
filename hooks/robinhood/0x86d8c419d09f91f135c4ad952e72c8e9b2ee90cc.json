@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x86d8c419d09f91f135c4ad952e72c8e9b2ee90cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Spot",
+    "description": "Uniswap v4 hook that applies dynamic fee overrides via beforeSwap lpFeeOverride, records tick observations via TruncGeoOracleMulti, and reinvests collected fees via a FullRangeLiquidityManager. On every swap, an additional undisclosed 0.10% fee (AGGRESSIVE_SURGE) is unconditionally extracted from the input amount on top of any disclosed hook fee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
