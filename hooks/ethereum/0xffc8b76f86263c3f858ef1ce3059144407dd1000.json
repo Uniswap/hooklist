@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A Uniswap v4 hook for Saturn Omnichain that triggers only on afterInitialize, coordinating initial liquidity bootstrapping by calling an external ISaturnOmnichainLiquidityBootstrapper contract. Has no active swap, liquidity modification, or donate logic.",
+    "description": "A Uniswap v4 hook for Saturn Omnichain that registers only the afterInitialize permission but performs no action in the callback. The contract separately exposes an initializePools() function that calls an external ISaturnOmnichainLiquidityBootstrapper to coordinate initial liquidity bootstrapping.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
