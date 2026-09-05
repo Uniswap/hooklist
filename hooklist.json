@@ -10289,6 +10289,41 @@
   },
   {
     "hook": {
+      "address": "0xb36f4a2fb18b745ef8ed31452781a463d2b3f0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BondingCurveHook",
+      "description": "Routes swaps through a custom bonding curve during the token's bonding phase by intercepting beforeSwap and executing buys/sells via the BondkitToken contract. After migration to DEX phase, collects LP fees from the hook-owned position in afterSwap and distributes them via a DexPhaseSplitter contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb3ae7c0495fe4d20786cf6d119c7a821f83f40cc",
       "chain": "base",
       "chainId": 8453,
@@ -11886,6 +11921,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd4f185382cc4a2c01584e8c0f54b36d85a8980cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "UniswapV4SwapFeeHookV1",
+      "description": "A Uniswap v4 hook that charges configurable buy and sell fees (in basis points) on swaps involving a designated fee token. Fees are collected in the fee token via BeforeSwapDelta and AfterSwapDelta return values and forwarded to a configurable recipient contract, with separate rates for buy and sell operations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -18199,6 +18269,41 @@
   },
   {
     "hook": {
+      "address": "0x1f73ae8b1adcfff858cfe2cfb35e054d710fc880",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ArrakisPrivateHook",
+      "description": "A Uniswap v4 hook for the Arrakis private vault system that applies directional dynamic LP fee overrides per pool (separate rates for zeroForOne and oneForZero swaps), and restricts liquidity additions to the authorized module for each pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x213f0db3d48580954471b3e69e5f486292a36844",
       "chain": "ethereum",
       "chainId": 1,
@@ -20789,6 +20894,41 @@
   },
   {
     "hook": {
+      "address": "0x57e0589aa41ee7d2493c1dd03629d4f43d1b80cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "MixpadHook",
+      "description": "MixpadHook collects a configurable platform fee on every swap for factory-registered tokens, splitting revenue between the token creator and treasury. It applies anti-snipe surcharges in blocks immediately after launch, a time-decaying deployer dump surcharge, optional buyback-and-burn of the creator's fee share, and optional dividend routing to a yield vault.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5832f3e51295cee676eebbb25748d527f64b5f80",
       "chain": "ethereum",
       "chainId": 1,
@@ -22395,6 +22535,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x803d9db0f5dc76591663c1991fe4f0ba4156bacc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BDeFiHook",
+      "description": "BuilDeFi's swap hook that applies configurable buy/sell taxes on each trade, routes proceeds to fee distributors, fulfills queued token orders at TWAP price against collected fees, and records truncated geo-oracle observations. Trading is gated on a per-token fully-initialized flag set by the LP manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -40599,6 +40774,41 @@
   },
   {
     "hook": {
+      "address": "0xe9dde136307c0b8ad8a22cf54f46870463c1a8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PmavHookQuoted",
+      "description": "Bonding curve launchpad hook for memecoins with block+1 anti-snipe protection, a permanent 2% wallet cap with auto-refund, a decaying anti-snipe fee premium, and automatic graduation to a standard 1% dynamic-fee pool once the curve fills.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0xeb05ff77166f09fe78edcf4e137e001ea1e660cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -41854,6 +42064,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2e7c80cf7ecc15c9d6578b8efb4fc37a28ce9540",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "GridHook",
+      "description": "Grid trading hook that deploys user liquidity across multiple evenly-spaced tick ranges. Supports configurable order count, distribution weights, and automated rebalancing by authorized keepers when price moves beyond a threshold. Uses permit2 for token settlement.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
