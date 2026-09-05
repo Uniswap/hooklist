@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1a449ff189cbbb2aee012e70022193535c74c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CobaltHook",
+    "description": "A token-launch hook that deducts percentage fees from swap quote amounts via BeforeSwapDelta (exact-input) and afterSwapReturnsDelta (exact-output). Applies an elevated anti-snipe tax rate during the first configurable number of blocks after token registration; accumulated fees are claimable by token creators.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
