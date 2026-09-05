@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdda9bc41e324ef379e774ae1f7b062d23ea8aacc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LaunchHook",
+    "description": "A shared Uniswap v4 hook for launchpad-created pools that gates pool creation to the factory, locks all liquidity (blocking third-party adds/removes), and charges time-decaying anti-snipe fees on swaps. Fees are split into configurable per-pool components (creator, platform, referrer) and distributed via ERC-6909 claims to a FeeEscrow contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
