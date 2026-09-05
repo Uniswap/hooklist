@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "SaturnOmnichainV4Hook",
-    "description": "Saturn Omnichain V4 hook that records the initial tick at pool initialization via an afterInitialize callback. All swap and liquidity callbacks are no-ops; the hook holds references to the token and a liquidity bootstrapper contract used to seed initial positions.",
+    "description": "Saturn Omnichain V4 hook with an afterInitialize flag set (callback is a no-op). The initial tick is recorded via the separate `initializePools()` function, which calls the liquidity bootstrapper contract to seed initial positions.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
