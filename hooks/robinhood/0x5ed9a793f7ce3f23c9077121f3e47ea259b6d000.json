@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5ed9a793f7ce3f23c9077121f3e47ea259b6d000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SaturnOmnichainV4Hook",
+    "description": "A minimal hook that only fires afterInitialize, recording the initial tick from an external ISaturnOmnichainLiquidityBootstrapper contract. It has no swap, liquidity modification, or donate hooks and does not alter swap execution in any way.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
