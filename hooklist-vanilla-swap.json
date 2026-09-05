@@ -3606,6 +3606,41 @@
   },
   {
     "hook": {
+      "address": "0xa793d9291e59b4747054d447f6cc37150d124080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "V4GasDetectHook",
+      "description": "A honeypot hook that unconditionally allows buy swaps (zeroForOne=true) but blocks real sell transactions by reverting when gasleft() is below 55M. Simulated sells (which use the full block gas limit) appear to succeed, deceiving users into buying tokens they cannot sell in real transactions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xafe727f2288e531184f5b9a81d3049b2f69a6880",
       "chain": "ethereum",
       "chainId": 1,
@@ -4827,6 +4862,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x36d873b7c1472711076dd9cde9dd549aa7d14080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "V4GasDetectHook",
+      "description": "A honeypot hook that blocks real sell transactions by checking gasleft(): buys always succeed, sells are allowed only when gas remaining exceeds 30M (typical of simulations/eth_call), and revert on real user transactions with normal gas. Users who buy tokens cannot sell them.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "other"
     }
   },
   {
