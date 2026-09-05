@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe9cf1667585f3d58de52f64052c6d5a2c960aa88",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EquityPegHook",
+    "description": "A hook that acts as an equity-pegged market maker, quoting token\u2194USDC swaps at a price derived from an external equity/stock feed. Liquidity deposits are fully blocked; each swap is settled in full via beforeSwapReturnDelta using locked ERC-6909 inventory seeded at graduation. Swaps revert when the feed is stale or not-ok, or when the pool is frozen by the factory admin.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
