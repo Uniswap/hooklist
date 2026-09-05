@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x11f0785694b2cbdc3be852efae91a249435b6acc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HoodersLaunchHook",
+    "description": "Launch hook for Hooders tokens on Robinhood Chain managing the full token lifecycle: seeds a concentrated liquidity bonding curve, applies a decaying sniper tax and per-wallet anti-snipe buy cap, routes fees across platform/creator/liquidity/RWA buckets, atomically collapses the curve into a full-range AMM position upon graduation, and runs a jackpot buyer-reward system.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
