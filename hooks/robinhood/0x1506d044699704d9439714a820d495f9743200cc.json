@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1506d044699704d9439714a820d495f9743200cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "QuoteFeeHook",
+    "description": "Charges a fixed 1% fee on every swap, always denominated in the ETH side of the pool (currency0), by splitting the charge between beforeSwap and afterSwap callbacks depending on which side is specified. Fees are accrued per registered pool and collected by an immutable factory contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
