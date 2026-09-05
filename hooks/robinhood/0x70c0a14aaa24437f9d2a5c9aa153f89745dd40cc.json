@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x70c0a14aaa24437f9d2a5c9aa153f89745dd40cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LatchHook",
+    "description": "A Uniswap v4 hook for Latch token launches that intercepts swaps on registered tokens to collect configurable protocol fees and creator-defined buy/sell taxes (paid in the quote token). Fees are claimable by token creators, and swap volume is reported to the factory for graduation threshold tracking.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
