@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa89f376d6d2de70823329d8eb8542730d900c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NasdankFeeHook",
+    "description": "A shared Uniswap v4 hook for the NASDANK memecoin launchpad that charges a configurable WETH-denominated fee on every swap through registered pools. Fees are collected via BeforeSwapDelta and AfterSwapDelta return values and split between an immutable project treasury and protocol treasury, claimable permissionlessly by anyone.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
