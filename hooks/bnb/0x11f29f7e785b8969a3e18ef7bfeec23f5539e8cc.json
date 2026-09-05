@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x11f29f7e785b8969a3e18ef7bfeec23f5539e8cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "PmavHookQuotedSlimX",
+    "description": "Bonding curve launch hook that gates pool creation to an internal factory, enforces a block+1 anti-snipe delay, a permanent 2% wallet cap with automatic surplus refund, and a decaying anti-snipe fee premium on buys. Upon reaching the graduation raise target, the hook executes an inner swap, locks full-range liquidity, and updates the dynamic LP fee to a flat 1%.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
