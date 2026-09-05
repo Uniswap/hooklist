@@ -4,7 +4,7 @@
     "chain": "robinhood",
     "chainId": 4663,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook for the Saturn Omnichain protocol that triggers liquidity bootstrapping after pool initialization and records the initial tick. All swap, liquidity, and donate callbacks are pure no-ops.",
+    "description": "A minimal hook for the Saturn Omnichain protocol with only the afterInitialize permission set. The afterInitialize callback is a no-op. Liquidity bootstrapping and initial tick recording are performed by a separate initializePools() function that calls an external ISaturnOmnichainLiquidityBootstrapper. All swap, liquidity, and donate callbacks are pure no-ops.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -33,3 +33,4 @@
     "swapAccess": "none"
   }
 }
+
