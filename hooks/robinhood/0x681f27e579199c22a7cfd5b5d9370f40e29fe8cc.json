@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x681f27e579199c22a7cfd5b5d9370f40e29fe8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PmavHookQuoted",
+    "description": "Bonding curve launch hook for the pmav.fun V2 platform (Robinhood Chain) using a quote ERC20 (USDG). Manages a constant-product AMM curve from token launch to graduation: enforces block+1 trading delay, a permanent 2% wallet cap with fill-to-cap refund waterfall, decaying anti-snipe premium on buys, 1% quote-denominated fees, and in-place graduation to a full-range V4 pool with dynamic LP fee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
