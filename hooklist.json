@@ -3536,6 +3536,41 @@
   },
   {
     "hook": {
+      "address": "0x4ac4aff2eede61556bfbc45879a87d440a3c68cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LiquidHookDynamicFeeV2",
+      "description": "A Uniswap v4 hook that adjusts LP fees dynamically based on a volatility accumulator derived from tick movement between swaps, and collects protocol fees on each swap by modulating swap deltas via beforeSwapReturnsDelta and afterSwapReturnsDelta. Supports optional MEV module and pool extension integrations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4cd3be8768aea2a0297c22c17a7a3cae65adc0cc",
       "chain": "base",
       "chainId": 8453,
@@ -8189,6 +8224,41 @@
   },
   {
     "hook": {
+      "address": "0xc384b99a6e5cd1a800b2d83ab71bab7bd712b0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DeliHook",
+      "description": "Uniswap v4 hook for wBLT-paired pools that replaces standard LP fee collection with custom fee handling: overrides the dynamic LP fee to 0 and takes fees always in wBLT, forwarding them to a FeeProcessor. Syncs DailyEpochGauge and IncentiveGauge on every swap. Pools must include wBLT as one of the two currencies and must use dynamic LP fees.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc3b8e77ac038aa260035a1911827086c34a9e844",
       "chain": "base",
       "chainId": 8453,
@@ -10950,6 +11020,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x996e65c40ce4e48b9c378fb32e7676ff962910cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "Spot",
+      "description": "Dynamic-fee AMM hook that computes LP fees via a TruncatedGeoOracle and DynamicFeeManager, collecting protocol fees and an undisclosed 0.10% surcharge on every swap via beforeSwap/afterSwap return deltas, and reinvesting accumulated fees into full-range liquidity positions through a FullRangeLiquidityManager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -21454,6 +21559,41 @@
   },
   {
     "hook": {
+      "address": "0x108d0512b4ab6a841ebe679e7f87688704fca0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchTaxHook",
+      "description": "Charges a fixed 1% tax on every swap in launchpad pools, always denominated in the pool's quote token, split 50/50 between the launchpad deployer and each pool's token creator. Pools must be initialized via a one-shot-bound strategy contract and carry a zero LP fee; the tax is the only charge on trades.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x12783b423b9cf1a136bd7e0f8baca5944f5baacc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -22272,6 +22412,41 @@
       "beforeInitialize": true,
       "afterInitialize": false,
       "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2c08f416e52310223d1a3cfdffbbbe1edc8140cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "NasdankFeeHook",
+      "description": "A shared Uniswap v4 hook for NASDANK pools that charges a configurable fee always denominated in WETH on every swap in both directions. Uses beforeSwap/afterSwap return deltas to take the fee from the WETH leg, accruing it to per-pool balances that are split between an immutable project treasury and a protocol treasury via a permissionless claim function.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
@@ -25619,6 +25794,41 @@
   },
   {
     "hook": {
+      "address": "0x96de958a60469818fa494123f4efb9c6d99f40cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FlintHook",
+      "description": "A token launch hook for the Flint platform that collects protocol and creator fees on swaps in quote-token terms, applying an anti-snipe surcharge during the initial blocks after token launch. Fees are routed to claimable balances for token creators and can be claimed via `claimFees`/`claimAllFees`.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x971df49844604e44514120682eac3fcdc4f5c0c4",
       "chain": "robinhood",
       "chainId": 4663,
@@ -26175,6 +26385,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa726975b51e716708417374c39180c1f12e960cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchTaxHook",
+      "description": "Singleton Uniswap v4 hook that collects a configurable swap tax (in the pool's quote currency) on token launches, splitting fees between a platform tax collector and the token creator. Trading is gated by a per-token start timestamp set by the launch factory.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -28625,6 +28870,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf972bc1fc1cf2f4120720ee0a6d891ed3d1500cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "WobbHook",
+      "description": "Uniswap v4 hook for the wobb.fun token launch platform. Intercepts swaps on registered tokens to collect platform and maker fees, apply anti-snipe and founder-sell surcharges, route dividends, and trigger auto buyback-and-burn of the launched token and/or the platform $WOBB token. Enforces a configurable staker-only early-access window and per-wallet buy cap during the guard window.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
