@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaa46cdbd84edaba190dd7c5c354e16c9c8e36000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchBeforeInitializeHookV1",
+    "description": "Gates pool initialization to a single authorized factory address, enforcing fixed launch economics: LP fee of 12,500, tick spacing of 200, ETH (address(0)) as currency0, and a fixed opening sqrt price derived from tick 191,200. Pool creation reverts unless the sender is the bound factory and all parameters match exactly.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
