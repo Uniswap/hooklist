@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x547d9690276a893041fcb94045a4a765580eeac0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DualPoolHook",
+    "description": "JIT liquidity hook that deploys concentrated LP positions across multiple configurable tick ranges (buckets) before each swap and removes them after, using ERC-4626 vault rehypothecation to earn yield on idle capital between swaps. Pool fee is static (set at deploy time); swaps can be paused per-pool by the owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
