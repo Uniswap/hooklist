@@ -8294,6 +8294,41 @@
   },
   {
     "hook": {
+      "address": "0x7eeba3e74a38269351f42ec030077a19adc00080",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DynamicFeeHook",
+      "description": "A Uniswap v4 hook that dynamically adjusts the LP fee on every swap. An owner can set the active fee to any value between 1% (10000) and 2% (20000) via setFee(); the current fee is returned as an lpFeeOverride in beforeSwap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7Fa49D29481b6D168505Ccde26635e204c09e5CF",
       "chain": "base",
       "chainId": 8453,
@@ -10149,6 +10184,41 @@
   },
   {
     "hook": {
+      "address": "0x983dd6ef6a9360331ba80ed6322ea47feb9ad000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "UniV4Hook",
+      "description": "Owner-controlled dynamic LP fee hook that sets an initial 2% fee on pool initialization via afterInitialize and allows the owner to manually update the fee rate at any time through forceUpdateLPFee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9850de90445233c2561dd29fc67aaa353b48a888",
       "chain": "base",
       "chainId": 8453,
@@ -11081,6 +11151,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa54cbcf7449421e5842c483cc30d992ced301000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "UniV4Hook",
+      "description": "A Uniswap v4 hook that manages a dynamic LP fee for pools. On initialization, it sets a 2% default fee (20000 bps) via updateDynamicLPFee, and exposes an owner-only forceUpdateLPFee function to update the pool's dynamic LP fee thereafter.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -46825,6 +46930,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd9831cf99f2d94e9b89085414ce4b30ab87ec8c8",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PeepsV4TaxHook",
+      "description": "A meme token launch hook that applies configurable buy/sell taxes via BeforeSwapDelta, distributes tax proceeds to fund, burn, dividend, and liquidity buckets in afterSwap, and blocks third-party LP additions during a configurable anti-farmer lock period.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
