@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xad347a63c12fa6e87f893acca0e565b9e9698088",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "HaberdasheryHook",
+    "description": "A fee-taking hook that charges a 1% fee on each swap via beforeSwapReturnsDelta, capturing the input-side token as protocol revenue retained by the contract. The owner can withdraw accumulated fees, with non-Habs tokens automatically swapped to a designated Habs token through an internal pool swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
