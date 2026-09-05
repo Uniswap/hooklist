@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe505d19dcd4d2942385f2d3663732b242b8880cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MoonHook",
+    "description": "A token launch platform hook that charges configurable BPS fees on swaps for registered tokens by taking from the swap delta. Applies an elevated snipe tax on buys during the first N blocks after launch; accrued fees are claimable by token creators.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
