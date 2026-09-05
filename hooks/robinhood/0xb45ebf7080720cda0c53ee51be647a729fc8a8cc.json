@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb45ebf7080720cda0c53ee51be647a729fc8a8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FlowPadCurveHook",
+    "description": "FlowPad bonding-curve launch hook. Seeds a pool with single-sided concentrated token liquidity; buyers walk the price down accumulating ETH, functioning as a real on-chain bonding curve. Enforces a configurable snipe guard (first N blocks restricted to the launcher), takes ETH-denominated trade fees split between creator and protocol via BeforeSwapDelta/AfterSwapDelta, and supports permissionless graduation once the curve sells out.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
