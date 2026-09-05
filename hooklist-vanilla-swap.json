@@ -1051,6 +1051,41 @@
   },
   {
     "hook": {
+      "address": "0x76f753016342ae987fbe555694aefe6804f0c080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "V4SellBlockHook",
+      "description": "Blocks all token-to-ETH swaps (sells) by reverting in beforeSwap when zeroForOne is false, while permitting ETH-to-token swaps (buys). Intended for use as a honeypot mechanism, deployed once via CREATE2 and reused across pools to prevent holders from selling their tokens.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7b9d30379e446b53e135ce060f38bc2b3be8a040",
       "chain": "ethereum",
       "chainId": 1,
