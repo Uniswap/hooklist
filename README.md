@@ -33,6 +33,12 @@ See [`schema.json`](schema.json) for the full schema.
 
 Optional fields (name, description, deployer, audit URL) can be provided in the issue — otherwise Claude generates them from the source code.
 
+## Releases
+
+A release file captures a reviewed family analysis: name, description, the five hook properties, warnings, and source/audit links. Each release is a separate PR, reviewed and merged once; later instances of the same hook family (factory deployments, forks, or audited variants) may reference the release via a thin pointer file (containing only address, chain, chainId, optional deployer/description, and the release reference). These thin files are expanded at build time to include all properties from their release. The published `hooklist.json` remains unchanged for consumers — they see a flat list of complete hook records regardless of whether a hook's data came from a full file or a thin pointer.
+
+To submit a new release (a family you've reviewed and want to make available for instances), open a PR adding one or more `releases/<project>/<release-id>.json` files, optionally with member hook files that reference them. To submit a new instance of an existing release, use the normal [hook submission process](#submit-a-hook); Claude's bot will automatically detect and match it to the release.
+
 ## Supported Chains
 
 Ethereum, Unichain, Base, Arbitrum, Optimism, Polygon, Blast, Worldchain, Avalanche, BNB, Celo, Zora, Ink, Soneium, Linea, Monad, Robinhood Chain, MegaETH, Tempo, X Layer, zkSync
