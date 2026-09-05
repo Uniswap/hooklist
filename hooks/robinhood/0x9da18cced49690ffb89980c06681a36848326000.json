@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9da18cced49690ffb89980c06681a36848326000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PairV4Hook",
+    "description": "A gating hook that restricts pool initialization to a designated launchpad address. Pools must be pre-authorized by the launchpad with specific project/quote token pairs, fee (1%), and tick spacing before they can be initialized.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
