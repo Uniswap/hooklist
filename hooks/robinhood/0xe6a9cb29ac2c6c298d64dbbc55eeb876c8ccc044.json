@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe6a9cb29ac2c6c298d64dbbc55eeb876c8ccc044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TaxHook",
+    "description": "A Uniswap v4 hook that applies fixed buy (3%) and sell (6%) taxes on swaps involving a designated token, deducted from the unspecified currency in afterSwap as ERC-6909 claims. Fees accumulate to the hook contract and are swept permissionlessly to a treasury address governed by a 3-day owner-controlled timelock.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
