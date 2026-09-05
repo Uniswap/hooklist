@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcb6938cbc3cd628cc7321bbedd0165e23a37a888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "MarginHook",
+    "description": "A custom-curve hook that routes all swaps through an external PairPoolManager, bypassing v4's native liquidity. Blocks native v4 liquidity addition via a revert in beforeAddLiquidity, and returns a dynamic swap fee from the external swap calculation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
