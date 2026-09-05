@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x719f220609cde1d55d191437d98ceec063768080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FoundryHookV4",
+    "description": "Shared fee hook for all Foundry launchpad pools on Robinhood Chain. Applies a market-cap-scaled dynamic LP fee (1.25% below $25k FDV, 1.00% above) pre-graduation, switching to a 0.30% LP fee post-graduation. Fees are split between the pool creator and the protocol treasury via a pull-pattern claim.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
