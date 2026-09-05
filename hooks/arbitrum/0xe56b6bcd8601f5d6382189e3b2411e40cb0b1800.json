@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe56b6bcd8601f5d6382189e3b2411e40cb0b1800",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "BlockAddLiquidityHook",
+    "description": "Records the EOA that initialized each pool (via tx.origin) and blocks all subsequent liquidity additions from any other origin address, making each pool effectively single-provider.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
