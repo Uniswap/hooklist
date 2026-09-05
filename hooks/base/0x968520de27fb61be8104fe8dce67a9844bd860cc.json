@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x968520de27fb61be8104fe8dce67a9844bd860cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Flash",
+    "description": "A Uniswap v4 hook for the FLASH protocol implementing WETH-rooted token pools with a static 0.6% LP fee, sell taxes distributed to stakers, pool creators, and protocol, OTC buy-side fills from an on-chain inventory deck, and multi-venue buy aggregation. Swaps require a governance-activated directional protocol fee to be set before executing.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
