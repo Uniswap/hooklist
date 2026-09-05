@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x10ca8c3498d9b08c80b1cce95d0ee7224b0c10cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Spot",
+    "description": "A Uniswap v4 hook with dynamic fees driven by a truncated geometric mean oracle and surge-based fee adjustment. Charges a configured protocol fee plus an undisclosed 0.10% \"hidden\" fee (AGGRESSIVE_SURGE) on every swap, minting proceeds as ERC6909 claims to a full-range liquidity manager for optional reinvestment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
