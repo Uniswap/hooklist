@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3b3d2fbb8670a5c4caf306b78569fead02e980cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BoobHook",
+    "description": "A launch-pad fee hook that collects a configurable basis-point fee on quote-token amounts for registered token swaps. Applies a higher anti-snipe tax on buys within the first configurable number of blocks after token launch. Collected fees accrue to the token creator and are claimable via `claimFees`.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
