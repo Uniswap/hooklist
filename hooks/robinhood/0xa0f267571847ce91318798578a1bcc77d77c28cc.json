@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa0f267571847ce91318798578a1bcc77d77c28cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookrHook",
+    "description": "Shared Uniswap v4 hook for the Hookr launchpad implementing per-pool anti-snipe guards with temporal cumulative buy caps, surge-based dynamic LP fees, auto-burn of token output in afterSwap, in-swap LP reward donations, and a deterministic jackpot for qualifying buys.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
