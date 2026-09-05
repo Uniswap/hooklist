@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7a380b486ccc5e5c19879eb8c6e5c5b6b7fc80cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EchoHook",
+    "description": "A token launch hook for factory-registered tokens that charges configurable buy fees and sell drain fees (defaulting to 100%) in the quote currency, taken via BeforeSwapDelta and AfterSwapDelta. Accumulated fees are tracked per token creator and claimable via claimFees or claimAllFees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
