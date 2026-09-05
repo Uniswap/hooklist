@@ -4,7 +4,7 @@
     "chain": "bnb",
     "chainId": 56,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A Uniswap v4 hook for the Saturn Omnichain project that records the initial pool tick after initialization. Only the afterInitialize flag is active; all hook callbacks are pure no-ops that return their selectors without modifying swap behavior.",
+    "description": "A Uniswap v4 hook for the Saturn Omnichain project that registers the afterInitialize flag but implements it as a pure no-op. The contract exposes a separate initializePools() function that calls a LiquidityBootstrapper to bootstrap liquidity and records the resulting initial pool tick in contract state.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -33,3 +33,4 @@
     "swapAccess": "none"
   }
 }
+
