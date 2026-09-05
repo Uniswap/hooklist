@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x96b18f9db4a90a92bad3ae026dfe97fb452a1000",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "SaturnOmnichainV4Hook",
+    "description": "A minimal hook that uses afterInitialize to record the initial tick set by a liquidity bootstrapper contract. It has no swap, fee, or liquidity modification logic beyond that initialization callback.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
