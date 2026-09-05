@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xabf3b3081492743cdb09965af8a75726249af000",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MoonsendFeeHook_BASE",
+    "description": "A factory-gated Uniswap v4 hook that enforces pool pre-registration before initialization and sets a one-time dynamic LP fee (from a fixed set of tiers: 1.33%\u20134.20%) via updateDynamicLPFee() in afterInitialize. Has no swap callbacks, imposing zero gas overhead per swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
