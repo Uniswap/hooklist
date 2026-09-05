@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x982f06e8218ca86676c6c0a45172fbbdbb711888",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "TokiHook",
+    "description": "A custom-curve AMM hook for fixed-maturity Principal Token yield markets, implementing a Pendle-style curve via beforeSwapReturnsDelta. Supports optional rehypothecation into ERC4626 vaults, TWAP oracle tracking, and hooklet plugins; swaps are permanently blocked after pool maturity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
