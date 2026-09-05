@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9837e91f6e403dac40e0ce5d20e7aa89e137e840",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OneTimeLaunchHookTemplate",
+    "description": "Gates pool initialization and initial liquidity addition to once per token. After launch, the deployer (or any caller via the permissionless entropy() function) can activate an allowlist restriction on token1-to-token0 swaps, blocking addresses not in the deployer-controlled hasValue mapping (checked via tx.origin).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}
