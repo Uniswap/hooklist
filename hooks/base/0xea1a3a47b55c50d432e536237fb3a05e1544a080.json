@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xea1a3a47b55c50d432e536237fb3a05e1544a080",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ForgeHook",
+    "description": "A shared hook for all Forge V4 pools that enforces factory-authorized pool initialization and applies a parabolic time-decaying MEV fee: starting at 80% and decaying to a 1.5% base fee over a 30-second window after pool creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
