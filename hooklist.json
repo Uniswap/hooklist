@@ -37029,6 +37029,41 @@
   },
   {
     "hook": {
+      "address": "0x0d22acf2e1469b0b2f266b1d16659294b4b61080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchHook",
+      "description": "A shared multi-pool hook that applies a linearly decaying dynamic LP fee (from a configurable high start rate to a lower end rate over a set time window) to deter sniping at token launch. Each pool gets its own fee schedule keyed by pool ID, seeded at initialization and updated per-swap by the owner-configured schedule.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0e6e93dc982eb50ad622abf0beac1e551c6000cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -38036,6 +38071,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1b780830ed629eb9e6de573957a121fd317c1080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FriarTier",
+      "description": "A dynamic LP fee hook using a Liquidity Book volatility accumulator to compute a spacing-invariant surge fee on top of an immutable base fee set at deployment. Each deployment is a distinct fee tier with no owner, admin, or upgradeability.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -42345,6 +42415,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5a9e9859d2bff9e103dc061185731dfa802a6acc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PumpV4StockHook",
+      "description": "A fee-and-liquidity hook for token launches quoted in an arbitrary ERC-20. Charges a 2% fee on both buy (via beforeSwap delta) and sell (via afterSwap delta) swap directions, restricts liquidity additions to a single factory-authorized initial seed, and permanently locks liquidity removal by reverting in beforeRemoveLiquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -48929,6 +49034,41 @@
   },
   {
     "hook": {
+      "address": "0xc250b60332da38ad27ed05cc3db9f6e264f5e8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PmavHookQuoted",
+      "description": "Bonding curve launchpad factory on Uniswap V4 that creates 1B-supply ERC20 coins paired against an immutable ERC20 quote token (USDG). Manages a concentrated curve position with a 1% fee (70% creator / 30% platform), enforces a permanent 2% per-wallet buy cap with auto-refund, and graduates the coin to a permanently locked full-range position when the raise target is met.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc282245a22b602c90d04283b22e414f75afc20c4",
       "chain": "robinhood",
       "chainId": 4663,
@@ -49230,6 +49370,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc937309e7642b95b1f4b6187755843088c2ba8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PrinterHook",
+      "description": "Singleton Uniswap v4 hook for token launches that extracts a 1% protocol fee and a configurable creator fee (up to 5%) in ETH on every swap, distributing proceeds to a treasury, token creator, holder reward pool, and optional swap referrer. Only the registered factory can create pools, and all liquidity is permanently locked at launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
