@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x24e081f4da1ce6f8c194a031ae7aecb7910968cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ClankerHookStaticFeeV2",
+    "description": "Clanker v2 hook that applies configurable static LP fees with separate rates per swap direction (clanker-in vs. paired-token-in), collects protocol fees via BeforeSwap/AfterSwap return deltas, and supports optional MEV module (temporary high-fee anti-MEV window) and pool extension integrations.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
