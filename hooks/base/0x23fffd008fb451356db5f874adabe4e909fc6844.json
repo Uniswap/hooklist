@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x23fffd008fb451356db5f874adabe4e909fc6844",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFab",
+    "description": "A Uniswap v4 hook implementing a bonding curve token launch platform. Deploys new ERC20 tokens with configurable multi-chunk liquidity curves backed by a base token, collects a 1% swap fee split equally between creator and platform fee receivers, and automatically graduates tokens to a standard full-range AMM pool when the bonding curve supply is exhausted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
