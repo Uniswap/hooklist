@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook for the Saturn Omnichain protocol that records pool initialization state via `afterInitialize`. Liquidity bootstrapping is delegated to an external `ISaturnOmnichainLiquidityBootstrapper` contract called through `initializePools()`.",
+    "description": "A minimal hook for the Saturn Omnichain protocol that registers afterInitialize but performs no logic in that callback. Liquidity bootstrapping and pool state initialization are handled externally via initializePools(), which calls an ISaturnOmnichainLiquidityBootstrapper contract.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
