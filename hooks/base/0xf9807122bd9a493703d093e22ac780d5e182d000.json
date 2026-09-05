@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook for the Saturn Omnichain protocol that records the initial pool tick via a liquidity bootstrapper upon initialization. Only afterInitialize is enabled; all swap and liquidity hook functions are pure no-ops.",
+    "description": "A minimal hook for the Saturn Omnichain protocol. Only afterInitialize is enabled, but its callback is a pure no-op. The contract also exposes an `initializePools()` function that calls an external liquidity bootstrapper to record an initial tick, but this is independent of the hook mechanism.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
