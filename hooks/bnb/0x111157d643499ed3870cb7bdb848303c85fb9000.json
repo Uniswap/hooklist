@@ -4,7 +4,7 @@
     "chain": "bnb",
     "chainId": 56,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook for the Saturn Omnichain project that records the initial pool tick via afterInitialize. All hook callbacks are no-ops; the hook's primary purpose is to coordinate pool initialization with an external liquidity bootstrapper contract.",
+    "description": "A minimal hook for the Saturn Omnichain project with only the `afterInitialize` permission enabled (as a no-op callback). Pool initialization and the initial tick are managed externally via `initializePools()`, which delegates to a `LIQUIDITY_BOOTSTRAPPER` contract.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
