@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x35839b084137f4b79ad5e994714dd5cdcc985000",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SaturnOmnichainV4Hook",
+    "description": "Minimal hook for the Saturn omnichain token project. Only the afterInitialize flag is set; the callback is a pure no-op returning the selector. Includes an initializePools() function that delegates to an external ISaturnOmnichainLiquidityBootstrapper contract to seed initial pool liquidity and records the resulting initial tick.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
