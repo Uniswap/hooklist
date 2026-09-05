@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb3086becb80c2a82f93a47d773c3dac8958d2aa8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "IconCurveHook",
+    "description": "A bonding-curve AMM hook for player (\"icon\") tokens paired with country tokens. It intercepts every swap to price buys/sells using a virtual-reserves formula, mints/burns PlayerToken on demand, and burns a 5% fee on each trade. Trading is gated behind a phase2Active governance flag set by the owner or pack-opener.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
