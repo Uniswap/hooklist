@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x790c4c4f06f3666002bff43d50490be2a07808cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "JetstreamHook",
+    "description": "Singleton hook that charges a configurable fee (up to 3%) on the ETH leg of every swap, distributing proceeds between the pool creator, a buyback wallet, and a platform wallet. Liquidity additions are gated until the pool is registered by the factory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
