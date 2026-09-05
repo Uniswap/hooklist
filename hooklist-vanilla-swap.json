@@ -1716,6 +1716,41 @@
   },
   {
     "hook": {
+      "address": "0x39bed84530e2a314aba2158c6dab1cea1cbb4080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "V4GasDetectHook",
+      "description": "A hook that gates oneForZero swaps on gasleft(), reverting if remaining gas is at or below 30,000,000; zeroForOne swaps are always permitted unconditionally.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4245822772d196a046ac69ed307551b3bfb52000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -1791,6 +1826,41 @@
       "chainId": 4663,
       "name": "GuardHook",
       "description": "Restricts pool initialization to the factory address to prevent front-running of pool launch. All swap-time flags are disabled, so the hook is never invoked during trades; the pool fee serves as the creator tax.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xaa46cdbd84edaba190dd7c5c354e16c9c8e36000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchBeforeInitializeHookV1",
+      "description": "Gates pool initialization to a single authorized factory address, enforcing fixed launch economics: LP fee of 12,500, tick spacing of 200, ETH (address(0)) as currency0, and a fixed opening sqrt price derived from tick 191,200. Pool creation reverts unless the sender is the bound factory and all parameters match exactly.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
