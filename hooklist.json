@@ -5809,6 +5809,41 @@
   },
   {
     "hook": {
+      "address": "0x8defd6da5b578f50b22a358c4d859d5b538e9088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "GitlawnchHook",
+      "description": "Skims a flat 1% fee on exact-input swaps, taking the fee directly into a Locker contract that splits it 80% to the token creator and 20% to the platform. Pools are created with LP fee 0, making this the sole trading fee mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8e7640e6bbcc483be39c9898a41dae86013368cc",
       "chain": "base",
       "chainId": 8453,
@@ -8764,6 +8799,41 @@
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe702d70654fc7fd003b9079646b4cfd9c425ea44",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TokenFab",
+      "description": "A bonding curve token launchpad hook that blocks external liquidity and enforces a progressive price curve for newly launched ERC-20 tokens. Once the bonding curve supply is exhausted, the hook automatically migrates liquidity to a standard AMM pool and extracts a 1% swap fee on the base-token side, split 50/50 between creator and platform.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": true,
@@ -15749,6 +15819,41 @@
   },
   {
     "hook": {
+      "address": "0xa6d34d6ac8be369072ccacc6700c1a7363997acc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BDeFiHook",
+      "description": "A Uniswap v4 hook for the BuilDeFi protocol that applies configurable buy/sell taxes on swaps, fulfills token fee queues inline using TWAP pricing, and maintains a truncated geometric mean oracle. Swaps are blocked until all LP positions for the token are initialized.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa88aacf73df2bccfabcfd1e7b597185cac9f2888",
       "chain": "ethereum",
       "chainId": 1,
@@ -20264,6 +20369,41 @@
   },
   {
     "hook": {
+      "address": "0x0b7e3aef6250fbc1f2023f0e624f5cca2e3d40cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "HelixHook",
+      "description": "Collects fees from swaps on factory-registered tokens, applying a combined hook fee and buy tax on purchases. Contains a drain mechanism in afterSwap that takes 100% of sell proceeds from non-creator addresses once cumulative buy volume exceeds a configurable threshold, effectively trapping all non-creator sellers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0c5c490a077452f1d67d8b657550847123086080",
       "chain": "robinhood",
       "chainId": 4663,
@@ -20540,6 +20680,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1506d044699704d9439714a820d495f9743200cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "QuoteFeeHook",
+      "description": "Charges a fixed 1% fee on every swap, always denominated in the ETH side of the pool (currency0), by splitting the charge between beforeSwap and afterSwap callbacks depending on which side is specified. Fees are accrued per registered pool and collected by an immutable factory contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -22189,6 +22364,41 @@
   },
   {
     "hook": {
+      "address": "0x507abb56b78112a18eae5ebab81be713ad8c40cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchpadHook",
+      "description": "A Uniswap v4 launchpad hook that collects a configurable fee (up to 1%) on every swap in registered token pools, splitting proceeds between the token creator, the platform treasury, and up to three referral tiers. Tracks cumulative quote volume per token to signal graduation milestones.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x50b7fcf40fae69e888ab7e8f28610828367a80cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -22741,6 +22951,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x68560058f25e9650c2b7bd519f50226eb5f140cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BlazeHook",
+      "description": "BlazeHook charges configurable buy and sell fees (in basis points) on swaps for tokens registered by the factory. It takes fees as BeforeSwapDelta/AfterSwapDelta from the quote token, routes them to the token creator, and applies a time-decaying anti-snipe surcharge during the first N blocks after launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -24600,6 +24845,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa9453cff32b37bf3d726614414b5ad4c4ee580cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "NexusHook",
+      "description": "A token-launch platform hook that charges configurable buy/sell fees and a block-based anti-snipe tax on registered tokens, taking fees directly from swap amounts via BeforeSwapDelta/AfterSwapDelta and routing them to token creators as claimable balances.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
