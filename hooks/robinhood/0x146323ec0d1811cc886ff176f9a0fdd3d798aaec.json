@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x146323ec0d1811cc886ff176f9a0fdd3d798aaec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ForgeHookV4",
+    "description": "A Forge platform hook that enforces configurable buy/sell fees (split among platform, creator, rewards, and utility recipients) taken via beforeSwap/afterSwap return deltas. Pools must be registered by a launchManager before trading, liquidity removal is permanently locked, and donations are disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
