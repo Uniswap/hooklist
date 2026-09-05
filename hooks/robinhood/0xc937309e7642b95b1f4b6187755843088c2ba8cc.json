@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc937309e7642b95b1f4b6187755843088c2ba8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PrinterHook",
+    "description": "Singleton Uniswap v4 hook for token launches that extracts a 1% protocol fee and a configurable creator fee (up to 5%) in ETH on every swap, distributing proceeds to a treasury, token creator, holder reward pool, and optional swap referrer. Only the registered factory can create pools, and all liquidity is permanently locked at launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
