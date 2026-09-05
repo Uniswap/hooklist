@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbea90eed6b2d07e8d66894969ed6d0a5ba242ac8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HeisenbergHook",
+    "description": "A Uniswap v4 hook for an ETH/$HEIST token pool that charges a 2% swap fee split 50/40/10 between a redemption treasury, a platform wallet, and a buy-and-burn fund. Operates 300-block \"heist\" windows where buyers earn $LOOT rewards based on buy volume and entry timing, with a probabilistic bust mechanic driven by a global heat accumulator and a swap coherence metric.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
