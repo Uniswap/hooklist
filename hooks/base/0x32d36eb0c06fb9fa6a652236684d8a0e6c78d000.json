@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook for the Saturn Omnichain protocol that implements only afterInitialize, recording the initial tick from a linked liquidity bootstrapper contract. It holds no swap or liquidity logic and does not modify swap behavior.",
+    "description": "A minimal hook for the Saturn Omnichain protocol that registers an afterInitialize permission but performs no action in that callback. The contract exposes a separate initializePools() function that calls an external liquidity bootstrapper to record the initial tick.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
