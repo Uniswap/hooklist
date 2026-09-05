@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf9cfc1ed016a467675c8a79316ebf8882dc120cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LeshyClassicQuoteFeeHook",
+    "description": "A Uniswap v4 hook for Leshy's classic fixed-supply token pools that deducts a controller-governed treasury fee on each swap, denominated in the pool's quote asset. Fees are accumulated as ERC-6909 claims on the PoolManager and redeemable to the treasury address defined by the fee controller.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
