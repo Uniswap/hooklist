@@ -26704,6 +26704,41 @@
   },
   {
     "hook": {
+      "address": "0x208378ddc05ed5de1833624a30eb9c1d26f86ecc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BagsV4Hook",
+      "description": "A shared Uniswap v4 hook for Bags platform pools that enforces full-range, permanently locked liquidity, overrides LP fees to 0, and charges a 2% fee on the WETH leg of every swap, split 50/50 between the Bags vault and a per-pool creator fee share recipient.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x21af167ce890d5127d6d8a7456335c92e4d76acc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -27006,6 +27041,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x288a6ffb0d29004df7c1baa5fd032fa084c100cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "VoltHook",
+      "description": "A Uniswap v4 hook for token launches that collects protocol and creator fees on swaps via delta adjustments in beforeSwap and afterSwap. It applies a block-weighted anti-snipe surcharge on early buys after launch, routes fees to token creators via a claimable balance, and integrates with an external factory (IVoltFactory) for token registration and swap recording.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -28664,6 +28734,76 @@
   },
   {
     "hook": {
+      "address": "0x4b1c613eb366816592e7462756e3770f44de80cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FeeHook",
+      "description": "Levies a flat 1% protocol fee in native ETH on every swap of a native-ETH/token pool, using BeforeSwapDelta and afterSwapReturnsDelta to take the fee via PoolManager custom accounting. Fees are split between a treasury (10% default, up to 40% max) and a per-pool creator address (minimum 60%), accrued in-contract and withdrawn on demand.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4de23b773a33e9d1f392fe682a012508f0ac40cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PhantomHook",
+      "description": "A token-launch hook that collects protocol and creator fees on swaps of registered tokens, distributing fees to token creators. Includes block-number-based anti-snipe protection that charges elevated fees during the initial blocks after a token's launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4e3468951d49f2eea976ed0d6e75ffcb44a9a544",
       "chain": "robinhood",
       "chainId": 4663,
@@ -29779,6 +29919,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6acd7748dd7f877ea7844e1d3664b8b529a61080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchFeeHook",
+      "description": "Applies a time-based anti-snipe fee to pools: 50% flat fee for the first 4 minutes after initialization, then a permanent 3.5% LP fee floor. Fees are immutable \u2014 no admin controls or setters exist.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -34299,6 +34474,41 @@
   },
   {
     "hook": {
+      "address": "0xe3e84adeae9b754fbcd116820c7a007ef5959080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchFeeHook",
+      "description": "Anti-snipe launch fee hook that overrides the LP fee to 50% for the first 4 minutes after pool initialization, then permanently drops to 3.5%. The fee is applied via dynamic fee override in beforeSwap with no admin controls or setter functions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe449e013004db4a5681e9622ca10c5ba0ea610cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -35065,6 +35275,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf5453c2e587507995a917121b01fae897060f0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Frontier FactoryHook",
+      "description": "Singleton hook governing graduated BCToken pools; blocks swaps until the coin is graduated (`isLPd`), then charges time-decayed volatility-based fees split between LP positions (via dynamic LP fee override) and protocol (via hook delta). The non-LP share is distributed to the protocol treasury, staking vault, and fee recipient via a two-level waterfall.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
