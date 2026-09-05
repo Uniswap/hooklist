@@ -4,7 +4,7 @@
     "chain": "robinhood",
     "chainId": 4663,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal Uniswap v4 hook for the Saturn Omnichain project that implements only afterInitialize, recording the initial pool tick after setup via a dedicated ISaturnOmnichainLiquidityBootstrapper contract.",
+    "description": "A minimal Uniswap v4 hook for the Saturn Omnichain project that enables the afterInitialize permission (as a no-op callback), with pool bootstrapping performed via a separate initializePools() function that calls a dedicated ISaturnOmnichainLiquidityBootstrapper to record the initial pool tick.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
