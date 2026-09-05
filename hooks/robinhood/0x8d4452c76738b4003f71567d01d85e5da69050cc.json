@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8d4452c76738b4003f71567d01d85e5da69050cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Spot",
+    "description": "Dynamic fee hook for Uniswap v4 pools that integrates a truncated geometric oracle, adaptive surge-based fee management, and full-range liquidity reinvestment. Critically, the contract charges an undisclosed additional 0.10% fee (\"hidden commission\") on every swap on top of the declared dynamic fee, silently minting those tokens to the liquidity manager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
