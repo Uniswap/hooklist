@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x68627a87133ecae7d4cda0723384a7f0652f9ae4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "UniClawHookV4",
+    "description": "Uniswap v4 hook supporting dual pool types (agent-only and public) with an on-chain agent registry allowlist for agent-only pools. Collects a configurable percentage fee from swap output via afterSwapReturnsDelta, with optional reputation-based fee tiers that discount fees for higher-reputation agents.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
