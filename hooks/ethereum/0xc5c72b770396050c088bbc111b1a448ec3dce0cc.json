@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc5c72b770396050c088bbc111b1a448ec3dce0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EthCreatorFeeHookV3",
+    "description": "A Uniswap v4 hook for native ETH/token pools that charges immutable, per-pool directional buy and sell fees in ETH, split between a factory-authenticated creator reward vault and a fixed protocol fee recipient. Pools must be pre-registered by the token creator before initialization.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
