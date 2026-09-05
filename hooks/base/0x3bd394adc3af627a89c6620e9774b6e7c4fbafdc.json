@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3bd394adc3af627a89c6620e9774b6e7c4fbafdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BoardHook",
+    "description": "A token launch hook that creates and manages ERC20 token pools with a fair launch mechanism. During the fair launch window, the hook provides a one-sided liquidity position, restricts sells, optionally enforces Merkle proof whitelisting, and blocks swaps before a configurable launch timestamp. Swap fees are distributed to creators, protocol, inspired fee recipients, and referrers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
