@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xeef473f1c797f1fc97d56ec71bb3923887a820cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FlowHookSS",
+    "description": "A launch-tax hook for single-sided ETH/token pools that extracts a configurable fee (0.5\u201310%) plus a time-decaying anti-snipe surcharge (up to +4% for the first 60 seconds) from ETH-leg swaps as ERC-6909 claim tokens. Accrued claims are redeemed for real ETH and routed to FLOW baskets (0.25% of trade) and the pool's own token holders (remainder).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
