@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7b95238ed71cfe3546a466ea9f37c78bb2a0c088",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AirlockGate",
+    "description": "Launch-window gate that records whether each swap originates from a whitelisted router (via transient storage, read by AirlockToken) and collects a capped platform fee (\u22641%) on exactInput swaps during a configurable time window set by an authorized launchpad.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
