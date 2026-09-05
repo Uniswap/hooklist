@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x835abe5afee54b2aea865e9a92db973e52eb1000",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SaturnOmnichainV4Hook",
+    "description": "A minimal hook for the Saturn Omnichain project that uses only afterInitialize. On pool initialization, it records the initial tick returned by an external LiquidityBootstrapper contract. No swap-time logic is implemented.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
