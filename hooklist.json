@@ -2206,6 +2206,41 @@
   },
   {
     "hook": {
+      "address": "0x221fab939d3c966122da95cea963e1b8d3f410c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ZoraV4CoinHook",
+      "description": "Uniswap v4 hook for Zora Coins that initializes multiple Doppler-curve liquidity positions on pool creation. On every swap, collects LP fees, converts them to a backing currency, and distributes rewards. Features a dynamic launch fee decaying from 99% to 1% over 10 seconds post-creation, and triggers Zora limit order book fills on each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x22266a74902ef7546ab80156539e7a349ad20040",
       "chain": "base",
       "chainId": 8453,
@@ -4444,6 +4479,41 @@
   },
   {
     "hook": {
+      "address": "0x66ee9adb1d644bb818e654aaed1824618c116fdc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BoardHook",
+      "description": "A Uniswap v4 hook that manages token fair launches with time-gated trading windows, optional Merkle-proof whitelist enforcement during the fair launch period, and custom fee distribution to protocol, creator, referrer, and inspired parties. Unsold tokens at the end of the fair launch are burned.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6ae11676c7b3ec082989ce12ba462d46180fc0c4",
       "chain": "base",
       "chainId": 8453,
@@ -5354,6 +5424,41 @@
   },
   {
     "hook": {
+      "address": "0x80887f4ce589c973ebb1f6f81b6f6bb492106fdc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BoardHook",
+      "description": "A token-launch hook that manages a FairLaunch mechanism: it gates swaps temporally until a configurable launch timestamp, enforces an optional Merkle-proof allowlist during the fair launch window, intercepts swap input/output via BeforeSwapDelta to sell tokens from a one-sided position, and captures custom swap fees redistributed to protocol, token creators, referrers, and a Muse manager via AfterSwapDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x80e2f7dc8c2c880bbc4bdf80a5fb0eb8b1db68cc",
       "chain": "base",
       "chainId": 8453,
@@ -5830,6 +5935,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8e04235b0a61dab93ab99c0bef82a407a8af5040",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ZoraV4CoinHook",
+      "description": "A Uniswap v4 hook for Zora coin pools that mints liquidity positions on pool initialization and, after each swap, collects accrued LP fees, converts them to a payout currency via an on-chain swap path, and distributes the proceeds to the coin creator, trade/create referrers, and protocol.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
@@ -8119,6 +8259,41 @@
   },
   {
     "hook": {
+      "address": "0xd103012ad40bcd053fdda1ae80f62f39366ca080",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ForgeHook",
+      "description": "Shared hook for all Forge V4 pools that enforces factory-only pool initialization and applies a time-decaying MEV fee: starts at 80% and decays parabolically to a 1.5% base fee over a 30-second window after pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd24d29a47adb8786072ab2cb9925dc8ba36bc044",
       "chain": "base",
       "chainId": 8453,
@@ -9021,6 +9196,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf5ee090f78bb3aa9e8719c776449bfa1587828cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ClankerHookStaticFeeV2",
+      "description": "Manages Uniswap v4 pools for Clanker-deployed tokens with asymmetric static fees (separate clankerFee and pairedFee per direction), collecting a protocol cut via BeforeSwapDelta/AfterSwapDelta on each swap. Supports an optional time-limited MEV protection module that can temporarily raise fees, and LP locker fee auto-claiming.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -18164,6 +18374,41 @@
   },
   {
     "hook": {
+      "address": "0xfaaa5067d76443b8ea22de68ed1df219e72b10cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "BoltFeeHookV3",
+      "description": "A launch-protection hook that applies a 10% buy/sell tax on swaps of \u22651.5% of supply during the first 6 blocks after pool initialization, diverting taxed tokens or ETH to a treasury. After the window, it permanently triggers internal self-swaps to convert accumulated tokens (\u22655M threshold) into ETH forwarded to the treasury on every subsequent user swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xfb78f6600ec9a795f3f7270e05ea0dd371f94040",
       "chain": "ethereum",
       "chainId": 1,
@@ -21065,6 +21310,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2380abf72c17aabab76480244759ac7e2932eecc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BagsV4Hook",
+      "description": "Shared hook for all Bags pools enforcing full-range-only, permanently-locked liquidity, zero LP fee, and a 2% hook fee on the WETH leg of every swap. Fees accrue per-pool and are swept to a platform vault (50%) and a creator fee share contract (50%), with an optional partner cut carved from the protocol half.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
