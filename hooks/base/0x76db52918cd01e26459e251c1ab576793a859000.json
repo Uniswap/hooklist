@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x76db52918cd01e26459e251c1ab576793a859000",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "UniV4Hook",
+    "description": "Sets a 2% initial LP fee on pool initialization via afterInitialize and allows the owner to update the dynamic LP fee at any time via forceUpdateLPFee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
