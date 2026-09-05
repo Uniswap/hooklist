@@ -5601,6 +5601,41 @@
   },
   {
     "hook": {
+      "address": "0x40deb30fafd5286547458d921f5bbf7115196a20",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "NoncePoolHookV1",
+      "description": "A launchpad hook for nonce.fun pools that restricts pool initialization and liquidity provision to a designated launchpad contract. It enforces a fixed opening price, tick range, and fee, allows only one initial liquidity mint per token, locks principal removal, and permanently disables donations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x41c23f0df8d32aae59e3136785300be082301000",
       "chain": "ethereum",
       "chainId": 1,
