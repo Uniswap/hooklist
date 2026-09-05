@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x737e4adc81fd2f3bd5827f5d766491532071c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ReflectionHook",
+    "description": "A shared Uniswap v4 hook for launchpad token pools that skims a per-pool ETH reflection fee plus a platform fee on every swap. Fees are collected as ERC-6909 ETH claims in beforeSwap (exact-in buys, exact-out sells) and afterSwap (exact-in sells, exact-out buys), then swept by a distributor.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
