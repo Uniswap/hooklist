@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xab89cc08ef864dd00e561c38cf71fbfb3ceee8cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SpawnHookStaticFeeV2",
+    "description": "A Uniswap v4 hook for the Spawn token-launch platform that applies directional static LP fees (different rates for buying vs selling the spawn token), collects protocol fees via balance delta adjustments in beforeSwap/afterSwap, and supports a temporary MEV-protection module that can raise fees during the first hour after pool creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
