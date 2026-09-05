@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdd3beef2b5993f42532021d0654fbfef2d3280cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UNI20Hook",
+    "description": "A BRC-20-style inscription protocol layered on Uniswap v4. Users embed DEPLOY, MINT, or TRANSFER operations in swap hookData; MINT and DEPLOY ops extract ETH fees from the swap via BeforeSwapDelta and poolManager.take(), minting ERC-1155 tokens to the swapper's EOA. Swaps without hookData pass through normally.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
