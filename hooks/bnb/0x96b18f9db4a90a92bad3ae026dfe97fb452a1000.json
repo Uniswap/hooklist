@@ -4,7 +4,7 @@
     "chain": "bnb",
     "chainId": 56,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook that uses afterInitialize to record the initial tick set by a liquidity bootstrapper contract. It has no swap, fee, or liquidity modification logic beyond that initialization callback.",
+    "description": "A minimal hook with an afterInitialize permission that is registered but performs no action in the callback. Pool initialization and initial tick recording are handled by the separate initializePools() function, which calls an external liquidity bootstrapper contract.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
