@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x46d7ede4a59c2f66f44dab0186cb395720b140cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FeeHook",
+    "description": "Levies a flat 1% protocol fee in native ETH on every swap of a native-ETH/token pool, split 70% to a treasury and 30% to a per-pool creator address registered by a launch factory. Fees are accrued in-contract using PoolManager custom accounting deltas (beforeSwap and afterSwap) and withdrawn separately.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
