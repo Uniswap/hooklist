@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8d774909f5f82d3add1863407b9bb06bdeff6fdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BoardHook",
+    "description": "A full-featured token launch and fee-management hook that enforces a fair launch phase with optional Merkle whitelist, blocking sells and liquidity modifications during the launch window. Captures custom swap fees via hook deltas and distributes them among protocol, creator, referrer, and inspired parties.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
