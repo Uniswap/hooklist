@@ -36,6 +36,41 @@
   },
   {
     "hook": {
+      "address": "0xe56b6bcd8601f5d6382189e3b2411e40cb0b1800",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "BlockAddLiquidityHook",
+      "description": "Records the EOA that initialized each pool (via tx.origin) and blocks all subsequent liquidity additions from any other origin address, making each pool effectively single-provider.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x01edc739f4893df3c0658fb1b57d5a6ca05c1000",
       "chain": "base",
       "chainId": 8453,
@@ -2377,6 +2412,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2ac72baa335a901487a72b8428adb98104222840",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OneTimeLaunchHookTemplate",
+      "description": "A launch hook that restricts pool initialization and liquidity addition to a single occurrence per token. In afterSwap, when enabled via the permissionless zero() function, reverts non-zeroForOne (buy) swaps if tx.origin is not in a deployer-managed allowlist, creating asymmetric swap access control.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {
