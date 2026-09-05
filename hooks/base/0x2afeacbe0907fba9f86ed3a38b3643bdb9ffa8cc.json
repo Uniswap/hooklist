@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2afeacbe0907fba9f86ed3a38b3643bdb9ffa8cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LayerMemeHookStaticFeeV2",
+    "description": "A meme token launchpad hook that enforces separate static LP fees for buying vs. selling the meme token, collects a 20% protocol fee on each swap via before/afterSwap delta returns, and optionally integrates an MEV protection module (active for up to 2 minutes post-launch) and a pluggable pool extension.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
