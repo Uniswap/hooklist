@@ -491,6 +491,41 @@
   },
   {
     "hook": {
+      "address": "0xaa7f809bb3752f715fa2e418230667c382a56544",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "DopplerHookInitializer",
+      "description": "A Uniswap v4 pool initializer implementing the Doppler Multicurve bonding curve mechanism for token launches. Distributes liquidity across multiple tick ranges, supports optional dynamic LP fee adjustment via an associated Doppler hook, and enforces a graduation condition when the pool price reaches a target tick.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -2836,6 +2871,41 @@
   },
   {
     "hook": {
+      "address": "0x3a5357b375904cfaa9df07fba7252baa491c6fdc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BoardHook",
+      "description": "A Uniswap v4 hook implementing a token launch platform with a fair launch mechanism that fills purchases from a dedicated position, enforces time-gated access control (pre-launch block), optional Merkle-proof whitelisting, and distributes swap fees across protocol, creator, inspired, and referral recipients.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3aa3f28ae7c829a98359f31f3ddc5dae0a57afdc",
       "chain": "base",
       "chainId": 8453,
@@ -4724,6 +4794,41 @@
   },
   {
     "hook": {
+      "address": "0x73e0ae5d6b6950155db0415a60e5bb9a89a310c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ZoraV4CoinHook",
+      "description": "Uniswap v4 hook for Zora Coins that collects LP fees from multiple positions on every swap, converts them to a backing currency via multi-hop swaps, and distributes rewards to creators, referrers, and the protocol. Supports limit order filling and liquidity migration to new hook implementations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x73E74c090446ad7c9745EBa3c26F3E1a9680E8CC",
       "chain": "base",
       "chainId": 8453,
@@ -4859,6 +4964,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x766d77aa976ad92fa785dc505228dca7a36f80cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TaxHook",
+      "description": "A Uniswap v4 hook that taxes swaps on a designated token (boomToken), overriding LP fees to zero and collecting configurable team and per-pool developer taxes (in basis points) on both buys and sells.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -8609,6 +8749,41 @@
   },
   {
     "hook": {
+      "address": "0xe6b2b3e59d5df7827eb0a7915675db66ab12a044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "AdvancedFeeHookV3",
+      "description": "A token launchpad fee hook for the BaseStonk platform that collects configurable swap taxes in afterSwap, distributing proceeds among a platform treasury, creator payees, a buyback-and-burn mechanism, and optional single-sided liquidity re-injection. Pool initialization is restricted to a privileged launcher address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe87be9bc8e462de016760aa83bac56d608836aa8",
       "chain": "base",
       "chainId": 8453,
@@ -11008,6 +11183,41 @@
       "beforeSwap": true,
       "afterSwap": true,
       "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x0c2a07658442a5801155a5657db5f39178a380cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LaunchpadHook",
+      "description": "Collects a fixed-rate fee on every swap for registered launchpad tokens, splitting proceeds between the token creator, platform treasury, and up to three referral tiers. Fees are extracted via beforeSwap/afterSwap delta returns and accumulated in pull-based claimable balances for ETH and ERC-20 quote tokens.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
@@ -13645,6 +13855,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x653314b5175877266fcf5f76b953e4181d262acc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Sa1tHookV2",
+      "description": "Multi-phase bonding curve hook for SA1T token pools. Phases: CURVE (custom constant-product AMM with ERC-6909 claims), REFUND_WINDOW (money-back sells at average entry price), and AMM (full-range locked LP). Fees split between protocol, creator, and configurable mechanics; exact-input swaps only.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -16479,6 +16724,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbdf938149ac6a781f94faa0ed45e6a0e984c6544",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DopplerHookInitializer",
+      "description": "A Uniswap v4 hook that manages token launches on a multi-segment bonding curve, with dynamic LP fees, optional plugin hooks (DopplerHooks) for custom swap callbacks, and a graduation mechanism that migrates liquidity to a standard AMM once the target tick is reached.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -25685,6 +25965,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdc75967c5a8c49a82059ebdb55aeb6575ad370c4",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GlassBoxHook",
+      "description": "A Uniswap v4 launchpad hook with authorized pool creation and a mandatory dynamic LP fee. beforeSwap enforces a per-pool trading-start timestamp and applies a linearly-decaying anti-snipe LP fee override. afterSwap collects a configurable protocol fee (in bps) from swap output, routes it to a configurable fee sink, and awards Prism points per swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
