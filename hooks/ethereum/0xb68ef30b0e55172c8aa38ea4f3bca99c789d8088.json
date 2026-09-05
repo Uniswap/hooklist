@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb68ef30b0e55172c8aa38ea4f3bca99c789d8088",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "GeodeHook",
+    "description": "GeodeHook implements a permanent bonding curve venue on Uniswap v4. Direct swaps execute instantly against a constant-product curve via beforeSwap (0.3% fee split three ways), while gasless EIP-712-signed intents are settled in MEV-protected batches at a uniform clearing price (0.1% fee). The curve is the permanent market maker with no graduation or migration.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
