@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook with only afterInitialize permission, used to record the initial tick from a linked ISaturnOmnichainLiquidityBootstrapper contract when a pool is initialized. No swap-time logic is executed.",
+    "description": "A minimal hook with only afterInitialize permission. The afterInitialize callback is a no-op. A separate initializePools() function delegates to a linked ISaturnOmnichainLiquidityBootstrapper contract to bootstrap pool liquidity and record the initial tick.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -33,3 +33,4 @@
     "swapAccess": "none"
   }
 }
+
