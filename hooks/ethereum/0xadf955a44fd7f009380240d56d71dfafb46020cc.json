@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xadf955a44fd7f009380240d56d71dfafb46020cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EthCreatorFeeHookV4",
+    "description": "Charges immutable directional buy/sell fees on native ETH/token pools, splitting fees between the token creator's registered split vault and a fixed launcher fee recipient. Fee rates (between 0.1% and 10%) are configured per pool at registration by the token creator and cannot be changed afterward.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
