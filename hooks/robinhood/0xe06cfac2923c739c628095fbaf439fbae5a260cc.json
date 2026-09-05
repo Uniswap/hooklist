@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe06cfac2923c739c628095fbaf439fbae5a260cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchpadHook",
+    "description": "Uniswap v4 hook for token launch pools. Takes WETH trading fees via beforeSwap/afterSwap deltas using either a time-decaying anti-snipe schedule or a market-cap-based fee curve. Splits fees between protocol, creator, and partner; routes the creator share through a keeper-permissionless flywheel for buyback-and-burn, auto-LP, token reflections, or WETH dividends. Blocks trading until a configured timestamp and lifts launch-window token transfer limits once price crosses a target market cap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
