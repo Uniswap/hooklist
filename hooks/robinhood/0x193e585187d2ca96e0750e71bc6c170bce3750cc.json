@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x193e585187d2ca96e0750e71bc6c170bce3750cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ZayyanXPADHook",
+    "description": "Volatility-scaled fee hook for Zayyan XPAD pools that charges a bps fee on the quote side (currency0) of every swap; the rate scales linearly between baseFeeBps and maxFeeBps based on the previous swap's tick movement. Fees accumulate as ERC-6909 claims inside the pool manager and can be permissionlessly swept to the pad's fee wallet.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
