@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa9eea364848a7ae73430ed63f3cc46f1df3a80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RichFeeHook",
+    "description": "Charges a volatility-based ETH fee on buys (beforeSwap delta) and sells (afterSwap delta), scaling the rate between a configurable base and max (both in the 1\u20135% range) based on the previous swap's tick movement. Fees are sent immediately to a per-pool recipient address set at registration.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
