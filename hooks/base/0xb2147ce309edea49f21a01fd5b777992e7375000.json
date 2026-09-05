@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook that records the initial tick after pool initialization by delegating to an external ISaturnOmnichainLiquidityBootstrapper contract. All other hook callbacks (swap, liquidity, donate) are no-ops that return their selectors unchanged.",
+    "description": "A hook with afterInitialize registered but implemented as a no-op. Provides a separate initializePools() function that calls an external ISaturnOmnichainLiquidityBootstrapper.bootstrap() to record the initial tick. All hook callbacks return their selectors unchanged without performing any logic.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
