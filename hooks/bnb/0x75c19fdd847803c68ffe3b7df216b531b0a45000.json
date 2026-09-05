@@ -4,7 +4,7 @@
     "chain": "bnb",
     "chainId": 56,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A hook for the Saturn Omnichain project that records the initial pool tick from a liquidity bootstrapper contract in afterInitialize. All swap-related callbacks are no-op stubs; the hook does not alter swap behavior.",
+    "description": "A hook for the Saturn Omnichain project with only the afterInitialize permission bit set, but the afterInitialize callback is a no-op stub. Initial pool tick data is recorded by a separate initializePools() function that calls an external LiquidityBootstrapper contract. All hook callbacks are no-op stubs; the hook does not alter swap behavior.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
