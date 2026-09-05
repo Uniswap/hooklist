@@ -7874,6 +7874,41 @@
   },
   {
     "hook": {
+      "address": "0x7e0648deaded459a201fa35231189e214b1aa8cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ClankerHookDynamicFeeV2",
+      "description": "A Uniswap v4 hook for the Clanker token launchpad that dynamically adjusts LP fees based on a volatility accumulator derived from tick movement across swaps. Collects a configurable protocol fee on each swap of the paired (non-Clanker) token via before/afterSwap delta manipulation, and supports an optional MEV-protection module and pool extension.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7Fa49D29481b6D168505Ccde26635e204c09e5CF",
       "chain": "base",
       "chainId": 8453,
@@ -11934,6 +11969,41 @@
   },
   {
     "hook": {
+      "address": "0xbe031587de8f5d36672a4a96d6b690b9c7b200c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "DynamicFeeHookV2",
+      "description": "Implements a dynamic LP fee that linearly decays from a high launch fee to a flat end fee over a configurable duration (anti-sniper mechanism), then holds the end fee permanently. Maintains a TWAP price oracle via per-swap sqrt-price accumulator updates. No pause or access control of any kind can halt swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xbe4b993be32558eaf50ac7140607e927f13e5000",
       "chain": "base",
       "chainId": 8453,
@@ -14174,6 +14244,41 @@
   },
   {
     "hook": {
+      "address": "0xea1a3a47b55c50d432e536237fb3a05e1544a080",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ForgeHook",
+      "description": "A shared hook for all Forge V4 pools that enforces factory-authorized pool initialization and applies a parabolic time-decaying MEV fee: starting at 80% and decaying to a 1.5% base fee over a 30-second window after pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xeA9346e83952840E69Beb36Df365C4e68DE0E080",
       "chain": "base",
       "chainId": 8453,
@@ -14450,6 +14555,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf45f8e3495ef8f5213a567094797e46e55aca8c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "HowdyHook",
+      "description": "A Uniswap v4 hook for TOKEN/HOWDY pools implementing phased launches with optional Merkle-based allowlist access control and MEV protection. During the MEV window, LP fees decay linearly from a high initial rate to 0.5%. Liquidity additions are blocked during the active MEV window, and allowlist-phase swaps require a Merkle proof in hookData.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -30169,6 +30309,41 @@
   },
   {
     "hook": {
+      "address": "0x4cc8f6d5b7ce150ccc0a9b7664532b1283b96ac4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "ERC1967Proxy",
+      "description": "ERC1967 upgradeable proxy hook; the actual hook implementation was not available for source analysis. The address bitmask encodes beforeInitialize, beforeAddLiquidity, beforeRemoveLiquidity, beforeSwap, afterSwap, and afterSwapReturnsDelta permissions.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6699b561fd4b27eedec067606b623b4cffe030cc",
       "chain": "ink",
       "chainId": 57073,
@@ -30235,6 +30410,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8f706950decbd99529a13eb3312520194221ffff",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "PublicTransparentUpgradeableProxy",
+      "description": "A transparent upgradeable proxy from the @yolo/contracts project (by 0xyolodev.eth) that wraps a Uniswap v4 hook implementation. It exposes the implementation address, proxy admin, and implementation version publicly; the actual hook logic resides in the (unverified) implementation contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -32269,6 +32479,41 @@
   },
   {
     "hook": {
+      "address": "0x0317a9ac837cd741f4dc25181e230cd73b96c0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "NasdankFeeHook",
+      "description": "A Uniswap v4 hook that charges a fixed WETH-only fee on every swap through registered pools using return-delta accounting (beforeSwapReturnsDelta/afterSwapReturnsDelta). Accrued WETH fees are split between an immutable project treasury and protocol treasury at configurable proportions, claimable permissionlessly.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x032ff68841f3c93e3bc1de27919a00ae5a7620cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -33786,6 +34031,41 @@
     "flags": {
       "beforeInitialize": false,
       "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1a449ff189cbbb2aee012e70022193535c74c0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CobaltHook",
+      "description": "A token-launch hook that deducts percentage fees from swap quote amounts via BeforeSwapDelta (exact-input) and afterSwapReturnsDelta (exact-output). Applies an elevated anti-snipe tax rate during the first configurable number of blocks after token registration; accumulated fees are claimable by token creators.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
