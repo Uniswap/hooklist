@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8e04235b0a61dab93ab99c0bef82a407a8af5040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ZoraV4CoinHook",
+    "description": "A Uniswap v4 hook for Zora coin pools that mints liquidity positions on pool initialization and, after each swap, collects accrued LP fees, converts them to a payout currency via an on-chain swap path, and distributes the proceeds to the coin creator, trade/create referrers, and protocol.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
