@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa3580c07cd34627c38f5965310a9b37196b9b0c8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OrbitHook",
+    "description": "A hub-and-spoke liquidity hook for the ORBIT token. Satellite pools (ORBIT/quote) use fully custom accounting: buys fill from a hook-held ORBIT reserve, sells draw from banked quote inventory, both priced via Core TWAP \u00d7 external oracle with a spread earmarked for token burns. The Core pool (ORBIT/WETH) is passthrough-guarded by a TWAP deviation band and per-block notional cap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
