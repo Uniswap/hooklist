@@ -10676,6 +10676,41 @@
   },
   {
     "hook": {
+      "address": "0xd331a1c4e97ccceba360768d76ed32cb03df0040",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "UnifleHook",
+      "description": "A pure afterSwap observer hook for Unifle-launched token pools on Robinhood chain. Emits a SwapObserved event on every swap for off-chain analytics indexing; does not modify swap deltas or collect fees (fees are handled by the ERC-20 token's _update() override).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd3aee1d3d02ae89a7fae8e13e2868a473d4b9000",
       "chain": "robinhood",
       "chainId": 4663,
