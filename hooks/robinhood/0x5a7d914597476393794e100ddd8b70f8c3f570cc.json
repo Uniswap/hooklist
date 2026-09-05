@@ -4,7 +4,7 @@
     "chain": "robinhood",
     "chainId": 4663,
     "name": "QuotronFloorHook",
-    "description": "Fee engine for QUOTRON floor pools that overrides LP fees to zero and charges a tiered fee (3\u201340%) on the stock side via return deltas. During a 6-hour launch window non-whitelisted swappers pay 40%; whitelisted and post-window swappers pay 3%. Fees are split between reflections, buy-and-burn, and LP reinvest pots.",
+    "description": "Fee engine for QUOTRON floor pools that overrides LP fees to zero and charges a tiered fee on the stock side via return deltas. During a 6-hour launch window, whitelisted swappers pay 3%; holders of the 100 FCFS reduced-fee spots pay 10%; all others pay 40%. After the window, everyone pays 3%. Each fee is split four ways: ~2/3 to a reflections engine, ~1/6 to a STONKBROKER buy-and-burn pot, ~1/6 to an LP-reinvest pot, and ~5% to a creator address paid directly per swap.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
