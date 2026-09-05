@@ -736,6 +736,41 @@
   },
   {
     "hook": {
+      "address": "0xb5b8c2ece814b6eb97f09a7e69355a37e62ba0ec",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "CoalaArbitrumHook",
+      "description": "A Coala launch hook that collects a 1% buy and sell tax on swaps in registered pools. Tax is taken from the specified or unspecified currency via BeforeSwapDelta (beforeSwap) and AfterSwapDelta (afterSwap), minting ERC6909 tokens to the project token address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xbf4b4A83708474528A93C123F817e7f2A0637a88",
       "chain": "arbitrum",
       "chainId": 42161,
