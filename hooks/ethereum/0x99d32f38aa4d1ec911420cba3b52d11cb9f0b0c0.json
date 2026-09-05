@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x99d32f38aa4d1ec911420cba3b52d11cb9f0b0c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MevHookUpgradeableV10",
+    "description": "UUPS-upgradeable MEV protection hook that gates swaps via EIP-712 signatures from authorized signers or a block-level MEV unlock mechanism. ETH payments from MEV searchers are redistributed to the pool and a fee recipient after a configurable fee deduction, with admin-controlled blacklisting of tx.origin addresses and a minimum MEV payment threshold.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
