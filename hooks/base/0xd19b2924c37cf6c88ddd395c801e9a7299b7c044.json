@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd19b2924c37cf6c88ddd395c801e9a7299b7c044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MineSwapHookV2",
+    "description": "A universal fee-capture hook that deducts 0.15% of output tokens on every exact-input swap via afterSwapReturnsDelta, accumulating tokens in the contract. Anyone can trigger fee processing, which swaps accumulated tokens to BG via Uniswap V3, then splits the result: 50% burned to 0xdead, 49% sent to a rebate tracker for volume-based rewards, and 1% paid to the caller as a mining reward.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
