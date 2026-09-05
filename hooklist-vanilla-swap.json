@@ -9031,6 +9031,41 @@
   },
   {
     "hook": {
+      "address": "0x0b86c0cbb335c165b8fc410277eaa205ce57c800",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CBLaunchV4Hook",
+      "description": "Restricts liquidity provision to a single immutable launcher address, ensuring a launch pool remains closed to outside liquidity providers. Swap behavior is completely unaffected \u2014 only `beforeAddLiquidity` is active, reverting any deposit from an address other than the launcher.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0c5c490a077452f1d67d8b657550847123086080",
       "chain": "robinhood",
       "chainId": 4663,
@@ -9154,6 +9189,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1aa2ef6043b1a254954dee176c9072fa68680200",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "HoodBookHookV1",
+      "description": "Permanently locks liquidity in Uniswap v4 pools by reverting all beforeRemoveLiquidity calls where liquidityDelta is negative, preventing LP withdrawals. Allows delta == 0 calls (fee collection) to proceed normally.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
@@ -10478,6 +10548,41 @@
     "flags": {
       "beforeInitialize": false,
       "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9da18cced49690ffb89980c06681a36848326000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PairV4Hook",
+      "description": "A gating hook that restricts pool initialization to a designated launchpad address. Pools must be pre-authorized by the launchpad with specific project/quote token pairs, fee (1%), and tick spacing before they can be initialized.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
