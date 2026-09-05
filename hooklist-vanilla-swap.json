@@ -4621,6 +4621,41 @@
   },
   {
     "hook": {
+      "address": "0x1cf96129e1a9846275c4f7e2d9af824c22f1e080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GreenTownV4Hook",
+      "description": "A graduation gate hook for GreenTown token launchpad pools. Restricts pool initialization to a single migrator address and blocks all swaps until that migrator explicitly opens the pool after locking graduation liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1d7cb805ffa2eabeb5594673d4af1cab72c74f00",
       "chain": "robinhood",
       "chainId": 4663,

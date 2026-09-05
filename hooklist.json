@@ -36,6 +36,41 @@
   },
   {
     "hook": {
+      "address": "0x0010d0d5db05933fa0d9f7038d365e1541a41888",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "BunniHook",
+      "description": "Bunni protocol's central Uniswap v4 hook that handles swaps using custom liquidity density functions and its own swap math. Implements dynamic surge and TWAP-based fees taken via BeforeSwapDelta, an am-AMM mechanism for LVR/MEV recapture, a TWAP oracle, and auto-rebalancing via FloodPlain.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x192499a79cadb2e9ba221a252a3e3b7adc714880",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -2726,6 +2761,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x23fffd008fb451356db5f874adabe4e909fc6844",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TokenFab",
+      "description": "A Uniswap v4 hook implementing a bonding curve token launch platform. Deploys new ERC20 tokens with configurable multi-chunk liquidity curves backed by a base token, collects a 1% swap fee split equally between creator and platform fee receivers, and automatically graduates tokens to a standard full-range AMM pool when the bonding curve supply is exhausted.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -5629,6 +5699,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6fad8d06a053c81bf95f59e27a3a7257e4a768cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "CornersHookStaticFee",
+      "description": "A Uniswap v4 hook for the Corners protocol that applies asymmetric static LP fees per pool based on swap direction (corners token vs. paired token), takes a 20% protocol fee on each swap by manipulating BeforeSwapDelta/AfterSwapDelta, and optionally runs an MEV protection module during the first 2 minutes after pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -9091,6 +9196,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbb2a9c2d09bfb205b82f93ae75b8fc51865b50c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ZoraV4CoinHook",
+      "description": "Uniswap v4 hook for Zora Coins that creates multi-curve liquidity positions on pool initialization. On every swap, collects LP fees from all positions, swaps them to a backing currency, and distributes rewards. Applies a time-decaying dynamic launch fee (99% to 1% over 10 seconds) and fills Zora limit orders when ticks cross.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -14384,6 +14524,41 @@
   },
   {
     "hook": {
+      "address": "0x1987c4eca7912d8cd47a5a2c1405f8d3ccab00c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "InuPegHook",
+      "description": "A Uniswap v4 hook that imposes a trade tax on each swap \u2014 2.5% on buys (2% to a rewards vault, 0.5% to a deployer address) and 2% on sells (ETH forwarded to the vault) \u2014 via afterSwapReturnsDelta. On buys it mints NFTs for the recipient per whole INU token unit received (capped at 3 per swap); on sells it burns NFTs LIFO from the seller's inventory.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1a673ebfffeabdf7ca30b0cd1306397568595000",
       "chain": "ethereum",
       "chainId": 1,
@@ -14905,6 +15080,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2cb78e8b725a51bc6215184c24c8626de7d868cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ClankerHookStaticFeeV2",
+      "description": "A Clanker platform hook that enforces per-pool static LP fees with separate buy/sell rates for the Clanker token, collects a protocol fee on each swap via beforeSwap/afterSwap return deltas, and supports an optional MEV-protection module that temporarily raises fees on newly created pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -25409,6 +25619,41 @@
   },
   {
     "hook": {
+      "address": "0x1cf96129e1a9846275c4f7e2d9af824c22f1e080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GreenTownV4Hook",
+      "description": "A graduation gate hook for GreenTown token launchpad pools. Restricts pool initialization to a single migrator address and blocks all swaps until that migrator explicitly opens the pool after locking graduation liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1d7cb805ffa2eabeb5594673d4af1cab72c74f00",
       "chain": "robinhood",
       "chainId": 4663,
@@ -26000,6 +26245,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2b63bed7f8a3fc2b53a6b59eef483c713d0a80cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SurgeHook",
+      "description": "A token-launch hook that applies configurable hook fees, creator buy/sell taxes, and time-decaying anti-snipe fees to registered tokens, extracting fees from swap amounts via BeforeSwapDelta/AfterSwapDelta and routing them to token creators.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -26661,6 +26941,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3f27fb70d91ad868fd6b94db67cb919b38b7e8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ClankerHookStaticFeeV2",
+      "description": "A Clanker protocol hook that sets separate static LP fees for buying vs. selling the clanker token, applying them dynamically via updateDynamicLPFee on each swap. Collects protocol fees via delta manipulation in both beforeSwap and afterSwap, supports optional MEV protection modules (active for up to 2 minutes post-launch), and triggers LP locker fee claims on every swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -33610,6 +33925,76 @@
     },
     "flags": {
       "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfb4a5b583aa88825f3fcf6e09510bb325e3880cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PulseHook",
+      "description": "A fee-collection hook for a token launch platform (Pulse) that charges buy/sell fees and time-decaying anti-snipe fees during early blocks after launch. Fees are taken from the quote currency and routed to token creators' claimable balances. Tokens must be registered via the factory contract before fee logic activates.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfb50855d3a1003cd489cc73800081bfa915160cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ReflectionFeeHook",
+      "description": "A fixed 2% swap fee hook for graduated reflection-token pools. It collects ETH fees via return-delta callbacks in beforeSwap (for ETH-specified swaps) and afterSwap (for token-specified swaps), forwarding fees to the factory's per-token creditGraduatedFee() bucket. Pool creation is restricted to the factory's graduator contract via beforeInitialize.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
       "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
