@@ -6161,6 +6161,41 @@
   },
   {
     "hook": {
+      "address": "0x63537e1a2bad5ef073ffacb0796fa29b77b12840",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "OneTimeLaunchHookTemplate",
+      "description": "A one-time launch hook that restricts pool initialization and initial liquidity addition to occur only once per token (currency1). In afterSwap, gates one-direction swaps (non-zeroForOne) to an allowlist of addresses checked via tx.origin when the restriction is enabled per token.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6928d9a28fdcd8fe6de64a309f8f0d90b209d000",
       "chain": "ethereum",
       "chainId": 1,
@@ -10116,6 +10151,41 @@
   },
   {
     "hook": {
+      "address": "0x8e7f920ec2b7f9ae13f86f95782fe819c328e000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "HoodXLaunchHook",
+      "description": "An identity hook that gates pool initialization to a single bound factory address; pools created outside the HoodX factory are rejected. Swap and liquidity behavior are unmodified standard Uniswap v4.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x922826f26bacb89e9e9165951b4964f5436fd000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -10269,6 +10339,41 @@
       "beforeInitialize": false,
       "afterInitialize": true,
       "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa55b3f2e1bd6e4bb76e64f5b98547260e0be8800",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LiquidityGuardHook",
+      "description": "Restricts liquidity additions to a single authorized hub address by reverting in beforeAddLiquidity if the sender is not the hub. All other hook callbacks revert unconditionally. Swaps are unrestricted and behave identically to a standard Uniswap v4 pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
