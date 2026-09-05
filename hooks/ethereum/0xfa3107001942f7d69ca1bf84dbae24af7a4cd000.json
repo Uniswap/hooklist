@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook for the Saturn Omnichain project that implements only afterInitialize, recording the pool's initial tick and initialization status via an external liquidity bootstrapper contract. Swaps are entirely unaffected; the hook has no beforeSwap or afterSwap logic.",
+    "description": "A minimal hook for the Saturn Omnichain project that sets the afterInitialize permission bit but performs no logic in the callback. Pool initialization and tick recording are handled externally via the `initializePools()` function, which calls the liquidity bootstrapper contract.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
