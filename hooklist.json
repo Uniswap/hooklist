@@ -28139,6 +28139,76 @@
   },
   {
     "hook": {
+      "address": "0x6699b561fd4b27eedec067606b623b4cffe030cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "QuotronStockHook",
+      "description": "A Uniswap v4 hook for w&lt;SYM&gt;/USDG stock pools on Ink that overrides the LP fee to zero and collects a configurable hook fee on the USDG side of each swap via BeforeSwapDelta and afterSwap return delta, distributing proceeds between a per-pool LP vault pot and a shared terminal pot used for automated stock buybacks and dividends. Pools must be registered by the factory before initialization.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8bb4516059f9149bc3b89018fc7537f1f14a30cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "QuotronStockHook",
+      "description": "A Uniswap v4 hook for Quotron stock/USDG pools on Ink that overrides LP fees to 0% and skims a flat, owner-adjustable fee on the USDG side of each swap. Fees are split between a venue-wide terminal pot (fed to an epoch converter for stock buybacks and terminal dividends) and a per-pool LP vault pot.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x976697adcf27d0962d3b0b6304d5975ba647b0cc",
       "chain": "ink",
       "chainId": 57073,
@@ -33354,6 +33424,41 @@
   },
   {
     "hook": {
+      "address": "0x4013567e2e4d16d5a977d28a1d91d6e7766e38cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchpadV4Hook",
+      "description": "A token launchpad hook that charges a fixed 1% base fee plus an optional creator tax (up to 10%) denominated in the payment token side of each swap. Fee proceeds are split between an immutable protocol recipient and a per-pool creator fee recipient via PoolManager token credits. Pool registration is gated to a factory address and liquidity additions are restricted to a position manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x419596fb62de89de9d9d912a357828e480e9e544",
       "chain": "robinhood",
       "chainId": 4663,
@@ -34295,6 +34400,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x52fdce4c758f7400914f7b9d697d150492f45540",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RobinoHook",
+      "description": "Observation hook for Robino graduated pools that emits events on pool initialization, liquidity changes, and swaps. Pool initialization is gated to tokens registered in the Robino factory; afterSwap only records swap data via events without modifying execution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -37029,6 +37169,41 @@
   },
   {
     "hook": {
+      "address": "0x8b2b09ea14e1072087c1a0b676f5432115614080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "V4GasDetectHook",
+      "description": "A honeypot hook that allows buys unconditionally but blocks sell transactions in real on-chain execution by checking gasleft() against a 30M gas threshold. Simulations (eth_call, fork sims) have high gasleft() and pass; real user transactions have lower gasleft() and revert, trapping sellers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8c6a3fd9e2a7a6e239d06f0dbaf56c230f8e00cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -38075,6 +38250,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa4871e371e2b7be252f9f5c9060ffd27b94460cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GataraEthHook",
+      "description": "A Uniswap v4 hook for token launches with native ETH as the quote currency. Charges directional fees (buy/sell) split between the pool creator, protocol treasury, and a time-decaying cocoon surcharge, using beforeSwap/afterSwap delta returns. Blocks buys in the exact launch-second as an anti-snipe guard.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
