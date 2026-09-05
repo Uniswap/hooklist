@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x49ef3b0d8c1a5eb100da144f1c93ef48e7e680cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "JoltHook",
+    "description": "A Uniswap v4 hook for the Jolt token launchpad that collects protocol and creator fees on swaps via BeforeSwapDelta/AfterSwapDelta. Includes an anti-snipe mechanism that charges elevated fees for early buys within a configurable number of blocks after token launch, with fees routed to token creators and claimable on-demand.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
