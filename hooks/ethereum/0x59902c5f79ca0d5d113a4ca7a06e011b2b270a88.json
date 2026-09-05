@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x59902c5f79ca0d5d113a4ca7a06e011b2b270a88",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BracketHook",
+    "description": "BracketHook is the central contract for the TheCup protocol, managing 48 country-token pools across two AMM regimes: a bonding curve phase (hook handles all swap math via custom virtual-reserve AMM and a 1% protocol fee) and a graduated phase (standard v4 AMM with 1% protocol fee plus an optional 9% elimination tax on sells of knocked-out country tokens). A per-block price-impact cap (5%) is enforced as a sandwich protection mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
