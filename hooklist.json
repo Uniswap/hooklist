@@ -8784,6 +8784,41 @@
   },
   {
     "hook": {
+      "address": "0xad347a63c12fa6e87f893acca0e565b9e9698088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "HaberdasheryHook",
+      "description": "A fee-taking hook that charges a 1% fee on each swap via beforeSwapReturnsDelta, capturing the input-side token as protocol revenue retained by the contract. The owner can withdraw accumulated fees, with non-Habs tokens automatically swapped to a designated Habs token through an internal pool swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xadaccf778c96772fb06b042212b7ff0c434e00cc",
       "chain": "base",
       "chainId": 8453,
@@ -12280,6 +12315,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x0fcddca9910bb30a36052a075868e6134c6a40cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "LaunchpadHook",
+      "description": "A token launchpad hook that collects swap fees and splits them between creators and a platform treasury, with optional buyback-and-burn and dividend distribution. Enforces a snipe-protection window and a per-token max-buy cap during a fair launch period, both gated by block.timestamp.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -22745,6 +22815,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xedc3a1688b151c69a353f39fb2ba7ef2d7002044",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Unipump Fee Hook",
+      "description": "Singleton Uniswap v4 hook that collects a configurable fee (50\u20131000 bps) from the unspecified token of each swap in Unipump pools. Splits fees 60% to the pool creator and 40% to a fixed platform wallet; only factory-registered pools may use this hook.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
