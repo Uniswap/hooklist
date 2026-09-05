@@ -4,7 +4,7 @@
     "chain": "bnb",
     "chainId": 56,
     "name": "SaturnOmnichainV4Hook",
-    "description": "Omnichain hook for the Saturn protocol that records the initial pool tick after initialization via an external liquidity bootstrapper contract. Only afterInitialize is enabled; all other hook callbacks are no-ops that return their selectors without modifying pool behavior.",
+    "description": "Omnichain hook for the Saturn protocol. Only afterInitialize is enabled, but its callback is a no-op that returns its selector. The contract exposes a separate initializePools() function that calls an external liquidity bootstrapper to obtain and store the initial pool tick.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
