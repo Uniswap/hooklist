@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x63537e1a2bad5ef073ffacb0796fa29b77b12840",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OneTimeLaunchHookTemplate",
+    "description": "A one-time launch hook that restricts pool initialization and initial liquidity addition to occur only once per token (currency1). In afterSwap, gates one-direction swaps (non-zeroForOne) to an allowlist of addresses checked via tx.origin when the restriction is enabled per token.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}
