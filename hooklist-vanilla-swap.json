@@ -1436,6 +1436,41 @@
   },
   {
     "hook": {
+      "address": "0xbe4b993be32558eaf50ac7140607e927f13e5000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "Minimal hook with only an afterInitialize permission (no-op callback). Exposes an initializePools() function that delegates to an external liquidity bootstrapper to seed pool liquidity and records the resulting initial tick.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc084969baec7910f8df71bdcd90d9c37d3919000",
       "chain": "base",
       "chainId": 8453,
@@ -1996,6 +2031,111 @@
   },
   {
     "hook": {
+      "address": "0x099ac33b384b467a9b00bda79a48ebc4fa945000",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "Saturn Omnichain V4 hook that sets the afterInitialize flag but performs no logic in that callback. Provides an initializePools() function (callable by anyone) that invokes an external liquidity bootstrapper and records the initial tick and poolInitialized state. No swap logic is implemented.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2c59f71726e45fd9622bfabf34ca5c2842ce9000",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A minimal hook with only afterInitialize enabled (a no-op pass-through). The contract exposes an initializePools() function that calls an external LiquidityBootstrapper to set up liquidity positions and records the initial tick after pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x35839b084137f4b79ad5e994714dd5cdcc985000",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A Uniswap v4 hook for the Saturn Omnichain project with only the afterInitialize flag active (which performs no logic). Exposes an initializePools() function that delegates liquidity bootstrapping to a separate ISaturnOmnichainLiquidityBootstrapper contract and stores the resulting initial tick.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x38358b924cb329dc428650f91309dfbddf974080",
       "chain": "bnb",
       "chainId": 56,
@@ -2456,6 +2596,41 @@
       "chainId": 1,
       "name": "SaturnOmnichainV4Hook",
       "description": "A minimal Uniswap v4 hook for the Saturn Omnichain project. The afterInitialize callback is a no-op; the hook exposes an initializePools() function that delegates to an external ISaturnOmnichainLiquidityBootstrapper contract to bootstrap initial liquidity positions across pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x338d3e188dd9ceba7278311bd2647c26abed1000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "Minimal Uniswap v4 hook for the Saturn Omnichain project. Only `afterInitialize` is enabled (as a no-op). Exposes an `initializePools()` function that calls an external liquidity bootstrapper contract to record the initial tick and mark the pool as initialized.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -3431,6 +3606,41 @@
   },
   {
     "hook": {
+      "address": "0x83647f76b2961029ab305036546df71d4c0b5000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A Uniswap v4 hook for the Saturn Omnichain protocol that registers afterInitialize as a no-op permission placeholder. Pool setup is delegated to an external LiquidityBootstrapper contract via initializePools(), which records the initial tick and marks the pool as initialized on-chain.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8437958ebcc8a14906f84625dd94858213afd000",
       "chain": "ethereum",
       "chainId": 1,
@@ -4092,6 +4302,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xda81a254c9e4de59e5d68b48ae6e2f4e1d201000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A Uniswap v4 hook with a no-op afterInitialize callback. Pool initialization is triggered externally via initializePools(), which calls an ISaturnOmnichainLiquidityBootstrapper contract to bootstrap liquidity and records the resulting initial tick and pool initialization status on-chain.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
