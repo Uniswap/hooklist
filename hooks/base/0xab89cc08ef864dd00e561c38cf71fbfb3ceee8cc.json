@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "SpawnHookStaticFeeV2",
-    "description": "A Uniswap v4 hook for the Spawn token-launch platform that applies directional static LP fees (different rates for buying vs selling the spawn token), collects protocol fees via balance delta adjustments in beforeSwap/afterSwap, and supports a temporary MEV-protection module that can raise fees during the first hour after pool creation.",
+    "description": "A Uniswap v4 hook for the Spawn token-launch platform that applies directional static LP fees (different rates for buying vs selling the spawn token, configured at pool initialization). Protocol fees are explicitly disabled (PROTOCOL_FEE_NUMERATOR = 0). The hook also supports a temporary MEV-protection module that can raise LP fees during the first hour after pool creation.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -33,3 +33,4 @@
     "swapAccess": "none"
   }
 }
+
