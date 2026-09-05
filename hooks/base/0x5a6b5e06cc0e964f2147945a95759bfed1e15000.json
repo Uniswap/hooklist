@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5a6b5e06cc0e964f2147945a95759bfed1e15000",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SaturnOmnichainV4Hook",
+    "description": "A hook for the Saturn Omnichain project that only implements afterInitialize as a no-op stub. Pool and liquidity setup is handled externally via initializePools(), which calls an ISaturnOmnichainLiquidityBootstrapper to bootstrap positions and record the initial tick. No swap logic is present.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
