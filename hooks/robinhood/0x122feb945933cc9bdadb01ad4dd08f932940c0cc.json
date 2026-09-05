@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x122feb945933cc9bdadb01ad4dd08f932940c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SparkHook",
+    "description": "A fee-collecting hook for Spark token launches that charges protocol and creator fees on swaps using quote-token amounts, with a block-number-based anti-snipe mechanism that applies elevated fees to early buyers within a configurable window after launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
