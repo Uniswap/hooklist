@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7f3976098b364770e77f03248e6e65cb8ce400cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NasdankFeeHook",
+    "description": "A Uniswap v4 hook for NASDANK token pools that charges all swap fees exclusively in WETH on every swap in both directions. Accrued WETH is split between an immutable project treasury and a protocol treasury per pool, with fee configuration set once at pool launch by an authorized launcher contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
