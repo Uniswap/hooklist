@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xacbe47dbff97f0c47bd08a287ffa21c1564828cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "Launchpad hook for meme token pools on Robinhood Chain. Captures all trading fees in WETH via swap deltas with a three-phase fee model: exponentially decaying 90%\u21923% during the guard phase (~5s), then flat 1% through curve and post-graduation. Enforces per-wallet and per-block buy caps during the first ~10s. Graduates the pool automatically when cumulative WETH raised crosses a configured threshold.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
