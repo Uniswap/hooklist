@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x80887f4ce589c973ebb1f6f81b6f6bb492106fdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BoardHook",
+    "description": "A token-launch hook that manages a FairLaunch mechanism: it gates swaps temporally until a configurable launch timestamp, enforces an optional Merkle-proof allowlist during the fair launch window, intercepts swap input/output via BeforeSwapDelta to sell tokens from a one-sided position, and captures custom swap fees redistributed to protocol, token creators, referrers, and a Muse manager via AfterSwapDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
