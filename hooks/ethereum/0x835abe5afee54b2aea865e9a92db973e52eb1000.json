@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "SaturnOmnichainV4Hook",
-    "description": "A minimal hook for the Saturn Omnichain project that uses only afterInitialize. On pool initialization, it records the initial tick returned by an external LiquidityBootstrapper contract. No swap-time logic is implemented.",
+    "description": "The afterInitialize hook does nothing \u2014 it is a pure stub returning only the selector. The contract separately exposes an initializePools() function that calls an external LiquidityBootstrapper to record an initial tick, but this is unrelated to the hook callback.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
