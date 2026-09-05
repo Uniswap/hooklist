@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x96ce193f25db9b75743332bb7c94e545f1a225c3",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FeraHook",
+    "description": "Uniswap v4 hook implementing regime-specific dynamic LP fees \u2014 MEME pools use an EWMA volatility/flow estimator, RWA pools use a Chainlink oracle price-deviation overlay \u2014 plus a cumulative-tick TWAP oracle and an economic anti-JIT guard that withholds and linearly decays accrued fees on fast liquidity removal.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
