@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xac4b3944c351b6641fdd85a192cf6ddf84b3facc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BDeFiHook",
+    "description": "Applies buy/sell taxes and fulfills fee queues on swaps using TWAP oracle pricing. Gates trading until all LPs are initialized and records pool observations via a truncated geometric oracle. Part of the BDeFi protocol on Base.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
