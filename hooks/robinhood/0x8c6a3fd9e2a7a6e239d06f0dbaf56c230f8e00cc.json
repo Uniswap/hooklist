@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8c6a3fd9e2a7a6e239d06f0dbaf56c230f8e00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BaldPadFunFeeHook",
+    "description": "Volatility-based ETH fee hook for BaldPadFun launch pools. Charges 1\u20135% fees in native ETH on exact-input buys (via beforeSwap delta) and sells (via afterSwap delta), with the fee scaling linearly based on the previous swap's tick movement. Fees are sent directly to a per-pool fee recipient on each swap. Exact-output swaps are rejected.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
