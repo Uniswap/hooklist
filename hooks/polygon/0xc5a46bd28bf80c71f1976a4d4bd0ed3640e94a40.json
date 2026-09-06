@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc5a46bd28bf80c71f1976a4d4bd0ed3640e94a40",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "TELxIncentiveHook",
+    "description": "Tracks LP positions and swap events for off-chain reward logic. Requires add/remove liquidity to be sent through a registered position manager; emits swap events with the current tick so off-chain scripts can determine whether LPs were in-range.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
