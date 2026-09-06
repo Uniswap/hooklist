@@ -1,0 +1,29 @@
+{
+  "project": "spectra",
+  "id": "hook",
+  "version": "1",
+  "name": "SpectraHook",
+  "description": "Standalone afterSwap hook for SpectraLaunch token pools: after each swap, harvests the pool token's parked fee balance via takeFeeBalance(), auto-sells it for ETH via a nested poolManager.swap() call, then distributes the ETH proceeds to token holders pro-rata via the token's creditPoolFees() accumulator.",
+  "source": {
+    "verified": true,
+    "codeHashes": [
+      "sha256:6d5875f54e73868eddeab4e8a1ec9c0b9311dc785d0ef61c108da5e797f0cd30",
+      "sha256:a6d23fc6cc26d132d70890a027cee1504ee3a9b832e5772f9c6ee0f25e286af0"
+    ]
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  },
+  "warnings": [],
+  "renamedFrom": [
+    "spectrahook/spectrahook"
+  ],
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "project": "friar",
+  "id": "friar",
+  "version": "1",
+  "name": "Friar",
+  "description": "A dynamic LP fee hook that tracks per-pool swap volatility using a volatility accumulator with configurable filter and decay periods. On each swap, the accumulator updates based on tick movement and computes a fee that surges with volatility and decays afterward, hard-capped at a maximum, returned as a beforeSwap LP fee override with zero delta.",
+  "source": {
+    "verified": true,
+    "codeHashes": [
+      "sha256:16683decf203e65f4345eddf3ec34fa951adcaf729180fc234c9fc78f2b538a5",
+      "sha256:36b9942799837a12c94c151313f1eaa95e79352289f62bb5d9d50a0c175adbf2"
+    ]
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  },
+  "warnings": [],
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null
+  }
+}
