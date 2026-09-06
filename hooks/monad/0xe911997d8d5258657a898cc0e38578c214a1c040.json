@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe911997d8d5258657a898cc0e38578c214a1c040",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "HookdRandomHook",
+    "description": "A reusable Uniswap v4 hook that records a rolling random seed per ERC3232 token after each pool swap. In afterSwap, it updates lastSeed[token] using a keccak256 hash of the prior seed, swap parameters, and block data, enabling ERC3232 token contracts to derive randomness for object generation without the hook itself minting anything.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
