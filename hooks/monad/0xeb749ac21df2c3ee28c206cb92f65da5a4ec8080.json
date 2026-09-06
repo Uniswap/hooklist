@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xeb749ac21df2c3ee28c206cb92f65da5a4ec8080",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "FuzeV4Hook",
+    "description": "Gates swaps to pools that have been registered and enabled by the hook owner or factory. Swaps on unregistered or disabled pools revert; no fee override, delta manipulation, or hookData inspection is performed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "governance"
+  }
+}
