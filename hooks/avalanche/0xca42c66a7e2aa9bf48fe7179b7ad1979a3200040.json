@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xca42c66a7e2aa9bf48fe7179b7ad1979a3200040",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "AutoExitHook",
+    "description": "Monitors the pool tick after each swap and automatically removes a concentrated liquidity position when price crosses its boundary, then executes a small internal swap and re-adds liquidity at configured target ticks using owner-supplied token balances.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
