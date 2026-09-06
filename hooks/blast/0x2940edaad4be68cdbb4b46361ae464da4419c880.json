@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2940edaad4be68cdbb4b46361ae464da4419c880",
+    "chain": "blast",
+    "chainId": 81457,
+    "name": "HookNewEvents",
+    "description": "A hook that emits custom events (HookSwap, HookModifyLiquidity) with additional amount and fee data decoded from hookData. Requires ABI-encoded AdditionalSwapData in swap hookData and AdditionalModifyData in liquidity hookData; calls with empty hookData will revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
