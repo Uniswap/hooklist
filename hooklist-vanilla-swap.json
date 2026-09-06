@@ -141,6 +141,76 @@
   },
   {
     "hook": {
+      "address": "0x9cb305235654bcb602b4ad99dd4ac7b6085caaa0",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AuthSwaps",
+      "description": "Restricts swaps, liquidity operations, and donations to KYC-verified, non-banned, non-sanctioned addresses via the Manifest Finance Auth Manager. Enforces that all pool interactions originate from approved Uniswap routers, with a 7-day timelocked mechanism for updating the auth manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xba70d4f04f596ce9612e68d8eb506062cae5eaa0",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AuthSwaps",
+      "description": "KYC-gated hook that restricts swaps, liquidity operations, and donations to callers verified by an external AuthManager contract. Swaps additionally require the caller to be an approved Uniswap router, and the underlying user must have valid KYC and not be banned or sanctioned.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc91d7fb7da698df53dee74da5066702dca4b4040",
       "chain": "avalanche",
       "chainId": 43114,

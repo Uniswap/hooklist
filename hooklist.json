@@ -1436,6 +1436,41 @@
   },
   {
     "hook": {
+      "address": "0x73211180381b5e0b71dfce1e87ff11d6879b8044",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "StrategyFeeHook",
+      "description": "Collects a 10% fee on the output token of each swap in owner-allowlisted pools, converts non-AVAX fees to AVAX via an in-pool swap, and forwards all collected fees to a configurable strategy manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7478a9701ac0c127eb2450294ddd78c79259c040",
       "chain": "avalanche",
       "chainId": 43114,
@@ -1821,6 +1856,41 @@
   },
   {
     "hook": {
+      "address": "0x9cb305235654bcb602b4ad99dd4ac7b6085caaa0",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AuthSwaps",
+      "description": "Restricts swaps, liquidity operations, and donations to KYC-verified, non-banned, non-sanctioned addresses via the Manifest Finance Auth Manager. Enforces that all pool interactions originate from approved Uniswap routers, with a 7-day timelocked mechanism for updating the auth manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9ce226b94717bd5c483daa880efe915b7d382aa8",
       "chain": "avalanche",
       "chainId": 43114,
@@ -1992,6 +2062,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xba70d4f04f596ce9612e68d8eb506062cae5eaa0",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AuthSwaps",
+      "description": "KYC-gated hook that restricts swaps, liquidity operations, and donations to callers verified by an external AuthManager contract. Swaps additionally require the caller to be an approved Uniswap router, and the underlying user must have valid KYC and not be banned or sanctioned.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -2421,6 +2526,41 @@
       "chainId": 43114,
       "name": "StrategyFeeHook",
       "description": "Collects a fixed 10% fee on the output token of each swap in owner-approved pools, converts non-AVAX fees to AVAX via an in-pool nested swap, and forwards all collected fees to a configurable strategy manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfda4b79e94a1041e426e9f1df054e25fc1e14044",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "StrategyFeeHook",
+      "description": "Collects a 10% fee (1000 bps) on the output token of each swap in owner-allowlisted pools, converts non-AVAX fees to AVAX via a nested in-pool swap, and forwards the collected AVAX to a configurable strategy manager contract.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -37379,6 +37519,41 @@
   },
   {
     "hook": {
+      "address": "0x083be93d93fd13f2bbd431e836f8ab07df830088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Routes exact-input swaps between hardcoded DAI and USDT addresses on Polygon through a Curve StableSwap3 pool, taking tokens from the pool manager and settling output via BeforeSwapDelta. The setFee function has no access control, allowing anyone to modify the swap ratio. A multicall function provides a hardcoded admin address with arbitrary call execution capability.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x15cD9520D0fAF71c938Db4426F8C58B5cBAa9ACc",
       "chain": "polygon",
       "chainId": 137,
@@ -37874,6 +38049,76 @@
       "chainId": 137,
       "name": "PolHook",
       "description": "Routes exact-input swaps between DAI and USDT on Polygon through Curve's StableSwap3Pool (exchange_underlying), returning a BeforeSwapDelta to fulfill the swap outside the v4 pool. Includes an unrestricted setFee/setEnabled (callable by anyone) and a privileged multicall restricted to a hardcoded admin address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc0db3c05eda0a0ad64ae139003f6324cd7e59888",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "StableSwap",
+      "description": "A custom stable swap hook implementing a 1:1 AMM with a 0.05% fee, depositing pool liquidity into Aave V3 and distributing accrued interest to swappers as a bonus. Standard liquidity addition is blocked; LPs must use the hook's custom deposit/withdraw functions. Contains privileged emergencyWithdraw and unconstrained multicall backdoors controlled by a hardcoded admin address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc377a577a4d0d59651fb7f905e50c358663c0088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Charges a 0.2% fee (1/500) on exact-input swaps by minting ERC-6909 claim tokens to itself using BeforeSwapDelta; exact-output swaps pass through unchanged with no fee.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -56651,6 +56896,76 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x112576da1a6e1261be646a6848ff50f7da49c040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "ProbabilisticFeeCollector",
+      "description": "After each swap, probabilistically triggers fee collection from a managed LP position using `block.prevrandao` modulo a configurable divisor (default: 1-in-25 chance). When triggered, calls `positionManager.modifyLiquiditiesWithoutUnlock` to decrease liquidity and transfer accumulated fees to a fixed collector address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x235877899ecd2287b073d312c02d21e7f8d09040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "LendingHook",
+      "description": "A Uniswap v4 hook implementing a lending protocol where users supply token0 as collateral and borrow token1. After each swap, it tracks tick changes against a Chainlink oracle price, computes adjusted liquidation thresholds, and liquidates undercollateralized positions by executing nested swaps in the pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
