@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe78faf59e4a9a4015b9a890fe18b1c19514a6888",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "AggHook",
+    "description": "A Uniswap v4 hook that acts as an on-chain DEX aggregator for a USDC.e/USDC pair on Polygon. On beforeSwap, it queries prices across up to 11 v4 pools and 1 v3 pool, routes the swap through the optimal path, charges a protocol fee via donate, and returns a BeforeSwapDelta to fully override the standard pool fill. Liquidity addition and pool initialization are restricted to an admin address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
