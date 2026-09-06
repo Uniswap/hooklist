@@ -10851,6 +10851,41 @@
   },
   {
     "hook": {
+      "address": "0xe18d669224656e62df52189be541a6d909774040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "HookdRandomHook",
+      "description": "A reusable Uniswap v4 hook that records a rolling random seed per ERC3232 token after each swap in a pool containing that token, enabling on-chain randomness for ERC3232 token generation without minting objects itself.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe911997d8d5258657a898cc0e38578c214a1c040",
       "chain": "monad",
       "chainId": 143,
@@ -11057,6 +11092,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc5a46bd28bf80c71f1976a4d4bd0ed3640e94a40",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "TELxIncentiveHook",
+      "description": "Tracks LP positions and swap events for off-chain reward logic. Requires add/remove liquidity to be sent through a registered position manager; emits swap events with the current tick so off-chain scripts can determine whether LPs were in-range.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -14614,6 +14684,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe550a677bb302d43dcc9bd30dc634cfe8369cac0",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "Counter",
+      "description": "Reference hook that increments per-pool counters on beforeSwap, afterSwap, beforeAddLiquidity, and beforeRemoveLiquidity calls. No access control, fee modification, or token transfers \u2014 pure observation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,

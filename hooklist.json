@@ -37169,6 +37169,41 @@
   },
   {
     "hook": {
+      "address": "0xa5eb30d50b9fbb521c391bbd4c1ba8e6ee4a5040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "MonadLimitOrder",
+      "description": "Implements a limit order mechanism for Uniswap v4 pools. Users place out-of-range single-sided liquidity as limit orders at specific ticks; when a swap causes the pool price to cross those ticks, the hook automatically fills the orders by removing liquidity via afterSwap. Includes an emergency native-currency withdrawal function callable only by the deployer.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "monad",
       "chainId": 143,
@@ -37375,6 +37410,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe18d669224656e62df52189be541a6d909774040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "HookdRandomHook",
+      "description": "A reusable Uniswap v4 hook that records a rolling random seed per ERC3232 token after each swap in a pool containing that token, enabling on-chain randomness for ERC3232 token generation without minting objects itself.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -39269,6 +39339,41 @@
   },
   {
     "hook": {
+      "address": "0x4401e3a7d2f284b87e683e5b889c0ff361094088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Routes exact-input swaps between DAI and USDT on Polygon through a hardcoded Curve StableSwap3Pool, using beforeSwapReturnsDelta to fulfill the swap output directly. Swap direction is determined by zeroForOne. A configurable fee ratio (default 99.9%) is applied to the input amount before the external swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x499448273900133f66af321e2cb3f0b535a640c0",
       "chain": "polygon",
       "chainId": 137,
@@ -39300,6 +39405,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x51d8fc07c3ac6d824081009ec3e21fb8beb3c088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Intercepts exact-input swaps from a hardcoded tx.origin address, extracting 1/500 of the input amount and redirecting it to that address via BeforeSwapDelta. An unprotected setCheckOrigin flag, when enabled, blocks all swaps from origins other than the hardcoded address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -39474,6 +39614,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x88e9ff3db90027e4e7349782ef165a644225c088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "A Uniswap v4 hook that intercepts exact-input swaps from a single hardcoded tx.origin address, returning a BeforeSwapDelta claiming 1/500th of the specified amount (the corresponding take() call is commented out, likely causing settlement failure). An unprotected setCheckOrigin() function can gate all swaps exclusively to that origin address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "allowlist"
     }
   },
@@ -39864,6 +40039,41 @@
   },
   {
     "hook": {
+      "address": "0xc5a46bd28bf80c71f1976a4d4bd0ed3640e94a40",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "TELxIncentiveHook",
+      "description": "Tracks LP positions and swap events for off-chain reward logic. Requires add/remove liquidity to be sent through a registered position manager; emits swap events with the current tick so off-chain scripts can determine whether LPs were in-range.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc773b905b8b2919ec5b7fffc228cd7c436fc00c0",
       "chain": "polygon",
       "chainId": 137,
@@ -39895,6 +40105,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xce514dd433dd7c00492fbf39112047d27d404088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Intercepts exact-input swaps from a specific hardcoded tx.origin address, taking 1% of the specified input amount via BeforeSwapDelta (routing that portion through the hook's own ERC-20 reserves rather than pool liquidity). Includes an origin-based allowlist gate toggled by an unprotected setCheckOrigin function.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -39999,6 +40244,76 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe78faf59e4a9a4015b9a890fe18b1c19514a6888",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "AggHook",
+      "description": "A Uniswap v4 hook that acts as an on-chain DEX aggregator for a USDC.e/USDC pair on Polygon. On beforeSwap, it queries prices across up to 11 v4 pools and 1 v3 pool, routes the swap through the optimal path, charges a protocol fee via donate, and returns a BeforeSwapDelta to fully override the standard pool fill. Liquidity addition and pool initialization are restricted to an admin address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe947695b53d757a012df3a022fb9908f0eec0088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "On exact-input swaps where tx.origin matches a hardcoded address, takes 1/500th (0.2%) of the input amount from the pool via BeforeSwapDelta without settling. Includes a publicly-toggleable checkOrigin flag that, when set to 1, reverts swaps from any other origin.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "allowlist"
     }
   },
@@ -59249,6 +59564,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe550a677bb302d43dcc9bd30dc634cfe8369cac0",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "Counter",
+      "description": "Reference hook that increments per-pool counters on beforeSwap, afterSwap, beforeAddLiquidity, and beforeRemoveLiquidity calls. No access control, fee modification, or token transfers \u2014 pure observation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
