@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0f41715dc432692b66a5adf8dcfef6ac407b20c8",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "GlueHook",
+    "description": "A buyback-and-burn Uniswap v4 hook with a singleton donation pot per pool. In beforeSwap, absorbs main\u2192secondary sells at pool execution price from the pot (shield). In afterSwap, executes a size-capped market buy of main on secondary\u2192main swaps (pump), delivering or burning acquired tokens. Optionally hosts an auto-compounding LP position per pool with configurable fee splits.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
