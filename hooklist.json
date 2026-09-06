@@ -1191,6 +1191,41 @@
   },
   {
     "hook": {
+      "address": "0x75d527f33d89ed78158130d65179053c81850044",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "StrategyFeeHook",
+      "description": "Collects a 10% fee on the output token after each swap on owner-allowlisted pools, converts non-AVAX fees to AVAX via an internal pool swap, and forwards all proceeds to a configurable strategy manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7844712c7be7f59e6ca5da10cc143072ada4c040",
       "chain": "avalanche",
       "chainId": 43114,
@@ -1213,6 +1248,76 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x797f623b7f2d646b513e6550b52a8363b568c040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AutoExitHook",
+      "description": "Manages up to three single-tick liquidity positions (lower, middle, upper) within a configured price range. After each swap, checks whether positions need rebalancing based on current tick, removes stale positions, optionally pulls tokens from the owner, and re-adds liquidity \u2014 including executing internal swaps to rebalance token holdings.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7eb4695e64687f1f3e45655c39ab7b88fc5e40cc",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "GildHook",
+      "description": "Charges a 1% toll on every swap in the AVAX (currency0) leg of a pinned pool, accruing fees as ERC-6909 claims to an immutable buyer address. The owner can lower the fee rate (never raise it) and pin the hook to one pool once, covering all four exact-input/output swap shapes via beforeSwap and afterSwap delta returns.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -1432,6 +1537,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc6c67207722b7c6b6396e4e6375c1b376858c040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AutoExitHook",
+      "description": "Manages three single-tick liquidity positions (lower, middle, upper) by rebalancing after every swap. When the current tick moves outside configured ranges, it removes stale positions, optionally pulls tokens from an owner address, executes nested swaps via poolManager.swap() to recenter liquidity, and adds new positions. Surplus tokens are flushed back to the owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -34054,6 +34194,111 @@
   },
   {
     "hook": {
+      "address": "0x079f03e252d6aa0d6dce91a80b7c32e66af2eac4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "ERC1967Proxy",
+      "description": "An ERC-1967 upgradeable proxy contract whose hook implementation is deployed at a separate address not verified here. Hook permissions include beforeSwap, afterSwap (with delta return), beforeInitialize, beforeAddLiquidity, and beforeRemoveLiquidity; the underlying logic cannot be analyzed from the proxy source alone.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1684a92fb71d84e3840040e645e5ef0c69f5c088",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "StopeHook",
+      "description": "Charges a configurable toll (default 1%, capped at 3%, can only decrease) on exact-input swaps by withholding a portion of the input currency as an ERC-6909 claim held by the hook. Accrued fees can be permissionlessly collected to a deployer-controlled treasury.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2a2b25be7ac490a9468be03a9a300fd4a9328fcc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "QwireHook",
+      "description": "A tax hook for a single WETH/QWIRE pool that skims a percentage fee on swaps: taxes WETH input in beforeSwap and WETH output (QWIRE-sell direction) in afterSwap, routing collected taxes to a treasury. Swaps are restricted to a canonical router and quoter; liquidity actions are restricted to an lpManager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4cc8f6d5b7ce150ccc0a9b7664532b1283b96ac4",
       "chain": "ink",
       "chainId": 57073,
@@ -34085,6 +34330,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x555650f67654eec6b27efa2c474455663c72f0cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "QuotronWethHook",
+      "description": "Uniswap v4 hook for the Quotron protocol's QUOTRON/WETH pool. Enforces a dynamic LP fee override, gates swaps to a single canonical router, and skims a percentage-based fee on each swap distributed across reflection, LP, and creator sinks. hookData must encode the payer and recipient addresses (64 bytes).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -54179,6 +54459,41 @@
   },
   {
     "hook": {
+      "address": "0x35bf74f583c88c0daef3bdb6a77d18da6ada00cc",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "FeeHook",
+      "description": "A Uniswap v4 hook that charges a fixed 3% fee on swaps involving a designated fee token (currency1), diverting collected fees to a treasury address using BeforeSwapDelta and AfterSwapDelta interception. Also maintains an on-chain tick oracle for fee-token pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9e94e85660be00af1bfdd065b14380311204c0cc",
       "chain": "soneium",
       "chainId": 1868,
@@ -54311,6 +54626,76 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb9583e7bcc42e6627a1c119b09bac07b14594800",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "TickRangeHook",
+      "description": "Restricts liquidity addition to a configured tick range by reverting in beforeAddLiquidity if the provided ticks fall outside the bounds set at deployment. Includes admin and manager roles for access control.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc1a7e45199ce4476621394b1ebeaefcdf3f5c0cc",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "Lev7FeeHook",
+      "description": "Charges a 3% fee on buys in pools where currency1 matches a designated fee token, reserving and settling fees to a treasury via BeforeSwapDelta and AfterSwapDelta. Also records on-chain tick observations via a built-in oracle for all fee-token pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
