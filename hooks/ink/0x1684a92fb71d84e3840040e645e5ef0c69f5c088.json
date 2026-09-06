@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1684a92fb71d84e3840040e645e5ef0c69f5c088",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "StopeHook",
+    "description": "Charges a configurable toll (default 1%, capped at 3%, can only decrease) on exact-input swaps by withholding a portion of the input currency as an ERC-6909 claim held by the hook. Accrued fees can be permissionlessly collected to a deployer-controlled treasury.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
