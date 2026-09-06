@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x61ff08c0fdd3b84efd9346822cfe7be151e64080",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "FuzeV4Hook",
+    "description": "Gates swaps by checking that the pool has been registered and enabled via an admin-controlled config. Swaps revert if the pool config is absent or disabled; no fee overrides or token deltas are applied.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "governance"
+  }
+}
