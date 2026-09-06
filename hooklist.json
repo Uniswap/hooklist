@@ -58344,11 +58344,81 @@
   },
   {
     "hook": {
+      "address": "0x17ce2ab83f087d79901493d65a1bf71352c700cc",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "Lev7FeeHook",
+      "description": "Charges a fixed 3% fee on exact-input buy swaps in pools where currency1 is the designated fee token, routing fees to a treasury address and optionally refunding the unconsumed reservation. Also maintains an on-chain tick oracle, recording price observations before each swap in fee pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x35bf74f583c88c0daef3bdb6a77d18da6ada00cc",
       "chain": "soneium",
       "chainId": 1868,
       "name": "FeeHook",
       "description": "A Uniswap v4 hook that charges a fixed 3% fee on swaps involving a designated fee token (currency1), diverting collected fees to a treasury address using BeforeSwapDelta and AfterSwapDelta interception. Also maintains an on-chain tick oracle for fee-token pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5cdcf55649883bfe728f04f957062043580540cc",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "Lev7FeeHook",
+      "description": "Charges a 3% fee on token buys (non-zeroForOne exact-input swaps) in pools where currency1 matches the configured feeToken, using BeforeSwapDelta to reserve fees upfront and AfterSwapDelta to refund unconsumed amounts. Also records TWAP oracle observations for fee pools and tracks buy credit accrual.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
