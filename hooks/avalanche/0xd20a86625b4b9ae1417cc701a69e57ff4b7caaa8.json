@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd20a86625b4b9ae1417cc701a69e57ff4b7caaa8",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "AuthSwaps",
+    "description": "A KYC-gated Uniswap v4 hook that restricts swaps, liquidity, and donations to users verified by an external IAuthManager contract. Enforces a trusted router sender allowlist and uses a 7-day timelock for auth manager updates.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
