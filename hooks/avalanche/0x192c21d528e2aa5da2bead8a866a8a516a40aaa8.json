@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x192c21d528e2aa5da2bead8a866a8a516a40aaa8",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "AuthSwaps",
+    "description": "A KYC-gated Uniswap v4 hook that restricts swaps, liquidity additions, removals, pool initialization, and donations to addresses verified through the Manifest Finance Auth Manager. Enforces an on-chain allowlist of approved Uniswap routers per chain, then checks the actual user's KYC, ban, and sanctions status via the auth manager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
