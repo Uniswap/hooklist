@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbea696425cb0e2d7c4d7ba15e6ed3eb6968f5040",
+    "chain": "worldchain",
+    "chainId": 480,
+    "name": "LendingHook",
+    "description": "A lending protocol hook that tracks pool price changes after each swap and automatically liquidates undercollateralized borrower positions. In afterSwap, it compares the oracle price to the Uniswap pool price, updates a tick-based debt accounting structure, and executes nested swaps via poolManager.swap() to absorb collateral from liquidated positions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
