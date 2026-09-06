@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x836f5bc2c58496842861ebad66902747148cc040",
+    "chain": "worldchain",
+    "chainId": 480,
+    "name": "ProbabilisticFeeCollector",
+    "description": "After each swap, probabilistically (approximately 1-in-33 chance by default) attempts to collect accrued fees from a configured Uniswap v4 position NFT via DECREASE_LIQUIDITY + TAKE_PAIR and transfer proceeds to a fixed collector address. The probability and NFT ID are configurable by the collector address owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
