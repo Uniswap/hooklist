@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hooklist Release",
+  "type": "object",
+  "required": ["project", "id", "version", "name", "description", "source", "properties", "warnings", "lifecycle"],
+  "additionalProperties": false,
+  "properties": {
+    "project": { "type": "string", "pattern": "^[a-z0-9-]{1,64}$" },
+    "id": { "type": "string", "pattern": "^[a-z0-9.-]{1,80}$" },
+    "version": { "type": "string", "maxLength": 40 },
+    "name": { "type": "string", "minLength": 1, "maxLength": 100 },
+    "description": { "type": "string", "maxLength": 500 },
+    "source": {
+      "type": "object",
+      "required": ["verified"],
+      "additionalProperties": false,
+      "properties": {
+        "verified": { "type": "boolean" },
+        "repository": { "type": "string", "pattern": "^(https://.*)?$" },
+        "commit": { "type": "string", "maxLength": 64 },
+        "auditUrl": { "type": "string", "pattern": "^(https://.*)?$" },
+        "codeHashes": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^sha256:[a-f0-9]{64}$" }
+        }
+      }
+    },
+    "properties": {
+      "type": "object",
+      "required": ["dynamicFee", "upgradeable", "requiresCustomSwapData", "vanillaSwap", "swapAccess"],
+      "additionalProperties": false,
+      "properties": {
+        "dynamicFee": { "type": "boolean" },
+        "upgradeable": { "type": "boolean" },
+        "requiresCustomSwapData": { "type": "boolean" },
+        "vanillaSwap": { "type": "boolean" },
+        "swapAccess": { "type": "string", "enum": ["none", "temporal", "allowlist", "governance", "other"] }
+      }
+    },
+    "warnings": { "type": "array", "maxItems": 20, "items": { "type": "string", "maxLength": 300 } },
+    "renamedFrom": {
+      "type": "array",
+      "items": { "type": "string", "pattern": "^[a-z0-9-]+/[a-z0-9.-]+$" }
+    },
+    "factories": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["chain", "address"],
+        "additionalProperties": false,
+        "properties": {
+          "chain": { "type": "string" },
+          "address": { "type": "string", "pattern": "^0x[a-f0-9]{40}$" }
+        }
+      }
+    },
+    "lifecycle": {
+      "type": "object",
+      "required": ["status", "supersedes"],
+      "additionalProperties": false,
+      "properties": {
+        "status": { "type": "string", "enum": ["active", "superseded", "deprecated", "flagged"] },
+        "supersedes": { "type": ["string", "null"], "pattern": "^[a-z0-9-]+/[a-z0-9.-]+$" }
+      }
+    }
+  }
+}
