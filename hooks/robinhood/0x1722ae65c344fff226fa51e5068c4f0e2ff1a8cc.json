@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1722ae65c344fff226fa51e5068c4f0e2ff1a8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GoldFunHook",
+    "description": "Memecoin launchpad hook implementing a constant-product bonding curve for token launches. During the curve phase, swap math is fully overridden and fees (protocol + referral + creator) are skimmed from the ETH side. At graduation, raised ETH and unsold tokens are seeded as locked full-range liquidity in the same pool. Post-graduation, the hook collects the same fee split from normal AMM swaps via beforeSwap/afterSwap return deltas.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
