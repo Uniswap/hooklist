@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x35bf74f583c88c0daef3bdb6a77d18da6ada00cc",
+    "chain": "soneium",
+    "chainId": 1868,
+    "name": "FeeHook",
+    "description": "A Uniswap v4 hook that charges a fixed 3% fee on swaps involving a designated fee token (currency1), diverting collected fees to a treasury address using BeforeSwapDelta and AfterSwapDelta interception. Also maintains an on-chain tick oracle for fee-token pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
