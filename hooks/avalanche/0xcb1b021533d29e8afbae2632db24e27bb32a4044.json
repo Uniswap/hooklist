@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcb1b021533d29e8afbae2632db24e27bb32a4044",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "StrategyFeeHook",
+    "description": "Charges a 10% fee on the output token of every swap via afterSwapReturnsDelta, converts non-AVAX fees to AVAX through a nested in-pool swap, and forwards all fees to a configurable strategy manager contract. Only owner-allowlisted pools are supported; swaps on non-allowlisted pools revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
