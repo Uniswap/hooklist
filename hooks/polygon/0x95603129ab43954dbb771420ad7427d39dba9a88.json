@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x95603129ab43954dbb771420ad7427d39dba9a88",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "FrdmV4LiquidityHook",
+    "description": "An oracle-based, LP-backed liquidity hook that bypasses the Uniswap v4 AMM curve entirely, executing swaps at FrdmOracle FX rates via BeforeSwapDelta. It manages pool reserves directly using V2-style share accounting, charges a configurable base fee plus per-currency inflation fee, and is UUPS upgradeable behind an ERC1967 proxy.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
