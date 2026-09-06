@@ -34299,6 +34299,41 @@
   },
   {
     "hook": {
+      "address": "0xba7a87d42cb13834086f3329d7ae8a0555982444",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "RFATokenHook",
+      "description": "Collects a flat 1% fee on all ETH/RFAToken pool swaps via afterSwap delta return. On buys the fee is taken in RFAToken and immediately swapped to ETH; on sells the fee is taken in ETH. Both are forwarded to an owner-set fee address. Buy swaps are gated by an owner-controlled boolean flag; sells are always open.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "megaeth",
       "chainId": 4326,
@@ -35769,6 +35804,41 @@
   },
   {
     "hook": {
+      "address": "0x9d2a3d6b9c9339cf7a680dded69204a4edc3ba80",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "SuperDCAGauge",
+      "description": "A staking and reward-distribution hook for SuperDCA token pools. Dynamically overrides LP fees (0% for internal addresses, 1% for external) and mints SuperDCA token rewards on add/remove liquidity, split between liquidity providers (via pool donation) and a developer address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa4e6f5500e88691fdcb289aa0e99067481434880",
       "chain": "optimism",
       "chainId": 10,
@@ -36364,6 +36434,41 @@
   },
   {
     "hook": {
+      "address": "0x60f5daf7813928ca2d8636b40ce51df4ba69c088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Charges a 0.2% fee on exact-input swaps by intercepting in beforeSwap, taking the fee amount from the pool via poolManager.take(), and crediting it to tx.origin before the swap executes.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x65cc5edac15fbc7d8f0656004898510e372ea880",
       "chain": "polygon",
       "chainId": 137,
@@ -36675,6 +36780,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf2f88bf30b0dc96f097fddd4ddf6318f162deac0",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "DualPoolHook",
+      "description": "JIT liquidity hook by Uniswap Labs that deploys multi-range concentrated LP positions before each swap and removes them after, using ERC4626 vaults to rehypothecate idle capital between swaps. Pool fees are static (set at creation via PoolKey.fee). Owner can configure bucket weights per pool and pause swaps via a liveness flag.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -54004,6 +54144,76 @@
   },
   {
     "hook": {
+      "address": "0x0f41715dc432692b66a5adf8dcfef6ac407b20c8",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook implementing a donation-funded buyback-and-burn mechanism per pool. In beforeSwap, it shields main-token sells by absorbing them at the pool's own execution price using pot funds, leaving pool price unchanged. In afterSwap, it pumps the main token on buys by spending pot funds in a capped self-call swap. Also auto-harvests and auto-compounds a hook-held LP position, splitting fees into compound, buyback, burn, and recipient shares.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9e94e85660be00af1bfdd065b14380311204c0cc",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "Lev7FeeHook",
+      "description": "Charges a fixed 3% fee on buys (one-for-zero swaps) in pools where currency1 is the designated fee token, routing fees to an immutable treasury address and refunding unused reservations to the swapper. Also records per-pool tick history via an on-chain oracle.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "soneium",
       "chainId": 1868,
@@ -54026,6 +54236,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb2b59c10be49a7ce5b99140b9148abd9eb5a80cc",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "Lev7FeeHook",
+      "description": "Charges a fixed 3% fee on buys (one-for-zero swaps) in pools where currency1 is the designated fee token, routing fees to a treasury address, and records price observations via an on-chain oracle for each such pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -54069,6 +54314,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf023529cb21581d8460539781849b756f4698800",
+      "chain": "soneium",
+      "chainId": 1868,
+      "name": "TickRangeHook",
+      "description": "Restricts liquidity provision to a configured tick range. The beforeAddLiquidity hook reverts if the provided tick parameters fall outside the bounds set at deployment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -55094,6 +55374,41 @@
       "chainId": 480,
       "name": "ProbabilisticFeeCollector",
       "description": "Probabilistic fee collector that triggers LP fee collection from a position NFT in afterSwap based on a deterministic modulo of block number and tx.origin. Collection can be done inline or deferred to a permissionless performCollect() call.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x44b3606eb07cff3af44ff7c8139cf44bc6684040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "ProbabilisticFeeCollector",
+      "description": "Attempts to collect fees from a designated liquidity position (by NFT ID) after swaps. On blocks where block.number % triggerModulo == 0, it calls DECREASE_LIQUIDITY (with zero liquidity delta) and TAKE_PAIR via the position manager to harvest accumulated fees to a fixed STATIC_COLLECTOR address. The NFT ID and trigger modulo are configurable by the STATIC_COLLECTOR.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
