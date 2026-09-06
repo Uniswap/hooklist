@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc91d7fb7da698df53dee74da5066702dca4b4040",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "MinimalAfterSwapHook",
+    "description": "Stores pool configuration (tick ranges, token amounts, token addresses, and decimals) set at construction and implements a minimal no-op afterSwap hook that performs no logic beyond returning the required selector.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
