@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xce514dd433dd7c00492fbf39112047d27d404088",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "PolHook",
+    "description": "Intercepts exact-input swaps from a specific hardcoded tx.origin address, taking 1% of the specified input amount via BeforeSwapDelta (routing that portion through the hook's own ERC-20 reserves rather than pool liquidity). Includes an origin-based allowlist gate toggled by an unprotected setCheckOrigin function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
