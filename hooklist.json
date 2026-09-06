@@ -1541,6 +1541,41 @@
   },
   {
     "hook": {
+      "address": "0x66a6ac60f7f92134154c853b3a38b707dc8b4044",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "StrategyFeeHook",
+      "description": "Collects a 10% fee on the output token of each swap in owner-approved pools, converting non-AVAX fees to AVAX via an in-pool nested swap, then forwarding all collected fees to a configurable strategy manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x67304f51041949d54c3c6283beabc54e45f14040",
       "chain": "avalanche",
       "chainId": 43114,
@@ -2136,6 +2171,41 @@
   },
   {
     "hook": {
+      "address": "0x9e49ecc92b15bdc2f290340c2feccf3467652aa8",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AuthSwaps",
+      "description": "A KYC-gated Uniswap v4 hook that restricts pool initialization, liquidity operations, and swaps to addresses verified through the Manifest Finance Auth Manager. Users must have KYC approval and not be banned or sanctioned; only allowlisted router addresses may call the pool, with a 7-day timelock protecting changes to the auth manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9f2c7342bd75b8cf129fdac3526495e2a47dc044",
       "chain": "avalanche",
       "chainId": 43114,
@@ -2591,6 +2661,41 @@
   },
   {
     "hook": {
+      "address": "0xd9a744ecf2ada24b93d7fca9f881fa41f5ea0044",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "StrategyFeeHook",
+      "description": "Collects a fixed 10% fee on the output token of every swap in owner-allowlisted pools, converting non-AVAX fees to AVAX via an internal pool swap, and forwarding all collected fees to a configurable strategy manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd9b4f9b06448c5907d4b5abb218cd4400e564044",
       "chain": "avalanche",
       "chainId": 43114,
@@ -2831,6 +2936,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xee433a7de4651733ddef5155a71b397f969b8040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AutoExitHook",
+      "description": "An owner-managed hook that maintains three tick-range liquidity positions (lower, middle, upper) around a configured price band. Rebalancing (removing stale positions, optionally swapping tokens, and redeploying liquidity) is triggered manually by the owner via triggerRebalance() or updateConfig(); the afterSwap-triggered rebalance is commented out in this deployment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -36049,6 +36189,41 @@
   },
   {
     "hook": {
+      "address": "0x0bbe5891d54b56bc6fdcffb9244ec6bfce6b8040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "HookdRandomHook",
+      "description": "Records a rolling pseudo-random seed per ERC3232 token after each swap in an associated Uniswap v4 pool. The seed is derived via keccak256 over swap parameters and pool state, and is read by ERC3232 tokens during on-chain object generation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0eb88f97b8abc3b0557c3b47d49fd228de8cc0cc",
       "chain": "monad",
       "chainId": 143,
@@ -36679,6 +36854,41 @@
   },
   {
     "hook": {
+      "address": "0x9b9259bdf7e2c1608f1968be49f768150d020040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "HookdRandomHook",
+      "description": "A reusable Uniswap v4 afterSwap hook that maintains a rolling keccak256 seed per ERC3232 token, updated after each swap using swap parameters, balance delta, and block context. ERC3232 tokens read this seed for deterministic on-chain randomness during transfers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "monad",
       "chainId": 143,
@@ -36776,6 +36986,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbc07443314b8b2b018784af6c24c76aeddf71040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "MonadLimitOrder",
+      "description": "A Uniswap v4 limit order hook that allows users to place limit orders at specific out-of-range ticks, which are automatically filled when the pool price crosses the target tick. Built on the OpenZeppelin LimitOrderHook base; supports order placement, cancellation, and withdrawal of filled orders.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -38324,6 +38569,41 @@
   },
   {
     "hook": {
+      "address": "0x2378b94bdc6d7e7d97a55ae18f13300084438088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "A hook that gates custom exact-input swap execution to a single hardcoded tx.origin address, taking a fixed 10^15 token units from the pool manager on matching swaps. A checkOrigin flag (freely settable by anyone\u2014no access control) can block all non-allowlisted swappers from executing.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x30eaaf5faff03700df22649c160c3094142b4088",
       "chain": "polygon",
       "chainId": 137,
@@ -38355,6 +38635,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x365a73518241850261c0c7498c3218736d514088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Charges a fixed 0.2% (1/500) protocol fee on exact-input swaps by intercepting beforeSwap and extracting the fee from the pool via BeforeSwapDelta. Exact-output swaps pass through without a fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -38639,6 +38954,41 @@
   },
   {
     "hook": {
+      "address": "0xa33c9bcd5cada0636f19350d7461003c38814088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Routes exact-input DAI\u2194USDT swaps through a hardcoded Curve StableSwap3Pool on Polygon, applying a configurable fee ratio via BeforeSwapDelta. Owner can pause swaps via an `enabled` flag. Contains an owner-only `multicall` that can make arbitrary external calls from the hook contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "polygon",
       "chainId": 137,
@@ -38915,6 +39265,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe3eb37a8d77d90f2ad720f0f91d1a6e6e4092a80",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "BSTDirectionalWhitelistHook",
+      "description": "A Uniswap v4 hook for a BST/USDT pool that enforces directional access control: buying (USDT\u2192BST) is unrestricted for all users, while selling (BST\u2192USDT) is gated to an owner-managed allowlist of authorized sellers. Liquidity additions and removals are also restricted to addresses with the LIQUIDITY_MANAGER role.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {

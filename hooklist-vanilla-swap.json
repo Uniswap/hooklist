@@ -246,6 +246,41 @@
   },
   {
     "hook": {
+      "address": "0xee433a7de4651733ddef5155a71b397f969b8040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AutoExitHook",
+      "description": "An owner-managed hook that maintains three tick-range liquidity positions (lower, middle, upper) around a configured price band. Rebalancing (removing stale positions, optionally swapping tokens, and redeploying liquidity) is triggered manually by the owner via triggerRebalance() or updateConfig(); the afterSwap-triggered rebalance is commented out in this deployment.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf17f8f532cb4389378323dddde4b77724b58eaa0",
       "chain": "avalanche",
       "chainId": 43114,
@@ -10466,6 +10501,41 @@
   },
   {
     "hook": {
+      "address": "0x0bbe5891d54b56bc6fdcffb9244ec6bfce6b8040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "HookdRandomHook",
+      "description": "Records a rolling pseudo-random seed per ERC3232 token after each swap in an associated Uniswap v4 pool. The seed is derived via keccak256 over swap parameters and pool state, and is read by ERC3232 tokens during on-chain object generation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x35788a848109d3c27e59ffc79f4251b3b904c040",
       "chain": "monad",
       "chainId": 143,
@@ -10676,6 +10746,41 @@
   },
   {
     "hook": {
+      "address": "0x9b9259bdf7e2c1608f1968be49f768150d020040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "HookdRandomHook",
+      "description": "A reusable Uniswap v4 afterSwap hook that maintains a rolling keccak256 seed per ERC3232 token, updated after each swap using swap parameters, balance delta, and block context. ERC3232 tokens read this seed for deterministic on-chain randomness during transfers.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd8e2bf980e099d6e5d0c03c6a5acef5b4f954080",
       "chain": "monad",
       "chainId": 143,
@@ -10847,6 +10952,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe3eb37a8d77d90f2ad720f0f91d1a6e6e4092a80",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "BSTDirectionalWhitelistHook",
+      "description": "A Uniswap v4 hook for a BST/USDT pool that enforces directional access control: buying (USDT\u2192BST) is unrestricted for all users, while selling (BST\u2192USDT) is gated to an owner-managed allowlist of authorized sellers. Liquidity additions and removals are also restricted to addresses with the LIQUIDITY_MANAGER role.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {
