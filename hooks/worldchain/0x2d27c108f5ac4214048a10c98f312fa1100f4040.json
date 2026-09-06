@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2d27c108f5ac4214048a10c98f312fa1100f4040",
+    "chain": "worldchain",
+    "chainId": 480,
+    "name": "ProbabilisticFeeCollector",
+    "description": "Probabilistically collects fees from a configured LP position after each swap, using block.prevrandao modulo a configurable value as a trigger. On trigger, calls the PositionManager to decrease liquidity on a stored NFT position and transfer collected tokens to a fixed collector address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
