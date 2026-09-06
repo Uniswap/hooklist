@@ -1191,6 +1191,41 @@
   },
   {
     "hook": {
+      "address": "0x7844712c7be7f59e6ca5da10cc143072ada4c040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AutoExitHook",
+      "description": "Automatically rebalances three narrow tick-range LP positions (lower, middle, upper) after each swap by removing stale positions and re-adding liquidity at updated ticks. When the price is out of range, it optionally executes an internal swap via poolManager.swap() to convert token balances before repositioning.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8db530e5affd1cd6bf890903f5d929c31a4f4044",
       "chain": "avalanche",
       "chainId": 43114,
@@ -1397,6 +1432,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc91d7fb7da698df53dee74da5066702dca4b4040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "MinimalAfterSwapHook",
+      "description": "Stores pool configuration (tick ranges, token amounts, token addresses, and decimals) set at construction and implements a minimal no-op afterSwap hook that performs no logic beyond returning the required selector.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -34054,6 +34124,41 @@
   },
   {
     "hook": {
+      "address": "0x68ad7d7e2905656b7d89e56a43a6872f8487b0cc",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "SentryStockFeeHookV3",
+      "description": "Launch hook with a time-decaying dynamic fee that distributes swap fees among a creator, treasury, liquidity providers, and token holders (reflections). Reflections are disabled during an initial delay window after launch; accrued LP fees can be compounded into permanently locked full-range liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8bb4516059f9149bc3b89018fc7537f1f14a30cc",
       "chain": "ink",
       "chainId": 57073,
@@ -34330,6 +34435,41 @@
       "requiresCustomSwapData": true,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x50b8bf0fe44903e754613dfd131ad107a42f8080",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "FuzeV4Hook",
+      "description": "A beforeSwap hook that gates swaps to pools registered and enabled by the Fuze factory or owner. Each pool must be configured with a creator address, vault, and fee parameters before trading is permitted; swaps on unregistered or disabled pools revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
     }
   },
   {
@@ -34824,6 +34964,41 @@
   },
   {
     "hook": {
+      "address": "0xd8e2bf980e099d6e5d0c03c6a5acef5b4f954080",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "FuzeV4Hook",
+      "description": "A swap hook for the Fuze protocol that gates swaps by requiring pools to be registered and enabled via a governance-controlled config. Reverts on unregistered or disabled pools. Pool configs define a creator address, vault address, and fee parameters (fuze + creator fees capped at 5%).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe449e013004db4a5681e9622ca10c5ba0ea610cc",
       "chain": "monad",
       "chainId": 143,
@@ -34964,6 +35139,41 @@
   },
   {
     "hook": {
+      "address": "0x0a207ba70ea7e74f326632f12008127c481d7a80",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "SuperDCAGauge",
+      "description": "A Uniswap v4 hook that distributes SuperDCAToken rewards to liquidity providers based on staked amounts, splitting newly minted tokens between the pool and a developer address on each add/remove liquidity event. Applies dynamic LP fee overrides: 0% for allowlisted internal addresses, 1% for all others.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x18fd202ca6dcb67100bf98a25d934f67dd1fd0c0",
       "chain": "optimism",
       "chainId": 10,
@@ -35065,6 +35275,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4a6f63eded697dc8531ae0186213bef6a17e7a80",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "SuperDCAGauge",
+      "description": "A Uniswap v4 hook for DCA pools that enforces dynamic fees based on user type (internal 0%, keeper 0.10%, external 0.50%), restricts swaps to admin-approved routers via an allowlist, and distributes SuperDCA token rewards 50/50 between LPs (via pool donations) and a developer address during liquidity operations and external swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -35489,6 +35734,76 @@
   },
   {
     "hook": {
+      "address": "0xc4a3e09db866809057d1d64118d2c7755b95ba80",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "SuperDCAGauge",
+      "description": "A Uniswap v4 hook that manages SuperDCAToken staking and reward distribution. Rewards are minted proportional to staked amounts and time elapsed, then distributed on liquidity events (50% to pool, 50% to developer). Before swaps, applies a dynamic LP fee override\u20140% for internal addresses, 1% for external addresses.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe1bc12d9269d577e3afbbba8c348c261c9557a80",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "SuperDCAGauge",
+      "description": "A Uniswap v4 hook for SuperDCA token pools that enforces a three-tier dynamic fee structure (0% internal, 0.10% keeper, 0.50% external), restricts swaps to an allowlist of verified routers, and distributes SuperDCA token rewards (50% pool donation, 50% developer) before liquidity add/remove operations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xfb8fdd258d6175a12a02805863662139db2415c8",
       "chain": "optimism",
       "chainId": 10,
@@ -35621,6 +35936,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1c951c807e6075fc778a9f8dbfdd8cf4caa58088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "A Uniswap v4 hook that charges a 0.2% fee (1/500) on exact-input swaps by withdrawing the fee amount from the pool via `poolManager.take()` and returning a `BeforeSwapDelta`. Exact-output swaps pass through without any fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -54376,6 +54726,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x59d6637eccab06e0efbc176ab2c292ab66ec5040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "LendingHook",
+      "description": "A Uniswap v4 hook implementing an on-chain lending protocol integrated with pool price data. On afterInitialize it records the starting tick. On afterSwap it compares the pool price against a Chainlink oracle and, if within deviation bounds, identifies under-collateralized borrow positions and liquidates them by executing a nested swap inside the pool manager to absorb collateral.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
