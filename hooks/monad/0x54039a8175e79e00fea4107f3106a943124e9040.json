@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x54039a8175e79e00fea4107f3106a943124e9040",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "MonadLimitOrder",
+    "description": "A limit order hook for Uniswap v4 on Monad, wrapping OpenZeppelin's LimitOrderHook. In afterSwap, it detects crossed ticks and fills outstanding limit orders by removing liquidity and transferring tokens. Adds self-delegatecall wrappers (placeOrderNative, claimFill) to preserve msg.sender context and per-owner registration tracking.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
