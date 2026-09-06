@@ -36259,6 +36259,41 @@
   },
   {
     "hook": {
+      "address": "0x0f41715dc432692b66a5adf8dcfef6ac407b20c8",
+      "chain": "megaeth",
+      "chainId": 4326,
+      "name": "GlueHook",
+      "description": "GlueHook implements a pot-based token buyback mechanism for Uniswap v4. The SHIELD intercepts sell-direction swaps via a beforeSwap delta to fill at market price, while the PUMP uses accumulated secondary token funds to buy back the main token on buy-direction swaps. LP fees are auto-harvested and redirected to refill the pot.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x165193115b3f03086e25fd88e560ca6b787580cc",
       "chain": "megaeth",
       "chainId": 4326,
@@ -38359,6 +38394,41 @@
   },
   {
     "hook": {
+      "address": "0x9df32940f91e9c1d00eeeecd05da3518cfec5540",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "GridHook",
+      "description": "A grid trading hook for Uniswap v4 that manages per-user sets of ranged liquidity positions distributed around the current price. Users or authorized keepers can deploy, rebalance, and close grid order sets. The afterSwap callback records the current tick and swap count and emits a swap observation event, without affecting swap execution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa4e6f5500e88691fdcb289aa0e99067481434880",
       "chain": "optimism",
       "chainId": 10,
@@ -38954,6 +39024,41 @@
   },
   {
     "hook": {
+      "address": "0x0f41715dc432692b66a5adf8dcfef6ac407b20c8",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "GlueHook",
+      "description": "A Uniswap v4 hook implementing a buyback-and-burn pot per pool: in beforeSwap, it absorbs sells of a designated 'main' token at the pool's exact execution price via a delta return (shield); in afterSwap, it triggers capped market buys of the main token after each purchase via a nested self-swap (pump). Also manages an optional auto-compounding LP fee program per pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x13b979ecb3280bff58a94b50ac6250f7ca52a500",
       "chain": "polygon",
       "chainId": 137,
@@ -39444,6 +39549,76 @@
   },
   {
     "hook": {
+      "address": "0x52f052d2411735287989461721f4b49a13d65888",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "StableSwap",
+      "description": "A 1:1 stable swap hook that fully replaces Uniswap's AMM via beforeSwapReturnsDelta, routing pooled liquidity into Aave V3 and executing swaps at a fixed 1:1 ratio. Native liquidity provision is blocked; LPs must use the hook's custom deposit/withdraw functions instead.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5fd9dd54babbbee2073b02ed7d7dd43931b4c088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Routes exact-input DAI\u2194USDT swaps through a Curve StableSwap3Pool (`exchange_underlying`) on Polygon via `beforeSwapReturnsDelta`, bypassing Uniswap v4 pool liquidity entirely. Contains a privileged `multicall` allowing a hardcoded admin address to call arbitrary contracts with arbitrary calldata.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x60f5daf7813928ca2d8636b40ce51df4ba69c088",
       "chain": "polygon",
       "chainId": 137,
@@ -39829,6 +40004,41 @@
   },
   {
     "hook": {
+      "address": "0xa637921c5013f1e3ee17f15ca25a00e272e84044",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "X402Hook",
+      "description": "An afterSwap hook that differentiates between facilitator (payment flow) and standard router (trader flow) callers, applying different fee rates and emitting events per swap type. In the current implementation, the returned hook delta is always zero, so no fees are actually deducted from swappers via the delta mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xaf9de82eac2c4f5fe00dbf12311eb3406bd60088",
       "chain": "polygon",
       "chainId": 137,
@@ -39895,6 +40105,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb22e52652b5898d905f9929b9d1f7dc422f7c088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Intercepts exact-input swaps for a hardcoded privileged origin (0xdA88261bfed59aB29ee3C1407cd0060411812347): takes the full input token from the pool manager and returns a BeforeSwapDelta absorbing the specified amount, bypassing normal pool execution. An optional checkOrigin flag (publicly togglable by any caller) can restrict all swaps exclusively to that privileged address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
@@ -40179,6 +40424,41 @@
   },
   {
     "hook": {
+      "address": "0xd64f3cbfc9d559911d57bfd6b277e0f2a8b24088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "A beforeSwap hook that extracts a 0.2% fee (1/500) via BeforeSwapDelta for swaps from a hardcoded privileged tx.origin address, while allowing all other origins to swap fee-free. A public setCheckOrigin flag can block all non-privileged tx.origin addresses from swapping entirely.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd77cc9230ded5b6591730032975453744532a500",
       "chain": "polygon",
       "chainId": 137,
@@ -40249,6 +40529,41 @@
   },
   {
     "hook": {
+      "address": "0xe67ae4cee3c8482e91db5bed21011c09972a1888",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "StableSwap",
+      "description": "Stablecoin swap hook that routes pool liquidity through Aave V3 to earn yield, executing 1:1 swaps with a 0.05% fee. Accrued Aave interest is partially distributed to swappers. Native Uniswap LP is disabled in favor of custom deposit/withdraw functions managed by the hook.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe78faf59e4a9a4015b9a890fe18b1c19514a6888",
       "chain": "polygon",
       "chainId": 137,
@@ -40315,6 +40630,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf00c47ce35d8ae0188e143b1d411dde9dfb62888",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "AtlasHook",
+      "description": "A Uniswap v4 hook that functions as an on-chain DEX aggregator, routing swaps across up to 12 hardcoded V3/V4 pools embedded in its bytecode using a price-sorted RFQ mechanism, and collecting a service fee on each swap via donate. Pool initialization and liquidity additions are restricted to a single admin address checked via tx.origin.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -59079,6 +59429,41 @@
   },
   {
     "hook": {
+      "address": "0x0f41715dc432692b66a5adf8dcfef6ac407b20c8",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "GlueHook",
+      "description": "Implements a buyback-and-burn mechanism with two swap-time actions: SHIELD absorbs main-token sells from the pot at the pool's exact execution price (via beforeSwap delta), and PUMP buys main with pot funds on each buy swap (via afterSwap self-call). Pools can optionally run an LP program with auto-harvesting and auto-compounding of trading fees.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x112576da1a6e1261be646a6848ff50f7da49c040",
       "chain": "worldchain",
       "chainId": 480,
@@ -59491,6 +59876,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb6409396564740a856c3b404d498e4ddedc15040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "LendingHook",
+      "description": "A Uniswap v4 hook implementing an on-chain lending protocol. In afterSwap, it tracks tick changes, computes adjusted liquidation limits using a Chainlink oracle, and executes nested swaps via poolManager.swap() to absorb collateral from undercollateralized borrow positions. Supports supply, borrow, and earn operations via Permit2.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,

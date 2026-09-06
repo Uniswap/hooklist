@@ -10956,6 +10956,41 @@
   },
   {
     "hook": {
+      "address": "0x9df32940f91e9c1d00eeeecd05da3518cfec5540",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "GridHook",
+      "description": "A grid trading hook for Uniswap v4 that manages per-user sets of ranged liquidity positions distributed around the current price. Users or authorized keepers can deploy, rebalance, and close grid order sets. The afterSwap callback records the current tick and swap count and emits a swap observation event, without affecting swap execution.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc375f636db1fb4b53e3a776ccb98e6ea458b4800",
       "chain": "optimism",
       "chainId": 10,
