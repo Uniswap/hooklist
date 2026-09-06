@@ -10746,6 +10746,41 @@
   },
   {
     "hook": {
+      "address": "0x7df249b5be8d4687a818ee9a6c4ee8feb1848080",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "FuzeV4Hook",
+      "description": "A Uniswap v4 hook that gates swaps to pools registered by the Fuze factory or owner. Swaps revert unless the pool has been configured and enabled with a creator address, vault address, and fee parameters (fuze + creator fee, capped at 5%).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9b9259bdf7e2c1608f1968be49f768150d020040",
       "chain": "monad",
       "chainId": 143,
@@ -10816,6 +10851,41 @@
   },
   {
     "hook": {
+      "address": "0xe911997d8d5258657a898cc0e38578c214a1c040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "HookdRandomHook",
+      "description": "A reusable Uniswap v4 hook that records a rolling random seed per ERC3232 token after each pool swap. In afterSwap, it updates lastSeed[token] using a keccak256 hash of the prior seed, swap parameters, and block data, enabling ERC3232 token contracts to derive randomness for object generation without the hook itself minting anything.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xeb749ac21df2c3ee28c206cb92f65da5a4ec8080",
       "chain": "monad",
       "chainId": 143,
@@ -10847,6 +10917,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc375f636db1fb4b53e3a776ccb98e6ea458b4800",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "Counter",
+      "description": "A Uniswap v4 hook that increments a per-pool counter on each beforeAddLiquidity call. Swap and remove-liquidity callbacks are present in the source but commented out and inactive.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
