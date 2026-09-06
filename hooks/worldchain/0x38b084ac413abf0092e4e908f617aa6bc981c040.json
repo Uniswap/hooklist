@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x38b084ac413abf0092e4e908f617aa6bc981c040",
+    "chain": "worldchain",
+    "chainId": 480,
+    "name": "ProbabilisticFeeCollector",
+    "description": "Probabilistic fee collector that triggers LP fee collection from a position NFT in afterSwap based on a deterministic modulo of block number and tx.origin. Collection can be done inline or deferred to a permissionless performCollect() call.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
