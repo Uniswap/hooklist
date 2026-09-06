@@ -10291,6 +10291,41 @@
   },
   {
     "hook": {
+      "address": "0x35788a848109d3c27e59ffc79f4251b3b904c040",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "HookdRandomHook",
+      "description": "A reusable Uniswap v4 hook that records a rolling random seed per ERC3232 token by observing pool swaps in afterSwap. After each swap, it updates a keccak256 hash chain (incorporating swap params, delta, block number, and prior seed) keyed by the ERC3232 token address, which tokens read during object generation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x50b8bf0fe44903e754613dfd131ad107a42f8080",
       "chain": "monad",
       "chainId": 143,
@@ -10462,6 +10497,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8711a41d76e18344b7b3eeb5c0703a1210214080",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "A beforeSwap hook that conditionally gates swaps by tx.origin: when checkOrigin is set to 1, only transactions originating from a single hardcoded address (0xdA88261bfed59aB29ee3C1407cd0060411812347) are permitted. The checkOrigin flag can be set by any caller with no access control.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
     }
   },
   {
