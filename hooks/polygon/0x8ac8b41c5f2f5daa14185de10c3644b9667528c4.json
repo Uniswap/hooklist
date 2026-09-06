@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8ac8b41c5f2f5daa14185de10c3644b9667528c4",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "PoolStartegyHooks",
+    "description": "A Uniswap v4 hook that gates pool initialization and liquidity addition to calls from a PoolStrategyFactory. On each swap, applies a time-decaying buy fee (starting at 95%, declining to 10% over time) and distributes collected fees \u2014 optionally converting them to ETH via a nested swap \u2014 to a strategy vault, collection owner, and protocol fee address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
