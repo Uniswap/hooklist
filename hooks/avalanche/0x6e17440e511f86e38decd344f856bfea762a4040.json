@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6e17440e511f86e38decd344f856bfea762a4040",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "AutoExitHook",
+    "description": "Manages three narrow liquidity positions (lower, middle, upper) around a configured price range. After each swap, automatically removes out-of-range positions, executes internal rebalancing swaps, and re-adds liquidity; excess tokens are flushed back to the owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
