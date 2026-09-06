@@ -1436,6 +1436,76 @@
   },
   {
     "hook": {
+      "address": "0x67304f51041949d54c3c6283beabc54e45f14040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AutoExitHook",
+      "description": "An auto-rebalancing hook that monitors tick movement after each swap and repositions the owner's liquidity across lower, middle, and upper single-tick ranges. It removes out-of-range positions, performs nested swaps via the pool manager to rebalance, and re-adds liquidity, pulling tokens from the owner's wallet as needed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6e17440e511f86e38decd344f856bfea762a4040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AutoExitHook",
+      "description": "Manages three narrow liquidity positions (lower, middle, upper) around a configured price range. After each swap, automatically removes out-of-range positions, executes internal rebalancing swaps, and re-adds liquidity; excess tokens are flushed back to the owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x73211180381b5e0b71dfce1e87ff11d6879b8044",
       "chain": "avalanche",
       "chainId": 43114,
@@ -1996,6 +2066,41 @@
   },
   {
     "hook": {
+      "address": "0xaa5af4240e730331097640ebd77bc8aa858a8040",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AutoExitHook",
+      "description": "Monitors the current tick after each swap and automatically removes liquidity from a configured range when the price exits it. After removal, the hook optionally pulls funds from the owner, performs a small balancing swap, and re-adds liquidity at the configured target tick range.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb216070c3509047ea597e2e626a29cea427a60c8",
       "chain": "avalanche",
       "chainId": 43114,
@@ -2272,6 +2377,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd299d278fee44bf2921cf19c7bd2cacd18c44044",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "StrategyFeeHook",
+      "description": "Collects a fixed 10% fee on the output token of every swap in owner-allowlisted pools, converts non-AVAX fees to AVAX via an in-pool swap, and forwards all collected fees to a configurable external strategy manager contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -36609,6 +36749,41 @@
   },
   {
     "hook": {
+      "address": "0x0f41715dc432692b66a5adf8dcfef6ac407b20c8",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "GlueHook",
+      "description": "A buyback-and-burn Uniswap v4 hook with a singleton donation pot per pool. In beforeSwap, absorbs main\u2192secondary sells at pool execution price from the pot (shield). In afterSwap, executes a size-capped market buy of main on secondary\u2192main swaps (pump), delivering or burning acquired tokens. Optionally hosts an auto-compounding LP position per pool with configurable fee splits.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x18fd202ca6dcb67100bf98a25d934f67dd1fd0c0",
       "chain": "optimism",
       "chainId": 10,
@@ -36955,6 +37130,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6d7a7ef698f9cd4c6268f9eb77eff1c0d84a8040",
+      "chain": "optimism",
+      "chainId": 10,
+      "name": "PointsHook",
+      "description": "Awards ERC20 points tokens to a user address (encoded in hookData) after swaps that buy a specific token using TOKEN_A (0x7C81Bf9fF2080033286071996bEe7D2E54a54D7C), at a rate of 1 point per 10 TOKEN_A spent. Points are minted by a companion PointsToken ERC20 contract deployed by the hook.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -37549,6 +37759,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x13b979ecb3280bff58a94b50ac6250f7ca52a500",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "TELxIncentiveHook",
+      "description": "Tracks LP positions (add and remove liquidity events) by recording them in an external PositionRegistry for off-chain incentive distribution. Access to liquidity hooks is restricted to an authorized position manager; pool initialization is gated via the registry.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -38250,6 +38495,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf415f8f47772ffd153c2ebb0df79191ffacd8088",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "PolHook",
+      "description": "Charges a 0.2% fee on each swap by calling poolManager.take() to collect the fee amount from the pool into the hook contract, returning a BeforeSwapDelta to offset the swap amount. No access control and no hookData usage.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -56979,6 +57259,41 @@
   },
   {
     "hook": {
+      "address": "0x2da1f76d0c1dfbba4dd3f83568453346f5578040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "ProbabilisticFeeCollector",
+      "description": "After each swap, with approximately 1% probability (based on block.prevrandao modulo a configurable trigger), the hook calls the position manager to decrease liquidity from a configured NFT position and transfer collected tokens to a static collector address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x38b084ac413abf0092e4e908f617aa6bc981c040",
       "chain": "worldchain",
       "chainId": 480,
@@ -57096,6 +57411,41 @@
     "flags": {
       "beforeInitialize": false,
       "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x836f5bc2c58496842861ebad66902747148cc040",
+      "chain": "worldchain",
+      "chainId": 480,
+      "name": "ProbabilisticFeeCollector",
+      "description": "After each swap, probabilistically (approximately 1-in-33 chance by default) attempts to collect accrued fees from a configured Uniswap v4 position NFT via DECREASE_LIQUIDITY + TAKE_PAIR and transfer proceeds to a fixed collector address. The probability and NFT ID are configurable by the collector address owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
