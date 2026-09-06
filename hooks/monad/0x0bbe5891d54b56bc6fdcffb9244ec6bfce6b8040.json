@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0bbe5891d54b56bc6fdcffb9244ec6bfce6b8040",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "HookdRandomHook",
+    "description": "Records a rolling pseudo-random seed per ERC3232 token after each swap in an associated Uniswap v4 pool. The seed is derived via keccak256 over swap parameters and pool state, and is read by ERC3232 tokens during on-chain object generation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
