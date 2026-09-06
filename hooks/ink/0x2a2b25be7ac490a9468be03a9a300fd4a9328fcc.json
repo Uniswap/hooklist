@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2a2b25be7ac490a9468be03a9a300fd4a9328fcc",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "QwireHook",
+    "description": "A tax hook for a single WETH/QWIRE pool that skims a percentage fee on swaps: taxes WETH input in beforeSwap and WETH output (QWIRE-sell direction) in afterSwap, routing collected taxes to a treasury. Swaps are restricted to a canonical router and quoter; liquidity actions are restricted to an lpManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
