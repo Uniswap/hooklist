@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x00514dd955fc83e23898bdde4aa0347c8658c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VladdyHook",
+    "description": "A fee-taking hook for native ETH/TOKEN pools that intercepts swaps to collect ETH-denominated fees, instantly distributing them to configurable recipients, a platform wallet, and a buyback reserve. Supports multiple distribution modes: direct recipient payouts, token buyback-and-burn, staking rewards (robin mode), lottery draws, and protocol-owned liquidity minting.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
