@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x87da6c61ee7c733361772703f6c867161e6368ec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NoMistakesHookV1",
+    "description": "Fee-collecting hook for the Pons token-launch protocol that applies variable sell fees based on market-cap tiers. Supports both the protocol's own router (with hookData-encoded TradeContext) and third-party routers permissionlessly via pool-delta accounting. Manages per-pool graduation state and an on-chain price oracle.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
