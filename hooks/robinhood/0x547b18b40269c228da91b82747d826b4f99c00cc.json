@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x547b18b40269c228da91b82747d826b4f99c00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VolatilityFeeHook",
+    "description": "Charges a realized-volatility fee on every swap, ranging from a base rate to a ceiling proportional to how far the previous swap moved the tick price. Fees are taken in the pool's quote currency as ERC-6909 claims and forwarded to an immutable fee wallet via a permissionless sweep() function. Exact-output swaps are rejected.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
