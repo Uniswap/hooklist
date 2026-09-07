@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x16c7549166d081e0ac2fd2e0cf38aa9487382080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ModularLaunchpadHook",
+    "description": "Modular Uniswap v4 launchpad hook with optional anti-snipe (time-based per-buy WETH cap curve), buy throttle (pool-wide rate limit during launch window), and JIT liquidity defense. Supports two fee models: standard (per-swap afterSwap take with optional creator-burn and liquidity-deepening redirects) or universal (hook-held seed LP with permissionless harvest() into a 70/30 creator/protocol split). This instance uses universal economics with anti-snipe enabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "temporal"
+  }
+}
