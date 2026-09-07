@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9c15c992e4de3711715c8b7d717ef46e474680cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BallastHook",
+    "description": "Charges a configurable basis-point fee on the WETH leg of every swap (before or after, depending on whether WETH is the specified or unspecified currency) and distributes it among the token creator, platform vault, and an optional referrer decoded from hookData. Fees accrue on-chain and are claimed via a pull-payment mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
