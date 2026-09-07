@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6c1d4751286a899815d031c372d7f9b506b3e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "V4TaxHook",
+    "description": "A shared Uniswap v4 hook that charges a fixed 1% tax on the WETH (base asset) side of buys and sells, minting the collected tax as a PoolManager ERC-6909 claim to the token contract. Pool initialization is gated to factory-registered pools to prevent launch DoS attacks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
