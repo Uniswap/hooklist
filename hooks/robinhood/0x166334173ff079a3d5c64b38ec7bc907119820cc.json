@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x166334173ff079a3d5c64b38ec7bc907119820cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LootHook",
+    "description": "Fee-taking hook that skims 1.5% of every swap in ETH. On buys (ETH\u2192token), fees are claimed as ERC-6909 ETH credits in beforeSwap and redeemed in afterSwap or via a permissionless collect(); on sells (token\u2192ETH), fees are taken from the ETH output in afterSwap. Fees are split among token holders (via DividendToken.fundPot), creator, platform, and ops.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
