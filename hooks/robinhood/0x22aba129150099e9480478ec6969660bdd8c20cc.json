@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x22aba129150099e9480478ec6969660bdd8c20cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PadFeeHook",
+    "description": "Singleton hook shared by all graduated pons v2 memecoin pools. Collects protocol, launchpad, creator, and charity fees from the quote leg, and optional burn fees from the memecoin leg, on every swap. Applies a time-decaying snipe tax on early buys. On buys, optionally stakes half of post-burn memecoin in a CoinFlip game. Supports per-pool rich/poor wallet balance gates and FOMO-only relayer allowlists.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
