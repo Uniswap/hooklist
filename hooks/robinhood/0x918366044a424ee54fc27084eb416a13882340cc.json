@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x918366044a424ee54fc27084eb416a13882340cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "IndexFeeHook",
+    "description": "A shared Uniswap v4 hook for all index pools that intercepts the full LP fee and splits it inline \u2014 a protocol base fee plus a volatility-scaled index fee \u2014 routing shares to a protocol treasury, index reserve, and basket stock buybacks, with a launch snipe guard on early blocks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
