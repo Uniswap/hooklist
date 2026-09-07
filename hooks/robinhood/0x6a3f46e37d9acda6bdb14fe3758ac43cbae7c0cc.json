@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6a3f46e37d9acda6bdb14fe3758ac43cbae7c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VicksHook",
+    "description": "A launch-platform hook that charges a configurable base fee (default 1%) on swaps and an elevated anti-snipe tax (default 12%) on buys within the first 28 blocks after token creation. Taxes are taken from the pool manager and credited to token creators via a factory registry, withdrawable by creators.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
