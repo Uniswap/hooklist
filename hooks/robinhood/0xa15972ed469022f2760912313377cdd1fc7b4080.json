@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa15972ed469022f2760912313377cdd1fc7b4080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "V4GasDetectHook",
+    "description": "A honeypot hook that selectively blocks sell swaps in real transactions while allowing them in simulations. Buy swaps (zeroForOne) always pass. Sell swaps check gasleft(): if above 30M (simulation), the sell is allowed; if below (real user transaction), the hook reverts \u2014 permanently trapping buyers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
