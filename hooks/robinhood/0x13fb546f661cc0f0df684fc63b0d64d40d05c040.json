@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x13fb546f661cc0f0df684fc63b0d64d40d05c040",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "EquifoldEvolutionHook",
+    "description": "Cosmetic accounting hook for Equifold launch pools that observes post-swap quote flow to update a tamagotchi-style creature's condition (fed/hungry/starving/ghost) and prophecy ladder (volume and price-hold milestones), emitting events without gating or modifying swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
