@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd539d1b10e38b983f4d426fa987f240aaae6eacc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ERC1967Proxy",
+    "description": "An OpenZeppelin ERC1967 transparent proxy pointing to an unverified implementation contract that contains the actual Uniswap v4 hook logic. The hook flags (beforeSwap, afterSwap, beforeSwapReturnsDelta, afterSwapReturnsDelta, and liquidity hooks) are encoded in the address bitmask, but the implementation source is not available for analysis.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
