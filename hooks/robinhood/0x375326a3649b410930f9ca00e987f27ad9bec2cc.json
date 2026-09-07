@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x375326a3649b410930f9ca00e987f27ad9bec2cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchTaxHook",
+    "description": "Applies a per-pool creator tax (up to 2% in basis points) on swaps involving a registered launch token, taking the tax from the quote-token side of each swap and crediting it to the token creator for later claiming. Also locks registered pools against liquidity removal until unlocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
