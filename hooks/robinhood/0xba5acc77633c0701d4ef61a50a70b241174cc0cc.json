@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xba5acc77633c0701d4ef61a50a70b241174cc0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HOODDOGFeeHook",
+    "description": "A volatility-based fee hook that charges ETH fees (1\u20135%) on swaps, scaling the fee by the previous swap's tick movement. Fees are collected via delta returns in beforeSwap (buys, zeroForOne exact-input) and afterSwap (sells), then forwarded directly to a per-pool fee recipient via poolManager.take().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
