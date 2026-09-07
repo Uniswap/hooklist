@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd9248ec8a2a8dcba9003fe9f2c6ac924c9e2a8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GateFeeGraduateHook",
+    "description": "A shared v4 hook for meme token launches that gates external liquidity (only the launcher may add LP via a one-shot per-pool gate), charges a 1% ETH fee on all swaps using the return-delta mechanism, and automatically marks a pool as graduated once net ETH inflow reaches 4 ETH.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
