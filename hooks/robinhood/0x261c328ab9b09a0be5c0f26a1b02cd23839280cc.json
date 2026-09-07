@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x261c328ab9b09a0be5c0f26a1b02cd23839280cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "QuantisFeeHook",
+    "description": "A volatility-based dynamic fee hook for ETH/token pools in the Quantis protocol. Charges buy fees (ETH input) in beforeSwap and sell fees (ETH output) in afterSwap, with the fee rate scaling between configurable base and max (1%\u20135%) based on the previous swap's tick movement. Fees are sent directly to a per-pool recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
