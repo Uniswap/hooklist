@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0cdaa2fb1fb3b9f0e05a5611931c13ddb258e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GoPumpMeFeeHook",
+    "description": "A Uniswap v4 hook for goPumpMe campaign pools that charges a flat WETH-denominated app fee on every swap, split between the campaign's cause recipient and the goPumpMe treasury, while overriding LP fees to zero to ensure fees are always taken in WETH only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
