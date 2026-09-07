@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x028e2216c20318d725010d3fa2ab7c375ca03080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "Shared multi-pool hook for Robinhood Chain Launchboy pools that implements a per-pool linearly decaying LP fee (up to 30%) to deter snipers at launch. The fee decays from a configured start rate to an end rate over a set duration. Pool initialization is restricted to the contract owner (server) to prevent front-running.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
