@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5b1d9e18641f20eb799374ab1d359d93110c80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LootHook",
+    "description": "A fee hook that takes 1.5% of every swap in ETH, routing proceeds to token holders (via a dividend token's fundPot), the pool creator, a platform address, and an ops address. Buy-side fees are minted as ERC-6909 claims in beforeSwap and redeemed on the next sell or via a permissionless collect() call.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
