@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xade82f80e09814ea0f83700c460faafabff368cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PmavHookQuoted",
+    "description": "A bonding-curve launchpad hook (PMAV v2.2 Quoted) that manages meme-coin pools through a curve phase with quote-denominated fees, a decaying anti-snipe premium, and a permanent 2% wallet cap, then graduates to a standard Uniswap v4 pool (1% dynamic LP fee) once all curve tokens are sold.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
