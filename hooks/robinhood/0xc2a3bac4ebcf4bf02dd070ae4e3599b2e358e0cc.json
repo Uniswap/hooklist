@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc2a3bac4ebcf4bf02dd070ae4e3599b2e358e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HedgeFeeHook",
+    "description": "Volatility-based ETH fee hook for ETH/token pools launched by a bound factory. Charges fees in native ETH on buys (from input, in beforeSwap) and sells (from output, in afterSwap), scaling the fee rate dynamically between a configurable base and maximum BPS (1%\u20137%) based on the previous swap's tick movement.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
