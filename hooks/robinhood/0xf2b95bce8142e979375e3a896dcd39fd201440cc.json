@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf2b95bce8142e979375e3a896dcd39fd201440cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "YunaFeeHook",
+    "description": "Applies directional ETH fees on swaps in a native ETH pool: a buy fee (ETH-specified swaps) is routed to a holder pool via BeforeSwapDelta, and a sell fee (ETH-unspecified swaps) is split between a team treasury and holder pool via AfterSwapDelta. All fees are taken in currency0 (native ETH) using poolManager.take().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
