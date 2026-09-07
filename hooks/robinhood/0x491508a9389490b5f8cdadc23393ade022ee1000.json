@@ -4,7 +4,7 @@
     "chain": "robinhood",
     "chainId": 4663,
     "name": "SaturnOmnichainV4Hook",
-    "description": "Records the initial tick upon pool creation by calling an external liquidity bootstrapper contract. Only afterInitialize is active; all swap, liquidity, and donate callbacks are pure no-ops that return their respective selectors without modifying state.",
+    "description": "Implements IHooks with only afterInitialize enabled; the afterInitialize callback is a pure no-op. Provides a separate external initializePools() function that records the initial tick by calling an external liquidity bootstrapper contract (ISaturnOmnichainLiquidityBootstrapper). All other hook callbacks are no-ops.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
