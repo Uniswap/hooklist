@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x730abadbb4f328520e5350f59126fbe1d67f70cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SentryStockFeeHookV3",
+    "description": "A Uniswap v4 hook for token launches with a time-decaying dynamic fee curve. The hook overrides pool LP fees to zero and skims fees via return deltas, distributing them between a creator recipient, treasury, permanently-locked LP compounding, and holder reflections (via IDividendToken.notifyReward). Whitelisted launch wallets pay the floor fee during the opening window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
