@@ -43294,6 +43294,41 @@
   },
   {
     "hook": {
+      "address": "0x1300cb662d94634b17accaa592409730aaf520cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "DirectV4StakingFeeHook",
+      "description": "Collects a fixed WETH fee on every token/WETH pool swap, distributing 30% to the pool creator, 15% to platform token stakers via a staking vault, and 55% to the treasury. Fees are extracted via beforeSwap and afterSwap return deltas using poolManager.take().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x133df5bf1d27b970640de89db403742b74c6c0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -52425,6 +52460,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8da93a6da0ee6654d6274910f84b9bcaae1060cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GataraEthHook",
+      "description": "Launch hook for ETH-quoted Uniswap v4 pools that charges configurable directional buy/sell fees denominated in native ETH, split among a pool creator, a protocol treasury, and a decaying launch-period cocoon surcharge. Blocks third-party buys in the same block-second as pool initialization to prevent atomic snipe attacks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
