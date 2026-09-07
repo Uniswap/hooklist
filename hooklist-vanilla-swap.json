@@ -13196,6 +13196,41 @@
   },
   {
     "hook": {
+      "address": "0x8479d26685eb2d70dda87c72fcfea8886dc9e000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "GraduationGateHook",
+      "description": "Gates Uniswap v4 pool initialization to require one token be a designated payment token and the other to be marked as \"graduated\" by an on-chain GraduationRegistry. Pools that don't meet these criteria are blocked from being created.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8526171645365821d0630f20bbe35284a3d1a040",
       "chain": "robinhood",
       "chainId": 4663,
@@ -13454,6 +13489,41 @@
       "beforeInitialize": false,
       "afterInitialize": true,
       "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x9671c79b81ff408199a8ccd5d236e14c4ffea800",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LpGuardHook",
+      "description": "Restricts pool initialization and liquidity additions to a single designated launcher address via beforeInitialize and beforeAddLiquidity, preventing any third-party LP from adding positions. Swaps are completely unrestricted with no hook involvement.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
