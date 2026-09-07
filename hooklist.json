@@ -41684,6 +41684,41 @@
   },
   {
     "hook": {
+      "address": "0x03c6230ef74e15c98e69396c4593fcfb50f1cacc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "WarzyHook",
+      "description": "Singleton launchpad hook for the Warzy platform on Robinhood Chain. Takes a 1% ETH fee on every swap (80% to the token's dev, 20% to treasury or parent-token holders via FeeDistributor). Enforces an anti-snipe warmup window after launch, locks liquidity so only the factory can add and nobody can remove, and automatically graduates tokens when their ETH FDV crosses a configurable threshold (USD-pegged via an on-chain oracle pool).",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x03fd23758e8790768fbb6a684b17fdda3b9a9000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -42559,6 +42594,41 @@
   },
   {
     "hook": {
+      "address": "0x0f1091ac57f4880f96adb544b9f9b476681e80cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "NasdankFeeHook",
+      "description": "A Uniswap v4 hook for NASDANK pools that charges a fixed WETH fee on every swap via return-delta accounting, splitting accrued fees between an immutable project treasury and protocol treasury. Each pool's fee rate and recipients are registered once by a permissioned launcher and cannot be modified afterward.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0fb46f019ebf66d0767e891f8face687f1156088",
       "chain": "robinhood",
       "chainId": 4663,
@@ -42834,6 +42904,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x11e2bf013c6c861780161069c23d001ea94410cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Spot",
+      "description": "A Uniswap v4 hook implementing dynamic swap fees with surge pricing, a truncated geometric oracle, and full-range liquidity reinvestment of collected fees. On every swap, the hook charges a protocol fee plus a hardcoded 0.10% hidden surcharge (AGGRESSIVE_SURGE) that is silently minted to the liquidity manager, with an always-true condition ensuring the surcharge is applied on exactOut swaps regardless of configured protocol fee settings.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -45355,6 +45460,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x332f85e7e323214b2d55286414b059ebb1f2a044",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PonsV2MemeHook",
+      "description": "A singleton Uniswap v4 hook for graduated Pons v2 memecoin pools. Takes a hook fee plus an optional creator tax on every swap via afterSwap return delta, accumulating fees in pending balances. A trusted sweep operator periodically converts memecoin-denominated fees to the pool's quote currency via internal swaps, then distributes proceeds among the protocol, a buyback-and-lock vault (five-year vest), and the pool creator.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -53094,6 +53234,41 @@
   },
   {
     "hook": {
+      "address": "0xa65ec30c6e35f847c900269c0446d5c0457700cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FeeHook",
+      "description": "Levies a flat 1% protocol fee in native ETH on every swap of a native-ETH/token pool, split 40% to a treasury and 60% to the pool's registered creator. Fees are accrued via PoolManager custom-accounting deltas (beforeSwap for ETH-specified swaps, afterSwap otherwise) and pulled by separate withdrawal calls.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa688e500cc85cc4de585fd0fe896634c0635c0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -57889,6 +58064,41 @@
   },
   {
     "hook": {
+      "address": "0xed3e36f26fd6385a66a964a8d42e91e3b1022000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "TweetPadV8InitializationHook",
+      "description": "A beforeInitialize-only hook that gates pool creation to a trusted adapter contract verified by runtime bytecode hash and portal address. Enforces that only WETH pairs with a fixed 0.3% fee and tick spacing of 60 can be initialized through the hook.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xed4b32249a657228207c0a429dd8668690afe0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -58410,6 +58620,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf58c7928a37187331fa0045415012de5f30d00cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RiftHook",
+      "description": "A token launchpad hook that collects configurable protocol and creator fees on swaps, with a time-decaying anti-snipe surcharge applied during the initial blocks after each token's launch.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
