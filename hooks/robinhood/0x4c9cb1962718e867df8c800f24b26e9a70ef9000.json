@@ -4,7 +4,7 @@
     "chain": "robinhood",
     "chainId": 4663,
     "name": "SaturnOmnichainV4Hook",
-    "description": "Uniswap v4 hook for the Saturn Omnichain protocol that uses afterInitialize to record the initial tick set by an external LiquidityBootstrapper contract. Has no swap-time or liquidity-time logic.",
+    "description": "Uniswap v4 hook for the Saturn Omnichain protocol with an afterInitialize permission (callback is a no-op). Pool initialization and initial tick recording are performed by a separate `initializePools()` function that delegates to an external LiquidityBootstrapper contract.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
