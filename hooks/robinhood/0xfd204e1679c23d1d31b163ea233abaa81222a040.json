@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfd204e1679c23d1d31b163ea233abaa81222a040",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NiceHoodV4Hook",
+    "description": "Gates pool initialization to an authorized graduation adapter address. After each swap, opportunistically calls vault.claim() to distribute LP fees for the swapped token, throttled by a configurable interval to avoid excessive calls.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
