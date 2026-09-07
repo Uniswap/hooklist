@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x322349c9db86d7ca04afe4331b8e152b6a74e8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ClankerHookStaticFeeV2",
+    "description": "Uniswap v4 hook for Clanker-issued tokens that enforces per-pool static LP fees with separate buy and sell rates, collects a 20% protocol fee on each swap via delta manipulation, and includes an optional MEV-protection module that can temporarily raise fees within two minutes of pool creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
