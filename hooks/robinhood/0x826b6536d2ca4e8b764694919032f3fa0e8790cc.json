@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x826b6536d2ca4e8b764694919032f3fa0e8790cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Spot",
+    "description": "Uniswap v4 hook with dynamic LP fees (base + surge) computed via a truncated geometric oracle; captures a configurable protocol fee share (POL) from each swap and reinvests it into full-range liquidity through a FullRangeLiquidityManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
