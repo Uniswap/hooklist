@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6396243065accc74ed3fcd13a4b01bb3e90020cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BobiFeeHook",
+    "description": "A volatility-based fee hook for BobiLaunch token launch pools. Charges ETH fees (1\u20137%) on buys via beforeSwap and on sells via afterSwap, scaling the fee with the tick movement of the previous swap. Only the bound factory can initialize pools; exact-output swaps are blocked; the owner can retune fees within the hard band.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
