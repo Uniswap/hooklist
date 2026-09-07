@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8107f67195dfa0c8d70abc401c1a6e42b46f40cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BullionTaxHook",
+    "description": "Levies a fixed 4% ETH trade tax on buys (ETH\u2192GLD, taken in beforeSwap) and sells (GLD\u2192ETH, taken in afterSwap) via BeforeSwapDelta/AfterSwapDelta returns. Accumulated ETH is held in the contract until flushed to a staking sink. Only exact-input swaps are permitted; exact-output reverts. Certain addresses (e.g. a buyback contract) can be exempted from the tax by the owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
