@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0c1fd1146074bab3a9d943180108f70107f3c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "OpenCatUsdgFeeHook",
+    "description": "A volatility-aware fee hook for USDG-quoted Uniswap v4 pools that charges a dynamic fee (1\u20135%) on exact-input swaps only. Buy fees are taken from USDG input in beforeSwap; sell fees from USDG output in afterSwap. The fee ramps between a configurable base and maximum based on the previous swap's tick movement. Fees are sent directly to a per-pool recipient address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
