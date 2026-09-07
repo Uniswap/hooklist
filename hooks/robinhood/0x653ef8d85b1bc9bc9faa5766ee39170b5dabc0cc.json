@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x653ef8d85b1bc9bc9faa5766ee39170b5dabc0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DeadBuybackHook",
+    "description": "A Uniswap v4 hook for a WETH/DEAD token pool that charges a 5% WETH fee on buys and sells, splits fees 50/50 between a team wallet reserve and a buyback reserve, and automatically buys and burns DEAD tokens to address 0xdEaD every 15 taxed swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
