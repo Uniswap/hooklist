@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2664eea5c49ffe9eed11d55613cec086becfeac0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LooprDualPoolHook",
+    "description": "JIT-quoter hook that deploys multi-range concentrated liquidity just-in-time for each swap and removes it in afterSwap, with ERC4626 vault rehypothecation of idle assets between swaps. Uses a static LP fee fixed at pool creation; owner configures tick-range bucket weights and can pause swaps via a liveness flag.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
