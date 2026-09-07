@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1c74a4ca5cfd8c550e54be091abda476acffa8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FlowstateC1Hook",
+    "description": "Custom-curve Uniswap V4 hook that routes buy-only swaps (quote-in, inventory-out) through the Flowstate C1 market, fully overriding the AMM curve via BEFORE_SWAP_RETURNS_DELTA. Sell direction reverts. Charges a configurable spread plus a TokenJar protocol fee on each fill.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
