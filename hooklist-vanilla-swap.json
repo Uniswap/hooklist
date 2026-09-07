@@ -11446,6 +11446,41 @@
   },
   {
     "hook": {
+      "address": "0x05c92f25e22c70cec523a724736f13fe1b2ce080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LifecycleHookV1",
+      "description": "A Uniswap v4 hook that enforces a factory-gated pool lifecycle with a trading cutoff. Pools must be pre-registered by a designated factory with a cutoff timestamp in the same transaction as initialization; beforeSwap reverts once block.timestamp reaches the cutoff, effectively closing trading at a predetermined time.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x099ac33b384b467a9b00bda79a48ebc4fa945000",
       "chain": "robinhood",
       "chainId": 4663,
