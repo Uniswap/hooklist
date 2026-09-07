@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd2bc4e68b001c024c66eba6328eef400f05dc0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FarmIndexFeeHook",
+    "description": "Volatility-based dynamic fee hook for ETH/token pairs launched via FarmIndexLauncher. Charges ETH fees on swap input for buys (beforeSwap) and on ETH output for sells (afterSwap), with the fee rate scaling between a configured base and max BPS based on the previous swap's tick movement. Fees are sent directly to the pool's fee recipient on every swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
