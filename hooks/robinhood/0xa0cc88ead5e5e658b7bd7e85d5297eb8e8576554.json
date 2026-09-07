@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa0cc88ead5e5e658b7bd7e85d5297eb8e8576554",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "XhoodHook",
+    "description": "Manages a base ETH/XHOOD pool and multiple child token/XHOOD pools, charging 200 bps fees on every swap via afterSwapReturnsDelta. Child pool fees are converted to XHOOD then to ETH; 20% is used to buy back and burn XHOOD, while the remainder is queued for distribution to stakers via an external reward distributor.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
