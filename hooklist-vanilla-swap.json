@@ -12846,6 +12846,41 @@
   },
   {
     "hook": {
+      "address": "0x5ff50a854d7979cc8224c96c7fd732b98c87a000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ModularLaunchpadHook",
+      "description": "A configurable Uniswap v4 launchpad hook that gates pool initialization to a factory and routes launch token swap fees into a 70/30 creator/protocol split. Deployed in \"universal\" economics mode: the hook holds the seed LP position and fees are collected via a permissionless harvest() call rather than afterSwap. Optional modules (anti-snipe buy caps, JIT defense, buy throttle, creator-fee burn, liquidity deepening) are baked in at deploy time as immutable config.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x692a5bd7fdced31853634cf423d4c0d46d7a5000",
       "chain": "robinhood",
       "chainId": 4663,
