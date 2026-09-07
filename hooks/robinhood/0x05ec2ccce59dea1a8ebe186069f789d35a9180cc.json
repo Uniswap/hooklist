@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x05ec2ccce59dea1a8ebe186069f789d35a9180cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookenAntiSnipeHook",
+    "description": "Anti-snipe hook for Hooken launch pools that applies a 50% tax on non-whitelisted buys within a 4-second launch window (routed to protocol treasury), and a cyclic dynamic tax on all other buys and sells (routed to the token creator), always collected in native ETH via BeforeSwapDelta/AfterSwapDelta returns.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
