@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf804df937d9f84660e4626aadad9358db702e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "EthCreatorFeeHookV3",
+    "description": "Charges configurable directional buy/sell fees on native ETH/token pools, splitting proceeds between a creator reward vault (authenticated via a fee-split vault factory) and a fixed launcher fee recipient. Fees are applied via BeforeSwapDelta for native-specified swaps and via afterSwap return delta for token-specified swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
