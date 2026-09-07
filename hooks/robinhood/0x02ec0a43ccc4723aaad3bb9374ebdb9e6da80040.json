@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x02ec0a43ccc4723aaad3bb9374ebdb9e6da80040",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VladBrianV1127CouplingHook",
+    "description": "An afterSwap hook that implements a coupling mechanism between two meme tokens (VLAD and BRIAN): when a user buys one token in an entry pool (against SPY), the hook automatically executes a nested swap in a VLAD/BRIAN duel pool, selling the opponent token proportional to the amount purchased.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
