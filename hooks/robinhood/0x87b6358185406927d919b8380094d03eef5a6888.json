@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x87b6358185406927d919b8380094d03eef5a6888",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RunnerCurveHook",
+    "description": "A bonding curve hook for token launches that prices swaps against a virtual-reserve constant-product curve, intercepts the full swap via beforeSwapReturnsDelta, blocks external liquidity additions during the curve phase, and automatically mints full-range Uniswap v4 liquidity once a configurable ETH graduation threshold is reached.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
