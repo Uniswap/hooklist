@@ -11726,6 +11726,76 @@
   },
   {
     "hook": {
+      "address": "0x13fb546f661cc0f0df684fc63b0d64d40d05c040",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "EquifoldEvolutionHook",
+      "description": "Cosmetic accounting hook for Equifold launch pools that observes post-swap quote flow to update a tamagotchi-style creature's condition (fed/hungry/starving/ghost) and prophecy ladder (volume and price-hold milestones), emitting events without gating or modifying swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x16c7549166d081e0ac2fd2e0cf38aa9487382080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ModularLaunchpadHook",
+      "description": "Modular Uniswap v4 launchpad hook with optional anti-snipe (time-based per-buy WETH cap curve), buy throttle (pool-wide rate limit during launch window), and JIT liquidity defense. Supports two fee models: standard (per-swap afterSwap take with optional creator-burn and liquidity-deepening redirects) or universal (hook-held seed LP with permissionless harvest() into a 70/30 creator/protocol split). This instance uses universal economics with anti-snipe enabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x16d1560630ce74af4478d9b8ad46548a092a2000",
       "chain": "robinhood",
       "chainId": 4663,
