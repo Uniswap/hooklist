@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc7f53f983aa0976bb4bbf75bd665175a9c5400c0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CreatorDynamicFeeHook",
+    "description": "A Uniswap v4 hook that dynamically adjusts the LP fee (0.05%\u20135%) based on tick movement between swaps to reflect current volatility, and accrues 10% of each swap's output volume as creator commissions withdrawable by a designated pool creator address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
