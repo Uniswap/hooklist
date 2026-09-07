@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x829fcd381baf38827da918b0a73bbfa4949cc0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PackFeeHook",
+    "description": "Volatility-based fee hook for PackLaunch pools. Charges a dynamic ETH fee (1%\u20136.6%) on exact-input swaps: buys are charged on input via beforeSwapReturnsDelta, sells are charged on output via afterSwapReturnsDelta. The fee rate floats with recent tick movement and is sent directly to a per-pool recipient address registered by the factory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
