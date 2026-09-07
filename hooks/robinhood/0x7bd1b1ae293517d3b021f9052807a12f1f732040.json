@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7bd1b1ae293517d3b021f9052807a12f1f732040",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NiceHoodV4Hook",
+    "description": "Uniswap v4 hook for the NiceHood launchpad that gates pool initialization to an authorized graduation adapter and opportunistically claims LP fees from a position vault after each swap, throttled by a configurable time interval.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
