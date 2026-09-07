@@ -12671,6 +12671,41 @@
   },
   {
     "hook": {
+      "address": "0x5792e5e04e985ab2317015dbb13134f74e846a40",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RetardV1227PoolHook",
+      "description": "Hook for a creator token launchpad protocol that manages Uniswap v4 liquidity positions for creator token markets, restricts pool initialization and liquidity modifications to the protocol, and reports the current sqrtPrice to the protocol after each public swap via onPublicSwap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x58e3d3832a252111210b9417506979aa4be7d000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -14157,6 +14192,41 @@
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbee7c2ca1c4c9e967b7ea5f01320b6a3431ccf00",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "TestHook",
+      "description": "A minimal test hook that implements the four liquidity callbacks (beforeAddLiquidity, afterAddLiquidity, beforeRemoveLiquidity, afterRemoveLiquidity) as pure no-ops, returning only the expected selectors with no additional logic or state changes.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
       "beforeSwap": false,
       "afterSwap": false,
       "beforeDonate": false,

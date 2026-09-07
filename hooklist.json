@@ -44309,6 +44309,41 @@
   },
   {
     "hook": {
+      "address": "0x1bc34460b7cd83b050dc67dd879ff46e679840cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BuybuttonFeeHook",
+      "description": "Volatility-based ETH fee hook for Uniswap v4. Charges a dynamic fee (1%\u20137%) on buys via beforeSwap delta and on sells via afterSwap delta, scaling the rate with the previous swap's tick movement. Fees are sent immediately to a per-pool feeRecipient.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1bf1bd9cb5e7e8ee0191cbf18586acf30a192044",
       "chain": "robinhood",
       "chainId": 4663,
@@ -47704,6 +47739,41 @@
   },
   {
     "hook": {
+      "address": "0x4445520306c9c70952bdfec28f3989f53d9f80c4",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "UniswapV4KEMHook",
+      "description": "Quote-gated Uniswap v4 hook that requires a cryptographic signature from a designated quote signer for each exact-input swap. Validates exchange rate bounds and nonce in beforeSwap; in afterSwap, captures any output exceeding the signed maximum exchange rate by minting ERC6909 tokens to itself, claimable by authorized accounts.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x44be6a8f791eeaed6051eba0fec9d98a345a80cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -49104,6 +49174,41 @@
   },
   {
     "hook": {
+      "address": "0x5792e5e04e985ab2317015dbb13134f74e846a40",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RetardV1227PoolHook",
+      "description": "Hook for a creator token launchpad protocol that manages Uniswap v4 liquidity positions for creator token markets, restricts pool initialization and liquidity modifications to the protocol, and reports the current sqrtPrice to the protocol after each public swap via onPublicSwap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x57a90a0bc27718d88a2ff3674799e008e3d4e0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -49205,6 +49310,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5962eb3aaae3711c1b61766d0d5f1ed4734ffacc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BDeFiHook",
+      "description": "Uniswap v4 hook for the BuilDeFi protocol that applies configurable buy/sell taxes on swaps, manages a fee fulfillment queue to convert collected protocol fees into ETH for distribution, and maintains a truncated geometric oracle for TWAP-based pricing. Trading is gated on per-token full initialization status.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -57079,6 +57219,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xbee7c2ca1c4c9e967b7ea5f01320b6a3431ccf00",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "TestHook",
+      "description": "A minimal test hook that implements the four liquidity callbacks (beforeAddLiquidity, afterAddLiquidity, beforeRemoveLiquidity, afterRemoveLiquidity) as pure no-ops, returning only the expected selectors with no additional logic or state changes.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
