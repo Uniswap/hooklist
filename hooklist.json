@@ -8119,6 +8119,41 @@
   },
   {
     "hook": {
+      "address": "0x58c339f327de01e3b4137320cfbb529ab5e7b0c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "VolatilityAdaptiveUsdcWethHookV6",
+      "description": "Dynamic-fee hook for the WETH/USDC pool on Base that computes LP fees and a hook fee per swap using signed off-chain market price reports anchored to Pyth, falls back to a higher static fee when market data is stale, and supports a Safe-controlled emergency pause with a 24-hour delayed unpause.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x58e3d3832a252111210b9417506979aa4be7d000",
       "chain": "base",
       "chainId": 8453,
@@ -57770,6 +57805,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa4555952075bdfd473521f3d754d13442ee3e0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RobinhoodMixedFeeHook",
+      "description": "Uniswap v4 hook for Robinhood Launchpad V2. Collects dividend fees in the configured base token while collecting creator, protocol, and referral fees in the swap's unspecified currency. Enforces a maximum total fee of 9.9%.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
