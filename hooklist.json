@@ -42524,6 +42524,41 @@
   },
   {
     "hook": {
+      "address": "0x0998ecdd40500ae7b38b9ffc39dfeaa4ffb528cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "QuiverHookStaticFee",
+      "description": "A Uniswap v4 hook for the Quiver protocol that sets asymmetric LP fees (quiverFee vs pairedFee) based on swap direction via updateDynamicLPFee, and collects protocol fees on the non-Quiver token side of each swap using BeforeSwapDelta and AfterSwapDelta. Includes optional MEV protection via an external module active for 2 minutes after pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x099ac33b384b467a9b00bda79a48ebc4fa945000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -43509,6 +43544,41 @@
       "chainId": 4663,
       "name": "SaturnOmnichainV4Hook",
       "description": "A minimal Uniswap v4 hook for the Saturn Omnichain project that implements only afterInitialize (returning the selector as a no-op). All swap, liquidity, and donate callbacks are pure stubs. Pool initialization is managed externally via a LiquidityBootstrapper contract called through initializePools().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1111a2074da79d99cd0aeca93ad5515281295000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "Exposes an `initializePools()` function that calls an external `ISaturnOmnichainLiquidityBootstrapper` to bootstrap liquidity and records the resulting tick in `initialTick`. All hook callbacks, including `afterInitialize`, are no-ops; the hook does not modify pool initialization or swap execution in any way.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
@@ -46654,6 +46724,41 @@
   },
   {
     "hook": {
+      "address": "0x2a3d8748d4de2efcea0c1c63da49eb3fd4d09000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "A Uniswap v4 hook for the Saturn Omnichain project with only afterInitialize enabled. The afterInitialize callback is a no-op. The contract exposes an `initializePools()` function that calls an external liquidity bootstrapper to bootstrap liquidity and record the initial tick. No swap logic is present.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2ab65cb22064f84cb832be2effd00d218be6e0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -49419,6 +49524,41 @@
   },
   {
     "hook": {
+      "address": "0x491508a9389490b5f8cdadc23393ade022ee1000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "Implements IHooks with only afterInitialize enabled; the afterInitialize callback is a pure no-op. Provides a separate external initializePools() function that records the initial tick by calling an external liquidity bootstrapper contract (ISaturnOmnichainLiquidityBootstrapper). All other hook callbacks are no-ops.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x496a171df1d69f7a5ef07e9359ab3dc91834c0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -49764,6 +49904,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4c9cb1962718e867df8c800f24b26e9a70ef9000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SaturnOmnichainV4Hook",
+      "description": "Uniswap v4 hook for the Saturn Omnichain protocol with an afterInitialize permission (callback is a no-op). Pool initialization and initial tick recording are performed by a separate `initializePools()` function that delegates to an external LiquidityBootstrapper contract.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -64255,6 +64430,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xf2a80b93269e83a24e451fca5e0fa5def7bdc0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "MintFastHook",
+      "description": "A Uniswap v4 launchpad hook that charges a fixed 2% ETH fee on every swap, collected via ERC-6909 claims on the PoolManager. Fees accrue per token and can be harvested by the launchpad address via a collect() function.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
