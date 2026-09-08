@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa4555952075bdfd473521f3d754d13442ee3e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinhoodMixedFeeHook",
+    "description": "Uniswap v4 hook for Robinhood Launchpad V2. Collects dividend fees in the configured base token while collecting creator, protocol, and referral fees in the swap's unspecified currency. Enforces a maximum total fee of 9.9%.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
