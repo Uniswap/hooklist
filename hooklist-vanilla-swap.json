@@ -12811,6 +12811,41 @@
   },
   {
     "hook": {
+      "address": "0x4bba749a09e0fd002ac52e83a7aba1e69782a000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BellV4Factory",
+      "description": "A permissionless factory that launches fixed-supply ERC20 tokens into native-ETH Uniswap v4 pools with permanently locked one-sided liquidity. Uses the beforeInitialize hook solely to reject unauthorized pool initialization by third parties; swaps and liquidity operations have no hook callbacks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4c9cb1962718e867df8c800f24b26e9a70ef9000",
       "chain": "robinhood",
       "chainId": 4663,
