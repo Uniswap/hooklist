@@ -4,12 +4,47 @@ You are running in CI to classify a Uniswap v4 hook's properties by analyzing it
 
 Your job is to analyze the source code and return structured JSON classifying the hook's properties.
 
+## 0. Release matching (do this FIRST)
+
+Before classifying from scratch, check whether this hook is an instance of an
+already-reviewed release:
+
+1. `Grep` the `releases/` directory for the contract name from `source_meta.json`
+   and for the project name if apparent from the source or submission.
+2. A release matches only when the verified source is the same contract at the
+   same version — same behavior, same properties. Per-deployment configuration
+   (fee values, timings, recipients, token addresses) does NOT break a match.
+   A difference that changes ANY property, warning, callback behavior, required
+   hookData, access control, or upgrade path is NOT a match — it is a new
+   release (or a new version of an existing one).
+
+   **Exception that overrides everything above: an address parameter that
+   selects executed code — a delegatecall/implementation target, oracle,
+   library, module, or external router — ALWAYS breaks a match, even when the
+   verified source is byte-identical.** Two deployments of identical source
+   that delegate to, read prices from, or route through different addresses
+   are different releases. If the source contains `delegatecall`, or calls out
+   to an address held in an immutable/constructor parameter, identify that
+   address for THIS instance and match only to a release whose instances
+   share it.
+3. On a match: set `"release": "<project>/<release-id>"` in your output. Set
+   `description` to ONLY the instance-specific configuration in one short
+   sentence (e.g. "Fee: 35 bps; auction 24h."), or "" if there is none.
+   Still fill in the property fields — CI uses them as a cross-check.
+4. No match, but the source is clearly a new version of an existing release's
+   project: classify normally AND add a warning noting the closest release
+   (e.g. "appears to be a new version of zora/creator-hook-2.2.1") so the
+   reviewer can create the new release file.
+5. No match at all: classify normally (everything below) and leave `release`
+   out of your output.
+
 ## Available Context
 
 - `.sources/` — Individual source files extracted from the verified contract. Use `Grep` to search for patterns and `Read` to examine specific sections. Do NOT try to read entire files — they can be very large.
 - `computed_flags.json` — The 14 permission flags already decoded from the address bitmask. These are authoritative.
 - `submission.json` — The submitter's metadata (chain, address, name, description).
 - `source_meta.json` — Contract name, proxy status, and verification status from the block explorer.
+- `releases/` — existing reviewed release files; Grep here for §0 release matching.
 
 ## Classification Instructions
 
@@ -23,9 +58,11 @@ Search for: `lpFeeOverride`, `updateDynamicLPFee`
 
 `true` if the contract uses:
 - Proxy patterns (ERC-1967, transparent proxy, UUPS)
-- `delegatecall` usage
+- `delegatecall` to a mutable or admin-configurable address
 - Mutable storage pointing to an implementation address
 - `SELFDESTRUCT` / `SELFDESTRUC` opcode usage
+
+A `delegatecall` to a compile-time-linked Solidity library or to an address fixed at deployment (constant/immutable) is a code-size optimization, not an upgrade path — it does not by itself make the hook upgradeable.
 
 Search for: `delegatecall`, `ERC1967`, `_implementation`, `upgradeTo`, `SELFDESTRUCT`
 
@@ -63,7 +100,7 @@ A hook that *blocks* a swap (reverts) is vanilla. A hook that *changes* how the 
 Classify the access control mechanism in `beforeSwap`:
 
 - `"none"` — No access control. Default for most hooks. Required if hook has no swap flags.
-- `"temporal"` — Gates on `block.timestamp` or `block.number`.
+- `"temporal"` — Gates on `block.timestamp` or `block.number` as a start/end window or phase schedule: swaps are fully closed at some times and open at others. A permanent block- or time-derived condition that never fully closes swaps (e.g., a rolling modular filter comparing swap amounts to `block.number`) is `"other"`, not `"temporal"`.
 - `"allowlist"` — Checks caller against approved addresses, registry, or Merkle proof.
 - `"governance"` — Checks a boolean flag (e.g., `migrated`, `tradingEnabled`) set by an owner/admin.
 - `"other"` — Any other gating mechanism.

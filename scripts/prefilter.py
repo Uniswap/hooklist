@@ -74,8 +74,9 @@ def validate_submission(submission: dict, hooks_dir: str | None = None) -> list[
 
     if hooks_dir is None:
         hooks_dir = os.path.join(REPO_ROOT, "hooks")
-    hook_path = os.path.join(hooks_dir, submission["chain"], f"{submission['address']}.json")
-    if os.path.exists(hook_path):
+    chain_dir = os.path.join(hooks_dir, submission["chain"])
+    target_name = f"{submission['address']}.json".lower()
+    if os.path.isdir(chain_dir) and target_name in (n.lower() for n in os.listdir(chain_dir)):
         errors.append(f"Hook already registered: {submission['chain']}/{submission['address']}")
 
     return errors

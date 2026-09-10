@@ -40,6 +40,9 @@ def verify_hook(filepath: str) -> list[str]:
     with open(filepath) as f:
         hook = json.load(f)
 
+    if "flags" not in hook:
+        return []  # thin release-pointer file: flags derive from the address at build time
+
     address = hook["hook"]["address"]
     expected = decode_flags(address)
     actual = hook["flags"]

@@ -3,7 +3,7 @@ name: Regenerate Registry
 on:
   push:
     branches: [main]
-    paths: ['hooks/**']
+    paths: ['hooks/**', 'releases/**']
 
 concurrency:
   group: regenerate-registry
@@ -21,6 +21,9 @@ jobs:
         with:
           app-id: ${{ vars.REGISTRY_APP_ID }}
           private-key: ${{ secrets.REGISTRY_APP_PRIVATE_KEY }}
+          # Scope the App token to the minimum this job needs:
+          # - contents:write — push the regenerated artifacts to main
+          permission-contents: write
 
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
         with:
@@ -34,6 +37,27 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
+      - name: Validate hook and release files
+        run: python scripts/validate.py
+
+      - name: Verify flags match address bitmask
+        run: python scripts/verify_flags.py
+
+      # Machine-maintained review-cache index: for every pointer-carrying
+      # hook file, keep its release's source.codeHashes review cache
+      # current with that member's live runtime bytecode. codeHashes is
+      # never hand-authored — the human review gate is the PR that added or
+      # changed the hook/release file (review-hook.yml, mechanically
+      # checked by scripts/release_verdict.py); this step is what actually
+      # records the reviewed bytes into the cache once that PR has merged.
+      # Best-effort by design (never fails the job on explorer flakiness —
+      # see the script's docstring) and only ever appends, so it's safe to
+      # run on every push to main. This job's trigger paths (hooks/**,
+      # releases/**) and this step's App token (contents:write) already
+      # cover writing back to releases/.
+      - name: Update codehash review-cache index
+        run: python scripts/update_codehash_index.py
+
       - name: Regenerate hooklist.json
         run: python scripts/aggregate.py
 
@@ -44,6 +68,6 @@ jobs:
           git config user.name "hook-registry-bot[bot]"
           git config user.email "hook-registry-bot[bot]@users.noreply.github.com"
           git remote set-url origin "https://x-access-token:${APP_TOKEN}@github.com/${{ github.repository }}.git"
-          git add hooklist.json hooklist-vanilla-swap.json
+          git add hooklist.json hooklist-vanilla-swap.json releases/
           git diff --staged --quiet || git commit -m "chore: regenerate hooklist.json"
           git push

@@ -102,6 +102,25 @@ def test_validate_submission_duplicate():
     assert any("already" in e.lower() for e in errors)
 
 
+def test_validate_submission_duplicate_case_insensitive():
+    submission = {
+        "chain": "ethereum",
+        "address": "0x0000000000000000000000000000000000002080",
+        "name": "",
+        "description": "",
+        "deployer": "",
+        "auditUrl": "",
+    }
+    with tempfile.TemporaryDirectory() as tmpdir:
+        chain_dir = os.path.join(tmpdir, "ethereum")
+        os.makedirs(chain_dir)
+        # Existing file only matches the submitted address case-insensitively.
+        with open(os.path.join(chain_dir, "0x0000000000000000000000000000000000002080".upper() + ".json"), "w") as f:
+            f.write("{}")
+        errors = validate_submission(submission, hooks_dir=tmpdir)
+    assert any("already" in e.lower() for e in errors)
+
+
 def test_validate_submission_bad_deployer():
     submission = {
         "chain": "base",

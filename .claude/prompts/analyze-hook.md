@@ -1,3 +1,5 @@
+> Reference-only: no workflow consumes this file; the CI classification prompt is `classify-hook.md`.
+
 # Hooklist — CI Analysis Instructions
 
 You are running in CI to analyze a Uniswap v4 hook submission. An issue has been opened with a chain and address. Your job is to fetch the verified source code, analyze it, and open a PR adding the hook to the registry.
@@ -104,6 +106,29 @@ gh issue comment <issue_number> --body-file comment.md
 
 ## Step 5: Analyze the Source Code
 
+### 0. Release matching (do this first)
+
+Before classifying from scratch, `Grep` the `releases/` directory for the contract name from
+`source_meta.json` (and the project name, if apparent from the source or submission). A release
+matches only when the verified source is the same contract at the same version — same behavior,
+same properties. Per-deployment configuration (fee values, timings, recipients, token addresses)
+does NOT break a match. A difference that changes ANY property, warning, callback behavior,
+required hookData, access control, or upgrade path is NOT a match — it's a new release (or a new
+version of an existing one). **Exception: an address parameter that selects executed code (a
+delegatecall/implementation target, oracle, library, module, or external router) ALWAYS breaks a
+match, even with byte-identical source** — match only to a release whose instances share that
+address.
+
+On a match: set `"release": "<project>/<release-id>"` in your output, and set `description` to
+ONLY the instance-specific configuration in one short sentence (e.g. "Fee: 35 bps; auction 24h."),
+or `""` if there is none. Still fill in the property fields below — CI uses them as a cross-check.
+
+If there's no exact match but the source is clearly a new version of an existing release's
+project, classify normally (below) and add a warning noting the closest release (e.g. "appears to
+be a new version of zora/creator-hook-2.2.1") so the reviewer can create the new release file.
+
+If there's no match at all, classify normally and leave `release` out of your output.
+
 Cross-reference the address-derived flags with the source code:
 
 1. **Verify flags match source**: If the hook extends `BaseHook`, find `getHookPermissions()` and confirm it matches the address bits. Flag any discrepancy in the description.
@@ -156,6 +181,8 @@ Cross-reference the address-derived flags with the source code:
 ## Step 6: Generate the Hook JSON
 
 Use the `Write` tool to create `hooks/<chain>/<address>.json` matching the schema in `schema.json`. The Write tool creates parent directories automatically — do not use `mkdir`. Use submitter-provided values for `name`, `description`, `deployer`, and `auditUrl` when present. Generate the rest from analysis.
+
+If §0 matched a release, write the **thin** form instead — `hook{address, chain, chainId, release, deployer?, description?}` (the instance-specific description only, no `name`/`flags`/`properties`) — rather than the full schema shown below.
 
 **IMPORTANT: `deployer` must be a valid Ethereum address (`0x` + 40 hex chars) or an empty string `""`. If the submitter provides a name or organization instead of an address, discard it and use `""`. Never put a human-readable name in the `deployer` field.**
 

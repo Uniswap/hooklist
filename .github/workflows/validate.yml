@@ -25,57 +25,148 @@ jobs:
           persist-credentials: false
           path: pr
 
-      - name: Check for hook changes and enforce diff policy
+      - name: Check for hook/release changes and enforce diff policy
         id: changed
         env:
           GH_TOKEN: ${{ github.token }}
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
-          FILES_JSON=$(gh api "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files")
+          FILES_JSON=$(gh api --paginate "repos/${{ github.repository }}/pulls/${PR_NUMBER}/files")
           CHANGED=$(echo "$FILES_JSON" | jq -r '.[].filename')
+
+          # Pagination completeness check: the COUNT policy below is a
+          # count-limited gate (exactly one hook file), so a silently
+          # truncated file list here could fail the wrong way (fail-open,
+          # letting a multi-file PR slip through as if it were one file).
+          # Cross-check the paginated count against the PR's own reported
+          # changedFiles total; any mismatch fails closed.
+          ACTUAL_COUNT=$(echo "$CHANGED" | grep -c . || true)
+          EXPECTED_COUNT=$(gh pr view "$PR_NUMBER" --repo "${{ github.repository }}" --json changedFiles --jq '.changedFiles')
+          if [ "$ACTUAL_COUNT" -ne "$EXPECTED_COUNT" ]; then
+            echo "::error::Paginated PR file list incomplete: fetched $ACTUAL_COUNT file(s) but PR reports $EXPECTED_COUNT changed file(s)"
+            exit 1
+          fi
+
           HAS_HOOK_CHANGES=$(echo "$CHANGED" | grep '^hooks/' || true)
-          if [ -z "$HAS_HOOK_CHANGES" ]; then
+          HAS_RELEASE_CHANGES=$(echo "$CHANGED" | grep '^releases/' || true)
+          if [ -z "$HAS_HOOK_CHANGES" ] && [ -z "$HAS_RELEASE_CHANGES" ]; then
             echo "hooks=false" >> "$GITHUB_OUTPUT"
-            echo "No hook files changed, skipping validation."
+            echo "releases=false" >> "$GITHUB_OUTPUT"
+            echo "No hook or release files changed, skipping policy and validation."
             exit 0
           fi
 
-          # Exact-diff policy: only hooks/** allowed, exactly one file (applies to add/modify/remove)
-          INVALID=$(echo "$CHANGED" | grep -v '^hooks/' || true)
-          if [ -n "$INVALID" ]; then
-            echo "::error::PR modifies files outside hooks/: $INVALID"
+          # Diff policy (applies to add/modify/remove): a PR that touches
+          # hooks/ and/or releases/ must touch ONLY those two dirs — mixing
+          # data changes with scripts/docs/workflow changes in one PR is a
+          # hard failure (restores pre-branch strictness; this used to be a
+          # ::notice skip, which let mixed PRs bypass the shape policy below).
+          # - PRs touching releases/: any number of releases/ and hooks/ files
+          #   allowed (release creation + backfill batches) — schema and
+          #   consistency checks below are the gate; human review is required
+          #   by ruleset.
+          # - PRs touching hooks/ only: exactly one hook file (unchanged bot flow).
+          OUTSIDE_DATA_DIRS=$(echo "$CHANGED" | grep -vE '^(hooks/|releases/)' || true)
+          if [ -n "$OUTSIDE_DATA_DIRS" ]; then
+            echo "::error::PR changes hooks/ and/or releases/ files together with files outside those directories: $OUTSIDE_DATA_DIRS"
             exit 1
+          elif [ -n "$HAS_RELEASE_CHANGES" ]; then
+            : # release lane: any number of releases/ and hooks/ files allowed
+          else
+            COUNT=$(echo "$CHANGED" | wc -l)
+            if [ "$COUNT" -ne 1 ]; then
+              echo "::error::PR must change exactly one hook file, found $COUNT changed files"
+              exit 1
+            fi
           fi
-          COUNT=$(echo "$CHANGED" | wc -l)
-          if [ "$COUNT" -ne 1 ]; then
-            echo "::error::PR must change exactly one hook file, found $COUNT changed files"
+
+          # Added/modified files only (renames counted as modified; deletions
+          # exempt) — used by the non-JSON guard below and, for hooks/, by the
+          # release-lane pointer policy step further down.
+          ADDED_OR_MODIFIED=$(echo "$FILES_JSON" | jq -r '.[] | select(.status != "removed") | .filename')
+
+          # Data files must be JSON: an added/modified file under hooks/ or
+          # releases/ that isn't a .json file is always a hard failure,
+          # regardless of lane (deletions exempt — removing a stray file is
+          # fine).
+          NON_JSON=$(echo "$ADDED_OR_MODIFIED" | grep -E '^(hooks/|releases/)' | grep -v '\.json$' || true)
+          if [ -n "$NON_JSON" ]; then
+            echo "::error::Non-JSON file(s) added or modified under hooks/ or releases/: $(echo "$NON_JSON" | tr '\n' ' ')"
             exit 1
           fi
 
-          # Schema validation only applies to files still present on the PR head
-          # (added/modified). Removed files have no content to validate.
-          HOOK_FILES=$(echo "$FILES_JSON" | jq -r '.[] | select(.status != "removed") | .filename' | grep '^hooks/' || true)
-          if [ -z "$HOOK_FILES" ]; then
+          # Persisted for the release-lane pointer policy step below — steps
+          # in the same job share the runner's filesystem.
+          echo "$ADDED_OR_MODIFIED" | grep '^hooks/' > "$RUNNER_TEMP/added_mod_hooks.txt" || true
+          echo "$CHANGED" | grep '^releases/' > "$RUNNER_TEMP/changed_releases.txt" || true
+
+          if [ -n "$HAS_HOOK_CHANGES" ]; then
+            echo "hooks=true" >> "$GITHUB_OUTPUT"
+          else
             echo "hooks=false" >> "$GITHUB_OUTPUT"
-            echo "Hook file is being removed, nothing to schema-validate."
-            exit 0
           fi
-          echo "hooks=true" >> "$GITHUB_OUTPUT"
-          echo "$HOOK_FILES" | sed 's|^|pr/|' > changed_hooks.txt
+
+          if [ -n "$HAS_RELEASE_CHANGES" ]; then
+            echo "releases=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "releases=false" >> "$GITHUB_OUTPUT"
+          fi
 
       - uses: actions/setup-python@a26af69be951a213d495a4c3e4e4022e16d87065
-        if: steps.changed.outputs.hooks == 'true'
+        if: steps.changed.outputs.hooks == 'true' || steps.changed.outputs.releases == 'true'
         with:
           python-version: '3.12'
 
       - name: Install dependencies
-        if: steps.changed.outputs.hooks == 'true'
+        if: steps.changed.outputs.hooks == 'true' || steps.changed.outputs.releases == 'true'
         run: pip install -r trusted/requirements.txt
 
-      - name: Validate hook files against schema
-        if: steps.changed.outputs.hooks == 'true'
-        run: python trusted/scripts/validate.py $(cat changed_hooks.txt)
+      # Full-tree validation of the PR checkout (not just the changed files):
+      # this is what catches a PR that deletes a release file while a hook
+      # file elsewhere in the tree still points at it (dangling pointer), and
+      # a PR that races a concurrent release edit. It also means this step
+      # must run even when every changed hook/release file is a deletion —
+      # there is no early exit here.
+      - name: Validate hook and release files against schema (full tree)
+        if: steps.changed.outputs.hooks == 'true' || steps.changed.outputs.releases == 'true'
+        env:
+          HOOKLIST_SCHEMA_FALLBACK: "1"
+        run: |
+          { find pr/hooks -name '*.json' 2>/dev/null || true; find pr/releases -name '*.json' 2>/dev/null || true; } | xargs -r python trusted/scripts/validate.py
 
-      - name: Verify flags match address bitmask
-        if: steps.changed.outputs.hooks == 'true'
-        run: python trusted/scripts/verify_flags.py $(cat changed_hooks.txt)
+      # Release-lane blast-radius guard: a PR that touches releases/ may
+      # touch any number of hooks/ files (unlike the one-file cap on a plain
+      # hooks-only PR above), so every hooks/ file it adds or modifies must
+      # be shaped like a release-pointer edit — see check_release_lane.py's
+      # module docstring for the two passing shapes.
+      - name: Enforce release-lane pointer policy on hook file edits
+        if: steps.changed.outputs.releases == 'true'
+        run: |
+          python trusted/scripts/check_release_lane.py \
+            --pr-root pr \
+            --trusted-root trusted \
+            --changed-hooks-file "$RUNNER_TEMP/added_mod_hooks.txt" \
+            --changed-releases-file "$RUNNER_TEMP/changed_releases.txt"
+
+      - name: Verify flags match address bitmask (full tree)
+        if: steps.changed.outputs.hooks == 'true' || steps.changed.outputs.releases == 'true'
+        run: |
+          { find pr/hooks -name '*.json' 2>/dev/null || true; } | xargs -r python trusted/scripts/verify_flags.py
+
+      # Tree-wide case-collision guard: main already carries some pre-existing
+      # case-insensitive duplicate hook paths (grandfathered — see
+      # scripts/dedupe_case_pairs.py). This step must not fail on those; it
+      # only fails when the PR tree introduces a NEW case-collision pair not
+      # already present on the trusted (base branch) checkout. Uses git
+      # plumbing (ls-files against the index), not the working tree, so this
+      # is correct on case-insensitive filesystems too.
+      - name: Check for new case-collision duplicate hook paths
+        if: steps.changed.outputs.hooks == 'true' || steps.changed.outputs.releases == 'true'
+        run: |
+          PR_DUPES=$(git -C pr ls-files hooks/ | tr 'A-Z' 'a-z' | sort | uniq -d)
+          TRUSTED_DUPES=$(git -C trusted ls-files hooks/ | tr 'A-Z' 'a-z' | sort | uniq -d)
+          NEW_DUPES=$(comm -23 <(echo "$PR_DUPES") <(echo "$TRUSTED_DUPES") | sed '/^$/d')
+          if [ -n "$NEW_DUPES" ]; then
+            echo "::error::New case-collision duplicate hook path(s) introduced by this PR (case-insensitive match, not present on the base branch): $(echo "$NEW_DUPES" | tr '\n' ' ')"
+            exit 1
+          fi

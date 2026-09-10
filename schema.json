@@ -3,9 +3,7 @@
   "title": "Uniswap v4 Hook",
   "type": "object",
   "required": [
-    "hook",
-    "flags",
-    "properties"
+    "hook"
   ],
   "additionalProperties": false,
   "properties": {
@@ -14,9 +12,7 @@
       "required": [
         "address",
         "chain",
-        "chainId",
-        "name",
-        "verifiedSource"
+        "chainId"
       ],
       "additionalProperties": false,
       "properties": {
@@ -75,6 +71,10 @@
           "type": "string",
           "default": "",
           "pattern": "^(https://.*)?$"
+        },
+        "release": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+/[a-z0-9.-]+$"
         }
       }
     },
