@@ -298,3 +298,12 @@ def test_fetch_with_retry_bot_challenge_403_retried(tmp_path, monkeypatch):
     code = fs.fetch_with_retry("http://x", str(tmp_path / "r.json"))
     assert code == "200"
     assert len(calls) == 2
+
+
+def test_user_agent_is_not_chrome():
+    """Cloudflare on robinhoodchain.blockscout.com challenges any UA containing
+    "Chrome" (observed 2026-09-10, 32/32 addresses); Safari/Firefox strings
+    pass. Guard against someone switching back to a Chrome string."""
+    assert "Chrome" not in fetch_source.FETCH_USER_AGENT
+    assert fetch_source.FETCH_USER_AGENT.startswith("Mozilla/5.0")
+    assert fetch_source.FETCH_USER_AGENT.endswith("hooklist-fetch")
