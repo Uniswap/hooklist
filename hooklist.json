@@ -71,6 +71,41 @@
   },
   {
     "hook": {
+      "address": "0x18608ad558dcd233f7854242bbaef73988bee000",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.0.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "0x32f4b2e69ebd7746596af8699dac1908f43107ad",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x192499a79cadb2e9ba221a252a3e3b7adc714880",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -179,11 +214,11 @@
       "address": "0x2a4adf825bd96598487dbb6b2d8d882a4eb86888",
       "chain": "arbitrum",
       "chainId": 42161,
-      "name": "WETH Hook (Arbitrum)",
+      "name": "WETHHook",
       "description": "A Uniswap v4 hook that enables seamless wrapping and unwrapping of ETH and WETH in a dedicated zero-fee pool, intercepting swaps to perform 1:1 ETH\u2194WETH conversion while blocking direct liquidity operations.",
       "deployer": "",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
     },
     "flags": {
       "beforeInitialize": true,
@@ -491,6 +526,41 @@
   },
   {
     "hook": {
+      "address": "0x8af0775a70cc94d71dfc0fe809435e833f2fe000",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.1.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "0x32f4b2e69ebd7746596af8699dac1908f43107ad",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x916bc355488071a414e7d916e05fb7c177241888",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -662,6 +732,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xaa49adadd33c5e953b645567afb10cbbba63afc4",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "NFTXV4Hook",
+      "description": "Allows for ERC721 NFT collections to be fractionalised into ERC20 and then traded on Uniswap V4. This then allows the NFT to be redeemed for 1e18.",
+      "deployer": "0xb8a70b4d1547bf6193bd67a73f4f98ea9fd0a973",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -1677,6 +1782,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x57bd0a9cd933c89ba55e086d53031367b6406000",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.1.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -2831,6 +2971,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcacd77134b072b4ad5621f585b0b422c6da4e000",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.0.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -6441,6 +6616,41 @@
   },
   {
     "hook": {
+      "address": "0x34385dd739fe5464892bf0ba4cc42492804da000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.1.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x34a45c6b61876d739400bd71228cbcbd4f53e8cc",
       "chain": "base",
       "chainId": 8453,
@@ -7347,6 +7557,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x47f7e32337c1144dd178fb4bf1ee3bc3d5e9b0c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Volatility Adaptive USDCWETH Hook V8",
+      "description": "A single WETH/USDC pool hook on Base that dynamically adjusts LP fees (0.01%\u201399.99%) using signed off-chain multi-venue market reports cross-checked against Chainlink and Pyth price anchors. Fees fall back to 3% when market data is stale. Strategy fees are split 90% to LPs and 10% to an immutable Safe address, with an owner-controlled emergency pause mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -8429,6 +8674,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": true,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5bb4bafafec57bed50d864aaa9d1ef992611e000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.0.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -14317,11 +14597,11 @@
       "address": "0xb08211d57032dd10b1974d4b876851a7f7596888",
       "chain": "base",
       "chainId": 8453,
-      "name": "WETH Hook",
+      "name": "WETHHook",
       "description": "A 1:1 ETH/WETH wrapper hook that allows users to swap between ETH and WETH within Uniswap V4 pools. It intercepts swaps to perform native wrapping and unwrapping, blocks direct liquidity operations, and requires pools to be initialized with zero fee.",
       "deployer": "",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
     },
     "flags": {
       "beforeInitialize": true,
@@ -22788,7 +23068,7 @@
       "chain": "ethereum",
       "chainId": 1,
       "name": "DualPoolHook",
-      "description": "A JIT (Just-In-Time) liquidity hook that deploys concentrated multi-range LP positions from ERC-4626 vault assets immediately before each swap and removes them afterward. Features owner-configurable liquidity bucket distributions, static fees fixed at pool creation, and a per-pool liveness flag for emergency pause.",
+      "description": "DualPool is a Uniswap v4 hook where capital rests in ERC-4626 vaults between swaps and is deployed as concentrated liquidity just-in-time, so LPs earn swap fees and vault yield on the same token.",
       "deployer": "0x58e28b95a2ee57c4e90613afce9e8cceed3ab1e8",
       "verifiedSource": true,
       "auditUrl": ""
@@ -22850,6 +23130,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x0000113dcf4add69999fad8f20f2b63f979bfcc0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "StablePairHook",
+      "description": "StablePair is a Uniswap v4 dynamic-fee hook built for assets that trade around a known reference price. Instead of charging a flat fee on every swap, it uses that reference to set fees dynamically, capturing more value for LPs while keeping execution tight and predictable around the reference.",
+      "deployer": "0xe49acc3b16c097ec88dc9352ce4cd57ab7e35b95",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -22920,6 +23235,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x000075e7511d6104d8b1e617a27d426d7611eac0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "DualPoolHook",
+      "description": "DualPool is a Uniswap v4 hook where capital rests in ERC-4626 vaults between swaps and is deployed as concentrated liquidity just-in-time, so LPs earn swap fees and vault yield on the same token.",
+      "deployer": "0x61e75d5c5dee4205a5bbcd9fbc40498b693197ad",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audit/openzeppelin-dualpool.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -27194,6 +27544,76 @@
   },
   {
     "hook": {
+      "address": "0x49380c4efab1b491006af7fabab8b3459f0e6000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.1.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "0x32f4b2e69ebd7746596af8699dac1908f43107ad",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x499a724ab630549f14c995ec41a8e04fa3fd28c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Permissioned Pools",
+      "description": "Permissioned Pools are a Uniswap V4 hook system that allows trading of tokenized and regulated assets onchain. The hook checks an issuer-managed allowlist on every swap and liquidity addition, while a verified wrapper contract keeps the permissioned token compatible with the standard PoolManager.",
+      "deployer": "0x2179a60856e37dfeaaca0ab043b931fe224b27b6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/Uniswap/v4-periphery/tree/main/audits/permissionedPools"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x49a2ff98ae45040011c8fde8c75ec418325d5000",
       "chain": "ethereum",
       "chainId": 1,
@@ -27618,10 +28038,10 @@
       "chain": "ethereum",
       "chainId": 1,
       "name": "DualPoolHook",
-      "description": "JIT liquidity hook that deploys multi-range concentrated positions before each swap and removes them after, with ERC4626 vault rehypothecation for idle capital yield. Pool fees are static (set at initialization), and swaps can be paused by the owner via a liveness flag.",
+      "description": "DualPool is a Uniswap v4 hook where capital rests in ERC-4626 vaults between swaps and is deployed as concentrated liquidity just-in-time, so LPs earn swap fees and vault yield on the same token.",
       "deployer": "0x5b57d58970ebe25b98b22db1e9f5be61b362b4c6",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audit/openzeppelin-dualpool.pdf"
     },
     "flags": {
       "beforeInitialize": true,
@@ -27722,11 +28142,11 @@
       "address": "0x57991106cb7aa27e2771beda0d6522f68524a888",
       "chain": "ethereum",
       "chainId": 1,
-      "name": "WETH Hook",
-      "description": "A Uniswap v4 hook that enables seamless ETH/WETH wrapping and unwrapping within v4 pools at a 1:1 ratio. It intercepts swaps to deposit or withdraw ETH from the WETH contract in-flight, supporting both exact input and exact output swaps, while blocking liquidity operations since the pool serves purely as a conversion mechanism.",
-      "deployer": "",
+      "name": "WETHHook",
+      "description": "WETHHook turns a v4 pool into an ETH / WETH wrapper. Swaps mint or burn WETH 1:1 against native ETH via the WETH9 contract. Deposits take ETH from the PoolManager and settle the minted WETH back; withdrawals unwrap and return native ETH. Direct liquidity provision is disabled.",
+      "deployer": "0x19b44a1ee64506eba1e3a2db28900b00b55ed65a",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
     },
     "flags": {
       "beforeInitialize": true,
@@ -29368,10 +29788,10 @@
       "chain": "ethereum",
       "chainId": 1,
       "name": "DualPoolHook",
-      "description": "JIT hook that deploys concentrated liquidity across multiple owner-configured tick ranges before each swap and removes it after, enabling just-in-time market making with ERC-4626 vault rehypothecation for idle capital. Swap access is gated by an owner-managed liveness flag; pool fees are static and set at initialization.",
+      "description": "DualPool is a Uniswap v4 hook where capital rests in ERC-4626 vaults between swaps and is deployed as concentrated liquidity just-in-time, so LPs earn swap fees and vault yield on the same token.",
       "deployer": "0x892a2a64178af49ec56d2311f955168cc96b8511",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audit/openzeppelin-dualpool.pdf"
     },
     "flags": {
       "beforeInitialize": true,
@@ -30869,12 +31289,82 @@
   },
   {
     "hook": {
+      "address": "0x9510184e76ff666660d23e3f22aa270180262888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LitePSM Aggregator Hook (DAI)",
+      "description": "Uniswap v4 custom accounting hook that routes DAI <-> USDC swaps through the Sky LitePSM at a fixed 1:1 rate with zero slippage, intercepting beforeSwap and returning a BeforeSwapDelta to bypass the AMM curve entirely. Direct liquidity addition is blocked, and the hook enforces one canonical pool per token pair.",
+      "deployer": "0xe3ed9ed05284cf1962882bef564b2f6aeec7d775",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x95518bfd15fc8da9fb62f7b5f5af7a87cf7fe888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LitePSM Aggregator Hook (USDS)",
+      "description": "Uniswap v4 custom accounting hook that routes USDS <-> USDC swaps through the Sky LitePSM at a fixed 1:1 rate with zero slippage, intercepting beforeSwap and returning a BeforeSwapDelta to bypass the AMM curve entirely. Direct liquidity addition is blocked, and the hook enforces one canonical pool per token pair.",
+      "deployer": "0xe3ed9ed05284cf1962882bef564b2f6aeec7d775",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x958942af77dcd973b815b2a16bd88a5134c46888",
       "chain": "ethereum",
       "chainId": 1,
       "name": "LitePSM Aggregator Hook (DAI)",
-      "description": "Aggregator hook that routes USDC/DAI (or USDC/USDS) swaps through a MakerDAO LitePSM contract, bypassing Uniswap pool liquidity entirely. Uses beforeSwapReturnsDelta to intercept and settle swaps at PSM pricing; blocks direct liquidity addition to the pool.",
-      "deployer": "",
+      "description": "Uniswap v4 custom accounting hook that routes DAI <-> USDC swaps through the Sky LitePSM at a fixed 1:1 rate with zero slippage, intercepting beforeSwap and returning a BeforeSwapDelta to bypass the AMM curve entirely. Direct liquidity addition is blocked, and the hook enforces one canonical pool per token pair.",
+      "deployer": "0xe3ed9ed05284cf1962882bef564b2f6aeec7d775",
       "verifiedSource": true,
       "auditUrl": ""
     },
@@ -30907,9 +31397,9 @@
       "address": "0x958a0904940f744f8c6b72c043ceee3ea34ae888",
       "chain": "ethereum",
       "chainId": 1,
-      "name": "LitePSM Aggregator Hook USDS",
-      "description": "Routes USDC\u2194USDS (or DAI) swaps through a MakerDAO LitePSM by intercepting beforeSwap and returning a BeforeSwapDelta, bypassing the standard AMM curve entirely. Liquidity addition is blocked; the hook enforces one canonical pool per gem/stable token pair.",
-      "deployer": "",
+      "name": "LitePSM Aggregator Hook (USDS)",
+      "description": "Uniswap v4 custom accounting hook that routes USDS <-> USDC swaps through the Sky LitePSM at a fixed 1:1 rate with zero slippage, intercepting beforeSwap and returning a BeforeSwapDelta to bypass the AMM curve entirely. Direct liquidity addition is blocked, and the hook enforces one canonical pool per token pair.",
+      "deployer": "0xe3ed9ed05284cf1962882bef564b2f6aeec7d775",
       "verifiedSource": true,
       "auditUrl": ""
     },
@@ -31001,6 +31491,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x95e56544e6fe5e91cb9bf2c408009f5494ed2888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LitePSM Aggregator Hook (DAI)",
+      "description": "Uniswap v4 custom accounting hook that routes DAI <-> USDC swaps through the Sky LitePSM at a fixed 1:1 rate with zero slippage, intercepting beforeSwap and returning a BeforeSwapDelta to bypass the AMM curve entirely. Direct liquidity addition is blocked, and the hook enforces one canonical pool per token pair.",
+      "deployer": "0xe3ed9ed05284cf1962882bef564b2f6aeec7d775",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -33109,6 +33634,41 @@
   },
   {
     "hook": {
+      "address": "0xb98766a35cdc28415be0767d4ea41e39fba3e000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.0.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "0x32f4b2e69ebd7746596af8699dac1908f43107ad",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xb99c5b4c603a607db02a984ed0a69fb45edc9000",
       "chain": "ethereum",
       "chainId": 1,
@@ -33669,6 +34229,41 @@
   },
   {
     "hook": {
+      "address": "0xc26a5cb51b1818f62a4c6693a9a1fedb3340efc4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "NFTXFlexHook",
+      "description": "Allows for exotic token pairings for liquidity against NFTX pools",
+      "deployer": "0xB8A70b4d1547bf6193bd67A73F4F98ea9FD0A973",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc26d4199880ff83e10b1076589e975b830118a80",
       "chain": "ethereum",
       "chainId": 1,
@@ -33949,14 +34544,49 @@
   },
   {
     "hook": {
+      "address": "0xcdde8f9c3414a00f804e5c565eed9949ad17e888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "WstETHHook",
+      "description": "WstETHHook turns a v4 pool into a stETH/wstETH wrapper. Swaps convert at Lido's live exchange rate rather than 1:1, since wstETH accrues staking rewards. Deposits wrap the stETH taken from the PoolManager and settle the wstETH back; withdrawals unwrap and return stETH. Exact-output swaps are not supported.",
+      "deployer": "0x2179a60856e37dfeaaca0ab043b931fe224b27b6",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xcde44b16e25b4321ef6471a4aa8d9d4d4fbf2ac0",
       "chain": "ethereum",
       "chainId": 1,
       "name": "DualPoolHook",
-      "description": "JIT liquidity hook that deploys concentrated LP positions across multiple configurable tick ranges before each swap and removes them afterward. Idle capital is rehypothecated via ERC-4626 vaults between swaps. The LP fee is static, set at pool creation via PoolKey.fee; dynamic fees are explicitly rejected.",
+      "description": "DualPool is a Uniswap v4 hook where capital rests in ERC-4626 vaults between swaps and is deployed as concentrated liquidity just-in-time, so LPs earn swap fees and vault yield on the same token.",
       "deployer": "0xf520820897fd7ca6977777892aed0e4b35a74d5f",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audit/openzeppelin-dualpool.pdf"
     },
     "flags": {
       "beforeInitialize": true,
@@ -34092,9 +34722,9 @@
       "address": "0xd53006d1e3110fd319a79aeec4c527a0d265e080",
       "chain": "ethereum",
       "chainId": 1,
-      "name": "VirtualLBPStrategyBasic",
-      "description": "A hook implementing a Virtual Liquidity Bootstrapping Pool (LBP) strategy for token launches. It restricts pool initialization to the contract itself and gates all swaps on a migration approval flag, enabling controlled token distribution.",
-      "deployer": "",
+      "name": "VirtualLBPStrategyBasic (Aztec)",
+      "description": "The dedicated hook for the AZTEC pool, deployed for Aztec's continuous clearing auction in November 2025 and left in place as the pool's hook afterwards.",
+      "deployer": "0x85e51a78fe8fe21d881894206a9adbf54e3df8c3",
       "verifiedSource": true,
       "auditUrl": ""
     },
@@ -36609,6 +37239,41 @@
   },
   {
     "hook": {
+      "address": "0xaa49adadd33c5e953b645567afb10cbbba63afc4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "NFTXV4Hook",
+      "description": "Allows for ERC721 NFT collections to be fractionalised into ERC20 and then traded on Uniswap V4. This then allows the NFT to be redeemed for 1e18.",
+      "deployer": "0xb8a70b4d1547bf6193bd67a73f4f98ea9fd0a973",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0xba7a87d42cb13834086f3329d7ae8a0555982444",
       "chain": "ink",
       "chainId": 57073,
@@ -36640,6 +37305,76 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xccbfcb32343023e69704af636a218792f5276000",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "InitializerHook",
+      "description": "InitializerHook (v3.0.0) restricts pool initialization to a single authorized address. Only beforeInitialize is implemented, so the hook takes no part in swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd749fae4d01e8fd85b9e26555cb300018afea000",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.1.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
     }
   },
   {
@@ -38467,11 +39202,11 @@
       "address": "0x480dafdb4d6092ef3217595b75784ec54b52e888",
       "chain": "optimism",
       "chainId": 10,
-      "name": "WETH Hook (Optimism)",
-      "description": "A Uniswap v4 hook that enables seamless wrapping and unwrapping of ETH to WETH within a pool, intercepting swaps to perform 1:1 ETH\u2194WETH conversions while blocking direct liquidity operations.",
+      "name": "WETHHook",
+      "description": "WETHHook turns a v4 pool into an ETH / WETH wrapper. Swaps mint or burn WETH 1:1 against native ETH via the WETH9 contract. Deposits take ETH from the PoolManager and settle the minted WETH back; withdrawals unwrap and return native ETH. Direct liquidity provision is disabled.",
       "deployer": "",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
     },
     "flags": {
       "beforeInitialize": true,
@@ -67059,6 +67794,41 @@
   },
   {
     "hook": {
+      "address": "0x298ea05d0356b2ae5ccaa3169e471783ee9ea000",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.1.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "0x32f4b2e69ebd7746596af8699dac1908f43107ad",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2b28456c46befd00cf05dc64f7dffc163c5550c0",
       "chain": "unichain",
       "chainId": 130,
@@ -67342,11 +68112,11 @@
       "address": "0x730b109bad65152c67ecc94eb8b0968603dba888",
       "chain": "unichain",
       "chainId": 130,
-      "name": "WETH Hook (Unichain)",
-      "description": "A 1:1 ETH/WETH wrapper hook that intercepts swaps in beforeSwap to wrap ETH into WETH or unwrap WETH into ETH, bypassing the pool's AMM math via BeforeSwapDelta. Liquidity additions are blocked \u2014 the hook itself manages liquidity.",
-      "deployer": "",
+      "name": "WETHHook",
+      "description": "WETHHook turns a v4 pool into an ETH / WETH wrapper. Swaps mint or burn WETH 1:1 against native ETH via the WETH9 contract. Deposits take ETH from the PoolManager and settle the minted WETH back; withdrawals unwrap and return native ETH. Direct liquidity provision is disabled.",
+      "deployer": "0x2cf8e5b175aa29c1fdf0e9fe572735c78eacce43",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
     },
     "flags": {
       "beforeInitialize": true,
@@ -67391,6 +68161,41 @@
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x824a3ecde463dd45cc156b64cefa132596c9a000",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.0.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "0x32f4b2e69ebd7746596af8699dac1908f43107ad",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
       "afterSwap": false,
       "beforeDonate": false,
       "afterDonate": false,
