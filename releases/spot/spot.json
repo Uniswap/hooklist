@@ -1,0 +1,38 @@
+{
+  "project": "spot",
+  "id": "spot",
+  "version": "1",
+  "name": "Spot",
+  "description": "A Uniswap v4 hook that implements dynamic LP fee management and protocol fee collection. In beforeSwap, it computes a dynamic fee (base + surge via DynamicFeeManager, or a manual override) and charges a protocol share on exactIn swaps; in afterSwap, it does the same for exactOut swaps. Collected fees are minted as ERC-6909 credits to a FullRangeLiquidityManager for optional auto-reinvestment, while a TruncatedGeometricOracle tracks tick movement for volatility-based fee tuning.",
+  "source": {
+    "verified": true,
+    "codeHashes": [
+      "sha256:02447c019c9941dbb2e38a8dc61d562104aca616042840bbea8465e34987ec31",
+      "sha256:137db0e78c1b082718cfc0d81d62748a297449af317639c2ce30b626d7de39f3",
+      "sha256:3068cffb1da2c5868999cfa004790e22b2712b07415110a80a71fa9b9a8a50f8",
+      "sha256:3fdad67ca7dc38e03972b4c11b5ba175f0b487f2c057f910dfcbec041ef8e816",
+      "sha256:4478b14fd48a783abf42926ac26ab98be17d66efa6fa90e7d7a10f85cd76cceb",
+      "sha256:67a43035ccc2d79273e7a08aa9a2d5b6bc210e22838d8fab74b4313166636ed3",
+      "sha256:88cbec24b8525e4bacec1aef2844f73db4e460e5c07f849c6a1d716c7e4f76d5",
+      "sha256:b0ed6e090c7ce5089cf6e377347f48cab1dac98bfa9a5f5f82ee6f4e2dddfde5",
+      "sha256:d9dad4f1d46d2071dec864a25e92c7944acfd14cb338c808b27dfff238b3edd2",
+      "sha256:df3982c3a38d6360245b2f21ceac4febf964996e3e0e6119294fcaa0a239d3a7",
+      "sha256:df69f375163459b1586efba2c4c402481c32277a17315304e9f8ebce016328cb",
+      "sha256:e6dacb1f5e71e04b2614866ae9eb67a260d6b044acb2f761b1f83950bdfebb7f",
+      "sha256:e794c85913a6b60cbd36e41b65577943599ce4d31d3f20f23966b574d1c8a2ad",
+      "sha256:f98bd25d285201953287ba043b1b4fca8e1a32f3f8dde50cbcd29f9497923176"
+    ]
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  },
+  "warnings": [],
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null
+  }
+}

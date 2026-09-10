@@ -1,0 +1,27 @@
+{
+  "project": "nftstrategyhook",
+  "id": "nftstrategyhook",
+  "version": "1",
+  "name": "NFTStrategyHook",
+  "description": "A hook for NFTStrategy pools that takes swap fees with a time-decaying buy rate (starting at 99%, decreasing by 100bps per 5 blocks down to a 10% floor) and a fixed 10% sell fee. Collected fees are distributed 80% to the NFT collection, 10% to buy-and-burn PNKSTR, and 10% to a configurable fee address. Exact-output swaps are blocked, and liquidity operations are restricted to the NFTStrategyFactory.",
+  "source": {
+    "verified": true,
+    "codeHashes": [
+      "sha256:1f6511728ce9440b020289cb7e25b37c7f241064c0df050096c4d49c768354ad",
+      "sha256:54fcb90e161ad1c608aab4c354b9f203bf1f84d7a520557d463505995885c4e9",
+      "sha256:d8d97dbeaccc984818ac09dd6be111aafc876fbec6cfc93d406c7ca8adf17cbf"
+    ]
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  },
+  "warnings": [],
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null
+  }
+}

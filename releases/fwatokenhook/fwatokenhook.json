@@ -1,0 +1,27 @@
+{
+  "project": "fwatokenhook",
+  "id": "fwatokenhook",
+  "version": "1",
+  "name": "FWATokenHook",
+  "description": "ETH/FWAToken pool hook that charges a flat 1% fee on all swaps, routing collected fees to an owner-set address (buys: fee in FWAToken swapped to ETH via internal pool swap; sells: fee in ETH). Pool initialization and liquidity addition are gated on the token's transient launching() flag; buy access is governance-controlled via an owner-toggled externalBuysEnabled flag.",
+  "source": {
+    "verified": true,
+    "codeHashes": [
+      "sha256:85e751a1a92a14b9fc95db46f1ac723a707c648b45bfa30ba9832442f90ee248",
+      "sha256:8e4d79e429a7cdf42e6fda3a607d0c083d85ca1daf565af342642bbabc6679d5",
+      "sha256:b8136036976085b69c60ed303e5503c7337870004c79abd1befd8304deb47613"
+    ]
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  },
+  "warnings": [],
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null
+  }
+}
