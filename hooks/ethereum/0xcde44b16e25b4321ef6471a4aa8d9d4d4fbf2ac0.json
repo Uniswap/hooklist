@@ -4,10 +4,10 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "DualPoolHook",
-    "description": "JIT liquidity hook that deploys concentrated LP positions across multiple configurable tick ranges before each swap and removes them afterward. Idle capital is rehypothecated via ERC-4626 vaults between swaps. The LP fee is static, set at pool creation via PoolKey.fee; dynamic fees are explicitly rejected.",
+    "description": "DualPool is a Uniswap v4 hook where capital rests in ERC-4626 vaults between swaps and is deployed as concentrated liquidity just-in-time, so LPs earn swap fees and vault yield on the same token.",
     "deployer": "0xf520820897fd7ca6977777892aed0e4b35a74d5f",
     "verifiedSource": true,
-    "auditUrl": ""
+    "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audit/openzeppelin-dualpool.pdf"
   },
   "flags": {
     "beforeInitialize": true,
