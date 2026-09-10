@@ -43399,6 +43399,41 @@
   },
   {
     "hook": {
+      "address": "0x095e38a2135aebcffa98a5b6911591937f912000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LBPStrategy",
+      "description": "LBPStrategy (v3.0.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0998ecdd40500ae7b38b9ffc39dfeaa4ffb528cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -53125,6 +53160,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6396243065accc74ed3fcd13a4b01bb3e90020cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BobiFeeHook",
+      "description": "A volatility-based fee hook for BobiLaunch token launch pools. Charges ETH fees (1\u20137%) on buys via beforeSwap and on sells via afterSwap, scaling the fee with the tick movement of the previous swap. Only the bound factory can initialize pools; exact-output swaps are blocked; the owner can retune fees within the hard band.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
