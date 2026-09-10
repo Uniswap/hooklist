@@ -3,11 +3,11 @@
     "address": "0x57991106cb7aa27e2771beda0d6522f68524a888",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "WETH Hook",
-    "description": "A Uniswap v4 hook that enables seamless ETH/WETH wrapping and unwrapping within v4 pools at a 1:1 ratio. It intercepts swaps to deposit or withdraw ETH from the WETH contract in-flight, supporting both exact input and exact output swaps, while blocking liquidity operations since the pool serves purely as a conversion mechanism.",
-    "deployer": "",
+    "name": "WETHHook",
+    "description": "WETHHook turns a v4 pool into an ETH / WETH wrapper. Swaps mint or burn WETH 1:1 against native ETH via the WETH9 contract. Deposits take ETH from the PoolManager and settle the minted WETH back; withdrawals unwrap and return native ETH. Direct liquidity provision is disabled.",
+    "deployer": "0x19b44a1ee64506eba1e3a2db28900b00b55ed65a",
     "verifiedSource": true,
-    "auditUrl": ""
+    "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
   },
   "flags": {
     "beforeInitialize": true,
