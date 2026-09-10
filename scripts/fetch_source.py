@@ -30,9 +30,14 @@ RETRY_BACKOFF_SECONDS = 2
 # with an HTTP 403 HTML page; the same request with a browser user agent
 # gets the JSON. Identify as a browser, and treat a 403 as transient so a
 # challenge is retried rather than read as "source not verified".
+#
+# As of 2026-09-10 the challenge also fires on any user agent containing
+# "Chrome" (32/32 robinhood hooks -> 403 + `cf-mitigated: challenge`, from
+# CI and locally), while Safari and Firefox strings get JSON for 32/32.
+# Keep this string Chrome-free; test_fetch_source guards it.
 FETCH_USER_AGENT = (
-    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
-    "(KHTML, like Gecko) Chrome/128.0 Safari/537.36 hooklist-fetch"
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 14_6) AppleWebKit/605.1.15 "
+    "(KHTML, like Gecko) Version/17.6 Safari/605.1.15 hooklist-fetch"
 )
 CHALLENGE_HTTP_CODES = {"403"}
 
