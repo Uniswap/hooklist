@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x000075e7511d6104d8b1e617a27d426d7611eac0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DualPoolHook",
+    "description": "DualPool is a Uniswap v4 hook where capital rests in ERC-4626 vaults between swaps and is deployed as concentrated liquidity just-in-time, so LPs earn swap fees and vault yield on the same token.",
+    "deployer": "0x61e75d5c5dee4205a5bbcd9fbc40498b693197ad",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audit/openzeppelin-dualpool.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
