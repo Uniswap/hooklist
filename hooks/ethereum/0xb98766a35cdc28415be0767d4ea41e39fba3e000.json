@@ -1,26 +1,26 @@
 {
   "hook": {
-    "address": "0x958a0904940f744f8c6b72c043ceee3ea34ae888",
+    "address": "0xb98766a35cdc28415be0767d4ea41e39fba3e000",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "LitePSM Aggregator Hook (USDS)",
-    "description": "Uniswap v4 custom accounting hook that routes USDS <-> USDC swaps through the Sky LitePSM at a fixed 1:1 rate with zero slippage, intercepting beforeSwap and returning a BeforeSwapDelta to bypass the AMM curve entirely. Direct liquidity addition is blocked, and the hook enforces one canonical pool per token pair.",
-    "deployer": "0xe3ed9ed05284cf1962882bef564b2f6aeec7d775",
+    "name": "LBPStrategy",
+    "description": "LBPStrategy (v3.0.0) bootstraps a Uniswap v4 pool from a price discovery auction. It creates the auction through a factory, then opens the pool at the auction's clearing price, seeded with the tokens reserved for liquidity plus a scheduled share of the currency raised.",
+    "deployer": "0x32f4b2e69ebd7746596af8699dac1908f43107ad",
     "verifiedSource": true,
     "auditUrl": ""
   },
   "flags": {
     "beforeInitialize": true,
     "afterInitialize": false,
-    "beforeAddLiquidity": true,
+    "beforeAddLiquidity": false,
     "afterAddLiquidity": false,
     "beforeRemoveLiquidity": false,
     "afterRemoveLiquidity": false,
-    "beforeSwap": true,
+    "beforeSwap": false,
     "afterSwap": false,
     "beforeDonate": false,
     "afterDonate": false,
-    "beforeSwapReturnsDelta": true,
+    "beforeSwapReturnsDelta": false,
     "afterSwapReturnsDelta": false,
     "afterAddLiquidityReturnsDelta": false,
     "afterRemoveLiquidityReturnsDelta": false
@@ -29,7 +29,7 @@
     "dynamicFee": false,
     "upgradeable": false,
     "requiresCustomSwapData": false,
-    "vanillaSwap": false,
+    "vanillaSwap": true,
     "swapAccess": "none"
   }
 }
