@@ -3,11 +3,11 @@
     "address": "0x480dafdb4d6092ef3217595b75784ec54b52e888",
     "chain": "optimism",
     "chainId": 10,
-    "name": "WETH Hook (Optimism)",
-    "description": "A Uniswap v4 hook that enables seamless wrapping and unwrapping of ETH to WETH within a pool, intercepting swaps to perform 1:1 ETH\u2194WETH conversions while blocking direct liquidity operations.",
+    "name": "WETHHook",
+    "description": "WETHHook turns a v4 pool into an ETH / WETH wrapper. Swaps mint or burn WETH 1:1 against native ETH via the WETH9 contract. Deposits take ETH from the PoolManager and settle the minted WETH back; withdrawals unwrap and return native ETH. Direct liquidity provision is disabled.",
     "deployer": "",
     "verifiedSource": true,
-    "auditUrl": ""
+    "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
   },
   "flags": {
     "beforeInitialize": true,
