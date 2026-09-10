@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaa49ADaDD33c5E953b645567AFb10CBbba63afC4",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "NFTXV4Hook",
+    "description": "NFTXV4Hook powers every NFTX v4 collection pool: a collection's ERC-20 floor token (CollectionToken, redeemable 1:1 for a vaulted NFT) paired with flETH. It sets a per-pool dynamic LP fee, takes a fixed AMM fee via afterSwapReturnsDelta and donates protocol revenue (listing taxes) to the pool's LPs. Swaps are open to anyone; the owner can only close a sunset collection's pool. No external calls during swaps. Same address on every chain via CREATE3.",
+    "deployer": "0xB8A70b4d1547bf6193bd67A73F4F98ea9FD0A973",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
