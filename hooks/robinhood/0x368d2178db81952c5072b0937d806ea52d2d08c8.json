@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x368d2178db81952c5072b0937d806ea52d2d08c8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PeepsV4TaxHook",
+    "description": "A tax-on-swap hook for Peeps V4 token launches that skims configurable buy/sell taxes via BeforeSwapDelta, then distributes collected amounts across funds, burn, dividend, and liquidity sinks in afterSwap. Enforces an optional anti-farmer window blocking third-party LP additions, and gates all swaps via a registry-controlled clearing window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

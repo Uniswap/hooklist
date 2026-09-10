@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x90c67c1e866f86526f0e338459cd435e1f23a0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "QuoteAssetCreatorFeeHookV1",
+    "description": "Charges a fixed 1% fee in the quote token (split 0.9% to the token creator's vault, 0.1% to the launcher) on every swap of registered stock/quote-asset pairs. Uses beforeSwap/afterSwap return deltas to extract fees from both exact-input and exact-output swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

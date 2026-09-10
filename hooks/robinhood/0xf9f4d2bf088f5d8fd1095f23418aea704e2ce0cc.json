@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf9f4d2bf088f5d8fd1095f23418aea704e2ce0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TollHookV1",
+    "description": "Anti-sniper fee hook that charges a flat buy fee and tiered sell fees based on hold duration (sniper &lt;30min, warm 30min\u20134h, holder 4h\u201324h, diamond &gt;24h). Uses tx.origin to track traders through routers, collects native (ETH) fees split between a creator reward vault and a protocol recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

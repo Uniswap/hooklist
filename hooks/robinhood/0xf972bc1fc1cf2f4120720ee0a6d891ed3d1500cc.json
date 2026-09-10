@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf972bc1fc1cf2f4120720ee0a6d891ed3d1500cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "WobbHook",
+    "description": "Uniswap v4 hook for the wobb.fun token launch platform. Intercepts swaps on registered tokens to collect platform and maker fees, apply anti-snipe and founder-sell surcharges, route dividends, and trigger auto buyback-and-burn of the launched token and/or the platform $WOBB token. Enforces a configurable staker-only early-access window and per-wallet buy cap during the guard window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

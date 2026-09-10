@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc384b99a6e5cd1a800b2d83ab71bab7bd712b0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DeliHook",
+    "description": "Uniswap v4 hook for wBLT-paired pools that replaces standard LP fee collection with custom fee handling: overrides the dynamic LP fee to 0 and takes fees always in wBLT, forwarding them to a FeeProcessor. Syncs DailyEpochGauge and IncentiveGauge on every swap. Pools must include wBLT as one of the two currencies and must use dynamic LP fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

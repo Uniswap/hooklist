@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd64f3cbfc9d559911d57bfd6b277e0f2a8b24088",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "PolHook",
+    "description": "A beforeSwap hook that extracts a 0.2% fee (1/500) via BeforeSwapDelta for swaps from a hardcoded privileged tx.origin address, while allowing all other origins to swap fee-free. A public setCheckOrigin flag can block all non-privileged tx.origin addresses from swapping entirely.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

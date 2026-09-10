@@ -112,9 +112,11 @@ Cross-reference the address-derived flags with the source code:
 
 3. **Detect `upgradeable`**: Check for:
    - Proxy patterns (ERC-1967, transparent proxy, UUPS)
-   - `delegatecall` usage
+   - `delegatecall` to a mutable or admin-configurable address
    - Mutable storage pointing to an implementation address
    - `SELFDESTRUCT` / `SELFDESTRUC` opcode usage
+
+   A `delegatecall` to a compile-time-linked Solidity library or to an address fixed at deployment (constant/immutable) is a code-size optimization, not an upgrade path — it does not by itself make the hook upgradeable.
 
 4. **Detect `requiresCustomSwapData`**: This is `true` if a normal swap (sending empty `hookData`) would **fail, revert, or produce materially incorrect behavior** because the hook requires specific encoded data (signatures, parameters, routing info, etc.) in `hookData`. If the hook merely inspects `hookData` for optional/ancillary features (e.g. an optional trade referrer via `if (hookData.length > 0)`) but swaps work correctly without it, this is `false`. In short: would an unsuspecting router or user sending no `hookData` have a bad experience?
 
@@ -140,7 +142,7 @@ Cross-reference the address-derived flags with the source code:
 6. **Detect `swapAccess`**: Classify the hook's swap access control mechanism by searching the `beforeSwap` implementation:
 
    - `"none"` — No access control logic in beforeSwap. The hook either has no beforeSwap, or beforeSwap never reverts based on caller identity, timing, or external state. Default for most hooks.
-   - `"temporal"` — Swaps gated by time. Look for: `block.timestamp` or `block.number` comparisons, `require(block.timestamp >= startTime)`, configurable start/end times, or phase-based timing logic.
+   - `"temporal"` — Swaps gated by time. Look for: `block.timestamp` or `block.number` comparisons, `require(block.timestamp >= startTime)`, configurable start/end times, or phase-based timing logic. Applies only when swaps are fully closed at some times and open at others (a start/end window or phase schedule). A permanent block- or time-derived condition that never fully closes swaps (e.g., a rolling modular filter comparing swap amounts to `block.number`) is `"other"`, not `"temporal"`.
    - `"allowlist"` — Only approved addresses can swap. Look for: `mapping(address => bool)` checks against `tx.origin` or `sender`, calls to external allowlist/registry contracts, Merkle proof verification, or KYC/Predicate authorization checks.
    - `"governance"` — An admin/owner must flip a flag to enable swaps. Look for: boolean storage like `migrated`, `tradingEnabled`, or `launched` that is set by an owner/admin function, with beforeSwap checking `require(migrated)` or similar. Includes single-owner gates, multi-sig gates, and role-based access control.
    - `"other"` — Some other mechanism not covered above (e.g., NFT-gated, token-balance-gated, signature-based).

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x64c6103255ccc638febe3619aeb52d2b59d6a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SlvrHook",
+    "description": "A hook for the SLVR/ETH pool that taxes exact-input swaps up to 2%: buys pay an ETH fee into a lottery jackpot pot and receive weighted tickets; sells pay a SLVR fee to in-range LP stakers. Optional hookData (address buyer, uint8 boost) enables ticket attribution and boost multipliers. Exact-output and partial fills revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

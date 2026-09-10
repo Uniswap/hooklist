@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7f3b3971ee064645f57fcf95a39139f97ab100cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TripoolsAntiSnipeHook",
+    "description": "Shared hook for all Tripools launch factory pools that enforces a 6-second anti-snipe window with a 50% tax on non-whitelisted buys, and applies a dynamic tiered fee schedule on buys and sells, splitting revenue between the protocol treasury and the token creator.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

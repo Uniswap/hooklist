@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x072a86662b587e8b3adfb5fb9d0b8c78120680cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ZeroRWAHook",
+    "description": "Collects a configurable BPS fee on each swap in RWA token pools; fees are taken from currency0 via BeforeSwapDelta and AfterSwapDelta and forwarded to the factory contract for distribution. Swaps revert if the pool's currency1 token has not been registered by the factory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

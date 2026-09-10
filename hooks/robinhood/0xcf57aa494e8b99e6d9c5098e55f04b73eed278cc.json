@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcf57aa494e8b99e6d9c5098e55f04b73eed278cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AgenEngineHookV2",
+    "description": "A market engine hook that replaces the LP fee with its own tiered fee structure, collected via BeforeSwapDelta and afterSwapDelta returns based on trade side and size. Enforces configurable per-market trade size bounds (min/max token and quote amounts) and optionally restricts liquidity provisioning to a factory address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}

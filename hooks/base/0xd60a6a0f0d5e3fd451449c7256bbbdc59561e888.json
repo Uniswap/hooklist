@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd60a6a0f0d5e3fd451449c7256bbbdc59561e888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Generic4626Router",
+    "description": "A hook-based router for symmetric ERC4626 vault pairs that intercepts swaps to perform vault deposits (underlying \u2192 shares) or redeems (shares \u2192 underlying) in place of standard AMM swaps. Pool initialization is gated through the hook; direct liquidity addition is blocked entirely.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

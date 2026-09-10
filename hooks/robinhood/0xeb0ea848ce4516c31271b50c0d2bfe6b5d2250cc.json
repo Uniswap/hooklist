@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xeb0ea848ce4516c31271b50c0d2bfe6b5d2250cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BangHook",
+    "description": "Fee-taking hook for ETH-paired pools that charges a creator rate (1\u20135%) plus an immutable 1% platform fee on every swap. Fees are accrued as ERC-6909 claims and can be permissionlessly swept to an immutable platform wallet or per-pool dividend vaults.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

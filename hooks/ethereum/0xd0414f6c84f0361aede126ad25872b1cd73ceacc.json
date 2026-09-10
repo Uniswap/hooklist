@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd0414f6c84f0361aede126ad25872b1cd73ceacc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FarmHook",
+    "description": "A Uniswap v4 hook that acts as a yield farm and liquidity manager, enforcing full-range liquidity added only through the hook. Charges a 1% swap fee routed to a fee recipient, distributes minted reward tokens via a Synthetix-style accumulator with tiered emissions (6.6M/day bootstrap, then 660k/day), and applies a 10% claim tax redistributed to current LPs.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

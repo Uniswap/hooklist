@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf91aef6d1c9ee76c0f02a73f11bdc5498b5000cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "UnifartHook",
+    "description": "A fee-collection hook for tokens launched via the Unifart factory that deducts a configurable basis-point fee from each swap's quote-token amount using the return-delta mechanism, with an elevated anti-snipe tax applied during the first N blocks after a token's launch. Fees accumulate as claimable balances for token creators.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

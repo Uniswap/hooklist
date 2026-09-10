@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8f66d6821dfa255f7a008e76efdefb96992b5ae4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "UniClawHookV4",
+    "description": "Dual-mode Uniswap v4 hook supporting agent-only and public pools. For agent-only pools, swaps and liquidity actions are gated to verified agents via an on-chain registry. After each swap, a configurable fee (optionally scaled by the swapper's on-chain reputation score) is extracted from the output token and accumulated for the pool creator to collect.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdc75967c5a8c49a82059ebdb55aeb6575ad370c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GlassBoxHook",
+    "description": "A Uniswap v4 launchpad hook with authorized pool creation and a mandatory dynamic LP fee. beforeSwap enforces a per-pool trading-start timestamp and applies a linearly-decaying anti-snipe LP fee override. afterSwap collects a configurable protocol fee (in bps) from swap output, routes it to a configurable fee sink, and awards Prism points per swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

@@ -3,11 +3,11 @@
     "address": "0x730b109bad65152c67ecc94eb8b0968603dba888",
     "chain": "unichain",
     "chainId": 130,
-    "name": "WETH Hook (Unichain)",
-    "description": "A 1:1 ETH/WETH wrapper hook that intercepts swaps in beforeSwap to wrap ETH into WETH or unwrap WETH into ETH, bypassing the pool's AMM math via BeforeSwapDelta. Liquidity additions are blocked \u2014 the hook itself manages liquidity.",
-    "deployer": "",
+    "name": "WETHHook",
+    "description": "WETHHook turns a v4 pool into an ETH / WETH wrapper. Swaps mint or burn WETH 1:1 against native ETH via the WETH9 contract. Deposits take ETH from the PoolManager and settle the minted WETH back; withdrawals unwrap and return native ETH. Direct liquidity provision is disabled.",
+    "deployer": "0x2cf8e5b175aa29c1fdf0e9fe572735c78eacce43",
     "verifiedSource": true,
-    "auditUrl": ""
+    "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
   },
   "flags": {
     "beforeInitialize": true,

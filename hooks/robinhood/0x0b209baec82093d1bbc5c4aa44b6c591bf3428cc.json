@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0b209baec82093d1bbc5c4aa44b6c591bf3428cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ERC1967Proxy Hook",
+    "description": "An upgradeable ERC1967 proxy contract that delegates all calls to an implementation address. The hook implements beforeSwap, afterSwap, beforeAddLiquidity, and beforeInitialize, with both beforeSwapReturnsDelta and afterSwapReturnsDelta enabled, indicating it modifies swap deltas. The actual hook logic resides in the unresolved implementation contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

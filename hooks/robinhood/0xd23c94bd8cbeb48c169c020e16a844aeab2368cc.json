@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd23c94bd8cbeb48c169c020e16a844aeab2368cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "Three-phase token launchpad hook: a 50-block guard phase with exponentially decaying fees (90%\u21923%), a flat 1% curve phase until a cumulative quote graduation threshold is met, then a permanent 1% graduated phase. The hook captures 100% of trading fees via before/afterSwap deltas and routes them through a FeeRouter. Per-wallet and per-block buy caps are enforced during the first 100 L2 blocks to limit sniping.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xef8c50ff07cd58ccbd6eb0499c207dc9f65a00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NeonHook",
+    "description": "A fee-extraction hook for factory-deployed tokens that charges layered buy-side fees (protocol hook fee + per-token tax + anti-snipe premium scaled by blocks since launch) and drains 60% of sell proceeds from non-creator sellers. Fees are accumulated as claimable balances for the token creator and distributed via a factory registry.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

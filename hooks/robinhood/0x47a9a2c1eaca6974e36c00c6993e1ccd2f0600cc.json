@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x47a9a2c1eaca6974e36c00c6993e1ccd2f0600cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MonkeyFeeHook",
+    "description": "A volatility-sensitive fee hook for native ETH/token pools that collects ETH fees (1%\u20137.3%) directly via BeforeSwapDelta on buys and AfterSwapDelta on sells. The fee scales between a configurable base and maximum based on the previous swap's tick movement. Exact-output swaps are blocked; only exact-input swaps are permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}

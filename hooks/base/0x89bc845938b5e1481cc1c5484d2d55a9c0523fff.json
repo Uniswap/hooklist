@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x89bc845938b5e1481cc1c5484d2d55a9c0523fff",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AgentUniswapHook",
+    "description": "A UUPS-upgradeable Uniswap v4 hook that collects configurable fees on each swap, distributing them to designated recipients, and burns the agent token (via IBurnable) in afterSwap. Fee recipients and burn percentages are set per token pair by an owner or controller.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6ce36c926a29c7c0f36a18f259fbe49bed13a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchpadHook",
+    "description": "A launchpad hook that gates swaps until a scheduled activation time and collects trading fees in WETH via swap deltas. Fees follow a time-decaying anti-snipe schedule or a market-cap-decaying curve, split between protocol, creator, and partner, with the creator's share routed into buyback-burn, auto-LP, token reflections, and WETH dividends.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

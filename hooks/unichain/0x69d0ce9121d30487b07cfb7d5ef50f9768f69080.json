@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x69d0ce9121d30487b07cfb7d5ef50f9768f69080",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "DynamicFeeHook",
+    "description": "Immutable Uniswap v4 hook that applies time-decaying dynamic LP fees for unifan launch pools. Starts at 1% (100 bps) and decreases based on pool age (days 8, 16) and FDV milestones ($10M, $50M, $100M USD), with a floor of 0.1%. Fees can only decrease over time.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

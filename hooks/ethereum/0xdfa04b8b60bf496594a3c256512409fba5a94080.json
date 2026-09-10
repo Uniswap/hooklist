@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdfa04b8b60bf496594a3c256512409fba5a94080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "WhitelistHook",
+    "description": "A Uniswap v4 hook that restricts swaps to whitelisted addresses. It checks `tx.origin` against an external `ISwapWhitelist` contract in `beforeSwap`, reverting with `SwapperNotWhitelisted` for non-whitelisted callers. No modification to swap execution occurs beyond access control.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}

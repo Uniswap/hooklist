@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2e4a2e0067f66404f17b7e1ffe3ddef9a528eaec",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ForgeHookV4",
+    "description": "A Uniswap v4 hook for controlled token launches that enforces launchManager authorization for pool initialization and liquidity provision. Collects configurable buy/sell fees via swap deltas and distributes fee shares across platform, creator, rewards, and utility recipients. Remove liquidity and donations are permanently disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

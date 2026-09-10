@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb046529771f5d01974913056843f1f0f77d81888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TokiHook",
+    "description": "Uniswap v4 custom curve hook implementing Pendle-style fixed-rate yield trading for Principal Tokens. Uses a custom AMM curve with optional ERC4626 rehypothecation to boost LP yields, maintains a TWAP oracle for logarithmic implied rates, and enforces curator-controlled pool lifecycle with pause and maturity expiry.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}

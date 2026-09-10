@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x201c4916c085032fb49f0b778efa98df23672044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AdvancedFeeHookV5",
+    "description": "Collects a configurable swap fee (up to 10%) in afterSwap, splitting it between a platform treasury and per-pool creator payees; portions of the creator share may be burned or reinvested as single-sided liquidity. Pool initialization is gated to a designated launcher address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

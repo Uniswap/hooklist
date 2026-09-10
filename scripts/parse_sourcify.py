@@ -6,18 +6,23 @@ Usage: python3 scripts/parse_sourcify.py response.json [--outdir .sources]
 Prints contract metadata to stdout and writes individual source files
 to the output directory for grep-based analysis.
 
-Sourcify v2 response format (with ?fields=sources,proxyResolution):
+Sourcify v2 response format (with ?fields=sources,compilation,proxyResolution):
 {
-  "match": "exact_match",
+  "match": "exact_match" | "match",
   "chainId": "4217",
   "address": "0x...",
-  "name": "ContractName",
+  "compilation": { "name": "ContractName", ... },
   "sources": {
     "src/Contract.sol": { "content": "pragma solidity ..." },
     ...
   },
   "proxyResolution": { ... } | null
 }
+
+`match` is the v2 spelling of a partial match; `partial_match` is the v1 spelling and is
+still accepted so a v1 server keeps working. A contract compiled with
+`metadata.bytecodeHash = "none"` embeds no metadata hash for Sourcify to compare, so it
+can only ever reach a partial match, never `exact_match`.
 """
 import json
 import os
@@ -57,11 +62,15 @@ def parse(response_path: str, outdir: str = ".sources") -> dict:
             first = next(iter(impls.values()), {})
             implementation = first.get("address", "") if isinstance(first, dict) else ""
 
+    # v2 carries the name under `compilation`; v1 carried it at the top level.
+    compilation = data.get("compilation") or {}
+    contract_name = compilation.get("name") or data.get("name") or ""
+
     meta = {
-        "contractName": data.get("name", ""),
+        "contractName": contract_name,
         "proxy": proxy,
         "implementation": implementation,
-        "verified": data.get("match") in ("exact_match", "partial_match"),
+        "verified": data.get("match") in ("exact_match", "partial_match", "match"),
     }
 
     print(f"ContractName: {meta['contractName']}")

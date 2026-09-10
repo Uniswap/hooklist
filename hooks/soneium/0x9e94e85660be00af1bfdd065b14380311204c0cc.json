@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9e94e85660be00af1bfdd065b14380311204c0cc",
+    "chain": "soneium",
+    "chainId": 1868,
+    "name": "Lev7FeeHook",
+    "description": "Charges a fixed 3% fee on buys (one-for-zero swaps) in pools where currency1 is the designated fee token, routing fees to an immutable treasury address and refunding unused reservations to the swapper. Also records per-pool tick history via an on-chain oracle.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

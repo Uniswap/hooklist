@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x57366c70236ba8558cfa289c52f32345d8fac040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFactory",
+    "description": "A token launch factory that deploys ERC-20 tokens, initializes Uniswap v4 pools with permanently locked liquidity, and collects a 0.5% tax on token purchase swaps (non-WETH output) via the afterSwap hook, forwarding the tax to a fee recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

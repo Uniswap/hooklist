@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x35839b084137f4b79ad5e994714dd5cdcc985000",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SaturnOmnichainV4Hook",
+    "description": "An omnichain hook for the Saturn protocol that records the initial tick after pool initialization and coordinates liquidity bootstrapping via an external bootstrapper contract. The hook has no swap-time logic; all swap callbacks are no-ops.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}

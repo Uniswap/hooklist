@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7c4ebb457cf1e8f08a139ac17716d71d9eecafdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BoardHook",
+    "description": "A Uniswap v4 hook for a token launchpad that manages fair launch phases, temporal access control, and fee distribution. During fair launch, it fills buy-side swaps from a one-sided position and optionally enforces Merkle-proof whitelisting. After launch, it captures swap fees and distributes them to creators, protocol, inspirers, and referrers via delta manipulation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

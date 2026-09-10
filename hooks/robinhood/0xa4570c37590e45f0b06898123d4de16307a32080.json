@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa4570c37590e45f0b06898123d4de16307a32080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FablesRWA",
+    "description": "Session-aware dynamic-fee hook for tokenized equity (RWA) pools. Adjusts LP fees based on a market calendar (open/overnight/closed sessions) driven by block.timestamp, with optional operator fee overrides (\"pokes\") bounded by TTL, configurable floor, and per-pool fee cap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

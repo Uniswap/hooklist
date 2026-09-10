@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x221fab939d3c966122da95cea963e1b8d3f410c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ZoraV4CoinHook",
+    "description": "Uniswap v4 hook for Zora Coins that initializes multiple Doppler-curve liquidity positions on pool creation. On every swap, collects LP fees, converts them to a backing currency, and distributes rewards. Features a dynamic launch fee decaying from 99% to 1% over 10 seconds post-creation, and triggers Zora limit order book fills on each swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

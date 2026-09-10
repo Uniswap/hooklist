@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x56f25473dd2c2e8cd37b68ff38f3bddeb19daaa8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "CurveHook",
+    "description": "A custom bonding curve AMM hook for FIFA/Country token pairs using a virtual reserve formula to price buys and sells. Charges a 5% fee per swap (burned), fully replaces pool liquidity mechanics (all direct add/remove liquidity and donate operations revert), and gates trading behind a phase-activation flag set by an authorized pack opener.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

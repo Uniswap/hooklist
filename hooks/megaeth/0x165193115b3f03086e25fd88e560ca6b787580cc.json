@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x165193115b3f03086e25fd88e560ca6b787580cc",
+    "chain": "megaeth",
+    "chainId": 4326,
+    "name": "HopforgeFeeHook",
+    "description": "A Uniswap v4 hook that taxes 1.5% of every swap on registered Hopforge ETH/token pools, splitting fees between a referrer (10%), token creator (20%), token holder reflection pool (30%), and platform treasury (40%) via the ERC6909 mint/burn pattern. Referrers are attributed via tx.origin and optional hookData; harvesting holder rewards is gated by a block delay to prevent flash-loan attacks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

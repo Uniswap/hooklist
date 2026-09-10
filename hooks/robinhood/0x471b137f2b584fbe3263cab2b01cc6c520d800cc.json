@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x471b137f2b584fbe3263cab2b01cc6c520d800cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StonkBrokerHook",
+    "description": "A Uniswap v4 hook for ETH/token pools that charges a configurable flat fee (up to 5%) in ETH on every swap. On buys (ETH in), the fee is deducted from the input via beforeSwap delta; on sells (ETH out), from the output via afterSwap delta. Fees are sent directly to a per-pool recipient address during the swap. Only exact-input swaps are permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

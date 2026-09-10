@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x16bc32e73a5db27580b7d550d921da8fc1cd40cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StarHook",
+    "description": "A fee-collecting hook for bonding-curve token launches registered via a factory contract. On each swap, it deducts a configurable fee (default 1%, max 3%) from the quote-token leg and credits it to the token's creator. Buys within a configurable block window after launch incur a higher anti-snipe tax (default 12%). Fees accumulate in the hook and are claimable by token creators.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

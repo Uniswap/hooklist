@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaa49adadd33c5e953b645567afb10cbbba63afc4",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "NFTXV4Hook",
+    "description": "Allows for ERC721 NFT collections to be fractionalised into ERC20 and then traded on Uniswap V4. This then allows the NFT to be redeemed for 1e18.",
+    "deployer": "0xb8a70b4d1547bf6193bd67a73f4f98ea9fd0a973",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

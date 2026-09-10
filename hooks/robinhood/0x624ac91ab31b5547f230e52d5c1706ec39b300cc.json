@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x624ac91ab31b5547f230e52d5c1706ec39b300cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VelvetHook",
+    "description": "Uniswap v4 hook for the Velvet token launchpad that collects fees on swaps using return deltas. Buy swaps are charged a configurable hook fee plus a per-token buy tax; sell swaps by non-creator addresses have their entire quote output taken as fee, effectively restricting selling to the token creator only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

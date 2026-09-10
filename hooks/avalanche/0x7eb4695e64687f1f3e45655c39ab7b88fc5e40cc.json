@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7eb4695e64687f1f3e45655c39ab7b88fc5e40cc",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "GildHook",
+    "description": "Charges a 1% toll on every swap in the AVAX (currency0) leg of a pinned pool, accruing fees as ERC-6909 claims to an immutable buyer address. The owner can lower the fee rate (never raise it) and pin the hook to one pool once, covering all four exact-input/output swap shapes via beforeSwap and afterSwap delta returns.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

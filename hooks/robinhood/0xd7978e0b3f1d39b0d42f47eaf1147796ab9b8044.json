@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd7978e0b3f1d39b0d42f47eaf1147796ab9b8044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "QuiverHook",
+    "description": "Launchpad hook for the Quiver platform on Robinhood Chain that skims a per-pool tax (0\u201310%) on every swap via afterSwap using the return-delta mechanism, accruing fees in WETH or the launched token. Harvested fees are split 50/25/25 among token holders (converted to a configured stock reward), the pool creator (claimable WETH), and a protocol treasury.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc250b60332da38ad27ed05cc3db9f6e264f5e8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PmavHookQuoted",
+    "description": "Bonding curve launchpad factory on Uniswap V4 that creates 1B-supply ERC20 coins paired against an immutable ERC20 quote token (USDG). Manages a concentrated curve position with a 1% fee (70% creator / 30% platform), enforces a permanent 2% per-wallet buy cap with auto-refund, and graduates the coin to a permanently locked full-range position when the raise target is met.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

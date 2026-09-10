@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xadaccf778c96772fb06b042212b7ff0c434e00cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Politiswap",
+    "description": "Manages a set of ETH/political-token (PolToken) pools, routing all swaps through a per-pool allowlist (only the PolToken contract itself may be the swap sender). Charges a fixed 2% fee on each swap in ETH, tracks net daily ETH inflows per pool, and distributes governance token (POL) rewards to holders of whichever pool attracted the highest daily ETH inflow.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

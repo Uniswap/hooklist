@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa637921c5013f1e3ee17f15ca25a00e272e84044",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "X402Hook",
+    "description": "An afterSwap hook that differentiates between facilitator (payment flow) and standard router (trader flow) callers, applying different fee rates and emitting events per swap type. In the current implementation, the returned hook delta is always zero, so no fees are actually deducted from swappers via the delta mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

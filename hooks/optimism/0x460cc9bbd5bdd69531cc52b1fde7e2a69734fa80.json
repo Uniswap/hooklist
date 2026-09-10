@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x460cc9bbd5bdd69531cc52b1fde7e2a69734fa80",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "SuperDCAGauge",
+    "description": "A Uniswap v4 hook that enables staking SuperDCA tokens to earn minted rewards distributed to liquidity providers and a developer address on each liquidity add/remove. Applies dynamic swap fees that differ based on whether the swapper is an allowlisted internal address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

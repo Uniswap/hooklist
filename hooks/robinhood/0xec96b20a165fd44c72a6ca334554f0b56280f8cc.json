@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xec96b20a165fd44c72a6ca334554f0b56280f8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinhoodV4SelectableFeeHook",
+    "description": "A Uniswap v4 launchpad hook that charges a fixed 1.5% base fee plus a configurable creator fee (0\u201310%), collected only in the payment token (not the launch token). Pool creation and liquidity additions are restricted to a factory and position manager; fees are distributed as ERC-6909 claims to a recipient set immutably at pool registration.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

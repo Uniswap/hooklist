@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1b8ce8893b09d42924cca74bfc2b535b7788c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VolatilityFeeHook",
+    "description": "A volatility-adjusted fee hook that charges between baseFeeBps and maxFeeBps on each swap based on the previous swap's tick movement. Fees are collected as ERC-6909 claims and swept to an immutable feeWallet; all parameters (fee bounds, fee destination) are fixed at deployment. Exact-output swaps are refused.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

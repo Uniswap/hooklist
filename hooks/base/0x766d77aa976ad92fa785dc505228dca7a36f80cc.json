@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x766d77aa976ad92fa785dc505228dca7a36f80cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TaxHook",
+    "description": "A Uniswap v4 hook that taxes swaps on a designated token (boomToken), overriding LP fees to zero and collecting configurable team and per-pool developer taxes (in basis points) on both buys and sells.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

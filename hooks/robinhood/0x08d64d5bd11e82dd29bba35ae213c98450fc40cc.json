@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x08d64d5bd11e82dd29bba35ae213c98450fc40cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PonsD09EHook",
+    "description": "A fee-and-burn hook for PONS token/ETH pools. Takes a configurable ETH fee (default 2%) on both buy and sell swaps, splitting proceeds between the token creator (90%) and a vault for $D09E buybacks (10%). On sells, also burns a configurable portion of the sold token from a hook-maintained burn reserve funded separately from swap flow.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

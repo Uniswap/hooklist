@@ -52,7 +52,7 @@ Cross-reference the `properties` section against the source code:
 
 1. **dynamicFee**: Should be `true` if `beforeSwap` returns a fee override via `lpFeeOverride`, or if the hook calls `poolManager.updateDynamicLPFee()`.
 
-2. **upgradeable**: Should be `true` if the contract uses proxy patterns, `delegatecall`, mutable implementation storage, or `SELFDESTRUCT`.
+2. **upgradeable**: Should be `true` if the contract uses proxy patterns, `delegatecall` to a mutable or admin-configurable address, mutable implementation storage, or `SELFDESTRUCT`. A `delegatecall` to a compile-time-linked Solidity library or to an address fixed at deployment (constant/immutable) is a code-size optimization, not an upgrade path — it does not by itself make the hook upgradeable.
 
 3. **requiresCustomSwapData**: Should be `true` if a normal swap with empty `hookData` would **fail, revert, or produce materially incorrect behavior** — i.e. the hook requires specific encoded data (signatures, parameters, routing info, etc.) to function. Should be `false` if swaps work correctly without `hookData`, even if the hook optionally inspects it for ancillary features (e.g. an optional trade referrer).
 
@@ -68,7 +68,7 @@ Cross-reference the `properties` section against the source code:
 
 5. **swapAccess**: Verify the classification matches the actual access control mechanism in beforeSwap:
    - `"none"` — beforeSwap has no access control, or the hook has no swap flags
-   - `"temporal"` — gates on `block.timestamp` or `block.number` (configurable start/end times)
+   - `"temporal"` — gates on `block.timestamp` or `block.number` as a start/end window or phase schedule: swaps are fully closed at some times and open at others. A permanent block- or time-derived condition that never fully closes swaps (e.g., a rolling modular filter comparing swap amounts to `block.number`) is `"other"`, not `"temporal"`
    - `"allowlist"` — checks caller against an approved address set, registry, or Merkle proof
    - `"governance"` — checks a boolean flag (e.g., `migrated`, `tradingEnabled`) set by an owner/admin
    - `"other"` — any other gating mechanism

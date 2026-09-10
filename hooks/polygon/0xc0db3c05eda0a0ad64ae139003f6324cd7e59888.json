@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc0db3c05eda0a0ad64ae139003f6324cd7e59888",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "StableSwap",
+    "description": "A custom stable swap hook implementing a 1:1 AMM with a 0.05% fee, depositing pool liquidity into Aave V3 and distributing accrued interest to swappers as a bonus. Standard liquidity addition is blocked; LPs must use the hook's custom deposit/withdraw functions. Contains privileged emergencyWithdraw and unconstrained multicall backdoors controlled by a hardcoded admin address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

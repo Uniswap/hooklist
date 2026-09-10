@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x68ad7d7e2905656b7d89e56a43a6872f8487b0cc",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "SentryStockFeeHookV3",
+    "description": "Launch hook with a time-decaying dynamic fee that distributes swap fees among a creator, treasury, liquidity providers, and token holders (reflections). Reflections are disabled during an initial delay window after launch; accrued LP fees can be compounded into permanently locked full-range liquidity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

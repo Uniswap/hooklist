@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf38bf268475621f9b5c79c0b47008257b79f40cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PackrFeeHook",
+    "description": "A volatility-based ETH fee hook for Uniswap v4 pools, charging fees between 1% and 5.12% based on the previous swap's tick movement. Buy fees are deducted from ETH input in beforeSwap; sell fees from ETH output in afterSwap. Only exact-input swaps are supported \u2014 exact-output swaps revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}

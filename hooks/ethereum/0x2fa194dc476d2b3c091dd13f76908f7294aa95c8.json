@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2fa194dc476d2b3c091dd13f76908f7294aa95c8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "JBUniswapV4Hook",
+    "description": "A Uniswap v4 hook that routes swaps between the V4 pool and Juicebox project terminals, selecting whichever venue gives the user more output tokens. Uses a 30-minute TWAP oracle to compare routes for buy-side (pay into project for tokens) and sell-side (cash out project tokens) swaps. Also serves as a TWAP oracle for external contracts via an IGeomeanOracle-compatible interface.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

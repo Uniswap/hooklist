@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7c672f3850afadcb8f83478e0a2a90d109fa6044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AdvancedFeeHookV6",
+    "description": "Token launch hook for the BaseStonk launchpad on Base that collects configurable buy/sell taxes (up to 10%) in afterSwap, distributing fees between a platform treasury, creator payees, an optional burn address, and optional single-sided liquidity positions. Includes a time-limited sniper-protection window with elevated buy fees decaying linearly to the base rate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

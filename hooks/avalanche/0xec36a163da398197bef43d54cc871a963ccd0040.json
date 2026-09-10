@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xec36a163da398197bef43d54cc871a963ccd0040",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "AutoExitHook",
+    "description": "After each swap, checks for the owner's liquidity in the current tick range and automatically removes it via poolManager.modifyLiquidity, settling any proceeds to the owner address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

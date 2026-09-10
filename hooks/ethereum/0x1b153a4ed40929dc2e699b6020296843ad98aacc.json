@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1b153a4ed40929dc2e699b6020296843ad98aacc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Sa1tHook",
+    "description": "A multi-phase token launch hook managing CURVE (bonding curve with custom pricing via ERC-6909 claims), REFUND_WINDOW (sell-only with refunds at entry price), and AMM (full-range Uniswap v4 pool with 1% fee skim) phases. Supports mechanic plugins for customizable fee structures and behaviors (e.g., HALVING token burns, MONEYBACK refunds).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

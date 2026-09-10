@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x30eaaf5faff03700df22649c160c3094142b4088",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "PolHook",
+    "description": "Intercepts exact-input swaps, taking half the specified input amount via ERC-6909 claim tokens, settling them against the pool manager, and transferring the underlying tokens to msg.sender. Includes a togglable tx.origin allowlist (publicly settable, no owner restriction) that restricts swaps to a single hardcoded address when active.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

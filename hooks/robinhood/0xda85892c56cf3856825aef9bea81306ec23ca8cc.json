@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xda85892c56cf3856825aef9bea81306ec23ca8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "QuiverHookStaticFee",
+    "description": "A Uniswap v4 hook for Quiver protocol token pools that sets directional LP fees (separate quiver-side and paired-side rates via updateDynamicLPFee), collects protocol fees by modifying swap deltas in beforeSwap and afterSwap, triggers LP locker reward claims per swap, and runs an optional MEV protection module during a 2-minute window after pool creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

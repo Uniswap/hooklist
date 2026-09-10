@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbc66eff9d15bf39eb06ace803710723a7039c080",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "XecoinSwapLimitHook",
+    "description": "A beforeSwap hook that enforces emergency pause and per-user daily input limits for exact-input swaps. Requires a trusted router and 32-byte hookData encoding the user address; reverts on exact-output swaps, unrecognized routers, or daily limit exhaustion.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

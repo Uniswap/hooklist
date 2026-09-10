@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x28850da38bd575bd8866ce748da40c1d49376aec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ForgeHookV4",
+    "description": "Collects configurable buy/sell fees on each swap (up to 5% in Basic mode, 15% in Utility/Rewards mode), distributing proceeds to platform, creator, rewards, and utility recipients tracked as on-chain liabilities. Liquidity additions are gated by a single-use launch authorization from a designated launch manager; liquidity removal is permanently locked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

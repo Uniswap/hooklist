@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf2a80b93269e83a24e451fca5e0fa5def7bdc0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MintFastHook",
+    "description": "A Uniswap v4 launchpad hook that charges a fixed 2% ETH fee on every swap, collected via ERC-6909 claims on the PoolManager. Fees accrue per token and can be harvested by the launchpad address via a collect() function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

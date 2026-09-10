@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0fb46f019ebf66d0767e891f8face687f1156088",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinhoodRWIV4LaunchHook",
+    "description": "Factory and hook for launching fixed-supply TOKEN/RWI pools on Robinhood Chain. Restricts pool initialization to the hook itself via beforeInitialize, and uses beforeSwap with a return delta to internally match accumulated token-fee inventory against organic RWI buys at the current pool price, routing that portion directly without going through the AMM curve.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

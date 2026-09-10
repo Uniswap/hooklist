@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x57b52d6cf749b96affb810b0cd7fecb94b5990cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PumpFeeHook",
+    "description": "A bonding-curve graduation hook that selects an LP fee tier dynamically based on the token's current market cap (derived from the pool's spot price and total supply), and deducts additional creator and protocol fees from the trader's input currency on every swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

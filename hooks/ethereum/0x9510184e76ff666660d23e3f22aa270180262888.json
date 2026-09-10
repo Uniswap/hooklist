@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9510184e76ff666660d23e3f22aa270180262888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LitePSM Aggregator Hook (DAI)",
+    "description": "Uniswap v4 custom accounting hook that routes DAI <-> USDC swaps through the Sky LitePSM at a fixed 1:1 rate with zero slippage, intercepting beforeSwap and returning a BeforeSwapDelta to bypass the AMM curve entirely. Direct liquidity addition is blocked, and the hook enforces one canonical pool per token pair.",
+    "deployer": "0xe3ed9ed05284cf1962882bef564b2f6aeec7d775",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

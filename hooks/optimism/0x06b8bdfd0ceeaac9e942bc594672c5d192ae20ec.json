@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x06b8bdfd0ceeaac9e942bc594672c5d192ae20ec",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "CoalaOptimismHook",
+    "description": "Collects a 1% buy and 1% sell tax on swaps in registered pools by intercepting beforeSwap and afterSwap. Tax is taken from the base-asset side of each swap and minted as ERC-6909 claims to the project token address. Pools must be registered by an owner-controlled factory before they can be initialized or traded.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

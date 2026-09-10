@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0010d0d5db05933fa0d9f7038d365e1541a41888",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "BunniHook",
+    "description": "Bunni protocol's central Uniswap v4 hook that handles swaps using custom liquidity density functions and its own swap math. Implements dynamic surge and TWAP-based fees taken via BeforeSwapDelta, an am-AMM mechanism for LVR/MEV recapture, a TWAP oracle, and auto-rebalancing via FloodPlain.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

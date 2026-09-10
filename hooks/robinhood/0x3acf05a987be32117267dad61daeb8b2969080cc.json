@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3acf05a987be32117267dad61daeb8b2969080cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StockFeeHookImmutable",
+    "description": "Fee hook for stock-paired (TOKEN/<stock>) Uniswap v4 launch pools. Charges a fixed fee on the stock/quote leg across all four swap directions, accumulating as ERC-6909 claims. A permissionless claimFees() converts accrued stock fees to WETH via Uniswap V3 (TWAP-guarded slippage floor) and distributes as native ETH across a fixed 4-way split: dev, treasury, buyback, and token mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

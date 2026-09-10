@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4cd3be8768aea2a0297c22c17a7a3cae65adc0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Politiswap",
+    "description": "A hook that manages political token ETH/ERC20 pools, taking a 2% fee on each swap and redirecting it to a fee collector. It tracks daily net ETH inflows per pool, determines which pool had the highest inflow each day, and allows holders of that day's winning token to claim governance token rewards.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

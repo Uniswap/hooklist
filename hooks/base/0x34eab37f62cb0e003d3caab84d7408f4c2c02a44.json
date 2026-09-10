@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x34eab37f62cb0e003d3caab84d7408f4c2c02a44",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFab",
+    "description": "A bonding curve token launch hook that blocks external liquidity management (beforeInitialize/beforeAddLiquidity/beforeRemoveLiquidity all revert). Newly launched tokens trade on a bonding curve until the supply cap is reached, then the hook automatically migrates liquidity to a standard AMM pool. Each swap incurs a 1% fee split 50/50 between the creator and platform, taken via afterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

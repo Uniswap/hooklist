@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7847f2cf84dddfcdc6faafa4f50dfd9dcfbec0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TripoolsAntiSnipeHook",
+    "description": "Anti-snipe and dynamic-fee tax hook serving all TripoolsLaunchFactory pools. Enforces a 6-second anti-snipe window with a flat 50% tax on non-whitelisted buys (100% to protocol treasury), and a cycling tiered tax schedule on ordinary buys and sells, split 20%/80% between protocol treasury and token creator, always collected in ETH via BeforeSwapDelta and AfterSwapDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

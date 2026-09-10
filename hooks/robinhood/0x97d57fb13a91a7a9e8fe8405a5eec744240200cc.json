@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x97d57fb13a91a7a9e8fe8405a5eec744240200cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VortexHook",
+    "description": "A Uniswap v4 hook for factory-launched tokens that collects configurable swap fees (with anti-snipe and deployer-dump surcharges), splits proceeds between the token creator and protocol treasury, and automatically executes buyback-and-burn of the launch token using accumulated quote fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

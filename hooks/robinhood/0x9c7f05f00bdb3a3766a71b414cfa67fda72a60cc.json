@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9c7f05f00bdb3a3766a71b414cfa67fda72a60cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "UniversalKlikHook",
+    "description": "Market-cap-tiered fee hook for ETH-paired pools that charges fees on buys and sells, splitting proceeds between a platform treasury and the token creator address. Fees range from 1% (low market cap) to 0.1% (high market cap), applied via BeforeSwapDelta on exact-input buys and AfterSwapDelta on exact-output buys and exact-input sells. Exact-output sells are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

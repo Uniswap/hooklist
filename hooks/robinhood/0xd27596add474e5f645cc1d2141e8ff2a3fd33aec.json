@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd27596add474e5f645cc1d2141e8ff2a3fd33aec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MorphogenHook",
+    "description": "Two-phase token launch hook implementing a bonding curve (Formation phase) with custom ERC6909 claim accounting via BeforeSwapDelta, transitioning to native Uniswap v4 concentrated liquidity after 75M tokens are sold. Enforces a time-locked launch gate and maintains an on-chain TWAP oracle after the permanent phase begins.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3aa5c7d8d9894cc0c9c234e59da8830740d2c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MomoHook",
+    "description": "A Uniswap v4 hook for the Momo token launch platform that collects protocol fees on swaps in registered token pools. It applies a configurable base fee (default 1%) and a higher anti-snipe tax (default 7%) on buys within the first 30 blocks after a token's launch, with collected fees claimable by the token creator.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

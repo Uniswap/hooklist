@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0000fe59823933ac763611a69c88f91d45f81888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BunniHook",
+    "description": "Uniswap v4 hook for Bunni v2 concentrated liquidity pools that handles the entire swap lifecycle in beforeSwap using custom Liquidity Density Function math, dynamic surge fees, a TWAP oracle, am-AMM auction-based LVR/MEV recapture, and automated FloodPlain-based rebalancing.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

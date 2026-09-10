@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8933d28e68d02faa02436aef42e6ba9674698044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "UruLaunchHook",
+    "description": "A Uniswap v4 launch hook for the URU token that applies a time-decaying sniper tax (up to 99% at launch, decaying to 0%) on swaps during a configurable window, routing proceeds to a vault. It also tracks URU trading volume per epoch to compute a bounded emission-rate signal.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

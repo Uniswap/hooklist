@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x206a881f80c280a2f6bab40af4ff61dc92f580c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FoundryHookV4R2E2",
+    "description": "Market-cap-tiered fee hook for bonding-curve token launch pools. Buy-side fees are set as dynamic LP fee overrides; sell-side ETH fees are taken via afterSwapReturnsDelta and held in the hook for off-path locker collection. Pools can graduate to a higher market-cap fee tier once accumulated ETH reaches a threshold.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xafc105fb435cb085dc13699882977b02889800cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PRHook",
+    "description": "Captures a configurable buy/sell fee on each swap in PR-token pools and routes it to a designated buyback vault. Exact-output swaps are handled in beforeSwap via BeforeSwapDelta; exact-input swaps in afterSwap via AfterSwapDelta. Operates only on owner-allowlisted pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6eb98e97d0efaeb784ca4e8ee55f7bfb5e5800cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CubeHook",
+    "description": "Collects a configurable fee (in basis points, 1%\u201310%) on swaps for factory-registered tokens in Cube Family launchpad pools. Fees are taken via BeforeSwapDelta or AfterSwapDelta and forwarded to a factory contract; when the pool manager lacks sufficient balance, fees are parked as ERC-6909 claims and flushed on the next eligible swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

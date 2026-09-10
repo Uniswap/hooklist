@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa3885fff57cb16cad60a3cac7e49b0273f562840",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "VieTokenPoolHook",
+    "description": "A Uniswap v4 hook for the Vie platform that gates pool initialization to a factory, enforces a 2-block delay before external liquidity additions, and after every swap sweeps accumulated LP fees from the pool's single managed position into a vault, splitting them between a token fee recipient and a platform fee recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

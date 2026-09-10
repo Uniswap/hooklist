@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x514c7811b9478a8d3d83dc8471e28e664894c8c8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PeepsV4TaxHook",
+    "description": "A Uniswap v4 hook for meme token launches that skims configurable buy/sell taxes via BeforeSwapDelta, overrides LP fee to 1%, and distributes collected taxes to funds, burn, dividend, and liquidity sinks. Enforces exact-input-only swaps, blocks swaps during a clearing window, and restricts third-party liquidity additions via a time-based anti-farmer lock.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

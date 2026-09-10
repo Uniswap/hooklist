@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcbb3e341794c268d2452c75a968d70997b6728cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "Launchpad hook that captures the full trading fee via before/afterSwap deltas (denominated in the quote/WETH currency) across three phases: a guard phase with exponentially decaying fees (90%\u21923%) and per-wallet/per-block buy caps, a bonding-curve phase (1% flat fee), and a graduated phase (1% flat fee). Fees are distributed through an attached FeeRouter with optional referrer attribution via hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

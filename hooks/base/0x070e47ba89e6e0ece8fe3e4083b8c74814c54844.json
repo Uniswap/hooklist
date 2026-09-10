@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x070e47ba89e6e0ece8fe3e4083b8c74814c54844",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "CabalFeeHook",
+    "description": "Platform fee hook that charges a configurable fee (default 1%) on every swap via afterSwapReturnsDelta. ETH fees are forwarded directly to a fee receiver; token fees are sent to a CabalFeeExecutor contract that sells them for ETH before distribution. Supports time-based launch fees with optional half-parabola decay curve.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7eeba3e74a38269351f42ec030077a19adc00080",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DynamicFeeHook",
+    "description": "A Uniswap v4 hook that dynamically adjusts the LP fee on every swap. An owner can set the active fee to any value between 1% (10000) and 2% (20000) via setFee(); the current fee is returned as an lpFeeOverride in beforeSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

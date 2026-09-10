@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x16c3239d8021cc7819ded9d940971bbd219b60cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookuidityHookV1",
+    "description": "A v4 hook for ETH/token pools that charges a 2% buy fee and 2% sell fee on native ETH. Buy fees are donated directly to current in-range LPs via poolManager.donate(); sell fees accrue to a per-pool creator reward vault. Pools must be registered by the token creator before swaps are permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

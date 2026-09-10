@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x653314b5175877266fcf5f76b953e4181d262acc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Sa1tHookV2",
+    "description": "Multi-phase bonding curve hook for SA1T token pools. Phases: CURVE (custom constant-product AMM with ERC-6909 claims), REFUND_WINDOW (money-back sells at average entry price), and AMM (full-range locked LP). Fees split between protocol, creator, and configurable mechanics; exact-input swaps only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

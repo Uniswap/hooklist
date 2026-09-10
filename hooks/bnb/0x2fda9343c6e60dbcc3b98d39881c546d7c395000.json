@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2fda9343c6e60dbcc3b98d39881c546d7c395000",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "SaturnOmnichainV4Hook",
+    "description": "A Saturn Omnichain project hook that registers only afterInitialize, returning the selector without modification. Includes an external initializePools() function that delegates pool liquidity bootstrapping to a separate ISaturnOmnichainLiquidityBootstrapper contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}

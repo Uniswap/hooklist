@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x01edc739f4893df3c0658fb1b57d5a6ca05c1000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SaturnOmnichainV4Hook",
+    "description": "A Saturn Omnichain project hook that registers `afterInitialize` as a no-op callback. Initial liquidity setup is performed via a separate `initializePools()` function that invokes an `ISaturnOmnichainLiquidityBootstrapper` contract and records the initial tick. Has no swap-time logic \u2014 swaps execute identically to a standard Uniswap v4 pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}

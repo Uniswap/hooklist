@@ -51,6 +51,68 @@ def test_parse_sourcify_partial_match(tmp_path):
     assert meta["contractName"] == "PartialHook"
 
 
+def test_parse_sourcify_v2_match(tmp_path):
+    """Sourcify v2 spells a partial match "match", and it is still verified."""
+    response = {
+        "match": "match",
+        "runtimeMatch": "match",
+        "creationMatch": "match",
+        "chainId": "7777777",
+        "address": "0x1234567890abcdef1234567890abcdef12345678",
+        "compilation": {
+            "name": "V2Hook",
+            "fullyQualifiedName": "src/V2Hook.sol:V2Hook",
+            "compilerVersion": "0.8.35+commit.47b9dedd",
+        },
+        "sources": {
+            "src/V2Hook.sol": {"content": "contract V2Hook {}"},
+        },
+    }
+    response_file = tmp_path / "response.json"
+    response_file.write_text(json.dumps(response))
+
+    meta = parse(str(response_file), outdir=str(tmp_path / "sources"))
+
+    assert meta["verified"] is True
+    assert meta["contractName"] == "V2Hook"
+    assert os.path.exists(tmp_path / "sources" / "src_V2Hook.sol")
+
+
+def test_parse_sourcify_name_from_compilation_preferred(tmp_path):
+    """compilation.name wins over a top-level name, and either alone is enough."""
+    both = {
+        "match": "exact_match",
+        "name": "TopLevel",
+        "compilation": {"name": "FromCompilation"},
+        "sources": {"Hook.sol": {"content": "contract Hook {}"}},
+    }
+    response_file = tmp_path / "both.json"
+    response_file.write_text(json.dumps(both))
+    assert parse(str(response_file), outdir=str(tmp_path / "a"))["contractName"] == "FromCompilation"
+
+    top_only = {
+        "match": "exact_match",
+        "name": "TopLevel",
+        "sources": {"Hook.sol": {"content": "contract Hook {}"}},
+    }
+    response_file = tmp_path / "top.json"
+    response_file.write_text(json.dumps(top_only))
+    assert parse(str(response_file), outdir=str(tmp_path / "b"))["contractName"] == "TopLevel"
+
+
+def test_parse_sourcify_unknown_match_not_verified(tmp_path):
+    """An unrecognised match value is not treated as verified."""
+    response = {
+        "match": "something_else",
+        "compilation": {"name": "Hook"},
+        "sources": {"Hook.sol": {"content": "contract Hook {}"}},
+    }
+    response_file = tmp_path / "response.json"
+    response_file.write_text(json.dumps(response))
+
+    assert parse(str(response_file), outdir=str(tmp_path / "sources"))["verified"] is False
+
+
 def test_parse_sourcify_not_verified(tmp_path):
     """Error response returns verified=False."""
     response = {"error": "not found"}

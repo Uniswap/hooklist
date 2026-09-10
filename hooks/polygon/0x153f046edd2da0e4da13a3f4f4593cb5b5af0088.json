@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x153f046edd2da0e4da13a3f4f4593cb5b5af0088",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "TaxHook",
+    "description": "Applies asymmetric swap taxes (5% on buys, 20% on sells) to each swap by computing a fee from the specified amount, routing it to a fixed feeReceiver address via poolManager.take(), and returning a BeforeSwapDelta to account for the extracted amount.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

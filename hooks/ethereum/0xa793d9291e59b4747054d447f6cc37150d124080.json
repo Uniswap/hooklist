@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa793d9291e59b4747054d447f6cc37150d124080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "V4GasDetectHook",
+    "description": "A honeypot hook that unconditionally allows buy swaps (zeroForOne=true) but blocks real sell transactions by reverting when gasleft() is below 55M. Simulated sells (which use the full block gas limit) appear to succeed, deceiving users into buying tokens they cannot sell in real transactions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "other"
+  }
+}

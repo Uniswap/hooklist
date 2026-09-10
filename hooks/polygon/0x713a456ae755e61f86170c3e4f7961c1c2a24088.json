@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x713a456ae755e61f86170c3e4f7961c1c2a24088",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "PolHook",
+    "description": "A hook that short-circuits exact-input swaps by taking and settling the input currency directly (bypassing the AMM) and transferring it to the caller, returning a delta that nets the specified amount to zero. Exact-output swaps are passed through to the pool manager unchanged. Includes an ungated tx.origin allowlist toggle controlled by a public setCheckOrigin() function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

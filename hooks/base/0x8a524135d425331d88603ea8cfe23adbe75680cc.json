@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8a524135d425331d88603ea8cfe23adbe75680cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TripoolsAntiSnipeHook",
+    "description": "A shared Uniswap v4 hook for all TripoolsLaunchFactory pools that enforces a 50% anti-snipe tax during a 6-second launch window for non-whitelisted buyers. Ordinary buys and sells follow a dynamic tiered tax schedule (cycling between the creator's base rate and fixed tiers), with 80% of taxes accruing to the pool creator and 20% sent directly to the protocol treasury in ETH.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

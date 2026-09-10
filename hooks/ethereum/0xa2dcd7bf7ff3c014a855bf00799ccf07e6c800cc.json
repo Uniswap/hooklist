@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa2dcd7bf7ff3c014a855bf00799ccf07e6c800cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FeeHook",
+    "description": "A hook that charges a tiered ETH-denominated swap fee (0.5%\u20131.25% based on token market cap) on ETH/token pools. In beforeSwap and afterSwap it skims the fee from the ETH leg of each swap via BeforeSwapDelta/AfterSwapDelta, accruing 75% to a hardcoded protocol wallet and 25% to a per-token registered creator, redeemable via a pull-based claim().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

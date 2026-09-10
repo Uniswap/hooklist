@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x47a2818f5f376e5c53d6731602a01cfd3c6070cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DegenV3Hook",
+    "description": "Uniswap v4 hook for DEGEN token launches on Robinhood chain that applies a time-decaying swap fee (up to 79% in the first 30 seconds post-launch, settling to a permanent 1%), split among an operating treasury, a DEGEN buyback vault, and a per-pool creator beneficiary. Fees are accumulated as ERC-6909 claims and can be flushed permissionlessly.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

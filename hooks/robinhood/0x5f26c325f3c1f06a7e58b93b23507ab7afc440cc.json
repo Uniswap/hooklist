@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5f26c325f3c1f06a7e58b93b23507ab7afc440cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FlareHook",
+    "description": "Fee-collection hook for the Flare token launchpad. Collects protocol fees and creator buy/sell taxes on swaps for registered launched tokens, with a time-decaying anti-snipe surcharge on buys during the first N blocks after launch. Fees are claimable by token creators.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

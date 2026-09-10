@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x54487d854eb8d08f7994caa9812471db7fbfe888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "MarginHook",
+    "description": "Custom-curve hook that routes all swaps through an external IPairPoolManager, bypassing Uniswap v4's native AMM entirely. Standard v4 liquidity addition is disabled (reverts). Fees are computed per-swap by the external manager and returned as an lpFeeOverride; token transfers are handled outside v4's pool liquidity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd5e2c7beaebf43165dfb6bf61c595fb6eeea80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MixpadHook",
+    "description": "Uniswap v4 hook for the Mixpad token launchpad. Collects platform swap fees on every trade and splits them between the token creator and a treasury. Applies a decaying anti-snipe surcharge on buys in the first N blocks post-launch and a time-limited deployer-dump surcharge on sells. Automatically executes buyback-and-burn of the launched token using the creator's designated share of fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7b0957aec2fb2a6cadef57a537a9d086849b60c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TruthMarketHook",
+    "description": "A hook for prediction market pools that gates pool initialization to authorized addresses, tracks tick movements via transient storage to notify an external order manager for limit-order settlement, optionally validates swaps via a configurable validator contract, and collects a configurable protocol fee from the unspecified token side of each swap. Pools can be paused by a governance operator.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8b2c69cf075cc416ff7c7eece544c1d9bc93e840",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BicoLaunchpadV3",
+    "description": "A bonding-curve launchpad hook that deposits a token's sellable supply as a concentrated liquidity position. When the price walks to the lower bound (curve sold out), afterSwap removes the curve position, deducts graduation fees, and re-deposits locked full-range liquidity in the same Uniswap v4 pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

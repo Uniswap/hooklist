@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xef461ef27a0675a3f7c1505e20ccb4f8bfc260cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CashCatQuoteFeeHook",
+    "description": "A singleton Uniswap v4 hook shared by CashCat launch pools that charges a quote-leg fee (up to 10%) on every swap, minting proceeds as ERC-6909 claims to an immutable liquidity locker, and latches a graduation milestone when the locked position's paired-currency value meets a configured threshold. Pool creation is restricted to the CashCat launchpad and requires a zero LP fee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

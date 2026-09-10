@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x11932c54e645aceef44f75ef06f560b5e40eaaec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ForgeHookV4",
+    "description": "A Uniswap v4 hook for token launches managed by a launchManager, enforcing configurable buy/sell fees distributed to platform, creator, rewards, and utility recipients via beforeSwap and afterSwap deltas. Liquidity removal is permanently locked, donations are disabled, and pool initialization is restricted to the launchManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

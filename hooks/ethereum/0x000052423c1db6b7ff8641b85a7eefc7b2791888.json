@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x000052423c1db6b7ff8641b85a7eefc7b2791888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BunniHook",
+    "description": "Bunni v2 concentrated liquidity hook that handles swap execution entirely via BeforeSwapDelta using a Liquidity Density Function (LDF). Supports surge fees, am-AMM fee management for MEV/LVR recapture, a TWAP oracle, and automated pool rebalancing via Flood Protocol.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

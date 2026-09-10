@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5daa88b65bd47199ec92d3cde01b56348e1270cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SentryStockFeeHookV3",
+    "description": "A launch hook for tokenized stock or WETH pairs that applies a time-decaying dynamic fee, starting at a high launch rate and settling at a 1.7% floor. Fees are split among creator, treasury, holder reflections, and permanently-locked LP compounding; pool initialization is restricted to the factory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

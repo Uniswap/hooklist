@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4de267913a4ee7f21e34763e512f6e87e7c90040",
+    "chain": "worldchain",
+    "chainId": 480,
+    "name": "ProbabilisticFeeCollector",
+    "description": "On each swap, uses block.prevrandao modulo a configurable value to probabilistically attempt fee collection from a designated NFT liquidity position, withdrawing tokens to a static collector address via the position manager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

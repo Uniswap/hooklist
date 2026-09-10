@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x72c08f4e6cd41a1f0e7be0f9d156c905c12080cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "WethFeeHookImmutable",
+    "description": "An immutable Uniswap v4 hook that charges a WETH-denominated fee on every swap using per-token tiers (3%, 5%, or 10%) from a launchpad registry, or a global fallback rate. Accrued fees are held as ERC-6909 claims and distributed via a permissionless distribute() call that splits proceeds between the token creator, treasury, a flagship buyback vault, and the token's on-chain mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

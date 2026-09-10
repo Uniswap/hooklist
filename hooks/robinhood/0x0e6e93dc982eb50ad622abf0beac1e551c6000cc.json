@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0e6e93dc982eb50ad622abf0beac1e551c6000cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AuraHook",
+    "description": "Fee-collection hook for factory-launched tokens that charges buyers a configurable fee plus buy tax, and can drain 100% of the sell-side quote amount from non-creator sellers once a buy-volume threshold is reached, directing collected fees to the token creator.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

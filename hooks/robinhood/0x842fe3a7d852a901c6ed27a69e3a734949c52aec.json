@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x842fe3a7d852a901c6ed27a69e3a734949c52aec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ForgeHookV4",
+    "description": "A token launch hook that gates pool creation to a designated launch manager, enforces configurable buy/sell fees on swaps (up to 5% basic or 15% utility mode), and distributes proceeds across platform, creator, rewards, and utility recipients via ERC-6909 claim tokens minted to a claim vault. Liquidity removal is permanently locked and donations are disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

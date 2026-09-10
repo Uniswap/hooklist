@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x235877899ecd2287b073d312c02d21e7f8d09040",
+    "chain": "worldchain",
+    "chainId": 480,
+    "name": "LendingHook",
+    "description": "A Uniswap v4 hook implementing a lending protocol where users supply token0 as collateral and borrow token1. After each swap, it tracks tick changes against a Chainlink oracle price, computes adjusted liquidation thresholds, and liquidates undercollateralized positions by executing nested swaps in the pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

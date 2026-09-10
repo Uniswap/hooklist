@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xee433a7de4651733ddef5155a71b397f969b8040",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "AutoExitHook",
+    "description": "An owner-managed hook that maintains three tick-range liquidity positions (lower, middle, upper) around a configured price band. Rebalancing (removing stale positions, optionally swapping tokens, and redeploying liquidity) is triggered manually by the owner via triggerRebalance() or updateConfig(); the afterSwap-triggered rebalance is commented out in this deployment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}

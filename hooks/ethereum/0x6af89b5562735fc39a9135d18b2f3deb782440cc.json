@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6af89b5562735fc39a9135d18b2f3deb782440cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HKPDHook",
+    "description": "Shared Uniswap v4 hook for the HKPD token launch platform. Applies a 60% anti-snipe tax on non-whitelisted buys within a configurable launch window, and tiered dynamic buy/sell taxes on all ETH-side swaps thereafter, routing fees to either the token creator or the protocol treasury via HKPDFeeVault.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

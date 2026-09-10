@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3655f2d85ca490e16993269e292a8b732501c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Zhao8HookV3",
+    "description": "A generation-3 fee hook that charges a creator fee (up to 10%, set at deploy) plus a flat 0.2% protocol fee on every swap shape (exact-in and exact-out, buy and sell) by minting ERC-6909 claims to a fee locker vault. An optional anti-sniper premium from a creator registry is added on top, with the total capped at 50%.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

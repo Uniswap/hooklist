@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3aba8060b5f767de54a19602ce345c06fcb91888",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "StableSwap",
+    "description": "A stable-swap hook that intercepts all swaps in beforeSwap, executing 1:1 token exchanges at a 0.05% fee. Pool liquidity is deposited into Aave v3 to earn yield, with accrued interest partially distributed to swappers. Standard AMM liquidity provision is blocked; LPs must use the hook's custom deposit/withdraw functions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

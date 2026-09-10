@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x976697adcf27d0962d3b0b6304d5975ba647b0cc",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "SentryStockFeeHookV3",
+    "description": "A time-decaying launch fee hook that charges a high initial swap fee that decays by half-life to a floor rate. Fees are split among a creator recipient, protocol treasury, permanently-locked LP compounding, and token holder reflections, with the distribution changing after a configurable reflection delay post-launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0edf0bbd3ff835beaedceea030ce61c43eee6880",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "QuiverV4Hook",
+    "description": "Shared policy hook for Quiver V4 pools that gates token purchases via EIP-712 signed vouchers with per-buyer cumulative allocation limits. Restricts liquidity addition to the designated launcher during the bootstrap phase, and blocks all buys via access-controlled pools unless the buyer holds a valid signed voucher.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}

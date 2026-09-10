@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6eca32ee9a1ce801c704a4d5166cbefe52f6acc4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "PoolStartegyHooks",
+    "description": "NFT strategy hook that gates pool initialization and liquidity addition to the factory contract, collects time-decaying swap fees (starting at 99% and decreasing every 5 blocks), converts non-ETH fees via nested swaps, and distributes fees among a vault, optional strategy fee recipient, and protocol address. Blocks exact-output swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

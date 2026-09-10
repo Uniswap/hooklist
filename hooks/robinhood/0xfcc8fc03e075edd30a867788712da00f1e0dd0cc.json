@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfcc8fc03e075edd30a867788712da00f1e0dd0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Spot",
+    "description": "A full-range liquidity hook that applies a dynamic LP fee (base + surge) computed by an external DynamicFeeManager, charges a protocol POL share plus an undisclosed extra 0.10% fee on every swap, reinvests collected fees into a full-range liquidity position, and records truncated geometric mean oracle observations for volatility-adaptive fee tuning.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

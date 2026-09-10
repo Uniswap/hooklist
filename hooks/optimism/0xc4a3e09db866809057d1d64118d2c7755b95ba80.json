@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc4a3e09db866809057d1d64118d2c7755b95ba80",
+    "chain": "optimism",
+    "chainId": 10,
+    "name": "SuperDCAGauge",
+    "description": "A Uniswap v4 hook that manages SuperDCAToken staking and reward distribution. Rewards are minted proportional to staked amounts and time elapsed, then distributed on liquidity events (50% to pool, 50% to developer). Before swaps, applies a dynamic LP fee override\u20140% for internal addresses, 1% for external addresses.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

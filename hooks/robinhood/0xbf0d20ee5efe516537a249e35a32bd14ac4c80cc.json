@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbf0d20ee5efe516537a249e35a32bd14ac4c80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StockFeeHookImmutable",
+    "description": "A fee hook for stock-paired TOKEN/&lt;stock&gt; launch pools on the LaunchFair V2 platform. Charges a fixed fee on the quote (stock) leg of every swap via BeforeSwapDelta/AfterSwapDelta return values, accrues fees as ERC-6909 claims, then permissionlessly converts them stock\u2192WETH on Uniswap V3 and distributes the proceeds in native ETH across creator, treasury, mechanism, and buyback recipients. No admin surface; all parameters are constructor immutables.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

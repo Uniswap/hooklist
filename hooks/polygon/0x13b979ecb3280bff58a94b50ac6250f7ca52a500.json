@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x13b979ecb3280bff58a94b50ac6250f7ca52a500",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "TELxIncentiveHook",
+    "description": "Tracks LP positions (add and remove liquidity events) by recording them in an external PositionRegistry for off-chain incentive distribution. Access to liquidity hooks is restricted to an authorized position manager; pool initialization is gated via the registry.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}

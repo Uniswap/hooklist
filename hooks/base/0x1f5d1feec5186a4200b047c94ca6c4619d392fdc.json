@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1f5d1feec5186a4200b047c94ca6c4619d392fdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Flaunch PositionManager",
+    "description": "The Flaunch protocol's central Uniswap v4 hook managing the full memecoin lifecycle: a time-gated fair launch phase (buy-only), an internal swap pool that recycles accumulated fees as liquidity before hitting the Uniswap pool, protocol and creator fee distribution, and a bid wall for buy-side liquidity support.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

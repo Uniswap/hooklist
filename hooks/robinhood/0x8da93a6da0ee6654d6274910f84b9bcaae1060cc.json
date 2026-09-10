@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8da93a6da0ee6654d6274910f84b9bcaae1060cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GataraEthHook",
+    "description": "Launch hook for ETH-quoted Uniswap v4 pools that charges configurable directional buy/sell fees denominated in native ETH, split among a pool creator, a protocol treasury, and a decaying launch-period cocoon surcharge. Blocks third-party buys in the same block-second as pool initialization to prevent atomic snipe attacks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

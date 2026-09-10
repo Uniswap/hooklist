@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x27fa5c40935c5559721b864806092983e1dbf0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SentryWethFeeHook",
+    "description": "Uniswap v4 launch hook that forces the pool's LP fee to zero and instead skims fees in WETH on every swap, splitting proceeds between a creator fee recipient and treasury. Uses a time-decaying fee schedule (flat start rate, then exponential half-life decay to a floor) with a launch whitelist for discounted buys.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

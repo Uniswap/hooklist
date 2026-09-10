@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe1e7cea9649aeccaa30286060305c07b1ea428cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ClankerHookDynamicFeeV2",
+    "description": "Clanker v2 hook that dynamically adjusts LP fees based on a volatility accumulator derived from tick differences. Collects protocol fees on all swaps via BeforeSwapDelta/AfterSwapDelta manipulation, with an optional short-lived MEV protection module active at pool launch and support for pluggable pool extension callbacks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

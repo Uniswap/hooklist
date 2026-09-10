@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x982f06e8218ca86676c6c0a45172fbbdbb711888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TokiHook",
+    "description": "A custom AMM hook implementing Pendle-style yield trading for Principal Tokens (PTs) on Uniswap V4. Uses a custom curve with beforeSwapReturnsDelta to fully handle swap execution, disables swaps after PT maturity via block.timestamp expiry, and optionally rehypothecates idle liquidity into ERC4626 vaults to boost LP yields.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

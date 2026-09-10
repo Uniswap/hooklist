@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe3351661c4af528669ca4c997a5b98818ab000cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TradingFeeHook",
+    "description": "Collects a 5% trading fee on every swap (0.5% commission to treasury, 4.5% to token creator via RevenueVault), using beforeSwapReturnDelta for exact-input buys and afterSwapReturnDelta for sells and exact-output buys. Pools must be registered by the LaunchVault to have fees enabled; unregistered pools swap without any fee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

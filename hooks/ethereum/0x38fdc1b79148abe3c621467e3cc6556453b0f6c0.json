@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x38fdc1b79148abe3c621467e3cc6556453b0f6c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SimHookMVP",
+    "description": "A dynamic-fee hook that sets LP fees based on simulated price impact and a time-decaying cumulative price imbalance score. Includes an owner-configurable JIT liquidity lock that prevents LPs from removing liquidity within a configurable block window after adding it.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x588c683ecc450f8b2aadb13d7f63792b840425dc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Flaunch PositionManager",
+    "description": "Flaunch protocol's core hook for memecoin pool launches on Uniswap v4. Implements an Internal Swap Pool that fills swaps from accumulated fee inventory before hitting the AMM, captures and distributes fees to creators, protocol, and a bid wall, records TWAP oracle observations per swap, and optionally routes referrer fees when an address is encoded in hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}

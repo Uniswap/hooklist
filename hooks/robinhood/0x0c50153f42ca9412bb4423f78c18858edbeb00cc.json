@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0c50153f42ca9412bb4423f78c18858edbeb00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "V4FunFeeHook",
+    "description": "Volatility-based fee hook for ETH/token pools on the v4.fun launcher. Charges fees in native ETH on buys (via beforeSwap delta) and sells (via afterSwap delta), scaling between configurable base and max rates (1%\u20137%) based on the previous swap's tick movement. Exact-output swaps are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
