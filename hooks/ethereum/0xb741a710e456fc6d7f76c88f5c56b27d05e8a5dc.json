@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb741a710e456fc6d7f76c88f5c56b27d05e8a5dc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PositionManager",
+    "description": "Flaunch protocol hook managing token launches with scheduled temporal gating, an internal swap pool that pre-fills swaps from fee inventory before Uniswap execution, per-swap fee capture and distribution, optional referral fees via hookData, and a bid wall mechanism for liquidity management.",
+    "deployer": "0xB8A70b4d1547bf6193bd67A73F4F98ea9FD0A973",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
