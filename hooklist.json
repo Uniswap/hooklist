@@ -63489,6 +63489,41 @@
   },
   {
     "hook": {
+      "address": "0xd7bcdea6dcdfccf93a3142eef4054d4bea1560cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "MagiStockFeeHook",
+      "description": "Charges a fixed 1.5% ETH fee on every swap in the designated ETH/MSTOCK pool, minting PoolManager native-currency claims to an immutable fee distributor. Pool LP fee is 0; enforces the designated pool key and initial price on initialization.",
+      "deployer": "0x8Dc20eb3Aed5c0B848E4d6811B65276993Db8F6E",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd7bda7629db314f9810724bdf3c8ce8057d88044",
       "chain": "robinhood",
       "chainId": 4663,
