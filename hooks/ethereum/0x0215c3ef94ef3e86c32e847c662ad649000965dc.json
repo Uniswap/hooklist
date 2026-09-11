@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0215c3ef94ef3e86c32e847c662ad649000965dc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AnyPositionManager",
+    "description": "Uniswap v4 hook for the Flaunch protocol that manages memecoin launches, routes fees through an internal swap pool and bid wall, and records price observations via an oracle. Supports pools backed by externally approved paired tokens beyond native ETH.",
+    "deployer": "0xB8A70b4d1547bf6193bd67A73F4F98ea9FD0A973",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
