@@ -55229,6 +55229,41 @@
   },
   {
     "hook": {
+      "address": "0x79e394e79c54936c7582452736d18890ce1368cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Bonker Dynamic Fee Hook (Robinhood Chain)",
+      "description": "A Uniswap v4 hook that sets dynamic LP fees based on a volatility accumulator (measured by tick movement across swaps) and collects a protocol fee (20% of LP fee) on all swaps. During pool launch, a MEV module can temporarily raise fees for up to 2 minutes. Supports optional pool extensions that execute post-swap logic.",
+      "deployer": "0x21b109ce8E663FB63CF0B2529324A2e75AeAf87D",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/bonker-wtf/contracts/blob/main/audit/CLAWDIT-Bonker-Audit.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7a0a24d5353ae73df851f2049bc0311d4145c0cc",
       "chain": "robinhood",
       "chainId": 4663,
