@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd450f631efa0596c67e3eb1e2b38513b203e30c8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FamilyLaunchHook",
+    "description": "FamilyLaunchHook registers one token launch per pool, capturing a per-pool swap fee, optional directional buy/sell tax, and a time-limited anti-snipe tax via beforeSwapReturnsDelta. Captured fees are donated back to the pool LP in afterSwap. Supports progressive liquidity tiers for relaunches; hookData is unused and no custom swap data is required.",
+    "deployer": "0x3e6C01Db5342e50d819eFA08b812FD0ebC5c1bB3",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
