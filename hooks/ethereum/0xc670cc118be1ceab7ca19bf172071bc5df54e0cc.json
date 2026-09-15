@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc670cc118be1ceab7ca19bf172071bc5df54e0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PerpFeeHook",
+    "description": "Collects a fixed 1.5% ETH-denominated fee on swaps in a single designated pool, minting fee claims to an external distributor contract. Records tick observations after each swap and pool initialization to maintain a 5-minute TWAP oracle via a 1024-entry ring buffer.",
+    "deployer": "0xe30d9d551C84Cd6A549d950C43C7DDEBc587c2d0",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
