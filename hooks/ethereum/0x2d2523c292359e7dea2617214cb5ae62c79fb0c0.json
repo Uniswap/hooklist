@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2d2523c292359e7dea2617214cb5ae62c79fb0c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ImpactHook",
+    "description": "Computes a dynamic LP fee based on estimated price impact and an illiquidity metric (price impact divided by swap volume), overriding the fee before each swap via OVERRIDE_FEE_FLAG. Tracks actual post-swap price impact and updates the illiquidity state used to estimate fees for future swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
