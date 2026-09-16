@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0b5d719460df4e6460440f583a36e061ae8c2888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "MiniBTCHook",
+    "description": "A bonding-curve hook that replaces the Uniswap v4 AMM for an ETH/MiniBTC pool. Buys mint MiniBTC via a forward curve; sells burn MiniBTC and pay ETH from the hook's accumulated reserves. Liquidity additions are permanently forbidden. Requires a swapper address ABI-encoded in hookData; enforces a 1-block cooldown between a wallet's last buy and any sell.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
