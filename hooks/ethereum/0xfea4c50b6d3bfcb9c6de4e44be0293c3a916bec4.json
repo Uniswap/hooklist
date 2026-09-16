@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfea4c50b6d3bfcb9c6de4e44be0293c3a916bec4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SimHook",
+    "description": "Dynamic-fee hook that prices each swap using simulated price impact and a time-decaying cumulative price imbalance, with JIT liquidity protection and a governance-configurable protocol fee taken via afterSwap hook delta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
