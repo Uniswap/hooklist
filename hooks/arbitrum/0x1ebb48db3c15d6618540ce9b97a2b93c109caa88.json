@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1ebb48db3c15d6618540ce9b97a2b93c109caa88",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "YieldSwapHook",
+    "description": "Custom AMM hook for yield token pairs (SY and PT), implementing a time-weighted pricing formula with a decaying rate anchor (Pendle-style curve). Supports only exact-input SY-to-PT swaps; LP shares are issued as ERC20 tokens managed by the hook itself.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
