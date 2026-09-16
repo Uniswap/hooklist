@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x351a8241eeee7412e5d9a8a745676d62fcfea0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HookpotHook",
+    "description": "A jackpot lottery hook for a native ETH / Hookpot token pool that charges a 1.7% fee on every buy and sell to accumulate a jackpot. Each eligible swap earns weighted tickets proportional to trade size (with per-wallet caps and penalties), and at round end a weighted-random winner is drawn who must hold a minimum Hookpot token balance.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
