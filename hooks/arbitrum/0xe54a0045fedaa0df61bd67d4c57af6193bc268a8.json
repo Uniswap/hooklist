@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe54a0045fedaa0df61bd67d4c57af6193bc268a8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "EulerSwap",
+    "description": "A custom-curve AMM hook that routes swaps through Euler Finance lending vaults. Each instance is a factory-deployed proxy managing a pair of Euler vaults; swaps are priced via a bespoke curve invariant and settled by depositing input tokens into and withdrawing output tokens from the corresponding vaults.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
