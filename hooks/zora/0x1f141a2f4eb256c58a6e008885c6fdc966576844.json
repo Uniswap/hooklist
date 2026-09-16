@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1f141a2f4eb256c58a6e008885c6fdc966576844",
+    "chain": "zora",
+    "chainId": 7777777,
+    "name": "StrategyHookV2",
+    "description": "A fee-taking hook that collects dynamic fees from swaps (fixed fee on buys; variable sell fees based on NFT accumulation state and a graduated cooldown mechanism), then distributes collected ETH to a strategy contract (80%) and an optional protocol fee recipient (20%). Locks liquidity after initial provision and requires pool initialization with a specific strategy token as currency1.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
