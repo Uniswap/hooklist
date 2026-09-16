@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3c3f7e016baef1bfbf54b046595fa9a7ec31e0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PMUReactorHook",
+    "description": "Fee hook for an ETH/PMU pool that applies a time-decaying launch fee on ETH-in (zeroForOne exact-input) swaps. The fee starts at a configurable high rate and decays block-by-block to a 2% base fee, with proceeds split between a buy-and-exile receiver and a team address. Exact-output swaps are blocked. Sell swaps (PMU\u2192ETH) incur a flat 2% fee collected in afterSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
