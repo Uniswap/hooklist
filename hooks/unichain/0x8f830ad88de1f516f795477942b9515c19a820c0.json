@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8f830ad88de1f516f795477942b9515c19a820c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "VolatilityDynamicFeeLimitOrderHook",
+    "description": "Adjusts LP fees dynamically based on a configurable base fee plus a time-decaying surge fee triggered by volatility cap events detected via a VolatilityOracle. Also executes on-chain limit orders through a LimitOrderManager on each swap, and temporarily blocks trading until a configured block number to prevent launch sniping.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
