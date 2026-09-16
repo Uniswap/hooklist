@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd3ba78c0cb651f19bdb50c102c0f2eb8e279a0cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "LaunchHook",
+    "description": "Singleton hook for pools created by a permissioned factory. Takes a fixed trading fee from the stock side (currency0) on each swap via return deltas, splitting it between a platform treasury (30%), pool creator, and token holders via a FeeDistributor contract. Exact-output sells are not supported.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
