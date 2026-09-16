@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x718865f833f0d5ddc8d6cd92e1cd85a86fd78044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "pERC20Hook",
+    "description": "An afterSwap hook that collects a 0.1% privacy tax on buy swaps (ETH\u2192pERC20Wrapper) by taking tokens from the pool via afterSwapReturnsDelta. Accumulated taxes fund a privacy reserve that pays a 0.5% bonus to users who shield their tokens into private ZK notes via the pERC20 system.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
