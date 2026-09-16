@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x650c40e697f882267d770db82a0b567d6da7cfe0",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "VerifierHook",
+    "description": "A KYC/AML compliance hook using PureFi protocol that requires senders to provide signed compliance payloads (with token identity and amount validation) on swaps, liquidity modifications, and donations \u2014 unless the sender is pre-approved as a market maker or router via an on-chain whitelist.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
