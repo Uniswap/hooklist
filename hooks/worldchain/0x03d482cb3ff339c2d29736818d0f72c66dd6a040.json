@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
+    "chain": "worldchain",
+    "chainId": 480,
+    "name": "GlueHook",
+    "description": "A Uniswap v4 singleton hook implementing a buyback-and-burn program: after every swap on a configured pool, it executes a reference-price-gated market buy of the pool's designated token (MAIN) using a secondary-token donation pot, delivering purchased tokens to a recipient (default burn via Glue Protocol). Optionally runs an auto-compounding LP program that harvests position fees and splits them across compound, burn, and recipient legs.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
