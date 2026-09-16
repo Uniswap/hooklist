@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x82405512c6675613e8a5f6b1e8fcdb360f63d540",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "GridHook",
+    "description": "A grid trading hook that lets users configure and deploy automated grid liquidity orders around the current tick. After each swap, it records the updated tick and swap count to support user-triggered rebalancing of grid positions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
