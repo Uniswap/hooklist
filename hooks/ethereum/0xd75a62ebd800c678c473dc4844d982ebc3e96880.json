@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd75a62ebd800c678c473dc4844d982ebc3e96880",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PredicateHook",
+    "description": "Gates swaps against off-chain Predicate service policies: non-authorized users must supply a signed PredicateMessage in hookData, while owner-managed allowlists of users and LPs can bypass the check. Liquidity additions are restricted to an owner-managed LP allowlist.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
