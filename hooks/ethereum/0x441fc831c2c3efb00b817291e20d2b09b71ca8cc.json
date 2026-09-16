@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x441fc831c2c3efb00b817291e20d2b09b71ca8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "IncineratorHook",
+    "description": "Applies a 1.2% fee on all swaps: buy fees are collected as ETH into a burn pot, sell fees are queued as tokens for direct burning. Every 20 swaps, the ETH pot is used to buy back and burn the token on-chain via a nested pool swap. Sells are blocked in the same block as a buyback.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
