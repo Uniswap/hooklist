@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe64f9d5a0cef9575a901eba6205937b81a85e8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniswapV4Hook",
+    "description": "Hook that charges a 1.7% fee on each swap: buy-side fees accumulate in an ETH pot for periodic buyback-and-burn (triggered every 20 swaps), while sell-side token fees are immediately queued for burning. Liquidity addition is permanently restricted to one deposit, and exact-output swaps always revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
