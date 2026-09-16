@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x669822ca4c1df21fbe379a03a2dc2879c69cc540",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "ZA_Hook",
+    "description": "An owner-controlled liquidity management hook that allows authorized callers to rebalance token holdings via swaps, mint LP positions, add liquidity to existing positions, and withdraw funds. The afterSwap, afterAddLiquidity, and afterRemoveLiquidity callbacks are no-ops that do not modify swap or liquidity behavior.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
