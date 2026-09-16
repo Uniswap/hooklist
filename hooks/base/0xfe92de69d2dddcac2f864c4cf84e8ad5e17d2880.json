@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfe92de69d2dddcac2f864c4cf84e8ad5e17d2880",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LexifiHook",
+    "description": "Compliance-gating hook that enforces per-pool eligibility rules for swaps and liquidity additions. Each pool can be assigned a configurable policy contract that determines user access levels; non-compliant users are denied via revert. Resolves user identity through trusted routers' msgSender(), falling back to the caller address.",
+    "deployer": "0x4122c8b8080c8960F52d3D1cCb3A8d85EFF1f039",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}
