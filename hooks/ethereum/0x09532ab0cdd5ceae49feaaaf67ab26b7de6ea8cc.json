@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x09532ab0cdd5ceae49feaaaf67ab26b7de6ea8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "RebelProtocol",
+    "description": "A Uniswap v4 hook for ETH/USDT/USDC\u2194REBEL pools that charges a fixed 1% fee on every swap (always denominated in non-REBEL currency) using beforeSwap/afterSwap delta returns. Fees fund a round-based PvP game where buyers compete to become \"King\" and earn from a leaderboard-weighted stake pool; no admin, no upgrade, no owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
