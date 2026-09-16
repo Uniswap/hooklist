@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x65a3f3136043541c89e6cd464778253682fca8a8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "EulerSwap",
+    "description": "A custom curve AMM hook for Uniswap v4 that routes swaps entirely through Euler Finance EVaults, using its own pricing curve (CurveLib/QuoteLib) and reserve tracking instead of Uniswap's CLMM. The hook returns a BeforeSwapDelta to override pool accounting, deposits input tokens into Euler vaults, and withdraws output tokens from Euler vaults. Each hook instance is a minimal proxy delegating to a shared EulerSwap implementation; native CLMM liquidity and direct pool initialization are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
