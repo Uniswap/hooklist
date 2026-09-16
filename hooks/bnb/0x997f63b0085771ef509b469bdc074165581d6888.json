@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x997f63b0085771ef509b469bdc074165581d6888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "HookHook",
+    "description": "A bonding curve hook that mints a HOOK token on buys (BNB in, HOOK out) via a forward curve and burns HOOK on sells (HOOK in, BNB out) via the inverse curve. It fully intercepts all swaps via beforeSwapReturnsDelta, replacing Uniswap AMM mechanics entirely. Liquidity additions are forbidden; sells require a block-number cooldown after the last buy.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
