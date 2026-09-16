@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa0ced7be8f9410369f2ba8ca2f9dbad34923c040",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "ArbitrageHook",
+    "description": "After each swap, queries an oracle to determine if the pool price has deviated from a target; if so, withdraws funds from a companion INexArbitrage contract and executes a rebalancing swap via poolManager.swap() to push the pool price back toward the oracle-derived target.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
