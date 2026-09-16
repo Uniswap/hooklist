@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3e8e395ff81273ccae88e2d09eaea48dec51a888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SoulHook",
+    "description": "A pump.fun-style bonding-curve hook for Uniswap V4. ETH buys mint SOUL tokens along a constant-product curve; sells burn them. The hook intercepts all swaps via beforeSwap (requiring an encoded swapper address in hookData), handles token minting and burning directly, and graduates to a locked Uniswap V3 LP position once the bonding curve fills.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
