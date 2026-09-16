@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x366af5d3dfe58a93e89f76892eaf1c0f74a90040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AvaHook",
+    "description": "Tracks sell-side tax accrual (default 3%, owner-adjustable up to 10%) on an ETH/AVA Uniswap v4 pool via afterSwap; increments a cumulative counter and emits an event per AVA-sell, but does not transfer or collect any tokens.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
