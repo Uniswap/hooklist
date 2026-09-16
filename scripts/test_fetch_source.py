@@ -33,6 +33,7 @@ def test_get_explorer_url_okx_chain():
 def test_get_explorer_url_new_chains():
     assert get_explorer_url("linea") == "https://api.etherscan.io/v2/api?chainid=59144"
     assert get_explorer_url("megaeth") == "https://api.etherscan.io/v2/api?chainid=4326"
+    assert get_explorer_url("arc") == "https://api.etherscan.io/v2/api?chainid=5042"
     assert get_explorer_url("zksync") == "https://block-explorer-api.mainnet.zksync.io/api"
 
 
