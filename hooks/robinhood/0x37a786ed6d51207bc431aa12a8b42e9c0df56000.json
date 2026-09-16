@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x37a786ed6d51207bc431aa12a8b42e9c0df56000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GuardHook",
+    "description": "Restricts pool initialization to the factory address, preventing front-running of Uniswap v4's permissionless initialize call. No swap-time callbacks are active; all swap flags are false.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
