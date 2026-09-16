@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbb7a22aacc8ff273df294beb306d21a1e59b0ac8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "IdleHook",
+    "description": "Combined ERC-20 token and Uniswap v4 hook that captures a hardcoded 2% fee on the idle-token input side of each swap via beforeSwap return delta, depositing fees into a drip pool that continuously distributes rewards to token holders block by block with a velocity-adjusted release horizon (6\u201348 hours).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
