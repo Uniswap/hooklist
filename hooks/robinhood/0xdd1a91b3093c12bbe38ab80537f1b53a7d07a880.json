@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdd1a91b3093c12bbe38ab80537f1b53a7d07a880",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FlockFall Dynamic Fee Hook",
+    "description": "Dynamic LP fee hook for FlockFall's ETH/SHELL pool that fetches the current fee decision from an external policy contract on each swap, overriding the LP fee. Restricts pool initialization to a designated bootstrap venue and blocks general liquidity additions until bootstrap is complete.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
