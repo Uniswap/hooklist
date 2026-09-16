@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe37f0c95351ec954f9bddaf02f7dee511a03a888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "RelicMachine",
+    "description": "A gacha/lottery machine built as a Uniswap v4 hook. Players swap a payment token into a dedicated pool; beforeSwap intercepts the payment, distributes yield to NFT stockers, and triggers a Chainlink VRF prize draw. Winners receive NFT relics from the pool; stockers earn revenue-share yield and buyout payments.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
