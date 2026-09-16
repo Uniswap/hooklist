@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd08933577167168a997142af2513f44ef4d1f5df",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "VolatilityGuardHookV2",
+    "description": "A volatility-reactive dynamic fee hook that switches LP fees between a base rate (0.05%) and a panic rate (2.00%) based on tick movement. When price moves beyond a tick threshold within an anchor window, it enters panic mode with elevated fees for 60 seconds.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
