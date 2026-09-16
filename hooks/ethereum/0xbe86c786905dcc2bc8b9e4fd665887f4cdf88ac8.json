@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbe86c786905dcc2bc8b9e4fd665887f4cdf88ac8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "RatchetHook",
+    "description": "A bonding curve hook that acts as the sole counterparty for all swaps; no LP positions are allowed. ETH\u2192token buys mint tokens via a multi-phase linear bonding curve (price doubles, cap halves each phase); token\u2192ETH sells burn tokens and release ETH from reserve. Includes a 5-day genesis deposit window for pro-rata initial token distribution.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
