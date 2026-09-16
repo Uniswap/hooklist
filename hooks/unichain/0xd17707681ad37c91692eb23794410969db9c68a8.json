@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd17707681ad37c91692eb23794410969db9c68a8",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "EulerSwap",
+    "description": "Custom-curve AMM hook backed by Euler vaults that fully intercepts swaps via beforeSwapReturnsDelta, routing funds through Euler Vault Kit vaults instead of standard Uniswap v4 concentrated liquidity. Blocks direct liquidity additions and donations to prevent unproductive capital allocation; deployed as delegatecall proxy instances per pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
