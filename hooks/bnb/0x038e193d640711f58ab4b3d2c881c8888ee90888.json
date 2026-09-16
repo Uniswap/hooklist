@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x038e193d640711f58ab4b3d2c881c8888ee90888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "JurassicPlatformV4Hook",
+    "description": "Routes swaps through Jurassic Protocol's external core pools instead of standard Uniswap v4 AMM liquidity, using beforeSwapReturnsDelta to fully handle token settlement. Supports only exact-input swaps; direct liquidity provision via Uniswap v4 is disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
