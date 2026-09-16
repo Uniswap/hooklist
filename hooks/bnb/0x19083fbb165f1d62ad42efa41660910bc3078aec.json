@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x19083fbb165f1d62ad42efa41660910bc3078aec",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BucketHook",
+    "description": "Single-pool hook for the Bucket Protocol that charges a configurable USDT swap fee (1\u20135% BPS) via beforeSwapReturnsDelta and afterSwapReturnsDelta, routing fees to an epoch-based fee escrow. Liquidity provision is restricted to a designated LP lock contract; trading requires governance bootstrap finalization and an epoch start timestamp.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
