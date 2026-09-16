@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbf870c242e0dadcd91a7d6296ae420f9ed9f9040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OwnerFeeHook",
+    "description": "A Uniswap v4 hook that accumulates ETH received via its payable `receive()` function and, after each swap (or on demand via `claimFees()`), forwards the accumulated balance to a single immutable `feeOwner` address once the threshold of 0.001 ETH is reached.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
