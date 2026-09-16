@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0c2fcdddbcd5ae744f1ef26d9e09f4338533eaec",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "LumoriaHook",
+    "description": "A Uniswap v4 hook for Lumoria token/BNB pools on BNB Chain that collects platform fees and per-token buy/sell taxes on every swap via BeforeSwapDelta and afterSwapDelta, gates pool initialization and liquidity additions to the LumoriaLiquidityVault, and permanently locks all liquidity (remove liquidity always reverts).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
