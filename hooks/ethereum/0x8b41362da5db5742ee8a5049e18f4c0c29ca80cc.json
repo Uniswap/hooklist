@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8b41362da5db5742ee8a5049e18f4c0c29ca80cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HookPadStandardHook",
+    "description": "A HookPad token launch hook that collects a flat 1% buy/sell tax on every swap, forwards 20% of collected fees to a fixed protocol treasury, and accrues the remaining 80% for the token creator to claim via `claimFees`. Optionally enforces a 60% anti-snipe tax during the first 10 seconds after launch for non-whitelisted buyers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
