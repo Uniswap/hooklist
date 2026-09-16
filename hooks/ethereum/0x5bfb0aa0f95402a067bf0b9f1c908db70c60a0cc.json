@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5bfb0aa0f95402a067bf0b9f1c908db70c60a0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "StockLaunchEthHook",
+    "description": "A Uniswap v4 hook for ETH-paired token launch pools that charges a mandatory 1% platform fee plus a configurable creator fee on every swap. Fees are taken from the stock/ETH currency via BeforeSwapDelta and AfterSwapDelta and held as claimable balances. Only factory-registered pools may use this hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
