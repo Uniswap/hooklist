@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb046529771f5d01974913056843f1f0f77d81888",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "TokiHook",
+    "description": "Custom AMM curve hook for fixed-rate Principal Token (PT) trading using a Pendle-style yield curve. Handles its own swap math via beforeSwap with delta returns, blocks direct PoolManager liquidity ops, optionally rehypothecates idle liquidity into ERC4626 vaults, and maintains a TWAP oracle for logarithmic implied rates. Swaps are permanently disabled after PT maturity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
