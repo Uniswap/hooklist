@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2cc06c2505bdd3a300ed05c09e419089f7210a44",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "StockpairHook",
+    "description": "Uniswap v4 hook that charges a 2% fee on token sells (0% on buys), split 60/40 between the pool creator and a platform address. Liquidity additions are restricted to the factory contract and removals always revert, locking LP positions permanently.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
