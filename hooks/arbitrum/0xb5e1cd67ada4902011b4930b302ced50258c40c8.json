@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb5e1cd67ada4902011b4930b302ced50258c40c8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "GoldenGateFeeHook",
+    "description": "Routes all v4 swaps through configured Uniswap v3 reference pools by absorbing the full input via BeforeSwapReturnDelta, executing the v3 swap inside beforeSwap, deducting a time-varying pulse-based fee retained as ERC20 balance in the hook, and settling net output back to the PoolManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
