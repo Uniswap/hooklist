@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x17bd8d34236697c14283c7003f45618a90160080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SpectraBlocklistHook",
+    "description": "Uniswap v4 hook that blocks swaps from addresses on a configurable blocklist, checking both the immediate swap caller (sender) and tx.origin. The immutable owner can update the blocklist but cannot affect fees, liquidity, or swap amounts.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}
