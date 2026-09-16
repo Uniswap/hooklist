@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9f3c19ad49f71f513817e4c40a53b0c5ce410044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PactHook",
+    "description": "Charges a fixed 3% fee on each swap's output token, taking 2% to a game contract (pactGame) and 1% to a dev wallet (devWallet) via afterSwap with a return delta. Fee recipient addresses are mutable by an owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
