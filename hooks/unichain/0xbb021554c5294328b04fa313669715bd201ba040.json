@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbb021554c5294328b04fa313669715bd201ba040",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "GlueHook",
+    "description": "A Uniswap v4 hook for static-fee pools that implements a reference-tick-gated buyback pump and LP fee auto-harvesting with auto-compounding. After each swap, it harvests accrued LP fees, executes a nested pump swap to buy the configured main token using pot secondary tokens, and distributes all proceeds in a single batched send phase.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
