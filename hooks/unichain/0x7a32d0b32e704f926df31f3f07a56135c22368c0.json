@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7a32d0b32e704f926df31f3f07a56135c22368c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "UnimonHook",
+    "description": "Mints ERC721 Unimon NFTs to swappers proportional to their native token input amount, enforcing an allowlisted router and native-currency-only swaps. Includes an on-chain game where NFT holders burn UnimonEnergy ERC20 tokens to hatch and level up their Unimon via pseudo-random seed generation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
