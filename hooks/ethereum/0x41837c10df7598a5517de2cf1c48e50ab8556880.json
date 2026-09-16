@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x41837c10df7598a5517de2cf1c48e50ab8556880",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PredicateHook",
+    "description": "A Uniswap v4 hook that enforces transaction compliance by validating swaps against off-chain Predicate policies. Authorized users bypass policy checks; others must supply signed authorization data in hookData. Liquidity additions are restricted to an owner-managed allowlist.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
