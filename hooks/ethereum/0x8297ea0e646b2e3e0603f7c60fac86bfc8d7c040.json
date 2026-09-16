@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8297ea0e646b2e3e0603f7c60fac86bfc8d7c040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SockMarketHook",
+    "description": "An afterSwap hook that triggers liquidity collection from a registered locker contract after each non-protocol swap in the oneForZero direction. Pools must be registered by a factory-configured address before the hook will process them; unregistered pools revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
