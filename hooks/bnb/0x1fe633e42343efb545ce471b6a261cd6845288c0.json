@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1fe633e42343efb545ce471b6a261cd6845288c0",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "OmniPriceHook",
+    "description": "A cross-chain oracle-priced hook that prices every swap against a coordinator-signed global reference price using JIT one-tick liquidity bands and a dynamic LP fee override. External liquidity is blocked; the hook exclusively manages a straddle book position in the pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
