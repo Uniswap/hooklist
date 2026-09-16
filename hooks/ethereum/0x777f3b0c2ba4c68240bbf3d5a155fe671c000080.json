@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x777f3b0c2ba4c68240bbf3d5a155fe671c000080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MonkeyHammerHook",
+    "description": "Computes a dynamic LP fee for each swap by measuring price deviation between a Uniswap V2 spot price and an EMA-smoothed reference price, then applying a configurable rational quadratic fee curve. The filtered price is updated via time-weighted cumulative averaging every 15 minutes, with the fee rising as spot price deviates from the filter.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
