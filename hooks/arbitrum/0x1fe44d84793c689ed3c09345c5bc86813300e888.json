@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1fe44d84793c689ed3c09345c5bc86813300e888",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "CustomHook",
+    "description": "OTC-style hook that intercepts swaps in a single direction (SELLABLE_TOKEN \u2192 BUYABLE_TOKEN only), pricing them via an external oracle and settling output from a vault rather than AMM liquidity. Liquidity addition is restricted to whitelisted addresses; accumulated sold tokens can be burned by the owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
