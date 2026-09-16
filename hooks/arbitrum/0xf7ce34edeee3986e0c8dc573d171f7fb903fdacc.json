@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf7ce34edeee3986e0c8dc573d171f7fb903fdacc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "GuUniswapV4Hook",
+    "description": "Singleton hook for GuCoin/reserve-token pools that computes dynamic swap fees using a volatility oracle (Algebra adaptive fee) and directional sliding fee factors. Collects fees via BeforeSwapDelta/AfterSwapDelta and distributes them to protocol and LP fee receivers. Swaps are gated by a per-pool security registry and a GuCoin LP status flag.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
