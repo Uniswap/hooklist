@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb74d8f19c4fb353a83905c7126040980463a80cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "IndexFeeHook",
+    "description": "Charges a fixed 3% fee in native ETH (currency0) on every swap, collected via return deltas split across beforeSwap and afterSwap depending on whether ETH is the specified amount. Fees are forwarded directly to an immutable treasury address. Pools where currency0 is not native ETH pass through untaxed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
