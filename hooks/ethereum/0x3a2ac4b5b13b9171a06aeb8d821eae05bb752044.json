@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3a2ac4b5b13b9171a06aeb8d821eae05bb752044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Unilaunch Fee Hook",
+    "description": "Singleton v4 hook for Unilaunch pools that skims a configurable per-pool fee (50\u20131000 bps) from each swap and splits it 60% to the pool creator and 40% to a fixed platform wallet. Only pools registered by the factory can initialize with this hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
