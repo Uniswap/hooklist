@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x07b62d57d9c5c9197a3791084561b6b634b968c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "NFTStrategyHook",
+    "description": "A Uniswap v4 hook for NFT collection trading pools that takes dynamic buy fees (starting at 95% and decaying ~100 bps per 5 blocks down to 10%) and a fixed 10% sell fee. Fees are split 80% to the NFT collection contract and 20% to a configured fee address. Pool initialization and liquidity addition are restricted to the NFTStrategyFactory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
