@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbc662a2bf630affa783d16b4158b927523db8aec",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BucketHook",
+    "description": "A single-pool hook for the Bucket Protocol on BNB that collects USDT-denominated fees on each swap and routes them to an epoch-based fee escrow. Liquidity additions are restricted to a single locked LP position, donations are blocked, and trading requires admin-finalized bootstrap and a scheduled epoch start time.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
