@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdbc61875df1b1c477aedf91708750765dcb6c8c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AccessControlDynamicFeeHookV4",
+    "description": "A Uniswap v4 hook that restricts liquidity provision to an owner-managed allowlist, applies asymmetric directional dynamic LP fees (separate rates for zeroForOne vs oneForZero), enforces configurable sqrtPrice bounds (reverting swaps that push the pool outside [min, max]), and optionally charges an additional hook fee taken from swappers via the afterSwapReturnsDelta mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
