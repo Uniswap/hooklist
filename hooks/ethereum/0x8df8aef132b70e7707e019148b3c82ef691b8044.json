@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8df8aef132b70e7707e019148b3c82ef691b8044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "CovenantHook",
+    "description": "Captures 3% of each swap output\u2014COVENANT tokens on buys, ETH on sells\u2014and distributes fees to COVENANT holders via two pools: a tribute pool (weighted by balance \u00d7 devotion multiplier that grows with hold time) and a sanctuary pool (for holders with \u2265100 COVENANT). A founder-controlled dissolve() function can drain all accumulated fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
