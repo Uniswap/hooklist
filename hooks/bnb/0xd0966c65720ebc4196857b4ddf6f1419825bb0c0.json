@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd0966c65720ebc4196857b4ddf6f1419825bb0c0",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BSC_FeeCaptureHook",
+    "description": "A hook that dynamically overrides LP fees (0.5% base, 2.0% during tick drops \u2265300 ticks) via lpFeeOverride in beforeSwap, and additionally calls poolManager.take() in afterSwap to extract a matching fee amount directly to the hook contract, which the owner can withdraw via withdrawFees().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
