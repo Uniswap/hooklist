@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0e2efbfbb80f33ee321cd6b07395b5e3aa4760cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniversalKlikHook",
+    "description": "A market-cap-tiered tax hook for ETH/token pools that deducts a fee on every buy and sell swap, splitting proceeds between a platform treasury and the token creator. Fees step down from 1.25% to 0.35% as market cap increases (queried from an external factory); no fee is taken on the pool's deployment block.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
