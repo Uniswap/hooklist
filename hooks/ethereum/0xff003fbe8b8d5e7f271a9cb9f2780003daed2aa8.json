@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xff003fbe8b8d5e7f271a9cb9f2780003daed2aa8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FloodHook",
+    "description": "A custom single-sided AMM hook that acts as a bonding-curve market for the FLOOD token against WETH, USDC, and USDT. It fully overrides swap execution via beforeSwapReturnsDelta, computing prices with a constant-product formula using deposited Aave aTokens as the reserve, and charges a 30 bps base fee plus a gas-priority MEV fee. External LP deposits and donations are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
