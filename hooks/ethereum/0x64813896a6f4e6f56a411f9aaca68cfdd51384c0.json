@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x64813896a6f4e6f56a411f9aaca68cfdd51384c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PegScapeHook",
+    "description": "A Uniswap v4 hook for the PegScape protocol that mints Runes to buyers based on swap size and market conditions, computing four boost flags (WHALE, DIP, REVENGE, LATE) from pre-swap state captured in transient storage. On sells, it updates a ring buffer tracking recent sellers for the REVENGE flag and drags the DIP price anchor downward as an anti-MEV measure.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
