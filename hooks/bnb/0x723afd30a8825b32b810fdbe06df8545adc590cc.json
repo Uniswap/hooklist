@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x723afd30a8825b32b810fdbe06df8545adc590cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "Spot",
+    "description": "Dynamic-fee AMM hook that charges protocol-owned liquidity (POL) fees on swaps and auto-reinvests them as full-range liquidity. Uses a truncated geometric oracle to track tick movement per swap or per block, feeding a dynamic fee manager that applies base + surge fees overridden on every swap via lpFeeOverride.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
