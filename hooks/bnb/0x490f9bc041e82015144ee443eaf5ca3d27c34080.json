@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x490f9bc041e82015144ee443eaf5ca3d27c34080",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "TimedDecayFeeHook",
+    "description": "Overrides the LP fee for pools containing a configured token using a time-decaying schedule, stepping from 3% down to 1% in 0.5% increments every 30 seconds over 120 seconds. The owner sets per-token decay start times via setTokenStartTime().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
