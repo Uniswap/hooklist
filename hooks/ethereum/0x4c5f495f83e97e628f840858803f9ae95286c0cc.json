@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4c5f495f83e97e628f840858803f9ae95286c0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PosHook",
+    "description": "A Uniswap v4 hook that charges a fixed 1% ETH fee on every swap in ETH/TOKEN pools. Uses beforeSwap and afterSwap return deltas to collect the fee from the ETH side of each swap, covering all four swap directions (exactIn/exactOut \u00d7 ETH-input/ETH-output). Accumulated fees are held in the hook contract and withdrawable by an immutable fee recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
