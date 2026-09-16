@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x72e766c9e86bd7646f002131659b0f526290a0c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "VolatilityDynamicFeeLimitOrderHook",
+    "description": "Singleton hook for Unilaunch pools that dynamically adjusts LP fees using a volatility oracle and executes limit orders on every swap. A surge multiplier is applied on top of the base fee after high-volatility events (CAP detections), decaying linearly over a configurable duration. New pools are blocked from swapping until the block after registration.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
