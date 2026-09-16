@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd8b747e0e895ed02fbdac6378a9548368374d088",
+    "chain": "xlayer",
+    "chainId": 196,
+    "name": "SUBAHook",
+    "description": "Implements a sealed-bid uniform-price batch auction over Uniswap v4 pools. Incoming exact-input swaps are buffered per epoch via ERC-6909 minting in beforeSwap (suppressing AMM execution); a permissioned keeper settles each epoch at a single uniform clearing price, matching buy and sell volume proportionally and distributing outputs to per-order user addresses.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
