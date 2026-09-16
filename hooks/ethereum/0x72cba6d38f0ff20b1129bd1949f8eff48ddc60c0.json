@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x72cba6d38f0ff20b1129bd1949f8eff48ddc60c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DialHook",
+    "description": "A dynamic-fee hook that adjusts LP fees between 0.30% and 1.00% based on order-flow imbalance, computed as an exponential moving average of buy vs. sell volume. Fees rise during one-sided flow and fall during balanced trading, with a warmup period and epoch-sealed on-chain audit trail.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
