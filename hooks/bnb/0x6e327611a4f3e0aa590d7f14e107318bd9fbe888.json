@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6e327611a4f3e0aa590d7f14e107318bd9fbe888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "LaunchSatoHook",
+    "description": "A launchpad bonding-curve hook for the LaunchSato platform that routes all buys and sells through a custom exponential curve, minting tokens on buys and burning on sells. Buys require a swapper address in hookData, are capped per transaction, and are permanently closed once 99% of the fair token supply is minted; sells remain enabled with a 1-block cooldown after a buy.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
