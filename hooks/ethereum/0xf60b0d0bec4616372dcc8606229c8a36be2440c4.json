@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf60b0d0bec4616372dcc8606229c8a36be2440c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HystrategyHook",
+    "description": "Skims a percentage fee from the output of every swap in an ETH/HYSTR pool. Buy-side fees decay from 15% to 10% over blocks after deployment; sell-side fees are a flat 10%. Collected fees are converted to ETH via a nested swap and distributed 80% to treasury and 20% to team using afterSwap delta return.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
