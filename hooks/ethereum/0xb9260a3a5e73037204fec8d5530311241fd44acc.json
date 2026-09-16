@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb9260a3a5e73037204fec8d5530311241fd44acc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MultiPoolsHook",
+    "description": "Enforces a fixed 1% swap fee on all swaps, split 0.7% to the pool creator and 0.3% to the platform, collected via BeforeSwapDelta and afterSwap return deltas. Liquidity is locked permanently after an initial seed \u2014 subsequent adds revert and removes always revert \u2014 and pools must be registered by the owner before swaps are permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
