@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x696aae99f3b8a1aff646aab01b4c701ce3be28a8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "EulerSwap",
+    "description": "Single-LP AMM hook implementing a custom bonding curve backed by Euler lending vaults. In beforeSwap, it computes quotes via its custom curve, deposits input tokens into an Euler vault, withdraws output tokens, and returns a BeforeSwapDelta to fully bypass Uniswap v4's CLAMM math. Prevents standard LP positions and donations via revert-only beforeAddLiquidity and beforeDonate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
