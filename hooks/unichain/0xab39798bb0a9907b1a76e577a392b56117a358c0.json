@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xab39798bb0a9907b1a76e577a392b56117a358c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "BaseStrategyHook",
+    "description": "An ALM hook that manages concentrated liquidity around an oracle price. Before each swap it adds liquidity to the pool; after each swap it removes all liquidity, collects fees, and settles token balances. It enforces dynamic LP fees and a price-deviation threshold, and can optionally restrict swaps to a designated operator address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
