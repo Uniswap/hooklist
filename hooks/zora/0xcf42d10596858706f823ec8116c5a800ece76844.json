@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcf42d10596858706f823ec8116c5a800ece76844",
+    "chain": "zora",
+    "chainId": 7777777,
+    "name": "StrategyHookV2",
+    "description": "Collects dynamic fees from swaps (with graduated cooldown sell fees and a high initial sell fee before first NFT accumulation) via afterSwap delta accounting, distributes them to a strategy contract (80%) and optional protocol fee split (20%), and permanently locks pool liquidity after the initial addition.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
