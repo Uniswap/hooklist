@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb9a2b47855c8baf9620a40d3f016f66846a880c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Life",
+    "description": "A Uniswap v4 hook combined with an ERC-20 token (LIFE) that runs Conway's Game of Life on a 64\u00d764 toroidal grid. Each swap advances the simulation 1\u201310 generations, collects a 3% fee split between cell-owners and an immutable protocol recipient, and places or kills grid cells based on ETH\u2194LIFE swap activity and token transfers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
