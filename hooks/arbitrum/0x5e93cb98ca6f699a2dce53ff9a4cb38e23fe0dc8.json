@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5e93cb98ca6f699a2dce53ff9a4cb38e23fe0dc8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "OrketHook",
+    "description": "Uniswap v4 hook for binary prediction market pools (YES/NO) that applies VALS dynamic fees using a signed off-chain sigma parameter. Fees are computed as e^[\u03bb\u00b7(\u0394x/L)\u00b7\u03c3] \u2212 1, captured from the USDC collateral side of swaps via beforeSwapReturnsDelta, and forwarded to a YieldDistributor for share token holders. Blocks trading when the market is resolved or disputed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
