@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa35bbd05d8de4dcd46b0103a687eff5184a5c044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MentalUniswapHook",
+    "description": "A hook for MENTAL token pools that tracks an ICO phase (complete when 1,050,000 MENTAL net sold) and applies a 1% tax on all post-ICO MENTAL swaps, forwarding the tax to a fee recipient via afterSwap delta return and POOL_MANAGER.take().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
