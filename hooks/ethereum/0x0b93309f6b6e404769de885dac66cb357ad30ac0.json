@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0b93309f6b6e404769de885dac66cb357ad30ac0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TokenLaunchHook",
+    "description": "Shared fair-launch hook serving multiple pools, each bootstrapped via hookData on the first mint. Supports per-pool optional modules: whitelist phase, anti-snipe protection, dynamic buy/sell LP-fee tax (returned as an lpFeeOverride), and liquidity lock. Governance is captured by the first LP NFT; the NFT owner controls module parameters during the launch window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
