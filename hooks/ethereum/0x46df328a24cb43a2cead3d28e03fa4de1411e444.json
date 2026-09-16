@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x46df328a24cb43a2cead3d28e03fa4de1411e444",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TTTHook",
+    "description": "A Uniswap v4 hook for TTT/ETH pools launched by the TenThousandTokens factory. Applies a flat 1% fee on every swap; on buys, fee tokens are swapped back to ETH and forwarded to a FeeSplitter. During the first 15 minutes after launch, if the pool has nftOnlyPeriod enabled, only holders of the original TenThousandTokens NFT collection may buy.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
