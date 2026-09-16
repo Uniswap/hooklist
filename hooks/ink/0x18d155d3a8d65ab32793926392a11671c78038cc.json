@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x18d155d3a8d65ab32793926392a11671c78038cc",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "SentryInkWethXStockHook",
+    "description": "A token launch hook with a time-decaying fee schedule (exponential half-life decay from startFee to endFee). On each swap, WETH fees are skimmed and distributed among reflection, creator, pot, and sink recipients. Liquidity additions are restricted to a factory-authorized vault. Whitelisted launch participants receive a discounted fee on buys during the launch window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
