@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x185b45b3b2193c911529d158e73cd83b52afc044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "VoltageHook",
+    "description": "A Uniswap v4 hook that captures a 3% fee on every ETH/VOLT swap: sell fees are taken in ETH and immediately distributed (70% to VOLT holders weighted by balance \u00d7 time-held multiplier, 30% to a capacitor reserve for holders with \u2265100 VOLT); buy fees are collected as VOLT tokens and converted to ETH via a permissionless convertVoltageFee() call.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
