@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x80a26a3650d03b6332f0d88450d5c396a2c880cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UnicoreHook",
+    "description": "A Uniswap v4 hook that levies a flat 3% tax on all native-ETH swaps. Buy-side tax is intercepted via BeforeSwapDelta (minted as ERC-6909 claims); sell-side tax is taken via AfterSwapDelta (physical ETH). Accumulated fees are pushed to an external reward distributor by calling normalize(), which is permissionless.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
