@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5a9dc05171fff9d5a7146665ef8d7c511690c040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BlockNodeHook",
+    "description": "An afterSwap hook that automatically mints tiered \"node\" NFTs via an external nodeManager when BLOCK tokens are bought, and burns nodes proportionally when BLOCK tokens are sold. Owner-configurable per-tier node limits, max nodes per swap, and a global auto-node toggle.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
