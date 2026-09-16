@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6f01a895e3370e884d6d1cab0ab44682904640cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "HavenHook",
+    "description": "A fee-collection hook for the Haven protocol that extracts a configurable fee (basis points, capped at 5%) from swaps involving registered (\"moored\") tokens, routing the collected fees to a yield pool that token skippers (owners) can claim.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
