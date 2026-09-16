@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2daf085ad7e6b7b1e3dc7415923e7c1cad5ee8c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "UnimonHook",
+    "description": "A Uniswap v4 hook that mints ERC-721 NFTs (Unimons) to swappers proportional to ETH input, at a rate of one NFT per 0.0111 ETH spent. Only verified routers (owner-managed allowlist) may swap, and only ETH-input swaps are accepted. NFTs can be hatched and leveled up by burning UnimonEnergy ERC-20 tokens.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
