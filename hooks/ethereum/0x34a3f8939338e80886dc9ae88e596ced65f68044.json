@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x34a3f8939338e80886dc9ae88e596ced65f68044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ForestHook",
+    "description": "A Uniswap v4 hook that collects 1% of each swap's output as \"sap\" via afterSwapReturnsDelta and distributes it to registered FOREST token holders in a tier-weighted reward pool. Holders earn proportional to their tier (Seedling to Wolf, weights 1\u20135) based on FOREST balance. Also custodies the launch LP NFT with an owner-callable burn function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
