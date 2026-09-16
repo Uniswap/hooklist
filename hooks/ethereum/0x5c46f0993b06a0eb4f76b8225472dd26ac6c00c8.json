@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5c46f0993b06a0eb4f76b8225472dd26ac6c00c8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TaxHook",
+    "description": "Deducts a configurable percentage (up to 10%) of input currency from each swap as a tax, routing 99% to a project treasury and 1% to a factory protocol fee recipient. Supports per-direction buy/sell tax decay schedules anchored on trading activation, a ramping max-buy cap enforced in afterSwap, and governance-gated trading. Exact-output swaps are not supported.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
