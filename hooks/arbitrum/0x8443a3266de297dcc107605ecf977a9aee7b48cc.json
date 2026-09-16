@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8443a3266de297dcc107605ecf977a9aee7b48cc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "PhoenixV4ReturnDeltaHook",
+    "description": "Uniswap v4 hook for a PXT/USDC pool that charges buy and sell fees via swap delta adjustments rather than LP fees. Sells burn a fixed percentage of PXT and skim USDC at penalty rates, with an attribution rebate for sellers who identify themselves via attributeSell; buys are charged a USDC fee split between donation and marketing allocations.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
