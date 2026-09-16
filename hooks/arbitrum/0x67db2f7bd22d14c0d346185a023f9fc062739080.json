@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x67db2f7bd22d14c0d346185a023f9fc062739080",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "MyNewHook",
+    "description": "A dynamic-fee Uniswap v4 hook that adjusts LP fees based on realized tick volatility measured across four timeframes (5m/15m/30m/1h) with EWMA smoothing. Fees range from 0.01% to 2.00% across four continuous regimes with no cliffs.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
