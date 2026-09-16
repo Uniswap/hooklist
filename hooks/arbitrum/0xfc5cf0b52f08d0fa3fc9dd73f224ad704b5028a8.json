@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfc5cf0b52f08d0fa3fc9dd73f224ad704b5028a8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "EulerSwap",
+    "description": "Custom AMM hook for Uniswap v4 that implements a proprietary pricing curve backed by Euler Finance vaults. On each swap, it deposits input tokens into and withdraws output tokens from Euler vaults via EVC accounts, bypassing standard Uniswap concentrated liquidity. Each pool instance is deployed as a minimal delegatecall proxy to this implementation contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
