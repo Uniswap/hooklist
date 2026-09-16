@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3aa65696fd09b7b98f03f982d2655bcb25be0dc8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "OrketHook",
+    "description": "Prediction market Uniswap v4 hook implementing VALS (Volatile Adverse-Liquidity Sensitivity) dynamic swap fees. Requires a signed sigma parameter per swap (from a trusted off-chain signer); reverts without it. Fees are captured as a BeforeSwapDelta and redirected to a YieldDistributor for share token holders, not LPs. Tracks LP virtual balances and updates pool prices after each swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
