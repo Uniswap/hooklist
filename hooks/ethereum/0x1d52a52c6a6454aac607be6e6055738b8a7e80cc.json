@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1d52a52c6a6454aac607be6e6055738b8a7e80cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FeeHook",
+    "description": "Collects configurable basis-point fees on both the input token (via BeforeSwapDelta) and output token (via afterSwapReturnsDelta) of each swap, routing the collected fees to a designated recipient address. Fee rates can be configured globally or per-pool by an admin role.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
