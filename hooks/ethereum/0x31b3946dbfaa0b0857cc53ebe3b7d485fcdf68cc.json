@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x31b3946dbfaa0b0857cc53ebe3b7d485fcdf68cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniswapV4Hook",
+    "description": "A Uniswap v4 hook that collects a 0.7% fee on every swap \u2014 ETH on buys, tokens on sells \u2014 accumulating ETH into a burn pot for periodic buyback-and-burn operations. Sell transactions can be selectively blocked via a tx.origin allowlist when enabled, and only one liquidity addition per token is permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
