@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x77924f2cd776d618ab440539c278cc7fdb4bd0cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "Spot",
+    "description": "A Uniswap v4 hook that applies a dynamic LP fee computed from base and surge components via a DynamicFeeManager, records price observations in a truncated geometric oracle, and routes a protocol-owned-liquidity share of each swap fee to a FullRangeLiquidityManager for automatic reinvestment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
