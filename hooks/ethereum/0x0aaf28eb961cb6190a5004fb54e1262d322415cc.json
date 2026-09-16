@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0aaf28eb961cb6190a5004fb54e1262d322415cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ProofOfTimeHook",
+    "description": "Uniswap v4 hook that rewards liquidity providers with time-weighted POT token emissions, enforces anti-whale buy caps during a 10-minute launch window, and applies a decaying buy/sell tax (35% to 2% over the first hour) collected in the non-protected currency and sent to a configurable treasury.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
