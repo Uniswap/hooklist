@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x404e560caf21fb7ef6f218a1f9c778d592d768c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "TestHook",
+    "description": "A hook that mints ERC721 NFTs to swappers proportional to their native-currency input amount. Swaps are restricted to native (ETH) input only and require a minimum of 0.000001 ETH; each increment of MINT_PRICE mints one NFT up to a cap of 100. Liquidity addition is one-time only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
