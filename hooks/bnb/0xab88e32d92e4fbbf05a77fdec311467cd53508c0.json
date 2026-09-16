@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xab88e32d92e4fbbf05a77fdec311467cd53508c0",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "OmniPriceHook",
+    "description": "A Uniswap v4 hook implementing a cross-chain virtual order book that prices swaps using a threshold-signed global USD reference price converted to local quote via Chainlink oracle. Between swaps, all inventory sits in a visible straddle position; each swap removes the book, JIT-mints a one-tick fill band at the coordinator price, executes, then distributes fees to four recipients and rebuilds the straddle.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
