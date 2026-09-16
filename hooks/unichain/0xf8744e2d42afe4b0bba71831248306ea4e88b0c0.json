@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf8744e2d42afe4b0bba71831248306ea4e88b0c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "LogCumHook",
+    "description": "A dynamic fee hook that sets swap fees proportional to cumulative logarithmic price impact with time decay. It tracks directional market imbalance across swaps and charges higher fees when swaps increase imbalance, using a configurable illiquidity metric and min/max fee bounds.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
