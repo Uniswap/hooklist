@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe256dde4e526ea7a01585c35b5b4e0861e642ac8",
+    "chain": "xlayer",
+    "chainId": 196,
+    "name": "HypersFunHook",
+    "description": "NAV-anchored tokenized-fund market hook on X Layer implementing a bonding curve (x*y=k) AMM for FUND/USDC swaps. The hook fully handles each swap by minting or burning FUND shares, collecting trading and exit fees, enforcing NAV-based price ceilings, and blocking external LP positions. hookData encoding the seller address and minOut slippage limit is required for sell swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
