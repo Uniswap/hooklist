@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xae3e67c0a435d95d0b408bab4b32a5d872e3e880",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "NLSTRHook",
+    "description": "A single-pool hook for native BNB/NLSTR that restricts liquidity provision to a treasury address and applies a dynamic LP fee decaying linearly from 95% to 10% over a configurable period after launch. Includes a temporal single-transaction buy-size cap during the decay window to limit large buys at launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
