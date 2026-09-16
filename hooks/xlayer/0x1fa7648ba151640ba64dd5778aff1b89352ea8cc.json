@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1fa7648ba151640ba64dd5778aff1b89352ea8cc",
+    "chain": "xlayer",
+    "chainId": 196,
+    "name": "OkMemeTaxHook",
+    "description": "Tax hook for meme tokens that charges configurable per-pool buy/sell fees (marketing, dividend, buyback, burn) by capturing swap deltas via poolManager.take(). Collected fees are forwarded to a settler contract; individual addresses can be exempted from taxes. Pool initialization is restricted to a designated venue address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
