@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf5283d90e14df651d23df172d7af89d6de574044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BlueHook",
+    "description": "Charges a 3% fee on every swap, taking it from the output token (BLUE on buys, ETH on sells). Fees are split 70% to weighted BLUE token holders (weight = balance \u00d7 a time-based hold multiplier capped at 2\u00d7) and 30% to a restore stream for addresses holding \u2265100 BLUE. A permissioned sweepFees function lets the launcher drain all accumulated ETH and BLUE from the contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
