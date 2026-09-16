@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5c00feb416b555dbb511ea83e9b9d84e2f34c040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SpectrumHook",
+    "description": "ERC20/NFT hybrid token (7,777 supply) that deploys single-sided liquidity across multiple owner-managed Uniswap v4 pools and distributes LP fees proportionally to NFT holders. The afterSwap hook is a pure no-op; fees are collected lazily via pokeFees().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
