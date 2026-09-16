@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa05b9e5fba8d28f4b6ee8e0d36c7b98001da5040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "GUNHook",
+    "description": "A gamified hook for a GUN/ETH pool that records each swap as a \"shot\" in a Western-themed game, tracking buy/sell pressure (heat/recoil), advancing a chamber based on tick distance from genesis, and resolving periodic \"duels\". Swaps via the designated gunRouter can supply hookData with a player address and stance for personalized scorekeeping; swaps without hookData succeed normally.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
