@@ -16,6 +16,7 @@ Public registry of Uniswap v4 hook deployments across all supported chains.
 - `.github/workflows/validate.yml` — CI: on PR, validates schema + flag bitmask
 - `.github/workflows/review-hook.yml` — CI: on PR, Claude reviews hook data against on-chain source
 - `.github/workflows/regenerate.yml` — CI: on merge to main, rebuilds `hooklist.json`
+- `.github/workflows/deploy-site.yml` — CI: on merge to main touching `site/**`, triggers the Vercel deploy hook
 - `.claude/prompts/analyze-hook.md` — prompt for the analyze-hook workflow
 - `.claude/prompts/review-hook.md` — prompt for the review-hook workflow
 

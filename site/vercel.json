@@ -1,9 +1,16 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
   "git": {
-    "deploymentEnabled": {
-      "**": false,
-      "main": true
+    "deploymentEnabled": false
+  },
+  "rewrites": [
+    {
+      "source": "/hooklist.json",
+      "destination": "https://raw.githubusercontent.com/Uniswap/hooklist/main/hooklist.json"
+    },
+    {
+      "source": "/hooklist-vanilla-swap.json",
+      "destination": "https://raw.githubusercontent.com/Uniswap/hooklist/main/hooklist-vanilla-swap.json"
     }
-  }
+  ]
 }
