@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe0fbd97aecd44bae1a11dc4c0a6dd4ded2146fc0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LivingCurveHook",
+    "description": "Uniswap v4 hook implementing a dynamic \"weather\" system that adjusts LP fees (2%\u201320%) based on rolling buy/sell volume ratios, LP activity, and a health score tracked over 5-minute epochs. Swaps are restricted to the Live phase and gated behind a governance-controlled tradingEnabled flag; liquidity management is restricted to a privileged bootstrapManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
