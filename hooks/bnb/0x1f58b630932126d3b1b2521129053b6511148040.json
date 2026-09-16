@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1f58b630932126d3b1b2521129053b6511148040",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "EqtInrUsdtTreasuryHook",
+    "description": "Intercepts EQT\u2192USDT swaps on BNB Chain and redirects the full EQT input amount to a treasury address via poolManager.take() in afterSwap. Only operates on EQT/USDT pools; passes through all other pairs. hookData optionally encodes a recipient and deadline for validation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
