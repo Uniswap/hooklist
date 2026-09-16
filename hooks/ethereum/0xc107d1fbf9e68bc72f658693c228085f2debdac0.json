@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc107d1fbf9e68bc72f658693c228085f2debdac0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OracleHook",
+    "description": "A TWAP oracle hook that writes tick observations on every swap via a V3-style ring buffer, applies a dynamic LP fee scaling linearly with price drift from a reference sqrt price, and gates all liquidity operations to an authorized Stabilizer contract via a magic sentinel in hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
