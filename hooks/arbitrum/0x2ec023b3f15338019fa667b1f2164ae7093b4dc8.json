@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2ec023b3f15338019fa667b1f2164ae7093b4dc8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "OrketHook",
+    "description": "A Uniswap v4 hook for binary prediction market pools (YES/NO outcomes) that applies VALS dynamic fees \u2014 calculated as e^[\u03bb \u00d7 (\u0394x/L) \u00d7 \u03c3] \u2212 1 \u2014 using ECDSA-signed off-chain sigma parameters. Fees are routed to a YieldDistributor for share holders, not LPs.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
