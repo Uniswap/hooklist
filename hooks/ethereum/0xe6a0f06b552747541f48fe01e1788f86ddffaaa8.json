@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe6a0f06b552747541f48fe01e1788f86ddffaaa8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "YieldHook",
+    "description": "A Uniswap v4 hook that implements a custom constant-product AMM for a YIELD token, deploying asset reserves into ERC4626 vaults (MetaMorpho) to earn yield. Fully overrides swap execution via beforeSwap with delta returns (FLOOD-style), supporting YIELD/wstETH, YIELD/USDC, and YIELD/USDT pools. YIELD token holders can claim pro-rata vault yield via MasterChef-style accumulators.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
