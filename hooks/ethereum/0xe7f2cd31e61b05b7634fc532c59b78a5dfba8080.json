@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe7f2cd31e61b05b7634fc532c59b78a5dfba8080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PredicateHook",
+    "description": "Gates swaps via the Predicate attestation network: callers must supply a signed PredicateMessage in hookData, validated against a configurable policy and a quorum of EigenLayer operators before the swap is permitted. Requires hookData on every swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
