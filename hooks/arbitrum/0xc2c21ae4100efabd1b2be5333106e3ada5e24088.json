@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc2c21ae4100efabd1b2be5333106e3ada5e24088",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "CurveHook",
+    "description": "Implements a constant-product bonding curve (pump.fun-style) inside a Uniswap v4 pool using beforeSwap return deltas and ERC-6909 claims for pre-graduation trading; once accumulated ETH reaches a configurable threshold, graduates by seeding full-range liquidity and transitioning to standard AMM behavior.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
