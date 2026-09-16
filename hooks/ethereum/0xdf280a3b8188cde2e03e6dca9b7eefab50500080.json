@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdf280a3b8188cde2e03e6dca9b7eefab50500080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ZKHook",
+    "description": "A Uniswap v4 hook for a ZK/ETH pool that acts as a transparent pass-through in beforeSwap (no gating, no fee changes). Its main function is to custody the launch LP position; the owner can call removeLiquidity() to decrease liquidity, burn the NFT, and receive the recovered tokens.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
