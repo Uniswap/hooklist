@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x691d17f0c422f17391a42b9cf729488442e6a0ec",
+    "chain": "xlayer",
+    "chainId": 196,
+    "name": "CoalaXLayerHook",
+    "description": "A buy/sell tax hook for factory-launched token pools on XLayer that applies a fixed 1% tax on swaps using BeforeSwapReturnsDelta and AfterSwapReturnsDelta. Tax proceeds are minted as ERC-6909 claims on the pool manager. Only pools registered by the CoalaXLayerFactory are permitted to swap; donations are blocked outright.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
