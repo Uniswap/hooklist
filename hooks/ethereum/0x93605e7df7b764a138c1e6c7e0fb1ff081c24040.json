@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x93605e7df7b764a138c1e6c7e0fb1ff081c24040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EggsNodeHook",
+    "description": "A Uniswap v4 hook that automatically mints farm \"hen nodes\" to traders who buy EGGS tokens and burns their nodes proportionally when they sell, by calling an external node manager contract in afterSwap. The hook is owner-controlled via an on/off switch and a per-swap node cap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
