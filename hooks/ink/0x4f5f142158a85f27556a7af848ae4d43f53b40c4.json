@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4f5f142158a85f27556a7af848ae4d43f53b40c4",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "MemeowGuardHook",
+    "description": "Per-pool trading guard for memeow v4 launches with dynamic LP fees: anti-snipe window enforcing max-buy caps and optionally decaying snipe tax, surge fee on large buys, EWMA volatility surcharge. Auto-burns a configurable share of buy output to the dead address via afterSwapReturnsDelta. Also hosts trustless on-chain single-tick limit orders that fill atomically when the price crosses their tick.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
