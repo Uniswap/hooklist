@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x85946081183a1085c7fb66d10fd469acc5b8c0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HashtocksHook",
+    "description": "Charges a configurable protocol fee (default 2%, capped at 5%) on every swap via v4 delta accounting. Fees are taken on the input token for both exact-input (in beforeSwap) and exact-output (in afterSwap) swaps and routed to a designated treasury address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
