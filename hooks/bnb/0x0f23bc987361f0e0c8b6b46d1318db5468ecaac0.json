@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0f23bc987361f0e0c8b6b46d1318db5468ecaac0",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "MultiPoolPrincipalProtectionHook",
+    "description": "Manages multiple native-BNB/ERC20 pools where liquidity operations are restricted to an immutable principalOwner and a registered compounder contract. Applies a dynamic 3-tier LP fee (0.0375%, 0.075%, or 0.15%) based on observed tick range volatility over 15-minute windows.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
