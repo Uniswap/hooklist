@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4c67997740d3b06731a0fcc0a36c6dbbb14cefc8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "RigHook",
+    "description": "Proof-of-liquidity mining hook for a single ETH/RIG pool. Applies buy (2%) and sell (5%) swap taxes via BeforeSwapDelta; buy tax funds ETH rewards, sell tax is 50% burned and 50% swapped back to ETH via an internal poolManager.swap() call. Rewards are distributed per 720-second epoch to LPs weighted by capital depth, range tightness, and position age.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
