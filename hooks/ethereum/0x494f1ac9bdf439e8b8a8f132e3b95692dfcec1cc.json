@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x494f1ac9bdf439e8b8a8f132e3b95692dfcec1cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Coven",
+    "description": "A combined ERC20 token (COV4) and Uniswap v4 hook that charges a 10% tax on ETH/token swaps via delta returns, forwarding tax to a fixed treasury address. Tracks a \"ritual chain\" of 13 consecutive unique buyers (each \u22650.5 ETH), emitting a RitualSealed event when a coven of 13 unique buyers is formed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
