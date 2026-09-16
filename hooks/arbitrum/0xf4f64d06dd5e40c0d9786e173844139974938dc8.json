@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf4f64d06dd5e40c0d9786e173844139974938dc8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "OrketHook",
+    "description": "A Uniswap v4 hook for prediction market pools that implements VALS (Volatility-Adjusted Liquidity Sensitivity) fees. Each swap requires a backend-signed sigma parameter; the hook computes an exponential fee based on trade size, pool liquidity, and toxic velocity, then captures the fee via BeforeSwapDelta and routes it to a YieldDistributor for share holders rather than LPs.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
