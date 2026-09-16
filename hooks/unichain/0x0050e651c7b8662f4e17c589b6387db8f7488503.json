@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0050e651c7b8662f4e17c589b6387db8f7488503",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "LiquidityPenaltyHook",
+    "description": "A JIT (Just-in-Time) liquidity protection hook that withholds LP fees when liquidity is added and removed within a configurable block window. Fees collected during rapid add/remove cycles are penalized proportionally and donated to in-range liquidity providers, disincentivizing JIT attacks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
