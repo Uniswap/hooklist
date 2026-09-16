@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x032c985fb17cceeef6d6a724de003d3a592828cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "PmavHookQuotedSlimX",
+    "description": "Bonding curve launchpad for ERC20-quote-denominated token launches on Uniswap v4. Each coin is 1B fixed supply, trading through a concentrated hook-owned curve position until 800M tokens sell, at which point the hook auto-graduates by converting to a permanently locked full-range position. Enforces 1% fees (70/30 creator/platform split), anti-snipe decay, a permanent 2% per-wallet buy cap, and a block+1 trading delay.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
