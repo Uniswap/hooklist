@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x12b06ab0a92eeca9d17cd2054d87730383d7e8a8",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "EulerSwap",
+    "description": "A custom-curve Uniswap v4 hook backed by Euler Protocol vaults. Each pool instance is a minimal proxy using a configurable pricing curve (with concentration and equilibrium reserve parameters). It handles swaps entirely in beforeSwap via a return delta, routing token flows through Euler vaults rather than native Uniswap v4 liquidity, and intentionally blocks native liquidity additions and donations.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
