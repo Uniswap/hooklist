@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8e96674cf27f5e8e1ced334be4ecdcb6d86e1098",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LaunchHook",
+    "description": "Token launch hook that charges a time-decaying anti-snipe fee on quote-currency buys, starting near 99% at pool open and decreasing linearly over 20 seconds to a configured steady-state rate (1%\u201310%). Fees are split between a platform and a tracker; swap metadata (trader, referrer, comment) can optionally be supplied via hookData in afterSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
