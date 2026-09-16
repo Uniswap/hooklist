@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcab62e007ab6656877ab556cea330de27ae025dc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "Flaunch PositionManager",
+    "description": "The core Uniswap v4 hook for the Flaunch protocol, managing memecoin pool launches with scheduled temporal gates, an Internal Swap Pool that routes swaps through fee inventory before hitting the Uniswap pool, and a fee distribution system splitting swap fees among referrers, creators, LPs, and a BidWall.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
