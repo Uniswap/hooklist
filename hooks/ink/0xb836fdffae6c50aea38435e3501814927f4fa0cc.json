@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb836fdffae6c50aea38435e3501814927f4fa0cc",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "PrintHook",
+    "description": "Charges a configurable toll (default 5%) on the gross ETH leg of every swap in a single pinned ETH/token pool. Fees accrue as ERC-6909 claims inside the PoolManager and are split 20% to a compile-time operator and 80% to a Printer address via a permissionless collect() function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
