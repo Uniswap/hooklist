@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa2a707fe62cc4a1048c1b7fc577963f4f228eaa8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AuthSwaps",
+    "description": "Restricts swaps, liquidity additions/removals, and donations to callers in an owner-managed `trustedSenders` allowlist that are also verified as whitelisted and not banned or sanctioned via an external Manifest Finance `IAuthManager` contract. The auth manager address is updatable by the owner subject to a 7-day timelock.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
