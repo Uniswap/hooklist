@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcd6822f6373bd730b71c69ee3af96214e86280c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DynamicStableFeeHook",
+    "description": "Dynamic-fee hook for a single Uniswap v4 pool that overrides LP fees per-swap via lpFeeOverride and collects a separate hook fee from the unspecified swap currency, sending it directly to a configurable fee recipient. Total fees (LP + hook) are capped on-chain at 300 pips (0.03%) and can be paused by the owner.",
+    "deployer": "0x8eba552Ae7Ecc746E0A41Ca824A6494fa04cFa89",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
