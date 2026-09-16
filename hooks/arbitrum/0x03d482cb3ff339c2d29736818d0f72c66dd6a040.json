@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "GlueHook",
+    "description": "A permissionless Uniswap v4 hook that runs a per-pool token buyback after every swap, spending pooled secondary funds to purchase a designated main token. Spend is sized by fee and liquidity depth, paced by a time-bucketed rate limit, and gated on a time-weighted reference tick. An optional auto-compounding LP program can split harvested fees into compound, burn (via Glue Protocol), and recipient delivery legs.",
+    "deployer": "0xe9009763480C401174Eed353256C242Dd2D3F60D",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/glue-finance/glueHook/tree/main/audit"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
