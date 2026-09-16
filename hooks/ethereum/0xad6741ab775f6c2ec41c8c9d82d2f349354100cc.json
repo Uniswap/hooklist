@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xad6741ab775f6c2ec41c8c9d82d2f349354100cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LoomHook",
+    "description": "LoomHook charges a configurable levy (up to 5%) on swaps in registered token pools, deducting the fee from either the input or output amount using BeforeSwapDelta/AfterSwapReturnDelta. Fees accumulate per-maker and can be withdrawn via harvest().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
