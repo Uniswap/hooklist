@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9547e5723b4902af276dadea621d1f643e83e0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TaxHook",
+    "description": "Charges a 1% tax on every swap in the specified pool pairs (ETH/FRAC and MEME/FRAC): ETH tax is accumulated in the contract and forwarded to a team wallet via `sweep()`; MEME tax is burned to address(0xdead). Tax is deducted in `beforeSwap` or `afterSwap` depending on whether the taxed currency is the specified or unspecified leg.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
