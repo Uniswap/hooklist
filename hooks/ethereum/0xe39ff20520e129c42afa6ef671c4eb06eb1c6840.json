@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe39ff20520e129c42afa6ef671c4eb06eb1c6840",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OneTimeLaunchHookTemplate",
+    "description": "A one-time-launch hook that allows pool initialization and liquidity seeding only once per token. In afterSwap, restricts token sells (non-zeroForOne swaps) to a deployer-controlled allowlist when enabled, while token buys remain unrestricted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}
