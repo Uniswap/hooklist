@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd8d94956a2f55b95e65d581a4894faddd63baec4",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "StonkHookV4",
+    "description": "A hook for the official Stonkmon V4 pool that blocks all liquidity removal, restricts pool initialization and liquidity additions to the token contract during launch, and gates external buys behind a governance flag on the token. Charges a 1% fee on both sides of each swap taken via afterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
