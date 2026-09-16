@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdb3844a2ff10c6672d420f447c7b3c05521e80cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TestStrategyHook",
+    "description": "Skims ETH fees from both buy and sell swaps (default 5% per side, with a surge tier during bootstrap and post-sale cooldown phases) using BeforeSwapDelta and AfterSwapDelta, forwarding 100% of fees to an external strategy contract. The strategy contract controls phase transitions and is exempt from fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
