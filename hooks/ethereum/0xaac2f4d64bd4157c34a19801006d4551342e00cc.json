@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaac2f4d64bd4157c34a19801006d4551342e00cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "StockPadHook",
+    "description": "Fee engine for StockPad's Uniswap v4 pools. Charges a configurable basis-point tax on the pair-side of each swap, distributed to registered token coin contracts. Features a linearly-decaying anti-snipe surcharge (starting at 99%) for the first 20 seconds after pool launch. Undeliverable fees are held as ERC-6909 claims and flushed on the next swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
