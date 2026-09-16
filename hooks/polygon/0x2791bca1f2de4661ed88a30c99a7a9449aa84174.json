@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2791bca1f2de4661ed88a30c99a7a9449aa84174",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "UChildAdministrableERC20",
+    "description": "An ERC20 token proxy contract (bridged USDC on Polygon), not a Uniswap v4 hook. The contract implements standard ERC20 transfer/mint/burn with blacklisting, pausing, and rescue functionality. Hook permission bits in its address are coincidental \u2014 there is no hook logic in the source.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
