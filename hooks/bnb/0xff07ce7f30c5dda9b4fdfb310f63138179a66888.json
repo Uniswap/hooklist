@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xff07ce7f30c5dda9b4fdfb310f63138179a66888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "SatoHook",
+    "description": "A bonding curve hook for ETH/SATO pools that fully replaces AMM execution. Buys mint SATO tokens via a forward curve; sells burn SATO and pay ETH from accumulated reserves. Liquidity additions are permanently forbidden, and the hook acts as the sole counterparty. A block-based cooldown prevents same-block sell-after-buy, and an entropy multiplier applies during the first 100 blocks after deployment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
