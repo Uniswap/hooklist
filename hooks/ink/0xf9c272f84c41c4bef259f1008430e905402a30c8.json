@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf9c272f84c41c4bef259f1008430e905402a30c8",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "LiquinkGraduationHook",
+    "description": "A Uniswap v4 hook for a single Liquink pool that enforces a fixed 2% fee on exact-input swaps, routing buy-side fees (WETH) to a buyback vault and sell-side fees (tokens) to on-chain burns via the curve contract. Also maintains a 300-second TWAP tick history and restricts pool initialization to post-graduation only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
