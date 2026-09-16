@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9d80c7fc189b19824d5f1c9def5794bd49e0e088",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "BallHook",
+    "description": "Burns 1% of every exact-input swap: when $BALL is the input, tokens are burned immediately; when ETH is the input, it is held as an ERC-6909 claim until anyone calls the permissionless `roll()` function to buy and burn $BALL. No owner; parameters are immutable constants.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
