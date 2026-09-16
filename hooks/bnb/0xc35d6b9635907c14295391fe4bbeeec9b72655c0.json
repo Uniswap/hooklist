@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc35d6b9635907c14295391fe4bbeeec9b72655c0",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "GridHook",
+    "description": "A grid trading hook that deploys multi-range liquidity positions across configurable tick intervals. Tracks cumulative tick movement per block in afterSwap and reverts swaps that exceed a maximum price impact threshold per block.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "temporal"
+  }
+}
