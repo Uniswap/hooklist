@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x12736d977a04924ff0fdec8cb91254e28fbf60c4",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "StableQuoteDynamicFeeHook",
+    "description": "Dynamic-fee hook for BSC token/stablecoin (USDT, USDC, USD1) pairs that computes LP fees from price-tick volatility and swap-volume EMAs, capped at 3%, and charges a 20% protocol share on top via afterSwap delta to a fixed recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
