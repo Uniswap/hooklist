@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6bebb7b4a6782c3a5e9e836f67c3d4fa3af268a8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "EulerSwap",
+    "description": "Custom-curve AMM hook backed by Euler lending vaults. Replaces the standard CLAMM mechanism: each swap deposits input tokens into an Euler vault and withdraws output tokens from another, using a proprietary two-asset liquidity curve. All swap accounting is handled via BeforeSwapDelta, bypassing standard pool pricing entirely.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
