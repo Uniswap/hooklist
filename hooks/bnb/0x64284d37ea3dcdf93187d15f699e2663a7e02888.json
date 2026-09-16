@@ -4,7 +4,7 @@
     "chain": "bnb",
     "chainId": 56,
     "name": "MiniBTCHook",
-    "description": "A bonding curve hook that fully replaces AMM pricing via BeforeSwapDelta. Buys (ETH\u2192MiniBTC) mint tokens through a forward curve; sells (MiniBTC\u2192ETH) burn tokens through an inverse curve priced against accumulated ETH reserves held by the hook. Liquidity additions are permanently forbidden; swaps require the swapper address encoded in hookData.",
+    "description": "A bonding curve hook that fully replaces AMM pricing via BeforeSwapDelta. Buys (ETH→MiniBTC) mint tokens through a forward curve; sells (MiniBTC→ETH) burn tokens through an inverse curve priced against accumulated ETH reserves held by the hook. Liquidity additions are permanently forbidden; swaps require the swapper address encoded in hookData.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": true,
     "vanillaSwap": false,
-    "swapAccess": "temporal"
+    "swapAccess": "other"
   }
 }
