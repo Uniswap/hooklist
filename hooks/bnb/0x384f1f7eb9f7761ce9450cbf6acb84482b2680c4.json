@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x384f1f7eb9f7761ce9450cbf6acb84482b2680c4",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BVCCDynamicFeeHook",
+    "description": "Dynamic LP fee hook with a configurable base fee (default 0.01%) and a 1.5% anti-bot penalty applied when a user swaps within 300 seconds of their last swap. Also charges a 0.005% admin fee taken directly from swap output amounts via afterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
