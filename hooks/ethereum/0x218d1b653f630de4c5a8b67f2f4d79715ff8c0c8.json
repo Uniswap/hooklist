@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x218d1b653f630de4c5a8b67f2f4d79715ff8c0c8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PegomonHook",
+    "description": "A tax hook for a PEGOMON token pool that extracts a 3% tax on every swap (2.5% to a prize vault, 0.5% to a platform wallet) using beforeSwap delta returns. In afterSwap, qualifying ETH buys trigger tiered Pokeball awards via an external catcher contract, with bonus flags for whale buys, sell-streak resets, price dip timing, and daily buy count milestones.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
