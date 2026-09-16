@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf0305c7751177c3d1c1cae98043012a981a60500",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LauncherHook",
+    "description": "A token launchpad hook that lets token creators initialize a Uniswap v4 ETH/token pool, seed a one-sided (token-only) LP position sized as a percentage of the token's total supply, and later withdraw the full position plus any accrued fees back to the creator. The afterAddLiquidity and afterRemoveLiquidity callbacks return zero deltas and perform no additional logic.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
