@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe5cdffb339dbacf87e8616af15112eba101f0444",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "UniderpHook",
+    "description": "Collects a 1% fee on each swap, distributing portions to the token creator (0.4%), a 3-level referral tree (0.1%), and a platform fee recipient. Referral relationships are optionally recorded via hookData in swaps and liquidity additions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
