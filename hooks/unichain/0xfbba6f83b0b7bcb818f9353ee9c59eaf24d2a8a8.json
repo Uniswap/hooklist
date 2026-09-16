@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfbba6f83b0b7bcb818f9353ee9c59eaf24d2a8a8",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "EulerSwap",
+    "description": "A custom curve AMM hook that handles swaps entirely in beforeSwap: it takes input tokens from the PoolManager, deposits them into an Euler EVault lending pool, withdraws output tokens from another Euler EVault, and validates the result against a bonding curve invariant. Standard Uniswap CLAMM liquidity is disabled \u2014 add-liquidity and donate calls revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
