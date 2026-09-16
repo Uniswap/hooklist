@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd0d04b3a09eba099adeae8ba19f1c0fefa0a4a44",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "StockpairHook",
+    "description": "A Uniswap v4 hook implementing a token launchpad with permanently locked liquidity after seeding. Charges 0% on buys and a 2% sell fee on exact-input token sells, split 60% to the token creator and 40% to the platform via afterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
