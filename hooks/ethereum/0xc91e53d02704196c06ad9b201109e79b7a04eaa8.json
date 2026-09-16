@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc91e53d02704196c06ad9b201109e79b7a04eaa8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Floor",
+    "description": "ERC20 token that is also its own Uniswap v4 AMM hook, implementing a custom bonding curve (x \u2212 F) \u00b7 y = k where F is a monotonically increasing price floor that grows by 1% of each swap's input. All swaps are fully absorbed via BeforeSwapDelta and restricted to a single authorized router; liquidity additions, removals, and donations are permanently disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
