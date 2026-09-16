@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc313d978c5a6e4ed6204d232269eb99cbbc48dc8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "OrketHook",
+    "description": "Uniswap v4 hook for prediction market pools implementing a VALS dynamic fee formula (e^[\u03bb*(\u0394x/L)*\u03c3] - 1). Requires a server-signed sigma parameter in hookData for every swap; fees are taken from the collateral token and routed to a YieldDistributor for share holders. Blocks swaps and liquidity additions when the market is resolved or disputed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
