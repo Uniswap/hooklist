@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1b8aca4da3f29e244be0e8e9824233ab44970dc8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "OrketHook",
+    "description": "Prediction market pool hook using the VALS formula to compute a per-swap fee based on a cryptographically signed toxic velocity parameter (\u03c3). Fees are taken from the collateral token via BeforeSwapDelta and redistributed to share token holders through a YieldDistributor rather than to LPs. Swaps are blocked when the market is resolved or disputed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
