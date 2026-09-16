@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3f668486be8c094bcc49a14932fcc0c2e5da0844",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "FeeHook",
+    "description": "Collects swap fees per pool and, once a threshold is reached, harvests them via the position manager and burns any non-native token proceeds to the dead address. Accumulated ETH fees are distributed weekly to vMooney token holders who explicitly check in each week.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
