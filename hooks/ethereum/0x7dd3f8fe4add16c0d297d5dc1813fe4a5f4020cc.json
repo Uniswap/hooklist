@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7dd3f8fe4add16c0d297d5dc1813fe4a5f4020cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LiquidGuard",
+    "description": "Uniswap v4 hook that skims a configurable BPS fee on the RARE token side of every RARE pool. Uses beforeSwap (with delta return) when RARE is the specified currency and afterSwap (with delta return) when RARE is unspecified, forwarding collected fees to a configurable FeeDistributor contract. Pool initialization is restricted to an owner-managed allowlist.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
