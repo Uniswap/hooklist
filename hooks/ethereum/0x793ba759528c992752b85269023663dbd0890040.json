@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x793ba759528c992752b85269023663dbd0890040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PrismHook",
+    "description": "ERC-20 token (PRISM) that doubles as a Uniswap v4 hook with a DN404-style NFT layer: each whole token backs one ERC-721 NFT, and LP fees earned from its own ETH/PRISM pool are distributed pro-rata to NFT holders. The afterSwap hook is a pure no-op used only to allow the token contract address to host its own pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
