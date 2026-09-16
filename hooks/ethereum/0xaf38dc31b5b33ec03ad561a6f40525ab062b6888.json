@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaf38dc31b5b33ec03ad561a6f40525ab062b6888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AtlasHook",
+    "description": "A Uniswap v4 hook that acts as an on-chain smart order router, splitting swaps across multiple Uniswap v3 and v4 liquidity pools to find the best execution price. It charges a service fee per swap and restricts liquidity provision and pool initialization to a hardcoded admin address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
