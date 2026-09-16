@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6379e5eb8a2437110485b53b1b6203fd0af280cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "NimbusHook",
+    "description": "Fee-collection hook for registered token/quote pairs. On each eligible swap, takes a configurable toll (up to 5%) from the quote amount via BeforeSwapDelta/afterSwap return delta, and accumulates the fees for a designated seeker address to withdraw via siphon().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
