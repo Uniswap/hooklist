@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x026198469007ad6a9ffa9e161b7a2d6dce542088",
+    "chain": "xlayer",
+    "chainId": 196,
+    "name": "EulrV4QuoteFriendlyTaxHook",
+    "description": "A buy/sell tax hook for token pools paired with a quote currency. Charges a fixed buy tax and a dynamic sell tax (ranging between configurable min/max BPS) that decreases as the token price rises above a sentiment baseline. Tax amounts are deducted from swap input via BeforeSwapDelta \u2014 sent to a tax recipient on buys, or burned via the token's hook contract on sells. Only exact-input swaps are supported.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
