@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xde2cfbd6df89a81ccb6114114b8923d623974088",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TaxHook",
+    "description": "A Uniswap v4 hook that applies a fixed tax (default 10%) on exact-input swaps in WETH-paired pools. In beforeSwap, it takes 8% of input to a protocol wallet and 2% to a team wallet, then returns a BeforeSwapDelta so the pool executes on the net post-fee amount. Exact-output swaps revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
