@@ -4,7 +4,7 @@
     "chain": "unichain",
     "chainId": 130,
     "name": "YoyoStrategyHook",
-    "description": "A fee-taking hook that charges a time-decaying buy fee (starting at 26%, decreasing 200 bps every 25 blocks) on swaps. Fees are taken via afterSwapReturnsDelta, converted to ETH through a nested pool swap when collected in non-ETH tokens, and forwarded to a designated fee address.",
+    "description": "A fee-taking hook that charges a time-decaying fee (starting at 26%, decreasing 200 bps every 25 blocks) on all swaps, taken from the output token via afterSwapReturnsDelta. When the fee currency is WETH, a 100% fee is applied instead. Non-ETH fees are converted to ETH via a nested pool swap and forwarded to a designated fee address.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
