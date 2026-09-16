@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x005af73a245d8171a0550ffae2631f12cc211888",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "BunniHook",
+    "description": "An AMM hook that handles all swap execution internally using a configurable Liquidity Density Function (LDF). Computes dynamic fees based on TWAP and surge detection, supports optional am-AMM bid-based fee management, and maintains a TWAP oracle for price data.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
