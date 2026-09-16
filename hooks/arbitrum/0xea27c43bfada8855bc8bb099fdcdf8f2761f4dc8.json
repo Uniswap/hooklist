@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xea27c43bfada8855bc8bb099fdcdf8f2761f4dc8",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "OrketHook",
+    "description": "A prediction market pool hook implementing VALS (Volatility-Adjusted Liquidity Sensitivity) dynamic fees. Captures fees from swaps using a signed toxic-velocity (sigma) parameter, routing them to a YieldDistributor for share holders rather than LPs. Requires a backend-signed sigma payload in hookData and blocks swaps when the prediction market is resolved or disputed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
