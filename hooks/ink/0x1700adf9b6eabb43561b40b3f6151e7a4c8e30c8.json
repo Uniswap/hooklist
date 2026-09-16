@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1700adf9b6eabb43561b40b3f6151e7a4c8e30c8",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "LiquinkGraduationHook",
+    "description": "Graduation hook for a single LIQUINK pool that enforces exact-input-only swaps with a fixed 2% fee: WETH inputs fund a buyback vault, LIQUINK sell inputs are burned. Maintains a 1024-slot ring-buffer for TWAP and blocks pool initialization until the bonding curve has graduated.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
