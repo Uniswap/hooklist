@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfd17145d446bfd62f36c5ff8667906e7bcb1a8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ReflectionV4Hook",
+    "description": "A Uniswap v4 hook implementing a 1.7% reflection fee on swaps. On buys, ETH fees accumulate and are periodically used to buyback the token via a nested POOL_MANAGER.swap() every 20 swaps; on sells, tokens are taken and sent to the token contract for holder distribution. Blocks exact-output swaps, gates sells temporally post-buyback, and has an owner-controlled allowlist that can block sells for non-allowlisted addresses.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
