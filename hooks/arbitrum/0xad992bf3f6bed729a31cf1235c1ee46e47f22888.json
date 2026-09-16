@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xad992bf3f6bed729a31cf1235c1ee46e47f22888",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "CustomHook",
+    "description": "A Uniswap v4 hook that restricts swaps to an owner-managed router allowlist, enforces unidirectional TOKEN_B-to-ETH exact-input swaps priced by an external oracle, gates liquidity additions behind a whitelist contract, and accumulates TOKEN_B swap credits for periodic on-chain burning.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
