@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x52c228a2c2aa03870b94e9e665ed090dd249a8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FireballHook",
+    "description": "A deflation hook for the $FIRE token that takes a 1.2% fee on all swaps: ETH fees from buys accumulate in a buyback pot (triggered every 10 swaps via burnThemAll()), while token fees from sells are immediately burned. An allowlist gating sell-side swaps can be activated by anyone (burner()) and is controlled by the deployer (fireBallSeeds()).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
