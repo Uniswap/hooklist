@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd8cb4ab0cfa0b25ac2452b62ad37d9c541bbea20",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "NonceV4HookV3",
+    "description": "Launchpad-controlled hook that gates pool initialization and initial liquidity minting to a trusted launchpad address. Enforces a fixed tick range and opening price, locks principal removal, and disables donations for registered token pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
