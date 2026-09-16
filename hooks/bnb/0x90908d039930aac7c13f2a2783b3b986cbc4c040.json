@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x90908d039930aac7c13f2a2783b3b986cbc4c040",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BscpegHook",
+    "description": "After each swap, this hook calls an associated BscpegToken contract to generate and distribute token (peg) rewards to the swap sender, or to an alternate address encoded in hookData. Reward generation uses on-chain entropy. Only a single owner-configured pool is supported.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
