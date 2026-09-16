@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6794f750f988cdf745895488d37b73f0f1dfaac4",
+    "chain": "ink",
+    "chainId": 57073,
+    "name": "StocksHook",
+    "description": "Uniswap v4 hook for graduated meme stock pools that merges TWAMM long-term order execution with per-swap fee routing. On each swap, a configurable fee is taken from the output token and split: non-CHILL fees go to treasury and protocol; CHILL fees are burned or accumulated and gradually converted to stock via TWAMM orders.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
