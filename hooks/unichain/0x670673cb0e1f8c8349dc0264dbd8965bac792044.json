@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x670673cb0e1f8c8349dc0264dbd8965bac792044",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "YoyoStrategyHook",
+    "description": "An afterSwap hook that collects a sliding fee (starting at 26%, decreasing 200 bps every 25 blocks) on trades in token/ETH pools, swaps collected tokens back to ETH via a nested pool swap, and distributes proceeds to a configured fee address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
