@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0b68d4e0f9ca8109023ace9aef0f40e8aa9d0444",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "YinYangHook",
+    "description": "A hook for a twin ERC-20 token pair (Yin/Yang) that mints or empties token \"pieces\" on each swap based on the swap direction (buy vs. sell), takes a per-swap skim fee forwarded to a configurable destination (with a 20% sniper tax for the first 10 seconds after pool launch), and bootstraps pool state on first liquidity addition.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
