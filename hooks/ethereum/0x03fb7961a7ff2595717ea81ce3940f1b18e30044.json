@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x03fb7961a7ff2595717ea81ce3940f1b18e30044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PaydayHook",
+    "description": "Captures 3% of every swap's output side (buys in PAYDAY tokens, sells in ETH) via afterSwapReturnsDelta and distributes fees to token holders through seniority-weighted payroll and bonus pools, claimable directly from the contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
