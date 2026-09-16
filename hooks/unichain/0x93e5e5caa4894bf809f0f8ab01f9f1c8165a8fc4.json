@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x93e5e5caa4894bf809f0f8ab01f9f1c8165a8fc4",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "EnhancedFeeDistributionHookV2",
+    "description": "Captures swap fees via afterSwapReturnsDelta (pool must have fee=0), buffers them per token, and converts to a single configured reward token via a nested V4 pool swap when a buffer threshold is met. Rewards are distributed to in-range liquidity providers using ERC-6909 accounting and tick-based reward growth tracking, with claims settled through PositionManager NFT ownership.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
