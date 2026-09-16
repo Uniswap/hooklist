@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc6e971ae875ec08fc18089621018652ec50820cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HooksToken",
+    "description": "Combined ERC-20 token (HOOKS) and Uniswap v4 hook for a single bound HOOKS/ETH pool. Charges immutable buy/sell fees on the ETH leg via BeforeSwapDelta/AfterSwapDelta, splits proceeds among holder ETH rewards and two treasury addresses, and maintains a \"build state\" mechanic that completes cycles as qualifying HOOKS buys accumulate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
