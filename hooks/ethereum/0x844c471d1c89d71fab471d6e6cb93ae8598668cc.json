@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x844c471d1c89d71fab471d6e6cb93ae8598668cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LaunchHook",
+    "description": "A token launch hook that seeds single-sided liquidity for new token launches and applies a time-decaying anti-snipe fee, starting at 99% and linearly decreasing to 1% over 20 seconds. Fees are split between the token creator and a protocol escrow; liquidity additions are locked to the hook itself.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
