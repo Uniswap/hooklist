@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4e1b00e41cd93013bff172f7e9fff23b183b4080",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "BlackListHook",
+    "description": "A beforeSwap hook that blocks blacklisted addresses from swapping on a per-pool basis. The swapper's address must be ABI-encoded in hookData; the pool owner manages the blacklist via setBlackListStatusForAddress. Swaps from unlisted addresses proceed normally.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
