@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xadc0a0afc36e2663f9a19fe9560652a547da3ff0",
+    "chain": "xlayer",
+    "chainId": 196,
+    "name": "LaunchGuardV4Hook",
+    "description": "A fair-launch Uniswap v4 hook that dynamically adjusts LP fees across multiple launch phases (guarded, cooldown, graduated), enforces per-wallet and per-transaction buy limits, locks creator liquidity, and redistributes penalty fees from suspicious trades into a community rebate pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
