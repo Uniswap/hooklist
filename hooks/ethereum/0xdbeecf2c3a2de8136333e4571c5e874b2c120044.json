@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdbeecf2c3a2de8136333e4571c5e874b2c120044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TribunalHook",
+    "description": "Imposes a tiered sell tax (8%\u20130.3% based on the seller's TRIB stake ratio) plus a 1% protocol fee on every swap via afterSwap. Fees are taken from the swap output: sell taxes go to TRIB stakers via the Court contract; protocol fees go to a treasury address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
