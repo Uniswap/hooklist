@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x07c74299a953731e378de8a4051cdcb7f303a888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Vitalik0Hook",
+    "description": "A bonding-curve hook acting as the sole swap counterparty for an ETH/VITALIK0 pair. Buys mint tokens via a forward curve; sells burn tokens and pay ETH from accumulated reserves. Liquidity addition is permanently disabled. A 20% tax on each swap routes to dev, liquidity, and public reward wallets.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
