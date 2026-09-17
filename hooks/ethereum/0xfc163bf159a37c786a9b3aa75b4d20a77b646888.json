@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfc163bf159a37c786a9b3aa75b4d20a77b646888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "NakamotoHook",
+    "description": "A bonding curve hook that mints NakamotoToken on ETH buys and burns it on sells, fully replacing standard AMM swap math via BeforeSwapDelta. Buys are capped at 5 ETH and disabled after the curve reaches 3,000 ETH implied; sells incur a 5% exit fee (3% retained in treasury, 2% to a fee receiver) and require a 1-block cooldown after the buyer's last buy.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
