@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb8f9aa9f39ffbec861f7014f1604f0b89ab2e080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SkewHook",
+    "description": "Asymmetric dynamic fee engine that reads a Chainlink oracle to compute the gap between pool price and market price, charging higher fees for arb-direction swaps (gap-closing) and discounting uninformed flow (gap-widening). Falls back to a flat fee when the oracle is unset or stale.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
