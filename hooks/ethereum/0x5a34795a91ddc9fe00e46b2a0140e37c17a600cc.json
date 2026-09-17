@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5a34795a91ddc9fe00e46b2a0140e37c17a600cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Echo Hook",
+    "description": "Fixed-fee hook for native ETH/token pools that takes a 2% buy fee and 2% sell fee via beforeSwap/afterSwap return deltas, forwards collected ETH to an external token contract via poolManager.take(), and calls token.processSwap(tx.origin, isBuy, feeAmount) on every swap to advance an external round-chain state machine.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
