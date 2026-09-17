@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd58ac94f71e5c15b256ea775cd5a7c03ca1040c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LaunchGuardV4Hook",
+    "description": "Applies a decaying sell tax on token-to-WETH swaps: starts at 99% and linearly decays to 2% over 194 minutes post-launch. Collected WETH accumulates in an on-hook reserve and can be compounded into locked liquidity every 8 hours via an authorized router, with a keeper reward of up to 0.005 ETH paid to the caller.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
