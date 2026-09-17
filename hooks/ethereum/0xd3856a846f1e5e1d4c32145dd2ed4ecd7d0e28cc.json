@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "A buy/sell hook that deducts a 4% fee on each swap: ETH fees from buys accumulate in a burn pot for periodic buyback-and-burn swaps via the pool, while token fees from sells are queued for direct burn. Pool initialization and liquidity addition are each one-time gated per token; exact-output swaps always revert.",
+    "description": "A buy/sell hook that deducts a 4% fee on each swap: ETH fees from buys accumulate in a burn pot for periodic buyback-and-burn swaps via the pool, while token fees from sells are queued for direct burn. Pool initialization and liquidity addition are each one-time gated per token; exact-output swaps always revert. Additionally, sell swaps can be gated by an admin-controlled allowlist (via timeBased/hasValue): any address can activate this sell restriction for a token by calling pitchWC(), after which only addresses allowlisted by the deployer can complete sells, and only the deployer can deactivate the restriction.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
