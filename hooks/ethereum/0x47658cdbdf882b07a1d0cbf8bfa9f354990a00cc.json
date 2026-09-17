@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "FALLaunchHook",
-    "description": "Charges a 4% fee (0.5% to a fee collector, 3.5% to a harvester contract) on exact-input ETH-input swaps, deducting fees from currency0 via BeforeSwapDelta and AfterSwapDelta. Fee recipients and governor address are configurable by the current governor.",
+    "description": "Charges a 4% fee (0.5% to a fee collector, 3.5% to a harvester contract) on exact-input swaps involving ETH (currency0) — deducting from ETH input on ETH→token swaps via BeforeSwapDelta, and from ETH output on token→ETH swaps via AfterSwapDelta. Fee recipients and governor address are configurable by the current governor.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
