@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
+    "chain": "megaeth",
+    "chainId": 4326,
+    "name": "GlueHook",
+    "description": "A general-purpose hook that maintains a per-pool buyback pot funded by swap fees. On every afterSwap, it auto-harvests fee splits, observes the current tick against a 10-minute time-weighted reference, and executes a nested buy of the pool's designated main asset from the secondary token. A spend bucket paced by fee accrual limits pump size per swap. Supports configurable LP programs with autocompound, burn, and fee-split options.",
+    "deployer": "0xe9009763480C401174Eed353256C242Dd2D3F60D",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/glue-finance/glueHook/tree/main/audit"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
