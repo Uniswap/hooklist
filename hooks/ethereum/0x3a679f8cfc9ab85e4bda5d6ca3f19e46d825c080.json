@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3a679f8cfc9ab85e4bda5d6ca3f19e46d825c080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DynamicFeeHook",
+    "description": "Implements a usage-grounded dynamic LP fee. The fee starts at 2.00% (cold ceiling), decreases by 0.05% per swap toward a resting floor, and drifts back up 0.005% per block of inactivity. Every 100 swaps, the floor permanently drops by 0.025% down to an absolute minimum of 0.25%. No owner or admin controls; all parameters are immutable constants.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
