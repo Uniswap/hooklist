@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd40145e384364653ceee5e9ad6560d93f93c80cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "UV4FeeDeltaHook",
+    "description": "Fee-skimming hook that collects 0.2% (configurable up to 10%) from swaps involving a designated feeCurrency token, using BeforeSwapDelta and AfterSwapDelta to mint ERC-6909 claims on PoolManager. Owner can withdraw accrued fees; whitelisted aggregators and simulation quotes (tx.origin == address(0)) bypass the fee. Owner can pause all swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
