@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "A Uniswap v4 hook implementing a buy-and-burn/buyback mechanism: on buys, 1% of ETH input is collected into a burn pot; on sells, 1% of tokens are queued for burning. Every 20 swaps, a buyback-and-burn can be triggered. Sell swaps revert in the same block as a buyback and can be gated by an owner-controlled allowlist checked via tx.origin.",
+    "description": "A Uniswap v4 hook implementing a buy-and-burn/buyback mechanism: on buys, 1% of ETH input is collected into a burn pot; on sells, 1% of tokens are queued for burning. Every 20 swaps, a buyback-and-burn can be triggered. Sell swaps revert in the same block as a buyback and can be gated by a per-token allowlist checked via tx.origin: any address can permissionlessly enable this sell gate by calling compress(), while adding addresses to the allowlist and disabling the gate are restricted to the deployer.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
