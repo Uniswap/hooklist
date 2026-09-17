@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "HookControllerV2",
-    "description": "Controls LP fees dynamically (30 bps normal, 300 bps in defensive mode triggered by liquidation cascades), gates new short positions via an admin-controlled pause flag, and maintains a per-pool tick observation ring buffer for TWAP computation.",
+    "description": "Controls LP fees dynamically (30 bps normal, 300 bps in defensive mode triggered by liquidation cascades), gates new short positions via a pause flag that any caller can toggle by calling the permissionless updateHookState function (which has no access control), and maintains a per-pool tick observation ring buffer for TWAP computation.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "governance"
+    "swapAccess": "other"
   }
 }
