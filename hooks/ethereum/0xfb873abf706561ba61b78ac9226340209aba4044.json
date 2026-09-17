@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfb873abf706561ba61b78ac9226340209aba4044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniFunToken",
+    "description": "ERC-404 token/hook combined: afterSwap collects a 4% fee on ETH/UFUN swaps via afterSwapReturnsDelta. On buys, the fee accrues to the creator as tokens; on sells, 1% ETH royalty goes to the creator and 3% ETH is distributed as dividends to non-exempt token holders. Whole-token holders receive mintable on-chain pixel NFTs.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
