@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x521578b3db6a31d72c43f8a2bd96e1b791852080",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MM",
+    "description": "A full-range liquidity market maker hook that rebalances the pool on every swap: removes all current liquidity, executes an internal swap to shift the pool price toward a configurable target price multiplier, re-adds liquidity at the new price, and donates remaining token balances back to the pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
