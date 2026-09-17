@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2c600f5bf2832bdc449b8dc33bf20cde7a4ba8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PrismReflectionV4Hook",
+    "description": "Collects a 1.2% fee on each swap (buy or sell), accumulating ETH into a reflection pot; every 20 swaps the pot is used to buy back the pool token via an internal poolManager.swap(), then calls notifyReflection() on the token contract to distribute bought tokens. Sells in the same block as a buyback revert; exact-output swaps are unsupported.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
