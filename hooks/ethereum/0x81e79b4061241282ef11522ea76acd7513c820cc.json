@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x81e79b4061241282ef11522ea76acd7513c820cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DeltaHook",
+    "description": "Applies zone-based ETH swap taxes (3\u201312% on buys/sells) relative to the token's all-time high price, with a decaying 30% anti-snipe launch tax over 30 minutes and ETH rebates for buys in peak/dip zones. Collects taxes via BeforeSwapDelta/AfterSwapDelta and optionally enforces a same-block sell guard to prevent sandwich attacks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
