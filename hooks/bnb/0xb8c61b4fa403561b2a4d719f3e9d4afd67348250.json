@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb8c61b4fa403561b2a4d719f3e9d4afd67348250",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "UniswapV3Pool",
+    "description": "A Uniswap V3 pool contract (Solidity 0.7.6) submitted as a v4 hook. The source implements no Uniswap v4 hook interface \u2014 no hook callbacks (afterSwap, afterDonate, beforeRemoveLiquidity) are present. Any v4 pool using this address as a hook would revert on callback invocations.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
