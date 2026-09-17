@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "AuthSwaps",
-    "description": "Restricts swaps, liquidity additions/removals, and donations to callers in an owner-managed `trustedSenders` allowlist that are also verified as whitelisted and not banned or sanctioned via an external Manifest Finance `IAuthManager` contract. The auth manager address is updatable by the owner subject to a 7-day timelock.",
+    "description": "Restricts all pool operations to callers in an owner-managed `trustedSenders` allowlist. Swaps additionally require the resolved user to pass `checkUser` (whitelisted and not banned) via the Manifest Finance `IAuthManager`. Liquidity operations, initialization, and donations additionally require the resolved sender to be a registered manifest account via the same `IAuthManager`. The auth manager address is updatable by the owner subject to a 7-day timelock.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
