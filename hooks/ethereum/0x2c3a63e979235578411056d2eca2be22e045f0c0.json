@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2c3a63e979235578411056d2eca2be22e045f0c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SimpHook",
+    "description": "A dynamic fee hook that computes LP fees using a VPIN-based model. It tracks order imbalance across fixed-size volume buckets and estimates price impact via an illiquidity measure, then sets a per-swap fee override in beforeSwap. afterSwap records actual price impact and updates volume trackers for subsequent fee calculations.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
