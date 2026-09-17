@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x72643e591a6c0c32da563bb0bd1c764a2c1b8044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Hive",
+    "description": "ERC-20 token that doubles as its own Uniswap v4 hook, charging a 0.5% buy tax (taken in HIVE and converted to ETH) and a 1% sell tax (taken in ETH directly) via afterSwapReturnsDelta. Tax proceeds accumulate in a shared jar distributed to holders who did not sell when net sell pressure exhausts a strength buffer, triggering a round collapse and payout.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
