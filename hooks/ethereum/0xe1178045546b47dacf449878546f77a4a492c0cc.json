@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe1178045546b47dacf449878546f77a4a492c0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LodeHook",
+    "description": "LodeHook charges a 1% fee on the ETH leg of every swap, routing 80% into a shared jackpot (\"vein\") and 20% to the deployer. Each swap simultaneously rolls for a \"strike\" using block.prevrandao-based randomness \u2014 winning half the vein \u2014 with Bitcoin-style difficulty retargeting. Winnings are credited to tx.origin via ERC-6909 claims inside the PoolManager and withdrawn via a pull claim function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
