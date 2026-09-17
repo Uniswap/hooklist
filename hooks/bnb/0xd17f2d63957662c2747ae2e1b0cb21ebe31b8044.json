@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd17f2d63957662c2747ae2e1b0cb21ebe31b8044",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "UNiulaiHook",
+    "description": "Collects a 5% fee on the NIU token leg of every swap and distributes yield to NFT \"bull\" holders weighted by rarity tier. Also folds swap parameters into a running entropy word that seeds NFT generation via the token contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
