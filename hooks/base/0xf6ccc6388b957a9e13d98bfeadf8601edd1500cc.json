@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf6ccc6388b957a9e13d98bfeadf8601edd1500cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MixpadHook",
+    "description": "Collects a platform swap fee on every Mixpad-launched token trade, splitting proceeds between the token creator and treasury with optional buyback-and-burn. Applies a block-decaying anti-snipe surcharge on early buys and a time-decaying dump surcharge on sells by the original deployer.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
