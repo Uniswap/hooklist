@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc6aa9acd9926e7f8d72b3aec3ef67e303a05c044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SimpleBurnRewardHook",
+    "description": "On buys (ETH\u2192Token), burns a configurable percentage of the user's received tokens, reducing total supply. On sells (Token\u2192ETH), redirects a configurable fee portion of the user's received ETH into a reward pool distributed proportionally to token holders via a MasterChef-style per-share accumulator; holders claim rewards via claimReward().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
