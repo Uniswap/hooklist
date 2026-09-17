@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xecae291740c80351e64b96128efd25ddee48a888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "RetardV111DelayedHookProxy",
+    "description": "Upgradeable proxy for the retard.market v111 AMM hook, delegating all calls to an implementation via delegatecall with a time-delayed upgrade path (minimum 1-day delay). Implements beforeSwap with delta returns for custom pricing based on virtual depth and fixed entry fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
