@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "Hook that charges a 1.7% fee on each swap: buy-side fees accumulate in an ETH pot for periodic buyback-and-burn (triggered every 20 swaps), while sell-side token fees are immediately queued for burning. Liquidity addition is permanently restricted to one deposit, and exact-output swaps always revert.",
+    "description": "Hook that charges a 1.7% fee on each swap: buy-side fees accumulate in an ETH pot for periodic buyback-and-burn (triggered every 20 swaps), while sell-side token fees are immediately queued for burning. Liquidity addition is permanently restricted to one deposit, and exact-output swaps always revert. When the token's `timeBased` flag is set, sell-side swaps are additionally restricted to an owner-approved allowlist (the `hasValue` mapping), reverting for any seller not on the list.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "temporal"
+    "swapAccess": "allowlist"
   }
 }
