@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x90d9960e70d737a5433bbe725a8364128d9ca8cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ClankerHookDynamicFeeV2",
+    "description": "A Clanker protocol hook that applies a volatility-based dynamic LP fee by simulating each swap to estimate the post-swap tick, then updating the pool fee via updateDynamicLPFee. It also collects a protocol fee on each swap using beforeSwap and afterSwap deltas, and supports optional MEV protection modules and post-swap pool extensions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
