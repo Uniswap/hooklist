@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x78b40b685d8586e1fbc3fd861e2223b1e2e2e8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniswapV4Hook",
+    "description": "Burns 1.2% of each swap as a deflationary mechanism: buy-side fees accumulate in a native ETH pot used to periodically buy back and burn the token (every 20 swaps); sell-side fees are taken directly and burned. Only exact-input swaps are supported. Liquidity additions are restricted to a single one-time event by the hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
