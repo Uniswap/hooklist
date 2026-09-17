@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4eab53f199b49d4382400532bb781d47d57400cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FeeHook",
+    "description": "Collects protocol fees on swaps by taking a configurable basis-point fee from the input token before the swap and from the output token after the swap. Fees are configurable per pool or via a default rate, controlled by an admin role, and accumulated in the contract for withdrawal to a designated fee recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
