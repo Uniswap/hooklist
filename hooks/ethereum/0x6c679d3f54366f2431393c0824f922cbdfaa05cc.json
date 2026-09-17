@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6c679d3f54366f2431393c0824f922cbdfaa05cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FTMonsterArcadeV4Hook",
+    "description": "A Uniswap v4 hook for the FTMonster Arcade project that routes fees from every ETH-in swap to a jackpot, penalty draw pool, LP club, and API wallet. It implements a \"fuse\" surcharge on token-to-ETH sells that spike price above a moving window high, tracks LP positions for rewards, and gates all activity behind a launcher-controlled `launched` boolean.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
