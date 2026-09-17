@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x764645d252c15fa3c968a7431df896ac33c5e040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FortuneCookieHook",
+    "description": "A Uniswap v4 hook that runs a per-epoch lottery: after each swap it issues tickets to the swapper (via tx.origin) proportional to ETH trading volume and adds a configurable tax to an ETH prize pot. At epoch end, anyone can trigger a Chainlink VRF draw to randomly select a winning ticket holder who receives the pot.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
