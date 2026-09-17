@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x425238a2ed23dda086e8de7be02ccf0b792b40cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Politiswap",
+    "description": "A hook that manages Uniswap v4 ETH/political-token pools, collecting a 2% fee on each swap and tracking daily net ETH inflows per pool. Holders of the highest-inflow pool's token each day earn POLITISWAP token rewards distributed via quadratic decay over 365 days. Accumulated ETH fees trigger a buy-and-burn mechanism for POLITISWAP tokens.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
