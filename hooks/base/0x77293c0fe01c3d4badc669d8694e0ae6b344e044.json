@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x77293c0fe01c3d4badc669d8694e0ae6b344e044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DecayFeeHook",
+    "description": "Charges a linearly decaying swap fee on the unspecified currency (via afterSwapReturnsDelta), from a configurable start rate down to an end rate over a fixed decay window. When the fee is denominated in the launched token, it converts it to stock via a nested pool swap and credits all proceeds to a MultiPool contract as ERC-6909 claims.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
