@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf5c5ce2ae4500d5c012ac78660d466bba883c0c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AvillHook",
+    "description": "Enforces a dynamic price floor for the Avill token in USDC/USDT pools. beforeSwap reverts sell orders when the current pool price falls below a floor derived from cumulative stable inflows and Avill sold; afterSwap updates those accumulators after each trade.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
