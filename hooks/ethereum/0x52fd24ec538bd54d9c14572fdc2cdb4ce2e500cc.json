@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x52fd24ec538bd54d9c14572fdc2cdb4ce2e500cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Luck",
+    "description": "A combined ERC20 token and Uniswap v4 hook that charges a tiered ETH tax on buys and sells. Tax starts at 20% for the first 10 minutes post-launch, drops to 10% for the next 10 minutes, then settles at 3%. Collected ETH is forwarded to a hardcoded treasury address. A separate admin can adjust the rate downward within the scheduled tier cap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
