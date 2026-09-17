@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x012750426ee75c075053b0a8f67c49a1c8383aec",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ApexYieldHookV4",
+    "description": "Oracle-priced vault hook that fully handles swaps using Pyth, Chainlink, or manual price feeds instead of the AMM curve. Applies zone-based dynamic fees derived from vault token weights and routes liquidity through an external vault contract via BeforeSwapDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
