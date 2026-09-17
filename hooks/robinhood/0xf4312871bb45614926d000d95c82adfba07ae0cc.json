@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf4312871bb45614926d000d95c82adfba07ae0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RewardHook",
+    "description": "Collects a fee (3% base, up to 20% during a 5-minute launch window) on the quote-token side of every swap via before/afterSwap return deltas, then splits the accrued fees between a holder distributor contract, a protocol fee recipient, and a buyback wallet.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
