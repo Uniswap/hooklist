@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd82f10d305da7bbd5b2842300515d7996aeaa0c8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DeltaHook",
+    "description": "A wave-tax hook that applies dynamic buy and sell taxes based on the token's price relative to a running peak price. Taxes range from 3\u201312% on sells and up to 6% rebates on buys depending on market zone (peak, mid, dip), with a warmup period, per-block and per-tx rebate caps, and zone-transition cooldowns to limit MEV.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
