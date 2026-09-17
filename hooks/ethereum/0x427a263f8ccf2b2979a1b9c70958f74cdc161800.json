@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x427a263f8ccf2b2979a1b9c70958f74cdc161800",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BlockAddLiquidityHook",
+    "description": "Records tx.origin as the pool creator on initialization, then reverts any liquidity addition where tx.origin differs from the stored creator. Only the EOA that initialized the pool can add liquidity, regardless of which router they use.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
