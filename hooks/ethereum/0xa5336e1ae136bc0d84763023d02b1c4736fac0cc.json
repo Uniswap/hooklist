@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa5336e1ae136bc0d84763023d02b1c4736fac0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "V4MineHook",
+    "description": "Takes a flat 3% ETH tax on every native-ETH swap: buy-side tax is intercepted in beforeSwap via a BeforeSwapDelta, sell-side tax is extracted in afterSwap via an afterSwapReturnsDelta. Accumulated tax (ERC-6909 claims and physical ETH) can be flushed permissionlessly via normalize() to a mining-reward distributor contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
