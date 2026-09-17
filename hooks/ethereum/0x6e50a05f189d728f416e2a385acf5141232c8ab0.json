@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6e50a05f189d728f416e2a385acf5141232c8ab0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FairLaunchHook",
+    "description": "A token-launch hook that restricts liquidity addition and selling until a factory-managed minting phase completes. The factory exclusively donates ETH to trigger token distribution to minters; once all tokens are distributed, unrestricted trading is enabled. Liquidity removal is permanently disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "governance"
+  }
+}
