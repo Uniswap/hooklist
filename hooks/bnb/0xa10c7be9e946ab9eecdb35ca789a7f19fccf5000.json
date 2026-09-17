@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa10c7be9e946ab9eecdb35ca789a7f19fccf5000",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "HumansHook",
+    "description": "A minimal hook that, on first pool initialization, registers the PoolManager address with an external HumansToken contract via `xpegToken.start()`. No swap or liquidity hook logic is implemented; all token mechanics are handled ERC-20-side in HumansToken.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
