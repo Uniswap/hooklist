@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x529785a7262e4fae020902a1c0cf16b16440a8cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LayerMemeHookDynamicFeeV2",
+    "description": "Volatility-based dynamic LP fee hook for LayerMeme token pools. Computes fees from tick movement using a volatility accumulator, takes a 20% protocol fee on swaps involving the LayerMeme token via beforeSwap/afterSwap delta manipulation, and supports optional MEV protection and pool extensions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
