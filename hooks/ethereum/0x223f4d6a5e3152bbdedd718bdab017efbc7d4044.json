@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x223f4d6a5e3152bbdedd718bdab017efbc7d4044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "pERC20Hook",
+    "description": "An afterSwap hook that collects a dynamic tax (0.05\u20130.20%) on buy-side (zeroForOne) swaps and stores the proceeds in an on-hook reserve. The tax rate adjusts each epoch based on buy count; the reserve funds shield bonuses distributed via a linked wrapper contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
