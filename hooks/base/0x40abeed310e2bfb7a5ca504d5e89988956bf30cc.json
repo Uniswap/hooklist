@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x40abeed310e2bfb7a5ca504d5e89988956bf30cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BaldpadRebaseHook",
+    "description": "A Baldpad-ecosystem launch hook that charges WETH-denominated swap fees with a platform/creator split and a decaying opening-fee schedule. After each rebase interval, it contracts an elastic-supply token's total supply based on the pool price's deviation below a rising target tick, with an optional permissionless buyback mechanism that burns tokens using accrued opening fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
