@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2021b2e3b8ada8e33168f2e23d835c051b6580cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MEI Swap Hook",
+    "description": "A 0.5% fee hook for the MEI/ETH Uniswap v4 pool. On each buy or sell, it skims a 0.5% fee in $MEI tokens using BeforeSwapDelta and AfterSwapDelta, then forwards collected fees to the meiToken contract via notifySwap() for distribution to token holders.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
