@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x550ce8e1e1e1ca33e7a59568903c3f0e549c6880",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "C402DynamicFeeHook",
+    "description": "A whitelist-gated hook that charges a 2.5% LP fee for the first 24 hours after pool creation, then drops to 1%. Only whitelisted launchers can initialize pools, and liquidity can be added only once per pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
