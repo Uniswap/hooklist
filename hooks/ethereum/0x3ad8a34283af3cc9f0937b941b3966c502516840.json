@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "A Uniswap v4 hook that enforces one-time pool initialization and one-time liquidity addition per token (trapping LP funds), and conditionally blocks non-zeroForOne (buy-side) swaps for addresses not in a deployer-controlled allowlist.",
+    "description": "A Uniswap v4 hook that enforces one-time pool initialization and allows only one liquidity addition per token (subsequent additions revert); LP funds are not trapped, as liquidity removal proceeds through standard Uniswap v4 mechanics and LPs can remove their positions freely. In afterSwap, once the permissionless robot() function has been called for a token, non-zeroForOne (sell-side) swaps revert for any address not in the deployer-controlled allowlist, while buys remain unrestricted.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
