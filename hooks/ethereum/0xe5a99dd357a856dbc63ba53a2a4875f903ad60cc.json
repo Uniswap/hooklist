@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe5a99dd357a856dbc63ba53a2a4875f903ad60cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Weave",
+    "description": "A combined ERC-20 token (WEAVE) and Uniswap v4 hook for a single WEAVE/native ETH pool. Charges 1% on buys and 2% on sells (WEAVE leg), distributing 100% of collected fees to holders: 70% proportional to WEAVE balance and 30% by connection count in an on-chain doubly linked list (\"The Living Weave\") of qualifying holders.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
