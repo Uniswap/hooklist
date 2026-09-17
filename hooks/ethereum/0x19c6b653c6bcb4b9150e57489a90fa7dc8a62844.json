@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x19c6b653c6bcb4b9150e57489a90fa7dc8a62844",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TTTStrategyHook",
+    "description": "After-swap hook that collects a 5% fee on token-to-ETH sells: 4% is forwarded to the token contract for buyback and burn, 1% is sent to a dev wallet. Pool initialization and liquidity additions are restricted to the factory contract while its loadingLiquidity flag is active.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
