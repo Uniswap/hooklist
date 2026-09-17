@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0507140088aa5b266d6b44eef02ad55cf1fb40c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FeeHook",
+    "description": "Uniswap v4 hook that overrides the LP fee per swap using a pluggable fee policy constrained to a 0.10%\u20131.00% corridor, and tracks per-wallet swap volume by season in the pool's USD leg. Only swaps routed through a trusted portal router receive personalized fees and volume tracking; all other swaps pay the maximum fee. No custody or swap delta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
