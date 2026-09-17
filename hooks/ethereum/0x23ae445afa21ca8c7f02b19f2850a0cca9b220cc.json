@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x23ae445afa21ca8c7f02b19f2850a0cca9b220cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "uStakeHook",
+    "description": "A native-ETH Uniswap v4 hook that charges a configurable flat fee (default 1%, hard-capped at 3%) on the ETH side of every swap using BeforeSwapDelta and AfterSwapDelta. Collected ETH accumulates in the hook and can be forwarded permissionlessly to a PlantVault via pour() as yield for stakers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
