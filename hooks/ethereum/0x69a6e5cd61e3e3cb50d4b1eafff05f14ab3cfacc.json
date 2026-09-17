@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x69a6e5cd61e3e3cb50d4b1eafff05f14ab3cfacc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LendingHookV4",
+    "description": "A combined lending and AMM hook where LPs deposit ETH and TOKEN into a hook-managed full-range V4 position and receive ERC20 shares, while borrowers lock TOKEN as collateral to borrow ETH at 40% LTV with interest. The hook also skims a 0.5% protocol fee from swaps via BeforeSwapDelta/AfterSwapDelta and supports permissionless liquidations of underwater positions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
