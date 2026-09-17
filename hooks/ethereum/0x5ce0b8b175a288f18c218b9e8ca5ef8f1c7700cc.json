@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5ce0b8b175a288f18c218b9e8ca5ef8f1c7700cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "STRCLaunchHook",
+    "description": "Uniswap v4 hook for an ETH/STRC pool that collects a dynamic fee (5% base, up to 10% with MEV surcharges) from every swap's ETH leg, routing proceeds to a dividend vault. Applies a decaying anti-snipe buy fee and a per-wallet 2%-of-supply cap during the post-migration window, governed by an owner-controlled flag.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
