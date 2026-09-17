@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xab0c4c13e6a11fe7be361cfaf0f8dcbd1a140aec",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BucketHook",
+    "description": "A Uniswap v4 hook for a single USDT/token pool that extracts a configurable fee (1\u20135% BPS) on each swap via beforeSwap/afterSwap return deltas, depositing fees into an epoch-based escrow contract. Trading is gated by an admin-controlled bootstrap finalization flag and a configurable epoch start timestamp.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
