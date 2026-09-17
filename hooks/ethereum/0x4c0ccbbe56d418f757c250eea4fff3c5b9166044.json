@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4c0ccbbe56d418f757c250eea4fff3c5b9166044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MiladyStrategyHook",
+    "description": "Takes a fixed 20% fee on all exact-input ETH/MLDYSTR swaps via afterSwap delta; 80% of collected fees are forwarded to the MiladyStrategy contract (for NFT purchases) and 20% go to a protocol fee address. Exact-output swaps revert. Token fees are converted to ETH via a nested pool swap before distribution.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
