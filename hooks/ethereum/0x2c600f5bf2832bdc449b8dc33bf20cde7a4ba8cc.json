@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "PrismReflectionV4Hook",
-    "description": "Collects a 1.2% fee on buys (in native ETH, accumulated into a reflection pot) and on sells (in tokens, sent immediately to the token contract via notifyReflection()). Every 20 swaps, a buyback is queued; execution requires a manual call to buyAndReflectPrism(), which spends the ETH pot to buy back the pool token via poolManager.swap() and distributes it via notifyReflection(). Sells in the same block as a buyback revert; exact-output swaps are unsupported.",
+    "description": "Collects a 1.2% fee on buys (ETH into a reflection pot) and sells (tokens sent to the token contract). Every 20 swaps a buyback is queued; execution needs a manual buyAndReflectPrism() call that buys back and distributes the token. Same-block-as-buyback sells revert; exact-output unsupported. afterSwap also gates sells: when reflectionBase[token] is set, non-canReflect addresses cannot sell - anyone can enable it via excludeReflections(), only genesisAddress disables it.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
