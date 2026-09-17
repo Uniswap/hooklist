@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7ef1fe4edd714cc925ad0705c840c19b4663d040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "StateTransitionHook65536",
+    "description": "Tracks swaps and tick-based phase transitions for a single admitted ETH/stateformToken pool, recording state changes to an external TransitionLedger and swap sequences to an ExecutionRootAccumulator on each afterSwap callback.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
