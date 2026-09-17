@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x30e39d95c6d998630d0bd298f547e7f51d72a880",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PredicateHook",
+    "description": "A compliance hook that gates swaps via an external Predicate policy service, requiring a signed authorization message in hookData for non-allowlisted users. Liquidity addition is restricted to an owner-managed allowlist of authorized LPs.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
