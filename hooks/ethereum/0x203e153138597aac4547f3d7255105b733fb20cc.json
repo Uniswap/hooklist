@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x203e153138597aac4547f3d7255105b733fb20cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "VibeHook",
+    "description": "A sell-tax hook for an ETH/VIBE pool that charges a time-decaying sell tax (20% during cooldown, decaying to 5%) on exact-input token sells, retaining the tax as reward inventory. Qualified buys (\u22650.01 ETH) trigger a 5% reward paid to the previous qualified buyer from the hook's token inventory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
