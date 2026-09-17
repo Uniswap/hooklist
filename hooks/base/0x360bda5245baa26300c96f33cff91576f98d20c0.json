@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x360bda5245baa26300c96f33cff91576f98d20c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MM",
+    "description": "Market maker hook that rebalances concentrated liquidity to an oracle-quoted price before each swap (removing liquidity, executing an internal rebalancing swap, and re-adding liquidity at a new tick range), then adjusts an external hedge pool position after each swap based on the non-quote token balance change.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
