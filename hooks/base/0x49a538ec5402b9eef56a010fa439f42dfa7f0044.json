@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x49a538ec5402b9eef56a010fa439f42dfa7f0044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ADRIANSimpleTaxHook",
+    "description": "After-swap hook that deducts a configurable tax (default 10%, max 20%) on ADRIAN token purchases from a pool, taking the tax from PoolManager via `take()` and forwarding it to a designated tax recipient address. Tax rate and recipient are mutable by the contract owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
