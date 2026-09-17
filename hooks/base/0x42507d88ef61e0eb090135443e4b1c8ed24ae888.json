@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x42507d88ef61e0eb090135443e4b1c8ed24ae888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FlashPerpsHook",
+    "description": "Custom-curve perpetuals hook that acts as the sole market maker for PERP/USDG pools. Buy swaps mint new perp exposure from a registered vault; sell swaps unwind it. A fixed 0.30% USDG fee on all trades is routed to a FLASH buyback module. No passive liquidity or external LPs are permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
