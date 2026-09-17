@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x105c835e7af068bbf53429df76064c7681f02044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "B420MemeHook",
+    "description": "Singleton Uniswap v4 hook for graduated B420 meme token pools. Collects protocol fees and creator taxes on each swap via afterSwap with a return delta, optionally converts memecoin-denominated fees to the quote currency inline per-swap, and supports a buyback-and-lock mechanism that swaps accumulated quote fees back into the memecoin and vests them in a five-year buyback vault.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
