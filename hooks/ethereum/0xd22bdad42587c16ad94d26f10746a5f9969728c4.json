@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd22bdad42587c16ad94d26f10746a5f9969728c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DoodStrategyHook",
+    "description": "A Uniswap v4 hook for Dood strategy tokens that collects a swap fee in afterSwap as a positive delta, distributes it 80/10/10 among beneficiaries, converts token-denominated fees to ETH via a nested pool swap, and toggles an anti-MEV flag on the strategy token contract during swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
