@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa2bc8e31d4249c9abd9ea1ec709c74c3e52c00cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MemeUniV4TaxHook",
+    "description": "Tax hook for meme token pools that collects buy taxes (1% liquidity + up to 4% dev) via beforeSwap delta and sell taxes (4% liquidity + up to 2% dev) via afterSwap delta in ETH. Accumulated taxes are periodically used to buy meme tokens for protocol-owned liquidity via a LiquidityBlackhole contract. A soft circuit breaker applies an extra 5% sell tax when large sell volumes are detected within a rolling 10-minute window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
