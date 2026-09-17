@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6b0ba08bfa1e07f453dc10c768a1367881d400cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LFWAHook",
+    "description": "A dedicated ETH/LFWA pool hook that charges a configurable fee (in basis points) on both buy and sell swaps. On buys (ETH\u2192LFWA), the fee is deducted from the ETH input in beforeSwap via a return delta; on sells (LFWA\u2192ETH), the fee is deducted from the ETH output in afterSwap. Fees are routed to an immutable feeRecipient via poolManager.take().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
