@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x68501849eaeec9922765ce1936d9fc4272df2888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OfficialFloorHook",
+    "description": "Custom bonding curve AMM hook for the FLOOP protocol: mints FLOOP tokens on ETH-in buys and burns them on FLOOP-in sells, fully handling swaps via beforeSwapReturnsDelta. Enforces an ETH-backed floor price through CurveEngine and EthTreasuryVault, with configurable buy fees and sell fees managed by FloorManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
