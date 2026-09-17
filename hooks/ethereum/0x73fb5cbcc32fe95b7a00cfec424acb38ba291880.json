@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x73fb5cbcc32fe95b7a00cfec424acb38ba291880",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniV4Hook",
+    "description": "A dynamic-fee hook that charges a size-proportional LP fee (scaling with swap size relative to virtual reserves) to protect LPs from impermanent loss, with a configurable base fee (default 0.3%) plus add-on. Restricts liquidity to an owner-managed allowlist via stake()/unstake(), enforcing full-range positions only. Registered owner2Executors can bypass the size-based fee and trade at 0%.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
