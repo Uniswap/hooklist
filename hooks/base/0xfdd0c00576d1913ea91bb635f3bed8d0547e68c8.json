@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfdd0c00576d1913ea91bb635f3bed8d0547e68c8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SlotMachineHook",
+    "description": "A hook that collects a configurable fee (default 2%) on all ETH/token swaps and splits it into dual per-pool jackpots (main and side). ETH buy swaps meeting a minimum threshold trigger a randomized slot machine game, awarding ETH payouts from the jackpots for matching symbol combinations; sell-side fees are converted to ETH via a nested swap executor.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
