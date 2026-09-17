@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd1ccfc9bb21b9348dc0077ef19310e4bf8c140c0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ElasticHookFarmToken",
+    "description": "An ERC20 farming token that doubles as a Uniswap v4 hook. Buying the token activates staking (increases active stake) and selling deactivates it; rewards denominated in the token itself are minted per-share from a decaying daily emission schedule, settled during beforeSwap and afterSwap callbacks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
