@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "Dot",
-    "description": "A bonding curve hook that fully handles ETH/token swaps via put (ETH\u2192token, 30% vault fee stays in vault raising the floor price) and clear (token\u2192ETH, 25% vault fee + 5% team fee) operations. Normal AMM liquidity is disabled. Requires 32 bytes of hookData encoding the swapper address. Auto-migrates all reserves to a full-range Uniswap V3 position when ETH reserves reach 100 ETH.",
+    "description": "A bonding curve hook that fully handles ETH/token swaps via put (ETH→token, 30% vault fee stays in vault raising the floor price) and clear (token→ETH, 25% vault fee + 5% team fee) operations. Normal AMM liquidity is disabled. Requires 32 bytes of hookData encoding the swapper address. Auto-migrates all reserves to a full-range Uniswap V3 position when ETH reserves reach 100 ETH.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": true,
     "vanillaSwap": false,
-    "swapAccess": "governance"
+    "swapAccess": "none"
   }
 }
