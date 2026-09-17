@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc780c0f4aac690908854d351b8bfda2812daefdc",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "Flaunch PositionManager",
+    "description": "Flaunch's PositionManager orchestrates memecoin token launches on Uniswap v4, managing fair launch periods (buy-only windows with price discovery from a fixed-tick position), an internal swap pool that fills orders from accumulated fees, dynamic fee capture and distribution to creators and referrers, BidWall ETH buybacks, and scheduled flaunch timing gated on block.timestamp.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
