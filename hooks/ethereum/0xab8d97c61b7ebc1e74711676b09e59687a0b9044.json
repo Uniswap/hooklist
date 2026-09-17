@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xab8d97c61b7ebc1e74711676b09e59687a0b9044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ExplorerHook",
+    "description": "A tax hook that charges a 3% fee on every swap: buy-side tax is burned as TOKEN immediately; sell-side tax accumulates ETH in a war chest. Anyone can call `triggerBuyback()` after a 1-hour cooldown and 0.05 ETH threshold to spend 90% of the war chest buying and burning TOKEN, earning a 1% ETH bounty.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
