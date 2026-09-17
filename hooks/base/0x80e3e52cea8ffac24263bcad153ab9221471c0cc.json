@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x80e3e52cea8ffac24263bcad153ab9221471c0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "UpHook",
+    "description": "Fee-collecting hook for ETH/token pools that deducts buy fees before the swap and sell fees after, splitting ETH proceeds among protocol, referral, and creator addresses. Restricts swap access to a trusted-router/quoter allowlist and tracks per-user token holdings for governance contribution attribution.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
