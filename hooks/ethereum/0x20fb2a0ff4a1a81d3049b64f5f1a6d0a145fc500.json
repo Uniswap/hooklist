@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x20fb2a0ff4a1a81d3049b64f5f1a6d0a145fc500",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LauncherHook",
+    "description": "A token launchpad hook that manages creator-gated, one-sided token/ETH liquidity positions. The afterAddLiquidity and afterRemoveLiquidity callbacks are no-ops (return zero delta); actual LP seeding and withdrawal occur through separate creator-only entry points (initializePool, addLiquidity, removeLiquidity).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
