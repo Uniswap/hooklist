@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x01cc8dc6c3f7f03e845b1f4d491bdec975434088",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "AssetToAssetSwapHookForERC4626",
+    "description": "Converts raw ERC20 assets to/from ERC4626 vault wrapper shares in beforeSwap, then executes a nested swap on the corresponding vault wrapper pool via poolManager.swap(), returning a BeforeSwapDelta so users can trade underlying assets directly without manually managing vault shares. Falls back to owner-configured default vault wrappers when no hookData is provided.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
