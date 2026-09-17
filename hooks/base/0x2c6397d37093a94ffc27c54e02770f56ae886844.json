@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2c6397d37093a94ffc27c54e02770f56ae886844",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFab",
+    "description": "A bonding curve token launch hook that creates new ERC-20 tokens with graduated liquidity positions. Once the bonding curve supply threshold is reached, it automatically removes the bonding curve liquidity and migrates to a new standard AMM pool, taking a fixed 1% fee on each swap split 50/50 between the token creator and the platform.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
