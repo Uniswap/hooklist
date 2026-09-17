@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa66e7b003e15a9b2c609a98a4f0893c38597c0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ShiftHook",
+    "description": "A fee hook for wstETH/ETH pools that levies a flat configurable toll (in basis points) on the wstETH leg of every swap, covering all four swap shapes (exact-input/output \u00d7 buy/sell) via both beforeSwap and afterSwap return deltas. Toll proceeds are split between an immutable Bus contract (distributes to seat holders) and an immutable Treasury address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
