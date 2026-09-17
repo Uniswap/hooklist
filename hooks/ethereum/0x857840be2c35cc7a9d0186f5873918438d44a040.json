@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x857840be2c35cc7a9d0186f5873918438d44a040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EdenHook",
+    "description": "Binds to a single pool on initialization and, after each qualifying zeroForOne swap (buy) above a minimum token threshold, calls an external IEdenGarden contract to plant a flower for the buyer. Swap execution is entirely unaffected; the hook acts as an on-chain participation tracker for a gamified garden mechanic.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
