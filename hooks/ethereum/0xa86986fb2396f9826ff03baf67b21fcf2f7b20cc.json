@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa86986fb2396f9826ff03baf67b21fcf2f7b20cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ReactorV4",
+    "description": "A Uniswap v4 ERC-20 hook token (REACTOR) that charges a 2% buy and 3% sell tax in ETH to a shared \"jar.\" Holders accrue \"honey\" proportional to token balance and time held; when a \"strength\" buffer drains to zero from net sell pressure, the jar splits among non-selling holders by honey weight. Sellers forfeit their honey accrual for that round.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
