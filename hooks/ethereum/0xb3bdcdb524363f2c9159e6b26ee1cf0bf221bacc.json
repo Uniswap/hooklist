@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb3bdcdb524363f2c9159e6b26ee1cf0bf221bacc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LendingHookV3",
+    "description": "A Uniswap v4 hook implementing a range-aware lending AMM. It seeds the pool with single-sided liquidity across discrete tick bands and charges a 1% fee on all swaps (buy fees via BeforeSwapDelta in beforeSwap, sell fees via afterSwap delta). Also supports ETH-backed borrowing with band-specific liquidation that recycles collateral back as pool liquidity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
