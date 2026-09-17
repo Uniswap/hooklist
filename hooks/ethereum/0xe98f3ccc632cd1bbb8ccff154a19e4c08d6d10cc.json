@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe98f3ccc632cd1bbb8ccff154a19e4c08d6d10cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ValoriaHook",
+    "description": "A GameFi hook for a canonical VLR/WETH pool that charges asymmetric WETH fees (2.5% buys, 5% sells), advances an on-chain world clock and water mechanics based on swap volume, and attributes water to NFT-linked farmer accounts when swaps originate from the trusted ValoriaRouter.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
