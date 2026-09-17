@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "IncineratorHook",
-    "description": "Applies a 1.2% fee on all swaps: buy fees are collected as ETH into a burn pot, sell fees are queued as tokens for direct burning. Every 20 swaps a buyback is queued (signalled via a BuybackQueued event); the ETH pot buyback-and-burn is then executed by a subsequent call to buyAndBurn(), which performs a nested pool swap. Sells are blocked in the same block as a buyback.",
+    "description": "Applies a 1.2% fee on all swaps: buy fees are collected as ETH into a burn pot, sell fees are queued as tokens for direct burning. Every 20 swaps a buyback is queued (signalled via a BuybackQueued event); the ETH pot buyback-and-burn is then executed by a subsequent call to buyAndBurn(), which performs a nested pool swap. Sells are blocked in the same block as a buyback. Additionally, sells can be gated to a deployer-managed allowlist (checked via tx.origin) in afterSwap: any address can permissionlessly trigger this restriction for a given token, after which only allowlisted addresses can sell.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
