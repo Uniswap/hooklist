@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb9e13a397c0773eaf92f5847f3ad9cdee3a600cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AshHook",
+    "description": "Protocol fee hook for an ASH/ETH pool that charges a configurable rate (default 5%, max 10%) on ETH input for buys and ETH output for sells, forwarding collected fees to a treasury address via `take()`; the owner can pause fee collection or update the treasury and fee rate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
