@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcf8d9618dcc62b627f3eee0d13cdc08993a240cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Tithe",
+    "description": "ERC20 token and Uniswap v4 hook that collects ETH taxes on swaps. Charges a flat 10% buy tax on ETH-in swaps and a graduated sell tax (15%/10%/5%) based on how long the seller has held the token (tracked by block number since first buy), forwarding all collected ETH to a hardcoded treasury address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
