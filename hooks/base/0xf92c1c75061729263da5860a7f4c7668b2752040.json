@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf92c1c75061729263da5860a7f4c7668b2752040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "StockPadHook",
+    "description": "Enforces a per-swap maximum buy size on the launched token for StockPad launch pools. Configuration (token address and max buy limit) is set once by the launcher at pool creation and is immutable thereafter; the hook holds no funds and collects no fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "other"
+  }
+}
