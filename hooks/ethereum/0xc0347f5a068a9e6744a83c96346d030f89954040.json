@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc0347f5a068a9e6744a83c96346d030f89954040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "CursedLiq",
+    "description": "An ERC20 token (\"Cursed Liquidity v4\", symbol uniCurs) combined with a Uniswap v4 hook. The afterSwap callback is a no-op that returns zero delta. One million tokens are minted to the owner on deployment; the hook does not alter swap behavior.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
