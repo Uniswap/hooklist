@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0028adf8ca99b63b8229ebce107e11fb907d40cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Complex64WaveHook",
+    "description": "Implements a 64-phase buy/sell tax and dynamic LP fee system for pools containing the Complex64 (C64) token. Each swap deducts a phase-dependent tax from the C64 side of the trade, splits it between token burns and a treasury address, and advances or reverses the phase index based on swap direction (buy=forward, sell=backward).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
