@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x03d482cb3ff339c2d29736818d0f72c66dd6a040",
+    "chain": "megaeth",
+    "chainId": 4326,
+    "name": "GlueHook",
+    "description": "A Uniswap v4 hook singleton that triggers a buyback-and-burn mechanism after every swap: it uses a per-pool \"secondary\" donation pot to execute a nested market buy of the pool's designated \"main\" token, delivering proceeds to a configured recipient or burning them. Optionally supports auto-compounding LP programs with fee harvesting and split distribution.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
