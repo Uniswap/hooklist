@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb94c84f0c8c64086f451f23b6ea88856478d60c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SwaputerHook",
+    "description": "ETH/SWAPUTER pool hook that gates swaps behind a governance-controlled trading flag. ETH\u2192SWAPUTER swaps with encoded hookData execute programs in the SwaputerVM, burning SWAPUTER tokens as fuel cost taken from the swap output via afterSwapReturnDelta; plain swaps with no hookData pass through normally.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
