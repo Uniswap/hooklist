@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x22e5342496326bffd834ad85bedc4c89f3996acc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFab",
+    "description": "A token launch platform implementing a bonding curve phase followed by automatic graduation to a Uniswap v4 AMM pool. The hook manages custom swap fees, controls all liquidity internally, and transitions each token from the bonding curve to a new AMM pool once the bonding curve supply is exhausted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
