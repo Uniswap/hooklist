@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "ReflectionV4Hook",
-    "description": "A reflection-token hook that charges a 1.7% fee on buys (ETH collected into a pot for periodic automated buybacks) and 1.7% on sells (tokens sent to the token contract's reflection bucket). Only one liquidity addition per pool is ever allowed. Sells in the same block as a buyback revert, and a deployer-controlled allowlist in afterSwap can selectively block sells by address.",
+    "description": "A reflection-token hook that charges a 1.7% fee on buys (ETH collected into a pot for periodic automated buybacks) and 1.7% on sells (tokens sent to the token contract's reflection bucket). Only one liquidity addition per pool is ever allowed. Sells in the same block as a buyback revert, and a publicly activatable (but deployer-controlled-allowlist) gate in afterSwap blocks sells from addresses not on the deployer's canReflect whitelist once the gate has been enabled for a token.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
