@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfb4b8ccefff4545806547a0f6481ae85b4458088",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "RecoilHook",
+    "description": "A fully custom AMM hook that replaces pool swap logic entirely. Handles ETH\u2194token swaps via a custom bonding curve (RecoilCurve) with inventory-based pricing, auto-LP provisioning, protocol fees, and recoil/afterburn credit mechanics. Trading must be activated by a designated launch controller.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
