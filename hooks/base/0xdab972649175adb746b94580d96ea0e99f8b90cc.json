@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdab972649175adb746b94580d96ea0e99f8b90cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AegisHook",
+    "description": "A Uniswap v4 hook that applies dynamic LP fees via an external DynamicFeeManager, charges a configurable hook fee on each swap (deducted from the input token using BeforeSwapDelta/afterSwap delta), records price observations via an OracleManager, integrates with a LimitOrderManager, and periodically reinvests accumulated hook fees into full-range LP positions through AegisEngine.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
