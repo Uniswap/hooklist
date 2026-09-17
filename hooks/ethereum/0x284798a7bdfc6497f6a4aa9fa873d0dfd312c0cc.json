@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x284798a7bdfc6497f6a4aa9fa873d0dfd312c0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TetrisHook",
+    "description": "Charges a configurable reflection fee on ETH-denominated buy and sell swaps, distributing collected ETH to token holders via an external IReflectionToken.distributeRewards() call. Also overrides the LP fee dynamically on every swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
