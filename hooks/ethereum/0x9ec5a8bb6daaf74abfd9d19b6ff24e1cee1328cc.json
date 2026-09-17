@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "FlywheelV4Hook",
-    "description": "Buyback-and-burn hook for a single ETH/token pool. Collects 0.7% fee on ETH buys into a burn pot and queues 0.7% of tokens on sells for burning. Triggers an internal buyback-and-burn swap every 20 swaps. Blocks sells in the same block as a buyback. Restricts pool liquidity to a single initial add only.",
+    "description": "Buyback-and-burn hook for a single ETH/token pool. Collects 0.7% fee on ETH buys into a burn pot and queues 0.7% of tokens on sells for burning. Sets a buyback-queued flag every 20 swaps; the buyback-and-burn swap is executed by calling flyWheel() externally. Blocks sells in the same block as a buyback. Restricts pool liquidity to a single initial add only.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
