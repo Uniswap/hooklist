@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0921d61880392b92de54f2a17a7f3b73da78e888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AtlasHook",
+    "description": "A Uniswap v4 hook that acts as an on-chain aggregator, routing swaps across up to 6 hardcoded V3 and V4 pools using a price-sorted RFQ algorithm. Returns a BeforeSwapDelta to settle the aggregated output atomically. Liquidity additions and pool initialization are restricted to an admin address (ADMIN constant).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
