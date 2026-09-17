@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x99496221f3a9e1f24d633178f8ac78a9d0088040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ProofOfTime",
+    "description": "ERC20 token (symbol: POT, 21M fixed supply) that doubles as a Uniswap v4 hook. The afterSwap callback is entirely passive \u2014 it returns the selector with a zero delta and performs no computation \u2014 making the contract a valid hook address without altering swap behavior. The owner can seed an ETH/POT pool via addLiquidity and manage protocol-owned liquidity. Holders can burn POT via burn() or burnFrom().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
