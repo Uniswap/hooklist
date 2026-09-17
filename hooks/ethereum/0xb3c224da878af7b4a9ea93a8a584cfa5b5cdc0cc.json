@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb3c224da878af7b4a9ea93a8a584cfa5b5cdc0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BorrowedHands",
+    "description": "A Uniswap v4 hook for the ACTION/ETH pool that charges a 0.5% fee on every swap's output, accumulates it as ERC-6909 claims, then autonomously deploys those fees as permanent single-sided liquidity one tick-rung beyond the current price on the side just emptied by the swap, reimbursing the carrying swapper for deployment gas.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
