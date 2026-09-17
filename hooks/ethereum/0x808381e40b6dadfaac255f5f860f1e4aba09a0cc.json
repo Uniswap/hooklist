@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x808381e40b6dadfaac255f5f860f1e4aba09a0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EthTaxHook",
+    "description": "A Uniswap v4 hook for ETH/token pools that collects configurable buy and sell taxes (in basis points) from the ETH side of each swap, depositing collected fees into an external rewards distributor contract. Trading must be enabled by a designated launch controller, who can also adjust tax rates up to the deployment-time maximums.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
