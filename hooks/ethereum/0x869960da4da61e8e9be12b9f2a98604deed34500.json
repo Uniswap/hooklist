@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x869960da4da61e8e9be12b9f2a98604deed34500",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LauncherHook",
+    "description": "A Uniswap v4 hook and launch controller for a flap-style token launchpad. It manages creator-gated one-sided token LP positions (seeded against native ETH at launch) held internally by the hook contract, not as PositionManager NFTs. The hook callbacks themselves only verify the caller and return zero delta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
