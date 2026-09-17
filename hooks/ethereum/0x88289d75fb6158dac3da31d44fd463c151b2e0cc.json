@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x88289d75fb6158dac3da31d44fd463c151b2e0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "GoldLaunchHook",
+    "description": "Shared fee hook for gold.fun token launch pools that charges a fixed 1% platform fee plus a configurable per-pool creator fee on every swap, denominated in the pair asset (stock/ETH). Fees are held as claimable balances on the hook; only factory-registered pools can be initialized or swapped through this hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
