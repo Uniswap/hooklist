@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb4039990ac5d0f654dff3b4a66d86bc41fd3e888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "SPCXReflectionV4Hook",
+    "description": "A Uniswap v4 hook for a single SPCX/TOKEN pool that takes a 2% SPCX fee on buys (0.25% to dev, 1.75% distributed to eligible TOKEN holders as SPCX rewards) and burns 0.5% of TOKEN input on sells. Only exact-input swaps are supported, only one liquidity position is ever permitted, and all pool fees are set to zero.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
