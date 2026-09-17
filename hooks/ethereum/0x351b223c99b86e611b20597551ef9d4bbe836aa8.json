@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x351b223c99b86e611b20597551ef9d4bbe836aa8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AscendiumHook",
+    "description": "A custom step-function AMM hook for a single ASC/WETH pool that fully overrides Uniswap v4 swap math via beforeSwap and BeforeSwapDelta, implementing a geometric pricing curve. Liquidity additions, removals, and donations are blocked; the hook custodies the ASC token supply and accumulates fees for a treasury address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
