@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x226f3d8ed87fa2311215f84550421cb8bd7b4044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LotoHook",
+    "description": "A lottery hook that skims a 0.5% fee from each swap's output side into an epoch-based pot. At the end of each epoch (~7200 blocks), a winner is selected via sqrt-weighted lottery based on fee contributions, receiving 80% of the ETH pot; 10% rolls over and 10% is donated to LPs. Accumulated LOTO tokens collected as fees are burned at draw time.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
