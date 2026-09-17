@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x871ce8144e9c7503d425d41d434b8cc767d0afdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BoardHook",
+    "description": "Uniswap v4 hook for token fair launches that gates swaps behind a scheduled launch timestamp, manages a one-sided fair launch liquidity position (with optional Merkle-proof whitelist), intercepts swaps to fill from the fair launch supply, and distributes captured fees to protocol, token creators, and referrers. Closes the fair launch position and burns unsold tokens when the window expires.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
