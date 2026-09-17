@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xec3a6502da2e98f493f9b079d0cf6869c8a92ac0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LaunchGuardHook",
+    "description": "Guards a fixed-configuration ETH/token Uniswap v4 pool. On buy swaps, records output volume as transient buy credit; on sell swaps, triggers fee collection from a designated locker contract. Restricts pool initialization to a specific locker address and enforces a fixed initial sqrt price, fee, and tick spacing.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
