@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3e8df8ffbc66146968e37b0914f5dbb5650268a8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EulerSwap",
+    "description": "A custom-curve AMM hook backed by Euler Finance lending vaults. In beforeSwap, it computes quotes using its own bonding curve, deposits input tokens into and withdraws output tokens from Euler vaults, returns a BeforeSwapDelta to bypass standard Uniswap v4 pool math, and enforces a reserve invariant. Standard LP positions and donations are intentionally blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
