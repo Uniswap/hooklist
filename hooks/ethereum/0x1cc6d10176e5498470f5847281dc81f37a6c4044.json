@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "PoolMetrics",
-    "description": "Oracle-gated hook that blocks token0-input swaps when an external price oracle reports a price below a configured minimum. In afterSwap, if token0 flows into the pool and the oracle price is below minPrice, the hook returns an invalid selector causing the PoolManager to revert the swap. Always returns a zero delta.",
+    "description": "Oracle-gated hook that blocks token0-output swaps (token1-input; zeroForOne=false) when an external price oracle reports a price below a configured minimum. In afterSwap, if token0 flows out of the pool to the swapper and the oracle price is below minPrice, the hook returns an invalid selector causing the PoolManager to revert the swap. Always returns a zero delta.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "other"
+    "swapAccess": "none"
   }
 }
