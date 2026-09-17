@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "Uniswap v4 hook implementing a buy-and-burn mechanism: on buys (ETH→token) it collects a 1.7% ETH fee into a burn pot; on sells (token→ETH) it collects a 1.7% token fee queued for burning. Every 20 swaps a buyback is signaled. Exact output swaps are blocked. Liquidity additions are limited to once per token, and sells are blocked in the same block as a buyback. Additionally, afterSwap contains an allowlist check on tx.origin (controlled by the deployer) that can be activated by anyone calling superposition() to block sells for non-allowlisted addresses.",
+    "description": "A Uniswap v4 buy-and-burn hook: buys (ETH->token) collect a 1.7% ETH fee into a burn pot; sells (token->ETH) collect a 1.7% token fee queued for burning. Every 20 swaps a buyback is signaled. Exact-output swaps are blocked. Liquidity additions are once-per-token, and sells are blocked in the same block as a buyback. Additionally, afterSwap has a tx.origin allowlist (deployer-controlled) that anyone can activate via superposition() to block sells for non-allowlisted addresses.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
