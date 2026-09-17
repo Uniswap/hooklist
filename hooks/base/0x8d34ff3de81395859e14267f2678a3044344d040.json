@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8d34ff3de81395859e14267f2678a3044344d040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LimitOrderHookImpl",
+    "description": "A limit order hook that lets users place orders at out-of-range ticks. When a swap crosses those ticks, the afterSwap callback automatically fills matched orders by removing their liquidity from the pool and minting the proceeds as ERC6909 claims, which order placers can later withdraw.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
