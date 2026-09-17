@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2ee95968fe944b18b599c5d6c6fd9186c4e7e044",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "PonsV2MemeHook",
+    "description": "Singleton hook shared by all graduated Pons v2 meme pools. Charges a configurable protocol + creator fee on every swap via afterSwap using the return-delta mechanism, accumulating fees per pool in pending buckets. A trusted sweep operator can later convert memecoin-denominated fees to quote currency via internal pool swaps and distribute proceeds to protocol, creator, and a buyback-and-lock vault.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
