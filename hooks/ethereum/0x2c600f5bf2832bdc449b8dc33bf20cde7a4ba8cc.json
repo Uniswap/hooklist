@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "PrismReflectionV4Hook",
-    "description": "A hook for a PRISM token pool that collects a 1.2% fee on all swaps: buy fees accumulate as native ETH in a reflection pot, and sell fees are sent directly to the token contract as reflections. Every 20 swaps, accumulated ETH is used to buy back PRISM tokens and distribute them as reflections via the token contract.",
+    "description": "A hook for a PRISM token pool that collects a 1.2% fee on all swaps: buy fees accumulate as native ETH in a reflection pot, and sell fees are sent directly to the token contract as reflections. Every 20 swaps the hook queues a buyback by setting a flag; the buyback itself is not automatic and must be triggered manually by calling buyAndReflectPrism(), which uses the accumulated ETH to buy back PRISM tokens and distribute them as reflections. Separately, when a token is flagged as a reflection base, afterSwap reverts any sell from an address not on the owner-controlled canReflect allowlist.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "allowlist"
+    "swapAccess": "none"
   }
 }
