@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdd361d0730be3182eaeb28ba6c5fb0481b087aec",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ApexYieldHookV4",
+    "description": "An oracle-driven hook that prices swaps using a Pyth/Chainlink/manual oracle cascade, applies zone-based directional fees, and routes funds through a linked vault. Supports owner-controlled pause, per-pool activation, circuit-breaker cooldown, and a fee-exempt allowlist.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
