@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa2c3b47008fc2bf86332dc5cfa1045722ccd80cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LaunchFeeHook",
+    "description": "A launchpad fee hook that charges a configurable fee (default 2%, max 3%) on every swap denominated in the quote asset using beforeSwap/afterSwap return deltas. For dual-pool tokens (coin + NFT floor token), it mirrors 50% of each trade through the paired collection pool to keep both markets synchronized.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
