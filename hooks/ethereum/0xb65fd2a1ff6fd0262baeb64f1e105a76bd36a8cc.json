@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "A Uniswap v4 hook implementing a 1.2% fee on both buy and sell swaps. Buy fees accumulate ETH into a burn pot for periodic buyback-and-burn cycles (triggered every 20 swaps). Sell fees queue tokens for direct burning. Sells are blocked in the same block as a buyback execution. Exact output swaps always revert.",
+    "description": "A Uniswap v4 hook implementing a 1.2% fee on both buy and sell swaps. Buy fees accumulate ETH into a burn pot for periodic buyback-and-burn cycles (triggered every 20 swaps). Sell fees queue tokens for direct burning. Sells are blocked in the same block as a buyback execution. Exact output swaps always revert. Only a single liquidity addition is permitted per token, permanently. Additionally, afterSwap contains an allowlist mechanism: when activated by any caller via superTokens(), sell swaps are blocked for all addresses not pre-approved by the deployer.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
