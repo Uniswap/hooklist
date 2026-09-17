@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb5a18cf5c711681ab1ac5973474e66471fb36a44",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFab",
+    "description": "A token launchpad hook that runs a bonding curve for newly launched ERC-20 tokens, blocking external liquidity additions and managing all liquidity internally. When the bonding curve supply cap is reached, liquidity migrates to a full-range AMM pool. A 5% swap fee is collected via afterSwapReturnsDelta, split between the platform (1%), creator (1%), and a reward pool (3%).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
