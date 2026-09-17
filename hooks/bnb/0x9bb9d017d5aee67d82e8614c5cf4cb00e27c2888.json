@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9bb9d017d5aee67d82e8614c5cf4cb00e27c2888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "SatHook",
+    "description": "A bonding curve hook that intercepts all swaps via BeforeSwapDelta. Buys (ETH\u2192SAT) mint SAT tokens through a forward curve; sells (SAT\u2192ETH) burn SAT and pay ETH from accumulated reserves. Liquidity additions are permanently forbidden; the hook acts as the sole counterparty.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
