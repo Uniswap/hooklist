@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa9c20b3d6a83e654b3183d630192b70c6e980088",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Bute",
+    "description": "A bonding-curve ERC-20 token (BUTE) that uses beforeSwap to intercept ETH-in swaps: it mints BUTE via a multi-factor curve (temporal decay, burn echo, peak bonus) and returns a BeforeSwapDelta, routing buys through the hook's own ETH reserve. Sell-side swaps pass through unmodified; selling BUTE is handled via a direct sell() function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
