@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfc16ebda1f6718931e4182c15c2237f99770c8c0",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "OmniPriceHook",
+    "description": "A Uniswap v4 hook that acts as a threshold-signed global price market maker: removes its straddle book position before each swap, JIT-mints a one-tick fill band at an oracle-converted USD reference price with a dynamic LP fee override, then harvests the band and rebuilds the book afterward. External liquidity providers are blocked; only the hook's own positions are allowed.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
