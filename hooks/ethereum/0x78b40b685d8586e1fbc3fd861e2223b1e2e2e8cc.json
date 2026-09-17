@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x78b40b685d8586e1fbc3fd861e2223b1e2e2e8cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniswapV4Hook",
+    "description": "A deflationary hook that charges 1.2% on every buy (ETH collected into a burn pot) and 1.2% on every sell (tokens burned directly), executing buyback-and-burn swaps every 20 user swaps. Restricts pool initialization and liquidity additions to a one-time operation, blocks sells in the same block as a buyback, and includes a deployer-controlled allowlist that can prevent non-allowlisted addresses from selling.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
