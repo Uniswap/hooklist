@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "CKHook",
-    "description": "A hook restricted to ETH/CKToken pools that enforces exact-input-only swaps and applies a time-decaying buy fee (starting at 99%, decreasing by 1% per block down to 10%). After each swap, fees are taken from the pool output, swapped to ETH via an internal pool swap, and forwarded to a CKCollector contract. Certain addresses (owner, hook, fee collector) are exempt from fees.",
+    "description": "A hook restricted to ETH/CKToken pools that enforces exact-input-only swaps and applies a time-decaying fee to all swaps, both buy and sell directions (starting at 99%, decreasing by 1% per block down to 10%). After each swap, fees are taken from the pool output, swapped to ETH via an internal pool swap, and forwarded to a CKCollector contract. Certain addresses (owner, hook, fee collector) are exempt from fees.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
