@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbf19d8d426c2548453a19c139bc4ff66d7068040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Swap",
+    "description": "Pays out TOKEN_A or TOKEN_B from the hook's own balance to swappers in ETH/TOKEN_A or ETH/TOKEN_B pools, with payout amount equal to the absolute swap delta of the paired token. Recipient is decoded from hookData or falls back to tx.origin.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
