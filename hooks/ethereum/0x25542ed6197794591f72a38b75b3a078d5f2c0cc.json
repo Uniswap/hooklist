@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x25542ed6197794591f72a38b75b3a078d5f2c0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "FroundsHookV2",
+    "description": "A timed game hook for the ETH/FRND pool that takes fees on each swap (burning FRND and funding an ETH prize pot), enforces EIP-712 signed swap authorization, and runs competitive rounds where qualifying buys extend the timer; prizes are split among the top time-holder, last buyer, and comeback leader.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
