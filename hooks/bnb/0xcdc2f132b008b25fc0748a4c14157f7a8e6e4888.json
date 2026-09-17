@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcdc2f132b008b25fc0748a4c14157f7a8e6e4888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "ConstantSumCurve",
+    "description": "A constant-sum (1:1) AMM hook that implements hook-owned liquidity and a fully custom swap curve via beforeSwap return delta. Both exact-input and exact-output swaps execute at a fixed 1:1 exchange rate, bypassing Uniswap v4's native AMM math entirely. Standard v4 liquidity addition is blocked via revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
