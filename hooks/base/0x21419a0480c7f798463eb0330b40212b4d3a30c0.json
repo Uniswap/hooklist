@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x21419a0480c7f798463eb0330b40212b4d3a30c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DynamicFeeHook",
+    "description": "Adjusts LP fees dynamically based on per-pool price deviation and volatility estimates, calling updateDynamicLPFee() on every swap. Implements circuit breakers that cap fee increases per block, enforce a minimum number of blocks at elevated fees for MEV protection, and provide an owner-controlled emergency mode that overrides fees globally.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
