@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "ReflectionV4Hook",
-    "description": "A Uniswap v4 hook that implements a reflection fee on swaps: on buys it collects 1.7% of native ETH input into a buyback pot; on sells it redirects 1.7% of token input to the token contract via notifyReflection(). Every 20 swaps the accumulated pot is used to buy back tokens and distribute them via the token's reflection mechanism. Only one liquidity addition is permitted per token.",
+    "description": "A Uniswap v4 hook that implements a reflection fee on swaps: on buys it collects 1.7% of native ETH input into a buyback pot; on sells it redirects 1.7% of token input to the token contract via notifyReflection(). Every 20 swaps a buyback is queued, requiring a manual call to buybackAndReflect() to execute, which uses the accumulated pot to buy back tokens and distribute them via the token's reflection mechanism. Only one liquidity addition is permitted per token.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "temporal"
+    "swapAccess": "allowlist"
   }
 }
