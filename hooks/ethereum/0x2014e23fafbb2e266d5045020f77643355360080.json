@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2014e23fafbb2e266d5045020f77643355360080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PriceFloorHook",
+    "description": "Enforces a dynamic price floor on registered memecoin/stablecoin pools by adjusting the LP fee in beforeSwap. Compares the pool's current sqrtPrice against a TWAP reference composed from UniswapV2 price accumulator snapshots along a project-configured route; the fee is raised to prevent swappers from receiving better execution than the external reference minus a configured margin. Curators and LP managers are exempt from the fee adjustment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
