@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9f08173bcd918377ab472286cd685a5d1e4dc0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UMiner",
+    "description": "A Uniswap v4 hook for the uLEGIT token that applies a configurable ETH buy/sell tax (initially 20%, capped at 30%) forwarded to a hardcoded treasury address, and mints pseudo-NFT \"Miner\" badges on qualifying buys, distributing virtual fees to badge holders proportional to their hashpower.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
