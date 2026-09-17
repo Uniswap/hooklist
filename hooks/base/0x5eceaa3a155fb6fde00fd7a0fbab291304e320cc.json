@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5eceaa3a155fb6fde00fd7a0fbab291304e320cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "wASSBLASTER420",
+    "description": "A Uniswap v4 hook that charges a 0.7% fee on the wASS token in registered pools, splitting the fee 50/50 between an apple staking contract and a protocol owner. Fees are taken via beforeSwapReturnsDelta on wASS sells and via manager.take() in afterSwap on wASS buys. Market makers are exempt from hook fees.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
