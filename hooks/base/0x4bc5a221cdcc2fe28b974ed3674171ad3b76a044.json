@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4bc5a221cdcc2fe28b974ed3674171ad3b76a044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AdvancedFeeHookV3",
+    "description": "A token launchpad hook (BaseStonk) that collects configurable swap taxes in afterSwap, splitting fees between a platform treasury, per-pool creator payees, a token burn address, and single-sided liquidity reinvestment. Pool initialization is restricted to a trusted launcher address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
