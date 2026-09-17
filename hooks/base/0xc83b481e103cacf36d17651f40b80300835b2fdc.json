@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc83b481e103cacf36d17651f40b80300835b2fdc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BoardHook",
+    "description": "A Uniswap v4 hook that manages token launches (\"publiphi\") with a fair launch window, blocking sells and enforcing an optional whitelist during the launch period. Swap fees are captured and distributed to protocol, token creators, and swappers; swaps before the scheduled launch timestamp are rejected.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
