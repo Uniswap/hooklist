@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x720e649549f7bc2118acba9f4c9ae6fcc7586080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ProgrammableLaunchFeeHook",
+    "description": "Governs a single canonical native-ETH pool on the Robinhood chain, restricting pool initialization to an authorized address and gating the first swap to that same address. Applies a 30% LP fee for 30 seconds after the first swap, then permanently drops to 1%.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
