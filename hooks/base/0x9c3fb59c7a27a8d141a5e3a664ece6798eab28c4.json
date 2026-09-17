@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9c3fb59c7a27a8d141a5e3a664ece6798eab28c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "NFTStrategyHook",
+    "description": "A Uniswap v4 hook for NFT-backed token pools that applies a decaying buy fee (starting at 95%, dropping to a 15% flat fee over blocks) and a flat 15% sell fee. Fees are taken via afterSwapReturnsDelta, converted to ETH via nested swaps when needed, and distributed to a FeeContract vault, founder wallets, or used to buy-and-burn a configurable brand asset token.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
