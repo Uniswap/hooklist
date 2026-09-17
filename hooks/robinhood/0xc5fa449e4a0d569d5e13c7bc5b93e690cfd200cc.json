@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc5fa449e4a0d569d5e13c7bc5b93e690cfd200cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GoofyhoodFeeHook",
+    "description": "Volatility-based fee hook for Goofyhood-launched ETH/token pools. Charges ETH fees on buys (from input in beforeSwap) and sells (from output in afterSwap), scaling dynamically between configurable base and max fees (1%\u20135.9%) based on the previous swap's tick movement.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
