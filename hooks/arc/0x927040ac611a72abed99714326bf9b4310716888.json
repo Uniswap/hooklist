@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x927040ac611a72abed99714326bf9b4310716888",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "CurveHook",
+    "description": "Uniswap v4 hook for token launches that replaces pool liquidity with a custom bonding curve. Intercepts all swaps in beforeSwap, prices them via a paired HookedCurve contract (constant product with phantom reserve), applies a snipe tax using tx.origin for third-party routers, and blocks direct liquidity additions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
