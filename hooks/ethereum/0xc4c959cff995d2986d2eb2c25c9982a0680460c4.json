@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc4c959cff995d2986d2eb2c25c9982a0680460c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BoundV4Hook",
+    "description": "Enforces an asymmetric burn on every swap through the canonical ETH/BOUND pool: 1% of BOUND output is burned on buys; on sells, 5% of ETH output is routed into a nested ETH\u2192BOUND buyback whose proceeds are burned. Token supply can only decrease over time.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
