@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x77e180e90130fa6e6a4bf4d07cf2032f5f2b70c8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SuperStrat",
+    "description": "Skims 2.30% from each swap (2.00% to hook reserves, 0.30% to a protocol fee manager) using BeforeSwapDelta, accumulates fees per pool, and reinvests them into Uniswap v4 LP positions via the PositionManager. Supports multi-pool liquidity management for both ETH and ERC20 pools with owner-controlled pause functionality.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
