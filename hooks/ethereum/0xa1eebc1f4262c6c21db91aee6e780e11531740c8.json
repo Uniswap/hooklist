@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa1eebc1f4262c6c21db91aee6e780e11531740c8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniRPGHook",
+    "description": "A Uniswap v4 hook for the UniRPG game economy that skims a 3% tax (2.5% to vault, 0.5% to platform) on swaps of the designated ETH/URPG pool, then routes buys to a BossArena contract as attacks (with WHALE, DIP, and REVENGE boost flags computed from swap size and price history) and sells as heals.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
