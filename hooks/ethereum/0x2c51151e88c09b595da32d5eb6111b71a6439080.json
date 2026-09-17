@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2c51151e88c09b595da32d5eb6111b71a6439080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UspegHook",
+    "description": "A Uniswap v4 hook that activates the Uspeg ERC-20 token mechanism on pool initialization and enforces a per-buy amount limit during swaps, with a one-way price-triggered phase transition that permanently disables an early-phase mint discount when the pool's sqrtPriceX96 falls below a configured threshold.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
