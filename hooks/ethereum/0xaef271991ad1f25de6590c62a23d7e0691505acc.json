@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaef271991ad1f25de6590c62a23d7e0691505acc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TerrariumHook",
+    "description": "An AMM hook that takes a fixed 2% skim on the input currency of every swap and deposits it as permanent, unremovable liquidity in the price stratum the swap just traversed (buys build support below, sells build resistance above). A creator cut starting at 25% of buy-side skim decays hyperbolically toward zero as cumulative volume grows; sell-side skim goes entirely to sediment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
