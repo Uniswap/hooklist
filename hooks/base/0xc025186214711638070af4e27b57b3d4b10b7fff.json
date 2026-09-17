@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc025186214711638070af4e27b57b3d4b10b7fff",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Alphix",
+    "description": "Uniswap v4 hook that delegates all hook logic to a swappable AlphixLogic contract. Implements a dynamic LP fee algorithm adjusted via off-chain `poke` calls based on pool ratios. Supports multiple pool types (stable, standard, volatile), requires owner-controlled pool initialization and activation, and includes global pause and per-pool activation controls.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
