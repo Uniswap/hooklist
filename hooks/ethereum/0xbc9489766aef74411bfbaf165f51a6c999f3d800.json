@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbc9489766aef74411bfbaf165f51a6c999f3d800",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniV4Hook",
+    "description": "Uniswap v4 hook that sets a dynamic LP fee (initially 2%) on pool initialization and restricts liquidity additions to full-range positions only. A privileged owner/executor role can update the LP fee at any time via `forceUpdateLPFee`, including zeroing it temporarily during arbitrage trades.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
