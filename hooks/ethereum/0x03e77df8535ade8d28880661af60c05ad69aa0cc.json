@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x03e77df8535ade8d28880661af60c05ad69aa0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "WHATHook",
+    "description": "A single ETH/WHAT pool hook that collects a 3% tax on every swap (buys and sells) and distributes all fees to WHAT token holders. Enforces a per-transaction buy size cap of 500 WHAT for the first 70 buys.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
