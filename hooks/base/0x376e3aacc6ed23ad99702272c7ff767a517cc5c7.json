@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x376e3aacc6ed23ad99702272c7ff767a517cc5c7",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenMesaHook",
+    "description": "A Uniswap v4 hook that collects a configurable USDC fee (up to 1%) on swaps and liquidity operations via afterSwap/afterLiquidity delta returns, and maintains a per-pool TWAP oracle using a circular buffer of tick observations recorded before each swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
