@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0b38f1f87925b75ca0fdbf39a6a33105847840c4",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "StarbaseHookV1",
+    "description": "Applies a 4% buy tax on FLT/WBNB swaps, routing portions to a burn address (1%), an operations wallet (1%), and a space fund (2%), collected via afterSwapReturnsDelta. Tracks Blueprint NFT mint credits and burn obligations per user on each swap. Requires hookData with the swap user address (\u226532 bytes); reverts for senders not in the trusted-router allowlist.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
