@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x835bd08ef8f2ba84b2a954eaa02e58af0c842888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "PhiEthHooks",
+    "description": "Implements a 1:1 ETH/phiETH exchange as a custom curve hook, bypassing Uniswap v4's AMM entirely by taking input tokens from the pool manager, wrapping/unwrapping via the phiEth contract, and settling the output directly. Liquidity addition is blocked; only zero-fee ETH/phiETH pools may use this hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
