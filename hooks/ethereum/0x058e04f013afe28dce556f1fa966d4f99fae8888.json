@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x058e04f013afe28dce556f1fa966d4f99fae8888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MetalHook",
+    "description": "Protocol-owned liquidity hook for an ETH/METAL pool that restricts LP provision to the hook itself and levies a symmetric 2% protocol fee on every swap, routing it to a treasury address. All trading is gated on the METAL token's `tradingEnabled` boolean flag set by the token owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
