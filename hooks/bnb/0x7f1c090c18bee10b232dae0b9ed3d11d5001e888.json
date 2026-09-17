@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7f1c090c18bee10b232dae0b9ed3d11d5001e888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BSCHook",
+    "description": "A bonding curve hook that fully replaces Uniswap v4 swap execution by minting and burning BSCToken against a single canonical ETH reserve state. Buys are capped at 5 ETH per swap and a 1-block cooldown is enforced between a wallet's last buy and first sell; all swaps require an encoded swapper address in hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
