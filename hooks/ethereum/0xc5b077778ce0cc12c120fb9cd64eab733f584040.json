@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc5b077778ce0cc12c120fb9cd64eab733f584040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "WhalesHook",
+    "description": "Classifies swap participants as 'whales' (\u22650.69 ETH per buy) or 'shrimp' (< 0.69 ETH) in afterSwap, and reverts sell transactions where a shrimp address attempts to sell more than 1% of their token balance per transaction.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
