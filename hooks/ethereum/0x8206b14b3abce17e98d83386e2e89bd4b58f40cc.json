@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8206b14b3abce17e98d83386e2e89bd4b58f40cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Holdfast",
+    "description": "A Uniswap v4 hook for an ETH/IVY pool that charges a configurable fee (up to 5%) on the ether leg of every swap, banking proceeds as ERC-6909 claims. Anyone can call climb() to convert banked ether into a ratcheting one-tick-wide buy bid that only ever moves to a better (lower) price; any IVY tokens caught by the bid are permanently burned.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
