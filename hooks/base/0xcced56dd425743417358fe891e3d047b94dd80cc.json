@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcced56dd425743417358fe891e3d047b94dd80cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FaunaHook",
+    "description": "A Uniswap v4 hook for the FAUNA NFT pool that skims a 1% ETH fee on every swap in afterSwap, forwarding it to a configurable fee recipient. Also optionally notifies an external renderer contract after each swap; beforeSwap is a no-op.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
