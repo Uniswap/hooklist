@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf0559f57e2dc028d6fd5c41663b4acfaf9a66aa8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "StableSwapHooks",
+    "description": "Curve-style (StableSwap) AMM hook for Uniswap v4 supporting multi-currency stable pools (2\u20134 tokens). Executes full StableSwap invariant math in beforeSwap with optional rate oracle support, and blocks direct PoolManager liquidity operations in favor of its own add/remove liquidity flow.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
