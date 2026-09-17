@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1f18e74fafb7b52eb4894983997817de7d2660c8",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DeltaHook",
+    "description": "A wave-tax hook that applies zone-aware swap taxes: buys always pay a 3% baseline ETH tax in beforeSwap via BeforeSwapDelta, with ETH rebates paid in afterSwap to buyers in peak (net \u22123%) or dip (net \u22126%) price zones relative to the running ATH. Sells are taxed 3% normally or 12% during deep dips, funding the rebate vault.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
