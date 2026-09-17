@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe753a351fb498051a09dc130fcc29aebc76525dc",
+    "chain": "arbitrum",
+    "chainId": 42161,
+    "name": "AnyPositionManager (Flaunch vested launch hook)",
+    "description": "Flaunch's hook for vested memecoin launches. Gates swaps on a per-pool scheduled open time (temporal fair-launch window), runs an internal swap pool that fills orders from fee inventory before Uniswap sees them, manages a bid wall, and distributes swap fees with optional referrer splits. Pools pair memecoins against registry-approved tokens.",
+    "deployer": "0xB8A70b4d1547bf6193bd67A73F4F98ea9FD0A973",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
