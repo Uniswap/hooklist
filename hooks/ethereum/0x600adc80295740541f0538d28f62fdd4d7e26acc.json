@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x600adc80295740541f0538d28f62fdd4d7e26acc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Engine",
+    "description": "A protocol hook managing a SOUL/ETH pool with a built-in leverage protocol. Applies 10% buy and sell taxes routed to an operator while a `limited` flag is active, enforces a per-transaction buy cap of 10k SOUL, and blocks direct LP modifications \u2014 restricting all liquidity management to internal protocol operations.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
