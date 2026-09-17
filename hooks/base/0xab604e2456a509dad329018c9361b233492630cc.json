@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xab604e2456a509dad329018c9361b233492630cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BondingCurveHook",
+    "description": "A Uniswap v4 hook that implements a two-phase bonding curve token launch mechanism. During the bonding phase, swaps are fully intercepted and routed through a custom bonding curve (BondkitToken) rather than the standard AMM. Once the funding threshold is reached, liquidity migrates to the DEX phase where the hook collects LP fees and distributes them to the creator and treasury via DexPhaseSplitter.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
