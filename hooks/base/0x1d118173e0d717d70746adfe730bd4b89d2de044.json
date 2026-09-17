@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1d118173e0d717d70746adfe730bd4b89d2de044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "AdvancedFeeHookV5",
+    "description": "A post-swap tax hook for a token launchpad that deducts a configurable percentage fee from each swap's output token, splitting it between a platform treasury and creator-defined payees. The creator share can optionally be partially burned and/or reinvested as single-sided liquidity. Pool initialization is gated to a designated launcher address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
