@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8472be512f9679662cd932e13e90e79657364044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HatTrickHook",
+    "description": "Uniswap v4 afterSwap hook for a $HAT/WETH pool that captures a configurable BPS fee on each swap via afterSwapReturnsDelta, then splits it three ways: to a prize vault, burned (directly for HAT fees or deferred via buybackAndBurn() for WETH fees), and to a treasury address. Fee rate and split ratios are owner-configurable within set bounds.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
