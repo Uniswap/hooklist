@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x22b9dde58328c01b6be268b78aa0bed5ebb9e0c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TombHook",
+    "description": "A Uniswap v4 hook for the canonical TOMB/ETH pool that permanently burns TOMB on every swap via an asymmetric fee: 1% on buys (withheld directly from TOMB output) and 5% on sells (used to fund a nested ETH\u2192TOMB buyback, with the purchased TOMB then burned). Only exact-input swaps are supported.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
