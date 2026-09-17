@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x44cfd5aa14067ba8fc5c3c727daaeed85be08acc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MultiPoolsHook",
+    "description": "A configurable swap-fee hook for ETH-paired pools that collects fees via BeforeSwapDelta/AfterSwapDelta and routes them to a fee vault, buyback burner, and rewards distributor. Includes an optional antisniper window with elevated fees at launch and restricts liquidity provision to an authorized auto-LP seeder only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
