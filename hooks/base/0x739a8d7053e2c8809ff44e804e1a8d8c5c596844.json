@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x739a8d7053e2c8809ff44e804e1a8d8c5c596844",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFab",
+    "description": "A bonding-curve token launchpad hook that deploys new ERC-20 tokens into Uniswap v4 pools with a structured liquidity curve. Blocks external pool initialization and liquidity additions. Charges a 1% swap fee split equally between the token creator and the platform. When a token's bonding curve supply is exhausted, automatically removes liquidity and migrates the token to a standard full-range AMM pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
