@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x96bf7679572fc5b82b286b2ac734d3dbb1b4c040",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "DooV4BuyHook",
+    "description": "An afterSwap hook for a Doo token pool that records buy events to an external DooPowerRegistry. When hookData containing (buyer address, USDT principal, Doo amount) is provided, it logs the purchase via the registry; swaps with empty or invalid hookData emit an ambiguity event and complete normally without reverting.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
