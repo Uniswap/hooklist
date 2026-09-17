@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2190e02c9084974d08b7c509a796a13941934088",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "X3DHook",
+    "description": "Captures fees on X3D/ETH swaps in beforeSwap using BeforeSwapDelta: 20% flat for the first 5 minutes post-launch, then up to 1.25% (owner-configurable). Fees split 45/45/10 to a pot vault, dividend tracker, and treasury. Triggers round settlement on each swap and stores ETH input in transient storage for automatic key grants by the X3D token contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
