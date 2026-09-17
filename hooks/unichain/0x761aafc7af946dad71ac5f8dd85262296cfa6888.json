@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x761aafc7af946dad71ac5f8dd85262296cfa6888",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "flUSDCHooks",
+    "description": "A custom constant-sum hook implementing 1:1 swaps between USDC and flUSDC. In beforeSwap, the hook takes the full input, converts it via flUSDC deposit or withdraw, and settles the output back to the PoolManager. Direct liquidity provision is blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
