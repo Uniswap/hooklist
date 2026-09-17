@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "HID Domain Registry Hook",
-    "description": "A Uniswap v4 hook on an ETH/HID token pool that collects 1% protocol fees on ETH input (buy swaps) and 1% of ETH output (sell swaps) via BeforeSwapDelta/AfterSwapDelta. When hookData encodes a domain name and the ETH input meets a configurable threshold, afterSwap optionally registers the domain on-chain for the swapper (tx.origin).",
+    "description": "A Uniswap v4 hook on an ETH/HID token pool that collects protocol fees on swaps via BeforeSwapDelta/AfterSwapDelta. For plain buy swaps (ETH→HID, no hookData or unapproved root), beforeSwap charges 1% of ETH input; for domain-registration buy swaps (hookData non-empty + inputAmount ≥ autoRegisterThreshold + root approved), beforeSwap charges a fixed REGISTRATION_FEE (0.0005 ETH). Sell swaps (HID→ETH) are charged 1% of ETH output via afterSwap. When a registration swap succeeds, afterSwap registers the domain encoded in hookData on-chain to tx.origin.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
