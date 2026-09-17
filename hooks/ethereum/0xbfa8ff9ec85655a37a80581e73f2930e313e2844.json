@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbfa8ff9ec85655a37a80581e73f2930e313e2844",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "MoonCatsStrategyHookV2",
+    "description": "Collects configurable buy/sell fees (up to 10%, 60% for the first 90 minutes post-launch) via afterSwapReturnsDelta; converts non-ETH fees to ETH via a nested pool swap, then distributes proceeds to a strategy contract (80%), marketing wallet (10%), and secondary wallet (10%). Restricts pool initialization and liquidity addition to the associated strategy contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
