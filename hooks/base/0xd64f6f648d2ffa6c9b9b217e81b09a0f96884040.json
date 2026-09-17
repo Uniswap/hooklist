@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd64f6f648d2ffa6c9b9b217e81b09a0f96884040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFactory",
+    "description": "Token factory that deploys ERC20 tokens with Uniswap v4 pools (1% fee tier), seeding them with 99% of total supply as single-sided liquidity. The afterSwap hook is a no-op; LP fees accumulate in the pool and token creators can claim them via claimLPFees().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
