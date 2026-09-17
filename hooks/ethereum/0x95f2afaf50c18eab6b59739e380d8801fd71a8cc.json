@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "A Uniswap v4 hook that extracts a 1% fee from every buy (in native ETH) and sell (in tokens), accumulating ETH into a burn pot used for periodic on-chain buyback-and-burn swaps; blocks exact-output swaps and sells in the same block as a buyback, and includes a deployer-controlled allowlist in afterSwap that can selectively prevent sell-side swaps.",
+    "description": "A Uniswap v4 hook that extracts a 1% fee from every buy (in native ETH) and sell (in tokens), accumulating ETH into a burn pot used for periodic on-chain buyback-and-burn swaps; blocks exact-output swaps and sells in the same block as a buyback, and includes an allowlist in afterSwap that can selectively prevent sell-side swaps; the restriction can be enabled by any caller via compress(), while only the deployer can disable it and control which addresses are allowlisted.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
