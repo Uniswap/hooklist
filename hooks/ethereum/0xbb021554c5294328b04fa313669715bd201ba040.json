@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbb021554c5294328b04fa313669715bd201ba040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "GlueHook",
+    "description": "A Uniswap v4 hook that runs a buyback-and-burn mechanism on every swap in configured pools: after each swap, it spends secondary token donations to buy back the pool's designated main token and delivers it to a configured recipient (burn by default via address(0)). It also supports auto-compounding LP fee programs with configurable splits among compounding, buyback, burn, and direct delivery shares.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
