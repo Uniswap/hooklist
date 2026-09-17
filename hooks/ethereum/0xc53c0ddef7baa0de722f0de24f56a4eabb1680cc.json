@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc53c0ddef7baa0de722f0de24f56a4eabb1680cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EigenGameHook",
+    "description": "Burns a fixed percentage of the pool token (currency1) on every swap via beforeSwap and afterSwap return deltas. For token-specified swaps the fee is taken in beforeSwap; for token-as-unspecified-output swaps it is taken in afterSwap. The burn rate (burnFeeBps) is immutable and set at deployment. Liquidity is managed exclusively by a single authorized address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
