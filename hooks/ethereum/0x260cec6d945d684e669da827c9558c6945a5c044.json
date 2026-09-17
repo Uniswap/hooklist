@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x260cec6d945d684e669da827c9558c6945a5c044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HookFee",
+    "description": "A hook that charges an owner-configurable fee (in basis points) on one-for-zero swaps (token1\u2192token0), diverting a portion of the output amount to a fixed fee recipient via afterSwap delta return. The fee rate can be updated by the owner up to 100% of the output.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
