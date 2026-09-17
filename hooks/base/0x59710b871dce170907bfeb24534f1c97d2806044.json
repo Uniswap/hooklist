@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x59710b871dce170907bfeb24534f1c97d2806044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "PackERC20Factory",
+    "description": "A factory hook that creates pack-based ERC20 tokens backed by Chainlink VRF randomness. The beforeInitialize blocks direct pool creation; pools are initialized internally by the factory via enablePackOpening(). After each swap, a 1% fee is taken from the base token as an afterSwapReturnsDelta, and swaps are rejected if the base token is the specified side of the swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
