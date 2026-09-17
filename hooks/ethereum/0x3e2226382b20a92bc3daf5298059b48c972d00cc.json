@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3e2226382b20a92bc3daf5298059b48c972d00cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "OFAOrderFlowAuctionHook",
+    "description": "An order-flow auction hook for ETH/OFA pools that routes exact-in buy swaps to bonded fillers at the spot price when a qualifying filler is available, distributing the filler's surplus bid to OFA token holders. Falls back to a 2% baseline fee on unmatched buys and all sells, also forwarded to holders.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
