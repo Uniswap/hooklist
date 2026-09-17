@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xce5d52c0c2345260502872b6108d0ce2559280cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "OmniHook",
+    "description": "Charges a fixed 10 bps fee on every swap's output amount (covering both exact-input and exact-output paths), splitting the cut among five hardcoded addresses via a pull-based ledger. The fee is mandatory and non-configurable; no owner or admin exists.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
