@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4c77a461669c0345960dd33d415747c8932f60cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "UnifiedFeeHook",
+    "description": "Manages platform and creator fees for curated token launches (exact-input only). On buys (native \u2192 token), deducts platform and creator fees from input pre-swap; on sells (token \u2192 native), burns a portion of tokens pre-swap and extracts a platform fee from native output post-swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
