@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xecb362137296a321009297fbc919172c43766cc4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "NFTStrategyHook",
+    "description": "Manages NFT-backed strategy pools with gated initialization and liquidity (only callable via a factory), and applies time-decaying buy fees that start at 99% and decrease every 5 blocks. Fees are taken from swaps via afterSwapReturnsDelta and distributed to a vault, collection owner, and protocol address; if the fee is in a non-ETH token, it is first swapped back to ETH internally.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
