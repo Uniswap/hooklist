@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5369cbb4762d4843cbc6e13df5e63b1ba31880cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "UV4FeeDeltaHook",
+    "description": "A fee-collecting hook that skims a configurable fee (default 0.2%) in a designated feeCurrency on each swap involving that currency. Fees are accumulated as ERC-6909 claims on the PoolManager via beforeSwap/afterSwap return deltas, and are withdrawable by the owner. Whitelisted aggregators and simulation quotes bypass fee collection.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
