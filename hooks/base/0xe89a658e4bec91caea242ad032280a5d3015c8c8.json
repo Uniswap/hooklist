@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe89a658e4bec91caea242ad032280a5d3015c8c8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TrinityHookV6",
+    "description": "Manages concentrated liquidity across price bands for a token, automatically rebalancing LP positions after each swap. Extracts a 1% fee on all swaps: buy fees go to a community treasury, sell fees are burned. Blocks external LP additions so only the hook controls liquidity. Only exactInput swaps are supported.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
