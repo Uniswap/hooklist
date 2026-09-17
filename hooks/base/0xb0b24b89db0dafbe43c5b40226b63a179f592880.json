@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb0b24b89db0dafbe43c5b40226b63a179f592880",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "V4AlphaHook",
+    "description": "A hook that restricts pool initialization to the contract owner and gates swaps via a configurable start timestamp (temporal access control). Liquidity additions are blocked for non-owners until the pool's start time is reached.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "temporal"
+  }
+}
