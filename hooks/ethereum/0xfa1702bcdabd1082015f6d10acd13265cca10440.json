@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfa1702bcdabd1082015f6d10acd13265cca10440",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AnonsHook",
+    "description": "A Uniswap v4 hook that captures the pool key on the first liquidity add and advances an on-chain pseudo-randomness chain on every swap. It also accepts ETH donations from an external forge contract and distributes them to in-range liquidity providers via poolManager.donate().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
