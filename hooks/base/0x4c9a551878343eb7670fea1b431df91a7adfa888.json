@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4c9a551878343eb7670fea1b431df91a7adfa888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FlashPerpsHook",
+    "description": "A custom-curve (NoOp) Uniswap v4 hook implementing a perpetuals issuance market: buys mint new perp exposure through a registered vault and sells unwind it, with a flat 0.3% USDG fee routed to a buyback escrow. Passive LP liquidity is blocked entirely via beforeAddLiquidity revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
