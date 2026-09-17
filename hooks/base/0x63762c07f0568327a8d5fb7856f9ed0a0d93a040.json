@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x63762c07f0568327a8d5fb7856f9ed0a0d93a040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ExponentialLiquidityHook",
+    "description": "A bonding curve hook for token launches paired with WBTC. Deploys ERC20 tokens (PackERC20) with liquidity distributed across exponential price segments. After each swap, if the price crosses a threshold, the hook removes all liquidity, transfers WBTC proceeds to the token contract, and enables a Chainlink VRF-based pack-opening mechanic. Pool initialization is restricted to the hook's own deployERC20Token function via a reverting beforeInitialize.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
