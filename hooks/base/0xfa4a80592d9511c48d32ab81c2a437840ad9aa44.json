@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfa4a80592d9511c48d32ab81c2a437840ad9aa44",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenFab",
+    "description": "TokenFab is a bonding curve launchpad hook that manages token launches through a bonding curve phase, graduating to a standard AMM pool upon reaching the supply cap. It blocks external liquidity modifications, charges a 5% swap fee (split among creator, platform, and reward pool), and handles pool initialization and liquidity settlement internally.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
