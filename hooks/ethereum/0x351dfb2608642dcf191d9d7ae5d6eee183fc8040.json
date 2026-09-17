@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x351dfb2608642dcf191d9d7ae5d6eee183fc8040",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Uniliquid",
+    "description": "A minimal observation-only hook that listens to afterSwap events for pools pairing ETH (currency0) with a single bound token. It increments a global swap counter and emits a Swapped event; it never modifies swap amounts, charges fees, or alters pool state.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
