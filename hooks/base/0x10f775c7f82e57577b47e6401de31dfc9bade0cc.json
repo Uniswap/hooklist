@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x10f775c7f82e57577b47e6401de31dfc9bade0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LiqpadLaunchHook",
+    "description": "Factory-gated launch pool hook for B20/VVV token pairs. Collects a 1% fee on each swap: B20 (launch token) fees are burned via the token contract, while VVV fees are routed to an immutable FeeRouter that splits 70% to the token creator and 30% to the protocol. Only pools registered and initialized by the factory may be swapped.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
