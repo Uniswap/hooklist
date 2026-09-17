@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x84ce80233136f3b2bc8af511d0bf96563ea32cc0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HmutableHook",
+    "description": "An immutable hook that gates swaps via an external auction contract (which manages timed, auctioned access seats), and reports swap and liquidity events to both an hmutable contract and the auction contract. Pool initialization requires currency1 to be in a seeding state.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "other"
+  }
+}
