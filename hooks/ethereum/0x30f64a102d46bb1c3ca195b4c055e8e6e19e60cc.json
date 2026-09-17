@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x30f64a102d46bb1c3ca195b4c055e8e6e19e60cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Infect",
+    "description": "ERC-20 memecoin and Uniswap v4 hook that runs a PvP infection game: every buy/sell charges an ETH-denominated tax (2% on buys and clean sells, 7% on infected-wallet sells), distributed to all holders by balance. Users lock tokens to infect wallets and earn a share of those wallets' sell taxes; the hook skims fees via beforeSwap/afterSwap delta overrides with the LP fee forced to zero.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
