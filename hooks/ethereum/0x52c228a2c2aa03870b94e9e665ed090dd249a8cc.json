@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "Charges a 1.2% fee on all swaps: buy-side (ETH\u2192token) fees accumulate in a native burn pot and are periodically used to buyback and burn tokens; sell-side (token\u2192ETH) fees are taken and burned directly. Blocks all liquidity additions after the first and reverts exact-output swaps. Contains an owner-controlled allowlist (hasValue) in afterSwap that can selectively block sells.",
+    "description": "Charges a 1.2% fee on all swaps: buy-side (ETH→token) fees accumulate in a native burn pot and are periodically used to buyback and burn tokens; sell-side (token→ETH) fees are taken and burned directly. Blocks all liquidity additions after the first and reverts exact-output swaps. Contains an owner-controlled allowlist (hasValue) in afterSwap that can selectively block sells.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "temporal"
+    "swapAccess": "allowlist"
   }
 }
