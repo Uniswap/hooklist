@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x958daebfe9b3547b59be0a1d8d0aa8afd65c20cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "VibeHook",
+    "description": "A Uniswap v4 hook for a fixed ETH/VIBE pool that applies a time-decaying sell tax (20\u20135% based on time since last buy) retained as reward inventory, and rewards the previous qualified buyer (\u22650.01 ETH) with 5% of the smaller buy amount. Swaps are only processable through a configured UniversalRouter.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
