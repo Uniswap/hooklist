@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd5531fc0a56835fc8db97f0ae2cb270525e06444",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "CDHook",
+    "description": "A Uniswap v4 hook for CoinDAT (CD) token ETH pools that implements time-decaying swap fees starting at 99% and decreasing to 7% over ~92 minutes. After each swap, it collects fees via afterSwapReturnsDelta and distributes them to the CD token accumulation contract (72%), protocol treasury (14%), and token deployer (14%).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
