@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xabf405c746753886894f8503357ab27bb34d4040",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BscpegHook",
+    "description": "After each swap on the owner-configured pool, generates entropy from block data (chainid, number, prevrandao) and calls BscpegToken.recordSwap() to potentially mint peg tokens to the swapper. An optional hookData address argument overrides the token recipient; without hookData the swapper address is used.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
