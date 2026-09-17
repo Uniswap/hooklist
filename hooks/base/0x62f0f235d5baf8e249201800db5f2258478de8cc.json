@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x62f0f235d5baf8e249201800db5f2258478de8cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "RallyHookU4",
+    "description": "A Uniswap v4 hook implementing Rally protocol's bonding curve token launch system. Acts as the sole LP for launch pools, enforcing a dynamic anti-snipe LP fee schedule during the curve phase, collecting quote-denominated fees on sells via BeforeSwapDelta, and automatically latching breakout when the price exits the bonding curve range.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
