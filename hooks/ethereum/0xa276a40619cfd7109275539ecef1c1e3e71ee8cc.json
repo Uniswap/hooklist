@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "CleaveV4Hook",
-    "description": "A reflection-buyback hook that collects a 0.7% fee on both buys (ETH) and sells (tokens). Buy fees accumulate in an ETH pot; every 20 swaps the pot is used to buy back tokens and distribute them via the token's `notifyReflection()` mechanism. Sell fees are sent directly to the token contract's reflection bucket. Sells are blocked in the same block as a buyback.",
+    "description": "A hook charging a 0.7% fee on buys (ETH) and sells (tokens). Buy fees accumulate in an ETH pot; every 20 swaps a buyback is queued, then executed by an external buyAndReflectPrism() call that buys back tokens and distributes them via notifyReflection(). Sell fees go to the token's reflection bucket. Sells are blocked in a buyback's block; afterSwap also holds a deployer-controlled allowlist (canReflect + reflectionBase) that, once activated, restricts sells to deployer-whitelisted addresses.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
