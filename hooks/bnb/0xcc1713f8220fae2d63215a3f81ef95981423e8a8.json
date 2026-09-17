@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcc1713f8220fae2d63215a3f81ef95981423e8a8",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "EulerSwap",
+    "description": "A custom AMM hook for Uniswap v4 backed by Euler Protocol lending vaults. It implements a proprietary bonding curve and fully overrides swap execution via beforeSwapReturnsDelta: input tokens are deposited into an Euler vault and output tokens are withdrawn from another, with reserves validated against the EulerSwap curve after each swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
