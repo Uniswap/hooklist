@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8d762654949e5e5e48e23fd52341ed9061458080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "Xyra",
+    "description": "ERC20 token (XYRA) and Uniswap v4 hook combined. The beforeSwap hook reverts all swaps until the owner calls enableTrading(), preventing snipers at launch. Once enabled, swaps execute as a standard pool. Owner retains full control of protocol-owned liquidity (add, collect fees, remove).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "governance"
+  }
+}
