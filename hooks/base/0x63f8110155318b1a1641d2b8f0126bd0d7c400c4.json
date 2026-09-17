@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x63f8110155318b1a1641d2b8f0126bd0d7c400c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LightspeedPoolHook",
+    "description": "Takes a fixed 0.3% fee from the canonical currency (e.g. SPEED) on every swap and forwards it to a FeeCollector address via afterSwap delta return. Tracks accumulated fees per epoch per pool for trustless ranking in launch pool competitions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
