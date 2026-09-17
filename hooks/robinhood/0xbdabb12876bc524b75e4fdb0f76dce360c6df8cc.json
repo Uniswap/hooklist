@@ -4,7 +4,7 @@
     "chain": "robinhood",
     "chainId": 4663,
     "name": "RobinhoodV4SelectableFeeHook",
-    "description": "A token-launchpad hook that charges a fixed 1.5% base fee plus a configurable 0\u201310% creator fee on the payment-token side of each swap. Fees are collected in beforeSwap/afterSwap via delta returns and minted as ERC-6909 claims to a designated recipient. Pool fee configs and LP positions are immutable after factory registration.",
+    "description": "A token-launchpad hook that charges a fixed 1% base fee plus a configurable 0–10% creator fee on the payment-token side of each swap. Fees are collected in beforeSwap/afterSwap via delta returns and minted as ERC-6909 claims to a designated recipient. Pool fee configs and LP positions are immutable after factory registration.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -26,7 +26,7 @@
     "afterRemoveLiquidityReturnsDelta": false
   },
   "properties": {
-    "dynamicFee": true,
+    "dynamicFee": false,
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
