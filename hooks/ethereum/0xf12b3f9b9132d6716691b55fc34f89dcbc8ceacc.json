@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf12b3f9b9132d6716691b55fc34f89dcbc8ceacc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ArtPegHook",
+    "description": "A three-phase token launchpad hook: CURVE phase prices via a custom bonding curve with ERC-6909 claims settlement (AMM is NoOp'd); REFUND_WINDOW phase allows sells at the buyer's recorded entry price; AMM phase uses full-range liquidity with 100bps platform+creator fee skimming and optional mechanic fees. Includes anti-snipe (3-block delay + same-tx transient lock), exact-input-only enforcement, and a post-graduation TWAP oracle.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
