@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6d19e796c06601bdab287371eb1faac4ab0f2888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "RefractHook",
+    "description": "A custom-curve hook that acts as the sole market maker for the REFRACT (RFR) token using a linear bonding curve. ETH buys release tokens from the hook's inventory; RFR sells are paid from the ETH reserve and sold tokens are queued for permanent burn, making the token supply monotonically deflationary. Liquidity provision by external LPs is disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
