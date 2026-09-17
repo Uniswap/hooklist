@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x65d35acdb6ce1fdf67a38c5ad0a211f73e24c0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Politiswap",
+    "description": "A hook that creates Uniswap v4 pools for political-themed ERC-20 tokens (PolTokens), enforcing that only the token contract (currency1) can initiate swaps. It extracts a fixed 2% fee on each swap via beforeSwap/afterSwap delta returns, tracks daily net ETH flows per pool, and allows users to claim governance token rewards for trading in the highest-inflow pool each day.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
