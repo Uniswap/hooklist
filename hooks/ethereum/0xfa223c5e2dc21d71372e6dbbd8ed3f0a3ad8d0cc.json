@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfa223c5e2dc21d71372e6dbbd8ed3f0a3ad8d0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HHook",
+    "description": "A Uniswap v4 hook implementing a floor-price defense and tax system for an H/ETH pool. When the AMM spot price falls below the treasury-backed RFV, beforeSwap intercepts exact-input H sells and redeems them at RFV directly from the treasury (burning the H). A 3% swap tax applies on all non-intercepted swaps\u2014burning H on buys and routing ETH to the treasury on sells\u2014with additional bonding and epoch-based staking rebase mechanics.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
