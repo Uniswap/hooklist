@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x75a8d1cb3b2aea6bc7abf54baa626f5fe346c0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ForgeHook",
+    "description": "A Uniswap v4 swap hook for a FORGE token pool that skims a flat 1% sell tax on FORGE sells and a time-limited anti-snipe buy tax (90% for 5 minutes post-launch, then 0%) to a treasury address, while overriding the LP fee to a flat 0.30% on all swaps. Swaps are blocked entirely before the configured launch time.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
