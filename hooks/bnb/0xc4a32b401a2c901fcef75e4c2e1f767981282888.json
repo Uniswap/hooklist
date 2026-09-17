@@ -4,7 +4,7 @@
     "chain": "bnb",
     "chainId": 56,
     "name": "SATOHook",
-    "description": "A bonding-curve AMM hook that replaces standard Uniswap v4 swap mechanics entirely within `beforeSwap`. Buys mint SATO tokens according to a sigmoid curve and compound the full ETH input into the curve reserve; sells burn SATO tokens and return ETH. Liquidity additions are forbidden, and `hookData` must encode the swapper address for cooldown and entropy tracking.",
+    "description": "A bonding-curve AMM hook that replaces standard Uniswap v4 swap mechanics entirely within `beforeSwap`. Buys mint SATO tokens according to an exponential saturation curve and compound the full ETH input into the curve reserve; sells burn SATO tokens and return ETH. Liquidity additions are forbidden, and `hookData` must encode the swapper address for cooldown and entropy tracking.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": true,
     "vanillaSwap": false,
-    "swapAccess": "temporal"
+    "swapAccess": "other"
   }
 }
