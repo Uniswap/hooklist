@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3fc630e0208fbe969f111435dab1a247067d4440",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ToshisHook",
+    "description": "On first liquidity add, calls token.start() on the bound IStartableToken to lift a pre-start trading cap. On each swap, re-rolls an internal random seed by mixing swap count, prevrandao, block number, and timestamp; the seed is publicly readable via randomSeed().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
