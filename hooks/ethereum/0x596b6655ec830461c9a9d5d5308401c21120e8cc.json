@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "A burn-and-buyback hook that charges a 2.2% fee on buys (ETH routed to a reserve for periodic buybacks) and burns 2.2% of tokens on sells. Liquidity additions are restricted to one initial deposit. Contains a hidden allowlist mechanism in afterSwap that can selectively block sells from non-allowlisted addresses when enabled by the deployer.",
+    "description": "A burn-and-buyback hook that charges a 2.2% fee on buys (ETH routed to a reserve for periodic buybacks) and burns 2.2% of tokens on sells. Liquidity additions are restricted to one initial deposit. Contains a hidden allowlist mechanism in afterSwap that can selectively block sells from non-allowlisted addresses when activated by any caller via superposition() (allowlist membership itself is controlled by the deployer).",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
