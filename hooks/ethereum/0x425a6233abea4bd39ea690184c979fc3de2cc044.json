@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x425a6233abea4bd39ea690184c979fc3de2cc044",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BunnyToken",
+    "description": "A combined ERC-20 meme token and Uniswap v4 hook that charges a 0.5% fee on every swap via afterSwapReturnsDelta, taking the fee in the output token (BUNNY on buys, ETH on sells) and accumulating it in the contract for periodic transfer to a treasury address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
