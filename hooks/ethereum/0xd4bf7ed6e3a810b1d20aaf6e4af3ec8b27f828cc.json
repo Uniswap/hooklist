@@ -3,7 +3,7 @@
     "address": "0xd4bf7ed6e3a810b1d20aaf6e4af3ec8b27f828cc",
     "chain": "ethereum",
     "chainId": 1,
-    "name": "BuyAndBurnHook",
+    "name": "UniswapV4Hook",
     "description": "Collects a 1.7% fee on buys (ETH) and sells (token), routing buy fees to a burn pot for periodic buyback-and-burn operations. Every 20 swaps with a non-empty burn pot, a buyback is flagged; sells in the same block as a buyback are blocked. Liquidity addition is permanently gated to a single provider, and sell access can be restricted to an admin-controlled allowlist via a publicly-triggerable `timeBased` flag.",
     "deployer": "",
     "verifiedSource": true,
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "temporal"
+    "swapAccess": "allowlist"
   }
 }
