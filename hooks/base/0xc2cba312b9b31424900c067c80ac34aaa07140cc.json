@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc2cba312b9b31424900c067c80ac34aaa07140cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "QubitorFeeHook",
+    "description": "Charges a flat fee in basis points (up to 25%) on swaps involving a configured quote currency, extracting fees via poolManager.take() in both beforeSwap and afterSwap and forwarding them to a configurable fee collector. The fee rate can only be decreased (never increased) by the owner after deployment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
