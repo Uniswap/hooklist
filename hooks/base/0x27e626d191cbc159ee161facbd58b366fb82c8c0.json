@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x27e626d191cbc159ee161facbd58b366fb82c8c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "JITRangeHook",
+    "description": "A sole-operator JIT market maker that injects a one-tick liquidity range at an operator-pushed price before each swap and removes it afterward, with configurable spread, skew, staleness bounds, and window-based notional risk controls. Third-party liquidity is blocked; the hook is the sole LP.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
