@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xef0cc29d1d830aed2d9d43b8fd8fcf4c87aaa0c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "CombustionHook",
+    "description": "A Uniswap v4 hook for the canonical Combustion/ETH pool that taxes swaps asymmetrically: 1% of Combustion output is burned on buys, and 5% of ETH output funds a nested buyback-and-burn on sells. Supports exact-input swaps only; exact-output swaps revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
