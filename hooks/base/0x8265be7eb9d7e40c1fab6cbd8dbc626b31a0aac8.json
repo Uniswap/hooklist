@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8265be7eb9d7e40c1fab6cbd8dbc626b31a0aac8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ClawclickHook",
+    "description": "A two-phase token launch hook that applies a decaying buy/sell tax (50%\u21926.25%) collected via BeforeSwapDelta during Phase 1 (protected), then transitions to a 1% pool LP fee override after the token achieves 16x market cap growth (graduation). Enforces max transaction and wallet limits that scale dynamically with market cap during Phase 1.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
