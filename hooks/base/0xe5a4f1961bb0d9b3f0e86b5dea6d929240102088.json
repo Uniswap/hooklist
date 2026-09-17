@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe5a4f1961bb0d9b3f0e86b5dea6d929240102088",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MoonpotHook",
+    "description": "A price-floor hook for a TMP/USDC pool that applies dynamic sell fees scaled by distance above a configurable floor tick, burns any TMP sold beyond a per-swap maximum, and allows a manager to inject protocol liquidity into the pool.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
