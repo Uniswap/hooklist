@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf0b8dde19510ee7d6d50be289c4257ecd14c60cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "UnifiedFeeHook",
+    "description": "A shared fee hook for Direct and Bond token launches. On buys, it deducts platform and creator fees in native currency via beforeSwap delta. On sells, it burns a token fee before the swap and deducts a platform fee from native output via afterSwap delta. Only pools pre-authorized by admin-controlled lockers can use this hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
