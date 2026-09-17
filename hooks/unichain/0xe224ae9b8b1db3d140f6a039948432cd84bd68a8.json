@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe224ae9b8b1db3d140f6a039948432cd84bd68a8",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "EulerSwap",
+    "description": "EulerSwap is a Uniswap v4 hook implementing a custom AMM curve backed by Euler Protocol vaults. In beforeSwap, input tokens are deposited into an Euler vault and output tokens are withdrawn from another vault; a custom curve invariant enforces valid reserve ratios. The hook blocks native concentrated liquidity (beforeAddLiquidity reverts) and unauthorized pool initialization (beforeInitialize reverts).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
