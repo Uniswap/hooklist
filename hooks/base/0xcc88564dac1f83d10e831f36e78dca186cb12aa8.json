@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcc88564dac1f83d10e831f36e78dca186cb12aa8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "RehypHook",
+    "description": "A custom AMM hook that implements a bonding-curve market maker between ERC-20 assets and a yield-bearing token (REHYP). It intercepts all swaps via beforeSwap with full delta returns, rehypothecates deposited assets into Aave to earn yield, and burns harvested yield against REHYP supply. Liquidity and swap operations are managed entirely by the hook's internal pricing logic.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
