@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xacc154d2bf4538aa8eaa64ed23ee77fa4fa91080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UspegHook",
+    "description": "Uniswap v4 hook for the USPEG token that calls token.start() on pool initialization and enforces a configurable per-buy amount limit in beforeSwap. Also automatically ratchets off an early-phase mint discount once the pool sqrtPriceX96 drops below a fixed threshold (equivalent to 1 USPEG = 0.005 ETH).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "governance"
+  }
+}
