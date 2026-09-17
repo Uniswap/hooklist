@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb760acae5e292eb93a131d7bd9dc3365e50880cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "NyxoraTaxHook",
+    "description": "A 1% buy/sell tax hook for a NYX/ETH Uniswap v4 pool that always collects tax in the ETH/WETH side. In beforeSwap it skims ETH on exact-input buys; in afterSwap it skims ETH on exact-input sells and exact-output buys. Collected fees are sent via poolManager.take() directly to a configurable treasury address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
