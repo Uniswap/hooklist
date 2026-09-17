@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc3faf92b6f883136ce6bd7ceff7fa02ff4152ac4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LeveragedLiquidityHook",
+    "description": "Implements atomic JIT (just-in-time) liquidity for Morpho-backed leveraged tokens. On each swap, issues or redeems vault shares through a primary pool, installs a single-tick liquidity position, executes the swap, and removes the position in afterSwap\u2014all within one transaction, with a zero LP fee override.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
