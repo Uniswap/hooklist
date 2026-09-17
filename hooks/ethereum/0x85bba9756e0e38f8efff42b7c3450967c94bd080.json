@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "DiminishingFeeHook",
-    "description": "A Uniswap v4 hook that applies time-based diminishing LP fees. The fee starts high at pool initialization and steps down through configurable fee tiers as time elapses, determined by block.timestamp relative to the pool's initialization timestamp.",
+    "description": "A Uniswap v4 hook that overrides the LP fee on each swap. The contract contains logic to apply time-based diminishing fees (stepping down through configurable fee tiers as time elapses since pool initialization), but the afterInitialize callback that records the initialization timestamp is commented out in the deployed code. As a result, the hook always returns the initial fee tier (feeTiers[0]) for all pools.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
