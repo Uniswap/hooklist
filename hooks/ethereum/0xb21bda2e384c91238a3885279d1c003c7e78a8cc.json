@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniswapV4Hook",
-    "description": "A Uniswap v4 hook that collects a 0.7% fee on every swap: ETH input from buys accumulates in a burn pot for periodic buyback-and-burn operations triggered every 20 swaps, and token input from sells is burned directly. Liquidity addition is one-time only per token, and sells are blocked in the same block as a buyback execution.",
+    "description": "A Uniswap v4 hook that collects a 0.7% fee on every swap: ETH input from buys accumulates in a burn pot for periodic buyback-and-burn operations triggered every 20 swaps, and token input from sells is burned directly. Liquidity addition is one-time only per token, and sells are blocked in the same block as a buyback execution; additionally, the contract owner can activate a per-token allowlist (registerPixel) that restricts sells to addresses pre-approved via preparePixels.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
