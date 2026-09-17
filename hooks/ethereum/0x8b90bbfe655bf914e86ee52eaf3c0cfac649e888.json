@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8b90bbfe655bf914e86ee52eaf3c0cfac649e888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "TaoBankV4Hook",
+    "description": "A bonding-curve AMM hook for the TBANK token that replaces standard Uniswap v4 swap execution with custom buy/sell logic against an ETH-backed floor-price curve. Liquidity provision is disabled, and the team can trigger graduation to a Uniswap v3 pool, permanently disabling further swaps through this hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
