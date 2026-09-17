@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x20c910e9e50fbca33166288aad92fd44ac3720c0",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "VolatilityDynamicFeeLimitOrderHook",
+    "description": "Unilaunch singleton hook that implements volatility-responsive dynamic LP fees: applies a base fee plus a surge multiplier when large tick movements are detected in afterSwap, decaying it over a configurable duration. Blocks trading for one block after pool initialization as an anti-sandwich measure. Integrates with an external limit order manager for limit order execution.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
