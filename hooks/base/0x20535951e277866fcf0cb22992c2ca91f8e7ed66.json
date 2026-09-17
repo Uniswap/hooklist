@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x20535951e277866fcf0cb22992c2ca91f8e7ed66",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SUKOClankerHook",
+    "description": "Accumulates estimated trading fees after each swap and periodically converts them into concentrated liquidity positions around the current tick. Maintains a configurable virtual liquidity display multiplier and optionally triggers reward collection via an external fee conversion locker contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
