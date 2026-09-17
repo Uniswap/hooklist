@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc4d8ff48706c6f82ad00fdae3bf1201ecd8ee8a8",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "EulerSwap",
+    "description": "Custom-curve AMM hook backed by Euler vaults. Intercepts every swap in beforeSwap, computes quotes via its own bonding curve (CurveLib), deposits input tokens into an Euler vault and withdraws output tokens from another, then returns a BeforeSwapDelta to bypass Uniswap v4's standard CLAMM pricing. Verifies the curve invariant after each trade. Standard liquidity provision is blocked; only the hook's Euler-vault reserves participate in swaps.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
