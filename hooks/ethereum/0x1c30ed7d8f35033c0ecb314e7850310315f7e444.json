@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1c30ed7d8f35033c0ecb314e7850310315f7e444",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DEPHIHook",
+    "description": "Uniswap v4 hook for ETH/token pools implementing a block-decaying buy tax (starts at 99%, decays to 10% over ~445 blocks) and a constant 10% sell tax; collected fees are converted to ETH and distributed 40/40/20 between the token contract, a charity address, and a protocol address. Exact-output swaps and post-deployment liquidity additions are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
