@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd022a9c2461a26feb28642dd64855a2d17220aec",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "BucketHook",
+    "description": "Single-pool hook for the Bucket Protocol that applies a configurable USDT fee on swaps, minting ERC-6909 claims to settle fees into an epoch-based escrow. Restricts liquidity modifications to a designated LP lock contract during bootstrap, and blocks all swaps until bootstrap is finalized by an admin and the epoch start timestamp is reached.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
