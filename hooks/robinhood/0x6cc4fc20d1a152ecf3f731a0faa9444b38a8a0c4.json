@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6cc4fc20d1a152ecf3f731a0faa9444b38a8a0c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RandomDonationHook",
+    "description": "On each swap, selects a pseudo-random tiered fee from three configurable probability tiers and applies it on top of a base fee. The fee is split between LPs (via pool donation) and a fixed treasury address. Only owner-registered pools may be initialized or traded.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
