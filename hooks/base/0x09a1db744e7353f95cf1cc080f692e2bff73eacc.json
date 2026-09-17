@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x09a1db744e7353f95cf1cc080f692e2bff73eacc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DiemCatLaunchHook",
+    "description": "A token launch hook that seeds initial liquidity and applies a time-decaying snipe-protection fee during a configurable window after launch. Token-side fees are burned to a dead address; quote-side fees are split between creator and platform. Liquidity is locked after seeding\u2014adds are restricted to the factory/hook and removes always revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
