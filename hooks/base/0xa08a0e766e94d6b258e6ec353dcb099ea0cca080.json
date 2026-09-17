@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa08a0e766e94d6b258e6ec353dcb099ea0cca080",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DecayFeeHook",
+    "description": "A Uniswap v4 hook that applies a linearly decaying launch fee (anti-snipe) from a configurable START_FEE down to END_FEE over DECAY_SECONDS, then charges a flat fee. Pool initialization is restricted to a fixed MULTI_POOL address set at deployment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
