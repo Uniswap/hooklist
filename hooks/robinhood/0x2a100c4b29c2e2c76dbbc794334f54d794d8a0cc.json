@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2a100c4b29c2e2c76dbbc794334f54d794d8a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HoardFeeHook",
+    "description": "Fee engine for the canonical HOARD/USDG Uniswap v4 pool, charging a 3% gross fee on all swaps collected in USDG and split equally between a Stock Vault and a USDG Wall manager. Records post-swap prices to an oracle after every swap; a LiquidationRouter address can be set as fee-exempt by the owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
