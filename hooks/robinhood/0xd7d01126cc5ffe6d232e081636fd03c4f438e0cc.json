@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd7d01126cc5ffe6d232e081636fd03c4f438e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinVistaHook",
+    "description": "A Uniswap v4 hook for RobinVista launch pools that charges a configurable trading fee (up to 10%) in the pool's base token regardless of swap direction or exact-in/out type. Fees are collected as PoolManager claims and distributed to five buckets (creator, holders, protocol, burn, flywheel) upon withdrawal.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
