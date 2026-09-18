@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0e6b4a067040a76876c527e094d4827fae5db080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MarketHoursFeeHook",
+    "description": "A Uniswap v4 hook for tokenized equity pools that charges a dynamic LP fee: a configurable base fee plus a time-varying surcharge computed from US market hours (regular session Mon\u2013Fri 09:30\u201316:00 ET, extended hours, or closed). The surcharge widens when the reference market is shut, compensating LPs for stale-price risk. Implemented via LP fee override in beforeSwap; the contract holds no funds and has no owner or governance.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
