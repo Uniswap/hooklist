@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa12d0f48d645850cc28dcb982bd656935d1760cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SlowmoFeeHook",
+    "description": "Volatility-sensitive ETH fee hook for Uniswap v4 pools opened by SlowmoLaunch. Charges a dynamic fee (1%\u20137%) on buys via beforeSwap delta and on sells via afterSwap delta, scaling the fee based on the previous swap's tick movement. Fees are pushed immediately to a per-pool feeRecipient; pool creation is gated to a bound factory contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
