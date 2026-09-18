@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa41e29f0c9c4071c8edf829617905c5b2398c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VolatilityFeeHook",
+    "description": "A Uniswap v4 hook that charges a volatility-adjusted fee on every swap, with the rate scaling linearly from a base fee to a maximum based on how far the previous swap moved the tick price. Fees are taken in the pool's quote currency as ERC-6909 claims and forwarded to an immutable fee wallet via a permissionless sweep().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
