@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x52e4691fb9b4424f8be44d3871fd5f2303b77ac8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DeliHookConstantProduct",
+    "description": "Implements a Uniswap v2-style x*y=k constant product AMM as a v4 hook, requiring wBLT as one pool token. Fees are extracted from swaps and forwarded to a FeeProcessor contract, with DailyEpochGauge and IncentiveGauge integrations for liquidity incentives.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
