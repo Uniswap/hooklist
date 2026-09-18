@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x51b2c9e2488a9ab2e73d479b7a9fcb587e31c040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SquishHook",
+    "description": "An afterSwap hook that sweeps a tick-triggered intent queue (SquishBook) at the end of every swap. When a swap moves the price past a registered tick threshold, the hook executes standing instructions (arbitrary external calls with escrowed bounties) and credits the bounties to the swapper; a try/catch ensures a failing intent never reverts the triggering swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
