@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb84c11114755b5cfb4d1342d7686acc72b06c888",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BlendHook",
+    "description": "Singleton Uniswap v4 hook that enables basket token trading by intercepting swaps and settling them at exact NAV through mint/redeem on registered BasketVault contracts, bypassing the AMM curve entirely. Liquidity addition is refused; every swap routes constituent purchases or redemptions through per-basket route pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
