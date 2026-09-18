@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5687cf36ad562b6d1a9dfc6d2aeec25360ec0088",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TaxGuard",
+    "description": "A tax-collecting hook that skims a configurable buy/sell tax from exact-input swaps and routes proceeds to a designated tax receiver, while applying a dynamic LP fee override via the 0x400000 bit. Tax rates are owner-adjustable downward only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
