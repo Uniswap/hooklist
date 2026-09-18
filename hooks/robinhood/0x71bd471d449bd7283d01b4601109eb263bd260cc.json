@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x71bd471d449bd7283d01b4601109eb263bd260cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AnyQuoteEthSharedHookV1",
+    "description": "A shared Uniswap v4 hook for host-registered token launch pools that intercepts swap fees, converts them to native ETH via an on-chain route, and distributes ETH rewards to platform and creator wallets atomically during each swap. Any router may swap on registered pools; pool registration is restricted to the immutable host address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
