@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6b619e546c029f65559e3e475cabdb36ea97e888",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Rob0Hook",
+    "description": "A bonding curve hook for Robinhood Chain that handles all swap accounting in beforeSwap, minting and burning Rob0Token against an ETH price curve. The pool holds no liquidity; the hook acts as the sole counterparty. Swaps are restricted to trusted routers and require an ABI-encoded swapper address in hookData.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": true,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
