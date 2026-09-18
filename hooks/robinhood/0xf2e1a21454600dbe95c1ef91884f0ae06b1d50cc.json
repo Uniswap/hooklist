@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf2e1a21454600dbe95c1ef91884f0ae06b1d50cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StaticsLaunchLiquidityHook",
+    "description": "A launch-pool hook for the Statics protocol that charges configurable bilateral hook fees (separate input and output fee rates, up to 10% each) on swaps, routing proceeds as ERC-6909 claims to a mutable fee receiver. Pools must be registered by an authorized operator and explicitly activated before swaps are permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
