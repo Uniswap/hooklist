@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb52230560f6f44d9293178ad241d1f515cf2a8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "UnihoodStockHook",
+    "description": "A Uniswap v4 hook implementing a tokenized-stock launch mechanism where each pool has a fixed per-launch swap fee (0\u20135%), split among the creator, platform, and a bid-wall bucket. The bid wall periodically places single-sided quote-token liquidity one tick spacing below spot; captured tokens are permanently sequestered. A graduation threshold latches once price falls to a configured tick, after which external liquidity is unlocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
