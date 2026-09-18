@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcb175ec09ec58bde47939f60f741832fcda20044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TripHook",
+    "description": "Charges a configurable WETH levy (default 1%, max 3%) on exact-input TRIP token sells in a single canonical pool, forwarding the levy directly to a SporeVault address via afterSwap delta return. Buys are exempt; the levy rate is governance-controlled within the hard cap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
