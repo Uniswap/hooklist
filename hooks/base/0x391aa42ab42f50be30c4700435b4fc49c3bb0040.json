@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x391aa42ab42f50be30c4700435b4fc49c3bb0040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FeeCollectHook",
+    "description": "Collects and processes fees for registered LP tokens after each swap by calling an external AutoRepayingManager contract in batches of up to 3. Pools and LP token IDs must be registered by the manager; unauthorized pools are skipped.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
