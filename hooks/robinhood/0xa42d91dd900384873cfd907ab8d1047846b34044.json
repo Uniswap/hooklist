@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa42d91dd900384873cfd907ab8d1047846b34044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HomepadHybridHook",
+    "description": "On every swap, takes a configurable fee from the output amount via afterSwapReturnsDelta and routes it proportionally to the pool's creator, a HOME treasury, and a platform wallet. Designed for HOMEPAD hybrid launch pools that seed liquidity with a single-sided concentrated position.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
