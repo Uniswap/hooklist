@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5de6a0b746841846415d70e9b3634f55e62de044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TokenStrategyHook",
+    "description": "Charges a time-decaying fee on swaps in token pools: starts at 20% and decreases by 200 bps every 25 blocks until reaching 0%. Collected fees are converted to ETH via an internal pool swap and forwarded to a designated fee address. WETH pools always incur a 100% fee on the output token.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
