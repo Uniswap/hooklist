@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x06fb2fbcbce0a212106bd7f0c8d2713ab2628888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TrinityHookV8",
+    "description": "A token-launch hook that maintains a single continuous concentrated liquidity position. On each exact-input swap, it extracts a symmetric fee: buy fees are forwarded to a configurable treasury address, sell fees are burned by transferring to 0xdead. External liquidity additions are permanently blocked; only the hook owner may seed the pool via addLiquidity().",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
