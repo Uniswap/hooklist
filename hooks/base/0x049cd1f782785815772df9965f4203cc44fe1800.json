@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x049cd1f782785815772df9965f4203cc44fe1800",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TrinityHookV10Collect",
+    "description": "A Uniswap v4 hook that manages a single owner-controlled liquidity position with an allowlisted LP set and a dynamic fee configured at pool initialization. Accrued LP fees are harvested off the swap path via permissionless collectFees(), forwarding both the token-side and quote-side fees to a treasury feeRecipient multisig Safe.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
