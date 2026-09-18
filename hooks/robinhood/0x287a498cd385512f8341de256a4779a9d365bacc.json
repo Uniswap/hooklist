@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x287a498cd385512f8341de256a4779a9d365bacc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PotatoV4Hook",
+    "description": "A token launch platform hook that manages bonding curve-style launches. Takes a 1% fee on buy swaps via BeforeSwapDelta (burns fee tokens on sells), enforces a 4-second anti-snipe window at launch, caps per-wallet token holdings, and tracks graduation when a quote-token liquidity threshold is reached. Fees are split among creator, protocol, and referrer.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
