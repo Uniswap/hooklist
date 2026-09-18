@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd156a4f8ec3dac293cd2758aea8de1e7ee4e8800",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CashCatMachineHook",
+    "description": "Restricts liquidity additions to a single designated machine address, ensuring it is the sole liquidity provider in the pool. All other hook callbacks (including swap hooks) are disabled and revert if called.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
