@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0bf1941958ec42696296311be072eb04312e90c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ZoraV4CoinHook",
+    "description": "Zora Coins V4 hook that collects LP fees on every swap, converts them to a backing currency via multi-hop paths, and distributes rewards. Applies dynamic swap fees computed by an external FeeManager and supports pool migration to newer hook versions via a permissioned upgrade gate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
