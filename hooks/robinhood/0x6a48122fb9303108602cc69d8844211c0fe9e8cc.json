@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6a48122fb9303108602cc69d8844211c0fe9e8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BluechipHook",
+    "description": "A Uniswap v4 hook for BLUECHIP-category pools that implements directional swap fees (quoteToBase vs baseToQuote) with an admin-configurable platform fee split. Platform fees are extracted from exact-input and exact-output swaps and transferred to a treasury contract, with an LP fee override returned on every swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
