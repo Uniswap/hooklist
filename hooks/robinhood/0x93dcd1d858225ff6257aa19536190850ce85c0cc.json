@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x93dcd1d858225ff6257aa19536190850ce85c0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DreddHook",
+    "description": "A fee-collection hook for factory-registered token pools that deducts configurable swap fees via return deltas in beforeSwap and afterSwap, applies an elevated sniper tax to early buyers within a configurable block window after launch, and accumulates fee earnings for token creators to withdraw.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
