@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x636cc41a47f6ae8a4543ab8cd31b6efe0320e0ec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DescendingFeeHook",
+    "description": "A Uniswap v4 hook that charges a descending anti-snipe fee: starting at a high rate (up to 99%) held briefly after launch, then parabolically decaying to a configured steady-state rate. The fee is taken in the input currency via hook deltas and accrued as ERC-6909 claims in the PoolManager, collectible by the launcher. LP fee is always zero; donations are disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
