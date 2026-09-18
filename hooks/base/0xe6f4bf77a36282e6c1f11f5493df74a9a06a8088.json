@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe6f4bf77a36282e6c1f11f5493df74a9a06a8088",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "P2Hook",
+    "description": "A swap-tax hook for the $P2/WETH pool on Base that deducts a 5% tax on each swap's input amount via beforeSwap delta. WETH taxes are split 40/40/20 to buyback, claim pool (lottery), and ops wallets; $P2 taxes go entirely to a buyback vault for burning. Certain addresses can be excluded from tax by the owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
