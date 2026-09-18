@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "SaturnOmnichainV4Hook",
-    "description": "Minimal hook for the Saturn Omnichain project that records the initial pool tick and sets a poolInitialized flag via afterInitialize. Has no effect on swaps, liquidity operations, or fees.",
+    "description": "Minimal hook for the Saturn Omnichain project; the afterInitialize callback itself is a no-op. A separate initializePool() function on the contract records the initial pool tick and sets a poolInitialized flag. Has no effect on swaps, liquidity operations, or fees.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
