@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x10283cba9f2de2d372f18c9dea56af9e3075e044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HimsTreasuryFeeHook",
+    "description": "Charges a 0.5% treasury fee and 0.3% development fee on every swap's executed amount using afterSwapReturnsDelta. Maintains an on-chain TWAP oracle and gates all swaps behind a treasury-controlled swapsEnabled flag.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
