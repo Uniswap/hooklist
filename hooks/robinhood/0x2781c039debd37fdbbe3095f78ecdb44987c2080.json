@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2781c039debd37fdbbe3095f78ecdb44987c2080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ForgeHook",
+    "description": "A Uniswap v4 hook that enforces factory-only pool initialization and applies a parabolic MEV-decay fee, starting at 80% and decaying to a 1.5% base over 30 seconds after pool creation. The factory's own launch buy is exempt from the MEV fee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
