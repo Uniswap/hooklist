@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x046d9cc1b44a98cf28316de6c5dfac5392d3c040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FeeCollectHook",
+    "description": "A post-swap hook that tracks trade counts per registered LP token position in authorized pools, designed to trigger fee processing via an external LeveragedLPManager contract on each swap. The fee collection call is currently disabled (commented out in source), so afterSwap only records trade counts and emits debug events.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
