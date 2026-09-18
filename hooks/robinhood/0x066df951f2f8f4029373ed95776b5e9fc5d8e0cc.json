@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x066df951f2f8f4029373ed95776b5e9fc5d8e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SharedStockFeeHook",
+    "description": "A shared registry hook for stock-paired pools that collects swap fees denominated in a \"reward stock\" token, minting ERC-6909 claims to each pool's designated distributor. Fee rates and distributor address are set once at pool registration and are permanently immutable thereafter.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
