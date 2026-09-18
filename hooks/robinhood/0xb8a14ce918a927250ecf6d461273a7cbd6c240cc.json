@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb8a14ce918a927250ecf6d461273a7cbd6c240cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "WethFeeHookImmutable",
+    "description": "Charges a WETH-denominated fee (3%, 5%, or 10% based on the token's launch tier, or a global fallback rate) on every swap by intercepting the WETH leg via BeforeSwapDelta and AfterSwapDelta. Accrued fees are distributed permissionlessly among a treasury, token creator, a flagship buyback vault, and the token's on-chain reward mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
