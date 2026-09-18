@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x52bd3fede7e78e8ca9a0277a7ddc41ee3cf100cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DexTaxHook",
+    "description": "A Uniswap v4 hook for native-ETH pool pairs that charges a configurable ETH tax (capped at 5%) on every swap, forwarding the fee directly to a recipient address in the same transaction. The tax is always taken in currency0 (native ETH), applied in beforeSwap when ETH is the specified currency and in afterSwap otherwise.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
