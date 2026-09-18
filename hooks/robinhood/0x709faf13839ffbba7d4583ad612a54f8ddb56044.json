@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x709faf13839ffbba7d4583ad612a54f8ddb56044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PonsV2MemeHook",
+    "description": "Singleton Uniswap v4 hook shared by all graduated Pons v2 meme pools. In afterSwap, it takes a hook fee and per-pool creator tax from the unspecified swap output, accumulating them as pending balances. A trusted operator can later sweep these fees, optionally converting memecoin-denominated balances to the quote currency via internal pool swaps, then distributing proceeds to protocol, creator, and a five-year buyback vault.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
