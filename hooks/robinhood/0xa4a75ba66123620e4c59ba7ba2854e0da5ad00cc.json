@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa4a75ba66123620e4c59ba7ba2854e0da5ad00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TipOffFeeHook",
+    "description": "A Uniswap v4 hook for an ETH/$TIPOFF pool that skims a fixed 5% fee in ETH on every swap (both buys and sells) by intercepting the swap via beforeSwap/afterSwap return deltas, routing collected ETH to an immutable feeRecipient address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
