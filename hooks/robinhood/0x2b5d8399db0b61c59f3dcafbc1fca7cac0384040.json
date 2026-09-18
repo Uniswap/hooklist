@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2b5d8399db0b61c59f3dcafbc1fca7cac0384040",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VladBrianV1127CouplingHook",
+    "description": "After a swap in a configured VLAD/SPY or BRIAN/SPY entry pool, the hook automatically executes a coupled sidecar swap in a VLAD/BRIAN duel pool, selling the opponent token proportional to the entry-pool buy amount. Coupling is capped by the hook's own token inventory and skipped gracefully on failure.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
