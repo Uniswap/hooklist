@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa876e316f70102ae21ad4ba2f518d26f5792a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LemonV4TaxHook",
+    "description": "Collects a configurable trading tax (3\u201310% total) on every swap in the pool's paired asset, splitting it between a per-pool creator recipient and a fixed protocol recipient. Tax rates and recipients are set once by a designated launcher before pool initialization and are permanently immutable thereafter.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
