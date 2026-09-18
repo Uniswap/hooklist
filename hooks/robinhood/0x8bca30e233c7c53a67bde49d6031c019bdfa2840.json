@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8bca30e233c7c53a67bde49d6031c019bdfa2840",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ChartGuardHook",
+    "description": "A price-peg enforcement hook that locks a Uniswap v4 pool to a 1:1 (one dollar) price. Pool initialization is restricted to a designated executor at exactly the $1 sqrtPrice; liquidity additions are confined to \u00b110 ticks of parity; and any swap that moves the tick beyond \u00b12 ticks from parity is reverted in afterSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
