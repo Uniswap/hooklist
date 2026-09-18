@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xeb4331f1ff3e85d1a52359c8d3721f983c9e00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ArkHook",
+    "description": "Collects a configurable fee (up to 5%) from swaps on registered tokens by taking a cut of the swap input or output via BeforeSwapDelta/AfterSwapDelta. Accumulated fees are stored as a claimable bounty for each token's designated captain and can be harvested at any time.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
