@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3db411571ab283598278c9ac85ae2eb4270cc0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FeeHook",
+    "description": "Fee hook for token launches that takes a configurable tax (up to 10%) on swaps denominated in the quote token, splitting proceeds among a dividend sink (token holders), a creator address, and a platform recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
