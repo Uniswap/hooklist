@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5856b06b7bb51ad51dd07cadcd345e426f5b80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FeeHook",
+    "description": "Taxes every swap on a single fixed pool in the quote currency, splitting proceeds between LP dividend holders (via a vault sink), the launch creator, and the platform. Fees accrue as ERC-6909 claims and are settled and distributed to holders at the start of the next swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
