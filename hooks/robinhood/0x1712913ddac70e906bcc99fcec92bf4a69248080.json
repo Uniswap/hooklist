@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1712913ddac70e906bcc99fcec92bf4a69248080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NoSellHook",
+    "description": "A Uniswap v4 hook that permanently blocks sell swaps (HODL \u2192 ETH direction) for all senders except a single protocol address set once by the deployer via setProtocol(). Buy swaps (ETH \u2192 HODL) are always permitted without restriction.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}
