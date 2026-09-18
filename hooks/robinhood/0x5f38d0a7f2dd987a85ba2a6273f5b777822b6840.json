@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5f38d0a7f2dd987a85ba2a6273f5b777822b6840",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NockV6PoolInitializationHook",
+    "description": "Gates pool initialization and pre-graduation liquidity additions to an authorized sale contract; enforces price-floor constraints in afterSwap (reverts if price falls below start FDV or if a target-price crossing is reversed); maintains a 64-slot TWAP oracle with a 30-minute window updated on each swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
