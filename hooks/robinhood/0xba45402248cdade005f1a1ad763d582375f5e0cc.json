@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xba45402248cdade005f1a1ad763d582375f5e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "OrielFeeHook",
+    "description": "A Uniswap v4 hook for Oriel token launch pools that charges a volatility-based dynamic fee (between a per-pool baseFeeBps and maxFeeBps) on buys and sells in the pool's quote currency, distributing fees directly to the pool creator's wallet; only exact-input swaps are permitted.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
