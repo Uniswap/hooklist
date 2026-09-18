@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd2d0b89056883f239b3b18e2a3fd5f2287ffb080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MarketHoursFeeHook",
+    "description": "A Uniswap v4 hook that applies a dynamic LP fee based on US equity market sessions (regular, extended, or closed), charging a base fee plus a time-of-day surcharge derived from block.timestamp and US Eastern time, to compensate LPs for stale-price risk outside trading hours. The hook holds no funds, has no owner, and cannot revert inside a swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
