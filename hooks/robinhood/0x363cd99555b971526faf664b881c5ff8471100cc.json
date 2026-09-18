@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x363cd99555b971526faf664b881c5ff8471100cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BobHook",
+    "description": "BobHook collects swap fees for factory-registered token stations, applying a higher snap fee during a configurable early block window after listing and a flat fee thereafter. Accumulated fees are attributed to designated patrons and redeemable via redeem/redeemAll.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
