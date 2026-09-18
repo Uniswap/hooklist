@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb765ff548543f915c6932b0001c4872e46ea20cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RhmiFeeHook",
+    "description": "Charges a fixed ETH-side trade tax (immutable basis points, max 4%) on all swaps in native ETH/RHMI pools, sending fees directly to an immutable treasury. Uses return-delta hooks: beforeSwap handles cases where ETH is the specified amount; afterSwap handles cases where ETH is the unspecified amount.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
