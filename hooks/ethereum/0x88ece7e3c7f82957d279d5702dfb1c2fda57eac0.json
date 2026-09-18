@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x88ece7e3c7f82957d279d5702dfb1c2fda57eac0",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ZCHFSavingsRouterHook",
+    "description": "A ZCHF/svZCHF pool hook that provides protocol-owned JIT liquidity for each swap, maintains anchor liquidity centered at the savings vault's fair price, and blocks external liquidity additions. Price sync can be triggered permissionlessly if spot price drifts too far from the fair rate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
