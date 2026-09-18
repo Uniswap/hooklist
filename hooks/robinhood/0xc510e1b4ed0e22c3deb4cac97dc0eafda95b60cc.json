@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc510e1b4ed0e22c3deb4cac97dc0eafda95b60cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BonniHook",
+    "description": "Uniswap v4 hook binding to a single native-ETH/BONNI token pool that gates trading behind an owner-controlled boolean switch and skims ETH fees from every swap (10% buy / 15% sell during an 8-minute launch window, then 2% flat), routing collected fees directly to a BonniFeeDistributor contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
