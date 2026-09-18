@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1cec128d003a2d79a7ef6552ecd7c266cdca20cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RimeHook",
+    "description": "Singleton hook for the Rime protocol that taxes every swap in quote-asset terms, applies anti-snipe mechanics (Sniper Shield and launch-decay) during curve and post-graduation phases, enforces a minimum price floor while a pool is on its curve, and detects graduation events.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
