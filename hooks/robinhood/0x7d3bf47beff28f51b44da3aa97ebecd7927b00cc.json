@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7d3bf47beff28f51b44da3aa97ebecd7927b00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GladeHook",
+    "description": "A fee-collecting hook that charges a configurable basis-point fee (capped at 5%) on swaps involving registered tokens, takes the fee directly from the PoolManager, and distributes it to token wardens (owners) via a per-token harvest balance that wardens can withdraw.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
