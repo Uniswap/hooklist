@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x65d144ea7bfbd8b4a9aa4c53c7db6025f28fa8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookrModularHookV4",
+    "description": "A modular Uniswap v4 hook that delegates swap accounting to a pinned immutable kernel via delegatecall, supporting per-pool module stacks, dynamic LP fees, and an optional arbitrage correction mechanism that triggers nested swaps during beforeSwap/afterSwap for trusted routers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
