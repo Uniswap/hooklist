@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x54cf34a5694e527519bff822f464bca81ee71044",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "VerifyHook",
+    "description": "A Uniswap v4 hook that applies a 1% swap tax: on buys (ETH\u2192token), 1% of received tokens is burned via the token contract; on sells (token\u2192ETH), 1% of received ETH is forwarded to a hardcoded deployer address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
