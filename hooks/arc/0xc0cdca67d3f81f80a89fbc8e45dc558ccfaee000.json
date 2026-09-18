@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc0cdca67d3f81f80a89fbc8e45dc558ccfaee000",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "PackedHook",
+    "description": "A Uniswap v4 hook with only the `beforeInitialize` permission, restricting pool creation to curves registered with an immutable factory address. No swap, liquidity, or donate callbacks are active; the pool behaves as a standard v4 pool once initialized.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
