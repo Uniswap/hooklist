@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5bd276df15af6e028f7cf6f0858ed58c8cc96888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "PhiEthHooks",
+    "description": "Custom-curve hook implementing 1:1 ETH/phiEth swapping. The beforeSwap hook takes the full input amount from the PoolManager, calls phiEth.deposit() or phiEth.withdraw() to convert between ETH and phiEth, settles the output, and returns a full delta to bypass concentrated liquidity. Direct liquidity additions always revert. Only ETH/phiEth pools with zero fee can use this hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
