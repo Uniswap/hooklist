@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfa6cdb274a5f2febdf0f9e05f0a3ba4ddcd680cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RiboV4TaxHook",
+    "description": "A tax hook for native/token pools that applies a 1.5% buy tax (taken from native input before swap) and a 1.5% sell tax (taken from native output after swap), routing collected taxes to a configurable revenue router. Only exact-input swaps on admin-registered pools are supported; exact-output swaps revert.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
