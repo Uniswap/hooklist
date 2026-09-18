@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x25e0b685c6ef28ed31c8409ebc426c3a3a4c80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NasdankFeeHookPairUniversal",
+    "description": "Fee hook for coin/pair-token pools that intercepts the pair-token leg of every swap to collect a configurable fee via BeforeSwapDelta and ERC-6909 accrual (zero net v4 delta per swap). Accumulated fees are split between a project treasury (paid in the pair token) and a protocol treasury (converted to WETH via a frozen DIRECT or VIA_USDG V3 route, with graceful in-kind pair-token degradation if conversion fails).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
