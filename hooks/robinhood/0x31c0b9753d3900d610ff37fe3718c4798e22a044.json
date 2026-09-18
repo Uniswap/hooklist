@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x31c0b9753d3900d610ff37fe3718c4798e22a044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinhoodScannerSafeHook",
+    "description": "Uniswap v4 hook that collects a fixed 1.5% swap fee from the output currency via afterSwapReturnsDelta, sending proceeds to an immutable fee recipient. Pool registration and initialization are restricted to a factory address set once by an immutable initializer; swaps revert for unregistered pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
