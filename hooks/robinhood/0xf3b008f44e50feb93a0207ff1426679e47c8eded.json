@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf3b008f44e50feb93a0207ff1426679e47c8eded",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LPFarmHook",
+    "description": "A Uniswap v4 hook for stock/LP farming pools that overrides LP fees with a dynamic 85/15 split between LPs and a protocol treasury, supports a time-based anti-snipe launch curve, and auto-pauses pools when a corporate action (stock split or dividend) is detected.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
