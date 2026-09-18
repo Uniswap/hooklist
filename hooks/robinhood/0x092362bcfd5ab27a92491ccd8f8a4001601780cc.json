@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x092362bcfd5ab27a92491ccd8f8a4001601780cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ReefGuardFeeHook",
+    "description": "A Uniswap v4 hook for the $REEFGUARD token that charges a 5% fee on both buys and sells, always collected in ETH (currency0), and forwarded to an immutable fee recipient address using BeforeSwapDelta and AfterSwapDelta returns.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
