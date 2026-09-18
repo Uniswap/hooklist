@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb2b48a0e11c260e25d0198fe6c6c104b927e2888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "PhiEthHooks",
+    "description": "Implements a 1:1 custom-curve swap between ETH and phiEth (an ETH wrapper token) by intercepting beforeSwap to handle deposit/withdraw directly and returning a BeforeSwapDelta to no-op the concentrated liquidity swap. Blocks all liquidity additions and restricts pool initialization to ETH/phiEth pairs with zero fee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
