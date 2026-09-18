@@ -1,0 +1,26 @@
+{
+  "project": "homelanderuniv4plugin",
+  "id": "homelanderuniv4plugin",
+  "version": "1",
+  "name": "HomelanderUniV4Plugin",
+  "description": "A Uniswap v4 hook that dynamically overrides the LP fee in beforeSwap (zero for a privileged MEV executor, configurable for all others) and runs on-chain arbitrage in afterSwap by delegating to an external MEV router and executor, distributing captured profits via a configurable profit distributor.",
+  "source": {
+    "verified": true,
+    "codeHashes": [
+      "sha256:59f93f927fad34ad71c95d0794dc72cbb35c63bd2bf5cbe9763ff56e6adb4632",
+      "sha256:78c153cdd23a0b451d2d536300e4ca27177722633158ce7e6fe9c9d85aaa8ae7"
+    ]
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  },
+  "warnings": [],
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null
+  }
+}
