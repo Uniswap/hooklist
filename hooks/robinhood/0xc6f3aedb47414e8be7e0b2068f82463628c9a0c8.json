@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc6f3aedb47414e8be7e0b2068f82463628c9a0c8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchFeeHook",
+    "description": "A launch tax hook that deducts a configurable fee (in basis points) from the gross input of each exact-input swap, accumulates the tax on-chain per pool and asset, and allows anyone to collect accrued fees into an immutable reward vault.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
