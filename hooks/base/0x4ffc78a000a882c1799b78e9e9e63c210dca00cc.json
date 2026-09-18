@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4ffc78a000a882c1799b78e9e9e63c210dca00cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SwcHook",
+    "description": "ERC20 token ($SWC) that is also a Uniswap v4 hook, charging a 1% buy and 1% sell tax on pool swaps by taking $SWC from the PoolManager and burning it. Token balances are mirrored to ERC-721 NFTs (DN404-style), minting or burning NFTs as balances cross whole-unit boundaries.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
