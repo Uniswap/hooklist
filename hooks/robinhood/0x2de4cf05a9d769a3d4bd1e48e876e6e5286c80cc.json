@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2de4cf05a9d769a3d4bd1e48e876e6e5286c80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MarblePoolHook",
+    "description": "Protocol fee hook for the canonical native ETH/MRBL pool on marble.fun. Burns a configurable portion of MRBL received in swaps, distributes native ETH to a fee splitter, and applies an additional launch-only snipe fee until disabled by the owner. The LP fee is dynamically adjustable by the owner via updateDynamicLPFee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
