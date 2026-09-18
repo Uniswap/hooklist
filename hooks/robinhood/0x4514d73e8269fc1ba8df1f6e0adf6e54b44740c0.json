@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4514d73e8269fc1ba8df1f6e0adf6e54b44740c0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "KnoxHook",
+    "description": "Gates swaps on a `launched` boolean set by a designated launchpad contract, blocking trading until initial liquidity is seeded. The afterSwap callback records on-chain swap statistics (volume in each direction, trade count, last block) for use as an external index.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "governance"
+  }
+}
