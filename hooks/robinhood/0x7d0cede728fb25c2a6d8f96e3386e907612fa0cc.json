@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7d0cede728fb25c2a6d8f96e3386e907612fa0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HEIMNativeTaxHook",
+    "description": "A single-pool Uniswap v4 hook that charges an immutable native ETH tax on every swap. It uses BeforeSwapDelta for native-specified swaps and AfterSwapDelta for fund-token-specified swaps. Accrued ETH tax is forwarded to an immutable recipient address via a permissionless keeper function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
