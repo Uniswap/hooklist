@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x81785af3c4772e61b4893f79d6a973f2b0ace0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinArrow",
+    "description": "ERC-20 token (ARROW, 100,000 fixed supply) that doubles as a Uniswap v4 hook for the official ARROW/WETH pool. Collects swap fees in ARROW (1% on buys, 2% on sells), distributing 80% pro-rata to all eligible holders and 20% to the current \"Robin Arrow\" holder \u2014 a gamified title earned by qualifying buys (\u2265100 ARROW net) and immediately lost on any sell.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
