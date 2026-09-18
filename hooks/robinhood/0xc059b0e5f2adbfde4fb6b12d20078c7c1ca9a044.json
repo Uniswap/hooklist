@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc059b0e5f2adbfde4fb6b12d20078c7c1ca9a044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinCoreHookV3",
+    "description": "Fee distribution, anti-sniper taxation, and auto-buyback-burn hook for ROBINCORE pools. After each swap in registered pools, it collects buy/sell fees and distributes them to the creator, referrer, platform, and gas recipients, with configurable sniper protection that applies a high sell tax to early buyers during the launch window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
