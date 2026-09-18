@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc5e70dcdc954e7a5411a4a424d5518bcd51c80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchpadHook",
+    "description": "A launchpad hook that charges ETH-denominated swap fees on every ETH/token trade, splitting revenue between the token creator, a platform treasury, and up to three referral tiers. Fees accumulate as native ETH in per-wallet claimable balances and are withdrawn via a pull-based claim function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
