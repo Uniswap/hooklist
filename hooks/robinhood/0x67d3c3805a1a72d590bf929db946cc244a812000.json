@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x67d3c3805a1a72d590bf929db946cc244a812000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "GuardHook",
+    "description": "Restricts pool initialization to the factory address, preventing front-running of pool creation. Has no swap-time flags and performs no actions during swaps \u2014 the pool fee serves as the creator's tax mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
