@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x16204b605c8aa036c47607a3b6bd0e330bca40cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "JadeHook",
+    "description": "A swap fee hook for a token launchpad that charges a configurable base fee on swaps for registered tokens, with an elevated rush fee during an initial block window after token registration. Fees are accrued to token maker addresses and can be claimed via the hook contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
