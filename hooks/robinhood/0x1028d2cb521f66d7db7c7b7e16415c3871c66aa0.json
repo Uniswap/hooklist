@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1028d2cb521f66d7db7c7b7e16415c3871c66aa0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MarketHook",
+    "description": "A prediction market hook that gates all pool operations through a designated router contract. Swaps and liquidity additions require trading to be open (via IMarketHookRouter.isTradingOpen()), fees must remain at zero, and donations are permanently disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}
