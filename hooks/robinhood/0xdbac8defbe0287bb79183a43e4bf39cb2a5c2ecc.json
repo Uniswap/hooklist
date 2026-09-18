@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdbac8defbe0287bb79183a43e4bf39cb2a5c2ecc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PumpRobinHook",
+    "description": "A Uniswap v4 bonding-curve launch hook that charges a 2% WETH fee on every swap (split equally between creator and platform), escalating to 99% during a configurable anti-snipe window; the pool fee is overridden to 0% via lpFeeOverride and the hook takes fees directly via BeforeSwapDelta/AfterSwapDelta. LP positions are permanently locked \u2014 removal always reverts.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
