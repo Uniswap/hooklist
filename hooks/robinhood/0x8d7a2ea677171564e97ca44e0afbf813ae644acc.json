@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8d7a2ea677171564e97ca44e0afbf813ae644acc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MultiPoolsHook",
+    "description": "A Uniswap v4 hook that collects a fixed 1% swap fee on all swaps (split 70% to the pool creator and 30% to a platform vault) and permanently locks liquidity after the initial seed deposit by reverting all subsequent add/remove liquidity calls.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
