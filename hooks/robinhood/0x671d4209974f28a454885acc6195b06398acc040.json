@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x671d4209974f28a454885acc6195b06398acc040",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "InfectHook",
+    "description": "A minimal hook that implements afterSwap but performs no action, returning the selector with zero delta. Also exposes several pure/view utility functions that compute epidemiology-themed metrics (e.g. outbreak pulse, pathogen tier, transmission index) from address and bytes32 inputs via modular arithmetic, though these are unused in swap logic.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
