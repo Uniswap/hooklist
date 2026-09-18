@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8d9d3bbd45f184fe8ff67446d50f7c49dbeb20cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StonkHook",
+    "description": "A Uniswap v4 hook for the Stonkdrops memecoin launchpad that charges a 1% base tax plus an optional creator fee on every swap's quote leg, routing 70% to a StonkFund raindrop pool and 30% to the treasury. Applies an anti-snipe tax in the first seconds after launch and reports USD volume back to the launchpad for vesting and stats.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
