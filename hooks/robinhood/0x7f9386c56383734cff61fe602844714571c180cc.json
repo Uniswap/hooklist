@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7f9386c56383734cff61fe602844714571c180cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "STONKBANK",
+    "description": "Fixed-supply ERC-20 token that also serves as a Uniswap v4 hook for a single immutably bound pool. Collects a configurable tax (in basis points) on the native ETH side of swaps for both buys and sells, routing collected taxes to a designated controller address via BeforeSwapDelta and AfterSwapDelta return values.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
