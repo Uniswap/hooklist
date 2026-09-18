@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x34c878c8995b1d60ae62697cd77faa960269e044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "EveriseHook",
+    "description": "Collects a configurable sell fee (in ETH) on token-to-ETH swaps via afterSwapReturnsDelta, accumulates the ETH in a fee pool, then executes a nested buyback swap to purchase the project token and burn it via ITokenBurn.burn(). Burns are triggered automatically when feePool reaches a minimum threshold, with deferred retry on failure.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
