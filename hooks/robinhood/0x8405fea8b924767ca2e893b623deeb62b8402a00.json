@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8405fea8b924767ca2e893b623deeb62b8402a00",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LiquidityGate",
+    "description": "Gates pool initialization to the launchpad address and restricts liquidity additions to a designated locker contract. Permanently prevents all liquidity removal by reverting any attempt, locking deposited liquidity forever.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
