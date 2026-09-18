@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0d2a6208807f46ea15cca9ad7b4ac406b816a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchTaxHook",
+    "description": "Charges a 1% swap tax on launchpad pools, always denominated in the pool's quote token, split 50/50 between the launchpad deployer and the pool token creator. Only the registered strategy contract can initialize pools with this hook; the tax is taken via BeforeSwapDelta or AfterSwapDelta depending on which swap leg is the quote currency.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
