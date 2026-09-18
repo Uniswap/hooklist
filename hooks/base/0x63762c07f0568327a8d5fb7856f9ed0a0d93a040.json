@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "ExponentialLiquidityHook",
-    "description": "A bonding curve hook for token launches paired with WBTC. Deploys ERC20 tokens (PackERC20) with liquidity distributed across exponential price segments. After each swap, if the price crosses a threshold, the hook removes all liquidity, transfers WBTC proceeds to the token contract, and enables a Chainlink VRF-based pack-opening mechanic. Pool initialization is restricted to the hook's own deployERC20Token function via a reverting beforeInitialize.",
+    "description": "A bonding curve hook for token launches paired with WBTC. Deploys ERC20 tokens (PackERC20) with liquidity distributed across exponential price segments. After each swap, if the price crosses a threshold, the hook removes all liquidity, transfers WBTC proceeds to the token contract, and enables a Chainlink VRF-based pack-opening mechanic. Pool initialization via the Uniswap v4 pool manager is blocked \u2014 beforeInitialize always reverts, preventing any pool from being initialized with this hook.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
