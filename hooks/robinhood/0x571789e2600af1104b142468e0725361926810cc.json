@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x571789e2600af1104b142468e0725361926810cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PaperHandsHook",
+    "description": "Taxes PAPER token sells during \"panic mode\" \u2014 when the pool price is \u226515% below the tracked sqrtPrice peak \u2014 by burning 20% of the sold PAPER to 0xdEaD. Buys are never taxed; sells are always permitted but subjected to the burn tax in panic mode.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
