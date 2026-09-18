@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x57bd62c4e6ccca1250cd5b4a5dcd4f1c00d1a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FewHook",
+    "description": "Launchpad hook for few.fun that charges a fixed fee (\u22642%) on the quote asset for every swap, split between a pool creator and an immutable protocol treasury. All economic parameters are set at construction and cannot be changed; includes an optional temporal guard that caps single-buy quote size for a configurable window after pool launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
