@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb9e2980af76f8b8de39909f12588a6d8c5aa4a00",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LiquidityGate",
+    "description": "Restricts liquidity operations so only an immutable designated locker address can add liquidity, and permanently prevents any real liquidity removal (liquidityDelta < 0) for all position owners, while allowing zero-delta calls for LP fee collection. Swaps are unaffected and route through standard Uniswap v4 logic.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
