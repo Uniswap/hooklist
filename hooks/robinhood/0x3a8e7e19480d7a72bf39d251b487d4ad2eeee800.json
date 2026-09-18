@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3a8e7e19480d7a72bf39d251b487d4ad2eeee800",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ApeLaunchHook",
+    "description": "Launchpad hook that gates pool initialization to pre-registered pools and restricts liquidity additions via transient-storage authorization. Only the launchpad or locker contract can authorize liquidity adds; all swaps execute as standard Uniswap v4 with no hook intervention.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
