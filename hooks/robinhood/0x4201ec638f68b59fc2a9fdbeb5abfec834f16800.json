@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4201ec638f68b59fc2a9fdbeb5abfec834f16800",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "VectisHook",
+    "description": "A shared hook for all Vectis pools that restricts pool initialization to the LaunchFactory address and liquidity additions to the Locker address. Swaps are fully unrestricted; the hook has no swap flags, no dynamic fee, and no delta modifications.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
