@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc712137afd02bb6ef684d76f2fe3b5fb8644c4cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "OreToll",
+    "description": "OreToll charges a flat 1% fee on the ETH leg of all swaps in a single owner-pinned pool, collected via BeforeSwapDelta and AfterSwapDelta. Fees accumulate as ERC-6909 claims in the PoolManager and can be withdrawn permissionlessly to a fixed treasury address. The fee schedule has equal min and max (both 1%), making the rate constant.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
