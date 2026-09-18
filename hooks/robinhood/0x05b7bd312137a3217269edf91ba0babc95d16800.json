@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x05b7bd312137a3217269edf91ba0babc95d16800",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MemeStonkCanonicalPoolHook",
+    "description": "Enforces exact-price pool initialization and temporary add-liquidity exclusivity for canonical meme-stonk pools. Only the immutable factory can initialize pools at pre-registered prices; liquidity additions are restricted to a designated controller address until a block-based exclusivity period expires.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
