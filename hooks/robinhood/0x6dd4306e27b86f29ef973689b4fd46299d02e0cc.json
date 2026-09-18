@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6dd4306e27b86f29ef973689b4fd46299d02e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinhoodFlashHookV3",
+    "description": "A Uniswap v4 hook for Robinhood's Flash ecosystem that routes swaps through OTC buy and sell paths, applies realized sell taxes, and supports perpetuals pools via delegatecall to a route module. Trading requires governance to configure protocol fees and unpause trading before any swaps can execute.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": true,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
