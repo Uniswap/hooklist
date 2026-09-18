@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x32b4066917e40c40b52295dbdbcc48d1af296444",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RehearsalHook",
+    "description": "Mainnet dry-run variant of SpcxStrategyHook that restricts swaps to owner-allowlisted tx.origin addresses. The base hook charges a decaying buy tax (95%\u219210%) and flat 10% sell tax on an ETH/SPCXSTR pool, takes fees via afterSwapReturnsDelta, and distributes them 80/10/10 to controller/dev/rewards with token-to-ETH conversion via a nested afterSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
