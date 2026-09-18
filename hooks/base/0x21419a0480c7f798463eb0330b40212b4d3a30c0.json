@@ -4,7 +4,7 @@
     "chain": "base",
     "chainId": 8453,
     "name": "DynamicFeeHook",
-    "description": "Adjusts LP fees dynamically based on per-pool price deviation and volatility estimates, calling updateDynamicLPFee() on every swap. Implements circuit breakers that cap fee increases per block, enforce a minimum number of blocks at elevated fees for MEV protection, and provide an owner-controlled emergency mode that overrides fees globally.",
+    "description": "Adjusts LP fees dynamically based on per-swap volume thresholds, calling updateDynamicLPFee() on every swap. Implements a price-deviation circuit breaker that locks the fee when price moves outside configurable bounds, caps fee increases per block, enforces a minimum number of blocks at elevated fees for MEV protection, and provides an owner-controlled emergency mode that overrides fees globally.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
