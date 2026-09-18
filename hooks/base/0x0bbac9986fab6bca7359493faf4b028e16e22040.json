@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0bbac9986fab6bca7359493faf4b028e16e22040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ExponentialLiquidityHook",
+    "description": "A bonding curve hook that deploys new ERC20/WBTC pools with exponentially-distributed liquidity across tick segments. After each swap, checks if the price has crossed the bonding curve endpoint; if so, removes all liquidity and transfers accumulated WBTC to the token contract, enabling \"pack opening\" on the associated PackERC20.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
