@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8f528d035bf2ca10b009b13108b8b57c937e20cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TaxHook",
+    "description": "Applies a time-decaying buy/sell tax on the ETH leg of swaps in a native ETH/token pool, forwarding collected ETH to an immutable dev wallet. The tax rate steps down by 100 bps per configurable interval from the pool's launch timestamp until it reaches 0%.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
