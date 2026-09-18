@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6739f363b476d3494c2f738f88e21177203260cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AproFunLaunchpadFeeHook",
+    "description": "A volatility-sensitive fee hook for AproFun Launchpad pools that charges 1\u20137% ETH fees on every swap, scaled dynamically by the tick movement of the previous swap. Buy fees are taken from the ETH input in beforeSwap; sell fees from the ETH output in afterSwap. Pool initialization is restricted to the bound factory contract only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
