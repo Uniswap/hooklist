@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9beaa5aef03396991be5689cfe24eabd3f8dbacc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PotatoV4Hook",
+    "description": "A token launch hook for the Potato protocol that takes a 1% swap fee via BeforeSwapDelta/AfterSwapDelta, enforces anti-sniping protection during the first 4 seconds after launch, applies a per-wallet token balance cap on buys, and permanently locks liquidity positions within the hook contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
