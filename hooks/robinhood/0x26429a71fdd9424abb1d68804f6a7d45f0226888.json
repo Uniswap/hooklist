@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x26429a71fdd9424abb1d68804f6a7d45f0226888",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NakamotoHook",
+    "description": "A bonding curve hook that mints NAKAMOTO tokens on ETH buys (curve-priced with a pool-value floor) and burns them on sells (priced by treasury/supply ratio with a 5% exit fee). Liquidity additions are disabled; the hook features a whitelist-gated launch window, a per-buyer sell cooldown, and self-deprecates permanently after 3,000 ETH in cumulative curve purchases.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
