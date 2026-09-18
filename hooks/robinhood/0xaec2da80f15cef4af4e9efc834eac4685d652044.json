@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaec2da80f15cef4af4e9efc834eac4685d652044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TweetPadV11UniversalHook",
+    "description": "A fee-custody hook that deducts a 1% creator fee, 0.5% protocol fee, and an optional 10% buy surcharge (active for 60 seconds after pool initialization) from each swap's unspecified output/input amount via afterSwap return delta, distributing accrued fees to a registered creator and a fixed protocol recipient.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
