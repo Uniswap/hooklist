@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6ab1853df0f73f55f6ed388c0902f9e70cb5cacc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MultiPoolsHook",
+    "description": "Collects configurable ETH swap fees on factory-registered pools, distributing them across creator, buyback/burn, rewards, auto-LP, and platform shares. Applies a 30% antisniper fee during a 60-second post-launch window and permanently locks LP removal.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
