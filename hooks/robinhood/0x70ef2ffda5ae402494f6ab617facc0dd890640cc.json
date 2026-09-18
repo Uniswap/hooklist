@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x70ef2ffda5ae402494f6ab617facc0dd890640cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BEANSTALK",
+    "description": "Fixed-supply ERC-20 token that doubles as its own Uniswap v4 hook, collecting a configurable buy and sell tax (in basis points) on the native ETH side of swaps via BeforeSwapDelta and afterSwapReturnsDelta, and forwarding the collected tax to a designated controller address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
