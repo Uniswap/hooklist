@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xea553f825bf879af542f8770144200be2c8840cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NasdankFeeHookPairUniversal",
+    "description": "A fee hook for coin/pair-token V4 pools (LP fee 0) that takes a configurable fee in the pair token on every swap via BeforeSwapDelta/afterSwapReturnsDelta mechanics. Fees accrue as ERC-6909 claims on the PoolManager, then are split at claim time: the creator leg is paid in the pair token, and the protocol leg is converted to WETH via a frozen V3 route (direct single-hop or 2-hop via USDG with TWAP floors).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
