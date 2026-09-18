@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x413aa1f90639ccb63153939847ca8006419c00cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CASHCATSTR",
+    "description": "Fixed-supply ERC-20 token that acts as a native-tax Uniswap v4 hook for its bound ETH/token pool, collecting configurable buy/sell taxes (up to 10%) on the ETH side of each swap. Collected tax is routed to a controller contract for processing and distribution to token holders.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
