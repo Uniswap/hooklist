@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x08e52564bad99e05a694b4809f397edca417a080",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FablesRamp",
+    "description": "A dynamic-fee hook that charges a configurable flat fee per pool with an optional directional premium and a TTL-bounded keeper override. Requires dynamic-fee pool initialization; pools must be pre-configured with floor, flat, and cap fee bounds before creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
