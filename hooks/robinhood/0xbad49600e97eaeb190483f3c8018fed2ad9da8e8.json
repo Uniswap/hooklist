@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbad49600e97eaeb190483f3c8018fed2ad9da8e8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "WolfHook",
+    "description": "A token launch hook for the WOLF token that runs a 24-hour fixed-price sale against SPY via a restricted market pool, then transitions to open trading with a permanent ask position. A separate floor pool allows WOLF holders to redeem tokens at the initial sale price from a SPY reserve.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
