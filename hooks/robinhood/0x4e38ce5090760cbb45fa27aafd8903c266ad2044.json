@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4e38ce5090760cbb45fa27aafd8903c266ad2044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "TwinHook",
+    "description": "Singleton hook shared by Twin launch pools. Restricts pool initialization to a registered launcher; charges configurable buy/sell taxes on swaps via afterSwapReturnDelta, sending proceeds to a vault. Maintains per-pool TWAP and block-start tick snapshots for manipulation resistance.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
