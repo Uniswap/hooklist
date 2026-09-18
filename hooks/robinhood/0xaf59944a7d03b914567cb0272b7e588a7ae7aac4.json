@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaf59944a7d03b914567cb0272b7e588a7ae7aac4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "A bonding curve token launch hook that restricts pool initialization and liquidity additions to registered launches via an authorized locker, charges a time-decaying anti-snipe opening tax plus configurable trading fees via afterSwap, and enforces a graduation threshold before transitioning the pool to a permanent full-range position.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
