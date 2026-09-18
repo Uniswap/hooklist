@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x981b6a1f160603c7f2fc4663147d0d01ff0180cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinShareHook",
+    "description": "Hook for ETH/token pools that takes swap fees entirely in ETH (1\u20135%, immutable after launch), distributing them instantly per-swap to a platform wallet, a buyback reserve, and configured recipient addresses. Supports factory-initiated dev buys and agent-triggered buyback-and-burn of the paired token using accumulated reserves.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
