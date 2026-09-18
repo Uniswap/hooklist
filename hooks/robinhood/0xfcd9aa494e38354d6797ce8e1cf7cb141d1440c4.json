@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfcd9aa494e38354d6797ce8e1cf7cb141d1440c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ChancePool",
+    "description": "A Uniswap v4 hook implementing a staker-funded betting pool where players wager USD against stakers for provably-fair outcomes (Strike/Range/Ladder modes). Gates CHANCE token purchases via owner-settable flags and charges a configurable swap fee taken from the unspecified currency via afterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
