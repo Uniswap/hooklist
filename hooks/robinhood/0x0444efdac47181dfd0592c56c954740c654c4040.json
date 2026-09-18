@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0444efdac47181dfd0592c56c954740c654c4040",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PrismStocksHook",
+    "description": "A DN404-style ERC20/NFT hybrid token acting as a Uniswap v4 hook. Swap fees are collected from the hook's own liquidity position and forwarded to PrismStockVault, where a keeper converts them into SPY stock token dividends distributed to NFT holders proportional to their token balance.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
