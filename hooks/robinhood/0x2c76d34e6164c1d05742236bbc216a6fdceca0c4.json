@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2c76d34e6164c1d05742236bbc216a6fdceca0c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchpadHook",
+    "description": "A launchpad hook for token launch pools that gates public trading to a configured block number, then collects a fixed 1% base fee plus configurable creator and decaying opening taxes from the unspecified swap currency, distributing proceeds to protocol and creator fee recipients.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
