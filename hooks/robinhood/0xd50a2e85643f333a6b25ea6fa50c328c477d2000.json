@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd50a2e85643f333a6b25ea6fa50c328c477d2000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PackedHook",
+    "description": "Gates pool initialization to only allow curves registered with the factory, preventing unauthorized front-running of pool creation for Packed launchpad coins. Has no swap, liquidity, or donate hooks \u2014 the pool fee accrues natively in the LP position.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
