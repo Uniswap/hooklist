@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb267a0e6fe2794010102e7ca7d50e82d2b182800",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MemeStonkCanonicalPoolHook",
+    "description": "Enforces exact-price initialization and temporary liquidity-addition exclusivity for canonical meme pools on Arbitrum. The beforeInitialize callback ensures only the immutable factory can initialize a pool at a pre-registered price; beforeAddLiquidity restricts deposits to a designated liquidity controller until an immutable block-height expiry.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
