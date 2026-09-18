@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9f4364a416350d8b0938c63de2fcf217cd3d80cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "StashHook",
+    "description": "A Uniswap v4 hook that charges a flat 3% (300 bps) toll on the ETH leg of all four swap forms (exact-input and exact-output in both directions) in a single deployer-pinned pool, accumulating fees as ERC-6909 claims in the PoolManager. Anyone can call collect() to transfer the accumulated ETH fees to a fixed, immutable vault address set by the deployer.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
