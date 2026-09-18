@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x53f31d93d21b6ada71013d802741f3227d3ee888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "PhiEthHooks",
+    "description": "A hook implementing a 1:1 custom swap curve between ETH and phiEth, bypassing concentrated liquidity by taking and settling amounts directly through the pool manager while minting or burning phiEth. Liquidity addition is always reverted; the hook handles all swap execution internally.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
