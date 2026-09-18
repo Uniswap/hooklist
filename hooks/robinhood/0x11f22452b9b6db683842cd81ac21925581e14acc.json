@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x11f22452b9b6db683842cd81ac21925581e14acc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MultiPoolsHook",
+    "description": "Uniswap v4 hook that charges a configurable swap fee (30\u2013500 bps) on ETH-input swaps, rising to 30% during a 60-second antisniper launch window. Collected fees are routed to creator, buyback/burn, rewards, and platform. LP additions are restricted to a designated autoLpSeeder after the initial seed, and LP removal is permanently blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
