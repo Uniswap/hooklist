@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe538af9254ee17dfdcedc16d5a25111c975928cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "UnihoodStockHook",
+    "description": "Bonding-curve hook for tokenized stock launches. Each pool has a fixed swap fee (0\u20135%) set at launch, split among creator, a bid wall, and a platform treasury. The bid wall accumulates its share of quote-token fees and places single-sided liquidity just below spot price; tokens acquired by the wall are permanently sequestered. External liquidity additions are blocked until the pool graduates.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
