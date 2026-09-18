@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa195237e256484511db91f21c3f723ba1cd6e4cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StockPegHook",
+    "description": "A launch hook for a StockPeg (sPEG) / ETH pool that charges a 3% (300 bps) fee on the ETH side of every swap, routing fees to a treasury address. Restricts pool initialization to a designated bootstrapper and tracks when initial liquidity is added to gate token launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
