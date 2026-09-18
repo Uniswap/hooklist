@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x08da232be2737189420de4142e0e4bc511c2a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookuidityHookV1",
+    "description": "A Uniswap v4 hook for creator token launches that charges a 2% fee on ETH buys (injected as pool liquidity via poolManager.donate()) and a 2% fee on ETH sells (directed to a per-pool creator reward vault), with a 0.10% launcher platform share deducted from each. Pools must be registered by the token creator before swaps can execute.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
