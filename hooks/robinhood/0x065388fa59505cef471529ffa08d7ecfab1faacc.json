@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x065388fa59505cef471529ffa08d7ecfab1faacc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FactionGameHook",
+    "description": "A game-specific Uniswap v4 hook for faction pools that enforces vault-only pool initialization and liquidity management, a nighttime trading curfew, and a decaying anti-snipe WETH tax (up to 99%) on public swaps during the post-night window, with an optional tick-move price-impact circuit breaker.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
