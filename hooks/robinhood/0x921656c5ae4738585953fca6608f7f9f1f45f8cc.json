@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x921656c5ae4738585953fca6608f7f9f1f45f8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchpadV4Hook",
+    "description": "Token launchpad hook that collects fees denominated in the payment token (fixed 1% base fee plus up to 10% creator tax) via BeforeSwapDelta and AfterSwapDelta. Tracks pool graduation when price crosses a configured tick and restricts liquidity additions to a designated position manager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
