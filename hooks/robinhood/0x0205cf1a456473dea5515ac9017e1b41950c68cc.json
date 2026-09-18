@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0205cf1a456473dea5515ac9017e1b41950c68cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "Token launch hook with anti-snipe fee protection: charges very high fees (~99%) at pool open that decay to a configured rate (1\u20133%) over 20 seconds, applied on buy and sell swaps. Fees are split among a fee recipient, platform, and optional token holder distributor. Liquidity addition is locked to the hook itself.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
