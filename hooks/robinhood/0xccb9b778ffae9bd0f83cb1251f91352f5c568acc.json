@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xccb9b778ffae9bd0f83cb1251f91352f5c568acc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NexsetsHook",
+    "description": "Token-launch fee hook that withholds ETH fees from buys and sells via BeforeSwapDelta/AfterSwapDelta. Applies a cycling 1\u20135% tax schedule for both directions, a 60% anti-snipe tax during a 4-second post-launch window (with an owner-controlled whitelist), an admin-controlled special sell-tax override (up to 60%), and enforces a one-time LP seed lock. All fees route 100% to treasury.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
