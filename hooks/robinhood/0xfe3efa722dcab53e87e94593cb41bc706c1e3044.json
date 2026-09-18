@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfe3efa722dcab53e87e94593cb41bc706c1e3044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CookHook",
+    "description": "Graduation hook for Cook launch pools that charges protocol swap fees and creator taxes via ERC-6909 claims in afterSwap, and atomically graduates a pool once the price reaches the launch target by burning the main liquidity band and re-pooling the raise as a permanently locked buy wall (Position 3).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
