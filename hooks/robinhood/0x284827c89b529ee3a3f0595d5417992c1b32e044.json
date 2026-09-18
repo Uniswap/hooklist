@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x284827c89b529ee3a3f0595d5417992c1b32e044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PairPadMemeHook",
+    "description": "Singleton hook shared by all graduated PairPad meme token pools. Charges a configurable fee on every swap via afterSwap (Internal Swap Pool pattern), optionally converts memecoin-denominated fees back to the quote currency via internal pool swaps, and distributes proceeds across protocol, creator, and buyback-and-lock buckets.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
