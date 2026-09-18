@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x8fcf60cc5c06847e14a6d852a77a053a297ca0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HoodsHook",
+    "description": "Singleton fee hook for hoods.meme pools that charges market-cap-tiered ETH fees (up to 1%) on every swap, splitting proceeds between a platform treasury and a creator via HoodsSplitter. Pools must be registered by the associated factory; sell exactOut swaps are rejected.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
