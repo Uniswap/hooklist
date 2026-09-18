@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x84c8f17eff9e416f0911f5d2a150cdf68bb128cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "UnihoodStockHook",
+    "description": "A token launch platform hook denominated in a tokenized ERC-20 stock. Charges a fixed swap fee (0\u20135%, configured per pool at launch) split between creator, bid wall, and platform. Automatically manages a single-sided quote-token bid wall just below spot price. Liquidity additions are locked to the factory until the pool reaches a configured graduation tick, after which the pool opens to all liquidity providers.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
