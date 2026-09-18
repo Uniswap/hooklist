@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x05319ce1a1c342357355558d4a470dd4bd072888",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "ViraltokHook",
+    "description": "Bonding-curve fair-launch hook (pump.fun-style x\u00b7y=k) that serves buys and sells via BeforeSwapDelta during the launch phase, auto-graduates to a standard AMM by seeding single-sided liquidity at the final curve price, and applies a constant 1% LP fee override post-graduation with 50/50 creator/protocol fee splitting.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
