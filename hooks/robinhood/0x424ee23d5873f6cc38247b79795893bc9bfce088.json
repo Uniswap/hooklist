@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x424ee23d5873f6cc38247b79795893bc9bfce088",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinhoodEthUsdgV4LaunchHook",
+    "description": "Immutable token launch hook for Robinhood Chain that creates TOKEN/ETH or TOKEN/USDG pools with permanently locked liquidity priced via a WETH/USDG TWAP oracle. In beforeSwap, it matches stored token LP fees against incoming buy orders at the current pool tick before they reach the AMM.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
