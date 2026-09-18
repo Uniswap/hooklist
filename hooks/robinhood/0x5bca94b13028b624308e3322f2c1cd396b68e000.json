@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5bca94b13028b624308e3322f2c1cd396b68e000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LeftoverSupplyHook",
+    "description": "Manages a fixed 300M token reserve per pool, held as ERC-6909 claims in the PoolManager. Pool initialization is gated to a factory address; a designated receiver can claim any portion of the remaining reserve at any time.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
