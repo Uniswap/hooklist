@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x57f9a088dd93b3028867f98b64b6d77a667d80cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "IMX5V4Hook",
+    "description": "A Uniswap v4 hook for IMX5 token pools that charges a 2.5% trade tax on the IMX5 leg of exact-input swaps (intercepted via beforeSwap/afterSwap return deltas) plus a proportional LP fee share, accumulating ERC-6909 claims redeemable by an authorized bridge. Only owner-approved pools containing the IMX5 token are permitted to swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
