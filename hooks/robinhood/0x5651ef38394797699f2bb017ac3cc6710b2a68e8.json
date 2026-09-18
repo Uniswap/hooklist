@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5651ef38394797699f2bb017ac3cc6710b2a68e8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "WolfHook",
+    "description": "A token launch hook that runs a 24-hour WOLF/SPY AMM sale with dynamic fees (1% on buys, 0% on sells), then post-launch opens a floor redemption pool where WOLF holders can burn tokens for SPY at a fixed price backed by sale proceeds.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
