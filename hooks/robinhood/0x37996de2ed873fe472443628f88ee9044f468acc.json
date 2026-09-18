@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x37996de2ed873fe472443628f88ee9044f468acc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MultiPoolsHook",
+    "description": "A Uniswap v4 hook for ETH-paired pools that collects configurable swap fees via BeforeSwapDelta and afterSwapReturnsDelta, permanently locks LP positions (beforeRemoveLiquidity always reverts), applies a 60-second elevated antisniper fee window at launch, and routes collected fees to creator, auto-LP, buyback/burn, and rewards vaults.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
