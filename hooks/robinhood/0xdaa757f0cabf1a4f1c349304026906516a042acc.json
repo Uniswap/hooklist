@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdaa757f0cabf1a4f1c349304026906516a042acc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StonksHook",
+    "description": "A launchpad pool hook that restricts pool creation and liquidity additions to the launchpad contract, permanently locks LP positions, and collects time-varying swap fees on the quote currency (currency0) split between platform, creator, and holders, credited via ERC-6909 claims on the PoolManager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
