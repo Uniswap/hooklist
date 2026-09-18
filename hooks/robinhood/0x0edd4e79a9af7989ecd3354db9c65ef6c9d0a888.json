@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0edd4e79a9af7989ecd3354db9c65ef6c9d0a888",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SockLaunchHook",
+    "description": "A token launch hook that prices swaps on a shared virtual constant-product curve denominated in basket units (a weighted index of stock assets). Pools hold no native liquidity; all swaps are fully consumed and settled via ERC-6909 claims inside the PoolManager. Trading is gated by a market clock and Chainlink price freshness checks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
