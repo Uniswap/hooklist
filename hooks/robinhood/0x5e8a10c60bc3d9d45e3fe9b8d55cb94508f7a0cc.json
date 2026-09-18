@@ -4,7 +4,7 @@
     "chain": "robinhood",
     "chainId": 4663,
     "name": "OreHook",
-    "description": "A Uniswap v4 hook implementing a Bitcoin-inspired proof-of-work mining protocol over an ETH/HBTC pool. Buy-side swaps pay an ETH toll (1\u201310%) that credits hashpower toward HBTC block rewards; tolls flow into a Burn Net that places maker limit orders and burns HBTC. Public trading is locked for the first 144 blocks after genesis.",
+    "description": "A Uniswap v4 hook implementing a Bitcoin-inspired proof-of-work mining protocol over an ETH/HBTC pool. Buy-side swaps pay an ETH toll (1–10%) that credits hashpower toward HBTC block rewards; tolls flow into a Burn Net that places maker limit orders and burns HBTC. Trading is open from deployment with no temporal lock.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "temporal"
+    "swapAccess": "none"
   }
 }
