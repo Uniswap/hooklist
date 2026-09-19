@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc4a6b9e55df79289203bd6cfa4872d24567ad0c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PulseV4Hook",
+    "description": "Adjusts LP fees dynamically using time-decayed trading volume across nearby tick buckets (half-life one hour), with an additional gas-price-proportional project fee capped at 0.30%. The owner can pause protocol fee collection and withdraw accrued ERC-6909 revenue; LP principal is never touched by the hook.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
