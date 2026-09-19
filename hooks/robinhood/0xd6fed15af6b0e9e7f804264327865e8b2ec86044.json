@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd6fed15af6b0e9e7f804264327865e8b2ec86044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NullTreasuryFeeHook",
+    "description": "Charges a fixed 0.50% hook fee on the unspecified side of every swap in a single native ETH/NULL pool, accumulating fees as ERC-6909 claims. Anyone can call claimFees to send accrued fees to an immutable treasury address. Pool creation is gated in beforeInitialize to a single hardcoded pool key.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
