@@ -87184,6 +87184,41 @@
   },
   {
     "hook": {
+      "address": "0xadef200b8e8b66e27d5bd11c87d789d4d6e82088",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FewV4ShellHook",
+      "description": "Routes all swaps through a FewToken-wrapped LP pool via an atomic wrap/swap/unwrap sequence in beforeSwap, returning the full fill as a beforeSwap delta so the shell pool itself is never the execution venue. Reverts if no LP route or sufficient inventory is available; hookData is ignored; an owner can register explicit LP pool mappings.",
+      "deployer": "0x87555dd0e101817c1bc7867e32451b080C55f596",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xadf955a44fd7f009380240d56d71dfafb46020cc",
       "chain": "ethereum",
       "chainId": 1,
