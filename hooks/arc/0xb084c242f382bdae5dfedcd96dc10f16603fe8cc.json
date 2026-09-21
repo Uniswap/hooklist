@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb084c242f382bdae5dfedcd96dc10f16603fe8cc",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "Bonker Dynamic Fee Hook (Arc)",
+    "description": "A Uniswap v4 hook that dynamically adjusts LP fees based on a volatility accumulator derived from tick differences between swaps. Collects a 20% protocol fee on each swap involving the bonker token via delta manipulation, with a ~2-minute MEV module window post-launch that can temporarily raise fees.",
+    "deployer": "0x6097DD26871b0c7811D52B674e7407a38F7E84e5",
+    "verifiedSource": true,
+    "auditUrl": "https://github.com/bonker-wtf/contracts/blob/main/audit/CLAWDIT-Bonker-Audit.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
