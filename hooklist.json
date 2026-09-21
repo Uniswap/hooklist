@@ -117634,6 +117634,41 @@
   },
   {
     "hook": {
+      "address": "0x41e4537a0911de756a05afd9a50e7af1e594b8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RobinhoodV4SingleVaultHook",
+      "description": "A Uniswap v4 hook (RobinhoodV4SingleVaultHook) that charges a flat 1.5% fee (FEE_BPS=150) on payment-token (non-launch token) swaps, minting the fee as ERC-6909 claims to a single per-pool claimRecipient. Pool registration is restricted to the factory and liquidity additions to the position manager. No creator tax or fee split.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4201ec638f68b59fc2a9fdbeb5abfec834f16800",
       "chain": "robinhood",
       "chainId": 4663,
