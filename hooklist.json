@@ -7211,6 +7211,41 @@
   },
   {
     "hook": {
+      "address": "0x2f26b317abb8a93cd462d2eeaf0574835835e8cc",
+      "chain": "arc",
+      "chainId": 5042,
+      "name": "Bonker Static Fee Hook (Arc)",
+      "description": "A Uniswap v4 hook for the Bonker token launch platform that sets per-pool static LP fees (configured as separate bonker-side and paired-token-side fees at initialization) using the dynamic fee mechanism, and takes a 20% protocol fee on every swap via beforeSwap and afterSwap delta returns.",
+      "deployer": "0x6097DD26871b0c7811D52B674e7407a38F7E84e5",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/bonker-wtf/contracts/blob/main/audit/CLAWDIT-Bonker-Audit.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6f6aab7d90306e6681dbec37605f59ab2f02e044",
       "chain": "arc",
       "chainId": 5042,
@@ -7311,6 +7346,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb084c242f382bdae5dfedcd96dc10f16603fe8cc",
+      "chain": "arc",
+      "chainId": 5042,
+      "name": "Bonker Dynamic Fee Hook (Arc)",
+      "description": "A Uniswap v4 hook that dynamically adjusts LP fees based on a volatility accumulator derived from tick differences between swaps. Collects a 20% protocol fee on each swap involving the bonker token via delta manipulation, with a ~2-minute MEV module window post-launch that can temporarily raise fees.",
+      "deployer": "0x6097DD26871b0c7811D52B674e7407a38F7E84e5",
+      "verifiedSource": true,
+      "auditUrl": "https://github.com/bonker-wtf/contracts/blob/main/audit/CLAWDIT-Bonker-Audit.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
