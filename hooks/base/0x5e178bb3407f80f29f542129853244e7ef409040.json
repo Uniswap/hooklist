@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5e178bb3407f80f29f542129853244e7ef409040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LimitOrderHook",
+    "description": "A Uniswap v4 Hook that enables on-chain limit orders on supported liquidity pools.\n\nUsers can set a target price, and when the pool price reaches the specified price, the Hook automatically executes the order. This enables users to place limit orders directly on Uniswap v4.",
+    "deployer": "0xAAD81Ac687f7f9454901dAFE2ef6Ebb26C907498",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
