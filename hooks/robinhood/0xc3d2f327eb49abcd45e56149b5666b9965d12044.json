@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc3d2f327eb49abcd45e56149b5666b9965d12044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HyperTaxHook",
+    "description": "Singleton hook that collects a fixed per-pool tax (0\u20135%) on every swap. After each swap it takes its share of the unspecified output side: if ETH, sends it directly to the registered launcher address; if token, sells the tokens back into the same pool via a nested swap and forwards the ETH proceeds. Only the factory can register pools or initialize them; no owner or upgrade mechanism exists.",
+    "deployer": "0x0B6Ab901359B9ad2F3691Df86f364064a26c15BE",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
