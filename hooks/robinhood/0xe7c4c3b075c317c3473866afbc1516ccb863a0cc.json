@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe7c4c3b075c317c3473866afbc1516ccb863a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinhoodNativeFeeHookV1",
+    "description": "A single-pool ETH/token fee hook that charges a 20 bps platform fee plus configurable creator buy/sell fees on gross native trade value, collecting them via BeforeSwapDelta/AfterSwapDelta and distributing through an immutable fee vault. Supports an optional module for dynamic LP fee overrides.",
+    "deployer": "0x7F33cED6E975DFD61D55813aC34aD198D0681551",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
