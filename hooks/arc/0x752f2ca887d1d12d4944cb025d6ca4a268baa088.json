@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x752f2ca887d1d12d4944cb025d6ca4a268baa088",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "LaunchpadFeeHook",
+    "description": "Charges a flat fee (default 1%) on exact-input swaps by taking the input currency via BeforeSwapDelta custom accounting, splitting it between the pool's registered creator (default 75%) and a platform treasury (default 25%) as claimable ERC-6909 credits. Exact-output swaps are rejected. Only factory-registered pools are accepted; fee rate and treasury address are adjustable by a designated timelock within hardcoded bounds (max 3% total, min 30% creator share).",
+    "deployer": "0x934594986fc9C665B1CA2FB82c05CF386D22E385",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
