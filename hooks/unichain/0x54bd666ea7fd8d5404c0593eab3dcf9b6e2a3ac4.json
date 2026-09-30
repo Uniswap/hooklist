@@ -5,9 +5,9 @@
     "chainId": 130,
     "name": "BackGeoOracle",
     "description": "Oracle hook with automated backrun functionality that mitigates price impact. Enforces zero-fee, max-tick-spacing, full-range-only pools. On swaps (exactIn only), computes a tick delta versus the last observation; if the price impact exceeds a threshold, executes an inverse nested swap and mints ERC6909 tokens to the original sender. Requires swap routers to implement `IMsgSender.msgSender()` or backrun-triggering transactions will revert.",
-    "deployer": "",
+    "deployer": "0x080f08076e8EAdC66006C3CbFEd28a34918A1fA6",
     "verifiedSource": true,
-    "auditUrl": ""
+    "auditUrl": "https://github.com/RigoBlock/back-geo-oracle/blob/main/audits/33Audits_audit_back_geo_oracle.pdf"
   },
   "flags": {
     "beforeInitialize": true,
