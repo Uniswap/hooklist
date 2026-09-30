@@ -102,6 +102,27 @@ def test_validate_submission_duplicate():
     assert any("already" in e.lower() for e in errors)
 
 
+def test_validate_submission_duplicate_mixed_case_existing():
+    """A submission must be rejected when a mixed-case (checksummed) file for the
+    same address already exists — the case that let 37 duplicates through."""
+    submission = {
+        "chain": "arbitrum",
+        "address": "0x5e645c3d580976ca9e3fe77525d954e73a0ce0c0",
+        "name": "",
+        "description": "",
+        "deployer": "",
+        "auditUrl": "",
+    }
+    with tempfile.TemporaryDirectory() as tmpdir:
+        chain_dir = os.path.join(tmpdir, "arbitrum")
+        os.makedirs(chain_dir)
+        # Existing file uses the mixed-case (checksummed) address.
+        with open(os.path.join(chain_dir, "0x5e645C3D580976cA9E3fe77525D954e73A0Ce0c0.json"), "w") as f:
+            f.write("{}")
+        errors = validate_submission(submission, hooks_dir=tmpdir)
+    assert any("already" in e.lower() for e in errors)
+
+
 def test_validate_submission_bad_deployer():
     submission = {
         "chain": "base",

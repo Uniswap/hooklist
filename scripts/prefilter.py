@@ -74,9 +74,15 @@ def validate_submission(submission: dict, hooks_dir: str | None = None) -> list[
 
     if hooks_dir is None:
         hooks_dir = os.path.join(REPO_ROOT, "hooks")
-    hook_path = os.path.join(hooks_dir, submission["chain"], f"{submission['address']}.json")
-    if os.path.exists(hook_path):
-        errors.append(f"Hook already registered: {submission['chain']}/{submission['address']}")
+    # Compare case-insensitively: older files use the mixed-case (checksummed)
+    # address, so an os.path.exists on the lowercase path misses them on a
+    # case-sensitive filesystem (Linux CI) and lets a duplicate through.
+    chain_dir = os.path.join(hooks_dir, submission["chain"])
+    want = f"{submission['address'].lower()}.json"
+    if os.path.isdir(chain_dir):
+        existing_lower = {fn.lower() for fn in os.listdir(chain_dir)}
+        if want in existing_lower:
+            errors.append(f"Hook already registered: {submission['chain']}/{submission['address'].lower()}")
 
     return errors
 
