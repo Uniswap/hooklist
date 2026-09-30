@@ -3606,41 +3606,6 @@
   },
   {
     "hook": {
-      "address": "0x98Aa253a44497dfa77ec1170e69f851cB17C2000",
-      "chain": "base",
-      "chainId": 8453,
-      "name": "AquinasPoolHook",
-      "description": "A Uniswap v4 hook for Aquinas DAOs that restricts pool initialization to factory-authorized Safe addresses, preventing frontrunning by requiring pre-approval before a specific pool can be initialized.",
-      "deployer": "",
-      "verifiedSource": true,
-      "auditUrl": ""
-    },
-    "flags": {
-      "beforeInitialize": true,
-      "afterInitialize": false,
-      "beforeAddLiquidity": false,
-      "afterAddLiquidity": false,
-      "beforeRemoveLiquidity": false,
-      "afterRemoveLiquidity": false,
-      "beforeSwap": false,
-      "afterSwap": false,
-      "beforeDonate": false,
-      "afterDonate": false,
-      "beforeSwapReturnsDelta": false,
-      "afterSwapReturnsDelta": false,
-      "afterAddLiquidityReturnsDelta": false,
-      "afterRemoveLiquidityReturnsDelta": false
-    },
-    "properties": {
-      "dynamicFee": false,
-      "upgradeable": false,
-      "requiresCustomSwapData": false,
-      "vanillaSwap": true,
-      "swapAccess": "none"
-    }
-  },
-  {
-    "hook": {
       "address": "0x98aa253a44497dfa77ec1170e69f851cb17c2000",
       "chain": "base",
       "chainId": 8453,
@@ -16248,7 +16213,7 @@
       "description": "Calls `start()` on a configured token when the first liquidity is added to that token's pool, and updates an internal random seed on each swap involving the configured token. Both actions are no-ops when no token is configured or for pools not involving the token.",
       "deployer": "",
       "verifiedSource": true,
-      "auditUrl": ""
+      "auditUrl": "https://github.com/ChainCreators/Upeg"
     },
     "flags": {
       "beforeInitialize": false,
@@ -17400,7 +17365,7 @@
       "chain": "monad",
       "chainId": 143,
       "name": "UniswapV4ScheduledMulticurveInitializerHook",
-      "description": "A token launch hook by Whetstone Research that gates pool initialization and liquidity additions exclusively to a designated Initializer contract, and blocks swaps until a per-pool configured start timestamp, enabling scheduled fair-launch token distributions.",
+      "description": "A token launch hook by Whetstone Research that gates pool initialization exclusively to a designated Initializer contract (liquidity additions are unrestricted), and blocks swaps until a per-pool configured start timestamp, enabling scheduled fair-launch token distributions.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
