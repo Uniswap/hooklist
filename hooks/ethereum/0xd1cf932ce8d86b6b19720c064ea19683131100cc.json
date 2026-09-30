@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "uTokenHook",
-    "description": "Deflationary hook for ETH/token pools that burns a configurable percentage (up to 10%) of the token on every swap. Burn is applied in beforeSwap for token-specified swaps and in afterSwap for unspecified token output. Pool initialization and liquidity management are restricted to an immutable authorized address.",
+    "description": "ETH/token v4 hook: before/afterSwap burn a fixed % of the token each swap (immutable rate, 10% cap) via IBurnable.burn. Pool init and all liquidity actions are gated to an immutable `authorized` address; the token side of liquidity is held by the hook. authorized can also move any ERC-20 out of the hook to any address via withdrawToken (source: full supply minted to the hook at launch). ~30 init/seed functions are identical aliases under different names (stake, deposit, claim, multicall, etc.).",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
