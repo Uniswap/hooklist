@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x18327b9dcf924f6846873c4a9a9d7cf8702760cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SHREDDER",
+    "description": "Permissionless Uniswap v4 dynamic-fee hook for SHRED markets. Adjusts fees using trade size, volatility, repeated flow and price reversals. Shares adaptive fees with LPs and delivers paired-asset revenue to the PULP Pool contract. Non-upgradeable, with no owner or custom router calldata requirement.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
