@@ -115814,6 +115814,41 @@
   },
   {
     "hook": {
+      "address": "0x35837892a1448f31c0284583e2e851372207eafc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "V21Hook",
+      "description": "Launchpad hook for heks.fun that charges a hook-delta fee on the pair's numeraire asset: 80% at pool creation decaying linearly to 1% over the first 10 seconds (anti-snipe), with liquidity additions restricted to the protocol vault and principal withdrawal permanently blocked. V2.1 adds an optional NFT-holder window: during this window, buys require a Merkle proof in hookData; sells and all swaps after the window close work without hookData.",
+      "deployer": "0xcb811ec409A43F7B6C49570B3a3bc37C3107b444",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x35839b084137f4b79ad5e994714dd5cdcc985000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -116735,6 +116770,41 @@
     },
     "flags": {
       "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x3bfee86dbbc225201b6e57e4da361375cff6a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FoundationHookV1",
+      "description": "FoundationHookV1 is an immutable per-pool fee hook that binds token, quote asset, creator, and creator fee at deployment. It collects quote-currency fees on every swap via beforeSwapReturnsDelta/afterSwapReturnsDelta, splitting platform and creator shares through FoundationLedgerV1, with optional module callbacks dispatched before and after each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
       "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
@@ -119240,6 +119310,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x4a3ab7799003381230f6ba6158aab5b5c2812aec",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "V22Hook",
+      "description": "A launchpad hook that charges fees as hook return deltas on the pool's numeraire leg (static LP fee is zero). Fees combine a base rate, an optional per-pool creator tax (0\u201310%), and a time-decaying anti-snipe surcharge on buys only; an optional NFT holder gate restricts buying to collection holders during an early window. Liquidity is locked via a burned PositionManager NFT; removals and donations revert.",
+      "deployer": "0xcb811ec409A43F7B6C49570B3a3bc37C3107b444",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
