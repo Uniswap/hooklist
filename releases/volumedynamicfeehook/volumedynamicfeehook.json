@@ -1,0 +1,27 @@
+{
+  "project": "volumedynamicfeehook",
+  "id": "volumedynamicfeehook",
+  "version": "1",
+  "name": "VolumeDynamicFeeHook",
+  "description": "A single-pool Uniswap v4 hook that dynamically adjusts LP fees across three regimes (floor, cash, extreme) based on EMA-smoothed per-period volume analysis. After each swap, it accrues a configurable percentage of LP fees to the hook owner and may update the pool's dynamic fee tier via poolManager.updateDynamicLPFee().",
+  "source": {
+    "verified": true,
+    "codeHashes": [
+      "sha256:506a50e2f109e18bbcc50f02327c075c1b524b6f954a758cb3f8b56a2d498a76",
+      "sha256:baa234bfc5464543d276f64472d80243d11184dd24a8a45cd600de39ec7bc141",
+      "sha256:fb34597666e6aa101a0aa980de088080c54d7aa638cb55efcdeda63f408e260a"
+    ]
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  },
+  "warnings": [],
+  "lifecycle": {
+    "status": "active",
+    "supersedes": null
+  }
+}
