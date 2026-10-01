@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x996190206c057d0d792d5fdbb6570a8ac271aacc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniKingHook",
+    "description": "UniKingHook is a Uniswap v4 hook for the ETH/UNIK pool. It charges a fixed 1.5% fee in ETH on swaps using beforeSwap and afterSwap delta flags, processes up to 20 active NFT accounts per swap, and allocates realized fees: 90% to NFT account rewards, 5% to the treasury, and 5% to a buyback reserve. Pool liquidity is permanently locked. The hook does not require custom hookData.",
+    "deployer": "0xD4cd6433Fce354F06C93E612bfC495ca2F8481e6",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
