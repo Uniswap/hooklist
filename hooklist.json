@@ -7281,6 +7281,41 @@
   },
   {
     "hook": {
+      "address": "0x752f2ca887d1d12d4944cb025d6ca4a268baa088",
+      "chain": "arc",
+      "chainId": 5042,
+      "name": "LaunchpadFeeHook",
+      "description": "Charges a flat fee (default 1%) on exact-input swaps by taking the input currency via BeforeSwapDelta custom accounting, splitting it between the pool's registered creator (default 75%) and a platform treasury (default 25%) as claimable ERC-6909 credits. Exact-output swaps are rejected. Only factory-registered pools are accepted; fee rate and treasury address are adjustable by a designated timelock within hardcoded bounds (max 3% total, min 30% creator share).",
+      "deployer": "0x934594986fc9C665B1CA2FB82c05CF386D22E385",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x927040ac611a72abed99714326bf9b4310716888",
       "chain": "arc",
       "chainId": 5042,
@@ -14658,6 +14693,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x1b993c37768f78bcb03cfa1d7b08f43dbcd540c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "PushBaseDynamicFeeHook",
+      "description": "A dynamic-fee Uniswap v4 hook where authorized off-chain pushers set the LP fee within configurable min/max bounds per pool. The pushed fee expires after a TTL and falls back to a defaultFee. On each swap, afterSwap deducts an additional hook fee and mints it as ERC-6909 claims to a treasury address.",
+      "deployer": "0x0308ab2d25A6126d22158F1B9D17a5fB2dcf101E",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -83019,6 +83089,41 @@
   },
   {
     "hook": {
+      "address": "0x996190206c057d0d792d5fdbb6570a8ac271aacc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniKingHook",
+      "description": "UniKingHook is a Uniswap v4 hook for the ETH/UNIK pool. It charges a fixed 1.5% fee in ETH on swaps using beforeSwap and afterSwap delta flags, processes up to 20 active NFT accounts per swap, and allocates realized fees: 90% to NFT account rewards, 5% to the treasury, and 5% to a buyback reserve. Pool liquidity is permanently locked. The hook does not require custom hookData.",
+      "deployer": "0xD4cd6433Fce354F06C93E612bfC495ca2F8481e6",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9993ad2765c251503914072dac959a2104f26840",
       "chain": "ethereum",
       "chainId": 1,
@@ -109611,6 +109716,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x18327b9dcf924f6846873c4a9a9d7cf8702760cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SHREDDER",
+      "description": "Permissionless Uniswap v4 dynamic-fee hook for SHRED markets. Adjusts fees using trade size, volatility, repeated flow and price reversals. Shares adaptive fees with LPs and delivers paired-asset revenue to the PULP Pool contract. Non-upgradeable, with no owner or custom router calldata requirement.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
