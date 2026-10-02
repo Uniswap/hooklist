@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5efaae7cf64a22b62672eab5a87a6fae166ae000",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "LiquidityMigrator",
+    "description": "Uniswap v4 graduation hook and permanent LP locker for a token launchpad. Uses `beforeInitialize` to gate pool creation exclusively to this contract, preventing anyone from creating a bonding-curve token's pool before graduation. Graduated positions are locked with no mechanism to remove liquidity; LP fees are split between the token creator and protocol treasury according to configurable fee parameters from the bonding curve manager.",
+    "deployer": "0x5fbA0B354B5fdD7B4a8eB0dc497143f7efa09d83",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
