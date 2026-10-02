@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcb6c4fe8be76538e865489818e1b420aa4fd2840",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BoundHook",
+    "description": "Guards Uniswap v4 pools for the BOUND token launchpad. Only a token's bonding curve can initialize its pool or add liquidity before graduation. After each swap, delegates to the token's checkPoolTrade to enforce per-trade rules, reverting non-compliant swaps.",
+    "deployer": "0xa33274Ea9Ce46850D28A65262a1aDe8f645E0297",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "other"
+  }
+}
