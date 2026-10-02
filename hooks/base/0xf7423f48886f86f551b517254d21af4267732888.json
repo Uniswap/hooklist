@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf7423f48886f86f551b517254d21af4267732888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TwigWrapHook",
+    "description": "Token wrapper hook for a fee-0 GITLAWB/TWIG pool that intercepts all swaps in beforeSwap and fulfills them by wrapping GITLAWB into TWIG or unwrapping TWIG into GITLAWB at a 1:1 ratio via ERC20Wrapper. Liquidity operations always revert; the contract has no owner, no admin functions, and no upgrade mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
