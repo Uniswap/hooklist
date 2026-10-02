@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7b567970d15a4dc805f5ebbf3203b2e06d5b78cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "Single-pool ETH/token hook that takes a tiered fee on every swap: a 1.5% base fee on the ETH side plus a buy surcharge that decays linearly from 49% to 0% over 15 seconds post-launch. Fees accumulate as ERC-6909 ETH claims payable only to a fixed fee recipient. External liquidity additions are blocked for 24 hours after launch, and any sell that pushes the price above the launch price is reverted.",
+    "deployer": "0x8cF853Dfe557a55C6b48C6B57cd38eA5ecEDfd07",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
