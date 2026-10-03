@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7d309a342f12e7f788ccf992740e5c482d4b6044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FloorHook",
+    "description": "A fee hook for ETH/coin pools that takes a configurable per-pool fee (up to 2%) from the unspecified side of each swap via afterSwapReturnsDelta and splits it among a platform wallet, a buyback-and-burn mechanism, and a launch vault. Pool initialization is gated to registered initializers; sweep swaps are limited to one per block and capped at a configurable price-impact bound (max 3%).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
