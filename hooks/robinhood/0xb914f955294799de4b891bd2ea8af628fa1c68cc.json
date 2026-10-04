@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb914f955294799de4b891bd2ea8af628fa1c68cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookrModularHookV6WthV5",
+    "description": "Modular Uniswap v4 hook implementing Hookr's always-on WTH arbitrage-recapture profile. Runs MEV correction logic on every swap (before and after) via a pluggable module stack and a pinned accounting kernel, computing per-swap LP fees dynamically from base rate plus module surcharges.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
