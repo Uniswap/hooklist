@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7e39dec0cfe5f63e80663ad96986987670cf68ec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookeMemeHook",
+    "description": "A single-hook meme launchpad managing bonding curves for meme tokens paired with hXMAX. Each swap pays a 1% fee on the hXMAX leg via BeforeSwapDelta/AfterSwapReturnsDelta, split between a per-launch fee recipient and the treasury; external liquidity is blocked until the curve empties, at which point remaining assets are permanently locked in a dead-address v4 position.",
+    "deployer": "0xb54765c7fB3e2b6917e97E0215025594E31d923B",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
