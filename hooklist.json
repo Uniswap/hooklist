@@ -2871,6 +2871,41 @@
   },
   {
     "hook": {
+      "address": "0x630e9cac0fff557bd3a01daa111ed253c771bcc0",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "StablePairHook",
+      "description": "StablePair is a Uniswap v4 dynamic-fee hook built for assets that trade around a known reference price. Instead of charging a flat fee on every swap, it uses that reference to set fees dynamically, capturing more value for LPs while keeping execution tight and predictable around the reference.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x63d3132013839ed98e9dbc375a88d5eebf52d040",
       "chain": "arbitrum",
       "chainId": 42161,
