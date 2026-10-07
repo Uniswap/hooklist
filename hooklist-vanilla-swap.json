@@ -17396,6 +17396,41 @@
   },
   {
     "hook": {
+      "address": "0x5efaae7cf64a22b62672eab5a87a6fae166ae000",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "LiquidityMigrator",
+      "description": "Uniswap v4 graduation hook and permanent LP locker for a token launchpad. Uses `beforeInitialize` to gate pool creation exclusively to this contract, preventing anyone from creating a bonding-curve token's pool before graduation. Graduated positions are locked with no mechanism to remove liquidity; LP fees are split between the token creator and protocol treasury according to configurable fee parameters from the bonding curve manager.",
+      "deployer": "0x5fbA0B354B5fdD7B4a8eB0dc497143f7efa09d83",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x61ff08c0fdd3b84efd9346822cfe7be151e64080",
       "chain": "monad",
       "chainId": 143,
@@ -23342,6 +23377,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xcb6c4fe8be76538e865489818e1b420aa4fd2840",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BoundHook",
+      "description": "Guards Uniswap v4 pools for the BOUND token launchpad. Only a token's bonding curve can initialize its pool or add liquidity before graduation. After each swap, delegates to the token's checkPoolTrade to enforce per-trade rules, reverting non-compliant swaps.",
+      "deployer": "0xa33274Ea9Ce46850D28A65262a1aDe8f645E0297",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "other"
     }
   },
   {
