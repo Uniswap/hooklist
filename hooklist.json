@@ -68284,6 +68284,41 @@
   },
   {
     "hook": {
+      "address": "0x37bfb8ac7c960e558657871d41ca70e07e7dbfff",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Claus",
+      "description": "A Uniswap v4 hook for the Claus protocol that applies dynamic ETH/USD-based fees and splits them across project revenue, liquidity reserve, burn, FOMO reserve, and NFT reward destinations. Supports privacy-preserving ZK-funded buys via ClausPrivacyBuy and checkpoints market cap predictions after each swap. Deployed as a transparent upgradeable proxy.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x37d189833877bb64b320f9d561ade9d7724c28a8",
       "chain": "ethereum",
       "chainId": 1,
