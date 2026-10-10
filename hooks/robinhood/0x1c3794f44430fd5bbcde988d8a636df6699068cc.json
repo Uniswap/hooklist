@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1c3794f44430fd5bbcde988d8a636df6699068cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StockHook",
+    "description": "Fixed-fee hook for a single STONKCOIN/NVDA pool. Charges immutable BUY_FEE_BPS on buys and SELL_FEE_BPS on sells (always in NVDA), collected via beforeSwap/afterSwap return deltas and minted as ERC-6909 claims to a FeeRouter. Maintains a TWAP oracle and restricts pool initialization to a Genesis contract; early liquidity additions are limited to an LP vault until genesis closes.",
+    "deployer": "0x0eB3AdCcDD8a057776a446c6ef409Ea1aDDDA2e2",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
