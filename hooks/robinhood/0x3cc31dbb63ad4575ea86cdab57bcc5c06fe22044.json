@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3cc31dbb63ad4575ea86cdab57bcc5c06fe22044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "WorkLaunchHook3",
+    "description": "Anti-snipe fee hook for a single IMD-paired Uniswap v4 pool. Charges a swap fee starting at 50% and sliding linearly to the standing fee (default 2%, configurable up to 10%) over 900 seconds from pool open. Fees are minted as ERC-6909 claims and swept to a treasury address via a permissionless sweep() function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": "https://explorer.imd.fun/jobs/09d157d4-92ff-4035-859e-0187f4cc6d02"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
