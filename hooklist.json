@@ -127784,6 +127784,41 @@
   },
   {
     "hook": {
+      "address": "0x833bbf11f2296faa4e6aa608257c4e28b15b2840",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Jackprint",
+      "description": "A single-position lottery hook for an ETH/token pool. Buys record lottery tickets proportional to USD value via a Chainlink ETH/USD price feed; sells cancel tickets. LP fees are split 75% to a prize drawer and 25% to a creator address via an external Tickets contract. Enforces a single locked liquidity position and a launch-window per-block buy cap.",
+      "deployer": "0xc08F0e73bc38dc8F857800A3BaFf5341515Cf462",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x83608601b5db694a63f38686ec064312b60420cc",
       "chain": "robinhood",
       "chainId": 4663,
