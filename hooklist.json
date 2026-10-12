@@ -141644,6 +141644,41 @@
   },
   {
     "hook": {
+      "address": "0xe136bc1a37fa63cbd7051d0545572a69f815a080",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BellswapHook",
+      "description": "A dynamic-fee hook that adjusts LP fees based on the price gap between a pool and an external reference feed. The fee increases when the pool price deviates from the reference and defaults to a maximum cap when the feed is stale or broken. Pools can only be initialized via the hook's `createPool` or `createSyntheticPool` functions.",
+      "deployer": "0x1E9956AfcC3e934BE49503cC5091Cc8D90A08a32",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xe19cd1b90888d1758c46f3352721ab15187240cc",
       "chain": "robinhood",
       "chainId": 4663,
