@@ -24849,6 +24849,41 @@
   },
   {
     "hook": {
+      "address": "0x5c999109609f9f857f4d58240ccb12bf219ee044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "AdvancedFeeHookV6 (V7 launcher)",
+      "description": "Launchpad fee hook that collects configurable buy/sell taxes (up to 10%) in afterSwap via a returned delta, splitting proceeds between a platform treasury, creator payees, an optional token burn, and an optional single-sided liquidity position. Supports an optional time-limited sniper window with a linearly decaying buy-fee rate. Pool creation is restricted to a launcher address via beforeInitialize.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5ca33d75df69c4f46093b7eb7f0f6dacace62080",
       "chain": "base",
       "chainId": 8453,
