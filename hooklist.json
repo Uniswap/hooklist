@@ -20301,6 +20301,41 @@
   },
   {
     "hook": {
+      "address": "0x3e6b46810b1fd5085086fd1417e8adb02f34a044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "AdvancedFeeHookV6B",
+      "description": "Collects configurable buy/sell taxes (up to 10%) in afterSwap as a returned delta on the unspecified currency, splitting fees between a platform treasury, creator payees, an optional token burn, and an optional single-sided liquidity position. Pool initialization is restricted to an immutable launcher address via beforeInitialize.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3e83479b2276ecfb7c7181f67b5d092d3511e0c4",
       "chain": "base",
       "chainId": 8453,
