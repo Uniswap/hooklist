@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2166221791aee01c88f9d8f8552e31f3266d5044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SniperRebateHook",
+    "description": "A launch-protection hook that applies a linearly declining sell tax during a configurable protection window after pool creation. 90% of collected tax accrues to a pot claimable pro-rata by early buyers who held through the window; the remaining 10% accrues to a rotatable protocol treasury address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
