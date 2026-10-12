@@ -127854,6 +127854,41 @@
   },
   {
     "hook": {
+      "address": "0x83b1a8f2ffcd2e9898ffe55fe53444943200c8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ProofLaunchHook",
+      "description": "Launch hook for token launches with phase-gated trading (Execution phase is vault-only, Public phase is open), ETH-denominated buy/sell taxes that decay linearly from configurable start rates (capped at 10% buy / 15% sell) to resting rates (capped at 2.5%/2.5%), a cumulative max-wallet buy cap that ramps up during early public trading, and liquidity gating that blocks all third-party LP operations.",
+      "deployer": "0x174b32A086682486678bA8086BF147Ea30D2edD0",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x83d6fa59bef503112887b16277cf559fdc93e0c4",
       "chain": "robinhood",
       "chainId": 4663,
