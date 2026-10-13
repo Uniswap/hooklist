@@ -73569,6 +73569,41 @@
   },
   {
     "hook": {
+      "address": "0x59255cbc688e402ef980b84668ba1d1c708b6088",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring FewV2 Shell Hook",
+      "description": "Uniswap v4 hook that executes each swap on the canonical Ring Swap v2 (FewV2) FewToken pair: it wraps the input 1:1 into its FewToken, swaps on the pair at live reserves, unwraps the output and settles through PoolManager. It needs no hookData and adds no hook fee. A two-step owner manages a time-locked token allowlist, and a guardian or the owner can pause swaps without blocking liquidity withdrawal.",
+      "deployer": "0x61E75d5c5deE4205a5bBCD9fBc40498b693197ad",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x596b6655ec830461c9a9d5d5308401c21120e8cc",
       "chain": "ethereum",
       "chainId": 1,
