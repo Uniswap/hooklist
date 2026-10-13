@@ -4,7 +4,7 @@
     "chain": "robinhood",
     "chainId": 4663,
     "name": "SLVR Swap Lottery Hook",
-    "description": "Hook for the SLVR/ETH pool that turns trading into a lottery. Exact-input swaps pay a tax (max 2%, owner-adjustable) in the input currency: buys pay ETH into an hourly jackpot draw and earn buy-weighted tickets; sells pay SLVR to in-range LP stakers. Optional hookData (address buyer, uint8 boost) attributes tickets and applies boosts. Exact-output swaps and partial fills revert. Only the owner can initialize the pool.",
+    "description": "Hook for the SLVR/ETH pool that turns trading into a lottery. Exact-input swaps pay a 2% tax in the input currency (hard-capped, can only be lowered): buys pay ETH into an hourly jackpot draw and earn buy-weighted tickets; sells pay SLVR to in-range LP stakers. Optional hookData (address buyer, uint8 boost) attributes tickets and applies boosts. Exact-output swaps and partial fills revert. Only the owner can initialize the pool.",
     "deployer": "0x11111972FE1b7e52D36609bCaF8702c65b025B46",
     "verifiedSource": true,
     "auditUrl": ""
