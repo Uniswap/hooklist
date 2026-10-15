@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0b0400b268045aa7e3b3ca18c1e1774f6c076880",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LexifiHook",
+    "description": "Compliance-gating hook that enforces per-pool eligibility rules in `beforeSwap` and `beforeAddLiquidity` via a configurable `ILexifiPolicy` contract. Non-compliant users are denied with a revert. User identity is resolved from trusted routers via `msgSender()`, never `tx.origin`. Liquidity removals are never gated.",
+    "deployer": "0xC0fa48B221F995620A2781A2Fa39F84636597aDA",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "allowlist"
+  }
+}
