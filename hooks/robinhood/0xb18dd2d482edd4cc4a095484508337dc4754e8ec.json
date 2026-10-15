@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb18dd2d482edd4cc4a095484508337dc4754e8ec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "HookeMemeHook",
+    "description": "Meme launchpad hook that pairs new tokens against hXMAX on a concentrated bonding curve, charges 1% hXMAX fees on all swaps via BeforeSwapDelta/AfterSwapReturnsDelta, locks external liquidity until the curve is bought out, then graduates the position into a permanently burned Uniswap v4 LP. Post-graduation buys are handled in the same swap via a nested pool swap.",
+    "deployer": "0xb54765c7fB3e2b6917e97E0215025594E31d923B",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
