@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5b58765d0b919f485bc36487bada7f9f7fe6e8cc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "Pangea Fee Hook",
+    "description": "Charges a fixed fee (0.3%\u20135%, set once per pool at registration) in the pool's designated quote currency on buys and sells via BeforeSwapDelta and AfterSwapDelta. Exempts a designated dev buyer address from fees on the first buy. Restricts liquidity provision to a single locker address, and reverts swaps that would move the pool price beyond the registered launch range.",
+    "deployer": "0x7794De82aa21CE22863102fB07E319daf85dd1c5",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
