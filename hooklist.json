@@ -129219,6 +129219,41 @@
   },
   {
     "hook": {
+      "address": "0x898b9e0a40f30d00be3098a5865ad5d71a93a8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Pangea Fee Hook",
+      "description": "Takes a fixed trading fee (0.3%\u20135%, set once per pool at launch) in the pool's quote asset via beforeSwap/afterSwap return deltas, routing fees to a per-pool splitter. The launch's first buy is fee-free, liquidity additions are restricted to a single registered seeder, and swaps that would push the price beyond the launch's range are reverted.",
+      "deployer": "0x7794De82aa21CE22863102fB07E319daf85dd1c5",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x898fe5b4e5c23e9e6fb908297c9557faedb080cc",
       "chain": "robinhood",
       "chainId": 4663,
