@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x01427fc5b40d6dd3289b0052fb90dbf8dd5ba5dc",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "Flaunch PositionManager",
+    "description": "Token-launch hook built on the Flaunch protocol that creates paired-token pools with creator-set swap fees (1.5\u20135%) taken via beforeSwap/afterSwap return deltas and distributed to a fee escrow and optional referrers. Supports scheduled launches (swaps gated by block.timestamp until a set flaunch time), optional pre-buys at launch, and an internal swap pool that fills orders from accumulated fee inventory before routing to the Uniswap pool.",
+    "deployer": "0x5f81Fcf79ABbC610972143f6883DE3a96c716BB6",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": true,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
