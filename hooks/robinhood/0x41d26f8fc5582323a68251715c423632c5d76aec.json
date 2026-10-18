@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x41d26f8fc5582323a68251715c423632c5d76aec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LaunchHook",
+    "description": "Token launch hook implementing a bonding curve as a Uniswap v4 position. Takes trading fees (1% base + optional creator tax up to 10%) as return deltas in the quote asset; applies a 99% snipe tax in the first 3 seconds post-launch unless the signer is exempt. The factory exclusively manages liquidity; when the curve sells out, the pool graduates to locked full-range liquidity in the same swap.",
+    "deployer": "0x35Ebf1EA450d911C560444bB8A0868a74452ec5b",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
