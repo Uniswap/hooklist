@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x81f989dcb1677ccea3a4f822aa871c08bd2400c4",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "DynamicFee",
+    "description": "Uniswap v4 hook that lets an off-chain keeper dynamically set LP fees per pool within configurable min/max bounds, with a TTL-based expiry that falls back to a default fee. Also charges a separate hook fee per swap, minted as ERC-6909 claims to a treasury address.",
+    "deployer": "0x79b96D6Cb15EA4aF023b56291e32e9A6903B07D4",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
