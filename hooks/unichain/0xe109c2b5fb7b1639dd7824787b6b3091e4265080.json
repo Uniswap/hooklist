@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe109c2b5fb7b1639dd7824787b6b3091e4265080",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "DeviationFeeHook",
+    "description": "Dynamic LP fee for a native ETH/wstETH pool, driven by the deviation between the pool price and the Chainlink wstETH/stETH rate. Base fee 0.01% inside a 35 bps deadband; swaps that correct the deviation pay base + 50% of the excess, capped at 0.5%; from 100 bps both directions pay. Falls back to the base fee if the feed is stale or fails. afterInitialize + beforeSwap only; no deltas, hookData, storage, admin or upgradeability.",
+    "deployer": "0x914930588119b0A5aB80C38b7135580B03DFb470",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
