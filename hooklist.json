@@ -82144,6 +82144,41 @@
   },
   {
     "hook": {
+      "address": "0x8fb4228579feca76d35f8fe361209cffe58c60c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "InkHook",
+      "description": "Manages the INK/IMD Uniswap v4 pool with a governance gate that blocks all swaps until an external vault contract signals `released()`, then levies a configurable fee (`feeBps` bps) on every swap via afterSwapReturnsDelta, waived for holders of an agent portrait NFT. Collected fees are distributed to a treasury (IMD) and a liquidity contract (INK). Ownerless and immutable.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8fb66c6e0f3cbb25001e0f1c0352cc888cff6444",
       "chain": "ethereum",
       "chainId": 1,
