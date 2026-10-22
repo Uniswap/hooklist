@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfd0753147e21c3f61e38ae27d6634b8c38cb6acc",
+    "chain": "avalanche",
+    "chainId": 43114,
+    "name": "AvaxHookV2",
+    "description": "A launch-platform hook that collects fee cuts via beforeSwap/afterSwap return deltas: a fixed 0.3% protocol fee, an optional creator fee (up to 10%), and up to 8 frozen-at-open module cuts (each capped at 25% per side). Overrides the LP fee (capped at 30% total). Exact-output swaps and partial fills revert.",
+    "deployer": "0x7149faf83059a6c8274441898c3fd5569f14614d",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
