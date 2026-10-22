@@ -7806,6 +7806,41 @@
   },
   {
     "hook": {
+      "address": "0x179278c7ecd2cfbc003d76985ba05f11ddc36acc",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AvaxHookV2",
+      "description": "A launch-platform hook that collects fee cuts via beforeSwap/afterSwap return deltas: a fixed 0.3% protocol fee, an optional creator fee (up to 10%), and up to 8 frozen-at-open module cuts (each capped at 25% per side). Overrides the LP fee (capped at 30% total). Exact-output swaps and partial fills revert.",
+      "deployer": "0x7149faf83059a6c8274441898c3fd5569f14614d",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x192c21d528e2aa5da2bead8a866a8a516a40aaa8",
       "chain": "avalanche",
       "chainId": 43114,
@@ -51751,6 +51786,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x15e5e7206c661a1e881f5cd33a94eaf2328fa8cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "Pangea Multichain Hook",
+      "description": "Fee hook for Pangea pangea.trade multichain token launch pools. Takes the whole trading fee in the quote asset at swap time: beforeSwap on buys, afterSwap on sells, grossed up for exact-out. Pools use fee 0. Same CREATE2 address on Ethereum, BNB, Base and Robinhood",
+      "deployer": "0x7794De82aa21CE22863102fB07E319daf85dd1c5",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
