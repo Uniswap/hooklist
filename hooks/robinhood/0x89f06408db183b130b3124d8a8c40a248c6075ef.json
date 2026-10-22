@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x89f06408db183b130b3124d8a8c40a248c6075ef",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DNAHook (Stockmon DNA)",
+    "description": "A single-pool hook for the canonical ETH/DNA Uniswap v4 pool that charges a 3%/3% buy/sell tax in native ETH via beforeSwap/afterSwap return deltas, with a decaying buy-tax curve during a launch window when only allowlisted routers and protocol accounts may swap. Also settles the DNA leg of all liquidity changes via return deltas and maintains a truncated TWAP oracle.",
+    "deployer": "0x2FBddCcb844Ce94153086502A8cB0a3bCe847632",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
