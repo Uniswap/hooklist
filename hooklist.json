@@ -8156,6 +8156,41 @@
   },
   {
     "hook": {
+      "address": "0x5aee0417293a175108124d462e5c10d400f6aacc",
+      "chain": "avalanche",
+      "chainId": 43114,
+      "name": "AvaxHookPoolsV1",
+      "description": "The AvaxHook hook for pools on tokens that already trade: the same fee and module logic as AvaxHookV2, plus an afterSwap check that reverts any swap the pool did not fill completely. Fees are beforeSwap/afterSwap return deltas: a 0.3% protocol fee, an optional creator fee of up to 10%, and cuts for up to 8 modules from an external registry, frozen per pool and capped at 25% per side, with an LP fee override capped at 30%. Exact-input swaps only. No proxy, no owner.",
+      "deployer": "0x7149faf83059a6c8274441898c3fd5569f14614d",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5aeff6d0dafec5ed45aab935db2548326072c044",
       "chain": "avalanche",
       "chainId": 43114,
