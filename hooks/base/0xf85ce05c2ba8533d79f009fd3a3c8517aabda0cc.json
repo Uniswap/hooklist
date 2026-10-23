@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf85ce05c2ba8533d79f009fd3a3c8517aabda0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "CURB FeeHook",
+    "description": "Fee hook for the CURB launchpad on Base. Restricts pool initialization to the designated poolOpener (Graduator). On each swap, charges a launch-specific trading tax split between a platform recipient and a creator: deducted from the input on buys via beforeSwapReturnsDelta, from the output on sells via afterSwapReturnsDelta. Exact-output swaps and partial fills revert.",
+    "deployer": "0xf7bbb6559EcB5cBb0aFf372413a316C26b280426",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
