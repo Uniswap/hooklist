@@ -133944,6 +133944,41 @@
   },
   {
     "hook": {
+      "address": "0xa4848c977950c7a66afd9a9f3669da9d9ce4e840",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LanternHook",
+      "description": "Single-pool launch hook that restricts initialization to one designated address and a fixed start price, allows only one liquidity add (the launch position via transient storage), and enforces a 3% per-transaction buy cap during the first 2 minutes after launch. After the launch window, afterSwap is a no-op.",
+      "deployer": "0x18c3Ea4124D64461278633b19Facb08fDD1858f2",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xa48566a3600dd654d01d87c324dd2121a04690cc",
       "chain": "robinhood",
       "chainId": 4663,
