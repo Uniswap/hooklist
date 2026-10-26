@@ -9591,6 +9591,41 @@
   },
   {
     "hook": {
+      "address": "0x2eef0e2a9a652d755accad95a24541a98b5ca000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LBPStrategy",
+      "description": "A Uniswap v4 hook implementing a Liquidity Bootstrapping Pool (LBP) strategy. It coordinates token distributions: deploying initializer contracts that run a token auction, then migrating raised funds and reserved token amounts into v4 liquidity positions at a price derived from the auction's final price. The `beforeInitialize` permission is used to gate pool creation to the strategy itself only.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2fda9343c6e60dbcc3b98d39881c546d7c395000",
       "chain": "ethereum",
       "chainId": 1,
