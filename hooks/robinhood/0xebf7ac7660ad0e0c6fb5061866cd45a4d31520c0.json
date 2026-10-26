@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xebf7ac7660ad0e0c6fb5061866cd45a4d31520c0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CurbHook",
+    "description": "A circuit breaker hook that gates swaps on a single Uniswap v4 pool to a configurable tick band around a rolling time-weighted reference price. Swaps moving outside the band are reverted; prices held at the band edge for a set duration trigger a timed halt that auto-expires, with optional owner resolution via an organic or concentrated verdict.",
+    "deployer": "0xa25b02a1e93903b790e6aaf7da1b8b8d50294645",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
