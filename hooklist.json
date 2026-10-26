@@ -40249,6 +40249,41 @@
   },
   {
     "hook": {
+      "address": "0xb9c1ab7bd023c784c19b8e9f10ce9cded9ff9010",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BatchDistributeHook",
+      "description": "Lets pool operators push-distribute ERC-20 tokens or native currency to up to 200 recipients in a single transaction via the Spraay batch contract. afterInitialize registers the pool; afterDonate emits a donation event. Distributions do not affect swap or liquidity behavior.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xba3eb6c67e737c0e732f1b2e7bb049d802492888",
       "chain": "base",
       "chainId": 8453,
