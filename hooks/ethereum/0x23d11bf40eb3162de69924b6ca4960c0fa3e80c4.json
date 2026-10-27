@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x23d11bf40eb3162de69924b6ca4960c0fa3e80c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DynamicFee",
+    "description": "A Uniswap v4 hook that lets an off-chain keeper push LP fees within configurable min/max bounds per pool, falling back to a default fee when the pushed fee's TTL expires. In afterSwap, it deducts a separate hook fee from the unspecified token amount and mints it to an immutable treasury as ERC-6909 claims.",
+    "deployer": "0x79b96D6Cb15EA4aF023b56291e32e9A6903B07D4",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
