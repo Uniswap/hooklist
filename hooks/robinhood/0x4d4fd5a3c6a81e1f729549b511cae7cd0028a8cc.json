@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4d4fd5a3c6a81e1f729549b511cae7cd0028a8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CaptainHookV2",
+    "description": "A shared Uniswap v4 hook for ETH/token launches on Robinhood Chain. Creators configure immutable trading rules at launch: allowlist phase, anti-snipe window, dynamic impact-based fee, max transaction limits, wallet cap, sandwich guard, buy/sell taxes, exit clock, auto burn, and buyback & burn. The hook collects all fees and taxes in ETH via swap return deltas. Only the factory may add liquidity, which is permanently locked. Exact-input swaps only.",
+    "deployer": "0x7857cDE7F6333102bd61a567E581ea8A274eDA6A",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
