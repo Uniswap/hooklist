@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x9e820255bf3e9cc4c583935844b0b61a9a8b40c4",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "DynamicFee",
+    "description": "Uniswap v4 hook with off-chain keeper-driven dynamic LP fees and a separate hook fee charged to a treasury on every swap. An operator configures per-pool min/max/default fee bounds; a pusher pushes the current fee within those bounds. If the keeper stops updating, the pool falls back to a default fee. The hook fee is minted to the treasury as ERC-6909 claims in afterSwap.",
+    "deployer": "0x79b96D6Cb15EA4aF023b56291e32e9A6903B07D4",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
