@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd62d7aeb07b354e503f8dc8bf21850033bae4580",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "ElectFee",
+    "description": "A pool's swap fee is elected by its LPs. Each position states a fee ask (16 buckets, 0.05%\u20132%) in hookData on its first add. Swap fee = liquidity-weighted median ask, moved toward that median at max 10 pips/second. Only positions in range when first added are counted. Fees go to LPs via the PoolManager. Hook holds no funds, no admin, no external calls. Needs a dynamic-fee pool. Flags: afterAddLiquidity, afterRemoveLiquidity, beforeSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
