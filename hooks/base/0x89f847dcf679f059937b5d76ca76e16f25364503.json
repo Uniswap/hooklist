@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x89f847dcf679f059937b5d76ca76e16f25364503",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "VestingFee",
+    "description": "LP fees vest with position age: fees collected before vestTime are partially forfeited (up to maxPenalty, linearly decaying to zero at vestTime) and donated back to in-range LPs in the same transaction. Top-ups reset position age proportionally via liquidity-weighting. No admin, no held funds, no swap hooks.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
