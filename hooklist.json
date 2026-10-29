@@ -132299,6 +132299,41 @@
   },
   {
     "hook": {
+      "address": "0x987e330f00b79864a07fe81dfac344d0078abcc0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "VolatilePairHook",
+      "description": "VolatilePair is a Uniswap v4 dynamic-fee hook built for assets without a fixed reference price. Instead of charging a flat fee on every swap, it uses recent price moves to set fees by trade direction, capturing more value for LPs while keeping the quoted spread competitive.",
+      "deployer": "0x2179a60856e37dfeaaca0ab043b931fe224b27b6",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x98856f5a91e92ec97380db6ea4f09369fec880cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -144370,41 +144405,6 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
-    }
-  },
-  {
-    "hook": {
-      "address": "0xe9e0221b95ddae7679784842ef4497b183e3fcc0",
-      "chain": "robinhood",
-      "chainId": 4663,
-      "name": "VolatilePairHook",
-      "description": "VolatilePair is a Uniswap v4 dynamic-fee hook built for assets without a fixed reference price. Instead of charging a flat fee on every swap, it uses recent price moves to set fees by trade direction, capturing more value for LPs while keeping the quoted spread competitive.",
-      "deployer": "0x2179a60856e37dfeaaca0ab043b931fe224b27b6",
-      "verifiedSource": true,
-      "auditUrl": ""
-    },
-    "flags": {
-      "beforeInitialize": true,
-      "afterInitialize": true,
-      "beforeAddLiquidity": true,
-      "afterAddLiquidity": true,
-      "beforeRemoveLiquidity": false,
-      "afterRemoveLiquidity": false,
-      "beforeSwap": true,
-      "afterSwap": true,
-      "beforeDonate": false,
-      "afterDonate": false,
-      "beforeSwapReturnsDelta": false,
-      "afterSwapReturnsDelta": false,
-      "afterAddLiquidityReturnsDelta": false,
-      "afterRemoveLiquidityReturnsDelta": false
-    },
-    "properties": {
-      "dynamicFee": true,
-      "upgradeable": true,
-      "requiresCustomSwapData": false,
-      "vanillaSwap": false,
-      "swapAccess": "none"
     }
   },
   {
