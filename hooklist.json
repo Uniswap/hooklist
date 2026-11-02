@@ -32549,6 +32549,41 @@
   },
   {
     "hook": {
+      "address": "0x89f847dcf679f059937b5d76ca76e16f25364503",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "VestingFee",
+      "description": "LP fees vest with position age: fees collected before vestTime are partially forfeited (up to maxPenalty, linearly decaying to zero at vestTime) and donated back to in-range LPs in the same transaction. Top-ups reset position age proportionally via liquidity-weighting. No admin, no held funds, no swap hooks.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x8a2a83545f4b38ae14e01a3d15f7d41006dfaa44",
       "chain": "base",
       "chainId": 8453,
@@ -42489,6 +42524,41 @@
   },
   {
     "hook": {
+      "address": "0xca1c326ef03f8cee0a6247ff69cb411ea0a340c0",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TetherFeeHook",
+      "description": "Oracle-free dynamic LP fee: trades that push price away from its recent average pay more, trades that heal it pay less; fees bounded 0.05%\u20132%, all to LPs, no admin, holds no funds.",
+      "deployer": "0xC046d270AaaaDc376aDf9D80dBF82b54411381A3",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xca36422bf43070f5a1f9c87fec6160797a69e888",
       "chain": "base",
       "chainId": 8453,
@@ -44478,6 +44548,41 @@
       "dynamicFee": false,
       "upgradeable": true,
       "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd62d7aeb07b354e503f8dc8bf21850033bae4580",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "ElectFee",
+      "description": "A pool's swap fee is elected by its LPs. Each position states a fee ask (16 buckets, 0.05%\u20132%) in hookData on its first add. Swap fee = liquidity-weighted median ask, moved toward that median at max 10 pips/second. Only positions in range when first added are counted. Fees go to LPs via the PoolManager. Hook holds no funds, no admin, no external calls. Needs a dynamic-fee pool. Flags: afterAddLiquidity, afterRemoveLiquidity, beforeSwap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
     }
@@ -88545,6 +88650,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb39aa0fea3d8940c1106059460934ccfb0212088",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "Ring FewV2 Shell Hook (WETH)",
+      "description": "Aggregator hook that routes swaps through FewV2 pairs using Ring-wrapped tokens, bypassing native v4 liquidity. An owner-controlled allowlist (with timelock for new additions) restricts which origin tokens can be registered; a guardian or owner can pause swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
