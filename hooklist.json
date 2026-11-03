@@ -101639,6 +101639,41 @@
   },
   {
     "hook": {
+      "address": "0x3fad8a7205f943528915e67cf94fc792c8fce888",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "WETHHook",
+      "description": "A 1:1 MON/WMON wrapper hook that allows users to swap between MON and WMON within Uniswap V4 pools. It intercepts swaps to perform native wrapping and unwrapping, blocks direct liquidity operations, and requires pools to be initialized with zero fee.",
+      "deployer": "",
+      "verifiedSource": false,
+      "auditUrl": "https://github.com/Uniswap/v4-hooks-public/blob/main/docs/audits/Uniswap%20V4%20WETH%20and%20WstETH%20Hooks%20Audit.pdf"
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4445520306c9c70952bdfec28f3989f53d9f80c4",
       "chain": "monad",
       "chainId": 143,
