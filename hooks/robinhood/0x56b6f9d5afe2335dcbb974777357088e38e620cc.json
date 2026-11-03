@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x56b6f9d5afe2335dcbb974777357088e38e620cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RyftPoolHook",
+    "description": "Takes a 1% ETH fee on swaps in the native ETH / RYFT pool on Robinhood Chain (RYFT 0xb0007D59fE4050A1636c2fa19038973d16481337). Only the RYFT liquidity locker can create a pool with this hook, so this is the only pool that uses it. Anyone can buy or sell, exact-in or exact-out, with no special swap data; the pool's LP fee is 0%. When the user sets an exact ETH amount, the hook sizes the fee with an internal test swap that always reverts. Fees are paid out later by anyone calling claim. The owner can change the fee receiver and set the fee between 0% and a hard-coded 5% cap, but cannot move user funds, pause trading or upgrade the contract.",
+    "deployer": "0x5Ad340f520ebCeF7Cd55178CCa4125d6Ab53F851",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
