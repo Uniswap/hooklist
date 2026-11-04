@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x59f2e3877d9aeab72d2a58cb9328d95ec567afec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "OFinHook",
+    "description": "Fee and curve hook for OFin token launches. Each launch's bonding curve is a V4 position in its pool, and only the OFin factory adds liquidity. It takes fees in the quote asset and graduates the pool into locked full-range liquidity when the curve sells out. No hookData, no owner, immutable.",
+    "deployer": "0x35Ebf1EA450d911C560444bB8A0868a74452ec5b",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
