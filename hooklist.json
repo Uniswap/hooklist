@@ -122289,6 +122289,41 @@
   },
   {
     "hook": {
+      "address": "0x59f2e3877d9aeab72d2a58cb9328d95ec567afec",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "OFinHook",
+      "description": "Fee and curve hook for OFin token launches. Each launch's bonding curve is a V4 position in its pool, and only the OFin factory adds liquidity. It takes fees in the quote asset and graduates the pool into locked full-range liquidity when the curve sells out. No hookData, no owner, immutable.",
+      "deployer": "0x35Ebf1EA450d911C560444bB8A0868a74452ec5b",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5a0a05d0012f20f14799cab226cf1af9ff0a28cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -130265,6 +130300,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x89f06408db183b130b3124d8a8c40a248c6075ef",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "DNAHook (Stockmon DNA)",
+      "description": "A single-pool hook for the canonical ETH/DNA Uniswap v4 pool that charges a 3%/3% buy/sell tax in native ETH via beforeSwap/afterSwap return deltas, with a decaying buy-tax curve during a launch window when only allowlisted routers and protocol accounts may swap. Also settles the DNA leg of all liquidity changes via return deltas and maintains a truncated TWAP oracle.",
+      "deployer": "0x2FBddCcb844Ce94153086502A8cB0a3bCe847632",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
