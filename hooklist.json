@@ -138109,6 +138109,41 @@
   },
   {
     "hook": {
+      "address": "0xbdd854c9ec87dc99b695f6c72ab1320af4322acc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ElcasLaunchHook",
+      "description": "A launchpad hook that takes a fixed 3% fee on every swap in the quote asset, enforces an anti-snipe window where only the launchpad router can buy during a configurable post-launch period, permanently locks launch liquidity (remove liquidity always reverts), and maintains a v3-compatible on-chain tick-cumulative oracle ring buffer per pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0xbdf11b474f03d4559edf02541b9606f1ce2b40cc",
       "chain": "robinhood",
       "chainId": 4663,
