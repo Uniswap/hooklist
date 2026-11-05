@@ -69229,6 +69229,41 @@
   },
   {
     "hook": {
+      "address": "0x38248a9a12f51858d872ee574c0b49c1d5a51080",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AccumulationHook",
+      "description": "Directional LP fee for the USDC/STRK pool on Ethereum: 3% when a swap buys STRK with USDC, 1% when it sells STRK for USDC. The fee goes to the pool's LPs through v4's standard dynamic fee override. The hook is unaudited.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3830bcc4c223992099215bffde7fb5fbaf28c044",
       "chain": "ethereum",
       "chainId": 1,
@@ -121420,6 +121455,41 @@
       "name": "SVMHook",
       "description": "A gamified trading hook that charges a percentage fee on every ETH swap via BeforeSwapDelta/AfterSwapDelta, assigns buyers to competing teams (STOCKS vs MEMES), and distributes the collected pot to the winning team at the end of each round.",
       "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x56b6f9d5afe2335dcbb974777357088e38e620cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RyftPoolHook",
+      "description": "Charges a configurable ETH fee (0\u2013500 bps, owner-settable) on swaps in the native ETH pool, gating pool initialization to a designated locker address. For exact-ETH input swaps, fee sizing uses an internal revert-based quote; fees are minted as claims and can be paid out later by anyone calling `claim()`.",
+      "deployer": "0x5Ad340f520ebCeF7Cd55178CCa4125d6Ab53F851",
       "verifiedSource": true,
       "auditUrl": ""
     },
