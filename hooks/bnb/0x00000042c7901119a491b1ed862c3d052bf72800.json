@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x00000042c7901119a491b1ed862c3d052bf72800",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "SDBR PoolTravada",
+    "description": "A Uniswap v4 hook that restricts pool initialization and liquidity additions exclusively to the hook contract itself \u2014 any external caller's beforeInitialize or beforeAddLiquidity reverts. Functions as a liquidity manager with a fixed 2% fee: the deployer seeds tiered liquidity ranges at launch, users can lock token payments as permanent liquidity via pagar, and accumulated fees are collected to a designated recipient.",
+    "deployer": "0xcDb05fEDD9ef3258e75De23AbF2751aC22156A1c",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
