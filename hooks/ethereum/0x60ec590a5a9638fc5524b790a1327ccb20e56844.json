@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x60ec590a5a9638fc5524b790a1327ccb20e56844",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "ProtoHook",
+    "description": "ProtoHook charges a sell-side fee (default 3%, up to 5%) on exact-input swaps via afterSwap return delta, forwarding proceeds to a Treasury and burning tokens on buys. It enforces a time-decaying launch fee, restricts liquidity additions to a single protocol-controlled position, and gates pool initialization to the owner.",
+    "deployer": "0x30eF70A5E654AAc61C91dcf76e39Fd7436dD123A",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
