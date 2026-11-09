@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdbebc6a7b2a38197932b6e01fb0e57e71d726aec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SynthHook",
+    "description": "Gates swaps to registered synth wallets until a per-token ETH graduation threshold is reached, then opens trading publicly. Charges a fixed-BPS ETH fee on every swap, distributing proceeds among the synth wallet, an ops wallet, and a buyback treasury via BeforeSwapDelta and AfterSwapReturnsDelta.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
