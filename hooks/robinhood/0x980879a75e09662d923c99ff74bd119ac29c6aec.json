@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x980879a75e09662d923c99ff74bd119ac29c6aec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SynthHookV2",
+    "description": "A hook for synthetic token launches that gates swaps to allowlisted synth wallets until an ETH graduation threshold or open time is reached, then permits public trading. Collects a percentage ETH fee on each swap, split between the token wallet, an ops wallet, and a buyback treasury.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
