@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc3774a7456c4cfe8e44d780877c9771d6562e0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "EtherealFactory",
+    "description": "Token launch factory (Ethereal.fun) that creates ETH/token Uniswap v4 pools with one-sided liquidity burned to 0xdead. Charges ETH fees on every swap via BeforeSwapDelta/AfterSwapDelta, with an anti-snipe decay from 30% to the creator's base rate over the first 24 seconds; fees accumulate as ERC-6909 claims and are split between the creator and the platform.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
