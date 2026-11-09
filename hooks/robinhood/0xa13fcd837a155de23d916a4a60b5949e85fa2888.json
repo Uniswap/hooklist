@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa13fcd837a155de23d916a4a60b5949e85fa2888",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SlipstreamAggregator",
+    "description": "A Uniswap v4 hook that aggregates liquidity from external Slipstream (tickSpacing-keyed concentrated liquidity) pools. On every swap, `beforeSwap` executes the trade on the matched external Slipstream pool and returns a `BeforeSwapDelta` to fully cancel the core v4 swap, routing all liquidity through the external pool instead. Liquidity provision directly into the v4 pool is blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
