@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x49d8e239878ba17ebd2ec9de5f8b25fc66d5aaec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "WormbookHook",
+    "description": "A per-pool hook that charges a 1% fee on every swap's quote-asset amount, distributing 70% to pool creators and 30% to protocol recipients as ERC-6909 claims. Enforces a 600-second post-launch liquidity window and 24-hour minimum hold periods for LP positions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
