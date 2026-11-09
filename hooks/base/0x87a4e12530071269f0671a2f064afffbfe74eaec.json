@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x87a4e12530071269f0671a2f064afffbfe74eaec",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "MemeFunHook",
+    "description": "A factory-exclusive Uniswap v4 hook for meme coin launches that locks pool liquidity, collects fees exclusively in the quote currency (ETH, USDC, or a stock token) using delta overrides, and optionally routes referral fee splits when swaps originate from the MemeFunRouter.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
