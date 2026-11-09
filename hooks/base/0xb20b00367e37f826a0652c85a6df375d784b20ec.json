@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb20b00367e37f826a0652c85a6df375d784b20ec",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "RwagmiHookV3",
+    "description": "A token-launch hook that collects swap fees directly via BeforeSwapDelta and afterSwapReturnsDelta intercepts, supporting either static or volatility-adjusted dynamic fee rates. Pools can only be initialized by a designated launcher contract, and donations are disabled.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
