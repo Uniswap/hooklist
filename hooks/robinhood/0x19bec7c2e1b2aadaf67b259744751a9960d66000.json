@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x19bec7c2e1b2aadaf67b259744751a9960d66000",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PoolInitializationGuard",
+    "description": "Restricts pool initialization so that only the factory that deployed this hook can initialize pools using it. The beforeInitialize callback reverts unless called by the pool manager with the factory as the sender; swaps, fees, and liquidity are entirely unaffected.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
