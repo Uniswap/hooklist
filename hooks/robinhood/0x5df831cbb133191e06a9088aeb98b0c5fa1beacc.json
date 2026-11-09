@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5df831cbb133191e06a9088aeb98b0c5fa1beacc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "QuoteFeeHook",
+    "description": "A bonding-curve Uniswap v4 hook for token launches that charges all fees exclusively in the quote asset, using beforeSwapReturnsDelta and afterSwapReturnsDelta to take the fee from the specified or unspecified quote side respectively. Restricts liquidity and trading to the launch's registered locker, and supports a configurable snipe-window tax and graduation mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
