@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x2f3f53a87854fbdaa46c95a58ddc98464e69a8ec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RotatoHook",
+    "description": "Shared hook for the rotato.fun platform. Only registered token managers can create pools or add liquidity. Public swaps pay a per-coin fee (1\u201310%) in the quote currency, minted as ERC-6909 claims to the FeeRouter; the pool LP fee is always overridden to 0. Records start-of-block sqrt prices to enable managers to detect intra-block price manipulation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
