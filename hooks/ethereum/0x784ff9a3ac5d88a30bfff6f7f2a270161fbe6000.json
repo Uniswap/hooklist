@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "PoolInitializationGuard",
+    "description": "Restricts pool initialization to the factory that deployed this hook. The `beforeInitialize` callback reverts unless called by the pool manager with the deploying factory as the sender, preventing unauthorized pool creation.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
