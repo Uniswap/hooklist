@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xee83560bb83fa38dcd3c1060233ddc7933c520cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "LaunchGuardHook",
+    "description": "A Uniswap v4 hook for token launches that charges a 1% fee on the base-currency side of every swap, distributing proceeds among creator, treasury, and token holders (with deferral to a locker on failure). During the launch block, buys are restricted to whitelisted early buyers via an external guard token contract, with per-buyer hold caps enforced in afterSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
