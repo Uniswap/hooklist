@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x567491df3379704d17ca9b764aa18426b1c96a40",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RetardV1227PoolHook",
+    "description": "A pool hook for creator token launches that restricts liquidity modification to the hook itself and notifies an external protocol contract after each swap with the current price, enabling optional reanchoring and fee accounting.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
