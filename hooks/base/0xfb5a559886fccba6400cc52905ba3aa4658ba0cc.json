@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfb5a559886fccba6400cc52905ba3aa4658ba0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "QSimpleLaunch",
+    "description": "Launch factory and hook for Uniswap v4 pools that enforces configurable launch guards (anti-snipe block caps, wallet caps, cooldowns, holder-only gate, optional trading-open delay) and collects swap taxes with configurable per-pool splits to creator, referrers, buyback-burn, and a protocol wallet.",
+    "deployer": "0xaf48A5Ab32EF96Ee7A72ED6Ed4534bE1bc928c73",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
