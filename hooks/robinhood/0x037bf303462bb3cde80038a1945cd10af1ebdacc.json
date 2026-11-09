@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x037bf303462bb3cde80038a1945cd10af1ebdacc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BasedBidHook",
+    "description": "A Uniswap V4 hook that layers additional fee mechanics on top of every swap, supporting static, tiered, and dynamic hook fees. Fees are distributed to LP, buyback, reward, and custom wallet recipients, with a whitelist-period buy limit and allowlist gate for new token launches.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
