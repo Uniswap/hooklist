@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x924add3c0e75a8d22db0a4c75abc91c0a2202aec",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "EmbowHook",
+    "description": "Launch-guard hook for Embow markets that locks pool liquidity in factory-defined positions, charges all swap fees exclusively in the quote token (minted as ERC6909 claims to the custody vault), and applies a time-decaying buy tax during the initial blocks after pool creation. Liquidity removal is restricted to fee-collection operations only.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
