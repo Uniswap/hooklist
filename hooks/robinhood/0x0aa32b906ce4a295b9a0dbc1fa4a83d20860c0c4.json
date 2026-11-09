@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0aa32b906ce4a295b9a0dbc1fa4a83d20860c0c4",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "MemeowGuardHook",
+    "description": "A multi-feature Uniswap v4 hook for memeow launchpad pools implementing anti-snipe buy caps and temporal fee surcharges, surge fees on large buys, auto-burn of a configurable share of coin output, and volatility-adjusted LP fees (EWMA of per-swap tick moves). Also provides resting limit orders and stop-loss/trailing-stop orders, all configurable per-pool by the launchpad.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
