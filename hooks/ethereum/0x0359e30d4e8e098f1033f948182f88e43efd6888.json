@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0359e30d4e8e098f1033f948182f88e43efd6888",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniswapV3Aggregator",
+    "description": "Aggregates Uniswap V3 pool liquidity into Uniswap V4 by intercepting swaps in beforeSwap, executing them on the corresponding V3 pool, and returning the full BeforeSwapDelta to the PoolManager. Blocks direct liquidity addition to the V4 pool, delegating all liquidity to the external V3 source.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
