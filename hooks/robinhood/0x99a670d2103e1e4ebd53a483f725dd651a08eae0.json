@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x99a670d2103e1e4ebd53a483f725dd651a08eae0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NavJitHook",
+    "description": "A JIT (just-in-time) liquidity hook for basket token pools that prices swaps at NAV \u00b1 spread. On each swap it lifts standing liquidity, mints or redeems basket constituents on-chain to supply inventory, places a narrow JIT position, then removes it after the swap while enforcing a price-band constraint. Third-party liquidity additions are blocked; only the owner seeds the standing position.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
