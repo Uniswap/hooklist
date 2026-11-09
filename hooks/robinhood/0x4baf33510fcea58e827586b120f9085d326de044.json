@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4baf33510fcea58e827586b120f9085d326de044",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StandardLaunchHook",
+    "description": "A token launch hook that seeds a one-sided concentrated liquidity position for new ERC-20 launches, charges a 4% afterSwap fee on each swap's unspecified leg via ERC-6909 claims, and triggers graduation when accumulated quote reaches a configured target \u2014 collecting a graduation fee and burning excess tokens at that point.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
