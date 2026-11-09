@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xae4c0cf7c3feb79e0c244edbc6a3f8a3290940cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RealmHook",
+    "description": "Singleton Uniswap v4 hook for the Realm protocol that collects LP fees and time-limited buy/sell taxes on swaps of graduated tokens, forwarding LP fees to a configurable router and taxes to each token's master fee handler. Also emits post-swap pool state events (sqrtPriceX96, liquidity) per swap for efficient off-chain indexing.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
