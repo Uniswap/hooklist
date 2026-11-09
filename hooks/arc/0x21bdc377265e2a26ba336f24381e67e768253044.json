@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x21bdc377265e2a26ba336f24381e67e768253044",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "WonkHook",
+    "description": "Bonding-curve graduation hook for Wonk token launches. Charges a protocol swap fee and a per-launch creator tax in afterSwap as ERC-6909 hook deltas. When the pool price reaches the fundraise target, atomically burns the main liquidity band and re-pools the raised funds as a permanently locked buy-wall position (Position 3) in the same swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
