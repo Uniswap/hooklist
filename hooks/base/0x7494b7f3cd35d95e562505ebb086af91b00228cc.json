@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7494b7f3cd35d95e562505ebb086af91b00228cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SlurpV4Hook",
+    "description": "A single-hook-per-chain token launch and fee distribution platform. Takes fees on every swap in the pool's quote currency and distributes shares to the platform, creator, and optionally token holders, with configurable modes including buyback-and-burn and auto-LP compounding. Includes anti-snipe protections with a time-decaying tax and per-block buy caps during the launch window.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
