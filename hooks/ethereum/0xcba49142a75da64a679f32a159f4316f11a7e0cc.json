@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xcba49142a75da64a679f32a159f4316f11a7e0cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "DirectAnyHook",
+    "description": "A fixed 1% fee hook for token launches on klik.finance that splits fees between the protocol treasury and token creator (or holders via dividends). Fees are deferred as ERC-6909 claims and redeemed on subsequent swaps. Includes anti-snipe protection that locks the launch block and caps buy amounts in USD during the first few blocks after launch.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
