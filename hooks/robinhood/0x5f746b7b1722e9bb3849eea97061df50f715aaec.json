@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5f746b7b1722e9bb3849eea97061df50f715aaec",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "DuelHook",
+    "description": "A Uniswap v4 hook shared across three pools per prediction-market duel pair (ETH/A, ETH/D, and cross A/D). Takes ETH swap fees and burns cross-pool switch fees, runs zero-fee internal arbitrage to keep pools aligned, and settles periodic 4-hour rounds by buying back the winning token near its 30-minute EMA reference price.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
