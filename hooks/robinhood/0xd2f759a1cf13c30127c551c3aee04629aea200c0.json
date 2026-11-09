@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xd2f759a1cf13c30127c551c3aee04629aea200c0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PairV5LaunchV2NativeFeeHook",
+    "description": "Observation-only hook for registered launch pools that records tick-based TWAP data and swap counts in beforeSwap. Reverts on unregistered pools; does not modify swap behavior or take any currency from the pool manager.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "governance"
+  }
+}
