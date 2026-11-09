@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1995280ec8cbe8136dafe96645b24c52df3590cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BasedBidHook",
+    "description": "A Uniswap v4 hook that layers multi-tier fee mechanics (static, dynamic, and tiered) onto every swap, with built-in anti-sandwich protection inherited from AntiSandwichHook. Supports configurable fee distribution to LPs, treasury, and custom wallets, plus optional per-origin buy limits and allowlist-based access control during a configurable launch period.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
