@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xde81be3a1aadeb9f01dfcf334f189901ef8600cc",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "MemespadHook",
+    "description": "Uniswap v4 launchpad hook that collects configurable buy/sell taxes on each swap, with a snipe-protection window and fair-launch buy cap. Tax proceeds are routed across four buckets: creator wallet, token burn, dividend distribution, and auto-liquidity provision.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
