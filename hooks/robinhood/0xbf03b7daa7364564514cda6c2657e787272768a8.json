@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xbf03b7daa7364564514cda6c2657e787272768a8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AccrueHook",
+    "description": "A Uniswap v4 hook for shelf-based pools that carry no liquidity; each swap is filled entirely by an external shelf contract at its quote price via the before-swap return delta, so the pool's own price never moves.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
