@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xfe97d6f3f59ec48f2953c702e55e0ca199392acc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "TaxLaunchHook",
+    "description": "A shared Uniswap v4 hook for token launchpad pools that gates pool creation to a factory, blocks external liquidity, and collects configurable multi-recipient tax fees (burn, protocol, creator, integrator, dividend) on each swap. Supports an optional anti-snipe surcharge during a configurable time window after launch, during which exact-output swaps are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
