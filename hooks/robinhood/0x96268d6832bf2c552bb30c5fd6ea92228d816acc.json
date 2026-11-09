@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x96268d6832bf2c552bb30c5fd6ea92228d816acc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "WstOLaunchHook",
+    "description": "A token launch hook that provides permanent single-sided (token-only) genesis liquidity while blocking all external liquidity additions and removals. On every swap, a configurable fraction of the quote token is taken as a fee and immediately burned via the quote token's burn function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
