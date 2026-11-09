@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4d667e420bd4a42969cb27251a3f9a24661fd0cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BasedBidHook",
+    "description": "Uniswap v4 hook that applies dynamic LP fees, optional anti-sandwich protection (enforcing beginning-of-block prices for zeroForOne swaps), configurable hook fees (fixed and percentage-based), and launch-period buy limits with an owner-managed allowlist. Collected fees are distributed to LPs, a treasury, and optional buyback or reward pools.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
