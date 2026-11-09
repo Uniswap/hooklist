@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xebb4f20fc425f3e252713bdab8c9746b9e672080",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "PadLaunchHook",
+    "description": "Gates pool initialization to a designated builder address, then dynamically overrides the swap fee from 30% to 2% linearly over the first 5 minutes after launch. The builder always pays the base 2% fee; all other swappers pay the time-decayed rate.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
