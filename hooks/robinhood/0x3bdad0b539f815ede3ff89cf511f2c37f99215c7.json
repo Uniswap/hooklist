@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3bdad0b539f815ede3ff89cf511f2c37f99215c7",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "StaccLadder",
+    "description": "A fee-tier ladder hook that creates a family of pools per token (one per quote/fee-tier pair). Implements an EIP-8429 fee ratchet charging quadratically increasing tolls on the k-th swap or LP operation referencing a token within a block. Supports depositor \"books\" where the hook automatically manages single-sided liquidity ranges across the pool family.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": true,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": true,
+    "afterRemoveLiquidityReturnsDelta": true
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
