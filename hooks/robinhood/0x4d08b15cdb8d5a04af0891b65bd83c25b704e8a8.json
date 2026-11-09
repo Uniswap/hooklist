@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4d08b15cdb8d5a04af0891b65bd83c25b704e8a8",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AccrueHook",
+    "description": "Routes all swaps through an external shelf contract at the shelf's quoted price using beforeSwap return deltas, completely bypassing pool liquidity. Each swap is filled entirely by the shelf so the pool price never moves; the pool itself carries no liquidity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
