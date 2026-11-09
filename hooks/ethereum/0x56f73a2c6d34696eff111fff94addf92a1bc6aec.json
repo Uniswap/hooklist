@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x56f73a2c6d34696eff111fff94addf92a1bc6aec",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "HookVolveHookV4",
+    "description": "A token launch and trading hook that charges ETH-side fees on each swap, splitting proceeds between a platform and a per-pool project vault. Implements a time-decaying launch fee (100 000 pips for the first 60 seconds), governance-gated dynamic fee updates with a mandatory 24-hour increase delay, and factory-exclusive liquidity management.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
