@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x73669cea70473f28af31fd1e7750e51dcfe5ea20",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LaunchGuardHook",
+    "description": "Guards a Uniswap v4 pool's three immutable launch positions, restricting pool initialization and liquidity additions to a factory-bound locker with exact parameters. Donations are permanently disabled; zero-delta liquidity modifications (fee collection) are only permitted after the pool is sealed by the factory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
