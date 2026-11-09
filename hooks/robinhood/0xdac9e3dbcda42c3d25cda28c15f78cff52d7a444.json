@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdac9e3dbcda42c3d25cda28c15f78cff52d7a444",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "NFTStrategyHook",
+    "description": "A Uniswap v4 hook for NFTStrategy pools that enforces factory-only pool creation and liquidity addition, applies a block-decaying buy fee (starting at 99%, falling ~1 point per ~12s to a floor of 10%) while sells stay at 10%, distributes collected fees in ETH \u2014 80% to the strategy, 10% to the launcher, 10% to a protocol address \u2014 and blocks exact-output swaps. Token fees are converted to ETH via a nested swap in afterSwap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": true,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
