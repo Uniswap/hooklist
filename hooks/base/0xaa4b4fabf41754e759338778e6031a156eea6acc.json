@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xaa4b4fabf41754e759338778e6031a156eea6acc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "WstOLaunchHook",
+    "description": "A token-launch hook that seeds permanent single-sided (token-only) genesis liquidity and locks all LP positions from external modification. On every swap, it deducts a configured burn rate from the quote-token side and destroys those tokens via IBurnableQuote.burn(). Supports a factory-controlled launch-buy adapter for the pool creator's initial purchase.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
