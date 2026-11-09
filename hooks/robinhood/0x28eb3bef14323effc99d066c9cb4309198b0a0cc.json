@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x28eb3bef14323effc99d066c9cb4309198b0a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "CrossrateTaxHook",
+    "description": "Charges a configurable tax (3\u201310% in BPS) on swaps in the paired quote currency for crossrate.market pools, carving it out in beforeSwap or afterSwap. The tax is split between the coin creator and a protocol wallet, accrued as pool manager claim tokens, and paid out as native ETH via a permissionless distribute() function.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
