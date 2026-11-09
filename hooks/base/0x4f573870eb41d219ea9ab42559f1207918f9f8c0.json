@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4f573870eb41d219ea9ab42559f1207918f9f8c0",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LeveragedLiquidityJitHook",
+    "description": "A Uniswap v4 hook for USDC/B20 perpetual token pools that places single-tick just-in-time liquidity positions in beforeSwap using Morpho-backed leveraged issuance to fill the order remainder beyond the resting NAV band; afterSwap removes the JIT position and routes LP fees to a protocol fee router.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
