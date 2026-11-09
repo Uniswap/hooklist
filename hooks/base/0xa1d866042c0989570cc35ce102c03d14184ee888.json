@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa1d866042c0989570cc35ce102c03d14184ee888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "SlipstreamAggregator",
+    "description": "A singleton aggregator hook that routes all Uniswap v4 swaps through a corresponding external Slipstream concentrated liquidity pool (tickSpacing-keyed factory lookup), returning a BeforeSwapDelta to cancel core pool execution. Liquidity provision is disabled; an optional protocol fee is applied on each swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
