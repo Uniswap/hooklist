@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x26fdfdc2bb38eff0bad6e368f904c293ae9768cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "SlurpV4Hook",
+    "description": "A Uniswap v4 hook for the Slurp token-launch platform that collects trading fees on buys (via BeforeSwapDelta) and sells (via AfterSwapDelta), then distributes them in-swap to the platform, token creator, and holders. It enforces exactInput-only swaps, applies anti-snipe buy caps during the launch window, and locks all liquidity so only the hook itself can modify positions.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
