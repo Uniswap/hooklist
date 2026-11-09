@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xf0117680ce319b8af64580002052eca29cc62acc",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "LaunchHook",
+    "description": "A shared launchpad hook for Uniswap v4 that gates pool creation to a factory, permanently locks all LP positions, and charges a time-decaying anti-snipe fee on swaps. Fees are taken via BeforeSwapDelta/AfterSwapDelta and distributed to creator, platform, and referrer components through a FeeEscrow contract.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
