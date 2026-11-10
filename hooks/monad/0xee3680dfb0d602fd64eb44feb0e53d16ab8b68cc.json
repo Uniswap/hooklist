@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xee3680dfb0d602fd64eb44feb0e53d16ab8b68cc",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "SteadyHook",
+    "description": "A Uniswap v4 hook for Nomad launch pools (Beam and Prism modes) that takes a fixed trading fee on every swap in the paired stock asset (currency0). Fees are split between the platform treasury (30%), the pool creator, and token holders via a FeeDistributor. Liquidity additions are restricted to a designated locker address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
