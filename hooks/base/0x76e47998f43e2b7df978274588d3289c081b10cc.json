@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x76e47998f43e2b7df978274588d3289c081b10cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BasedBidHook",
+    "description": "A configurable Uniswap v4 hook that collects per-pool fees on every swap (static, dynamic adaptive+surge, or tiered), distributing them among LPs, token buybacks, reward recipients, and custom wallets. Supports optional per-pool anti-sandwich protection, cooldown penalties for rapid repeat traders, and whitelist-period buy limits enforced via Merkle proof.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
