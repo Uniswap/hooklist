@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x25e5bf8aabe36e5c96394329fb616b7c181420cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FledgoTaxHook",
+    "description": "A Uniswap v4 hook that collects configurable buy/sell taxes on launch token swaps, distributing fees between the protocol treasury, token creators, referrers, and a buyback-and-burn fund. Supports both buy-side (beforeSwap delta) and sell-side (afterSwap delta) fee collection.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
