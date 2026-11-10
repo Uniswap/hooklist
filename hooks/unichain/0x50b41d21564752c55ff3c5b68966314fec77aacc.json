@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x50b41d21564752c55ff3c5b68966314fec77aacc",
+    "chain": "unichain",
+    "chainId": 130,
+    "name": "UniHooks Shared Hook",
+    "description": "A shared Uniswap v4 hook where each pool creator configures per-pool rules at launch: anti-snipe limits, buy-burn, LP rewards, treasury fee, sell tax, sandwich guard, allowlist, and volatility fee. A fixed 0.20% platform fee is charged on every swap. Pools using fee rules only support exact-input swaps.",
+    "deployer": "0xF41182e5c54d63Ba48422dD73569fa5AA221884a",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
