@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x01526cf7fd471ba38ebc98a5eed72bb13bae20cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "LaunchFeeHook",
+    "description": "A trading fee hook for basepad v2 launch pools. Charges fees via return-delta on both the specified and unspecified swap sides. Supports QUOTE_ONLY (all fees in quote token) and TOKEN_ONLY (creator share in launch token, platform share in quote) modes, splitting fees between a fixed platform address (5%) and configurable creator recipients (95%). Parameters and recipients are immutable after pool registration.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
