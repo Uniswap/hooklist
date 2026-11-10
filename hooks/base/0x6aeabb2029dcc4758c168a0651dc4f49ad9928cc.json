@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6aeabb2029dcc4758c168a0651dc4f49ad9928cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FlashV3Hook",
+    "description": "A Uniswap v4 hook for the Flash protocol that manages token-launch pools with dynamic LP fee overrides, a 1% creator/protocol fee split (90/10), impact taxes on token sells, and churn-deck liquidity (selling token inventory into buys at spot price). Supports multiple quote types (WETH, FLASH, RWA, Perp, custom) with per-pool creator routing, in-swap FLASH buyback triggers, and an always-on ledger sweep for fee distribution.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
