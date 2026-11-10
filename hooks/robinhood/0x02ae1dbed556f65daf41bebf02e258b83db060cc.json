@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x02ae1dbed556f65daf41bebf02e258b83db060cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "PulseFeeHook",
+    "description": "A launchpad pool fee hook that deducts a fixed per-coin fee (creator tax plus 1% protocol) from the quote asset on every swap using BeforeSwapDelta and AfterSwapDelta. Only the factory may initialize pools and register coin fees; accrued quote fees are held as ERC-6909 claims in the PoolManager until released by the factory.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
