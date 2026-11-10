@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x87d2d3971685f464dcdcbfeb384348907d8320cc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "BlobsHook",
+    "description": "Charges a flat 1% fee in ETH on every swap in ETH/token pools, retaining fees as ERC-6909 claims on the PoolManager. Fees are distributed via `settle`: 30% to a revenue wallet, 30% to the coin creator, 20% to droplet NFT stakers, 15% to the coin treasury, and 5% to a burner that buys and burns the platform token.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
