@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x6e67da46312092703a7f79c3093550fb11a42acc",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "UniHooks Shared Hook",
+    "description": "A shared launch hook where each pool's rules (anti-snipe window, auto-burn, LP rewards, treasury fee, sell tax, exit-decay tax, sandwich guard, volatility fee, allowlist, wallet cap, liquidity lock) are configured once at pool creation and are immutable thereafter. Takes a fixed 0.20% platform fee on every swap in the paired token; additional rules can deduct up to 20% (plus an optional launch-window fee up to 25%) from swap output, with exact-output swaps blocked when any cut applies.",
+    "deployer": "0xF41182e5c54d63Ba48422dD73569fa5AA221884a",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
