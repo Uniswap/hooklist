@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4b3321b6617c927023d849521ce7b7c5f2dd4844",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "AntiMevTaxHook",
+    "description": "A Uniswap v4 hook that records the block number and direction of each pool's last swap. When the next swap reverses direction within 2 blocks, it charges a 49% tax on that swap's output and `donate`s it into the pool's LP fee. Adding liquidity is restricted to transactions initiated by a whitelisted address.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
