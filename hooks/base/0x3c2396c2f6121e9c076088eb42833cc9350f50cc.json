@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x3c2396c2f6121e9c076088eb42833cc9350f50cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BasedBidHook",
+    "description": "A configurable Uniswap v4 hook offering static, dynamic (adaptive + surge), or tiered hook fees with admin/treasury splits, optional per-pool anti-sandwich protection, whitelist-period buy limits verified via Merkle proof, cooldown penalty fees for rapid repeat trades, and multi-recipient fee distribution (LP donation, buyback, rewards, custom wallets).",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "allowlist"
+  }
+}
