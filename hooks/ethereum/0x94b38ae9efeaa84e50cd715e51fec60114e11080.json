@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x94b38ae9efeaa84e50cd715e51fec60114e11080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AsymmetricFee_300bp_100bp",
+    "description": "Applies a directional dynamic LP fee based solely on swap direction: 3% when token0 is sold (zeroForOne) and 1% when token1 is sold. Only initializes pools with the dynamic fee flag set; no owner, no setters, and no storage after deployment.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
