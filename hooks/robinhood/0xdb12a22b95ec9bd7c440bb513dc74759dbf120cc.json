@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xdb12a22b95ec9bd7c440bb513dc74759dbf120cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BloomPadFeeHook",
+    "description": "Flat 0.9% ETH fee hook for BloomPad pools; collects fees from buy swaps in beforeSwap and sell swaps in afterSwap, routing them directly to per-pool fee recipients via poolManager.take(). Pool initialization is restricted to a single bound factory address; exact-output swaps are blocked.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
