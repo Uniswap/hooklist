@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x37fcd30d9b298c2067eb91529fb71d5405f3a0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LeveredHook",
+    "description": "A shared Uniswap v4 hook for Levered ETH/token pools that charges dynamic ETH fees composed of a base rate, volatility surcharge (decaying over a 15-minute half-life), quick-flip penalty for rapid sell-after-buy, and a fixed 1% creator fee. Fees are held as ERC-6909 claims and routed to per-pool treasuries. A defend mode redirects fees to buyback when the coin's price falls 20% below its peak.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
