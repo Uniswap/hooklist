@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x4b2d1b83ce0eb0d8c08be1ea3d9b6eac0f5d5040",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "BuybackHook",
+    "description": "Implements laddered single-sided limit orders (buyback/sell rungs) on Uniswap v4 pools. When price crosses a rung's tick range during a swap, the hook fills the rung and routes proceeds per an exit policy: keep as a claimable, extract to the owner, or reroll into an opposite-direction return leg. Extends LimitOrderHook with owner-scoped accounting and a configurable protocol fee.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
