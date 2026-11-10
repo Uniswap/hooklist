@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xc4df67d58fb02ecc2499fdacc4d1d71fea4fb8c8",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FlashPerpsV5Hook",
+    "description": "A Uniswap v4 perpetuals trading hook that intercepts swaps on registered USDC/perp pools, filling orders via a FlashPerpsV5Issuer contract that mints or redeems tokenized perp positions at the realized NAV price, using BeforeSwapReturnsDelta custom accounting to settle trades directly without routing through the pool's AMM liquidity.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
