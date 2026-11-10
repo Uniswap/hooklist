@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x769fae66c90e506d42fce7a837b6a91998c19080",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AsymmetricFee_100bp_30bp",
+    "description": "Directional LP fee for any pair on Ethereum: 1% when token0 is paid in, 0.3% when token1 is paid in, so the pool tends to collect token1. The fee goes to the pool's LPs through v4's standard dynamic fee override. The hook is unaudited.\n\nSource: https://github.com/LesserFoolCrypto/uniswap-v4-hooks",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": true,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
