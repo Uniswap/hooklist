@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x376aa4c2e48ac2498caaac06bd7a6b6ef373f8e0",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "FableHook",
+    "description": "FableHook enforces factory-only pool creation, locker-only liquidity provision, and a decaying sniper fee (99% to normal over 3 seconds post-launch). Launch pools maintain a price floor at their birth price to prevent coin price manipulation; mesh pools require full-range liquidity and have no price floor.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": true,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": true,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
