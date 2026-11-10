@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x34ac8c4e6ca3d5b70a5321b648d0db9451c060cc",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "QSimpleLaunch",
+    "description": "Launch factory and pool hook for Uniswap v4: deploys ERC-20 tokens and initializes pools with configurable launch guards (open delay, anti-snipe, wallet cap, holder gate, cooldown) and fee modules (taxes, buyback, burn, referrals, creator splits). Collects and routes trading fees via beforeSwap and afterSwap return deltas, and permanently holds the launch liquidity position.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "other"
+  }
+}
