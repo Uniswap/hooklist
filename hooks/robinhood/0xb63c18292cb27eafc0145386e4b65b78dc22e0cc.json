@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xb63c18292cb27eafc0145386e4b65b78dc22e0cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "RobinCoreHookV4",
+    "description": "Fee and anti-sniper hook for ROBINCORE pools: charges configurable buy/sell fees in the paired asset, splits revenue between creator, referrer, and platform, flags early buyers as snipers and applies a heavy sell tax on their exits, and accumulates paired-asset fees in a vault for periodic buyback-and-burn of the launched token.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
