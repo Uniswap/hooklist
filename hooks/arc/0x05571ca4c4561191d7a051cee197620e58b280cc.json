@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x05571ca4c4561191d7a051cee197620e58b280cc",
+    "chain": "arc",
+    "chainId": 5042,
+    "name": "MemespadHook",
+    "description": "A memecoin launchpad hook that collects configurable buy/sell taxes on each swap and routes them across creator rewards, token burns, dividends, and auto-liquidity buckets. Enforces temporal anti-snipe windows and per-swap buy caps during a configurable fair-launch period.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "temporal"
+  }
+}
