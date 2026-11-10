@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe89ab12a7dca7b4cb269002826dab40b04d440cc",
+    "chain": "monad",
+    "chainId": 143,
+    "name": "OmniHook",
+    "description": "Takes a fixed 10 bps fee on every swap, split among five hardcoded recipients via a pull-payment ledger (owed mapping). Fee is deducted from the specified token on exact-input swaps (via BeforeSwapDelta) and from the output token on exact-output swaps (via AfterSwapDelta). No owner, no admin, no fee-skip mechanism.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": false,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
