@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xe55a5e3d35ad2b0bbe3a0bf9ad13de2599d2e888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "FountainUrmHook",
+    "description": "Token-wrapper hook for fURM, the share token of the FountainUrm ERC-4626 vault. Swapping URM for fURM deposits into the vault, and swapping fURM for URM redeems, at the vault's own previewDeposit and previewRedeem rates with no added fee. The pool holds no liquidity; swaps are served from the hook's URM float. Exact-input swaps only. Not upgradeable.",
+    "deployer": "0x035A12973C7d6dE9E3D3D450899913F07f68edee",
+    "verifiedSource": true,
+    "auditUrl": "https://ultraroundmoney.com/urm/fountain-audit.pdf"
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
