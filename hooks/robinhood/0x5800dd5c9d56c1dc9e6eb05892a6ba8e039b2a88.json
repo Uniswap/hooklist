@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x5800dd5c9d56c1dc9e6eb05892a6ba8e039b2a88",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "Carry",
+    "description": "A custom-curve AMM hook that prices each pool off an external source pool (v2/v3/v4 on the same chain), using flat-center/steep-tail curve math (CarryFlatMath) and its own ERC-6909 reserves held inside the PoolManager. Swaps are fully handled in `beforeSwap`; Uniswap v4 concentrated liquidity is disabled for these pools.",
+    "deployer": "0xbD139eEdB2e2Eb6EF01a7E24539ffC7F77E3dfDb",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": true,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "governance"
+  }
+}
