@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x65c3f248393779d124b6112b1dc662f49cb2c8c4",
+    "chain": "ethereum",
+    "chainId": 1,
+    "name": "AdaptivePoolPolicyHookV1",
+    "description": "A Uniswap v4 hook that overrides directional LP fees dynamically in beforeSwap (separate rates for each swap direction) and enforces configurable price bounds in afterSwap. Optionally charges an additional hook fee on the swap's unspecified amount; liquidity provision can be restricted to approved addresses or enabled publicly by the owner.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": true,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
