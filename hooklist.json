@@ -71469,6 +71469,41 @@
   },
   {
     "hook": {
+      "address": "0x3af656de4507e822ccd86acf235198c3bba3e0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EpochHook",
+      "description": "Shared Uniswap v4 hook for Epochpad coins (ETH/coin pools, 0 LP fee) that charges a composite fee (base + trade-size + MEV priority-fee + anti-snipe components) collected as ERC-6909 claims via swap deltas. After each sell, triggers a support action from banked claims: price-band buyback, buy-and-burn, or permanent full-range liquidity addition.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x3b10be952225011d9b1754630cd19cba480ed000",
       "chain": "ethereum",
       "chainId": 1,
@@ -99434,6 +99469,41 @@
   },
   {
     "hook": {
+      "address": "0xf067c780c18e230958fb35c2455cee381864e0c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "FusingFeeHook",
+      "description": "Shared fee hook for Fusing V2 launch pools that dynamically overrides LP fees per-swap based on creator-configured terms: a resting fee plus a time-decaying schedule premium and a block-based anti-sniper surcharge. afterSwap tracks premium revenue above the resting fee for locker collection and creator/protocol splits.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xf0eecd9e6ddc2517dc0c2f3afd6f7246312f4acc",
       "chain": "ethereum",
       "chainId": 1,
@@ -117944,6 +118014,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2f3f53a87854fbdaa46c95a58ddc98464e69a8ec",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RotatoHook",
+      "description": "Shared hook for the rotato.fun platform. Only registered token managers can create pools or add liquidity. Public swaps pay a per-coin fee (1\u201310%) in the quote currency, minted as ERC-6909 claims to the FeeRouter; the pool LP fee is always overridden to 0. Records start-of-block sqrt prices to enable managers to detect intra-block price manipulation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
