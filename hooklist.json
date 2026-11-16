@@ -7071,6 +7071,41 @@
   },
   {
     "hook": {
+      "address": "0xfb5a559886fccba6400cc52905ba3aa4658ba0cc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "QSimpleLaunch",
+      "description": "A factory and hook for one-transaction token launches on Uniswap v4: deploys a fixed-supply token, opens a pool, and permanently locks the entire position in the hook. Per-launch style presets optionally apply anti-snipe charges, wallet caps, cooldowns, trading taxes, buybacks, and referral splits via per-pool launch-block contracts. Pools track a bonding milestone at 80% supply sold.",
+      "deployer": "0xaf48A5Ab32EF96Ee7A72ED6Ed4534bE1bc928c73",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xfc5cf0b52f08d0fa3fc9dd73f224ad704b5028a8",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -7627,6 +7662,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x6e3ba2861ec4c4ef6a86051a40c2441b4d959080",
+      "chain": "arc",
+      "chainId": 5042,
+      "name": "DynamicFeeHook",
+      "description": "Immutable hook that applies monotonic time-decaying LP fees: starts at 1% for the first 7 days after pool launch, drops to 0.5% between days 7\u201315, and settles at 0.3% thereafter. Pool initialization is restricted to a designated position manager and requires currency0 to implement a launcher interface pointing to an authorized launch authority.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -46024,6 +46094,41 @@
   },
   {
     "hook": {
+      "address": "0xd72cd1d46ba05479583fbb561b558f133ba98088",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "UniswapV4RFQHook",
+      "description": "An RFQ (Request for Quote) hook that fulfills exact-input swaps by routing them through KyberSwap with optional Morpho flash loan support. Each swap requires a signed quote from an authorized filler address, enforcing a deadline and unique quote ID to prevent replay attacks. The hook captures any spread between the KyberSwap output and the promised user output as profit sent to a treasury address.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0xd77018caa870609b726f0fc2940e7238301d6888",
       "chain": "base",
       "chainId": 8453,
@@ -50780,6 +50885,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfb5a559886fccba6400cc52905ba3aa4658ba0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "QSimpleLaunch",
+      "description": "Launch factory and hook for Uniswap v4 pools that enforces configurable launch guards (anti-snipe block caps, wallet caps, cooldowns, holder-only gate, optional trading-open delay) and collects swap taxes with configurable per-pool splits to creator, referrers, buyback-burn, and a protocol wallet.",
+      "deployer": "0xaf48A5Ab32EF96Ee7A72ED6Ed4534bE1bc928c73",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
@@ -61210,6 +61350,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfb5a559886fccba6400cc52905ba3aa4658ba0cc",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "QSimpleLaunch",
+      "description": "A launch factory and pool hook that creates token launches with configurable guards (trading open delay, anti-snipe, wallet cap, cooldown) and optional fee distribution (buy/sell tax, buyback-and-burn, referrals, creator vault). Fees are extracted via BeforeSwapDelta and AfterSwapDelta; launch liquidity positions are permanently locked with no owner or upgrade path.",
+      "deployer": "0xaf48A5Ab32EF96Ee7A72ED6Ed4534bE1bc928c73",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
     }
   },
   {
