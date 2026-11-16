@@ -35,6 +35,7 @@ def test_get_explorer_url_new_chains():
     assert get_explorer_url("megaeth") == "https://api.etherscan.io/v2/api?chainid=4326"
     assert get_explorer_url("arc") == "https://api.etherscan.io/v2/api?chainid=5042"
     assert get_explorer_url("zksync") == "https://block-explorer-api.mainnet.zksync.io/api"
+    assert get_explorer_url("elysium") == "https://elysium.kinetiq.xyz/api"
 
 
 def test_get_explorer_url_unknown_chain():
