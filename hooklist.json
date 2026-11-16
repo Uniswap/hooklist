@@ -116619,6 +116619,41 @@
   },
   {
     "hook": {
+      "address": "0x34ac8c4e6ca3d5b70a5321b648d0db9451c060cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "QSimpleLaunch",
+      "description": "A combined launch factory and Uniswap v4 hook that creates token launch pools with configurable guard blocks (anti-snipe, wallet cap, open delay, holder gate, cooldown). Collects trading taxes and fees via BeforeSwapDelta and AfterSwapDelta, distributing them to configurable recipients (buyback, burn, referrers, stakers, creator). No owner or upgrade mechanism.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x34c878c8995b1d60ae62697cd77faa960269e044",
       "chain": "robinhood",
       "chainId": 4663,
