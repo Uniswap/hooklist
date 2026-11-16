@@ -75284,6 +75284,41 @@
   },
   {
     "hook": {
+      "address": "0x56f73a2c6d34696eff111fff94addf92a1bc6aec",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "HookVolveHookV4",
+      "description": "A token launch and trading hook that charges ETH-side fees on each swap, splitting proceeds between a platform and a per-pool project vault. Implements a time-decaying launch fee (100 000 pips for the first 60 seconds), governance-gated dynamic fee updates with a mandatory 24-hour increase delay, and factory-exclusive liquidity management.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5725df570e0008997dacef46bc179bbfc4d125cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -92784,6 +92819,41 @@
   },
   {
     "hook": {
+      "address": "0xc3774a7456c4cfe8e44d780877c9771d6562e0cc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "EtherealFactory",
+      "description": "Token launch factory (Ethereal.fun) that creates ETH/token Uniswap v4 pools with one-sided liquidity burned to 0xdead. Charges ETH fees on every swap via BeforeSwapDelta/AfterSwapDelta, with an anti-snipe decay from 30% to the creator's base rate over the first 24 seconds; fees accumulate as ERC-6909 claims and are split between the creator and the platform.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc45d8d47bbba5164aa885c6a6f1cc81f78298044",
       "chain": "ethereum",
       "chainId": 1,
@@ -103315,6 +103385,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x41b6b779455646df1e9682d0d11d58ae405280cc",
+      "chain": "monad",
+      "chainId": 143,
+      "name": "PurplXV4FeeHook",
+      "description": "A 2% fee hook for the PurplX protocol that collects swap fees and splits them 80% to token holders and 20% to a protocol treasury. Holder fees accrue in one-minute snapshot epochs and are claimable within a 5-hour window; fees are taken as BeforeSwap or AfterSwap deltas depending on exact-input vs. exact-output swap direction.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -134497,6 +134602,41 @@
     "properties": {
       "dynamicFee": false,
       "upgradeable": true,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x96268d6832bf2c552bb30c5fd6ea92228d816acc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "WstOLaunchHook",
+      "description": "A token launch hook that provides permanent single-sided (token-only) genesis liquidity while blocking all external liquidity additions and removals. On every swap, a configurable fraction of the quote token is taken as a fee and immediately burned via the quote token's burn function.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
