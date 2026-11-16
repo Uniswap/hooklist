@@ -4201,6 +4201,41 @@
   },
   {
     "hook": {
+      "address": "0x95f2c2f7dca90f82fbffc5ea7dd481cce7c16acc",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "UniHooks Shared Hook",
+      "description": "Per-pool configurable Uniswap v4 launch hook. Pool creators set rules at initialization (trading start, allowlist, anti-snipe, wallet cap, same-block guard, buy burn, LP rewards, treasury fee, sell tax, exit decay, volatility fee, sandwich guard). Applies a 0.10% platform fee per swap. Reverts exact-output swaps when burn, reward, or treasury deductions apply.",
+      "deployer": "0xF41182e5c54d63Ba48422dD73569fa5AA221884a",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x981763699d269e129a08e216b1aec7caa376a8a8",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -18446,6 +18481,41 @@
   },
   {
     "hook": {
+      "address": "0x2ab86a34661c0629c62a0f1980c96d41ea471010",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BatchDistributeHook",
+      "description": "A Uniswap v4 hook that enables permissioned operators to push-distribute ERC-20 or native tokens to up to 200 recipients per transaction via an external Spraay batch contract, with per-operator pending-refund tracking for failed deliveries. Swaps and liquidity operations on pools using this hook are completely unaffected.",
+      "deployer": "0x867c6c5487Ea8504010B776a7a1475751F1b40a1",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2ac36df41fc7d8de229e95118e44baa71050e888",
       "chain": "base",
       "chainId": 8453,
@@ -28238,6 +28308,41 @@
       "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": true,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x672e67407fecbabbddd858a292041a561eafaacc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "UniHooks Shared Hook",
+      "description": "Configurable shared Uniswap v4 launch hook where pool creators set immutable per-pool rules at initialization (anti-snipe, burn, LP rewards, treasury fee, sell tax, trading start, allowlist, wallet cap, same-block guard, liquidity lock, exit decay, volatility fee, sandwich guard). Collects a 0.10% platform fee on every swap in the paired token; reverts on exact-output swaps.",
+      "deployer": "0xF41182e5c54d63Ba48422dD73569fa5AA221884a",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
     }
@@ -52634,6 +52739,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": true,
       "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x00000042c7901119a491b1ed862c3d052bf72800",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SDBR PoolTravada",
+      "description": "A Uniswap v4 hook that restricts pool initialization and liquidity additions exclusively to the hook contract itself \u2014 any external caller's beforeInitialize or beforeAddLiquidity reverts. Functions as a liquidity manager with a fixed 2% fee: the deployer seeds tiered liquidity ranges at launch, users can lock token payments as permanent liquidity via pagar, and accumulated fees are collected to a designated recipient.",
+      "deployer": "0xcDb05fEDD9ef3258e75De23AbF2751aC22156A1c",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
       "swapAccess": "none"
     }
   },
@@ -162325,6 +162465,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x38596756be9ff4807ee9c295169e0d3f4eeaaacc",
+      "chain": "unichain",
+      "chainId": 130,
+      "name": "UniHooks Shared Hook",
+      "description": "A single shared hook managing configurable token launch rules per pool, including anti-snipe windows, burn, LP rewards, treasury fees, sell tax, allowlist, wallet cap, same-block trading guard, liquidity lock, volatility fees, and sandwich guard. Rules are immutably fixed at pool creation via createPool, with a 0.10% platform fee on every swap taken in the paired token.",
+      "deployer": "0xF41182e5c54d63Ba48422dD73569fa5AA221884a",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {

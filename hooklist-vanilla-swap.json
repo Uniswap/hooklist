@@ -1891,6 +1891,41 @@
   },
   {
     "hook": {
+      "address": "0x2ab86a34661c0629c62a0f1980c96d41ea471010",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BatchDistributeHook",
+      "description": "A Uniswap v4 hook that enables permissioned operators to push-distribute ERC-20 or native tokens to up to 200 recipients per transaction via an external Spraay batch contract, with per-operator pending-refund tracking for failed deliveries. Swaps and liquidity operations on pools using this hook are completely unaffected.",
+      "deployer": "0x867c6c5487Ea8504010B776a7a1475751F1b40a1",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": true,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2c59f71726e45fd9622bfabf34ca5c2842ce9000",
       "chain": "base",
       "chainId": 8453,
@@ -5754,6 +5789,41 @@
       "beforeInitialize": false,
       "afterInitialize": true,
       "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x00000042c7901119a491b1ed862c3d052bf72800",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "SDBR PoolTravada",
+      "description": "A Uniswap v4 hook that restricts pool initialization and liquidity additions exclusively to the hook contract itself \u2014 any external caller's beforeInitialize or beforeAddLiquidity reverts. Functions as a liquidity manager with a fixed 2% fee: the deployer seeds tiered liquidity ranges at launch, users can lock token payments as permanent liquidity via pagar, and accumulated fees are collected to a designated recipient.",
+      "deployer": "0xcDb05fEDD9ef3258e75De23AbF2751aC22156A1c",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
