@@ -26634,6 +26634,41 @@
   },
   {
     "hook": {
+      "address": "0x5e320ea6278107968c119942e57d876c5f922acc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TaxLaunchHook",
+      "description": "Shared launchpad hook that collects configurable buy/sell taxes on each swap, split among protocol, creator fee slots, an optional dividend tracker, and an integrator recipient. Includes a temporary anti-snipe surcharge window post-launch that also blocks exact-output swaps during that window. Permanently locks liquidity by blocking all third-party add/remove operations.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5e48f905661d75501ca756edb3403da98f0400c4",
       "chain": "base",
       "chainId": 8453,
@@ -138795,6 +138830,41 @@
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x992118de23b4ebe9f527dacbbb7d8d4bbbf8e044",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "StandardLaunchHook",
+      "description": "Token launch hook that seeds a fixed-range Uniswap v4 position from a factory and charges a 4% fee (400/10000) on the unspecified swap leg via afterSwap delta return. Tracks accumulated quote against a configurable graduation target, emitting a Graduated event when reached; fees are routed to the factory via claim minting and settlement.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
       "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
