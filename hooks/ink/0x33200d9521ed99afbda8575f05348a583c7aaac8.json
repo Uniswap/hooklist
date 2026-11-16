@@ -4,7 +4,7 @@
     "chain": "ink",
     "chainId": 57073,
     "name": "MasterLaunchHook",
-    "description": "A token launch platform hook that charges dynamic swap fees, enforces anti-sandwich (same-block direction reversal) and anti-snipe (time-decayed buy tax) protections, and executes automatic fee distribution including LP deepening, token buybacks and burns, and holder airdrops.",
+    "description": "A token launch platform hook that charges dynamic swap fees, enforces anti-sandwich (one swap per origin per block) and anti-snipe (time-decayed buy tax) protections, and executes automatic fee distribution including LP deepening, token buybacks and burns, and holder airdrops.",
     "deployer": "",
     "verifiedSource": true,
     "auditUrl": ""
@@ -30,6 +30,6 @@
     "upgradeable": false,
     "requiresCustomSwapData": false,
     "vanillaSwap": false,
-    "swapAccess": "temporal"
+    "swapAccess": "other"
   }
 }
