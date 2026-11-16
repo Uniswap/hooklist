@@ -491,6 +491,41 @@
   },
   {
     "hook": {
+      "address": "0x17bd06195b2d65a9f056f69f6cd3db248b196000",
+      "chain": "arbitrum",
+      "chainId": 42161,
+      "name": "SpawnGateHook",
+      "description": "A beforeInitialize-only gate hook that restricts pool initialization to pools pre-registered by SpawnFactory, preventing hostile pre-initialization of launch pools (e.g., on LayerZero mirror chains) at a hostile price. Pools not registered by the factory atomically before initialize will revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x18608ad558dcd233f7854242bbaef73988bee000",
       "chain": "arbitrum",
       "chainId": 42161,
@@ -24178,6 +24213,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x5422e28e2e2be756e6633273ec0d485037b4e8cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LaunchHook",
+      "description": "A Uniswap v4 hook that acts as the shared rule engine for every launchpad pool. On each swap it applies a dynamic LP fee, takes configurable protocol and creator fee cuts, optionally burns tokens, donates a portion of fees back to the pool, and distributes the remainder to module escrows and claimable balances. Up to 8 owner-approved modules can extend behavior at launch, liquidity, and trade time.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
