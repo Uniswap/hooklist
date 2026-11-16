@@ -34474,6 +34474,41 @@
   },
   {
     "hook": {
+      "address": "0x924add3c0e75a8d22db0a4c75abc91c0a2202aec",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "EmbowHook",
+      "description": "Launch-guard hook for Embow markets that locks pool liquidity in factory-defined positions, charges all swap fees exclusively in the quote token (minted as ERC6909 claims to the custody vault), and applies a time-decaying buy tax during the initial blocks after pool creation. Liquidity removal is restricted to fee-collection operations only.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9278f6e55ce58519c79dc1ab0ad3b29ea7821040",
       "chain": "base",
       "chainId": 8453,
@@ -116409,6 +116444,41 @@
   },
   {
     "hook": {
+      "address": "0x28eb3bef14323effc99d066c9cb4309198b0a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "CrossrateTaxHook",
+      "description": "Charges a configurable tax (3\u201310% in BPS) on swaps in the paired quote currency for crossrate.market pools, carving it out in beforeSwap or afterSwap. The tax is split between the coin creator and a protocol wallet, accrued as pool manager claim tokens, and paid out as native ETH via a permissionless distribute() function.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x292018cc10ce84d62364d099fcf58277fd6dc0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -132855,6 +132925,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x8a34645c4d37d8e8b3c22d4a55d2c7cde434eacc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "HookrRoot",
+      "description": "Modular Uniswap v4 hook implementing dynamic LP fees, pluggable Rules and Advisory modules, and an optional arb-recapture lane in which a frozen trusted executor runs sandwiched swaps around each user trade to capture arbitrage profit for LPs. Pools opt into the recapture lane at initialization; every other pool follows a standard or fee-only path with optional dynamic fee simulation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
@@ -178530,6 +178635,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfd2c2d1f088dd5f37acfc6c67cd80e30499ce0cc",
+      "chain": "xlayer",
+      "chainId": 196,
+      "name": "LaunchHook",
+      "description": "A Uniswap v4 hook for token launches that collects platform fees on every swap and splits them between the creator, referrer, and protocol treasury. Supports optional per-pool custom taxes (buy/sell rates up to 10%) with configurable rewards, dividend, and token-burn distributions. Pools must be registered via a factory before swapping is allowed.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
