@@ -8646,6 +8646,41 @@
   },
   {
     "hook": {
+      "address": "0x014257c9bfb770a94065716188d60f881d1180c0",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "LaunchGuardHook",
+      "description": "A launch-guard hook that enforces a creator-only block during token launches (reverting non-factory swaps in the launch block) and applies a ramped per-transaction buy cap and per-address hold cap in afterSwap, protecting pools containing IGuardedToken tokens from sniping during the launch window.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x01ace8bc990270fbb742b27892b149a7f0e71000",
       "chain": "ethereum",
       "chainId": 1,
@@ -12617,6 +12652,41 @@
       "afterAddLiquidity": true,
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": true,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x784ff9a3ac5d88a30bfff6f7f2a270161fbe6000",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "PoolInitializationGuard",
+      "description": "Restricts pool initialization to the factory that deployed this hook. The `beforeInitialize` callback reverts unless called by the pool manager with the deploying factory as the sender, preventing unauthorized pool creation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": false,
       "beforeDonate": false,
@@ -19251,6 +19321,41 @@
   },
   {
     "hook": {
+      "address": "0x19bec7c2e1b2aadaf67b259744751a9960d66000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PoolInitializationGuard",
+      "description": "Restricts pool initialization so that only the factory that deployed this hook can initialize pools using it. The beforeInitialize callback reverts unless called by the pool manager with the factory as the sender; swaps, fees, and liquidity are entirely unaffected.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1aa2ef6043b1a254954dee176c9072fa68680200",
       "chain": "robinhood",
       "chainId": 4663,
@@ -20896,6 +21001,41 @@
   },
   {
     "hook": {
+      "address": "0x544a394b1553b016c0cb19ad68bff7b712f3c0c0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PairV5LaunchV2NativeFeeHook",
+      "description": "An observation-only Uniswap v4 hook that records TWAP tick observations on every swap for registered pools. Provides an on-chain TWAP oracle with a 30-minute window and up to 32 observations per pool; swaps on unregistered pools revert.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5792e5e04e985ab2317015dbb13134f74e846a40",
       "chain": "robinhood",
       "chainId": 4663,
@@ -21802,6 +21942,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x82ae8a5847c00eac437fe39a3708bdd36897e0c0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "TruthMarketHook",
+      "description": "Uniswap v4 hook managing YES/NO pool pairs for prediction markets; gates swaps on market close time, global trading halt, finalization status, and oracle certification round, then validates the post-swap tick remains within registered bounds.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "other"
     }
   },
   {
@@ -24217,6 +24392,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd2f759a1cf13c30127c551c3aee04629aea200c0",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PairV5LaunchV2NativeFeeHook",
+      "description": "Observation-only hook for registered launch pools that records tick-based TWAP data and swap counts in beforeSwap. Reverts on unregistered pools; does not modify swap behavior or take any currency from the pool manager.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "governance"
     }
   },
   {
