@@ -37064,6 +37064,41 @@
   },
   {
     "hook": {
+      "address": "0x9c7155d7216454d9d894f792c8b5c564f2c66acc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "TaxLaunchHook",
+      "description": "A shared Uniswap v4 hook for launchpad token launches that restricts pool creation to the factory, blocks external liquidity modifications, and applies configurable multi-recipient swap taxes (burn, protocol, creator, dividend, integrator) with an optional post-launch anti-snipe surcharge window that temporarily disables exact-output swaps.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
       "address": "0x9c754dd8fa7f32847ef0505a7c120c99c11828c4",
       "chain": "base",
       "chainId": 8453,
@@ -151020,6 +151055,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdbebc6a7b2a38197932b6e01fb0e57e71d726aec",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SynthHook",
+      "description": "Gates swaps to registered synth wallets until a per-token ETH graduation threshold is reached, then opens trading publicly. Charges a fixed-BPS ETH fee on every swap, distributing proceeds among the synth wallet, an ops wallet, and a buyback treasury via BeforeSwapDelta and AfterSwapReturnsDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
