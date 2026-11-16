@@ -62579,6 +62579,41 @@
   },
   {
     "hook": {
+      "address": "0x0ce2adeedcc62493cb3853a6f551426fd8b048c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AdaptivePoolPolicyHookV1",
+      "description": "Applies asymmetric directional LP fee overrides (configurable per swap direction) on Uniswap v4 dynamic-fee pools, enforces configurable minimum and maximum sqrtPrice bounds in afterSwap (reverting out-of-bounds swaps), and optionally charges an additional hook fee on each swap. Liquidity provision is gated to an owner-managed allowlist when public access is disabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0d081fc9dd65b751f340bed5a3619d5fba7b8444",
       "chain": "ethereum",
       "chainId": 1,
@@ -76404,6 +76439,41 @@
   },
   {
     "hook": {
+      "address": "0x65c3f248393779d124b6112b1dc662f49cb2c8c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AdaptivePoolPolicyHookV1",
+      "description": "A Uniswap v4 hook that overrides directional LP fees dynamically in beforeSwap (separate rates for each swap direction) and enforces configurable price bounds in afterSwap. Optionally charges an additional hook fee on the swap's unspecified amount; liquidity provision can be restricted to approved addresses or enabled publicly by the owner.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x66213c92f0a000a0e0dc21ad7faeb4cf528850c0",
       "chain": "ethereum",
       "chainId": 1,
@@ -88160,6 +88230,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb067b5deccbb371eb358953626dfbb0dc55608c4",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "AdaptivePoolPolicyHookV1",
+      "description": "Applies per-direction dynamic LP fees (token0\u2192token1 and token1\u2192token0 independently configurable) with configurable sqrtPrice bounds enforced post-swap. Optionally charges an additional hook fee on the unspecified swap amount. Restricts liquidity provision to whitelisted addresses or owner unless public liquidity is enabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -132461,6 +132566,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x974215f4c6ce01dd2c52bcbb32e144d8e6722888",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BinHook V2",
+      "description": "Bin-based AMM (Liquidity Book / DLMM style) on a Uniswap v4 pool. Liquidity sits in discrete price bins, held as ERC-6909 claims in the PoolManager. The hook fills every swap in beforeSwap and returns the full delta, so the pool's own liquidity stays zero. LPs add and withdraw through the hook and hold shares per bin. LP fee: a fixed base fee plus an optional volatility surcharge. Uniswap's protocol fee is passed on at the PoolManager's rate. No owner, not upgradeable, hookData ignored.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
