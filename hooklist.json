@@ -7946,6 +7946,41 @@
   },
   {
     "hook": {
+      "address": "0xb6a65950534f061618b4ae102fbcbb8541a8e0cc",
+      "chain": "arc",
+      "chainId": 5042,
+      "name": "MinaraFeeHook",
+      "description": "Charges platform and creator fees in the quote currency (currency0) on every swap, taking the fee before or after the pool depending on which leg is specified. Applies an anti-snipe tax (up to 99%) during the first 3 seconds after pool initialization; accrued fees are claimable permissionlessly for the platform and by the pool creator.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc0cdca67d3f81f80a89fbc8e45dc558ccfaee000",
       "chain": "arc",
       "chainId": 5042,
@@ -33599,6 +33634,41 @@
   },
   {
     "hook": {
+      "address": "0x87a4e12530071269f0671a2f064afffbfe74eaec",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "MemeFunHook",
+      "description": "A factory-exclusive Uniswap v4 hook for meme coin launches that locks pool liquidity, collects fees exclusively in the quote currency (ETH, USDC, or a stock token) using delta overrides, and optionally routes referral fee splits when swaps originate from the MemeFunRouter.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x87ee8672075744d032a8c00d8fdc19a7f79b90cc",
       "chain": "base",
       "chainId": 8453,
@@ -46251,6 +46321,41 @@
       "beforeRemoveLiquidity": false,
       "afterRemoveLiquidity": false,
       "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xd5a632a1f24231847f3c0be6adecf209c1830044",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SwapAndSprayHook",
+      "description": "Swap-settled payouts: afterSwap return-delta hook that delivers a swap's output to up to 200 recipients in one transaction via Spraay batch settlement on Base.",
+      "deployer": "0xe0DAa969c50ed9353bCDB9Fd6A3B3EA510F567E3",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
       "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
@@ -78360,6 +78465,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x60ec590a5a9638fc5524b790a1327ccb20e56844",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "ProtoHook",
+      "description": "ProtoHook charges a sell-side fee (default 3%, up to 5%) on exact-input swaps via afterSwap return delta, forwarding proceeds to a Treasury and burning tokens on buys. It enforces a time-decaying launch fee, restricts liquidity additions to a single protocol-controlled position, and gates pool initialization to the owner.",
+      "deployer": "0x30eF70A5E654AAc61C91dcf76e39Fd7436dD123A",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -142961,6 +143101,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xb091ec27074c7a0c1ba896c063cc677f89202888",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "PonsCurveAggregator",
+      "description": "A singleton Uniswap v4 hook that wraps Pons V2 bonding curves as v4 pools, routing exact-input swaps to external bonding curve contracts for buy/sell execution. Rejects trades once a curve has graduated or is ready to graduate, and prevents liquidity additions to the v4 pool.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
