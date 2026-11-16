@@ -18936,6 +18936,41 @@
   },
   {
     "hook": {
+      "address": "0x2f4a713980425df85b2b756c7484565a9b8778c8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FlashPerpsV5Hook",
+      "description": "A Uniswap v4 hook that routes swaps on registered USDC/perpetual-token pools through a FlashPerpsV5Issuer, intercepting fills via beforeSwapReturnsDelta to mint or redeem perpetual position tokens. An AMM curve (QuantCurve) serves as a backstop for partial issuer fills, and bounded upkeep is executed in afterSwap when sufficient gas is available.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x2f9354bbb0edef5c2a5c4b78d0c59d73412a28cc",
       "chain": "base",
       "chainId": 8453,
@@ -110459,6 +110494,41 @@
   },
   {
     "hook": {
+      "address": "0x0757b2da075c91050af880b3e957151be2cf68cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "ScrambleHook",
+      "description": "Takes a fixed 1% fee on the ETH leg of every swap \u2014 deducted from input on buys via BeforeSwapDelta, from output on sells via afterSwapReturnDelta \u2014 and mints the fee as ERC-6909 claims swept to a per-country vault. Records a TWAP oracle and 24h rolling volume window; restricts pool initialization to a privileged core address and liquidity additions to a locker.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x075e528fbf5df06caec4642d9baf6bc99516a0cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -131395,6 +131465,41 @@
       "name": "BuybackBurnHookV1",
       "description": "Charges fixed directional buy and sell fees in beforeSwap or afterSwap depending on trade shape, collecting a protocol fee, and spends the remainder buying the pool's own token back on sells and burning it.",
       "deployer": "0x91b6Eba0f71EA8B1aC25960A2770eD0bCa5FC128",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7aaed0e255d3b8cc0cca8e5130f7ab32a8a520cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FeeHook",
+      "description": "Charges a flat 0.01% fee on both swap legs, taken in the quote token (currency0), and routes fees to a per-token recipient registered at pool creation. Buy-leg fees are deducted from exact-input quote in beforeSwap; sell-leg fees are deducted from quote output in afterSwap via delta accounting.",
+      "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
     },
