@@ -3011,6 +3011,41 @@
   },
   {
     "hook": {
+      "address": "0x7396916a6cf5aacfa883351e01fe7176fd54a000",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "SpawnGateHook",
+      "description": "A beforeInitialize-only gate hook for Spawn launch pools. Prevents pool initialization unless the pool has been atomically registered by the authorized SpawnFactory, protecting against front-running of CREATE2-predictable pool addresses on mirror chains.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x752e82933b1629cdf1a50f4d71f8d1c9eb1c7a80",
       "chain": "base",
       "chainId": 8453,
@@ -23673,6 +23708,41 @@
     "flags": {
       "beforeInitialize": false,
       "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc7989b8a4230372f1bb41f7f31e6569b54e56000",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "SpawnGateHook",
+      "description": "A beforeInitialize-only gate hook that restricts pool initialization to pools pre-registered by a privileged factory address (set once by the deployer). Prevents unauthorized pre-initialization of Spawn launch pools at hostile prices. Static fee bounds (1%\u201310%) are enforced at registration time. No swap logic is present; swaps execute as standard Uniswap v4 static-fee pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
       "beforeAddLiquidity": false,
       "afterAddLiquidity": false,
       "beforeRemoveLiquidity": false,
