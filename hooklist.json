@@ -23836,6 +23836,41 @@
   },
   {
     "hook": {
+      "address": "0x4d667e420bd4a42969cb27251a3f9a24661fd0cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BasedBidHook",
+      "description": "Uniswap v4 hook that applies dynamic LP fees, optional anti-sandwich protection (enforcing beginning-of-block prices for currency1-to-currency0 (sell) swaps), configurable hook fees (fixed and percentage-based), and launch-period buy limits with an owner-managed allowlist. Collected fees are distributed to LPs, a treasury, and optional buyback or reward pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4d7b723bd4b95f48859927c1c27ebf9cb2c56888",
       "chain": "base",
       "chainId": 8453,
@@ -94359,6 +94394,41 @@
   },
   {
     "hook": {
+      "address": "0xbec48053a223449fd03c63a7780e9e7d481feacc",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "UniHooks Shared Hook",
+      "description": "Shared Uniswap v4 hook where each pool configures its own launch rules at creation: allowlist, anti-snipe window, buy burn, LP rewards, treasury fee, sell tax, trading start time, wallet cap, same-block guard, liquidity lock, exit decay, volatility fee, and sandwich guard. Rules are immutable after pool creation. A fixed 0.10% platform fee is taken on every swap in the paired token. Exact-output swaps revert when burn, LP reward, treasury, or sell tax is set, or during the anti-snipe window.",
+      "deployer": "0xF41182e5c54d63Ba48422dD73569fa5AA221884a",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
       "address": "0xbed0df6fcbbb44d2afcd6809eeea6662645b60cc",
       "chain": "ethereum",
       "chainId": 1,
@@ -104295,6 +104365,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x33200d9521ed99afbda8575f05348a583c7aaac8",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "MasterLaunchHook",
+      "description": "A token launch platform hook that charges dynamic swap fees, enforces anti-sandwich (one swap per origin per block) and anti-snipe (time-decayed buy tax) protections, and executes automatic fee distribution including LP deepening, token buybacks and burns, and holder airdrops.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "other"
     }
   },
   {
