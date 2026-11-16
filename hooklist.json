@@ -7946,6 +7946,41 @@
   },
   {
     "hook": {
+      "address": "0xc75076a17c1ba3dd949773f9036efa4a840020cc",
+      "chain": "arc",
+      "chainId": 5042,
+      "name": "CrossrateTaxHook",
+      "description": "A tax hook for crossrate.market pools that carves a configurable fee (3\u201310% BPS) from each swap denominated in the pool's paired currency. Accrued taxes are held as pool manager claim tokens until a permissionless distribute() call splits them between the coin creator and the platform wallet.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0xc780c0f4aac690908854d351b8bfda2812daefdc",
       "chain": "arc",
       "chainId": 5042,
@@ -70239,6 +70274,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x337eee273d26bcfbbb772ea582331b1dfc882444",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "InitialBuyNFTStrategyHook",
+      "description": "A Uniswap v4 hook for NFTStrategy pools that collects trading fees with a decaying buy fee (starting at 99%, decreasing 1% per block to a floor of 10%) and a fixed 10% sell fee. Fees are distributed 80% to the NFT collection, 10% to PunkStrategy, and 10% to a configured fee address. The factory's initial purchase is exempt from the buy fee.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
