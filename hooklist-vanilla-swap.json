@@ -19671,6 +19671,41 @@
   },
   {
     "hook": {
+      "address": "0x26241289fda28b27f0452e2699f96b52ef3aaa40",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RetardV1227PoolHook",
+      "description": "A creator token launch hook that manages per-market liquidity positions, restricts liquidity modifications to the hook contract and its inventory manager, and notifies an external protocol after each public swap via `onPublicSwap`. The protocol can reanchor prices and execute refresh swaps to redistribute inventory.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x270a6fa67750934cd790d95feb561240bde84a00",
       "chain": "robinhood",
       "chainId": 4663,
@@ -24484,6 +24519,41 @@
       "afterRemoveLiquidity": false,
       "beforeSwap": false,
       "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xdfc7ca9e9d42b4c817444db62f7835ff2ca0ea40",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "RetardV1227PoolHook",
+      "description": "Managed liquidity hook for a bonding curve market protocol. Restricts pool initialization and liquidity modifications to the hook itself, and after each swap reports the current pool price to a protocol contract via onPublicSwap().",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
       "beforeDonate": false,
       "afterDonate": false,
       "beforeSwapReturnsDelta": false,
