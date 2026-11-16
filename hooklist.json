@@ -7456,6 +7456,41 @@
   },
   {
     "hook": {
+      "address": "0x62c343817c222da1ae1e889baf3ec848f1d980cc",
+      "chain": "arc",
+      "chainId": 5042,
+      "name": "MemespadHook",
+      "description": "Uniswap v4 hook for the Memespad meme-token launchpad that collects configurable buy/sell taxes on each swap, routing fees to a creator wallet, platform treasury, burn bucket, dividend pool, and auto-liquidity position. Enforces a snipe-protection window and a fair-launch buy cap using block.timestamp gating.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "temporal"
+    }
+  },
+  {
+    "hook": {
       "address": "0x6f6aab7d90306e6681dbec37605f59ab2f02e044",
       "chain": "arc",
       "chainId": 5042,
@@ -29819,6 +29854,41 @@
   },
   {
     "hook": {
+      "address": "0x76e47998f43e2b7df978274588d3289c081b10cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BasedBidHook",
+      "description": "A configurable Uniswap v4 hook that collects per-pool fees on every swap (static, dynamic adaptive+surge, or tiered), distributing them among LPs, token buybacks, reward recipients, and custom wallets. Supports optional per-pool anti-sandwich protection, cooldown penalties for rapid repeat traders, and whitelist-period buy limits enforced via Merkle proof.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7706ea3232cbca17e0c7ec417919a4b7a6202844",
       "chain": "base",
       "chainId": 8453,
@@ -42411,6 +42481,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc4df67d58fb02ecc2499fdacc4d1d71fea4fb8c8",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "FlashPerpsV5Hook",
+      "description": "A Uniswap v4 perpetuals trading hook that intercepts swaps on registered USDC/perp pools, filling orders via a FlashPerpsV5Issuer contract that mints or redeems tokenized perp positions at the realized NAV price, using BeforeSwapReturnsDelta custom accounting to settle trades directly without routing through the pool's AMM liquidity.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
@@ -106084,6 +106189,41 @@
   },
   {
     "hook": {
+      "address": "0x3b42d3e4b4369ac2126dc74c02a165b666f3e444",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "NFTStrategyHook",
+      "description": "A Uniswap v4 hook for NFT strategy token pools that enforces a flat 10% fee on all swaps, distributing 80% to the NFT strategy contract, 10% to the launcher/creator, and 10% to a protocol fee address. Pool initialization and liquidity additions are restricted to the NFTStrategyFactory; exact-output swaps are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x4192c8736ce3e45b49ed9a1b69e9c5a1a7fa2888",
       "chain": "polygon",
       "chainId": 137,
@@ -112769,6 +112909,41 @@
   },
   {
     "hook": {
+      "address": "0x18b779b030cb3e5a0cf91d9c9f20645570d7aaec",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LaunchHook",
+      "description": "Bonding curve hook for token launches. Restricts pool initialization and liquidity management to the factory, charges a custom fee in the quote asset on every swap (with a 99% anti-snipe tax within 3 seconds of launch), and graduates the pool by calling the factory's onSoldOut when buys exhaust the curve. Donations are blocked.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x18cf9452cbf4518941e283403cad563c62b64040",
       "chain": "robinhood",
       "chainId": 4663,
@@ -118399,6 +118574,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x37fcd30d9b298c2067eb91529fb71d5405f3a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "LeveredHook",
+      "description": "A shared Uniswap v4 hook for Levered ETH/token pools that charges dynamic ETH fees composed of a base rate, volatility surcharge (decaying over a 15-minute half-life), quick-flip penalty for rapid sell-after-buy, and a fixed 1% creator fee. Fees are held as ERC-6909 claims and routed to per-pool treasuries. A defend mode redirects fees to buyback when the coin's price falls 20% below its peak.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -139820,6 +140030,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xba7401628167fbcd8f9db9f6ad2dda72ab41eacc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FeeLiquidityHook",
+      "description": "A token launchpad hook that manages phased launch pools with a bonding curve. It gates liquidity and swaps to authorized lockers, charges a time-decaying anti-snipe tax on early buys, and splits trade fees between a treasury, creator, and locker \u2014 with the locker's share deployed as permanent one-sided quote liquidity after graduation.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
