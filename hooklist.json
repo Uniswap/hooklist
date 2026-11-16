@@ -112454,6 +112454,41 @@
   },
   {
     "hook": {
+      "address": "0x0af57f62982d03066ef917acad87f771c06528ec",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FoboHook",
+      "description": "Manages all FOBO token pools on Robinhood Chain: charges a time-decaying swap tax (up to 90% at launch, linearly decaying to 2.5% at 60 seconds), maintains a rising floor price through automated once-per-block liquidity raises and buybacks, and distributes tax revenue among floor, creator, and protocol shares.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0b0400b268045aa7e3b3ca18c1e1774f6c076880",
       "chain": "robinhood",
       "chainId": 4663,
