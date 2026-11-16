@@ -7456,6 +7456,41 @@
   },
   {
     "hook": {
+      "address": "0x21bdc377265e2a26ba336f24381e67e768253044",
+      "chain": "arc",
+      "chainId": 5042,
+      "name": "WonkHook",
+      "description": "Bonding-curve graduation hook for Wonk token launches. Charges a protocol swap fee and a per-launch creator tax in afterSwap as ERC-6909 hook deltas. When the pool price reaches the fundraise target, atomically burns the main liquidity band and re-pools the raised funds as a permanently locked buy-wall position (Position 3) in the same swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x22f48471f01420af2750bb60d50f84e4876b6000",
       "chain": "arc",
       "chainId": 5042,
@@ -155251,6 +155286,41 @@
     },
     "properties": {
       "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xfcd182416ca91a9e88e9fe44e4f78ea3cb2c15c7",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "StaccLadder",
+      "description": "A multi-tier AMM hook that creates a family of pools per token (one per fee tier) and applies the EIP-8429 quadratic fee ratchet: the k-th reference to a token in a block pays 10 bp \u00d7 k\u00b2, collected in kind. Supports automated liquidity management via depositor-controlled books spread across tiers by volatility.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": true,
+      "afterRemoveLiquidityReturnsDelta": true
+    },
+    "properties": {
+      "dynamicFee": false,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
