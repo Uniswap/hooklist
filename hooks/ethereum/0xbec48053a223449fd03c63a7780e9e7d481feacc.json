@@ -4,7 +4,7 @@
     "chain": "ethereum",
     "chainId": 1,
     "name": "UniHooks Shared Hook",
-    "description": "Shared Uniswap v4 hook where each pool configures its own launch rules at creation: allowlist, anti-snipe window, buy burn, LP rewards, treasury fee, sell tax, trading start time, wallet cap, same-block guard, liquidity lock, exit decay, volatility fee, and sandwich guard. Rules are immutable after pool creation. A fixed 0.10% platform fee is taken on every swap in the paired token. Only exact-input swaps are supported.",
+    "description": "Shared Uniswap v4 hook where each pool configures its own launch rules at creation: allowlist, anti-snipe window, buy burn, LP rewards, treasury fee, sell tax, trading start time, wallet cap, same-block guard, liquidity lock, exit decay, volatility fee, and sandwich guard. Rules are immutable after pool creation. A fixed 0.10% platform fee is taken on every swap in the paired token. Exact-output swaps revert when burn, LP reward, treasury, or sell tax is set, or during the anti-snipe window.",
     "deployer": "0xF41182e5c54d63Ba48422dD73569fa5AA221884a",
     "verifiedSource": true,
     "auditUrl": ""
