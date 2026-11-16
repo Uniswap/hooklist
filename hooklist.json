@@ -122149,6 +122149,41 @@
   },
   {
     "hook": {
+      "address": "0x5800dd5c9d56c1dc9e6eb05892a6ba8e039b2a88",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "Carry",
+      "description": "A custom-curve AMM hook that prices each pool off an external source pool (v2/v3/v4 on the same chain), using flat-center/steep-tail curve math (CarryFlatMath) and its own ERC-6909 reserves held inside the PoolManager. Swaps are fully handled in `beforeSwap`; Uniswap v4 concentrated liquidity is disabled for these pools.",
+      "deployer": "0xbD139eEdB2e2Eb6EF01a7E24539ffC7F77E3dfDb",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x5856b06b7bb51ad51dd07cadcd345e426f5b80cc",
       "chain": "robinhood",
       "chainId": 4663,
@@ -128725,6 +128760,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x7e37bbffeeeccb02ca31049021fa313cd6a14844",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "AntiMevTaxHook",
+      "description": "anti-MEV tax hook : a swap that reverses the pool's previous swap direction within two blocks pays a 49% tax on its output, which is donated to the pool's LP fee. Swaps outside that window pay only the pool's normal LP fee .",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
