@@ -29539,6 +29539,41 @@
   },
   {
     "hook": {
+      "address": "0x73669cea70473f28af31fd1e7750e51dcfe5ea20",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "LaunchGuardHook",
+      "description": "Guards a Uniswap v4 pool's three immutable launch positions, restricting pool initialization and liquidity additions to a factory-bound locker with exact parameters. Donations are permanently disabled; zero-delta liquidity modifications (fee collection) are only permitted after the pool is sealed by the factory.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": false,
+      "afterSwap": false,
+      "beforeDonate": true,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x7396916a6cf5aacfa883351e01fe7176fd54a000",
       "chain": "base",
       "chainId": 8453,
@@ -33140,6 +33175,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x87ee8672075744d032a8c00d8fdc19a7f79b90cc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "BasedBidHook",
+      "description": "A Uniswap v4 hook that layers configurable trading fees (static, tiered, or dynamic with surge pricing) onto every swap, distributing collected fees to liquidity providers via donation, buyback-and-burn of the project token, reward distributors, or custom wallets. Also includes OpenZeppelin anti-sandwich protection, Merkle-proof whitelist buy-limits during a launch window, volume-based fee multipliers, and cooldown penalties for rapid trading.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": true,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "allowlist"
     }
   },
   {
