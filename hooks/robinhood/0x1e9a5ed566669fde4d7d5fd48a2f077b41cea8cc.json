@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x1e9a5ed566669fde4d7d5fd48a2f077b41cea8cc",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "BurnRise",
+    "description": "A meme-token launchpad hook that takes a 1.3% fee on the pair-asset side (split to creator, platform, and contest) and burns 0.5% of the token side on every swap, using beforeSwapReturnsDelta and afterSwapReturnsDelta. Only the launchpad can create pools or add liquidity; swaps must fill completely or revert. The hook has no owner and is not upgradeable.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": true,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
