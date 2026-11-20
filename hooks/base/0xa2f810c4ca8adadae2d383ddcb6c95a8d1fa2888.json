@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0xa2f810c4ca8adadae2d383ddcb6c95a8d1fa2888",
+    "chain": "base",
+    "chainId": 8453,
+    "name": "Algebra Aggregator Hook",
+    "description": "Aggregator hook that routes all Uniswap v4 swaps to external Algebra DEX liquidity. The v4 pool holds no liquidity; beforeSwap executes the trade on the registered Algebra pool and returns a delta. Supports Uniswap protocol fees; liquidity addition is blocked. The owner registers DEX sources and pools via addSource and beforeInitialize.",
+    "deployer": "0x093761B97f7782420077Dd881EC7Ac518D0c6814",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
