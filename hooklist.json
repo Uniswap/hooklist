@@ -12426,6 +12426,41 @@
   },
   {
     "hook": {
+      "address": "0x07d8f2dfd121b10de3176deab6a8c0eaa2646acc",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "NARALiquidityHookV5",
+      "description": "Charges a tiered input-side protocol fee on a single registered NARA/USDC pool via beforeSwap and afterSwap return deltas, minting ERC-6909 fee claims to a bound fee vault while checkpointing a capital oracle on swaps and liquidity changes.",
+      "deployer": "0x82fd7b79D4cfd8Fc5B4B9eE57CfD2E2592cE7805",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x0855d12094daade3bc2441b04a09eb57a65fa888",
       "chain": "base",
       "chainId": 8453,
@@ -19308,6 +19343,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2f7754e19b692c5b7bee4220c90f2c43b17108c4",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "AdaptivePoolPolicyHookV1",
+      "description": "Applies asymmetric directional LP fee overrides (configurable per swap direction) on Uniswap v4 dynamic-fee pools, enforces configurable minimum and maximum sqrtPrice bounds in afterSwap (reverting out-of-bounds swaps), and optionally charges an additional hook fee on each swap. Liquidity provision is gated to an owner-managed allowlist when public access is disabled.",
+      "deployer": "0x5EDb4d89D89E5d04B82930ed1562392AAe759615",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -38241,6 +38311,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa2f810c4ca8adadae2d383ddcb6c95a8d1fa2888",
+      "chain": "base",
+      "chainId": 8453,
+      "name": "Algebra Aggregator Hook",
+      "description": "Aggregator hook that routes all Uniswap v4 swaps to external Algebra DEX liquidity. The v4 pool holds no liquidity; beforeSwap executes the trade on the registered Algebra pool and returns a delta. Supports Uniswap protocol fees; liquidity addition is blocked. The owner registers DEX sources and pools via addSource and beforeInitialize.",
+      "deployer": "0x093761B97f7782420077Dd881EC7Ac518D0c6814",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -59529,6 +59634,41 @@
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa2f810c4ca8adadae2d383ddcb6c95a8d1fa2888",
+      "chain": "bnb",
+      "chainId": 56,
+      "name": "AlgebraIntegralAggregator",
+      "description": "Aggregator hook that routes Uniswap v4 swaps to external Algebra Integral DEX pools registered by the owner. The v4 pool holds no liquidity; `beforeSwap` executes the trade on the bound Algebra pool and returns a full delta, consuming the entire swap. Supports Uniswap v4 protocol fees; the owner can register additional Algebra sources (factory + deployer pairs) and pools.",
+      "deployer": "0x093761B97f7782420077Dd881EC7Ac518D0c6814",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
       "swapAccess": "none"
     }
   },
@@ -104019,6 +104159,41 @@
   },
   {
     "hook": {
+      "address": "0x064cf10a93fc2bcfa992819a9140c4db0a22afc4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "NFTXV4Hook",
+      "description": "NFTX collection token AMM hook that sets dynamic LP fees per pool via a configurable fee policy, records price oracle observations on each swap, and charges an additional AMM fee from the unspecified swap leg via afterSwap balance delta.",
+      "deployer": "0xB8A70b4d1547bf6193bd67A73F4F98ea9FD0A973",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
       "address": "0x067a168da351d40e086b974f16f94cb0f3df00c4",
       "chain": "ink",
       "chainId": 57073,
@@ -105345,6 +105520,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
       "swapAccess": "allowlist"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xc1595f4277c94fa15c397ecad787fc0072862fc4",
+      "chain": "ink",
+      "chainId": 57073,
+      "name": "NFTXHook",
+      "description": "A Uniswap v4 hook for the NFTX protocol that manages NFT collection liquidity pools with dynamic LP fee pricing, an oracle recording observations before each swap, and an optional AMM fee taken from the unspecified swap leg via afterSwapReturnsDelta.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": true,
+      "beforeRemoveLiquidity": true,
+      "afterRemoveLiquidity": true,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
     }
   },
   {
@@ -109886,6 +110096,41 @@
       "afterDonate": false,
       "beforeSwapReturnsDelta": true,
       "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xa2f810c4ca8adadae2d383ddcb6c95a8d1fa2888",
+      "chain": "polygon",
+      "chainId": 137,
+      "name": "AlgebraIntegralAggregator",
+      "description": "Aggregator hook that routes Uniswap v4 swaps to external Algebra Integral DEX pools; v4 pools hold no LP liquidity. Executes the full swap inside beforeSwap via BeforeSwapDelta, blocks all liquidity additions, and supports Uniswap v4 protocol fees collected to a token jar.",
+      "deployer": "0x093761B97f7782420077Dd881EC7Ac518D0c6814",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
       "afterAddLiquidityReturnsDelta": false,
       "afterRemoveLiquidityReturnsDelta": false
     },
@@ -117599,6 +117844,41 @@
   },
   {
     "hook": {
+      "address": "0x1e9a5ed566669fde4d7d5fd48a2f077b41cea8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "BurnRise",
+      "description": "A meme-token launchpad hook that takes a 1.3% fee on the pair-asset side (split to creator, platform, and contest) and burns 0.5% of the token side on every swap, using beforeSwapReturnsDelta and afterSwapReturnsDelta. Only the launchpad can create pools or add liquidity; swaps must fill completely or revert. The hook has no owner and is not upgradeable.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1ed3afa8c99b4ab597c48a9f56cad6457d255000",
       "chain": "robinhood",
       "chainId": 4663,
@@ -122530,6 +122810,41 @@
       "requiresCustomSwapData": false,
       "vanillaSwap": true,
       "swapAccess": "other"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x39d37b42c2575cbc65a88440a5020aa18fefa8cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "FlowState C1 Hook",
+      "description": "Buy-only custom-curve hook that fills swap orders from the FlowState marketplace (off-chain listings and pool deposits), priced via an external settlement contract plus a size-adjusted spread. Sell direction reverts. Each fill pays a protocol fee to a TokenJar; hookData is not read. LP additions are blocked except for a single dust beacon position per pool, seeded on first fill.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
     }
   },
   {
@@ -152066,6 +152381,41 @@
     },
     "properties": {
       "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
+      "address": "0xe34a996473f190cca403500ff76e935bc4b548c4",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "AdaptivePoolPolicyHookV1",
+      "description": "Applies asymmetric directional LP fee overrides (configurable per swap direction) on Uniswap v4 dynamic-fee pools, enforces configurable minimum and maximum sqrtPrice bounds in afterSwap (reverting out-of-bounds swaps), and optionally charges an additional hook fee on each swap. Liquidity provision is gated to an owner-managed allowlist when public access is disabled.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": false,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": false,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": true,
       "upgradeable": false,
       "requiresCustomSwapData": false,
       "vanillaSwap": false,
