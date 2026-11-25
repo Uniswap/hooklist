@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x37cd72fabf04d02879392b1293da26ab548d2888",
+    "chain": "bnb",
+    "chainId": 56,
+    "name": "PancakeV3Aggregator (bstocks)",
+    "description": "Aggregator hook that fills Uniswap v4 swaps from PancakeSwap V3 pools of tokenized equities (NVDAB, TSLAB, QQQB, SPYB, AAPLB and others), returning a BeforeSwapDelta so the v4 pool itself holds no liquidity. Liquidity provision on the v4 pool is disabled, the hook is immutable and ownerless, and a protocol fee capped by a constant is taken on each swap.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": true,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": true,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
