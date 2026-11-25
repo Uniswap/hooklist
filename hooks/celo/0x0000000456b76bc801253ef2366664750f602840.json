@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0000000456b76bc801253ef2366664750f602840",
+    "chain": "celo",
+    "chainId": 42220,
+    "name": "AgroLastro PoolAGL",
+    "description": "PoolAGL deploys the AGL token and initializes a single AGL/USDC Uniswap v4 pool in one transaction, depositing 100% of the token supply into a fixed price-step ladder. Pool initialization and liquidity additions are restricted to the hook itself, permanently locking liquidity. afterSwap writes an AGL flow quota to transient storage consumed by the AGL token to gate physical token movements. Fixed 2% LP fee collectible by a designated recipient.",
+    "deployer": "0x4a5beD839b3cb0736c03fB3A7eb096701E8A89c8",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": false,
+    "swapAccess": "none"
+  }
+}
