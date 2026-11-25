@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x0000000456b76bc801253ef2366664750f602840",
+    "chain": "polygon",
+    "chainId": 137,
+    "name": "AgroLastro PoolAGL",
+    "description": "Uniswap v4 hook for the AGL/USDC pool that restricts pool initialization and liquidity additions to the hook itself, locking all liquidity permanently. After each swap, it updates a transient quota (EIP-1153) tracking AGL net flow to gate token transfers in/out of the PoolManager. Collects a fixed 2% LP fee withdrawable only to a designated fee recipient.",
+    "deployer": "0x4a5beD839b3cb0736c03fB3A7eb096701E8A89c8",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": true,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": true,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
