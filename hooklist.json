@@ -67724,6 +67724,41 @@
   },
   {
     "hook": {
+      "address": "0x1a0156236e898a1efa7625c72b0f1e2d150b2888",
+      "chain": "ethereum",
+      "chainId": 1,
+      "name": "CurveStableNGAggregator",
+      "description": "Aggregator hook that fills Uniswap v4 swaps from Curve StableSwap-NG plain pools (stablecoins, ETH and BTC pairs), returning a BeforeSwapDelta so the v4 pool itself holds no liquidity. Exact-output swaps revert with ExactOutputNotSupported. Liquidity provision on the v4 pool is disabled, the hook is immutable and ownerless, and a protocol fee capped by a constant is taken on each swap.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": true,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": false,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": false,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "none"
+    }
+  },
+  {
+    "hook": {
       "address": "0x1a3d5691f1e385678f18393d12aa9fd874b7c500",
       "chain": "ethereum",
       "chainId": 1,
@@ -120439,6 +120474,41 @@
       "chainId": 4663,
       "name": "LaunchHookV3",
       "description": "A token-launch hook that imposes a native-ETH creator tax on swaps across temporal phases: a factory-only launch phase, an early 35% tax window, a whitelist-exempt early period, then dynamic buy/sell tax cycles with configurable base rates. Operates only on factory-registered ETH/token pools.",
+      "deployer": "",
+      "verifiedSource": true,
+      "auditUrl": ""
+    },
+    "flags": {
+      "beforeInitialize": true,
+      "afterInitialize": false,
+      "beforeAddLiquidity": false,
+      "afterAddLiquidity": false,
+      "beforeRemoveLiquidity": false,
+      "afterRemoveLiquidity": false,
+      "beforeSwap": true,
+      "afterSwap": true,
+      "beforeDonate": false,
+      "afterDonate": false,
+      "beforeSwapReturnsDelta": true,
+      "afterSwapReturnsDelta": true,
+      "afterAddLiquidityReturnsDelta": false,
+      "afterRemoveLiquidityReturnsDelta": false
+    },
+    "properties": {
+      "dynamicFee": false,
+      "upgradeable": false,
+      "requiresCustomSwapData": false,
+      "vanillaSwap": false,
+      "swapAccess": "governance"
+    }
+  },
+  {
+    "hook": {
+      "address": "0x2b90d9d9be5279ca20ccf89ed537be26a805a0cc",
+      "chain": "robinhood",
+      "chainId": 4663,
+      "name": "HookPot",
+      "description": "Fee hook for ETH/token pools that takes a tax in ETH on top of each swap (capped at 10% by an immutable; the owner can only lower it) and pays it into a pot. The swap itself runs through the v4 pool. Swaps are blocked until the owner opens trading, which is one-way and cannot be closed again.",
       "deployer": "",
       "verifiedSource": true,
       "auditUrl": ""
