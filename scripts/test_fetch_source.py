@@ -308,3 +308,122 @@ def test_user_agent_is_not_chrome():
     assert "Chrome" not in fetch_source.FETCH_USER_AGENT
     assert fetch_source.FETCH_USER_AGENT.startswith("Mozilla/5.0")
     assert fetch_source.FETCH_USER_AGENT.endswith("hooklist-fetch")
+
+
+# --- fallback explorers ---
+
+ETHERSCAN_UNVERIFIED = {"status": "1", "result": [{"ContractName": "", "SourceCode": "", "Proxy": "0", "Implementation": ""}]}
+ETHERSCAN_VERIFIED = {"status": "1", "result": [{"ContractName": "EtherscanHook", "SourceCode": "contract EtherscanHook {}", "Proxy": "0", "Implementation": ""}]}
+SOURCIFY_VERIFIED = {
+    "match": "exact_match",
+    "compilation": {"name": "SourcifyHook"},
+    "sources": {"src/SourcifyHook.sol": {"content": "contract SourcifyHook {}"}},
+    "proxyResolution": None,
+}
+BLOCKSCOUT_UNVERIFIED = {"is_verified": False}
+HOOK_ADDRESS = "0x3333333333333333333333333333333333332888"
+
+
+def _run_main(tmp_path, monkeypatch, chain, replies, api_key="KEY"):
+    """Run fetch_source.main against scripted (http_code, body) replies, one per request."""
+    requested_urls = []
+
+    def fake_curl(args, capture_output, text):
+        requested_urls.append(args[-1])
+        code, body = replies[len(requested_urls) - 1]
+        Path(args[args.index("-o") + 1]).write_text(json.dumps(body))
+        return subprocess.CompletedProcess(args, 0, stdout=code, stderr="")
+
+    monkeypatch.chdir(tmp_path)
+    monkeypatch.setattr(fetch_source.subprocess, "run", fake_curl)
+    monkeypatch.setattr(fetch_source.time, "sleep", lambda s: None)
+    argv = ["fetch_source.py", chain, HOOK_ADDRESS, "--output", "source_meta.json", "--outdir", ".sources"]
+    if api_key:
+        argv += ["--api-key", api_key]
+    monkeypatch.setattr(sys, "argv", argv)
+    exit_code = 0
+    try:
+        fetch_source.main()
+    except SystemExit as e:
+        exit_code = e.code
+    meta = json.loads(Path("source_meta.json").read_text()) if Path("source_meta.json").exists() else None
+    return exit_code, requested_urls, meta
+
+
+def test_fallback_to_sourcify_when_chain_explorer_unverified(tmp_path, monkeypatch):
+    exit_code, urls, meta = _run_main(
+        tmp_path, monkeypatch, "base", [("200", ETHERSCAN_UNVERIFIED), ("200", SOURCIFY_VERIFIED)]
+    )
+    assert exit_code == 0
+    assert urls[0].startswith("https://api.etherscan.io/v2/api?chainid=8453")
+    assert urls[1] == (
+        f"https://sourcify.dev/server/v2/contract/8453/{HOOK_ADDRESS}"
+        "?fields=sources,compilation,proxyResolution"
+    )
+    assert len(urls) == 2
+    assert meta["verified"] is True
+    assert meta["contractName"] == "SourcifyHook"
+    assert meta["verifiedOn"] == "sourcify"
+
+
+def test_fallback_to_etherscan_when_blockscout_and_sourcify_unverified(tmp_path, monkeypatch):
+    exit_code, urls, meta = _run_main(
+        tmp_path,
+        monkeypatch,
+        "robinhood",
+        [("200", BLOCKSCOUT_UNVERIFIED), ("404", {"error": "not found"}), ("200", ETHERSCAN_VERIFIED)],
+    )
+    assert exit_code == 0
+    assert urls[0] == f"https://robinhoodchain.blockscout.com/api/v2/smart-contracts/{HOOK_ADDRESS}"
+    assert urls[1].startswith("https://sourcify.dev/server/v2/contract/4663/")
+    assert urls[2].startswith("https://api.etherscan.io/v2/api?chainid=4663&")
+    assert meta["verifiedOn"] == "etherscan"
+    assert meta["contractName"] == "EtherscanHook"
+
+
+def test_chain_explorer_verified_needs_no_fallback(tmp_path, monkeypatch):
+    exit_code, urls, meta = _run_main(tmp_path, monkeypatch, "base", [("200", ETHERSCAN_VERIFIED)])
+    assert exit_code == 0
+    assert len(urls) == 1
+    assert meta["verifiedOn"] == "etherscan"
+
+
+def test_etherscan_fallback_skipped_without_api_key(tmp_path, monkeypatch):
+    exit_code, urls, meta = _run_main(
+        tmp_path,
+        monkeypatch,
+        "robinhood",
+        [("200", BLOCKSCOUT_UNVERIFIED), ("404", {"error": "not found"})],
+        api_key="",
+    )
+    assert exit_code == 1
+    assert len(urls) == 2
+    assert not any("etherscan" in u for u in urls)
+    assert meta["verified"] is False
+
+
+def test_unverified_everywhere_exits_nonzero_with_primary_meta(tmp_path, monkeypatch):
+    exit_code, urls, meta = _run_main(
+        tmp_path,
+        monkeypatch,
+        "base",
+        [("200", ETHERSCAN_UNVERIFIED), ("404", {"error": "not found"})],
+    )
+    assert exit_code == 1
+    assert len(urls) == 2
+    assert meta["verified"] is False
+    assert "verifiedOn" not in meta
+
+
+def test_fallback_verified_even_when_chain_explorer_is_down(tmp_path, monkeypatch):
+    replies = [("503", {})] * 5 + [("200", SOURCIFY_VERIFIED)]
+    exit_code, urls, meta = _run_main(tmp_path, monkeypatch, "robinhood", replies)
+    assert exit_code == 0
+    assert meta["verifiedOn"] == "sourcify"
+
+
+def test_chain_explorer_down_and_no_fallback_verified_is_transient(tmp_path, monkeypatch):
+    replies = [("503", {})] * 5 + [("404", {"error": "not found"}), ("200", ETHERSCAN_UNVERIFIED)]
+    exit_code, urls, meta = _run_main(tmp_path, monkeypatch, "robinhood", replies)
+    assert exit_code == 1
+    assert meta is None
