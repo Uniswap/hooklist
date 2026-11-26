@@ -98,6 +98,67 @@ def fetch_and_parse(response_path: str, outdir: str = ".sources", explorer_type:
     return parse_etherscan(response_path, outdir)
 
 
+# Explorers tried, in order, after the chain's own explorer reports the source as
+# unverified. A hook verified on any of them has public source that matches the
+# deployed bytecode, so the review can read it. Etherscan v2 is skipped without an
+# API key, and on chains it does not index it answers "not verified".
+FALLBACK_EXPLORERS = [
+    ("sourcify", "https://sourcify.dev/server"),
+    ("etherscan", "https://api.etherscan.io/v2/api?chainid={chain_id}"),
+]
+
+
+def build_source_url(explorer_type: str, explorer_url: str, chain_id: int, address: str, api_key: str) -> str:
+    """API URL that returns the verified source of address on the given explorer."""
+    if explorer_type == "sourcify":
+        # Sourcify v2 API: GET /v2/contract/{chainId}/{address}?fields=...
+        # `compilation` carries the contract name, which is the fallback assemble_hook.py
+        # uses when the classifier returns no name.
+        return (
+            f"{explorer_url}/v2/contract/{chain_id}/{address}"
+            "?fields=sources,compilation,proxyResolution"
+        )
+    if explorer_type == "etherscan":
+        return f"{explorer_url}&module=contract&action=getsourcecode&address={address}&apikey={api_key}"
+    if explorer_type == "okx":
+        return f"{explorer_url}&contractAddress={address}"
+    if explorer_type == "blockscout-v2":
+        # Blockscout's native API. Same host as the Etherscan-compatible endpoint, but not
+        # subject to the same rate limit, and a throttled reply cannot be mistaken for an
+        # unverified contract. explorerUrl already ends in /api.
+        return f"{explorer_url}/v2/smart-contracts/{address}"
+    # Blockscout / Routescan — no API key
+    return f"{explorer_url}?module=contract&action=getsourcecode&address={address}"
+
+
+def explorer_candidates(chain_info: dict, api_key: str) -> list:
+    """The chain's explorer first, then each fallback that is not the same explorer."""
+    chain_id = chain_info["chainId"]
+    candidates = [(chain_info["explorer"], chain_info["explorerUrl"])]
+    for explorer_type, url_template in FALLBACK_EXPLORERS:
+        if explorer_type == "etherscan" and not api_key:
+            continue
+        candidate = (explorer_type, url_template.format(chain_id=chain_id))
+        if candidate not in candidates:
+            candidates.append(candidate)
+    return candidates
+
+
+def fetch_meta(explorer_type: str, explorer_url: str, chain_id: int, address: str,
+               api_key: str, outdir: str, response_file: str):
+    """Fetch and parse one explorer's answer. Returns (http_code, meta); meta is None
+    when the explorer failed transiently, so no verdict can be read from it."""
+    url = build_source_url(explorer_type, explorer_url, chain_id, address, api_key)
+    http_code = fetch_with_retry(url, response_file)
+    if http_code == "000" or http_code in TRANSIENT_HTTP_CODES:
+        return http_code, None
+    # For Sourcify, a 404 means not verified — write an empty error response
+    if explorer_type == "sourcify" and http_code == "404":
+        with open(response_file, "w") as f:
+            json.dump({"error": "not found"}, f)
+    return http_code, fetch_and_parse(response_file, outdir, explorer_type)
+
+
 def main():
     if len(sys.argv) < 3:
         print(f"Usage: {sys.argv[0]} <chain> <address> [--api-key <key>] [--output <path>] [--outdir <dir>]", file=sys.stderr)
@@ -118,94 +179,60 @@ def main():
     if "--output" in sys.argv:
         output_path = sys.argv[sys.argv.index("--output") + 1]
 
-    # Look up explorer URL
     with open(os.path.join(REPO_ROOT, "chains.json")) as f:
         chains = json.load(f)
-
     chain_info = chains[chain]
-    explorer_url = chain_info["explorerUrl"]
-    explorer_type = chain_info["explorer"]
     chain_id = chain_info["chainId"]
 
-    # Build the API URL and select parser
     response_file = "explorer_response.json"
-
-    if explorer_type == "sourcify":
-        # Sourcify v2 API: GET /v2/contract/{chainId}/{address}?fields=...
-        # `compilation` carries the contract name, which is the fallback assemble_hook.py
-        # uses when the classifier returns no name.
-        url = (
-            f"{explorer_url}/v2/contract/{chain_id}/{address}"
-            "?fields=sources,compilation,proxyResolution"
+    meta = None
+    primary_meta = None
+    transient_codes = []
+    verified_on = None
+    for index, (explorer_type, explorer_url) in enumerate(explorer_candidates(chain_info, api_key)):
+        http_code, candidate_meta = fetch_meta(
+            explorer_type, explorer_url, chain_id, address, api_key, outdir, response_file
         )
-        parser = parse_sourcify
-    elif explorer_type == "etherscan":
-        url = f"{explorer_url}&module=contract&action=getsourcecode&address={address}&apikey={api_key}"
-        parser = parse_etherscan
-    elif explorer_type == "okx":
-        url = f"{explorer_url}&contractAddress={address}"
-        parser = parse_okx
-    elif explorer_type == "blockscout-v2":
-        # Blockscout's native API. Same host as the Etherscan-compatible endpoint, but not
-        # subject to the same rate limit, and a throttled reply cannot be mistaken for an
-        # unverified contract. explorerUrl already ends in /api.
-        url = f"{explorer_url}/v2/smart-contracts/{address}"
-        parser = parse_blockscout_v2
-    else:
-        # Blockscout / Routescan — no API key
-        url = f"{explorer_url}?module=contract&action=getsourcecode&address={address}"
-        parser = parse_etherscan
+        if candidate_meta is None:
+            transient_codes.append(f"{explorer_type}: HTTP {http_code}")
+            continue
+        if index == 0:
+            primary_meta = candidate_meta
+        if candidate_meta["verified"]:
+            meta = candidate_meta
+            verified_on = (explorer_type, explorer_url)
+            break
+        if index > 0:
+            print(f"Source code is NOT verified on {explorer_type} either.", file=sys.stderr)
+        else:
+            print(f"Source code is NOT verified on {explorer_type}; trying other explorers.", file=sys.stderr)
 
-    # Fetch
-    http_code = fetch_with_retry(url, response_file)
-    if http_code == "000" or http_code in TRANSIENT_HTTP_CODES:
-        print(
-            f"Explorer error (HTTP {http_code}) after retries — transient explorer "
-            "failure, NOT a verification verdict. Try again later.",
-            file=sys.stderr,
-        )
-        sys.exit(1)
-
-    # For Sourcify, a 404 means not verified — write an empty error response
-    if explorer_type == "sourcify" and http_code == "404":
-        with open(response_file, "w") as f:
-            json.dump({"error": "not found"}, f)
-
-    # Parse
-    meta = parser(response_file, outdir)
-
-    if not meta["verified"]:
-        print("Source code is NOT verified on the block explorer.", file=sys.stderr)
+    if meta is None:
+        if primary_meta is None or transient_codes:
+            print(
+                f"Explorer error after retries ({', '.join(transient_codes)}) and no explorer "
+                "reported the source as verified: transient explorer failure, NOT a "
+                "verification verdict. Try again later.",
+                file=sys.stderr,
+            )
+            if primary_meta is None:
+                sys.exit(1)
+        print("Source code is NOT verified on any supported explorer.", file=sys.stderr)
         with open(output_path, "w") as f:
-            json.dump(meta, f, indent=2)
+            json.dump(primary_meta, f, indent=2)
             f.write("\n")
         sys.exit(1)
 
-    # Handle proxy: fetch implementation source too
+    explorer_type, explorer_url = verified_on
+    meta["verifiedOn"] = explorer_type
+
+    # Handle proxy: fetch implementation source too, from the explorer that verified the proxy
     if meta["proxy"] and meta["implementation"]:
-        impl_address = meta["implementation"]
-        if explorer_type == "sourcify":
-            impl_url = (
-                f"{explorer_url}/v2/contract/{chain_id}/{impl_address}"
-                "?fields=sources,compilation"
-            )
-        elif explorer_type == "etherscan":
-            impl_url = f"{explorer_url}&module=contract&action=getsourcecode&address={impl_address}&apikey={api_key}"
-        elif explorer_type == "okx":
-            impl_url = f"{explorer_url}&contractAddress={impl_address}"
-        elif explorer_type == "blockscout-v2":
-            impl_url = f"{explorer_url}/v2/smart-contracts/{impl_address}"
-        else:
-            impl_url = f"{explorer_url}?module=contract&action=getsourcecode&address={impl_address}"
-
-        impl_response_file = "explorer_impl_response.json"
-        impl_http_code = fetch_with_retry(impl_url, impl_response_file)
-        if explorer_type == "sourcify" and impl_http_code == "404":
-            with open(impl_response_file, "w") as f:
-                json.dump({"error": "not found"}, f)
-
-        impl_meta = parser(impl_response_file, outdir)
-        if impl_meta["contractName"]:
+        _, impl_meta = fetch_meta(
+            explorer_type, explorer_url, chain_id, meta["implementation"], api_key, outdir,
+            "explorer_impl_response.json",
+        )
+        if impl_meta and impl_meta["contractName"]:
             meta["contractName"] = impl_meta["contractName"]
 
     # Write metadata
@@ -213,7 +240,10 @@ def main():
         json.dump(meta, f, indent=2)
         f.write("\n")
 
-    print(f"Source fetched and parsed: {meta['contractName']} (verified={meta['verified']}, proxy={meta['proxy']})")
+    print(
+        f"Source fetched and parsed: {meta['contractName']} (verified={meta['verified']}, "
+        f"proxy={meta['proxy']}, verifiedOn={meta['verifiedOn']})"
+    )
 
 
 if __name__ == "__main__":
