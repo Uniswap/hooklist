@@ -1,0 +1,35 @@
+{
+  "hook": {
+    "address": "0x7e1f1d795a798d9fb6ba186a6254bbbe58ed8800",
+    "chain": "robinhood",
+    "chainId": 4663,
+    "name": "LiquidityGateHook",
+    "description": "Only beforeAddLiquidity is hooked (swaps, removals and donations are not; no delta-returning flags). Liquidity can be added only by one address, through the canonical PositionManager (checked via its msgSender()). Pools on it use an ordinary fixed fee in their key; the hook never touches the fee. Not upgradeable, nothing configurable.",
+    "deployer": "",
+    "verifiedSource": true,
+    "auditUrl": ""
+  },
+  "flags": {
+    "beforeInitialize": false,
+    "afterInitialize": false,
+    "beforeAddLiquidity": true,
+    "afterAddLiquidity": false,
+    "beforeRemoveLiquidity": false,
+    "afterRemoveLiquidity": false,
+    "beforeSwap": false,
+    "afterSwap": false,
+    "beforeDonate": false,
+    "afterDonate": false,
+    "beforeSwapReturnsDelta": false,
+    "afterSwapReturnsDelta": false,
+    "afterAddLiquidityReturnsDelta": false,
+    "afterRemoveLiquidityReturnsDelta": false
+  },
+  "properties": {
+    "dynamicFee": false,
+    "upgradeable": false,
+    "requiresCustomSwapData": false,
+    "vanillaSwap": true,
+    "swapAccess": "none"
+  }
+}
